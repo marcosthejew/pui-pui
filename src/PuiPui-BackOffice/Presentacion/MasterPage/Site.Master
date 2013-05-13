@@ -15,7 +15,7 @@
         <div class="header">
             <div class="title">
                 <h1>
-                    Mi aplicación ASP.NET
+                    Pui-Pui BackOffice
                 </h1>
             </div>
             <%--<div class="loginDisplay">

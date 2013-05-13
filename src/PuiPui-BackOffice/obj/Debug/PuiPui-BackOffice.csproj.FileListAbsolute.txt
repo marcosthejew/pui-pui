@@ -7,3 +7,8 @@ C:\Users\Jonathan\Dropbox\Public\Software Development\PuiPui\PuiPui-BackOffice\P
 C:\Users\Jonathan\Dropbox\Public\Software Development\PuiPui\PuiPui-BackOffice\PuiPui-BackOffice\obj\Debug\PuiPui-BackOffice.csprojResolveAssemblyReference.cache
 C:\Users\Jonathan\Dropbox\Public\Software Development\PuiPui\PuiPui-BackOffice\PuiPui-BackOffice\obj\Debug\PuiPui-BackOffice.dll
 C:\Users\Jonathan\Dropbox\Public\Software Development\PuiPui\PuiPui-BackOffice\PuiPui-BackOffice\obj\Debug\PuiPui-BackOffice.pdb
+C:\Users\Jonathan\Dropbox\Public\Software Development\PuiPui\pui-pui\src\PuiPui-BackOffice\bin\PuiPui-BackOffice.dll
+C:\Users\Jonathan\Dropbox\Public\Software Development\PuiPui\pui-pui\src\PuiPui-BackOffice\bin\PuiPui-BackOffice.pdb
+C:\Users\Jonathan\Dropbox\Public\Software Development\PuiPui\pui-pui\src\PuiPui-BackOffice\obj\Debug\PuiPui-BackOffice.csprojResolveAssemblyReference.cache
+C:\Users\Jonathan\Dropbox\Public\Software Development\PuiPui\pui-pui\src\PuiPui-BackOffice\obj\Debug\PuiPui-BackOffice.dll
+C:\Users\Jonathan\Dropbox\Public\Software Development\PuiPui\pui-pui\src\PuiPui-BackOffice\obj\Debug\PuiPui-BackOffice.pdb
