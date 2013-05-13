@@ -1,0 +1,9 @@
+C:\Hjpm\PuiPui-BackOffice\PuiPui-BackOffice\bin\PuiPui-BackOffice.dll
+C:\Hjpm\PuiPui-BackOffice\PuiPui-BackOffice\bin\PuiPui-BackOffice.pdb
+C:\Hjpm\PuiPui-BackOffice\PuiPui-BackOffice\obj\Debug\PuiPui-BackOffice.dll
+C:\Hjpm\PuiPui-BackOffice\PuiPui-BackOffice\obj\Debug\PuiPui-BackOffice.pdb
+C:\Users\Jonathan\Dropbox\Public\Software Development\PuiPui\PuiPui-BackOffice\PuiPui-BackOffice\bin\PuiPui-BackOffice.dll
+C:\Users\Jonathan\Dropbox\Public\Software Development\PuiPui\PuiPui-BackOffice\PuiPui-BackOffice\bin\PuiPui-BackOffice.pdb
+C:\Users\Jonathan\Dropbox\Public\Software Development\PuiPui\PuiPui-BackOffice\PuiPui-BackOffice\obj\Debug\PuiPui-BackOffice.csprojResolveAssemblyReference.cache
+C:\Users\Jonathan\Dropbox\Public\Software Development\PuiPui\PuiPui-BackOffice\PuiPui-BackOffice\obj\Debug\PuiPui-BackOffice.dll
+C:\Users\Jonathan\Dropbox\Public\Software Development\PuiPui\PuiPui-BackOffice\PuiPui-BackOffice\obj\Debug\PuiPui-BackOffice.pdb
