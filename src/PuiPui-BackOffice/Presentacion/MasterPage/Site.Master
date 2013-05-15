@@ -85,6 +85,7 @@
                                 <asp:MenuItem NavigateUrl="../Vista/Modulo6/Cliente/Act-Ina.aspx" Text="Activar/Inactivar" />
                             </asp:MenuItem>
                         </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="../Vista/Modulo6/Login.aspx" Text="Login" />
                         <asp:MenuItem NavigateUrl="../Vista/Home/About.aspx" Text="Creditos" />
                     </Items>
                 </asp:Menu>
