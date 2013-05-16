@@ -116,6 +116,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccesoDeDatos\Conexion\Conexion.cs" />
+    <Compile Include="AccesoDeDatos\Conexion\IConexion\IConexionSQLServer.cs" />
+    <Compile Include="AccesoDeDatos\SQLServer\SQLServerPersona.cs" />
     <Compile Include="Account\ChangePassword.aspx.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -144,6 +147,7 @@
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="LogicaDeNegocios\Excepciones\ExcepcionConexion.cs" />
     <Compile Include="Presentacion\Vista\Home\About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -424,6 +428,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="AccesoDeDatos\Excepciones_BD\" />
     <Folder Include="App_Data\" />
     <Folder Include="LogicaDeNegocios\Clase\" />
     <Folder Include="LogicaDeNegocios\Cliente\" />

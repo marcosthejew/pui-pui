@@ -97,6 +97,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccesoDeDatos\Conexion\Conexion.cs" />
+    <Compile Include="AccesoDeDatos\Conexion\IConexion\IConexionSQLServer.cs" />
+    <Compile Include="AccesoDeDatos\SQLServer\SQLServerPersona.cs" />
+    <Compile Include="LogicaDeNegocios\Exepciones\ExcepcionConexion.cs" />
     <Compile Include="Presentacion\Vista\Home\About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -293,6 +297,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="AccesoDeDatos\Excepciones_BD\" />
     <Folder Include="LogicaDeNegocios\Login\" />
     <Folder Include="LogicaDeNegocios\ReservaClase\" />
     <Folder Include="LogicaDeNegocios\ReservaInstructor\" />

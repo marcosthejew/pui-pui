@@ -6,3 +6,7 @@ C:\Users\Jonathan\Dropbox\Public\Software Development\PuiPui\pui-pui\src\PuiPui-
 C:\Users\Jonathan\Dropbox\Public\Software Development\PuiPui\pui-pui\src\PuiPui-FrontOffice\bin\PuiPui-FrontOffice.pdb
 C:\Users\Jonathan\Dropbox\Public\Software Development\PuiPui\pui-pui\src\PuiPui-FrontOffice\obj\Debug\PuiPui-FrontOffice.dll
 C:\Users\Jonathan\Dropbox\Public\Software Development\PuiPui\pui-pui\src\PuiPui-FrontOffice\obj\Debug\PuiPui-FrontOffice.pdb
+C:\Hjpm\pui-pui\src\PuiPui-FrontOffice\bin\PuiPui-FrontOffice.dll
+C:\Hjpm\pui-pui\src\PuiPui-FrontOffice\bin\PuiPui-FrontOffice.pdb
+C:\Hjpm\pui-pui\src\PuiPui-FrontOffice\obj\Debug\PuiPui-FrontOffice.dll
+C:\Hjpm\pui-pui\src\PuiPui-FrontOffice\obj\Debug\PuiPui-FrontOffice.pdb
