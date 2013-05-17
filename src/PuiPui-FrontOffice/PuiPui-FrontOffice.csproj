@@ -99,8 +99,13 @@
   <ItemGroup>
     <Compile Include="AccesoDeDatos\Conexion\Conexion.cs" />
     <Compile Include="AccesoDeDatos\Conexion\IConexion\IConexionSQLServer.cs" />
+    <Compile Include="AccesoDeDatos\Excepciones_BD\Class1.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerPersona.cs" />
     <Compile Include="LogicaDeNegocios\Exepciones\ExcepcionConexion.cs" />
+    <Compile Include="LogicaDeNegocios\Login\Class1.cs" />
+    <Compile Include="LogicaDeNegocios\ReservaClase\Class1.cs" />
+    <Compile Include="LogicaDeNegocios\ReservaInstructor\Class1.cs" />
+    <Compile Include="Presentacion\Imagenes\Class1.cs" />
     <Compile Include="Presentacion\Vista\Home\About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -295,17 +300,11 @@
     <Compile Include="Presentacion\MasterPage\Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
+    <Compile Include="PruebasUnitarias\Login\Class1.cs" />
+    <Compile Include="PruebasUnitarias\ReservaClase\Class1.cs" />
+    <Compile Include="PruebasUnitarias\ReservaInstructor\Class1.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="AccesoDeDatos\Excepciones_BD\" />
-    <Folder Include="LogicaDeNegocios\Login\" />
-    <Folder Include="LogicaDeNegocios\ReservaClase\" />
-    <Folder Include="LogicaDeNegocios\ReservaInstructor\" />
-    <Folder Include="Presentacion\Imagenes\" />
-    <Folder Include="PruebasUnitarias\Login\" />
-    <Folder Include="PruebasUnitarias\ReservaClase\" />
-    <Folder Include="PruebasUnitarias\ReservaInstructor\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Account\Web.config" />
     <Content Include="Presentacion\MasterPage\Site.Master" />

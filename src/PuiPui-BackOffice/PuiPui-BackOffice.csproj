@@ -118,6 +118,7 @@
   <ItemGroup>
     <Compile Include="AccesoDeDatos\Conexion\Conexion.cs" />
     <Compile Include="AccesoDeDatos\Conexion\IConexion\IConexionSQLServer.cs" />
+    <Compile Include="AccesoDeDatos\Excepciones_BD\Class1.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerPersona.cs" />
     <Compile Include="Account\ChangePassword.aspx.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
@@ -147,7 +148,14 @@
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="LogicaDeNegocios\Clase\Class1.cs" />
+    <Compile Include="LogicaDeNegocios\Cliente\Class1.cs" />
+    <Compile Include="LogicaDeNegocios\Ejercicio\Class1.cs" />
     <Compile Include="LogicaDeNegocios\Excepciones\ExcepcionConexion.cs" />
+    <Compile Include="LogicaDeNegocios\Instructor\Class1.cs" />
+    <Compile Include="LogicaDeNegocios\Rutina\Class1.cs" />
+    <Compile Include="LogicaDeNegocios\Salon\Class1.cs" />
+    <Compile Include="Presentacion\Imagenes\Class1.cs" />
     <Compile Include="Presentacion\Vista\Home\About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -426,17 +434,16 @@
     <Compile Include="Presentacion\MasterPage\Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
+    <Compile Include="PruebasUnitarias\Clase\Class1.cs" />
+    <Compile Include="PruebasUnitarias\Cliente\Class1.cs" />
+    <Compile Include="PruebasUnitarias\Ejercicio\Class1.cs" />
+    <Compile Include="PruebasUnitarias\Excepciones\ExcepcionConexion.cs" />
+    <Compile Include="PruebasUnitarias\Instructor\Class1.cs" />
+    <Compile Include="PruebasUnitarias\Rutina\Class1.cs" />
+    <Compile Include="PruebasUnitarias\Salon\Class1.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="AccesoDeDatos\Excepciones_BD\" />
     <Folder Include="App_Data\" />
-    <Folder Include="LogicaDeNegocios\Clase\" />
-    <Folder Include="LogicaDeNegocios\Cliente\" />
-    <Folder Include="LogicaDeNegocios\Ejercicio\" />
-    <Folder Include="LogicaDeNegocios\Instructor\" />
-    <Folder Include="LogicaDeNegocios\Rutina\" />
-    <Folder Include="LogicaDeNegocios\Salon\" />
-    <Folder Include="Presentacion\Imagenes\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Account\Web.config" />
