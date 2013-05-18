@@ -36,13 +36,16 @@
                         
                         <asp:MenuItem NavigateUrl="../Vista/Home/Default.aspx" Text="Inicio" />
                         <asp:MenuItem NavigateUrl="../Vista/Modulo1/Modulo1.aspx" Text="Modulo 1">
-                            <asp:MenuItem Text="Entrenador">
+                            <asp:MenuItem Text="Musculo">
+                                <asp:MenuItem NavigateUrl="../Vista/Modulo1/Gestion%20de%20Ejercicios/Agregar.aspx" Text="Agregar" />
+                                <asp:MenuItem NavigateUrl="../Vista/Modulo1/Gestion%20de%20Ejercicios/Eliminar.aspx" Text="Eliminar" />
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Ejercicio">
                                 <asp:MenuItem NavigateUrl="../Vista/Modulo1/Gestion%20de%20Ejercicios/Agregar.aspx" Text="Agregar" />
                                 <asp:MenuItem NavigateUrl="../Vista/Modulo1/Gestion%20de%20Ejercicios/Consultar.aspx" Text="Consultar" />
                                 <asp:MenuItem NavigateUrl="../Vista/Modulo1/Gestion%20de%20Ejercicios/Modificar.aspx" Text="Modificar" />
                                 <asp:MenuItem NavigateUrl="../Vista/Modulo1/Gestion%20de%20Ejercicios/Eliminar.aspx" Text="Eliminar" />
-                                <asp:MenuItem NavigateUrl="../Vista/Modulo1/Gestion%20de%20Ejercicios/Act-Ina.aspx" Text="Activar/Inactivar" />
-                            </asp:MenuItem>
+                             </asp:MenuItem>
                             <asp:MenuItem Text="Instructor">
                                 <asp:MenuItem NavigateUrl="../Vista/Modulo1/Gestion%20de%20Instructores/Agregar.aspx" Text="Agregar" />
                                 <asp:MenuItem NavigateUrl="../Vista/Modulo1/Gestion%20de%20Instructores/Consultar.aspx" Text="Consultar" />
