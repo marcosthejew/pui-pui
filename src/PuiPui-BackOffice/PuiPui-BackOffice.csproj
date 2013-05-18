@@ -75,6 +75,7 @@
     <Content Include="Presentacion\Vista\Modulo1\Gestion de Ejercicios\Act-Ina.aspx" />
     <Content Include="Presentacion\Vista\Modulo1\Gestion de Ejercicios\Agregar.aspx" />
     <Content Include="Presentacion\Vista\Modulo1\Gestion de Ejercicios\Consultar.aspx" />
+    <Content Include="Presentacion\Vista\Modulo1\Gestion de Ejercicios\AgregarEjercicio.aspx" />
     <Content Include="Presentacion\Vista\Modulo1\Gestion de Ejercicios\Eliminar.aspx" />
     <Content Include="Presentacion\Vista\Modulo1\Gestion de Ejercicios\Modificar.aspx" />
     <Content Include="Presentacion\Vista\Modulo1\Gestion de Instructores\Act-Ina.aspx" />
@@ -122,6 +123,7 @@
     <Compile Include="AccesoDeDatos\Conexion\Conexion.cs" />
     <Compile Include="AccesoDeDatos\Conexion\IConexion\IConexionSQLServer.cs" />
     <Compile Include="AccesoDeDatos\Excepciones_BD\ExcepcionConexion.cs" />
+    <Compile Include="AccesoDeDatos\SQLServer\SQLServerMusculo.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerPersona.cs" />
     <Compile Include="Account\ChangePassword.aspx.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
@@ -152,9 +154,11 @@
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
     <Compile Include="Entidades\Cliente\Acceso.cs" />
+    <Compile Include="Entidades\Ejercicio\Musculo.cs" />
     <Compile Include="LogicaDeNegocios\Clase\LogicaClase.cs" />
     <Compile Include="LogicaDeNegocios\Cliente\LogicaPersona.cs" />
     <Compile Include="LogicaDeNegocios\Ejercicio\LogicaEjercicio.cs" />
+    <Compile Include="LogicaDeNegocios\Ejercicio\LogicaMusculo.cs" />
     <Compile Include="LogicaDeNegocios\Excepciones\ExcepcionClientes.cs" />
     <Compile Include="LogicaDeNegocios\Instructor\LogicaInstructor.cs" />
     <Compile Include="LogicaDeNegocios\Rutina\LogicaRutina.cs" />
@@ -205,6 +209,13 @@
     </Compile>
     <Compile Include="Presentacion\Vista\Modulo1\Gestion de Ejercicios\Consultar.aspx.designer.cs">
       <DependentUpon>Consultar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Vista\Modulo1\Gestion de Ejercicios\AgregarEjercicio.aspx.cs">
+      <DependentUpon>AgregarEjercicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Vista\Modulo1\Gestion de Ejercicios\AgregarEjercicio.aspx.designer.cs">
+      <DependentUpon>AgregarEjercicio.aspx</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Vista\Modulo1\Gestion de Ejercicios\Eliminar.aspx.cs">
       <DependentUpon>Eliminar.aspx</DependentUpon>

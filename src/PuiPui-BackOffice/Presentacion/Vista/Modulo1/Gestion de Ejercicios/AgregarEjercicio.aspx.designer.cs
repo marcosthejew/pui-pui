@@ -10,7 +10,7 @@
 namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Ejercicios {
     
     
-    public partial class Agregar {
+    public partial class Consulta {
         
         /// <summary>
         /// lExito control.
@@ -29,6 +29,15 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Ejercicios {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbNombre;
+        
+        /// <summary>
+        /// ddlMusculo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlMusculo;
         
         /// <summary>
         /// bAgregar control.
