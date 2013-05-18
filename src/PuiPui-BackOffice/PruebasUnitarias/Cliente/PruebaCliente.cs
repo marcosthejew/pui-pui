@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace PuiPui_BackOffice.LogicaDeNegocios.Ejercicio
+namespace PuiPui_BackOffice.PruebasUnitarias.Cliente
 {
-    public class Class1
+    public class PruebaCliente
     {
     }
 }

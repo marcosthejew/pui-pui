@@ -5,16 +5,15 @@ using System.Web;
 
 namespace PuiPui_BackOffice.Entidades.Cliente
 {
-    public class Clientes : Persona
+
+    public class Acceso
     {
+        private string _login;
+        private string _password;
 
-
-        public Clientes()
+        public Acceso()
         {
-            //
-            // TODO: Agregar aquí la lógica del constructor
-            //
+
         }
     }
-
 }

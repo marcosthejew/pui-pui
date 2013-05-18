@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace PuiPui_BackOffice.LogicaDeNegocios.Salon
+namespace PuiPui_BackOffice.PruebasUnitarias.Salon
 {
-    public class Class1
+    public class LogicaSalon
     {
     }
 }

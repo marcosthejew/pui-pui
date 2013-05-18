@@ -7,14 +7,12 @@ using System.Data.SqlClient;
 using System.Configuration;
 using PuiPui_BackOffice.AccesoDeDatos.Conexion;
 using PuiPui_BackOffice.AccesoDeDatos.Conexion.IConexion;
-using PuiPui_BackOffice.AccesoDeDatos.SQLServer;
+using PuiPui_BackOffice.AccesoDeDatos.Excepciones_BD;
 using PuiPui_BackOffice.Entidades.Cliente;
-using PuiPui_BackOffice.LogicaDeNegocios.Excepciones;
-
+using PuiPui_BackOffice.LogicaDeNegocios.Cliente;
 
 namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 {
-
     public class SQLServerPersona
     {
         IConexionSqlServer db = new ConexionSqlServer();
@@ -33,7 +31,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
             {
                 conexion = new SqlConnection(cadenaConexion);
                 conexion.Open();
-                cmd = new SqlCommand("[dbo].[hola]", conexion);
+                cmd = new SqlCommand("[dbo].[consultarModificarPersona]", conexion);
                 cmd.CommandType = CommandType.StoredProcedure;
                 dr = cmd.ExecuteReader();
 
