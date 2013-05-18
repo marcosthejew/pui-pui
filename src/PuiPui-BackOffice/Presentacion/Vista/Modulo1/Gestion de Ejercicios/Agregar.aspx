@@ -65,7 +65,7 @@ AutoEventWireup="true" CodeBehind="Agregar.aspx.cs" Inherits="PuiPui_BackOffice.
 
                     <asp:Button ID="bAgregar" runat="server" Text="Agregar" OnClick="bAgregar_Click" />
 
-                    </td>
+                </td>
 
             </tr>
 
