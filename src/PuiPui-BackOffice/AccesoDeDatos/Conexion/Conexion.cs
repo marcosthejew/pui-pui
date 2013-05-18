@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
 using System.Configuration;
-using PuiPui_BackOffice.PruebasUnitarias.Excepciones;
+using PuiPui_BackOffice.AccesoDeDatos.Excepciones_BD;
 using PuiPui_BackOffice.AccesoDeDatos.Conexion.IConexion;
 
  
@@ -26,7 +26,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.Conexion
             }
             catch (NullReferenceException)
             {
-                throw new ExcepcionCliente("El estring de conexion del WebConfig no puede ser localizado");
+                throw new ExcepcionConexion("El estring de conexion del WebConfig no puede ser localizado");
             }
         }
 

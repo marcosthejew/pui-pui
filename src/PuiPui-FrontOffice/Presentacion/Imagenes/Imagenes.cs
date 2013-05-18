@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace PuiPui_BackOffice.Presentacion.Imagenes
+namespace PuiPui_FrontOffice.Presentacion.Imagenes
 {
-    public class Class1
+    public class Imagenes
     {
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
 using System.Configuration;
-using PuiPui_FrontOffice.LogicaDeNegocios.Exepciones;
+using PuiPui_FrontOffice.AccesoDeDatos.Excepciones_BD;
 using PuiPui_FrontOffice.AccesoDeDatos.Conexion.IConexion;
 
 namespace PuiPui_FrontOffice.AccesoDeDatos.Conexion

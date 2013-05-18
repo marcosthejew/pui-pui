@@ -14,6 +14,6 @@ C:\Users\Jonathan\Dropbox\Public\Software Development\PuiPui\pui-pui\src\PuiPui-
 C:\Users\Jonathan\Dropbox\Public\Software Development\PuiPui\pui-pui\src\PuiPui-BackOffice\obj\Debug\PuiPui-BackOffice.pdb
 C:\Hjpm\pui-pui\src\PuiPui-BackOffice\bin\PuiPui-BackOffice.dll
 C:\Hjpm\pui-pui\src\PuiPui-BackOffice\bin\PuiPui-BackOffice.pdb
-C:\Hjpm\pui-pui\src\PuiPui-BackOffice\obj\Debug\PuiPui-BackOffice.csprojResolveAssemblyReference.cache
 C:\Hjpm\pui-pui\src\PuiPui-BackOffice\obj\Debug\PuiPui-BackOffice.dll
 C:\Hjpm\pui-pui\src\PuiPui-BackOffice\obj\Debug\PuiPui-BackOffice.pdb
+C:\Hjpm\pui-pui\src\PuiPui-BackOffice\obj\Debug\PuiPui-BackOffice.csprojResolveAssemblyReference.cache

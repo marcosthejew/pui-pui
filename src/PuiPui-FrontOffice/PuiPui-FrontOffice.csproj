@@ -99,13 +99,13 @@
   <ItemGroup>
     <Compile Include="AccesoDeDatos\Conexion\Conexion.cs" />
     <Compile Include="AccesoDeDatos\Conexion\IConexion\IConexionSQLServer.cs" />
-    <Compile Include="AccesoDeDatos\Excepciones_BD\Class1.cs" />
+    <Compile Include="AccesoDeDatos\Excepciones_BD\ExcepcionConexion.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerPersona.cs" />
     <Compile Include="LogicaDeNegocios\Exepciones\ExcepcionConexion.cs" />
-    <Compile Include="LogicaDeNegocios\Login\Class1.cs" />
-    <Compile Include="LogicaDeNegocios\ReservaClase\Class1.cs" />
-    <Compile Include="LogicaDeNegocios\ReservaInstructor\Class1.cs" />
-    <Compile Include="Presentacion\Imagenes\Class1.cs" />
+    <Compile Include="LogicaDeNegocios\Login\Login.cs" />
+    <Compile Include="LogicaDeNegocios\ReservaClase\ReservaClase.cs" />
+    <Compile Include="LogicaDeNegocios\ReservaInstructor\ReservaInstructor.cs" />
+    <Compile Include="Presentacion\Imagenes\Imagenes.cs" />
     <Compile Include="Presentacion\Vista\Home\About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -300,9 +300,9 @@
     <Compile Include="Presentacion\MasterPage\Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
-    <Compile Include="PruebasUnitarias\Login\Class1.cs" />
-    <Compile Include="PruebasUnitarias\ReservaClase\Class1.cs" />
-    <Compile Include="PruebasUnitarias\ReservaInstructor\Class1.cs" />
+    <Compile Include="PruebasUnitarias\Login\Pruebalogin.cs" />
+    <Compile Include="PruebasUnitarias\ReservaClase\PruebaReservaClase.cs" />
+    <Compile Include="PruebasUnitarias\ReservaInstructor\PruebaReservaInstructor.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -159,7 +159,7 @@
     <Compile Include="LogicaDeNegocios\Instructor\LogicaInstructor.cs" />
     <Compile Include="LogicaDeNegocios\Rutina\LogicaRutina.cs" />
     <Compile Include="LogicaDeNegocios\Salon\LogicaSalon.cs" />
-    <Compile Include="Presentacion\Imagenes\Class1.cs" />
+    <Compile Include="Presentacion\Imagenes\Imagenes.cs" />
     <Compile Include="Presentacion\Vista\Home\About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
