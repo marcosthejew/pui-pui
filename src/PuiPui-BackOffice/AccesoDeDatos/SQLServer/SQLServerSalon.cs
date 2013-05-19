@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace PuiPui_BackOffice.PruebasUnitarias.Clase
+namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 {
-    public class LogicaClase
+    public class SQLServerSalon
     {
+
     }
 }
