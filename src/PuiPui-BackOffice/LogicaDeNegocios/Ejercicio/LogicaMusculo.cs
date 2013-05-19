@@ -21,8 +21,7 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.Ejercicio
             {
                 return objDataBase.insertarMusculo(nombre);
             }
-           // objDataBase.insertarMusculo
-            return false;
+           
         }
 
 

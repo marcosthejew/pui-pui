@@ -36,6 +36,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Ejercicios
                 {
                     lExito.Text = "Se agrego exitosamente el musculo.";
                     lExito.Visible = true;
+                    tbNombre.Text = "";
                 }
 
             }

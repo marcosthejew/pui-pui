@@ -7,13 +7,15 @@ namespace PuiPui_BackOffice.Entidades.Instructor
 {
     public class Instructor : Cliente.Persona{
     
-        private IList<Horario> _horario;
-        public Instructor()
-        {
+        private List<Horario> _horario;
 
-            //
-            // TODO: Agregar aquí la lógica del constructor
-            //
+        public Instructor(int cedula, string nombre1, string nombre2, string apellido1, string apellido2,
+         string genero, DateTime fechaNacimiento, string ciudad, string direccion, string correo, string contacto,
+         string telfContacto, List<Horario> horario)
+         :base(cedula, nombre1, nombre2, apellido1, apellido2, genero, fechaNacimiento, ciudad, direccion, correo, 
+          contacto, telfContacto)
+        {
+            _horario = horario;
         }
     }
 }

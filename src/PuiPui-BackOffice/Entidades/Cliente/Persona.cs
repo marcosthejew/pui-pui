@@ -144,6 +144,25 @@ namespace PuiPui_BackOffice.Entidades.Cliente
 
         }
 
+        public Persona(int cedula, string nombre1, string nombre2, string apellido1, string apellido2,
+         string genero, DateTime fechaNacimiento, string ciudad, string direccion, string correo, string contacto,
+         string telfContacto)
+        {
+            _cedulaPersona = cedula;
+            _nombrePersona1 = nombre1;
+            _nombrePersona2 = nombre2;
+            _apellidoPersona1 = apellido1;
+            _apellidoPersona2 = apellido2;
+            _generoPersona = genero;
+            _fechaNacimientoPersona = fechaNacimiento;
+            _ciudadPersona = ciudad;
+            _DireccionPersona = direccion;
+            _contactoNombrePersona = contacto;
+            _contactoTelefonoPersona = telfContacto;
+            _fechaIngresoPersona = new DateTime().Date;
+            _estadoPersona = "activo";
+        }
+
         #endregion
 
     }
