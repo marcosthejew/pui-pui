@@ -71,12 +71,11 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
             _conexion = new SqlConnection(_cadenaConexion);
 
             _conexion.Open();
-            string _inserutina = "Insert into Rutina values(SQ_Rutina.nextval,@descripcion, @duracion,  @repeticiones)";
+            string _inserutina = "Insert into Rutina values(@descripcion, @duracion,  @repeticiones)";
             SqlCommand _insertar = new SqlCommand(_inserutina, _conexion);
-
-            _insertar.Parameters.AddWithValue("@descripcion", insertaRutina.Descripcion);
-            _insertar.Parameters.AddWithValue("@duracion", insertaRutina.Tiempo);
-            _insertar.Parameters.AddWithValue("@repeticiones", insertaRutina.Repeteciones);
+            _insertar.Parameters.Add("@descripcion", SqlDbType.NChar, 100).Value = insertaRutina.Descripcion;
+            _insertar.Parameters.Add("@duracion", SqlDbType.Time, 7).Value = insertaRutina.Tiempo;
+            _insertar.Parameters.Add("@duracion", SqlDbType.Int).Value = insertaRutina.Repeteciones;
             _insertar.ExecuteNonQuery();
 
             _conexion.Close();
@@ -104,6 +103,8 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
 
         }
 
+
+       
     }
 
 }
