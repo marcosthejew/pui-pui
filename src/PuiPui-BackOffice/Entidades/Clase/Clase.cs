@@ -13,11 +13,18 @@ namespace PuiPui_BackOffice.Entidades.Clase
         private String _nombre;
         private int _idClase;
         private String _descripcion;
-        
+        private int _status;
+
         #endregion
 
         #region Getter Setter
 
+        public int Status
+        {
+            get { return _status; }
+            set { _status = value; }
+        }
+        
         public String Descripcion
         {
             get { return _descripcion; }

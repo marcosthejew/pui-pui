@@ -8,10 +8,13 @@ namespace PuiPui_BackOffice.Entidades.Salon
     public class Salon
     {
         #region Atributos
+
         private String _nombre;
         private int _idSalon;
         private String _ubicacion;
         private int _capacidad;
+        private int status;
+
         #endregion
 
         #region Metodos GetterSetter
@@ -34,6 +37,11 @@ namespace PuiPui_BackOffice.Entidades.Salon
         {
             get { return _capacidad; }
             set { _capacidad = value; }
+        }
+        public int Status
+        {
+            get { return status; }
+            set { status = value; }
         }
         #endregion
 

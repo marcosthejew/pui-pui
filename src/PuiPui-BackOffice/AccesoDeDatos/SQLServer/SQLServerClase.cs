@@ -15,55 +15,56 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 {
     public class SQLServerClase
     {
+        #region Atributos
+         
+        private List<Clase> _listaClases ;
+        private Clase _objetoClase;
+        private IConexionSqlServer _db ;
+        private string _cadenaConexion;
+        private SqlConnection _conexion;
+        private SqlCommand _cmd;
+        private SqlDataReader _dr;
+        #endregion
 
-        IConexionSqlServer db = new ConexionSqlServer();
-
-        public Clase ConsultarDetallePersona(int idClase)
+        #region Constructor
+        public SQLServerClase()
         {
-            string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
-            SqlConnection conexion = new SqlConnection();
-            SqlCommand cmd = new SqlCommand();
-            SqlDataReader dr;
-            Clase objetoPersona = new Clase();
+            _listaClases = new List<Clase>();
+            _db = new ConexionSqlServer();
+            _cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            _conexion = new SqlConnection();
+            _cmd = new SqlCommand();
+        }
+        #endregion
+
+        #region Metodos 
+
+        public List<Clase> ConsultarClases()
+        {
 
             try
             {
-                conexion = new SqlConnection(cadenaConexion);
-                conexion.Open();
-                cmd = new SqlCommand("[dbo].[consultarDetallePersona]", conexion);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@idPersona", idClase);
-                dr = cmd.ExecuteReader();
+                _conexion = new SqlConnection(_cadenaConexion);
+                _conexion.Open();
+                _cmd = new SqlCommand("[dbo].[ListarClases]", _conexion);
+                _cmd.CommandType = CommandType.StoredProcedure;
+                _dr = _cmd.ExecuteReader();
 
-                //Se recorre cada row
-                while (dr.Read())
+                //Llena la lista de Clases
+                while (_dr.Read())
                 {
 
-                    objetoPersona = new Clase();
-/*
-                    objetoPersona.IdPersona = Convert.ToInt32(dr.GetValue(0));
-                    objetoPersona.CedulaPersona = Convert.ToInt32(dr.GetValue(1));
-                    objetoPersona.NombrePersona1 = dr.GetValue(2).ToString();
-                    objetoPersona.NombrePersona2 = dr.GetValue(3).ToString();
-                    objetoPersona.ApellidoPersona1 = dr.GetValue(4).ToString();
-                    objetoPersona.ApellidoPersona2 = dr.GetValue(5).ToString();
-                    objetoPersona.GeneroPersona = dr.GetValue(6).ToString();
-                    objetoPersona.FechaNacimientoPersona = Convert.ToDateTime(dr.GetValue(7));
-                    objetoPersona.FechaIngresoPersona = Convert.ToDateTime(dr.GetValue(8));
-                    objetoPersona.CiudadPersona = dr.GetValue(9).ToString();
-                    objetoPersona.DireccionPersona = dr.GetValue(10).ToString();
-                    objetoPersona.TelefonoLocalPersona = dr.GetValue(11).ToString();
-                    objetoPersona.TelefonoCelularPersona = dr.GetValue(12).ToString();
-                    objetoPersona.CorreoPersona = dr.GetValue(13).ToString();
-                    objetoPersona.ContactoNombrePersona = dr.GetValue(14).ToString();
-                    objetoPersona.ContactoTelefonoPersona = dr.GetValue(13).ToString();
-                    objetoPersona.EstadoPersona = dr.GetValue(16).ToString();
-                    objetoPersona.LoginPersona = dr.GetValue(17).ToString();
-                    objetoPersona.PasswordPersona = dr.GetValue(18).ToString();
-                    objetoPersona.TipoPersona = dr.GetValue(19).ToString();*/
+                    _objetoClase = new Clase();
+
+                    _objetoClase.IdClase = Convert.ToInt32(_dr.GetValue(0));
+                    _objetoClase.Nombre = _dr.GetValue(1).ToString();
+                    _objetoClase.Descripcion = _dr.GetValue(2).ToString();
+                    _objetoClase.Status = Convert.ToInt32(_dr.GetValue(3));
+
+                    _listaClases.Add(_objetoClase);
                 }
 
-                db.CerrarConexion();
+                _db.CerrarConexion();
 
             }
             catch (SqlException error)
@@ -73,10 +74,11 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
             }
             finally
             {
-                db.CerrarConexion();
+                _db.CerrarConexion();
             }
-            return objetoPersona;
+            return _listaClases;
         }
 
+        #endregion
     }
 }
