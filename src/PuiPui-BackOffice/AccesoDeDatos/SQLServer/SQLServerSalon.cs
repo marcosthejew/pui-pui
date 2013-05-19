@@ -24,6 +24,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
         private SqlConnection _conexion;
         private SqlCommand _cmd;
         private SqlDataReader _dr;
+        private SqlParameter _param;
         #endregion  
 
         #region Constructor
@@ -57,10 +58,9 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                     _objetoSalon = new Salon();
 
                     _objetoSalon.IdSalon = Convert.ToInt32(_dr.GetValue(0));
-                    _objetoSalon.Nombre = _dr.GetValue(1).ToString();
-                    _objetoSalon.Ubicacion = _dr.GetValue(2).ToString();
-                    _objetoSalon.Capacidad = Convert.ToInt32(_dr.GetValue(3));
-                    _objetoSalon.Status = Convert.ToInt32(_dr.GetValue(4));
+                    _objetoSalon.Ubicacion = _dr.GetValue(1).ToString();
+                    _objetoSalon.Capacidad = Convert.ToInt32(_dr.GetValue(2));
+                    _objetoSalon.Status = Convert.ToInt32(_dr.GetValue(3));
 
                     _listaSalones.Add(_objetoSalon);
                 }
@@ -78,6 +78,89 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 _db.CerrarConexion();
             }
             return _listaSalones;
+        }
+
+        public Boolean AgregarSalon(Salon salon)
+        {
+            Boolean insercion = false;
+            try
+            {
+                _conexion = new SqlConnection(_cadenaConexion);
+                _conexion.Open();
+                _cmd = new SqlCommand("[dbo].[AgregarSalon]", _conexion);
+                _cmd.CommandType = CommandType.StoredProcedure;
+                _dr = _cmd.ExecuteReader();
+
+                _param = new SqlParameter("@Ubicacion", salon.Ubicacion);
+                _cmd.Parameters.Add(_param);
+
+                _param = new SqlParameter("@Capacidad", salon.Capacidad);
+                _cmd.Parameters.Add(_param);
+
+                _param = new SqlParameter("@Status", salon.Status);
+                _cmd.Parameters.Add(_param);
+
+                insercion = true;
+                _db.CerrarConexion();
+
+            }
+            catch (SqlException error)
+            {
+                //En caso de que se viole alguna restriccion sobre la BD
+                insercion = false;
+                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+
+            }
+            finally
+            {
+                _db.CerrarConexion();
+
+            }
+            return insercion;
+
+        }
+
+        public Boolean ModificarSalon(Salon salon)
+        {
+            Boolean insercion = false;
+            try
+            {
+                _conexion = new SqlConnection(_cadenaConexion);
+                _conexion.Open();
+                _cmd = new SqlCommand("[dbo].[ModificarSalon]", _conexion);
+                _cmd.CommandType = CommandType.StoredProcedure;
+                _dr = _cmd.ExecuteReader();
+
+                _param = new SqlParameter("@Id_salon", salon.IdSalon);
+                _cmd.Parameters.Add(_param);
+
+                _param = new SqlParameter("@Ubicacion", salon.Ubicacion);
+                _cmd.Parameters.Add(_param);
+
+                _param = new SqlParameter("@Capacidad", salon.Capacidad);
+                _cmd.Parameters.Add(_param);
+
+                _param = new SqlParameter("@Status", salon.Status);
+                _cmd.Parameters.Add(_param);
+
+                insercion = true;
+                _db.CerrarConexion();
+
+            }
+            catch (SqlException error)
+            {
+                //En caso de que se viole alguna restriccion sobre la BD
+                insercion = false;
+                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+
+            }
+            finally
+            {
+                _db.CerrarConexion();
+
+            }
+            return insercion;
+
         }
 
         #endregion

@@ -120,15 +120,6 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
         }
 
 
-
-
-
-
-
-
-
-
-     
-        #endregion
+      #endregion
     }
 }

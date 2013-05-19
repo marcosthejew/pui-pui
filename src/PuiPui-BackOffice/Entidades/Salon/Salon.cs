@@ -9,7 +9,6 @@ namespace PuiPui_BackOffice.Entidades.Salon
     {
         #region Atributos
 
-        private String _nombre;
         private int _idSalon;
         private String _ubicacion;
         private int _capacidad;
@@ -28,11 +27,7 @@ namespace PuiPui_BackOffice.Entidades.Salon
             get { return _ubicacion; }
             set { _ubicacion = value; }
         }
-        public String Nombre
-        {
-            get { return _nombre; }
-            set { _nombre = value; }
-        }
+       
         public int Capacidad
         {
             get { return _capacidad; }
@@ -47,11 +42,10 @@ namespace PuiPui_BackOffice.Entidades.Salon
 
         #region Contructores
 
-        public Salon(String nombre, int idSalon, String ubicacion, int capacidad)
+        public Salon(int idSalon, String ubicacion, int capacidad)
         {
             this._capacidad = capacidad;
             this._idSalon = idSalon;
-            this._nombre = nombre;
             this._ubicacion = ubicacion;
 
         }

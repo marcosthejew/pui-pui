@@ -9,45 +9,63 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
 {
     public class LogicaSalon
     {
+
+        #region Atributos
+
+        private Salon _salon;
+        private SQLServerSalon _accesoSalon;
+
+        #endregion
+
+        #region Constructor
+
+        public LogicaSalon()
+        {
+            _salon = new Salon();
+            _accesoSalon= new SQLServerSalon();
+
+        }
+
+
+        #endregion
+
+        #region Metodos
+
         private List<Salon> ConsultarSalones(){
 
-            List<Salon> listaSalon = new List<Salon>();
+            List<Salon> listaSalon ;
             //conectar a la bd
+            listaSalon = _accesoSalon.ConsultarSalones();
 
             return listaSalon;
         
         }
 
-        private Boolean ModificarSalones()
+        private Boolean ModificarSalones(Salon salon)
         {
 
-            List<Salon> listaSalon = new List<Salon>();
-            //conectar a la bd
+            Boolean retorno = false;
 
-            return true;
+            retorno = _accesoSalon.ModificarSalon(salon);
+            
+            return retorno;
 
         }
 
-        private Boolean AgregarSalones()
+        private Boolean AgregarSalones(String ubicacion,int capacidad)
         {
-
-            List<Salon> listaSalon = new List<Salon>();
+            Boolean resultado = false;
+            _salon.Ubicacion = ubicacion;
+            _salon.Capacidad = capacidad;
+            _salon.Status = 0;
+            resultado = _accesoSalon.AgregarSalon(_salon);
             //conectar a la bd
 
-            return true;
+            return resultado;
 
         }
 
-        private Boolean ActivarDesactivarSalones()
-        {
-
-            List<Salon> listaSalon = new List<Salon>();
-            //conectar a la bd
-
-            return true;
-
-        }
-
+        #endregion
 
     }
 }
