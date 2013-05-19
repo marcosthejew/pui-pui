@@ -1,3 +1,6 @@
+
+/*CONSULTAR SI EXISTE UN MUSCULO */
+
 USE [puipuiDB]
 GO
 SET ANSI_NULLS ON
@@ -17,7 +20,7 @@ BEGIN
 END;
 
 GO
-
+/*INSERTAR UN MUSCULO */
 USE [puipuiDB]
 GO
 SET ANSI_NULLS ON
@@ -33,3 +36,8 @@ BEGIN
 END;
 
 GO
+
+
+
+
+

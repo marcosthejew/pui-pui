@@ -19,6 +19,88 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 
 
 
+        public bool ExisteEjercicio(string nombreEjercicio)
+        {
+            string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader dr;
+
+            try
+            {
+                conexion = new SqlConnection(cadenaConexion);
+                conexion.Open();
+                cmd = new SqlCommand("[dbo].[existeEjercicio]", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@nombreEjercicio", nombreEjercicio);
+                dr = cmd.ExecuteReader();
+
+                //Se recorre cada row
+                if (dr.Read())
+                {
+                    db.CerrarConexion();
+                    return true;
+                }
+
+                db.CerrarConexion();
+            }
+            catch (SqlException error)
+            {
+                //En caso de que se viole alguna restriccion sobre la BD
+                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+            }
+            finally
+            {
+                db.CerrarConexion();
+            }
+            return false;
+        }
+
+
+
+
+        public bool insertarEjercicio(string nombreEjercicio, String descripcion, int musculo)
+        {
+            string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader dr;
+
+            try
+            {
+                conexion = new SqlConnection(cadenaConexion);
+                conexion.Open();
+                cmd = new SqlCommand("[dbo].[insertarEjercicio]", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@nombreEjercicio", nombreEjercicio);
+                cmd.Parameters.AddWithValue("@descripcionEjercicio", descripcion);
+                cmd.Parameters.AddWithValue("@idMusculo", musculo);
+                dr = cmd.ExecuteReader();
+
+                //Se recorre cada row
+                if (dr.Read())
+                {
+                    db.CerrarConexion();
+                    return true;
+                }
+
+                db.CerrarConexion();
+            }
+            catch (SqlException error)
+            {
+                //En caso de que se viole alguna restriccion sobre la BD
+                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+            }
+            finally
+            {
+                db.CerrarConexion();
+            }
+            return false;
+        }
+
+
+
+
         public List<Ejercicio> ConsultarEjercicios()
         {
 
