@@ -16,7 +16,7 @@ namespace PuiPui_BackOffice.Entidades.Ejercicio
             set { _nombreMusculo = value; }
         }
 
-        public int IdPersona
+        public int IdMusculo
         {
             get { return _idMusculo; }
             set { _idMusculo = value; }
