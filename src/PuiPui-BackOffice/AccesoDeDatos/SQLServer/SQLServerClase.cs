@@ -24,6 +24,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
         private SqlConnection _conexion;
         private SqlCommand _cmd;
         private SqlDataReader _dr;
+        private SqlParameter _param;
         #endregion
 
         #region Constructor
@@ -58,8 +59,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 
                     _objetoClase.IdClase = Convert.ToInt32(_dr.GetValue(0));
                     _objetoClase.Nombre = _dr.GetValue(1).ToString();
-                    _objetoClase.Descripcion = _dr.GetValue(2).ToString();
-                    _objetoClase.Status = Convert.ToInt32(_dr.GetValue(3));
+                    _objetoClase.Status = Convert.ToInt32(_dr.GetValue(2));
 
                     _listaClases.Add(_objetoClase);
                 }
@@ -79,6 +79,56 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
             return _listaClases;
         }
 
+        public Boolean AgregarClase(Clase clase)
+        {
+            Boolean insercion=false;
+            try
+            {
+                _conexion = new SqlConnection(_cadenaConexion);
+                _conexion.Open();
+                _cmd = new SqlCommand("[dbo].[ListarClases]", _conexion);
+                _cmd.CommandType = CommandType.StoredProcedure;
+                _dr = _cmd.ExecuteReader();
+
+                _param = new SqlParameter("@Nombre", clase.Nombre);
+                _cmd.Parameters.Add(_param);
+
+                _param = new SqlParameter("@Descripcion", clase.Descripcion);
+                _cmd.Parameters.Add(_param);
+
+                _param = new SqlParameter("@Status", clase.Status);
+                _cmd.Parameters.Add(_param);
+
+                insercion = true;
+                _db.CerrarConexion();
+
+            }
+            catch (SqlException error)
+            {
+                //En caso de que se viole alguna restriccion sobre la BD
+                insercion = false;
+                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+                
+            }
+            finally
+            {
+                _db.CerrarConexion();
+                
+            }
+            return insercion;
+            
+        }
+
+
+
+
+
+
+
+
+
+
+     
         #endregion
     }
 }

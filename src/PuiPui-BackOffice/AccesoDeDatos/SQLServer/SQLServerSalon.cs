@@ -24,7 +24,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
         private SqlConnection _conexion;
         private SqlCommand _cmd;
         private SqlDataReader _dr;
-        #endregion
+        #endregion  
 
         #region Constructor
         public SQLServerSalon()
