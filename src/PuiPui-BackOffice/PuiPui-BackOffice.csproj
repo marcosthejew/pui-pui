@@ -123,8 +123,10 @@
     <Compile Include="AccesoDeDatos\Conexion\Conexion.cs" />
     <Compile Include="AccesoDeDatos\Conexion\IConexion\IConexionSQLServer.cs" />
     <Compile Include="AccesoDeDatos\Excepciones_BD\ExcepcionConexion.cs" />
+    <Compile Include="AccesoDeDatos\SQLServer\SQLServerClase.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerMusculo.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerPersona.cs" />
+    <Compile Include="AccesoDeDatos\SQLServer\SQLServerSalon.cs" />
     <Compile Include="Account\ChangePassword.aspx.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -155,14 +157,14 @@
     </Compile>
     <Compile Include="Entidades\Cliente\Acceso.cs" />
     <Compile Include="Entidades\Ejercicio\Musculo.cs" />
-    <Compile Include="LogicaDeNegocios\Clase\LogicaClase.cs" />
+    <Compile Include="LogicaDeNegocios\LogicaClase\LogicaClase.cs" />
     <Compile Include="LogicaDeNegocios\Cliente\LogicaPersona.cs" />
     <Compile Include="LogicaDeNegocios\Ejercicio\LogicaEjercicio.cs" />
     <Compile Include="LogicaDeNegocios\Ejercicio\LogicaMusculo.cs" />
     <Compile Include="LogicaDeNegocios\Excepciones\ExcepcionClientes.cs" />
     <Compile Include="LogicaDeNegocios\Instructor\LogicaInstructor.cs" />
     <Compile Include="LogicaDeNegocios\Rutina\LogicaRutina.cs" />
-    <Compile Include="LogicaDeNegocios\Salon\LogicaSalon.cs" />
+    <Compile Include="LogicaDeNegocios\LogicaSalon\LogicaSalon.cs" />
     <Compile Include="Presentacion\Imagenes\Imagenes.cs" />
     <Compile Include="Presentacion\Vista\Home\About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>

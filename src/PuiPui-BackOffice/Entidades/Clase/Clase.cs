@@ -28,16 +28,8 @@ namespace PuiPui_BackOffice.Entidades.Clase
             get { return _idClase; }
             set { _idClase = value; }
         }
-        public Horario Horario
-        {
-            get { return _horario; }
-            set { _horario = value; }
-        }
-        public Salon.Salon Salon
-        {
-            get { return _Salon; }
-            set { _Salon = value; }
-        }
+       
+     
         public String Nombre
         {
             get { return _nombre; }

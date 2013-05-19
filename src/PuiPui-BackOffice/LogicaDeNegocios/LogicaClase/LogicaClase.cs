@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using PuiPui_BackOffice.Entidades.Clase;
-namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaClase
+namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaClase{
     public class LogicaClase
     {
 
