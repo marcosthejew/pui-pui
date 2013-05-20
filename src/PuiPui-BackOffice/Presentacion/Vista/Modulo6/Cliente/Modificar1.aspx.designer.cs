@@ -49,13 +49,31 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo6.Cliente {
         protected global::System.Web.UI.WebControls.TextBox LFechaIngreso;
         
         /// <summary>
+        /// LCedula control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox LCedula;
+        
+        /// <summary>
+        /// ComboTipo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ComboTipo;
+        
+        /// <summary>
         /// LFechaNacimiento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox LFechaNacimiento;
+        protected global::System.Web.UI.WebControls.Calendar LFechaNacimiento;
         
         /// <summary>
         /// ComboGenero control.
@@ -121,13 +139,22 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo6.Cliente {
         protected global::System.Web.UI.WebControls.TextBox LTelefonoLocal;
         
         /// <summary>
-        /// LDireccion control.
+        /// LNombreContactoEmergencia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox LDireccion;
+        protected global::System.Web.UI.WebControls.TextBox LNombreContactoEmergencia;
+        
+        /// <summary>
+        /// LTelefonoContactoEmergencia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox LTelefonoContactoEmergencia;
         
         /// <summary>
         /// LCorreo control.
@@ -139,12 +166,57 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo6.Cliente {
         protected global::System.Web.UI.WebControls.TextBox LCorreo;
         
         /// <summary>
-        /// ComboTipo control.
+        /// LCiudad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ComboTipo;
+        protected global::System.Web.UI.WebControls.TextBox LCiudad;
+        
+        /// <summary>
+        /// LDireccion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox LDireccion;
+        
+        /// <summary>
+        /// LUsuario control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox LUsuario;
+        
+        /// <summary>
+        /// LContrasena control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox LContrasena;
+        
+        /// <summary>
+        /// ComboStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ComboStatus;
+        
+        /// <summary>
+        /// BRegistrar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BRegistrar;
     }
 }

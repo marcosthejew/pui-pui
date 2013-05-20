@@ -31,7 +31,7 @@
                     </td>
                     <td class="auto-style6">Tipo Persona</td>
                     <td class="auto-style2">
-                        <asp:DropDownList ID="ComboTipo" runat="server" Height="20px" Width="90px">
+                        <asp:DropDownList ID="ComboTipo" runat="server" Height="19px" Width="120px">
                             <asp:ListItem Value="Cliente">Cliente</asp:ListItem>
                             <asp:ListItem Value="Administrador">Administrador</asp:ListItem>
                         </asp:DropDownList>
@@ -51,7 +51,7 @@
                     </td>
                     <td class="auto-style6">Genero</td>
                     <td class="auto-style2">
-                        <asp:DropDownList ID="ComboGenero" runat="server" Height="20px" Width="90px">
+                        <asp:DropDownList ID="ComboGenero" runat="server" Height="21px" Width="120px">
                             <asp:ListItem Value="Femenino">Femenino</asp:ListItem>
                             <asp:ListItem Value="Masculino">Masculino</asp:ListItem>
                         </asp:DropDownList>
@@ -110,7 +110,7 @@
                 <tr>
                     <td class="auto-style6" >Direccion</td>
                     <td class="auto-style2"colspan="3">
-                        <asp:TextBox ID="LDireccion" runat="server" Height="20px" Width="560px"></asp:TextBox>
+                        <asp:TextBox ID="LDireccion" runat="server" Height="20px" Width="639px"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>

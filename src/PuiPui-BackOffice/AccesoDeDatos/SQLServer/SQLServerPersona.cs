@@ -185,5 +185,59 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
         }
 
 
+        #region Modificar Persona
+
+        public bool ModificarPersona(Persona nuevaPersona)
+        {
+            string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader dr;
+
+            try
+            {
+                conexion = new SqlConnection(cadenaConexion);
+                conexion.Open();
+                cmd = new SqlCommand("[dbo].[modificarPersona]", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idPersona", nuevaPersona.IdPersona);
+                cmd.Parameters.AddWithValue("@cedulaPersona", nuevaPersona.CedulaPersona);
+                cmd.Parameters.AddWithValue("@nombrePersona1", nuevaPersona.NombrePersona1);
+                cmd.Parameters.AddWithValue("@nombrePersona2", nuevaPersona.NombrePersona2);
+                cmd.Parameters.AddWithValue("@apellidoPersona1", nuevaPersona.ApellidoPersona1);
+                cmd.Parameters.AddWithValue("@apellidoPersona2", nuevaPersona.ApellidoPersona2);
+                cmd.Parameters.AddWithValue("@generoPersona", nuevaPersona.GeneroPersona);
+                cmd.Parameters.AddWithValue("@fechaNacimientoPersona", nuevaPersona.FechaNacimientoPersona);
+                cmd.Parameters.AddWithValue("@fechaIngresoPersona", nuevaPersona.FechaIngresoPersona);
+                cmd.Parameters.AddWithValue("@ciudadPersona", nuevaPersona.CiudadPersona);
+                cmd.Parameters.AddWithValue("@direccionPersona", nuevaPersona.DireccionPersona);
+                cmd.Parameters.AddWithValue("@telefonoLocalPersona", nuevaPersona.TelefonoLocalPersona);
+                cmd.Parameters.AddWithValue("@telefonoCelularPersona", nuevaPersona.TelefonoCelularPersona);
+                cmd.Parameters.AddWithValue("@correoPersona", nuevaPersona.CorreoPersona);
+                cmd.Parameters.AddWithValue("@contactoNombrePersona", nuevaPersona.ContactoNombrePersona);
+                cmd.Parameters.AddWithValue("@contactoTelefonoPersona", nuevaPersona.ContactoTelefonoPersona);
+                cmd.Parameters.AddWithValue("@estadoPersona", nuevaPersona.EstadoPersona);
+                cmd.Parameters.AddWithValue("@loginPersona", nuevaPersona.LoginPersona);
+                cmd.Parameters.AddWithValue("@passwordPersona", nuevaPersona.PasswordPersona);
+                cmd.Parameters.AddWithValue("@tipoPersona", nuevaPersona.TipoPersona);
+
+                dr = cmd.ExecuteReader();
+                dr.Read();
+                db.CerrarConexion();
+                return true;
+            }
+            catch (SqlException error)
+            {
+                //En caso de que se viole alguna restriccion sobre la BD
+                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+                return false;
+            }
+
+            finally
+            {
+                db.CerrarConexion();
+            }
+        }
+        #endregion
     }
 }

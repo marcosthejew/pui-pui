@@ -34,6 +34,11 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.Cliente
             objPersona = objDataBase.AgregarCliente(miPersona);
             return objPersona;
         }
+        public void ModificarPersona(Persona nuevaPersona)
+        {
+            SQLServerPersona objDataBase = new SQLServerPersona();
+            bool booleanito = objDataBase.ModificarPersona(nuevaPersona);
 
+        }
     }
 }

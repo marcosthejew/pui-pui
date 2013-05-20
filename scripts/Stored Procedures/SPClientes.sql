@@ -78,6 +78,72 @@ END;
 
 GO
 
+GO
+USE [puipuiDB]
+GO
+/****** Object:  StoredProcedure [dbo].[modificarPersona]    Script Date: 19/05/2013 23:09:08 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER PROCEDURE [dbo].[modificarPersona]
+
+	@idPersona bigint,
+	@cedulaPersona bigint,
+	@nombrePersona1 [nchar](50),
+	@nombrePersona2 [nchar](50),
+	@apellidoPersona1 [nchar](50),
+	@apellidoPersona2 [nchar](50),
+	@generoPersona [nchar](50),
+	@fechaNacimientoPersona [date],
+	@fechaIngresoPersona [date],
+	@ciudadPersona [nchar](50),
+	@direccionPersona [nchar](300),
+	@telefonoLocalPersona [nchar](50),
+	@telefonoCelularPersona [nchar](50),
+	@correoPersona [nchar](50),
+	@contactoNombrePersona [nchar](50),
+	@contactoTelefonoPersona [nchar](50),
+	@estadoPersona [nchar](50),
+	@loginPersona [nchar](50),
+	@passwordPersona [nchar](50),
+	@tipoPersona [nchar](50)
+
+AS
+
+BEGIN
+
+	SET NOCOUNT ON;
+
+    
+	UPDATE [Persona]
+	SET [Persona].cedulaPersona = @cedulaPersona, 
+		[Persona].nombrePersona1 = @nombrePersona1, 
+		[Persona].nombrePersona2 = @nombrePersona2,
+		[Persona].apellidoPersona1 = @apellidoPersona1,
+		[Persona].apellidoPersona2 = @apellidoPersona2,
+		[Persona].generoPersona = @generoPersona,
+		[Persona].fechaNacimientoPersona = @fechaNacimientoPersona,
+		[Persona].ciudadPersona = @ciudadPersona,
+		[Persona].DireccionPersona = @direccionPersona,
+		[Persona].telefonoLocalPersona = @telefonoLocalPersona,
+		[Persona].telefonoCelularPersona = @telefonoCelularPersona,
+		[Persona].correoPersona = @correoPersona,
+		[Persona].contactoNombrePersona = @contactoNombrePersona,
+		[Persona].contactoTelefonoPersona = @contactoTelefonoPersona,
+		[Persona].estadoPersona = @estadoPersona,
+		[Persona].loginPersona = @loginPersona,
+		[Persona].passwordPersona = @passwordPersona,
+		[Persona].tipoPersona = @tipoPersona
+
+	WHERE [Persona].idPersona = @idPersona
+	
+END;
+
+
+
+
 
 
 

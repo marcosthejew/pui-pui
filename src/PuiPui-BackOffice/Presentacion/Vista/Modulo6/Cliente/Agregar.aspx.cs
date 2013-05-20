@@ -77,7 +77,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo6.Cliente
                 falla.Visible = false;
 
                 LCedula.Enabled = false;
-                ComboTipo.SelectedItem.Enabled = false;
+                ComboTipo.Enabled = false;
                 FechaNacimiento.Enabled = false;
                 ComboGenero.Enabled = false;
                 LPrimerNombre.Enabled = false;
