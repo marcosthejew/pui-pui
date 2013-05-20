@@ -16,10 +16,10 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
     public class SQLServerClase
     {
         #region Atributos
-         
-        private List<Clase> _listaClases ;
+
+        private List<Clase> _listaClases;
         private Clase _objetoClase;
-        private IConexionSqlServer _db ;
+        private IConexionSqlServer _db;
         private string _cadenaConexion;
         private SqlConnection _conexion;
         private SqlCommand _cmd;
@@ -38,7 +38,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
         }
         #endregion
 
-        #region Metodos 
+        #region Metodos
 
         public List<Clase> ConsultarClases()
         {
@@ -81,12 +81,12 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 
         public Boolean AgregarClase(Clase clase)
         {
-            Boolean insercion=false;
+            Boolean insercion = false;
             try
             {
                 _conexion = new SqlConnection(_cadenaConexion);
                 _conexion.Open();
-                _cmd = new SqlCommand("[dbo].[ListarClases]", _conexion);
+                _cmd = new SqlCommand("[dbo].[AgregarClase]", _conexion);
                 _cmd.CommandType = CommandType.StoredProcedure;
                 _dr = _cmd.ExecuteReader();
 
@@ -108,18 +108,60 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 //En caso de que se viole alguna restriccion sobre la BD
                 insercion = false;
                 throw (new ExcepcionConexion(("Error: " + error.Message), error));
-                
+
             }
             finally
             {
                 _db.CerrarConexion();
-                
+
             }
             return insercion;
-            
+
         }
 
+        public Boolean ModificarClase(Clase clase)
+        {
+            Boolean insercion = false;
+            try
+            {
+                _conexion = new SqlConnection(_cadenaConexion);
+                _conexion.Open();
+                _cmd = new SqlCommand("[dbo].[ModificarClase]", _conexion);
+                _cmd.CommandType = CommandType.StoredProcedure;
+                _dr = _cmd.ExecuteReader();
 
-      #endregion
+                _param = new SqlParameter("@Id_salon", clase.IdClase);
+                _cmd.Parameters.Add(_param);
+
+                _param = new SqlParameter("@Nombre", clase.Nombre);
+                _cmd.Parameters.Add(_param);
+
+                _param = new SqlParameter("@Descripcion", clase.Descripcion);
+                _cmd.Parameters.Add(_param);
+
+                _param = new SqlParameter("@Status", clase.Status);
+                _cmd.Parameters.Add(_param);
+
+                insercion = true;
+                _db.CerrarConexion();
+
+            }
+            catch (SqlException error)
+            {
+                //En caso de que se viole alguna restriccion sobre la BD
+                insercion = false;
+                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+
+            }
+            finally
+            {
+                _db.CerrarConexion();
+
+            }
+            return insercion;
+
+        }
+
+        #endregion
     }
 }

@@ -3,49 +3,69 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using PuiPui_BackOffice.Entidades.Clase;
-namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaClase{
+using PuiPui_BackOffice.AccesoDeDatos.SQLServer;
+namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaClase
+{
     public class LogicaClase
     {
 
-        private List<Clase> ConsultarSalones()
+        #region Atributos
+
+        private Clase _clase;
+        private SQLServerClase _accesoClase;
+
+        #endregion
+
+        #region Constructor
+
+        public LogicaClase()
         {
-
-            List<Clase> listaSalon = new List<Clase>();
-            //conectar a la bd
-
-            return listaSalon;
+            _clase = new Clase();
+            _accesoClase = new SQLServerClase();
 
         }
 
-        private Boolean ModificarSalones()
+        #endregion
+
+        #region Metodos
+
+        private List<Clase> ConsultarClase()
         {
 
-            List<Clase> listaSalon = new List<Clase>();
+            List<Clase> listaClase;
             //conectar a la bd
+            listaClase = _accesoClase.ConsultarClases();
 
-            return true;
+            return listaClase;
 
         }
 
-        private Boolean AgregarSalones()
+        private Boolean ModificarClase(Clase clase)
         {
 
-            List<Clase> listaSalon = new List<Clase>();
-            //conectar a la bd
+            Boolean retorno = false;
 
-            return true;
+            retorno = _accesoClase.ModificarClase(clase);
+
+            return retorno;
 
         }
 
-        private Boolean ActivarDesactivarSalones()
+        private Boolean AgregarClase(String nombre, String descripcion)
         {
-
-            List<Clase> listaSalon = new List<Clase>();
+            Boolean resultado = false;
+            _clase.Nombre = nombre;
+            _clase.Descripcion = descripcion;
+            _clase.Status = 0;
+            resultado = _accesoClase.AgregarClase(_clase);
             //conectar a la bd
 
-            return true;
+            return resultado;
 
         }
+
+
+        #endregion
 
 
     }

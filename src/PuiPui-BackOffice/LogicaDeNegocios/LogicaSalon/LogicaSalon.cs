@@ -22,7 +22,7 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
         public LogicaSalon()
         {
             _salon = new Salon();
-            _accesoSalon= new SQLServerSalon();
+            _accesoSalon = new SQLServerSalon();
 
         }
 
@@ -31,14 +31,15 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
 
         #region Metodos
 
-        private List<Salon> ConsultarSalones(){
+        private List<Salon> ConsultarSalones()
+        {
 
-            List<Salon> listaSalon ;
+            List<Salon> listaSalon;
             //conectar a la bd
             listaSalon = _accesoSalon.ConsultarSalones();
 
             return listaSalon;
-        
+
         }
 
         private Boolean ModificarSalones(Salon salon)
@@ -47,12 +48,12 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
             Boolean retorno = false;
 
             retorno = _accesoSalon.ModificarSalon(salon);
-            
+
             return retorno;
 
         }
 
-        private Boolean AgregarSalones(String ubicacion,int capacidad)
+        private Boolean AgregarSalones(String ubicacion, int capacidad)
         {
             Boolean resultado = false;
             _salon.Ubicacion = ubicacion;
