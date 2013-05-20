@@ -1,5 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="../../../MasterPage/Site.master"
   AutoEventWireup="true" CodeBehind="Agregar.aspx.cs" Inherits="PuiPui_BackOffice.Presentacion.Vista.Modulo6.Cliente.Agregar" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 <style type="text/css">
         .auto-style2
@@ -124,21 +127,142 @@
                     </td>
                 </tr>
                   <tr>
-                    <td colspan="4">
-                        <div align="center">
-                            <asp:Button ID="BAgregar" runat="server" CssClass="button" 
+                    <td colspan="4" align="center">
+                          <asp:Button ID="BAgregar" runat="server" CssClass="button" 
                                 onclick="BAgregar_Click" Text="Aceptar" />
-                        </div>
+                        
                     </td>
-                      
-      
-
-
                 </tr>
              </table>
-       
-                    
+    </div>
 
+    <div id="validaciones">
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+
+        
+        <!--Validacion: NO pueden estar vacio los campos  -->
+        <asp:RequiredFieldValidator ID="cedula" runat="server" Display="Dynamic"
+            ErrorMessage="El campo &lt;strong>cedula</strong> es requerido. Verifique"
+            ControlToValidate="LCedula" CssClass="itemError">&nbsp;&nbsp;&nbsp;&nbsp;
+        </asp:RequiredFieldValidator>
+        <cc1:validatorcalloutextender ID="validarCedula" runat="server" TargetControlID="cedula"
+            Width="200px" HighlightCssClass="highlight">
+        </cc1:validatorcalloutextender>
+
+        <asp:RequiredFieldValidator ID="primerNombre" runat="server" Display="Dynamic"
+            ErrorMessage="El campo &lt;strong>primer nombre</strong> es requerido. Verifique"
+            ControlToValidate="LPrimerNombre" CssClass="itemError">&nbsp;&nbsp;&nbsp;&nbsp;
+        </asp:RequiredFieldValidator>
+                <cc1:validatorcalloutextender ID="validarPrimerNombre" runat="server" TargetControlID="primerNombre"
+            Width="200px" HighlightCssClass="highlight">
+        </cc1:validatorcalloutextender>
+
+        <asp:RequiredFieldValidator ID="segundoNombre" runat="server" Display="Dynamic"
+            ErrorMessage="El campo &lt;strong>segundo nombre</strong> es requerido. Verifique"
+            ControlToValidate="LSegundoNombre" CssClass="itemError">&nbsp;&nbsp;&nbsp;&nbsp;
+        </asp:RequiredFieldValidator>
+        <cc1:validatorcalloutextender ID="validarSegundoNombre" runat="server" TargetControlID="segundoNombre"
+            Width="200px" HighlightCssClass="highlight">
+        </cc1:validatorcalloutextender>
+
+        <asp:RequiredFieldValidator ID="primerApellido" runat="server" Display="Dynamic"
+            ErrorMessage="El campo &lt;strong>primer apellido</strong> es requerido. Verifique"
+            ControlToValidate="LPrimerApellido" CssClass="itemError">&nbsp;&nbsp;&nbsp;&nbsp;
+        </asp:RequiredFieldValidator>
+        <cc1:validatorcalloutextender ID="validarPrimerApellido" runat="server" TargetControlID="primerApellido"
+            Width="200px" HighlightCssClass="highlight">
+        </cc1:validatorcalloutextender>
+
+        <asp:RequiredFieldValidator ID="segundoApellido" runat="server" Display="Dynamic"
+            ErrorMessage="El campo &lt;strong>segundo apellido</strong> es requerido. Verifique"
+            ControlToValidate="LSegundoApellido" CssClass="itemError">&nbsp;&nbsp;&nbsp;&nbsp;
+        </asp:RequiredFieldValidator>
+        <cc1:validatorcalloutextender ID="validarSegundoApellido" runat="server" TargetControlID="segundoApellido"
+            Width="200px" HighlightCssClass="highlight">
+        </cc1:validatorcalloutextender>
+
+        <asp:RequiredFieldValidator ID="telefonoCelular" runat="server" Display="Dynamic"
+            ErrorMessage="El campo &lt;strong>telefono celular</strong> es requerido. Verifique"
+            ControlToValidate="LTelefonoCelular" CssClass="itemError">&nbsp;&nbsp;&nbsp;&nbsp;
+        </asp:RequiredFieldValidator>
+        <cc1:validatorcalloutextender ID="validarTelefonoCelular" runat="server" TargetControlID="telefonoCelular"
+            Width="200px" HighlightCssClass="highlight">
+        </cc1:validatorcalloutextender>
+
+        <asp:RequiredFieldValidator ID="telefonoLocal" runat="server" Display="Dynamic"
+            ErrorMessage="El campo &lt;strong>telefono local</strong> es requerido. Verifique"
+            ControlToValidate="LTelefonoLocal" CssClass="itemError">&nbsp;&nbsp;&nbsp;&nbsp;
+        </asp:RequiredFieldValidator>
+        <cc1:validatorcalloutextender ID="validarTelefonoLocal" runat="server" TargetControlID="telefonoLocal"
+            Width="200px" HighlightCssClass="highlight">
+        </cc1:validatorcalloutextender>
+
+        <asp:RequiredFieldValidator ID="nombreContactoEmergencia" runat="server" Display="Dynamic"
+            ErrorMessage="El campo &lt;strong>nombre contacto de emergencia</strong> es requerido. Verifique"
+            ControlToValidate="LNombreContactoEmergencia" CssClass="itemError">&nbsp;&nbsp;&nbsp;&nbsp;
+        </asp:RequiredFieldValidator>
+        <cc1:validatorcalloutextender ID="validarNombreContactoEmergencia" runat="server" TargetControlID="nombreContactoEmergencia"
+            Width="200px" HighlightCssClass="highlight">
+        </cc1:validatorcalloutextender>
+
+        <asp:RequiredFieldValidator ID="telefonoContactoEmergencia" runat="server" Display="Dynamic"
+            ErrorMessage="El campo &lt;strong>telefono contacto de emergencia</strong> es requerido. Verifique"
+            ControlToValidate="LTelefonoContactoEmergencia" CssClass="itemError">&nbsp;&nbsp;&nbsp;&nbsp;
+        </asp:RequiredFieldValidator>
+        <cc1:validatorcalloutextender ID="validarTelefonoContactoEmergencia" runat="server" TargetControlID="telefonoContactoEmergencia"
+            Width="200px" HighlightCssClass="highlight">
+        </cc1:validatorcalloutextender>
+
+        <asp:RequiredFieldValidator ID="correo" runat="server" Display="Dynamic"
+            ErrorMessage="El campo &lt;strong>correo electronico</strong> es requerido. Verifique"
+            ControlToValidate="LCorreo" CssClass="itemError">&nbsp;&nbsp;&nbsp;&nbsp;
+        </asp:RequiredFieldValidator>
+        <cc1:validatorcalloutextender ID="validarCorreo" runat="server" TargetControlID="correo"
+            Width="200px" HighlightCssClass="highlight">
+        </cc1:validatorcalloutextender>
+
+         <asp:RequiredFieldValidator ID="ciudad" runat="server" Display="Dynamic"
+            ErrorMessage="El campo &lt;strong>ciudad</strong> es requerido. Verifique"
+            ControlToValidate="LCiudad" CssClass="itemError">&nbsp;&nbsp;&nbsp;&nbsp;
+        </asp:RequiredFieldValidator>
+        <cc1:validatorcalloutextender ID="validarCiudad" runat="server" TargetControlID="ciudad"
+            Width="200px" HighlightCssClass="highlight">
+        </cc1:validatorcalloutextender>
+
+        <asp:RequiredFieldValidator ID="direccion" runat="server" Display="Dynamic"
+            ErrorMessage="El campo &lt;strong>direccion</strong> es requerido. Verifique"
+            ControlToValidate="LDireccion" CssClass="itemError">&nbsp;&nbsp;&nbsp;&nbsp;
+        </asp:RequiredFieldValidator>
+        <cc1:validatorcalloutextender ID="validarDireccion" runat="server" TargetControlID="direccion"
+            Width="200px" HighlightCssClass="highlight">
+        </cc1:validatorcalloutextender>
+
+        <asp:RequiredFieldValidator ID="usuario" runat="server" Display="Dynamic"
+            ErrorMessage="El campo &lt;strong>usuario</strong> es requerido. Verifique"
+            ControlToValidate="LUsuario" CssClass="itemError">&nbsp;&nbsp;&nbsp;&nbsp;
+        </asp:RequiredFieldValidator>
+        <cc1:validatorcalloutextender ID="validarUsuario" runat="server" TargetControlID="usuario"
+            Width="200px" HighlightCssClass="highlight">
+        </cc1:validatorcalloutextender> 
+
+        <asp:RequiredFieldValidator ID="contrasena" runat="server" Display="Dynamic"
+            ErrorMessage="El campo &lt;strong>contrasena</strong> es requerido. Verifique"
+            ControlToValidate="LContrasena" CssClass="itemError">&nbsp;&nbsp;&nbsp;&nbsp;
+        </asp:RequiredFieldValidator>
+        <cc1:validatorcalloutextender ID="validarContrasena" runat="server" TargetControlID="contrasena"
+            Width="200px" HighlightCssClass="highlight">
+        </cc1:validatorcalloutextender>
+
+        <!--Validacio: SOLO caracteres numericos campos: cedula, telefono celular, telefono local, telefono contacto emergencia -->
+        <cc1:filteredtextboxextender ID="_cedula" runat="server" TargetControlID="LCedula"
+            FilterType="Numbers" />
+        <cc1:filteredtextboxextender ID="_telefonoCelular" runat="server" TargetControlID="LTelefonoCelular"
+            FilterType="Numbers" />
+        <cc1:filteredtextboxextender ID="_telefonoLocal" runat="server" TargetControlID="LTelefonoLocal"
+            FilterType="Numbers" />
+        <cc1:filteredtextboxextender ID="_telefonoContactoEmergencia" runat="server" TargetControlID="LTelefonoContactoEmergencia"
+            FilterType="Numbers" />
     </div>
 
 </asp:Content>
