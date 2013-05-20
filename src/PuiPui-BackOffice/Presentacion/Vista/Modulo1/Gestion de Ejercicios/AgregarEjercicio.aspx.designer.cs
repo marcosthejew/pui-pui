@@ -10,7 +10,7 @@
 namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Ejercicios {
     
     
-    public partial class Consulta {
+    public partial class AgregarEjercicio {
         
         /// <summary>
         /// lExito control.
@@ -19,16 +19,25 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Ejercicios {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        //protected global::System.Web.UI.WebControls.Label lExito;
+        protected global::System.Web.UI.WebControls.Label lExito;
         
         /// <summary>
-        /// tbNombre control.
+        /// Nombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-       // protected global::System.Web.UI.WebControls.TextBox tbNombre;
+        protected global::System.Web.UI.WebControls.TextBox Nombre;
+        
+        /// <summary>
+        /// taDescripcion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox taDescripcion;
         
         /// <summary>
         /// ddlMusculo control.

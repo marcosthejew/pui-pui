@@ -111,12 +111,9 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
             SqlCommand cmd = new SqlCommand();
 
             SqlDataReader dr;
-
-
-
+            
             try
             {
-
                 conexion = new SqlConnection(cadenaConexion);
 
                 conexion.Open();
@@ -133,49 +130,29 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 
                 //Se recorre cada row
 
-
-
                 while (dr.Read())
                 {
-
                     entra = true;
-
                     Ejercicio ejercicio = new Ejercicio();
-
                     ejercicio.Id = Convert.ToInt32(dr.GetValue(0));
-
                     ejercicio.Nombre = dr.GetValue(1).ToString();
-
                     ejercicios.Add(ejercicio);
-
                 }
-
                 db.CerrarConexion();
-
                 if (entra)
-
                     return ejercicios;
-
             }
-
             catch (SqlException error)
             {
-
                 //En caso de que se viole alguna restriccion sobre la BD
-
                 throw (new ExcepcionConexion(("Error: " + error.Message), error));
-
             }
 
             finally
             {
-
                 db.CerrarConexion();
-
             }
-
             return null;
-
         }
 
 

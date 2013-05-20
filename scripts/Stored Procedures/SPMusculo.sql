@@ -37,6 +37,22 @@ END;
 
 GO
 
+/*CONSULTAR LISTA DE MUSCULOS*/
+USE [puipuiDB]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON 
+GO
+CREATE procedure [dbo].[consultarTodosMusculos]
+as
+BEGIN
+set nocount on	
+select M.id_musculo, M.nombre
+        from Musculo M
+END;
+GO
+
 
 
 

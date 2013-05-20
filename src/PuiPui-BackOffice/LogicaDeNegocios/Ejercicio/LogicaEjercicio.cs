@@ -11,6 +11,24 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.Ejercicio
 {
     public class LogicaEjercicio
     {
+
+
+        public bool AgregarEjercicio(string nombre, String descripcion, int idmusculo)
+        {
+            SQLServerEjercicio objDataBase = new SQLServerEjercicio();
+            if (objDataBase.ExisteEjercicio(nombre))
+            {
+                return true;
+            }
+            else
+            {
+                return objDataBase.insertarEjercicio(nombre, descripcion, idmusculo);
+            }
+
+        }
+
+
+
         public List<Entidades.Ejercicio.Ejercicio> ConsultarTodosEjercicios()
         {
             SQLServerEjercicio objDataBase = new SQLServerEjercicio();
@@ -21,6 +39,8 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.Ejercicio
             return null;    
         }
 
+
+
         public Entidades.Ejercicio.Ejercicio ConsultarEjercicio(string nombre)
         {
             SQLServerEjercicio objDataBase = new SQLServerEjercicio();
@@ -30,6 +50,8 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.Ejercicio
             }
             return null;
         }
+
+
 
     }
 }

@@ -90,6 +90,54 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
             }
             return false;
         }
+
+
+
+        public List<Musculo> ConsultarMusculos()
+        {
+
+            string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader dr;
+            try
+            {
+                conexion = new SqlConnection(cadenaConexion);
+                conexion.Open();
+                cmd = new SqlCommand("[dbo].[consultarTodosMusculos]", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                dr = cmd.ExecuteReader();
+
+                List<Musculo> musculos = new List<Musculo>();
+
+                bool entra = false;
+
+                //Se recorre cada row
+
+                while (dr.Read())
+                {
+                    entra = true;
+                    Musculo musculo = new Musculo();
+                    musculo.IdMusculo = Convert.ToInt32(dr.GetValue(0));
+                    musculo.NombreMusculo = dr.GetValue(1).ToString();
+                    musculos.Add(musculo);
+                }
+                db.CerrarConexion();
+                if (entra)
+                    return musculos;
+            }
+            catch (SqlException error)
+            {
+                //En caso de que se viole alguna restriccion sobre la BD
+                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+            }
+
+            finally
+            {
+                db.CerrarConexion();
+            }
+            return null;
+        }
    
     }
 }

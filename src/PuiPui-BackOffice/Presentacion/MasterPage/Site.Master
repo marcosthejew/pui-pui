@@ -41,10 +41,10 @@
                                 <asp:MenuItem NavigateUrl="../Vista/Modulo1/Gestion%20de%20Ejercicios/Eliminar.aspx" Text="Eliminar" />
                             </asp:MenuItem>
                             <asp:MenuItem Text="Ejercicio">
-                                <asp:MenuItem NavigateUrl="../Vista/Modulo1/Gestion%20de%20Ejercicios/Agregar.aspx" Text="Agregar" />
+                                <asp:MenuItem NavigateUrl="../Vista/Modulo1/Gestion%20de%20Ejercicios/AgregarEjercicio.aspx" Text="Agregar" />
                                 <asp:MenuItem NavigateUrl="../Vista/Modulo1/Gestion%20de%20Ejercicios/Consultar.aspx" Text="Consultar" />
                                 <asp:MenuItem NavigateUrl="../Vista/Modulo1/Gestion%20de%20Ejercicios/Modificar.aspx" Text="Modificar" />
-                                <asp:MenuItem NavigateUrl="../Vista/Modulo1/Gestion%20de%20Ejercicios/Eliminar.aspx" Text="Eliminar" />
+                                <asp:MenuItem NavigateUrl="../Vista/Modulo1/Gestion%20de%20Ejercicios/EliminarEjercicio.aspx" Text="Eliminar" />
                              </asp:MenuItem>
                             <asp:MenuItem Text="Instructor">
                                 <asp:MenuItem NavigateUrl="../Vista/Modulo1/Gestion%20de%20Instructores/Agregar.aspx" Text="Agregar" />

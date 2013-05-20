@@ -19,15 +19,16 @@ AutoEventWireup="true" CodeBehind="Consultar.aspx.cs" Inherits="PuiPui_BackOffic
 
     }
 
-        .auto-style1 {
-        width: 223px;
-    }
-    .auto-style2 {
-        width: 312px;
-    }
+        .auto-style2 {
+            width: 185px;
+        }
     .auto-style3 {
-        width: 180px;
-    }
+            width: 133px;
+        }
+
+        .auto-style4 {
+            width: 6px;
+        }
 
         </style>
 </asp:Content>
@@ -41,7 +42,7 @@ AutoEventWireup="true" CodeBehind="Consultar.aspx.cs" Inherits="PuiPui_BackOffic
     <br />
     <br />
     <br />
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ejercicios:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ejercios:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
 <asp:DropDownList ID="ddlEjercicios" runat="server" Height="18px" Width="163px" OnSelectedIndexChanged="ddlEjercicios_SelectedIndexChanged" AutoPostBack="True" >
 </asp:DropDownList>
 <br />
@@ -53,29 +54,29 @@ AutoEventWireup="true" CodeBehind="Consultar.aspx.cs" Inherits="PuiPui_BackOffic
 
         <table style="width: 726px" id="tablaEjercicio">
             <tr>
-                <td class="auto-style1" />
+                <td class="auto-style4" />
                 <td class="auto-style3">
-                    Nombre del ejercicio: </td>
+                    Nombre del Ejercicio: </td>
                 <td class="auto-style2">
                     <asp:TextBox ID="tbNombre" runat="server" Width="269px" ReadOnly="True"></asp:TextBox>
 
                 </td>
             </tr>
             <tr>
-                <td class="auto-style1" />
+                <td class="auto-style4" />
                 <td class="auto-style3">
                    Descripcion: 
                 </td>
 
                 <td class="auto-style2">
-                    <asp:TextBox ID="tbDescripcion" runat="server" Width="267px" ReadOnly="True" Columns="5" Height="83px" Rows="5"></asp:TextBox>
+                    <asp:TextBox ID="tbDescripcion" runat="server" Width="267px" ReadOnly="True" Columns="5" Height="83px" Rows="5" TextMode="MultiLine" style="margin-left: 2px"></asp:TextBox>
 
                 </td>
 
             </tr>
 
              <tr>
-                <td class="auto-style1" />
+                <td class="auto-style4" />
                 <td class="auto-style3">
 
                     Musculo a ejercitar:</td>
@@ -90,7 +91,7 @@ AutoEventWireup="true" CodeBehind="Consultar.aspx.cs" Inherits="PuiPui_BackOffic
 
             <tr>
 
-                <td class="auto-style1">
+                <td class="auto-style4">
 
                     &nbsp;</td>
 
@@ -102,7 +103,7 @@ AutoEventWireup="true" CodeBehind="Consultar.aspx.cs" Inherits="PuiPui_BackOffic
 
              <tr>
 
-                <td class="auto-style1"> 
+                <td class="auto-style4"> 
 
                      &nbsp;</td>
 

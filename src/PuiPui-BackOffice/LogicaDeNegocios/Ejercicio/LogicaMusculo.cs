@@ -25,5 +25,16 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.Ejercicio
         }
 
 
+        public List<Entidades.Ejercicio.Musculo> ConsultarTodosMusculos()
+        {
+            SQLServerMusculo objDataBase = new SQLServerMusculo();
+            if (objDataBase.ConsultarMusculos()!= null)
+            {
+                return objDataBase.ConsultarMusculos();
+            }
+            return null;
+        }
+
+
     }
 }
