@@ -70,6 +70,9 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
+    <Content Include="bin\AjaxControlToolkit.dll" />
+    <Content Include="bin\PuiPui-BackOffice.dll" />
+    <Content Include="bin\PuiPui-BackOffice.pdb" />
     <Content Include="Presentacion\Estilo\Site.css" />
     <Content Include="Presentacion\Vista\Home\About.aspx" />
     <Content Include="Presentacion\Vista\Home\Default.aspx" />
@@ -130,6 +133,7 @@
     <Compile Include="AccesoDeDatos\Excepciones_BD\ExcepcionConexion.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerClase.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerEjercicio.cs" />
+    <Compile Include="AccesoDeDatos\SQLServer\SQLServerInstructor.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerMusculo.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerPersona.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerSalon.cs" />

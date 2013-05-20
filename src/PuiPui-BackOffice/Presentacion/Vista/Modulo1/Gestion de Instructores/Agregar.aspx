@@ -6,7 +6,7 @@
         AGREGAR INSTRUCTOR
     </h2>
     <br />
-    <asp:Label ID="lExito" runat="server" Text="El instructor se ha agregado correctamente." Visible="False"> </asp:Label>
+    <asp:Label ID="lexito" runat="server" Text="El instructor se ha agregado correctamente." Visible="False"></asp:Label>
     <br />
     <h3>
         Datos Personales:
@@ -17,86 +17,86 @@
                 <td class="style2">
                   Cedula: 
                 </td>
-                <td class="style1">
-                    <asp:TextBox ID="TextBox3" runat="server" Width="269px"></asp:TextBox>
+                <td class="auto-style13">
+                    <asp:TextBox ID="tb1" runat="server" Width="269px" Height="25px"></asp:TextBox>
                 </td>
                  <td class="style2">
                    Genero: 
                  </td>
                 <td class="style1">
-                    <input id="Checkbox1" type="checkbox" /><asp:Label ID="Label1" runat="server" Text="    Femenino"></asp:Label>
-                &nbsp;&nbsp;&nbsp;
-                    <input id="Checkbox2" type="checkbox" /><asp:Label ID="Label2" runat="server" Text="Masculino"></asp:Label>
+                    <asp:CheckBox ID="cb1" runat="server" BorderColor="#0000CC" CausesValidation="True" OnCheckedChanged="cb1_CheckedChanged" Text="Masculino" />
+&nbsp;&nbsp;
+                    <asp:CheckBox ID="cb2" runat="server" BorderColor="#0000CC" OnCheckedChanged="cb1_CheckedChanged" Text="Femenino" />
                 </td>
             </tr>
             <tr>
                 <td class="style2">
                    Primer Nombre: 
                 </td>
-                <td class="style1">
-                    <asp:TextBox ID="tbPrimerNombre" runat="server" Width="269px"></asp:TextBox>
+                <td class="auto-style13">
+                    <asp:TextBox ID="tb2" runat="server" Width="269px"></asp:TextBox>
                 </td>
                  <td class="style2">
                    Segundo Nombre: 
                  </td>
                 <td class="style1">
-                    <asp:TextBox ID="tbSegundoNombre" runat="server" Width="269px"></asp:TextBox>
+                    <asp:TextBox ID="tb6" runat="server" Width="269px"></asp:TextBox>
                 </td>
             </tr>
              <tr>
                 <td class="style2">
                    Primer Apellido: 
                 </td>
-                <td class="style1">
-                    <asp:TextBox ID="TextBox1" runat="server" Width="269px"></asp:TextBox>
+                <td class="auto-style13">
+                    <asp:TextBox ID="tb3" runat="server" Width="269px"></asp:TextBox>
                 </td>
                  <td class="style2">
                    Segundo Apellido: 
                  </td>
                 <td class="style1">
-                    <asp:TextBox ID="TextBox2" runat="server" Width="269px"></asp:TextBox>
+                    <asp:TextBox ID="tb7" runat="server" Width="269px"></asp:TextBox>
                 </td>
            </tr>
            <tr>
-                <td class="style2">
+                <td class="auto-style14">
                    Telefono Local:
                 </td>
-                <td class="style1">
-                    <asp:TextBox ID="TextBox4" runat="server" Width="269px"></asp:TextBox>
+                <td class="auto-style15">
+                    <asp:TextBox ID="tb4" runat="server" Width="269px" OnTextChanged="tb4_TextChanged"></asp:TextBox>
                 </td>
-                 <td class="style2">
+                 <td class="auto-style14">
                    Telefono Celular: 
                  </td>
-                <td class="style1">
-                    <asp:TextBox ID="TextBox5" runat="server" Width="269px"></asp:TextBox>
+                <td class="auto-style14">
+                    <asp:TextBox ID="tb8" runat="server" Width="269px" OnTextChanged="tb8_TextChanged"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td class="style2">
                   Ciudad:
                 </td>
-                <td class="style1">
-                    <asp:TextBox ID="TextBox6" runat="server" Width="269px"></asp:TextBox>
+                <td class="auto-style13">
+                    <asp:TextBox ID="tb5" runat="server" Width="269px"></asp:TextBox>
                 </td>
                  <td class="style2">
                    Direccion:
                  </td>
                 <td class="style1">
-                    <asp:TextBox ID="TextBox7" runat="server" Width="269px"></asp:TextBox>
+                    <asp:TextBox ID="tb9" runat="server" Width="269px"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td class="style2">
                   Fecha nacimiento:
                 </td>
-                <td class="style1">
-                    <asp:TextBox ID="TextBox8" runat="server" Width="269px"></asp:TextBox>
+                <td class="auto-style13">
+                    <asp:Calendar ID="Calendar" runat="server"></asp:Calendar>
                 </td>
                  <td class="style2">
                    E-mail:
                  </td>
                 <td class="style1">
-                    <asp:TextBox ID="TextBox9" runat="server" Width="269px"></asp:TextBox>
+                    <asp:TextBox ID="tb10" runat="server" Width="269px"></asp:TextBox>
                 </td>
             </tr>
         </table>
@@ -111,13 +111,13 @@
                     Persona Contacto:
                 </td>
                 <td class="auto-style6">
-                    <asp:TextBox ID="TextBox10" runat="server" Width="269px"></asp:TextBox>
+                    <asp:TextBox ID="tb11" runat="server" Width="269px"></asp:TextBox>
                 </td>
                  <td class="auto-style7">
                    Telefono:
                  </td>
                 <td class="style1">
-                    <asp:TextBox ID="TextBox11" runat="server" Width="269px"></asp:TextBox>
+                    <asp:TextBox ID="tb12" runat="server" Width="269px" OnTextChanged="tb12_TextChanged"></asp:TextBox>
                 </td>
             </tr>
         </table>
@@ -959,7 +959,7 @@
          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;  
-        <asp:Button ID="Button1" runat="server" Text="Agregar" />
+        <asp:Button ID="Button1" runat="server" Text="Agregar" OnClick="Button1_Click" />
 
         <br />
 
@@ -994,6 +994,16 @@
         }
         .auto-style12 {
             height: 26px;
+        }
+        .auto-style13 {
+            width: 277px;
+        }
+        .auto-style14 {
+            height: 29px;
+        }
+        .auto-style15 {
+            width: 277px;
+            height: 29px;
         }
     </style>
 </asp:Content>
