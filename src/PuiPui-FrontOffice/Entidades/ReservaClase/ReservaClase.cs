@@ -8,7 +8,7 @@ namespace PuiPui_FrontOffice.Entidades.ReservaClase
     public class ReservaClase
     {
         private Clase.Clase _clase;
-        private Cliente.Cliente _alumnos;
+        private Cliente.Clientes _alumnos;
         private int _evaluacion;
 
         public ReservaClase()

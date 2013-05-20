@@ -9,7 +9,7 @@ namespace PuiPui_FrontOffice.Entidades.ReservaInstructor
     {
 
         private Instructor.Instructor _clase;
-        private Cliente.Cliente _alumnos;
+        private Cliente.Clientes _alumnos;
         private Horario _horareserva;
         private int _evaluacion;
 
