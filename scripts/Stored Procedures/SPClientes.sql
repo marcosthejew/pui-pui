@@ -12,15 +12,10 @@ BEGIN
 	set nocount on
 		
 	SELECT P.idPersona, P.nombrePersona1, P.apellidoPersona1, P.fechaIngresoPersona
-	FROM Persona AS P
-	
+	FROM Persona
 		
 END;
 
-
-
-GO
-USE [puipuiBD]
 GO
 /****** Object:  StoredProcedure [dbo].[consultarDetallePersona]   Script Date: 12/06/2012 18:39:36 ******/
 SET ANSI_NULLS ON
@@ -157,4 +152,44 @@ BEGIN
 	FROM Persona AS P
 	
 		
+END;
+GO
+USE [puipuiDB]
+GO
+/****** Object:  StoredProcedure [dbo].[consultarAccesoPersonaB]    Script Date: 20/05/2013 15:00:05 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[consultarAccesoPersonaB]
+@loginPersona nchar (50),
+@passwordPersona nchar (50)
+as
+
+BEGIN
+	set nocount on
+		SELECT P.loginPersona, P.passwordPersona
+		FROM Persona AS P
+		where P.loginPersona = @loginPersona and P.passwordPersona = @passwordPersona
+		and P.tipoPersona = 'Admin'
+END;
+GO
+USE [puipuiDB]
+GO
+/****** Object:  StoredProcedure [dbo].[consultarAccesoPersonaF]    Script Date: 20/05/2013 15:00:05 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE procedure [dbo].[consultarAccesoPersonaF]
+@loginPersona nchar (50),
+@passwordPersona nchar (50)
+as
+
+BEGIN
+	set nocount on
+		SELECT P.loginPersona, P.passwordPersona
+		FROM Persona AS P
+		where P.loginPersona = @loginPersona and P.passwordPersona = @passwordPersona
+		and P.tipoPersona = 'Cliente'
 END;

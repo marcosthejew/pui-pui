@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using PuiPui_BackOffice.Entidades.Cliente;
-using PuiPui_BackOffice.AccesoDeDatos.SQLServer;
+using PuiPui_FrontOffice.Entidades.Cliente;
+using PuiPui_FrontOffice.AccesoDeDatos.SQLServer;
 
-namespace PuiPui_BackOffice.LogicaDeNegocios.Cliente
+namespace PuiPui_FrontOffice.LogicaDeNegocios.Cliente
 {
     public class LogicaPersona
     {
@@ -31,7 +31,7 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.Cliente
         #endregion
 
         #region Agregar Cliente
-        public Persona AgregoCliente (Persona miPersona)
+        public Persona AgregoCliente(Persona miPersona)
         {
             Persona objPersona = new Persona();
             SQLServerPersona objDataBase = new SQLServerPersona();
@@ -76,16 +76,16 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.Cliente
         public bool LoginCorrecto(string usuario, string contraseña)
         {
             Acceso acceso = new Acceso();
-            bool persona= false;
+            bool persona = false;
             SQLServerPersona sqlserverPersona = new SQLServerPersona();
             acceso.Login = usuario;
             acceso.Password = contraseña;
             persona = sqlserverPersona.ConsultarAccesoPersona(acceso);
 
             if (persona)
-            
+
                 return true;
-            
+
             return false;
         }
         #endregion

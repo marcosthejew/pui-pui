@@ -49,6 +49,10 @@
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="nunit.framework, Version=2.6.2.12296, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\UricaoSegunda\Src\Uricao\Uricao\bin\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
@@ -75,7 +79,8 @@
     <Content Include="bin\PuiPui-BackOffice.pdb" />
     <Content Include="Presentacion\Estilo\Site.css" />
     <Content Include="Presentacion\Vista\Home\About.aspx" />
-    <Content Include="Presentacion\Vista\Home\Default.aspx" />
+    <Content Include="Presentacion\Vista\Home\Home.aspx" />
+    <Content Include="Presentacion\Vista\Home\Login.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Presentacion\Estilo\Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Presentacion\Estilo\Scripts\jquery-1.4.1.js" />
@@ -177,6 +182,13 @@
     <Compile Include="LogicaDeNegocios\Rutina\LogicaRutina.cs" />
     <Compile Include="LogicaDeNegocios\LogicaSalon\LogicaSalon.cs" />
     <Compile Include="Presentacion\Imagenes\Imagenes.cs" />
+    <Compile Include="Presentacion\MasterPage\Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentacion\MasterPage\Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Vista\Home\About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -184,12 +196,19 @@
     <Compile Include="Presentacion\Vista\Home\About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Vista\Home\Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="Presentacion\Vista\Home\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Presentacion\Vista\Home\Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="Presentacion\Vista\Home\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Vista\Home\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Vista\Home\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Entidades\Clase\Clase.cs" />
     <Compile Include="Entidades\Cliente\Cliente.cs" />
@@ -481,6 +500,7 @@
     <Compile Include="PruebasUnitarias\Ejercicio\PruebaEjercicio.cs" />
     <Compile Include="PruebasUnitarias\Excepciones\ExcepcionConexion.cs" />
     <Compile Include="PruebasUnitarias\Instructor\PruebaInstructor.cs" />
+    <Compile Include="PruebasUnitarias\PruebaConexion.cs" />
     <Compile Include="PruebasUnitarias\Rutina\PruebaRutina.cs" />
     <Compile Include="PruebasUnitarias\Salon\PruebaSalon.cs" />
   </ItemGroup>
@@ -494,6 +514,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Presentacion\MasterPage\Site1.Master" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

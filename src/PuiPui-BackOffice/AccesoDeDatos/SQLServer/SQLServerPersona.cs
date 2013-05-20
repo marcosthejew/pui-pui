@@ -329,5 +329,43 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
             return false;
         }
         #endregion
+
+        #region ConsultarDetallePersona
+        public bool ConsultarAccesoPersona(Acceso persona)
+        {
+            string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader dr;
+            Acceso objAcceso = new Acceso();
+
+            try
+            {
+                conexion = new SqlConnection(cadenaConexion);
+                conexion.Open();
+                cmd = new SqlCommand("[dbo].[consultarAccesoPersonaB]", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@loginPersona", persona.Login);
+                cmd.Parameters.AddWithValue("@passwordPersona", persona.Password);
+                dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                    return true;
+                db.CerrarConexion();
+
+            }
+            catch (SqlException error)
+            {
+                //En caso de que se viole alguna restriccion sobre la BD
+                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+            }
+            finally
+            {
+                db.CerrarConexion();
+            }
+            return false;
+        }
+        #endregion
+
     }
 }

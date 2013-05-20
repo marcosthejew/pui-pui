@@ -67,7 +67,8 @@
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Presentacion\Estilo\Site.css" />
-    <Content Include="Presentacion\Vista\Home\Default.aspx" />
+    <Content Include="Presentacion\Vista\Home\Home.aspx" />
+    <Content Include="Presentacion\Vista\Home\Login.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Presentacion\Vista\Modulo3\EvaluarClase\Agregar.aspx" />
     <Content Include="Presentacion\Vista\Modulo3\EvaluarClase\Consultar.aspx" />
@@ -101,11 +102,20 @@
     <Compile Include="AccesoDeDatos\Conexion\IConexion\IConexionSQLServer.cs" />
     <Compile Include="AccesoDeDatos\Excepciones_BD\ExcepcionConexion.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerPersona.cs" />
+    <Compile Include="Entidades\Cliente\Acceso.cs" />
+    <Compile Include="LogicaDeNegocios\Cliente\LogicaPersona.cs" />
     <Compile Include="LogicaDeNegocios\Exepciones\ExcepcionConexion.cs" />
     <Compile Include="LogicaDeNegocios\Login\Login.cs" />
     <Compile Include="LogicaDeNegocios\ReservaClase\ReservaClase.cs" />
     <Compile Include="LogicaDeNegocios\ReservaInstructor\ReservaInstructor.cs" />
     <Compile Include="Presentacion\Imagenes\Imagenes.cs" />
+    <Compile Include="Presentacion\MasterPage\Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentacion\MasterPage\Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Vista\Home\About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -141,12 +151,19 @@
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Vista\Home\Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="Presentacion\Vista\Home\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Presentacion\Vista\Home\Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="Presentacion\Vista\Home\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Vista\Home\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Vista\Home\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Entidades\Clase\Clase.cs" />
     <Compile Include="Entidades\Cliente\Cliente.cs" />
@@ -304,7 +321,9 @@
     <Compile Include="PruebasUnitarias\ReservaClase\PruebaReservaClase.cs" />
     <Compile Include="PruebasUnitarias\ReservaInstructor\PruebaReservaInstructor.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Presentacion\MasterPage\Site1.Master" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Account\Web.config" />
     <Content Include="Presentacion\MasterPage\Site.Master" />

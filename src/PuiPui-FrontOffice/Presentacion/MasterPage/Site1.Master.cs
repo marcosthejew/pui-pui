@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace PuiPui_FrontOffice
+namespace PuiPui_FrontOffice.Presentacion.MasterPage
 {
-    public partial class _Default : System.Web.UI.Page
+    public partial class Site1 : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

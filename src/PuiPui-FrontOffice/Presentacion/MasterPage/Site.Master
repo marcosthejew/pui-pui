@@ -36,7 +36,7 @@
                 <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false"
                     IncludeStyleBlock="false" Orientation="Horizontal">
                     <Items>
-                        <asp:MenuItem NavigateUrl="../Vista/Home/Default.aspx" Text="Inicio" />
+                        <asp:MenuItem NavigateUrl="../Vista/Home/Home.aspx" Text="Inicio" />
                         <asp:MenuItem NavigateUrl="../Vista/Modulo3/Modulo3.aspx" Text="Modulo 3">
                             <asp:MenuItem Text="Reservar Clase">
                                 <asp:MenuItem NavigateUrl="../Vista/Modulo3/EvaluarClase/Agregar.aspx" Text="Agregar" />
@@ -58,14 +58,22 @@
                                 <asp:MenuItem NavigateUrl="../Vista/Modulo4/EvaluarInstructor/Modificar.aspx" Text="Modificar" />
                                 <asp:MenuItem NavigateUrl="../Vista/Modulo4/EvaluarInstructor/Eliminar.aspx" Text="Eliminar" />
                             </asp:MenuItem>
+                        </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="../Vista/Modulo6/Modulo6.aspx" Text="Modulo 6">
+                            <asp:MenuItem Text="Cliente">
+                                
+                                <asp:MenuItem NavigateUrl="../Vista/Modulo6/Cliente/Consultar.aspx" Text="Consultar" />
+                                <asp:MenuItem NavigateUrl="../Vista/Modulo6/Cliente/Modificar.aspx" Text="Modificar" />
+                                </asp:MenuItem>
+                            </asp:MenuItem>
                             <asp:MenuItem Text="Evaluar Instructor">
                                 <asp:MenuItem NavigateUrl="../Vista/Modulo4/ReservarInstructor/Agregar.aspx" Text="Agregar" />
                                 <asp:MenuItem NavigateUrl="../Vista/Modulo4/ReservarInstructor/Consultar.aspx" Text="Consultar" />
                                 <asp:MenuItem NavigateUrl="../Vista/Modulo4/ReservarInstructor/Modificar.aspx" Text="Modificar" />
                                 <asp:MenuItem NavigateUrl="../Vista/Modulo4/ReservarInstructor/Eliminar.aspx" Text="Eliminar" />
                             </asp:MenuItem>
-                        </asp:MenuItem>
-                        <asp:MenuItem NavigateUrl="../Vista/Modulo6/Login.aspx" Text="Login" />
+                        
+                        
                         <asp:MenuItem NavigateUrl="../Vista/Home/About.aspx" Text="Creditos" />
                     </Items>
                 </asp:Menu>

@@ -15,8 +15,11 @@
         <div class="header">
             <div class="title">
                 <h1>
-                    Pui-Pui BackOffice
+                    Pui-Pui BackOffice&nbsp;
                 </h1>
+                
+        
+                
             </div>
             <%--<div class="loginDisplay">
                 <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
@@ -34,7 +37,7 @@
                     IncludeStyleBlock="false" Orientation="Horizontal">
                     <Items>
                         
-                        <asp:MenuItem NavigateUrl="../Vista/Home/Default.aspx" Text="Inicio" />
+                        <asp:MenuItem NavigateUrl="../Vista/Home/Home.aspx" Text="Inicio" />
                         <asp:MenuItem NavigateUrl="../Vista/Modulo1/Modulo1.aspx" Text="Modulo 1">
                             <asp:MenuItem Text="Musculo">
                                 <asp:MenuItem NavigateUrl="../Vista/Modulo1/Gestion%20de%20Ejercicios/Agregar.aspx" Text="Agregar" />
@@ -88,7 +91,7 @@
                                 <asp:MenuItem NavigateUrl="../Vista/Modulo6/Cliente/Act-Ina.aspx" Text="Activar/Inactivar" />
                             </asp:MenuItem>
                         </asp:MenuItem>
-                        <asp:MenuItem NavigateUrl="../Vista/Modulo6/Login.aspx" Text="Login" />
+                        
                         <asp:MenuItem NavigateUrl="../Vista/Home/About.aspx" Text="Creditos" />
                     </Items>
                 </asp:Menu>
