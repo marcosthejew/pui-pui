@@ -17,8 +17,8 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
     {
         IConexionSqlServer db = new ConexionSqlServer();
 
-        #region ConsultarModificarPersona
-        public List<Persona> ConsultarModificarPersona()
+        #region ConsultarPersona
+        public List<Persona> ConsultarPersona()
         {
             string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
             SqlConnection conexion = new SqlConnection();
@@ -31,7 +31,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
             {
                 conexion = new SqlConnection(cadenaConexion);
                 conexion.Open();
-                cmd = new SqlCommand("[dbo].[consultarModificarPersona]", conexion);
+                cmd = new SqlCommand("[dbo].[consultarPersona]", conexion);
                 cmd.CommandType = CommandType.StoredProcedure;
                 dr = cmd.ExecuteReader();
 
@@ -67,6 +67,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
         }
         #endregion
 
+        #region ConsultarDetallePersona
         public Persona ConsultarDetallePersona(int idPersona)
         {
             string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
@@ -126,8 +127,9 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
             }
             return objetoPersona;
         }
+        #endregion
 
-
+        #region AgregarCliente
         public Persona AgregarCliente(Persona miPersona)
         {
             string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
@@ -146,12 +148,12 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 cmd = new SqlCommand("[dbo].[insertarCliente]", conexion);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                
+
 
                 cmd.Parameters.AddWithValue("@cedulaCliente", miPersona.CedulaPersona);
                 cmd.Parameters.AddWithValue("@primerNombreCliente", miPersona.NombrePersona1);
                 cmd.Parameters.AddWithValue("@segundoNombreCliente", miPersona.NombrePersona2);
-                cmd.Parameters.AddWithValue("@primerApellidoCliente",miPersona.ApellidoPersona1);
+                cmd.Parameters.AddWithValue("@primerApellidoCliente", miPersona.ApellidoPersona1);
                 cmd.Parameters.AddWithValue("@segundoaApellidoCliente", miPersona.ApellidoPersona2);
                 cmd.Parameters.AddWithValue("@genero", miPersona.GeneroPersona);
                 cmd.Parameters.AddWithValue("@fechaNacimiento", miPersona.FechaNacimientoPersona);
@@ -171,7 +173,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 
                 dr = cmd.ExecuteReader();
                 db.CerrarConexion();
-        }
+            }
             catch (SqlException error)
             {
                 //En caso de que se viole alguna restriccion sobre la BD
@@ -183,7 +185,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
             }
             return objPersona;
         }
-
+        #endregion
 
         #region Modificar Persona
 
@@ -237,6 +239,94 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
             {
                 db.CerrarConexion();
             }
+        }
+        #endregion
+
+        #region ConsultarActivarDesactivarPersona
+        public List<Persona> ConsultarActivarDesactivarPersona()
+        {
+            string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader dr;
+            Persona objetoPersona = new Persona();
+            List<Persona> miLista = new List<Persona>();
+
+            try
+            {
+                conexion = new SqlConnection(cadenaConexion);
+                conexion.Open();
+                cmd = new SqlCommand("[dbo].[consultarActivarDesactivarPersona]", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                dr = cmd.ExecuteReader();
+
+                //Se recorre cada row
+                while (dr.Read())
+                {
+
+                    objetoPersona = new Persona();
+
+
+                    objetoPersona.IdPersona = Convert.ToInt32(dr.GetValue(0));
+                    objetoPersona.NombrePersona1 = dr.GetValue(1).ToString();
+                    objetoPersona.ApellidoPersona1 = dr.GetValue(2).ToString();
+                    objetoPersona.EstadoPersona = dr.GetValue(3).ToString();
+
+
+                    miLista.Add(objetoPersona);
+                }
+
+                db.CerrarConexion();
+
+            }
+            catch (SqlException error)
+            {
+                //En caso de que se viole alguna restriccion sobre la BD
+                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+            }
+            finally
+            {
+                db.CerrarConexion();
+            }
+            return miLista;
+        }
+        #endregion
+
+        #region ActivarDesactivarPersona
+        public bool ActivarDesactivarPersona(Persona persona)
+        {
+            string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader dr;
+
+            List<Persona> miLista = new List<Persona>();
+
+            try
+            {
+                conexion = new SqlConnection(cadenaConexion);
+                conexion.Open();
+                cmd = new SqlCommand("[dbo].[ActivarDesactivarPersona]", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@estadoPersona", persona.EstadoPersona);
+                cmd.Parameters.AddWithValue("@idPersona", persona.IdPersona);
+                dr = cmd.ExecuteReader();
+
+                dr.Read();
+                db.CerrarConexion();
+                return true;
+
+            }
+            catch (SqlException error)
+            {
+                //En caso de que se viole alguna restriccion sobre la BD
+                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+            }
+            finally
+            {
+                db.CerrarConexion();
+            }
+            return false;
         }
         #endregion
     }

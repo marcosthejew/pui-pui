@@ -1,11 +1,11 @@
 USE [puipuiDB]
 GO
-/****** Object:  StoredProcedure [dbo].[consultarModificarPersona]   Script Date: 12/06/2012 18:39:36 ******/
+/****** Object:  StoredProcedure [dbo].[consultarPersona]   Script Date: 12/06/2012 18:39:36 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE procedure [dbo].[consultarModificarPersona]
+CREATE procedure [dbo].[consultarPersona]
 as
 
 BEGIN
@@ -13,7 +13,7 @@ BEGIN
 		
 	SELECT P.idPersona, P.nombrePersona1, P.apellidoPersona1, P.fechaIngresoPersona
 	FROM Persona AS P
-	where P.tipoPersona = 'Cliente'
+	
 		
 END;
 
@@ -140,10 +140,21 @@ BEGIN
 	WHERE [Persona].idPersona = @idPersona
 	
 END;
+USE [puipuiDB]
+GO
+/****** Object:  StoredProcedure [dbo].[consultarActivarDesactivarPersona]    Script Date: 20/05/2013 2:45:11 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE procedure [dbo].[consultarActivarDesactivarPersona]
+as
 
-
-
-
-
-
-
+BEGIN
+	set nocount on
+		
+	SELECT P.idPersona, P.nombrePersona1, P.apellidoPersona1, P.estadoPersona
+	FROM Persona AS P
+	
+		
+END;

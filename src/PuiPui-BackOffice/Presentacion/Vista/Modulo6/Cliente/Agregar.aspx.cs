@@ -48,7 +48,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo6.Cliente
                 string usuario = LUsuario.Text;
                 string contrasena = LContrasena.Text;
                 string estado = "Activo";
-                
+
 
                 Persona objPersona = new Persona();
                 objPersona.CedulaPersona = cedula;

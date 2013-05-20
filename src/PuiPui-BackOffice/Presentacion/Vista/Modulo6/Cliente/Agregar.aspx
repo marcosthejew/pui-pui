@@ -121,7 +121,7 @@
                     <td class="auto-style2">
                         <asp:TextBox ID="LUsuario" runat="server" Height="20px" Width="190px"></asp:TextBox>
                     </td>
-                    <td class="auto-style6">Contrasena</td>
+                    <td class="auto-style6">Contraseña</td>
                     <td class="auto-style2">
                         <asp:TextBox ID="LContrasena" runat="server" Height="20px" Width="190px"></asp:TextBox>
                     </td>

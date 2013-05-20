@@ -19,7 +19,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo6.Cliente
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            listaPersona = miHistoriaClinica.ConsultarModificarPersona();
+            listaPersona = miHistoriaClinica.ConsultarPersona();
 
             if (!IsPostBack)
             {

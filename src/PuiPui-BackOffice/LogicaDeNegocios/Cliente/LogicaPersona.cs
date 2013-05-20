@@ -9,24 +9,28 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.Cliente
 {
     public class LogicaPersona
     {
-        public List<Persona> ConsultarModificarPersona()
+        #region ConsultarPersona
+        public List<Persona> ConsultarPersona()
         {
 
             List<Persona> miListaPersona = new List<Persona>();
             SQLServerPersona objDataBase = new SQLServerPersona();
-            miListaPersona = objDataBase.ConsultarModificarPersona();
+            miListaPersona = objDataBase.ConsultarPersona();
             return miListaPersona;
         }
+        #endregion
 
+        #region ConsultarDetallePersona
         public Persona ConsultarDetallePersona(int idPersona)
         {
-
             Persona miPersona = new Persona();
             SQLServerPersona objDataBase = new SQLServerPersona();
             miPersona = objDataBase.ConsultarDetallePersona(idPersona);
             return miPersona;
         }
+        #endregion
 
+        #region Agregar Cliente
         public Persona AgregoCliente (Persona miPersona)
         {
             Persona objPersona = new Persona();
@@ -34,11 +38,39 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.Cliente
             objPersona = objDataBase.AgregarCliente(miPersona);
             return objPersona;
         }
+        #endregion
+
+        #region ModificarPersona
         public void ModificarPersona(Persona nuevaPersona)
         {
             SQLServerPersona objDataBase = new SQLServerPersona();
             bool booleanito = objDataBase.ModificarPersona(nuevaPersona);
 
         }
+        #endregion
+
+        #region ConsultarActivarDesactivarPersona
+        public List<Persona> ConsultarActivarDesactivarPersona()
+        {
+            List<Persona> miListaPersona = new List<Persona>();
+            SQLServerPersona objDataBase = new SQLServerPersona();
+            miListaPersona = objDataBase.ConsultarActivarDesactivarPersona();
+            return miListaPersona;
+        }
+        #endregion
+
+        #region CambiarEstado
+        public void CambiarEstado(Persona persona)
+        {
+            if (persona.EstadoPersona.Contains("Activo"))
+                persona.EstadoPersona = "Inactivo";
+            else if (persona.EstadoPersona.Contains("Inactivo"))
+                persona.EstadoPersona = "Activo";
+
+            SQLServerPersona objDataBase = new SQLServerPersona();
+            bool booleanito = objDataBase.ActivarDesactivarPersona(persona);
+        }
+        #endregion
+
     }
 }
