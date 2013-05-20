@@ -67,9 +67,9 @@
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Presentacion\Estilo\Site.css" />
+    <Content Include="Global.asax" />
     <Content Include="Presentacion\Vista\Home\Home.aspx" />
     <Content Include="Presentacion\Vista\Home\Login.aspx" />
-    <Content Include="Global.asax" />
     <Content Include="Presentacion\Vista\Modulo3\EvaluarClase\Agregar.aspx" />
     <Content Include="Presentacion\Vista\Modulo3\EvaluarClase\Consultar.aspx" />
     <Content Include="Presentacion\Vista\Modulo3\EvaluarClase\Eliminar.aspx" />
@@ -151,6 +151,17 @@
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Entidades\Clase\Clase.cs" />
+    <Compile Include="Entidades\Cliente\Cliente.cs" />
+    <Compile Include="Entidades\Cliente\Persona.cs" />
+    <Compile Include="Entidades\Horario.cs" />
+    <Compile Include="Entidades\Instructor\Instructor.cs" />
+    <Compile Include="Entidades\ReservaClase\ReservaClase.cs" />
+    <Compile Include="Entidades\ReservaInstructor\ReservaInstructor.cs" />
+    <Compile Include="Entidades\Salon\Salon.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Vista\Home\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -164,17 +175,6 @@
     </Compile>
     <Compile Include="Presentacion\Vista\Home\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Entidades\Clase\Clase.cs" />
-    <Compile Include="Entidades\Cliente\Cliente.cs" />
-    <Compile Include="Entidades\Cliente\Persona.cs" />
-    <Compile Include="Entidades\Horario.cs" />
-    <Compile Include="Entidades\Instructor\Instructor.cs" />
-    <Compile Include="Entidades\ReservaClase\ReservaClase.cs" />
-    <Compile Include="Entidades\ReservaInstructor\ReservaInstructor.cs" />
-    <Compile Include="Entidades\Salon\Salon.cs" />
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Vista\Modulo3\EvaluarClase\Agregar.aspx.cs">
       <DependentUpon>Agregar.aspx</DependentUpon>

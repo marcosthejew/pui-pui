@@ -4,6 +4,4 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     Bienvenido al sistema PUI PUI te has conectado con el usuario: 
     <asp:Label ID="Label1" runat="server" Text="Label" Font-Bold="True" Font-Size="Medium"></asp:Label>
-&nbsp;
-
 </asp:Content>

@@ -18,5 +18,6 @@ namespace PuiPui_FrontOffice.Presentacion.Vista.Home
             string a = acceso.Login;
             Label1.Text = a;
         }
+
     }
 }

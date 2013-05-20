@@ -7,10 +7,11 @@ using System.Web.UI.WebControls;
 using PuiPui_FrontOffice.LogicaDeNegocios.Cliente;
 using PuiPui_FrontOffice.Entidades.Cliente;
 
-namespace PuiPui_FrontOffice
+namespace PuiPui_FrontOffice.Presentacion.Vista.Home
 {
-    public partial class _Default : System.Web.UI.Page
+    public partial class Login : System.Web.UI.Page
     {
+
         protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
         {
             bool Autenticado = false;
@@ -28,5 +29,7 @@ namespace PuiPui_FrontOffice
                 Response.Redirect("Home.aspx");
             }
         }
+ 
+        
     }
 }

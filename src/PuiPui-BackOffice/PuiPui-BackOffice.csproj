@@ -80,11 +80,11 @@
     <Content Include="Presentacion\Estilo\Site.css" />
     <Content Include="Presentacion\Vista\Home\About.aspx" />
     <Content Include="Presentacion\Vista\Home\Home.aspx" />
-    <Content Include="Presentacion\Vista\Home\Login.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Presentacion\Estilo\Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Presentacion\Estilo\Scripts\jquery-1.4.1.js" />
     <Content Include="Presentacion\Estilo\Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Presentacion\Vista\Home\Login.aspx" />
     <Content Include="Presentacion\Vista\Modulo1\Gestion de Ejercicios\Act-Ina.aspx" />
     <Content Include="Presentacion\Vista\Modulo1\Gestion de Ejercicios\Agregar.aspx" />
     <Content Include="Presentacion\Vista\Modulo1\Gestion de Ejercicios\Consultar.aspx" />
@@ -203,13 +203,6 @@
     <Compile Include="Presentacion\Vista\Home\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Vista\Home\Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Vista\Home\Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Entidades\Clase\Clase.cs" />
     <Compile Include="Entidades\Cliente\Cliente.cs" />
     <Compile Include="Entidades\Cliente\Persona.cs" />
@@ -220,6 +213,13 @@
     <Compile Include="Entidades\Salon\Salon.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Vista\Home\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Vista\Home\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Vista\Modulo1\Gestion de Ejercicios\Act-Ina.aspx.cs">
       <DependentUpon>Act-Ina.aspx</DependentUpon>

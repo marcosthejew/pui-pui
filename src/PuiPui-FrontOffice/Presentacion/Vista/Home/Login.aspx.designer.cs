@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PuiPui_FrontOffice {
+namespace PuiPui_FrontOffice.Presentacion.Vista.Home {
     
     
-    public partial class _Default {
+    public partial class Login {
         
         /// <summary>
         /// Login1 control.

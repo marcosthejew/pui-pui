@@ -10,7 +10,7 @@
 namespace PuiPui_BackOffice.Presentacion.Vista.Home {
     
     
-    public partial class _Default {
+    public partial class Login {
         
         /// <summary>
         /// Login1 control.
