@@ -130,7 +130,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 _cmd.CommandType = CommandType.StoredProcedure;
                 _dr = _cmd.ExecuteReader();
 
-                _param = new SqlParameter("@Id_salon", clase.IdClase);
+                _param = new SqlParameter("@Id_clase", clase.IdClase);
                 _cmd.Parameters.Add(_param);
 
                 _param = new SqlParameter("@Nombre", clase.Nombre);

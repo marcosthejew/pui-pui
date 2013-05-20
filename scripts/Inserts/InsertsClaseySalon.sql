@@ -10,10 +10,11 @@ INSERT INTO Clase VALUES ('TRX','Ejercicio con cuerdas para tonificar los muscul
 INSERT INTO Clase VALUES ('Pilates','Se centra en el desarrollo de los músculos internos para mantener el equilibrio corporal',1 );
 INSERT INTO Clase VALUES ('Yoga','Ejercicio que permite estirar el cuerpo y lograr paz interna',1 );
 
-INSERT INTO SALON VALUES ("Segundo Piso-Ala Este",30,1);
-INSERT INTO SALON VALUES ("Primer Piso-Ala 0ste",40,1);
-INSERT INTO SALON VALUES ("Primer Piso",100,1);
-INSERT INTO SALON VALUES ("Segundo Piso-Ala Norte",100,1);
-INSERT INTO SALON VALUES ("Tercer Piso",100,1);
-INSERT INTO SALON VALUES ("Primer Piso-Ala Este",50,1);
-INSERT INTO SALON VALUES ("Primer Piso-Ala Oeste",20,1);
+INSERT INTO SALON VALUES ('Segundo Piso-Ala Este',30,1);
+INSERT INTO SALON VALUES ('Primer Piso-Ala 0ste',40,1);
+INSERT INTO SALON VALUES ('Primer Piso',100,1);
+INSERT INTO SALON VALUES ('Segundo Piso-Ala Norte',100,1);
+INSERT INTO SALON VALUES ('Tercer Piso',100,1);
+INSERT INTO SALON VALUES ('Primer Piso-Ala Este',50,1);
+INSERT INTO SALON VALUES ('Primer Piso-Ala Oeste',20,1);
+
