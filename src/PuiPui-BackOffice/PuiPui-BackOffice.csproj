@@ -112,6 +112,7 @@
     <Content Include="Presentacion\Vista\Modulo6\Cliente\Act-Ina.aspx" />
     <Content Include="Presentacion\Vista\Modulo6\Cliente\Agregar.aspx" />
     <Content Include="Presentacion\Vista\Modulo6\Cliente\Consultar.aspx" />
+    <Content Include="Presentacion\Vista\Modulo6\Cliente\ConsultarDetalle.aspx" />
     <Content Include="Presentacion\Vista\Modulo6\Cliente\Eliminar.aspx" />
     <Content Include="Presentacion\Vista\Modulo6\Cliente\Modificar.aspx" />
     <Content Include="Presentacion\Vista\Modulo6\Cliente\Modificar1.aspx" />
@@ -424,6 +425,13 @@
     </Compile>
     <Compile Include="Presentacion\Vista\Modulo6\Cliente\Consultar.aspx.designer.cs">
       <DependentUpon>Consultar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Vista\Modulo6\Cliente\ConsultarDetalle.aspx.cs">
+      <DependentUpon>ConsultarDetalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Vista\Modulo6\Cliente\ConsultarDetalle.aspx.designer.cs">
+      <DependentUpon>ConsultarDetalle.aspx</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Vista\Modulo6\Cliente\Eliminar.aspx.cs">
       <DependentUpon>Eliminar.aspx</DependentUpon>
