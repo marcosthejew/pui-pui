@@ -26,5 +26,14 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.Cliente
             miPersona = objDataBase.ConsultarDetallePersona(idPersona);
             return miPersona;
         }
+
+        public Persona AgregoCliente (Persona miPersona)
+        {
+            Persona objPersona = new Persona();
+            SQLServerPersona objDataBase = new SQLServerPersona();
+            objPersona = objDataBase.AgregarCliente(miPersona);
+            return objPersona;
+        }
+
     }
 }

@@ -7,13 +7,9 @@ namespace PuiPui_BackOffice.Entidades.Cliente
 {
     public class Clientes : Persona
     {
-
-
         public Clientes()
         {
-            //
-            // TODO: Agregar aquí la lógica del constructor
-            //
+            
         }
     }
 

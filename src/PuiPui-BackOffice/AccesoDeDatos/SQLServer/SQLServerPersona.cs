@@ -128,5 +128,62 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
         }
 
 
+        public Persona AgregarCliente(Persona miPersona)
+        {
+            string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader dr;
+            Persona objPersona = new Persona();
+
+            try
+            {
+                string fechaRegistro = DateTime.Now.ToString("dd-MM-yyyy");
+                miPersona.FechaIngresoPersona = Convert.ToDateTime(fechaRegistro);
+
+                conexion = new SqlConnection(cadenaConexion);
+                conexion.Open();
+                cmd = new SqlCommand("[dbo].[insertarCliente]", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                
+
+                cmd.Parameters.AddWithValue("@cedulaCliente", miPersona.CedulaPersona);
+                cmd.Parameters.AddWithValue("@primerNombreCliente", miPersona.NombrePersona1);
+                cmd.Parameters.AddWithValue("@segundoNombreCliente", miPersona.NombrePersona2);
+                cmd.Parameters.AddWithValue("@primerApellidoCliente",miPersona.ApellidoPersona1);
+                cmd.Parameters.AddWithValue("@segundoaApellidoCliente", miPersona.ApellidoPersona2);
+                cmd.Parameters.AddWithValue("@genero", miPersona.GeneroPersona);
+                cmd.Parameters.AddWithValue("@fechaNacimiento", miPersona.FechaNacimientoPersona);
+                cmd.Parameters.AddWithValue("@fechaRegistro", miPersona.FechaIngresoPersona);
+                cmd.Parameters.AddWithValue("@ciudad", miPersona.CiudadPersona);
+                cmd.Parameters.AddWithValue("@direccion", miPersona.DireccionPersona);
+                cmd.Parameters.AddWithValue("@telefonoLocal", miPersona.TelefonoLocalPersona);
+                cmd.Parameters.AddWithValue("@telefonoCelular", miPersona.TelefonoCelularPersona);
+                cmd.Parameters.AddWithValue("@email", miPersona.CorreoPersona);
+                cmd.Parameters.AddWithValue("@nombreContactoEmergencia", miPersona.ContactoNombrePersona);
+                cmd.Parameters.AddWithValue("@telefonoContactoEmergencia", miPersona.ContactoTelefonoPersona);
+                cmd.Parameters.AddWithValue("@estado", miPersona.EstadoPersona);
+                cmd.Parameters.AddWithValue("@usuario", miPersona.LoginPersona);
+                cmd.Parameters.AddWithValue("@password", miPersona.PasswordPersona);
+                cmd.Parameters.AddWithValue("@tipo", miPersona.TipoPersona);
+
+
+                dr = cmd.ExecuteReader();
+                db.CerrarConexion();
+        }
+            catch (SqlException error)
+            {
+                //En caso de que se viole alguna restriccion sobre la BD
+                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+            }
+            finally
+            {
+                db.CerrarConexion();
+            }
+            return objPersona;
+        }
+
+
     }
 }
