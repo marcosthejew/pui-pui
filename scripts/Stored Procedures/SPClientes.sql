@@ -12,7 +12,7 @@ BEGIN
 	set nocount on
 		
 	SELECT P.idPersona, P.nombrePersona1, P.apellidoPersona1, P.fechaIngresoPersona
-	FROM Persona
+	FROM Persona P
 		
 END;
 
@@ -34,7 +34,7 @@ BEGIN
 	where P.idPersona = @idPersona
 
 END;
-
+GO
 
 
 /* Insertar cliente */
@@ -46,34 +46,33 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE procedure [dbo].[insertarCliente]
-@cedulaCliente bigint,
-@primerNombreCliente nchar(50),
-@segundoNombreCliente nchar(50),
-@primerApellidoCliente nchar(50),
-@segundoaApellidoCliente nchar(50),
-@genero nchar(1),
-@fechaNacimiento datetime,
-@fechaRegistro datetime,
-@ciudad nchar(50),
-@direccion nchar(200),
-@telefonoLocal nchar(12),
-@telefonoCelular nchar(12),
-@email nchar(50),
-@nombreContactoEmergencia nchar(100),
-@telefonoContactoEmergencia nchar(12),
-@estado nchar(10),
-@usuario nchar(50),
-@password nchar(20),
-@tipo nchar(20),
+	@cedulaCliente bigint,
+	@primerNombreCliente nchar(50),
+	@segundoNombreCliente nchar(50),
+	@primerApellidoCliente nchar(50),
+	@segundoaApellidoCliente nchar(50),
+	@genero nchar(1),
+	@fechaNacimiento datetime,
+	@fechaRegistro datetime,
+	@ciudad nchar(50),
+	@direccion nchar(200),
+	@telefonoLocal nchar(12),
+	@telefonoCelular nchar(12),
+	@email nchar(50),
+	@nombreContactoEmergencia nchar(100),
+	@telefonoContactoEmergencia nchar(12),
+	@estado nchar(10),
+	@usuario nchar(50),
+	@password nchar(20),
+	@tipo nchar(20)
 as
 BEGIN	
 INSERT INTO Persona (cedulaPersona, nombrePersona1,nombrePersona2,apellidoPersona1,apellidoPersona2,generoPersona,fechaNacimientoPersona,fechaIngresoPersona,ciudadPersona,DireccionPersona,telefonoLocalPersona,telefonoCelularPersona,correoPersona,contactoNombrePersona,contactoTelefonoPersona,estadoPersona,loginPersona,passwordPersona,tipoPersona)
 	   VALUES (@cedulacliente,@primerNombreCliente,@segundoNombreCliente,@primerApellidoCliente,@segundoaApellidoCliente,@genero,@fechaNacimiento,@fechaRegistro,@ciudad,@direccion,@telefonoLocal,@telefonoCelular,@email,@nombreContactoEmergencia,@telefonoContactoEmergencia,@estado,@usuario,@password,@tipo);
 END;
-
 GO
 
-GO
+
 USE [puipuiDB]
 GO
 /****** Object:  StoredProcedure [dbo].[modificarPersona]    Script Date: 19/05/2013 23:09:08 ******/
@@ -82,7 +81,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-ALTER PROCEDURE [dbo].[modificarPersona]
+CREATE PROCEDURE [dbo].[modificarPersona]
 
 	@idPersona bigint,
 	@cedulaPersona bigint,
@@ -135,6 +134,8 @@ BEGIN
 	WHERE [Persona].idPersona = @idPersona
 	
 END;
+GO
+
 USE [puipuiDB]
 GO
 /****** Object:  StoredProcedure [dbo].[consultarActivarDesactivarPersona]    Script Date: 20/05/2013 2:45:11 ******/
@@ -161,9 +162,9 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-ALTER procedure [dbo].[consultarAccesoPersonaB]
-@loginPersona nchar (50),
-@passwordPersona nchar (50)
+CREATE  procedure [dbo].[consultarAccesoPersonaB]
+	@loginPersona nchar (50),
+	@passwordPersona nchar (50)
 as
 
 BEGIN
@@ -174,6 +175,8 @@ BEGIN
 		and P.tipoPersona = 'Admin'
 END;
 GO
+
+
 USE [puipuiDB]
 GO
 /****** Object:  StoredProcedure [dbo].[consultarAccesoPersonaF]    Script Date: 20/05/2013 15:00:05 ******/
