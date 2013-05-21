@@ -137,6 +137,7 @@
     <Compile Include="AccesoDeDatos\Conexion\IConexion\IConexionSQLServer.cs" />
     <Compile Include="AccesoDeDatos\Excepciones_BD\ExcepcionConexion.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerClase.cs" />
+    <Compile Include="AccesoDeDatos\SQLServer\SQLServerClaseSalon.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerEjercicio.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerHorario.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerInstructor.cs" />
@@ -171,6 +172,7 @@
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Entidades\Clase\ClaseSalon.cs" />
     <Compile Include="Entidades\Cliente\Acceso.cs" />
     <Compile Include="Entidades\Ejercicio\Musculo.cs" />
     <Compile Include="LogicaDeNegocios\Instructor\LogicaHorario.cs" />

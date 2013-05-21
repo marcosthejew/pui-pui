@@ -56,6 +56,10 @@ namespace PuiPui_BackOffice.Entidades.Clase
         public Clase()
         {
         }
+        public Clase(int id)
+        {
+            this.IdClase = id;
+        }
 
         #endregion
 
