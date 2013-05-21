@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data;
 using PuiPui_BackOffice.Entidades.Salon;
 using PuiPui_BackOffice.AccesoDeDatos.SQLServer;
 
@@ -14,6 +15,7 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
 
         private Salon _salon;
         private SQLServerSalon _accesoSalon;
+        private List<Salon> _miLista;
 
         #endregion
 
@@ -23,6 +25,7 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
         {
             _salon = new Salon();
             _accesoSalon = new SQLServerSalon();
+            _miLista= new List<Salon>();
 
         }
 
@@ -31,15 +34,24 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
 
         #region Metodos
 
-        private List<Salon> ConsultarSalones()
+        private DataTable ConsultarSalones()
         {
+            DataTable miTabla = new DataTable();
 
-            List<Salon> listaSalon;
-            //conectar a la bd
-            listaSalon = _accesoSalon.ConsultarSalones();
+            _miLista = _accesoSalon.ConsultarSalones();
 
-            return listaSalon;
+            miTabla.Columns.Add("Nro.Salon", typeof(string));
+            miTabla.Columns.Add("Ubicacion", typeof(string));
+            miTabla.Columns.Add("Capacidad", typeof(string));
+            miTabla.Columns.Add("Estatus", typeof(string));
 
+            foreach (Salon salon in _miLista)
+            {
+
+                miTabla.Rows.Add(salon.IdSalon,salon.Ubicacion,salon.Capacidad,salon.Status);
+            }
+
+            return miTabla;
         }
 
         private Boolean ModificarSalones(Salon salon)
@@ -64,6 +76,86 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
 
             return resultado;
 
+        }
+
+        private DataTable ConsultarSalonesUbicacion(String ubi)
+        {
+            DataTable miTabla = new DataTable();
+
+            _miLista = _accesoSalon.BusquedaUbicacion(ubi);
+
+            miTabla.Columns.Add("Nro.Salon", typeof(string));
+            miTabla.Columns.Add("Ubicacion", typeof(string));
+            miTabla.Columns.Add("Capacidad", typeof(string));
+            miTabla.Columns.Add("Estatus", typeof(string));
+
+            foreach (Salon salon in _miLista)
+            {
+
+                miTabla.Rows.Add(salon.IdSalon, salon.Ubicacion, salon.Capacidad, salon.Status);
+            }
+
+            return miTabla;
+        }
+
+        private DataTable ConsultarSalonesCapacidadMayo(int capa)
+        {
+            DataTable miTabla = new DataTable();
+
+            _miLista = _accesoSalon.BusquedaCapacidadMayorSalon(capa);
+
+            miTabla.Columns.Add("Nro.Salon", typeof(string));
+            miTabla.Columns.Add("Ubicacion", typeof(string));
+            miTabla.Columns.Add("Capacidad", typeof(string));
+            miTabla.Columns.Add("Estatus", typeof(string));
+
+            foreach (Salon salon in _miLista)
+            {
+
+                miTabla.Rows.Add(salon.IdSalon, salon.Ubicacion, salon.Capacidad, salon.Status);
+            }
+
+            return miTabla;
+        }
+
+        private DataTable ConsultarSalonesCapacidadMenor(int capa)
+        {
+            DataTable miTabla = new DataTable();
+
+            _miLista = _accesoSalon.BusquedaCapacidadMenorSalon(capa);
+
+            miTabla.Columns.Add("Nro.Salon", typeof(string));
+            miTabla.Columns.Add("Ubicacion", typeof(string));
+            miTabla.Columns.Add("Capacidad", typeof(string));
+            miTabla.Columns.Add("Estatus", typeof(string));
+
+            foreach (Salon salon in _miLista)
+            {
+
+                miTabla.Rows.Add(salon.IdSalon, salon.Ubicacion, salon.Capacidad, salon.Status);
+            }
+
+            return miTabla;
+        }
+
+        private DataTable ConsultarSalonesStatus(int stat)
+        {
+            DataTable miTabla = new DataTable();
+
+            _miLista = _accesoSalon.BusquedaStatusSalon(stat);
+
+            miTabla.Columns.Add("Nro.Salon", typeof(string));
+            miTabla.Columns.Add("Ubicacion", typeof(string));
+            miTabla.Columns.Add("Capacidad", typeof(string));
+            miTabla.Columns.Add("Estatus", typeof(string));
+
+            foreach (Salon salon in _miLista)
+            {
+
+                miTabla.Rows.Add(salon.IdSalon, salon.Ubicacion, salon.Capacidad, salon.Status);
+            }
+
+            return miTabla;
         }
 
         #endregion

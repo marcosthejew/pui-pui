@@ -89,8 +89,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 _conexion.Open();
                 _cmd = new SqlCommand("[dbo].[AgregarSalon]", _conexion);
                 _cmd.CommandType = CommandType.StoredProcedure;
-                _dr = _cmd.ExecuteReader();
-
+                
                 _param = new SqlParameter("@Ubicacion", salon.Ubicacion);
                 _cmd.Parameters.Add(_param);
 
@@ -99,6 +98,8 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 
                 _param = new SqlParameter("@Status", salon.Status);
                 _cmd.Parameters.Add(_param);
+
+                _dr = _cmd.ExecuteReader();
 
                 insercion = true;
                 _db.CerrarConexion();
@@ -129,8 +130,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 _conexion.Open();
                 _cmd = new SqlCommand("[dbo].[ModificarSalon]", _conexion);
                 _cmd.CommandType = CommandType.StoredProcedure;
-                _dr = _cmd.ExecuteReader();
-
+               
                 _param = new SqlParameter("@Id_salon", salon.IdSalon);
                 _cmd.Parameters.Add(_param);
 
@@ -142,6 +142,8 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 
                 _param = new SqlParameter("@Status", salon.Status);
                 _cmd.Parameters.Add(_param);
+
+                _dr = _cmd.ExecuteReader();
 
                 insercion = true;
                 _db.CerrarConexion();
@@ -161,6 +163,162 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
             }
             return insercion;
 
+        }
+
+        public List<Salon> BusquedaUbicacion(String ubicacion)
+        {
+
+            try
+            {
+                _conexion = new SqlConnection(_cadenaConexion);
+                _conexion.Open();
+                _cmd = new SqlCommand("[dbo].[BusquedaNombreClase]", _conexion);
+                _cmd.CommandType = CommandType.StoredProcedure;
+                _param = new SqlParameter("@Ubicacion", ubicacion);
+                _cmd.Parameters.Add(_param);
+
+                _dr = _cmd.ExecuteReader();
+                
+                while (_dr.Read())
+                {
+                    _objetoSalon = new Salon();
+                    _objetoSalon.IdSalon = Convert.ToInt32(_dr.GetValue(0));
+                    _objetoSalon.Ubicacion = _dr.GetValue(1).ToString();
+                    _objetoSalon.Capacidad = Convert.ToInt32(_dr.GetValue(2).ToString());
+                    _objetoSalon.Status = Convert.ToInt32(_dr.GetValue(3));
+                    _listaSalones.Add(_objetoSalon);
+                }
+
+                _db.CerrarConexion();
+
+            }
+            catch (SqlException error)
+            {
+                //En caso de que se viole alguna restriccion sobre la BD
+                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+            }
+            finally
+            {
+                _db.CerrarConexion();
+            }
+            return _listaSalones;
+        }
+
+        public List<Salon> BusquedaCapacidadMayorSalon(int capacidad)
+        {
+
+            try
+            {
+                _conexion = new SqlConnection(_cadenaConexion);
+                _conexion.Open();
+                _cmd = new SqlCommand("[dbo].[BusquedaCapacidadMayorSalon]", _conexion);
+                _cmd.CommandType = CommandType.StoredProcedure;
+                _param = new SqlParameter("@Capacidad", capacidad);
+                _cmd.Parameters.Add(_param);
+
+                _dr = _cmd.ExecuteReader();
+
+                while (_dr.Read())
+                {
+                    _objetoSalon = new Salon();
+                    _objetoSalon.IdSalon = Convert.ToInt32(_dr.GetValue(0));
+                    _objetoSalon.Ubicacion = _dr.GetValue(1).ToString();
+                    _objetoSalon.Capacidad = Convert.ToInt32(_dr.GetValue(2).ToString());
+                    _objetoSalon.Status = Convert.ToInt32(_dr.GetValue(3));
+                    _listaSalones.Add(_objetoSalon);
+                }
+
+                _db.CerrarConexion();
+
+            }
+            catch (SqlException error)
+            {
+                //En caso de que se viole alguna restriccion sobre la BD
+                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+            }
+            finally
+            {
+                _db.CerrarConexion();
+            }
+            return _listaSalones;
+        }
+
+        public List<Salon> BusquedaCapacidadMenorSalon(int stat)
+        {
+
+            try
+            {
+                _conexion = new SqlConnection(_cadenaConexion);
+                _conexion.Open();
+                _cmd = new SqlCommand("[dbo].[BusquedaCapacidadMenorSalon]", _conexion);
+                _cmd.CommandType = CommandType.StoredProcedure;
+                _param = new SqlParameter("@Capacidad", stat);
+                _cmd.Parameters.Add(_param);
+
+                _dr = _cmd.ExecuteReader();
+
+                while (_dr.Read())
+                {
+                    _objetoSalon = new Salon();
+                    _objetoSalon.IdSalon = Convert.ToInt32(_dr.GetValue(0));
+                    _objetoSalon.Ubicacion = _dr.GetValue(1).ToString();
+                    _objetoSalon.Capacidad = Convert.ToInt32(_dr.GetValue(2).ToString());
+                    _objetoSalon.Status = Convert.ToInt32(_dr.GetValue(3));
+                    _listaSalones.Add(_objetoSalon);
+                }
+
+                _db.CerrarConexion();
+
+            }
+            catch (SqlException error)
+            {
+                //En caso de que se viole alguna restriccion sobre la BD
+                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+            }
+            finally
+            {
+                _db.CerrarConexion();
+            }
+            return _listaSalones;
+        }
+
+        public List<Salon> BusquedaStatusSalon(int stat)
+        {
+
+            try
+            {
+                _conexion = new SqlConnection(_cadenaConexion);
+                _conexion.Open();
+                _cmd = new SqlCommand("[dbo].[BusquedaStatusSalon]", _conexion);
+                _cmd.CommandType = CommandType.StoredProcedure;
+                _param = new SqlParameter("@Status", stat);
+                _cmd.Parameters.Add(_param);
+
+                _dr = _cmd.ExecuteReader();
+
+                while (_dr.Read())
+                {
+                    _objetoSalon = new Salon();
+                    _objetoSalon.IdSalon = Convert.ToInt32(_dr.GetValue(0));
+                    _objetoSalon.Ubicacion = _dr.GetValue(1).ToString();
+                    _objetoSalon.Capacidad = Convert.ToInt32(_dr.GetValue(2).ToString());
+                    _objetoSalon.Status = Convert.ToInt32(_dr.GetValue(3));
+                    _listaSalones.Add(_objetoSalon);
+                }
+
+                _db.CerrarConexion();
+
+            }
+            catch (SqlException error)
+            {
+                //En caso de que se viole alguna restriccion sobre la BD
+                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+            }
+            finally
+            {
+                _db.CerrarConexion();
+            }
+            return _listaSalones;
         }
 
         #endregion
