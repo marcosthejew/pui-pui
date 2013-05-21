@@ -19,50 +19,68 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
         {
             string _cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
             SqlConnection _conexion = new SqlConnection();
-            SqlCommand _cmd = new SqlCommand();
+            SqlCommand _insertar = new SqlCommand();
+            SqlDataReader _execute;
             _conexion = new SqlConnection(_cadenaConexion);
+          
+            try
+            {
+                _conexion.Open();
+                _insertar = new SqlCommand("[dbo].[insertar_HistorialEjercicio]", _conexion);
+                _insertar.CommandType = CommandType.StoredProcedure;
+                _insertar.Parameters.Add("@id_cliente", SqlDbType.Int).Value = id_cliente;
+                _insertar.Parameters.Add("@id_rutina", SqlDbType.Int).Value = id_rutina;
+                _insertar.Parameters.Add("@id_ejercicio", SqlDbType.Int).Value = id_ejercicio_;
+                _execute = _insertar.ExecuteReader();
 
-            _conexion.Open();
-            string _inserhistorial = "Insert into Historial_Ejercicio values(id_cliente, id_rutina,  id_ejercicio)";
-            SqlCommand _insertar = new SqlCommand(_inserhistorial, _conexion);
-            _insertar.Parameters.Add("id_cliente", SqlDbType.Int).Value = id_cliente;
-            _insertar.Parameters.Add("id_rutina", SqlDbType.Int).Value = id_rutina;
-            _insertar.Parameters.Add("id_ejercicio", SqlDbType.Int).Value = id_ejercicio_;
-            _insertar.ExecuteNonQuery();
+                if (_execute.Read())
+                {
+                    db.CerrarConexion();
+                    return true;
+                }
+            }
+            catch (SqlException error)
+            {
 
-            _conexion.Close();
-            return true;
+                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+
+            }
+            finally
+            {
+                db.CerrarConexion();
+            }
+            return false;
         }
 
-        public List<int> listaIdejercicios(int id_cliente)
+        public List<int> listaIdejercicios(int id_cliente, int id_rutina)
         {
             string _cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
             SqlConnection _conexion = new SqlConnection();
             SqlCommand _cmd = new SqlCommand();
             List<int> lista = new List<int>();
+            SqlDataReader _execute;
+            int _id_ejer = 0;
             try
             {
 
                 _conexion = new SqlConnection(_cadenaConexion);
                 _conexion.Open();
-                string listarut = "Select id_ejercicio from Historial_Ejercicio where id_cliente=" + id_cliente + "";
-                SqlDataAdapter _querylista = new SqlDataAdapter(listarut, _conexion);
-                DataSet tabla = new DataSet();
-                _querylista.Fill(tabla, "Historial_Ejercicio");
+                _cmd = new SqlCommand("[dbo].[busca_rutina_idEjercicio]", _conexion);
+                _cmd.CommandType = CommandType.StoredProcedure;
+                _cmd.Parameters.AddWithValue("@id_cli", id_cliente);
+                _cmd.Parameters.AddWithValue("@id_ru", id_rutina);
+                _execute = _cmd.ExecuteReader();
 
-                if (tabla.Tables[0].Rows.Count == 1)
+                while (_execute.Read())
                 {
-                    int _id = 0;
-                    for (int i = 0; i < tabla.Tables[0].Rows.Count; i++)
-                    {
 
-                        _id = int.Parse(tabla.Tables[0].Rows[i]["id_ejercicio"].ToString());
-                        lista.Add(_id);
-                        _id = 0;
-                    }
+                    _id_ejer = Convert.ToInt32(_execute.GetValue(0));
+                    lista.Add(_id_ejer);
 
-                    _conexion.Close();
                 }
+
+                _conexion.Close();
+
             }
             catch (SqlException e)
             {
@@ -76,6 +94,88 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
             }
             return lista;
 
+        }
+        public List<int> busca_id_rutina(int id_cliente)
+        {
+            string _cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            SqlConnection _conexion = new SqlConnection();
+            SqlCommand _cmd = new SqlCommand();
+            List<int> lista = new List<int>();
+            SqlDataReader _execute;
+            int _id_ejer = 0;
+            try
+            {
+
+                _conexion = new SqlConnection(_cadenaConexion);
+                _conexion.Open();
+                _cmd = new SqlCommand("[dbo].[busca_rutina_idCliente]", _conexion);
+                _cmd.CommandType = CommandType.StoredProcedure;
+                _cmd.Parameters.AddWithValue("@id_cli", id_cliente);
+                _execute = _cmd.ExecuteReader();
+
+                while (_execute.Read())
+                {
+
+                    _id_ejer = Convert.ToInt32(_execute.GetValue(0));
+                    lista.Add(_id_ejer);
+
+                }
+
+                db.CerrarConexion();
+
+            }
+            catch (SqlException e)
+            {
+
+                throw (new ExcepcionConexion(("Error: " + e.Message), e));
+
+            }
+            finally
+            {
+                _conexion.Close();
+            }
+            return lista;
+
+        }
+
+        public bool BDEliminaHistorial(int id_cliente, int id_rutina)
+        {
+
+    
+            string _cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            SqlConnection _conexion = new SqlConnection();
+            SqlCommand _borrar = new SqlCommand();
+            SqlDataReader _execute;
+         
+            try
+            {
+                _conexion = new SqlConnection(_cadenaConexion);
+                _conexion.Open();
+                _borrar = new SqlCommand("[dbo].[delete_Historial_Rutina]", _conexion);
+                _borrar.CommandType = CommandType.StoredProcedure;
+                _borrar.Parameters.AddWithValue("@id_ruti", id_rutina);
+                _borrar.Parameters.AddWithValue("@id_cli", id_cliente);
+                _execute = _borrar.ExecuteReader();
+                db.CerrarConexion();
+                return  true;
+
+               
+            }
+            catch (SqlException error)
+            {
+
+                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+                
+            }
+               
+            finally
+            {
+               
+                db.CerrarConexion();
+               
+            }
+            return false;
+           
         }
     }
 }
