@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using PuiPui_BackOffice.LogicaDeNegocios.Instructor;
 using System.Drawing;
+using PuiPui_BackOffice.Entidades;
 
 
 namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
@@ -134,6 +135,109 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
                             lexito.Text = "Seleccion Alguno de los dos Sexos";
                             cb1.BorderColor = Color.Red;
                             cb2.BorderColor = Color.Red;
+                        }
+
+
+
+
+
+                        if (cb6.Checked == true) 
+                        {
+                            Horario horario = new Horario();
+                            horario.dia = "lunes";
+                            horario.horaini = Convert.ToDateTime(dp1.Text);
+                            horario.horafin = Convert.ToDateTime(dp2.Text);
+                            LogicaHorario logica = new LogicaHorario();
+                            logica.agregarHorario(horario, tb1.Text);
+                        }
+
+                        if (cb11.Checked == true)
+                        {
+                            Horario horario = new Horario();
+                            horario.dia = "lunes";
+                            horario.horaini = Convert.ToDateTime(dp3.Text);
+                            horario.horafin = Convert.ToDateTime(dp4.Text);
+                            LogicaHorario logica = new LogicaHorario();
+                            logica.agregarHorario(horario, tb1.Text);
+                        }
+
+                        if (cb7.Checked == true)
+                        {
+                            Horario horario = new Horario();
+                            horario.dia = "martes";
+                            horario.horaini = Convert.ToDateTime(dp5.Text);
+                            horario.horafin = Convert.ToDateTime(dp6.Text);
+                            LogicaHorario logica = new LogicaHorario();
+                            logica.agregarHorario(horario, tb1.Text);
+                        }
+
+                        if (cb12.Checked == true)
+                        {
+                            Horario horario = new Horario();
+                            horario.dia = "martes";
+                            horario.horaini = Convert.ToDateTime(dp7.Text);
+                            horario.horafin = Convert.ToDateTime(dp8.Text);
+                            LogicaHorario logica = new LogicaHorario();
+                            logica.agregarHorario(horario, tb1.Text);
+                        }
+
+                        if (cb8.Checked == true)
+                        {
+                            Horario horario = new Horario();
+                            horario.dia = "miercoles";
+                            horario.horaini = Convert.ToDateTime(dp9.Text);
+                            horario.horafin = Convert.ToDateTime(dp10.Text);
+                            LogicaHorario logica = new LogicaHorario();
+                            logica.agregarHorario(horario, tb1.Text);
+                        }
+
+                        if (cb13.Checked == true)
+                        {
+                            Horario horario = new Horario();
+                            horario.dia = "miercoles";
+                            horario.horaini = Convert.ToDateTime(dp11.Text);
+                            horario.horafin = Convert.ToDateTime(dp12.Text);
+                            LogicaHorario logica = new LogicaHorario();
+                            logica.agregarHorario(horario, tb1.Text);
+                        }
+
+                        if (cb9.Checked == true)
+                        {
+                            Horario horario = new Horario();
+                            horario.dia = "jueves";
+                            horario.horaini = Convert.ToDateTime(dp13.Text);
+                            horario.horafin = Convert.ToDateTime(dp14.Text);
+                            LogicaHorario logica = new LogicaHorario();
+                            logica.agregarHorario(horario, tb1.Text);
+                        }
+
+                        if (cb14.Checked == true)
+                        {
+                            Horario horario = new Horario();
+                            horario.dia = "jueves";
+                            horario.horaini = Convert.ToDateTime(dp15.Text);
+                            horario.horafin = Convert.ToDateTime(dp16.Text);
+                            LogicaHorario logica = new LogicaHorario();
+                            logica.agregarHorario(horario, tb1.Text);
+                        }
+
+                        if (cb10.Checked == true)
+                        {
+                            Horario horario = new Horario();
+                            horario.dia = "viernes";
+                            horario.horaini = Convert.ToDateTime(dp17.Text);
+                            horario.horafin = Convert.ToDateTime(dp18.Text);
+                            LogicaHorario logica = new LogicaHorario();
+                            logica.agregarHorario(horario, tb1.Text);
+                        }
+                        if (cb15.Checked == true)
+                        {
+                            Horario horario = new Horario();
+                            horario.dia = "viernes";
+                            horario.horaini = Convert.ToDateTime(dp19.Text);
+                            horario.horafin = Convert.ToDateTime(dp20.Text);
+                            LogicaHorario logica = new LogicaHorario();
+                            logica.agregarHorario(horario, tb1.Text);
                         }
 
                     }

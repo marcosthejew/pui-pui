@@ -31,6 +31,12 @@ END;
 
 GO
 
+
+
+
+
+
+
 USE [puipuiDB]
 GO
 SET ANSI_NULLS ON
@@ -45,5 +51,23 @@ BEGIN
 	Select cedula
 	FROM Instructor
 	where cedula=@cedula
+END;
+GO
+
+USE [puipuiDB]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE procedure [dbo].[obtenerIdInstructor]
+@cedula nchar (50)
+
+as
+
+BEGIN
+	SELECT id_instructor
+	FROM Instructor
+	WHERE cedula=@cedula
 END;
 GO

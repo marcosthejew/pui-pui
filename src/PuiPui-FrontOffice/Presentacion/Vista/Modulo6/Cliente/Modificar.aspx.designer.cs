@@ -7,432 +7,513 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores {
+namespace PuiPui_FrontOffice.Presentacion.Vista.Modulo6.Cliente {
     
     
-    public partial class Agregar {
+    public partial class Modificar {
         
         /// <summary>
-        /// lexito control.
+        /// falla control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lexito;
+        protected global::System.Web.UI.WebControls.Label falla;
         
         /// <summary>
-        /// tb1 control.
+        /// Exito control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb1;
+        protected global::System.Web.UI.WebControls.Label Exito;
         
         /// <summary>
-        /// cb1 control.
+        /// LIdentificador control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cb1;
+        protected global::System.Web.UI.WebControls.TextBox LIdentificador;
         
         /// <summary>
-        /// cb2 control.
+        /// LFechaIngreso control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cb2;
+        protected global::System.Web.UI.WebControls.TextBox LFechaIngreso;
         
         /// <summary>
-        /// tb2 control.
+        /// LCedula control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb2;
+        protected global::System.Web.UI.WebControls.TextBox LCedula;
         
         /// <summary>
-        /// tb6 control.
+        /// ComboTipo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb6;
+        protected global::System.Web.UI.WebControls.DropDownList ComboTipo;
         
         /// <summary>
-        /// tb3 control.
+        /// LFechaNacimiento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb3;
+        protected global::System.Web.UI.WebControls.Calendar LFechaNacimiento;
         
         /// <summary>
-        /// tb7 control.
+        /// ComboGenero control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb7;
+        protected global::System.Web.UI.WebControls.DropDownList ComboGenero;
         
         /// <summary>
-        /// tb4 control.
+        /// LPrimerNombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb4;
+        protected global::System.Web.UI.WebControls.TextBox LPrimerNombre;
         
         /// <summary>
-        /// tb8 control.
+        /// LSegundoNombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb8;
+        protected global::System.Web.UI.WebControls.TextBox LSegundoNombre;
         
         /// <summary>
-        /// tb5 control.
+        /// LPrimerApellido control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb5;
+        protected global::System.Web.UI.WebControls.TextBox LPrimerApellido;
         
         /// <summary>
-        /// tb9 control.
+        /// LSegundoApellido control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb9;
+        protected global::System.Web.UI.WebControls.TextBox LSegundoApellido;
         
         /// <summary>
-        /// Calendar control.
+        /// LTelefonoCelular control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar Calendar;
+        protected global::System.Web.UI.WebControls.TextBox LTelefonoCelular;
         
         /// <summary>
-        /// tb10 control.
+        /// LTelefonoLocal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb10;
+        protected global::System.Web.UI.WebControls.TextBox LTelefonoLocal;
         
         /// <summary>
-        /// tb11 control.
+        /// LNombreContactoEmergencia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb11;
+        protected global::System.Web.UI.WebControls.TextBox LNombreContactoEmergencia;
         
         /// <summary>
-        /// tb12 control.
+        /// LTelefonoContactoEmergencia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb12;
+        protected global::System.Web.UI.WebControls.TextBox LTelefonoContactoEmergencia;
         
         /// <summary>
-        /// cb6 control.
+        /// LCorreo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cb6;
+        protected global::System.Web.UI.WebControls.TextBox LCorreo;
         
         /// <summary>
-        /// dp1 control.
+        /// LCiudad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dp1;
+        protected global::System.Web.UI.WebControls.TextBox LCiudad;
         
         /// <summary>
-        /// dp2 control.
+        /// LDireccion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dp2;
+        protected global::System.Web.UI.WebControls.TextBox LDireccion;
         
         /// <summary>
-        /// cb11 control.
+        /// LUsuario control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cb11;
+        protected global::System.Web.UI.WebControls.TextBox LUsuario;
         
         /// <summary>
-        /// dp3 control.
+        /// LContrasena control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dp3;
+        protected global::System.Web.UI.WebControls.TextBox LContrasena;
         
         /// <summary>
-        /// dp4 control.
+        /// ComboStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dp4;
+        protected global::System.Web.UI.WebControls.DropDownList ComboStatus;
         
         /// <summary>
-        /// cb7 control.
+        /// BRegistrar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cb7;
+        protected global::System.Web.UI.WebControls.Button BRegistrar;
         
         /// <summary>
-        /// dp5 control.
+        /// ScriptManager1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dp5;
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
         
         /// <summary>
-        /// dp6 control.
+        /// cedula control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dp6;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator cedula;
         
         /// <summary>
-        /// cb12 control.
+        /// validarCedula control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cb12;
+        protected global::AjaxControlToolkit.ValidatorCalloutExtender validarCedula;
         
         /// <summary>
-        /// dp7 control.
+        /// primerNombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dp7;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator primerNombre;
         
         /// <summary>
-        /// dp8 control.
+        /// validarPrimerNombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dp8;
+        protected global::AjaxControlToolkit.ValidatorCalloutExtender validarPrimerNombre;
         
         /// <summary>
-        /// cb8 control.
+        /// segundoNombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cb8;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator segundoNombre;
         
         /// <summary>
-        /// dp9 control.
+        /// validarSegundoNombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dp9;
+        protected global::AjaxControlToolkit.ValidatorCalloutExtender validarSegundoNombre;
         
         /// <summary>
-        /// dp10 control.
+        /// primerApellido control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dp10;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator primerApellido;
         
         /// <summary>
-        /// cb13 control.
+        /// validarPrimerApellido control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cb13;
+        protected global::AjaxControlToolkit.ValidatorCalloutExtender validarPrimerApellido;
         
         /// <summary>
-        /// dp11 control.
+        /// segundoApellido control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dp11;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator segundoApellido;
         
         /// <summary>
-        /// dp12 control.
+        /// validarSegundoApellido control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dp12;
+        protected global::AjaxControlToolkit.ValidatorCalloutExtender validarSegundoApellido;
         
         /// <summary>
-        /// cb9 control.
+        /// telefonoCelular control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cb9;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator telefonoCelular;
         
         /// <summary>
-        /// dp13 control.
+        /// validarTelefonoCelular control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dp13;
+        protected global::AjaxControlToolkit.ValidatorCalloutExtender validarTelefonoCelular;
         
         /// <summary>
-        /// dp14 control.
+        /// telefonoLocal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dp14;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator telefonoLocal;
         
         /// <summary>
-        /// cb14 control.
+        /// validarTelefonoLocal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cb14;
+        protected global::AjaxControlToolkit.ValidatorCalloutExtender validarTelefonoLocal;
         
         /// <summary>
-        /// dp15 control.
+        /// nombreContactoEmergencia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dp15;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator nombreContactoEmergencia;
         
         /// <summary>
-        /// dp16 control.
+        /// validarNombreContactoEmergencia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dp16;
+        protected global::AjaxControlToolkit.ValidatorCalloutExtender validarNombreContactoEmergencia;
         
         /// <summary>
-        /// cb10 control.
+        /// telefonoContactoEmergencia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cb10;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator telefonoContactoEmergencia;
         
         /// <summary>
-        /// dp17 control.
+        /// validarTelefonoContactoEmergencia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dp17;
+        protected global::AjaxControlToolkit.ValidatorCalloutExtender validarTelefonoContactoEmergencia;
         
         /// <summary>
-        /// dp18 control.
+        /// correo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dp18;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator correo;
         
         /// <summary>
-        /// cb15 control.
+        /// validarCorreo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cb15;
+        protected global::AjaxControlToolkit.ValidatorCalloutExtender validarCorreo;
         
         /// <summary>
-        /// dp19 control.
+        /// ciudad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dp19;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator ciudad;
         
         /// <summary>
-        /// dp20 control.
+        /// validarCiudad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dp20;
+        protected global::AjaxControlToolkit.ValidatorCalloutExtender validarCiudad;
         
         /// <summary>
-        /// Button1 control.
+        /// direccion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator direccion;
+        
+        /// <summary>
+        /// validarDireccion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.ValidatorCalloutExtender validarDireccion;
+        
+        /// <summary>
+        /// usuario control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator usuario;
+        
+        /// <summary>
+        /// validarUsuario control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.ValidatorCalloutExtender validarUsuario;
+        
+        /// <summary>
+        /// contrasena control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator contrasena;
+        
+        /// <summary>
+        /// validarContrasena control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.ValidatorCalloutExtender validarContrasena;
+        
+        /// <summary>
+        /// _cedula control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.FilteredTextBoxExtender _cedula;
+        
+        /// <summary>
+        /// _telefonoCelular control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.FilteredTextBoxExtender _telefonoCelular;
+        
+        /// <summary>
+        /// _telefonoLocal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.FilteredTextBoxExtender _telefonoLocal;
+        
+        /// <summary>
+        /// _telefonoContactoEmergencia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.FilteredTextBoxExtender _telefonoContactoEmergencia;
     }
 }
