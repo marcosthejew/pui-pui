@@ -16,6 +16,7 @@ namespace PuiPui_FrontOffice.Presentacion.Vista.Home
             Acceso acceso = new Acceso();
             acceso = (Acceso)Session["loginPersona"];
             string a = acceso.Login;
+            Session["loginPersona"] = acceso;
             Label1.Text = a;
         }
 
