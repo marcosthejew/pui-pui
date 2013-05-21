@@ -8,6 +8,7 @@ using System.Web;
 using PuiPui_FrontOffice.AccesoDeDatos.Conexion;
 using PuiPui_FrontOffice.AccesoDeDatos.Conexion.IConexion;
 using PuiPui_FrontOffice.AccesoDeDatos.Excepciones_BD;
+using PuiPui_FrontOffice.Entidades.Rutina;
 
 namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
 {
@@ -52,14 +53,14 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
             return false;
         }
 
-        public List<int> listaIdejercicios(int id_cliente, int id_rutina)
+        public List<Historial_Ejercicio> listaIdejercicios(int id_cliente, int id_rutina)
         {
             string _cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
             SqlConnection _conexion = new SqlConnection();
             SqlCommand _cmd = new SqlCommand();
-            List<int> lista = new List<int>();
+            List<Historial_Ejercicio> lista = new List<Historial_Ejercicio>();
             SqlDataReader _execute;
-            int _id_ejer = 0;
+            Historial_Ejercicio _id_ejer = new Historial_Ejercicio();
             try
             {
 
@@ -74,7 +75,7 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
                 while (_execute.Read())
                 {
 
-                    _id_ejer = Convert.ToInt32(_execute.GetValue(0));
+                    _id_ejer.Id_ejercicio = Convert.ToInt32(_execute.GetValue(0));
                     lista.Add(_id_ejer);
 
                 }
@@ -95,14 +96,14 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
             return lista;
 
         }
-        public List<int> busca_id_rutina(int id_cliente)
+        public List<Historial_Ejercicio> busca_id_rutina(int id_cliente)
         {
             string _cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
             SqlConnection _conexion = new SqlConnection();
             SqlCommand _cmd = new SqlCommand();
-            List<int> lista = new List<int>();
+            List<Historial_Ejercicio> lista = new List<Historial_Ejercicio>();
             SqlDataReader _execute;
-            int _id_ejer = 0;
+            Historial_Ejercicio _id_ruti = new Historial_Ejercicio();
             try
             {
 
@@ -116,8 +117,8 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
                 while (_execute.Read())
                 {
 
-                    _id_ejer = Convert.ToInt32(_execute.GetValue(0));
-                    lista.Add(_id_ejer);
+                    _id_ruti.Id_rutina = Convert.ToInt32(_execute.GetValue(0));
+                    lista.Add(_id_ruti);
 
                 }
 

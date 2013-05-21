@@ -31,6 +31,7 @@ namespace PuiPui_FrontOffice.LogicaDeNegocios.Rutinas
 
         /*Metodo para obtener  una Rutina*/
 
+      
         public List<Rutina> ConsultaRutina(int id_rutina)
         {
             List<Rutina> _rutinas = new List<Rutina>();
@@ -40,7 +41,9 @@ namespace PuiPui_FrontOffice.LogicaDeNegocios.Rutinas
         
         }
 
-             public bool Update_Rutina(Rutina actualizar_rutina)
+        /*Metodo para updatear una Rutina*/
+
+        public bool Update_Rutina(Rutina actualizar_rutina)
                      {
                        bool _updateo = false;
                     SQLServerRutina actualiza = new SQLServerRutina();
@@ -49,7 +52,7 @@ namespace PuiPui_FrontOffice.LogicaDeNegocios.Rutinas
    
                 }
 
-
+        /*Metodo para cargar todos los ejercicios disponibles en la BD */
         public List<PuiPui_BackOffice.Entidades.Ejercicio.Ejercicio> ConsultaTodoEjercicios()
         {
             List<PuiPui_BackOffice.Entidades.Ejercicio.Ejercicio> _listaejercicios = new List<PuiPui_BackOffice.Entidades.Ejercicio.Ejercicio>();
@@ -61,9 +64,10 @@ namespace PuiPui_FrontOffice.LogicaDeNegocios.Rutinas
         
         }
 
-        public List<int> Lista_Ejercicios_Historial(int id_cliente, int id_rutina)
+        /* Metodo para traer las id de los ejercicios por rutina */
+        public List<Historial_Ejercicio> Lista_Ejercicios_Historial(int id_cliente, int id_rutina)
         {
-            List<int> ejercicios = new List<int>();
+            List<Historial_Ejercicio> ejercicios = new List<Historial_Ejercicio>();
             SQLServerHistorialEjercicios _busca_ejercicios = new  SQLServerHistorialEjercicios();
             ejercicios = _busca_ejercicios.listaIdejercicios(id_cliente, id_rutina);
             return ejercicios;
@@ -71,9 +75,10 @@ namespace PuiPui_FrontOffice.LogicaDeNegocios.Rutinas
         
         }
 
-        public List<int> Lista_Rutinas_Historial(int id_cliente)
+        /* Metodo para traer las id de  rutina por el id del cliente */
+        public List<Historial_Ejercicio> Lista_Rutinas_Historial(int id_cliente)
         {
-            List<int> rutinas = new List<int>();
+            List<Historial_Ejercicio> rutinas = new List<Historial_Ejercicio>();
             SQLServerHistorialEjercicios _busca_ejercicios = new SQLServerHistorialEjercicios();
             rutinas = _busca_ejercicios.busca_id_rutina(id_cliente);
             return rutinas;
@@ -81,6 +86,7 @@ namespace PuiPui_FrontOffice.LogicaDeNegocios.Rutinas
 
         }
 
+        /*Metodo para insertar en la tabla Historial Cliente*/
         public bool Inserta_Historial(int id_cliente, int id_rutina, int id_ejercicio)
         {
 
@@ -91,7 +97,8 @@ namespace PuiPui_FrontOffice.LogicaDeNegocios.Rutinas
         
         
         }
-
+        
+        /*Metodo para eliminar rutinas en el Historial de los CLientes */
         public bool Elimina_Historico(int cliente, int rutina)
         {
             bool _elimanada = false;

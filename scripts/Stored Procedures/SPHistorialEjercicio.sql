@@ -12,7 +12,7 @@ as
 BEGIN
 	set nocount on
 		
-	SELECT id_rutina
+	SELECT Distinct id_rutina
 	FROM Historial_Ejercicio
 	where id_cliente = @id_cli	
 END;

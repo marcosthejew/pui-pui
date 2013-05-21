@@ -105,6 +105,7 @@
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerPersona.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerRutina.cs" />
     <Compile Include="Entidades\Cliente\Acceso.cs" />
+    <Compile Include="Entidades\Rutina\Historial_Ejercicio.cs" />
     <Compile Include="Entidades\Rutina\Rutina.cs" />
     <Compile Include="LogicaDeNegocios\Cliente\LogicaPersona.cs" />
     <Compile Include="LogicaDeNegocios\Exepciones\ExcepcionConexion.cs" />
