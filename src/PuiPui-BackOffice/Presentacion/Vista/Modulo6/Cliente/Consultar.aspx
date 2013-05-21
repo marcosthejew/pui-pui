@@ -19,7 +19,7 @@
                     <td>
                         <asp:RadioButton ID="cargoRadioButton" GroupName="Grupo1" runat="server" 
                             oncheckedchanged="cargoRadioButton_CheckedChanged" AutoPostBack="true"/>
-                        Cargo:</td>
+                        Nombre:</td>
                     <td><asp:TextBox ID="NombreTextBox" runat="server" Height="20px" Width="130px"></asp:TextBox>
                     
                     </td>
