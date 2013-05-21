@@ -22,7 +22,7 @@ BEGIN
 
 	
     
-    Insert Salon values(@Ubicacion,@Capacidad,@Status);
+    Insert Salon values(@Ubicacion,@Capacidad,0);
 	
 END
 
