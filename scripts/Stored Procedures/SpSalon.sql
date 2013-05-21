@@ -88,3 +88,80 @@ BEGIN
 END
 
 GO
+
+IF EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'[BusquedaUbicacionSalon]')
+AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [BusquedaUbicacionSalon]
+GO
+CREATE PROCEDURE [dbo].[BusquedaUbicacionSalon]
+@Ubicacion NVARCHAR(50)
+AS
+
+BEGIN
+
+	SET NOCOUNT ON;
+	  
+    Select id_salon,ubicacion,capacidad,estatus
+    from Salon
+    where ubicacion like @Ubicacion;
+	
+END
+GO
+
+IF EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'[BusquedaStatusSalon]')
+AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [BusquedaStatusSalon]
+GO
+CREATE PROCEDURE [dbo].[BusquedaStatusSalon]
+@Status int
+AS
+
+BEGIN
+
+	SET NOCOUNT ON;
+	  
+    Select id_salon, ubicacion,capacidad,estatus
+    from Salon
+    where estatus=@Status;
+	
+END
+GO
+
+IF EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'[BusquedaCapacidadMayorSalon]')
+AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [BusquedaCapacidadMayorSalon]
+GO
+CREATE PROCEDURE [dbo].[BusquedaCapacidadMayorSalon]
+@Capacidad int
+AS
+
+BEGIN
+
+	SET NOCOUNT ON;
+	  
+    Select id_salon, ubicacion,capacidad,estatus
+    from Salon
+    where capacidad >= @Capacidad;
+	
+END
+GO
+
+
+IF EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'[BusquedaCapacidadMenorSalon]')
+AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [BusquedaCapacidadMenorSalon]
+GO
+CREATE PROCEDURE [dbo].[BusquedaCapacidadMenorSalon]
+@Capacidad int
+AS
+
+BEGIN
+
+	SET NOCOUNT ON;
+	  
+    Select id_salon, ubicacion,capacidad,estatus
+    from Salon
+    where capacidad <= @Capacidad;
+	
+END
+GO

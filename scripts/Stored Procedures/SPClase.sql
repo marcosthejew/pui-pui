@@ -86,3 +86,42 @@ BEGIN
     where id_clase=@idclass;
 	
 END
+Go
+
+IF EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'[BusquedaNombreClase]')
+AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [BusquedaNombreClase]
+GO
+CREATE PROCEDURE [dbo].[BusquedaNombreClase]
+@Nombre NVARCHAR(50)
+AS
+
+BEGIN
+
+	SET NOCOUNT ON;
+	  
+    Select id_clase, nombre,descripcion,estatus
+    from clase
+    where nombre like @Nombre;
+	
+END
+GO
+
+IF EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'[BusquedaStatusClase]')
+AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [BusquedaStatusClase]
+GO
+CREATE PROCEDURE [dbo].[BusquedaStatusClase]
+@Status int
+AS
+
+BEGIN
+
+	SET NOCOUNT ON;
+	  
+    Select id_clase, nombre,descripcion,estatus
+    from clase
+    where estatus=@Status;
+	
+END
+GO
