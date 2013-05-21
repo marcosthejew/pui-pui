@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data;
 using PuiPui_BackOffice.Entidades.Clase;
 using PuiPui_BackOffice.AccesoDeDatos.SQLServer;
 namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaClase
@@ -13,7 +14,7 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaClase
 
         private Clase _clase;
         private SQLServerClase _accesoClase;
-
+        private List<Clase> _listaClase;
         #endregion
 
         #region Constructor
@@ -29,18 +30,26 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaClase
 
         #region Metodos
 
-        private List<Clase> ConsultarClase()
+        public DataTable ConsultarClase()
         {
-
-            List<Clase> listaClase;
             //conectar a la bd
-            listaClase = _accesoClase.ConsultarClases();
+            _listaClase = _accesoClase.ConsultarClases();
+                         
+            DataTable miTabla = new DataTable();
+            miTabla.Columns.Add("Nombre", typeof(string));
+            miTabla.Columns.Add("Estatus", typeof(string));
 
-            return listaClase;
+            foreach (Clase clase in _listaClase)
+            {
 
+                miTabla.Rows.Add(clase.IdClase, clase.Nombre, clase.Status);
+            }
+
+            return miTabla;
         }
 
-        private Boolean ModificarClase(Clase clase)
+            
+        public Boolean ModificarClase(Clase clase)
         {
 
             Boolean retorno = false;
@@ -51,7 +60,7 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaClase
 
         }
 
-        private Boolean AgregarClase(String nombre, String descripcion)
+        public Boolean AgregarClase(String nombre, String descripcion)
         {
             Boolean resultado = false;
             _clase.Nombre = nombre;
@@ -64,6 +73,7 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaClase
 
         }
 
+       
 
         #endregion
 
