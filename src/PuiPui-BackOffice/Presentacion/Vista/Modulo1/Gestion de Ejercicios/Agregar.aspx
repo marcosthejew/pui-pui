@@ -11,7 +11,7 @@ AutoEventWireup="true" CodeBehind="Agregar.aspx.cs" Inherits="PuiPui_BackOffice.
     </h2>
     <br />
 
-    <asp:Label ID="lExito" runat="server" Text="El ejercicio se ha agregado correctamente." Visible="False"> </asp:Label>
+    <asp:Label ID="lExito" runat="server" Text="El musculo se ha agregado correctamente." Visible="False"></asp:Label>
 
     <br />
 

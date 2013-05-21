@@ -11,30 +11,34 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.Ejercicio
     {
         public bool AgregarMusculo(string nombre)
         {
-
             SQLServerMusculo objDataBase = new SQLServerMusculo();
             if (objDataBase.ExisteMusculo(nombre))
-            {
                 return true;
-            }
             else
-            {
-                return objDataBase.insertarMusculo(nombre);
-            }
-           
+                return objDataBase.insertarMusculo(nombre);       
         }
-
 
         public List<Entidades.Ejercicio.Musculo> ConsultarTodosMusculos()
         {
             SQLServerMusculo objDataBase = new SQLServerMusculo();
             if (objDataBase.ConsultarMusculos()!= null)
-            {
                 return objDataBase.ConsultarMusculos();
-            }
+
             return null;
         }
 
+        public bool EliminarMusculo(string nombre)
+        {
+            SQLServerMusculo objDataBase = new SQLServerMusculo();
+            int idMusculo = objDataBase.BuscarIdMusculo(nombre);
+            if (idMusculo > 0)
+                if (!objDataBase.ExisteEjercicioConMusculo(idMusculo))
+                {
+                    objDataBase.EliminarMusculo(idMusculo);
+                    return true;
+                }
+            return false;
+        }
 
     }
 }

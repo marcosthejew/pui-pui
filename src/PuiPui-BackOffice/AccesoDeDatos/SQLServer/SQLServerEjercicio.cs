@@ -17,8 +17,6 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
     {
         IConexionSqlServer db = new ConexionSqlServer();
 
-
-
         public bool ExisteEjercicio(string nombreEjercicio)
         {
             string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
@@ -55,9 +53,6 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
             }
             return false;
         }
-
-
-
 
         public bool insertarEjercicio(string nombreEjercicio, String descripcion, int musculo)
         {
@@ -97,9 +92,6 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
             }
             return false;
         }
-
-
-
 
         public List<Ejercicio> ConsultarEjercicios()
         {
@@ -155,85 +147,152 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
             return null;
         }
 
-
-
         public Ejercicio ConsultarEjercicio(string nombre)
         {
 
             string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
-
             SqlConnection conexion = new SqlConnection();
-
             SqlCommand cmd = new SqlCommand();
-
             SqlDataReader dr;
-
-
 
             try
             {
-
                 conexion = new SqlConnection(cadenaConexion);
-
                 conexion.Open();
-
                 cmd = new SqlCommand("[dbo].[consultarEjercicio]", conexion);
-
                 cmd.CommandType = CommandType.StoredProcedure;
-
                 cmd.Parameters.AddWithValue("@nombre", nombre);
-
                 dr = cmd.ExecuteReader();
-
                 Ejercicio ejercicio = new Ejercicio();
 
-
-
                 //Se recorre cada row
-
                 if (dr.Read())
                 {
-
                     ejercicio.Id = Convert.ToInt32(dr.GetValue(0));
-
                     ejercicio.Nombre = dr.GetValue(1).ToString();
-
                     ejercicio.Descripcion = dr.GetValue(2).ToString();
-
                     Musculo musculo = new Musculo();
-
                     musculo.IdMusculo = Convert.ToInt32(dr.GetValue(3));
-
                     musculo.NombreMusculo = dr.GetValue(4).ToString();
-
                     ejercicio.Musculo = musculo;
-
                 }
 
                 db.CerrarConexion();
-
                 return ejercicio;
-
             }
 
             catch (SqlException error)
             {
-
                 //En caso de que se viole alguna restriccion sobre la BD
-
                 throw (new ExcepcionConexion(("Error: " + error.Message), error));
-
             }
 
             finally
             {
-
                 db.CerrarConexion();
-
             }
 
+        }
 
+        public bool ExisteRutinaConEjercicio(string nombreEjercicio)
+        {
+            string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader dr;
+            bool existe = false;
+            try
+            {
+                conexion = new SqlConnection(cadenaConexion);
+                conexion.Open();
+                cmd = new SqlCommand("[dbo].[existeRutinaConEjercicio]", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@nombreEjercicio", nombreEjercicio);
+                dr = cmd.ExecuteReader();
+
+                //Se recorre cada row
+                if (dr.Read())
+                {
+                        existe = true;
+                }
+
+                db.CerrarConexion();
+            }
+            catch (SqlException error)
+            {
+                //En caso de que se viole alguna restriccion sobre la BD
+                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+            }
+            finally
+            {
+                db.CerrarConexion();
+            }
+            return existe;
+        }
+
+        public void EliminarEjercicio(string nombreEjercicio)
+        {
+            string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader dr;
+
+            try
+            {
+                conexion = new SqlConnection(cadenaConexion);
+                conexion.Open();
+                cmd = new SqlCommand("[dbo].[eliminarEjercicio]", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@nombreEjercicio", nombreEjercicio);
+                dr = cmd.ExecuteReader();
+
+                db.CerrarConexion();
+            }
+            catch (SqlException error)
+            {
+                //En caso de que se viole alguna restriccion sobre la BD
+                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+            }
+            finally
+            {
+                db.CerrarConexion();
+            }
 
         }
+
+        public void ActualizarEjercicio(Ejercicio ejercicio, int idMusculo)
+        {
+            string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader dr;
+
+            try
+            {
+                conexion = new SqlConnection(cadenaConexion);
+                conexion.Open();
+                cmd = new SqlCommand("[dbo].[actualizarEjercicio]", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idEjercicio", ejercicio.Id);
+                cmd.Parameters.AddWithValue("@nombreEjercicio", ejercicio.Nombre);
+                cmd.Parameters.AddWithValue("@descripcionEjercicio", ejercicio.Descripcion);
+                cmd.Parameters.AddWithValue("@idMusculo", idMusculo);
+
+                dr = cmd.ExecuteReader();
+                db.CerrarConexion();
+            }
+            catch (SqlException error)
+            {
+                //En caso de que se viole alguna restriccion sobre la BD
+                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+            }
+            finally
+            {
+                db.CerrarConexion();
+            }
+
+        }
+    
+    
     }
 }
