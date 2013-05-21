@@ -34,7 +34,7 @@ CREATE procedure [dbo].[insertar_Rutina]
 as
 
 BEGIN
-	INSERT INTO Rutina VALUES (@descripcion,@duracion,@repeticiones);	
+	INSERT INTO Rutina VALUES (@descripcion,Convert(Time(7),@duracion,108),@repeticiones);	
 END;
 
 GO
