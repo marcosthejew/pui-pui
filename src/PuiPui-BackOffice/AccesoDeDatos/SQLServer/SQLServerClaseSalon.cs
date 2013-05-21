@@ -9,27 +9,40 @@ using PuiPui_BackOffice.AccesoDeDatos.Conexion;
 using PuiPui_BackOffice.AccesoDeDatos.Conexion.IConexion;
 using PuiPui_BackOffice.AccesoDeDatos.Excepciones_BD;
 using PuiPui_BackOffice.Entidades.Salon;
+using PuiPui_BackOffice.Entidades.Clase;
+using PuiPui_BackOffice.Entidades.Instructor;
+
+
 
 namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 {
-    public class SQLServerSalon
+    public class SQLServerClaseSalon
     {
-              #region Atributos
+
+        #region Atributos
          
         private List<Salon> _listaSalones ;
         private Salon _objetoSalon;
-        private IConexionSqlServer _db ;
+        private Instructor _objetoInstructor;
+        private List<Clase> _listaClases;
+        private Clase _objetoClase;
+        private ClaseSalon _objetoClaseSalon;
+        private IConexionSqlServer _db;
         private string _cadenaConexion;
         private SqlConnection _conexion;
         private SqlCommand _cmd;
         private SqlDataReader _dr;
         private SqlParameter _param;
+        private List<ClaseSalon> _listaClaseSalon;
         #endregion  
 
+
         #region Constructor
-        public SQLServerSalon()
+        public SQLServerClaseSalon()
         {
+            _listaClaseSalon= new List<ClaseSalon>();
             _listaSalones = new List<Salon>();
+            _listaClases = new List<Clase>();
             _db = new ConexionSqlServer();
             _cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
             _conexion = new SqlConnection();
@@ -37,16 +50,16 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
         }
         #endregion
 
-        #region Metodos 
+        #region Metodos
 
-        public List<Salon> ConsultarSalones()
+        public List<ClaseSalon> ListarSalonesClase()
         {
 
             try
             {
                 _conexion = new SqlConnection(_cadenaConexion);
                 _conexion.Open();
-                _cmd = new SqlCommand("[dbo].[ListarSalones]", _conexion);
+                _cmd = new SqlCommand("[dbo].[ListarSalonesClase]", _conexion);
                 _cmd.CommandType = CommandType.StoredProcedure;
                 _dr = _cmd.ExecuteReader();
 
@@ -55,13 +68,16 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 {
 
                     _objetoSalon = new Salon();
+                    _objetoClase = new Clase();
+                    _objetoInstructor = new Instructor();
+                    _objetoClaseSalon = new ClaseSalon();
 
-                    _objetoSalon.IdSalon = Convert.ToInt32(_dr.GetValue(0));
-                    _objetoSalon.Ubicacion = _dr.GetValue(1).ToString();
-                    _objetoSalon.Capacidad = Convert.ToInt32(_dr.GetValue(2));
-                    _objetoSalon.Status = Convert.ToInt32(_dr.GetValue(3));
+                    _objetoClaseSalon.Id = Convert.ToInt32(_dr.GetValue(0));
+                    _objetoClase.Nombre = _dr.GetValue(1).ToString();
+                    _objetoSalon.Ubicacion = _dr.GetValue(2).ToString();
+                    _objetoInstructor.NombrePersona1 = _dr.GetValue(3).ToString();
 
-                    _listaSalones.Add(_objetoSalon);
+                    _listaClaseSalon.Add(_objetoClaseSalon);
                 }
 
                 _db.CerrarConexion();
@@ -76,7 +92,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
             {
                 _db.CerrarConexion();
             }
-            return _listaSalones;
+            return _listaClaseSalon;
         }
 
         public Boolean AgregarSalon(Salon salon)
@@ -88,7 +104,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 _conexion.Open();
                 _cmd = new SqlCommand("[dbo].[AgregarSalon]", _conexion);
                 _cmd.CommandType = CommandType.StoredProcedure;
-                
+
                 _param = new SqlParameter("@Ubicacion", salon.Ubicacion);
                 _cmd.Parameters.Add(_param);
 
@@ -129,7 +145,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 _conexion.Open();
                 _cmd = new SqlCommand("[dbo].[ModificarSalon]", _conexion);
                 _cmd.CommandType = CommandType.StoredProcedure;
-               
+
                 _param = new SqlParameter("@Id_salon", salon.IdSalon);
                 _cmd.Parameters.Add(_param);
 
@@ -177,7 +193,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 _cmd.Parameters.Add(_param);
 
                 _dr = _cmd.ExecuteReader();
-                
+
                 while (_dr.Read())
                 {
                     _objetoSalon = new Salon();
