@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="../../../MasterPage/Site.master"
- AutoEventWireup="true" CodeBehind="Agregar.aspx.cs" Inherits="PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores.Agregar" %>
+ AutoEventWireup="true" CodeBehind="Agregar.aspx.cs" Inherits="PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores.Agregar" MaintainScrollPositionOnPostback="true"%>
 
 <asp:Content ID="Content3" runat="server" ContentPlaceHolderID="MainContent">
     <h2>
@@ -137,7 +137,7 @@
           </tr>
           <tr>
                 <td class="auto-style2">
-                    &nbsp;&nbsp;<asp:CheckBox ID="CheckBox6" runat="server" AutoPostBack="True" OnCheckedChanged="CheckBox6_CheckedChanged" Text="Turno A" />
+                    &nbsp;&nbsp;<asp:CheckBox ID="cb6" runat="server" AutoPostBack="True" OnCheckedChanged="CheckBox6_CheckedChanged" Text="Turno A" />
                 </td>
                 <td class="auto-style6">
                     <asp:DropDownList ID="dp1" runat="server" Height="17px" Width="74px" >
@@ -149,7 +149,7 @@
                     </asp:DropDownList>
                 </td>
                  <td class="auto-style7">
-                   &nbsp;<asp:CheckBox ID="CheckBox7" runat="server" AutoPostBack="True" OnCheckedChanged="CheckBox7_CheckedChanged" Text="Turno B" />
+                   &nbsp;<asp:CheckBox ID="cb11" runat="server" AutoPostBack="True" OnCheckedChanged="CheckBox7_CheckedChanged" Text="Turno B" />
                  </td>
                 <td class="style1">
                     <asp:DropDownList ID="dp3" runat="server" Height="17px" Width="74px" AutoPostBack="True" >
@@ -167,7 +167,7 @@
                 </tr>
                  <tr>
                 <td class="auto-style9">
-                    &nbsp;&nbsp;<asp:CheckBox ID="CheckBox2" runat="server" AutoPostBack="True" OnCheckedChanged="CheckBox2_CheckedChanged" Text="Turno A" />
+                    &nbsp;&nbsp;<asp:CheckBox ID="cb7" runat="server" AutoPostBack="True" OnCheckedChanged="CheckBox2_CheckedChanged" Text="Turno A" />
                 </td>
                 <td class="auto-style10">
                     <asp:DropDownList ID="dp5" runat="server" Height="17px" Width="74px" >
@@ -179,7 +179,7 @@
                     </asp:DropDownList>
                 </td>
                 <td class="auto-style11">
-                    <asp:CheckBox ID="CheckBox8" runat="server" AutoPostBack="True" OnCheckedChanged="CheckBox8_CheckedChanged" Text="Turno B" />
+                    <asp:CheckBox ID="cb12" runat="server" AutoPostBack="True" OnCheckedChanged="CheckBox8_CheckedChanged" Text="Turno B" />
                  </td>
                 <td class="auto-style12">
                     <asp:DropDownList ID="dp7" runat="server" Height="17px" Width="74px" AutoPostBack="True" OnSelectedIndexChanged="dp7_SelectedIndexChanged" >
@@ -197,7 +197,7 @@
             </tr>
             <tr>
                 <td class="auto-style2">
-                    &nbsp;&nbsp;<asp:CheckBox ID="CheckBox3" runat="server" AutoPostBack="True" OnCheckedChanged="CheckBox3_CheckedChanged" Text="Turno A" />
+                    &nbsp;&nbsp;<asp:CheckBox ID="cb8" runat="server" AutoPostBack="True" OnCheckedChanged="CheckBox3_CheckedChanged" Text="Turno A" />
                 </td>
                 <td class="auto-style6">
                     <asp:DropDownList ID="dp9" runat="server" Height="17px" Width="74px" >
@@ -209,7 +209,7 @@
                     </asp:DropDownList>
                 </td>
                 <td class="auto-style7">
-                    <asp:CheckBox ID="CheckBox9" runat="server" AutoPostBack="True" OnCheckedChanged="CheckBox9_CheckedChanged" Text="Turno B" />
+                    <asp:CheckBox ID="cb13" runat="server" AutoPostBack="True" OnCheckedChanged="CheckBox9_CheckedChanged" Text="Turno B" />
                  </td>
                 <td class="style1">
                     <asp:DropDownList ID="dp11" runat="server" Height="17px" Width="74px" AutoPostBack="True" >
@@ -227,7 +227,7 @@
                 </tr>
                  <tr>
                 <td class="auto-style2">
-                    &nbsp;&nbsp;<asp:CheckBox ID="CheckBox4" runat="server" AutoPostBack="True" OnCheckedChanged="CheckBox4_CheckedChanged" Text="Turno A" />
+                    &nbsp;&nbsp;<asp:CheckBox ID="cb9" runat="server" AutoPostBack="True" OnCheckedChanged="CheckBox4_CheckedChanged" Text="Turno A" />
                 </td>
                 <td class="auto-style6">
                     <asp:DropDownList ID="dp13" runat="server" Height="17px" Width="74px" >
@@ -239,7 +239,7 @@
                     </asp:DropDownList>
                 </td>
                 <td class="auto-style7">
-                    <asp:CheckBox ID="CheckBox10" runat="server" AutoPostBack="True" OnCheckedChanged="CheckBox10_CheckedChanged" Text="Turno B" />
+                    <asp:CheckBox ID="cb14" runat="server" AutoPostBack="True" OnCheckedChanged="CheckBox10_CheckedChanged" Text="Turno B" />
                  </td>
                 <td class="style1">
                     <asp:DropDownList ID="dp15" runat="server" Height="17px" Width="74px" AutoPostBack="True" >
@@ -257,7 +257,7 @@
             </tr>
                  <tr>
                 <td class="auto-style2">
-                    &nbsp;&nbsp;<asp:CheckBox ID="CheckBox5" runat="server" AutoPostBack="True" OnCheckedChanged="CheckBox5_CheckedChanged" Text="Turno A" />
+                    &nbsp;&nbsp;<asp:CheckBox ID="cb10" runat="server" AutoPostBack="True" OnCheckedChanged="CheckBox5_CheckedChanged" Text="Turno A" />
                     &nbsp;</td>
                 <td class="auto-style6">
                     <asp:DropDownList ID="dp17" runat="server" Height="17px" Width="74px" >
@@ -269,7 +269,7 @@
                     </asp:DropDownList>
                 </td>
                 <td class="auto-style7">
-                    <asp:CheckBox ID="CheckBox11" runat="server" AutoPostBack="True" OnCheckedChanged="CheckBox11_CheckedChanged" Text="Turno B" />
+                    <asp:CheckBox ID="cb15" runat="server" AutoPostBack="True" OnCheckedChanged="CheckBox11_CheckedChanged" Text="Turno B" />
                  </td>
                 <td class="style1">
                     <asp:DropDownList ID="dp19" runat="server" Height="17px" Width="74px" OnSelectedIndexChanged="DropDownList19_SelectedIndexChanged" AutoPostBack="True" >

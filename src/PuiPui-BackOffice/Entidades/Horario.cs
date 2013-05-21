@@ -13,9 +13,26 @@ namespace PuiPui_BackOffice.Entidades
 
         public Horario()
         {
-            //
-            // TODO: Agregar aquí la lógica del constructor
-            //
         }
+
+        public String dia
+        {
+            get { return _dia; }
+            set { _dia = value; }
+
+        }
+
+        public DateTime horaini
+        {
+            get { return _horaini; }
+            set { _horaini = value; }
+        }
+
+        public DateTime horafin
+        {
+            get { return _horafin; }
+            set { _horafin = value; }
+        }
+
     }
 }

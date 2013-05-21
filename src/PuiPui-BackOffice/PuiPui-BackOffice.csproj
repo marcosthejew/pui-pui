@@ -139,6 +139,7 @@
     <Compile Include="AccesoDeDatos\Excepciones_BD\ExcepcionConexion.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerClase.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerEjercicio.cs" />
+    <Compile Include="AccesoDeDatos\SQLServer\SQLServerHorario.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerInstructor.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerMusculo.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerPersona.cs" />
@@ -173,6 +174,7 @@
     </Compile>
     <Compile Include="Entidades\Cliente\Acceso.cs" />
     <Compile Include="Entidades\Ejercicio\Musculo.cs" />
+    <Compile Include="LogicaDeNegocios\Instructor\LogicaHorario.cs" />
     <Compile Include="LogicaDeNegocios\LogicaClase\LogicaClase.cs" />
     <Compile Include="LogicaDeNegocios\Cliente\LogicaPersona.cs" />
     <Compile Include="LogicaDeNegocios\Ejercicio\LogicaEjercicio.cs" />
