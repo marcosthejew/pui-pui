@@ -39,7 +39,16 @@ namespace PuiPui_FrontOffice.LogicaDeNegocios.Rutinas
             return _rutinas;
         
         }
-     
+
+             public bool Update_Rutina(Rutina actualizar_rutina)
+                     {
+                       bool _updateo = false;
+                    SQLServerRutina actualiza = new SQLServerRutina();
+                    _updateo = actualiza.BDUpadteRutina(actualizar_rutina);
+                    return _updateo= true;
+   
+                }
+
 
         public List<PuiPui_BackOffice.Entidades.Ejercicio.Ejercicio> ConsultaTodoEjercicios()
         {
@@ -51,6 +60,51 @@ namespace PuiPui_FrontOffice.LogicaDeNegocios.Rutinas
         
         
         }
+
+        public List<int> Lista_Ejercicios_Historial(int id_cliente, int id_rutina)
+        {
+            List<int> ejercicios = new List<int>();
+            SQLServerHistorialEjercicios _busca_ejercicios = new  SQLServerHistorialEjercicios();
+            ejercicios = _busca_ejercicios.listaIdejercicios(id_cliente, id_rutina);
+            return ejercicios;
+
+        
+        }
+
+        public List<int> Lista_Rutinas_Historial(int id_cliente)
+        {
+            List<int> rutinas = new List<int>();
+            SQLServerHistorialEjercicios _busca_ejercicios = new SQLServerHistorialEjercicios();
+            rutinas = _busca_ejercicios.busca_id_rutina(id_cliente);
+            return rutinas;
+
+
+        }
+
+        public bool Inserta_Historial(int id_cliente, int id_rutina, int id_ejercicio)
+        {
+
+            SQLServerHistorialEjercicios inserta_histo = new SQLServerHistorialEjercicios();
+            bool _inserta = false;
+            _inserta = inserta_histo.BDInsertarHistorial(id_cliente, id_rutina, id_ejercicio);
+            return _inserta;
+        
+        
+        }
+
+        public bool Elimina_Historico(int cliente, int rutina)
+        {
+            bool _elimanada = false;
+            SQLServerHistorialEjercicios _historial_eliminar = new SQLServerHistorialEjercicios();
+            _elimanada = _historial_eliminar.BDEliminaHistorial(cliente, rutina);
+            return _elimanada;
+         
+        }
+
+
+        
+
+
         public Rutina Logirutina
         {
             get { return logirutina; }

@@ -17,37 +17,39 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
 
         public List<Rutina> BDConsultaRutinas(int id_rutina)
         {
+
+
             string _cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
             SqlConnection _conexion = new SqlConnection();
             SqlCommand _cmd = new SqlCommand();
             SqlDataReader _dr;
             Rutina _ruti = new Rutina();
             List<Rutina> _listarutina = new List<Rutina>();
-
+            DateTime _miTiempo;
+            string tiempo = "";
             try
             {
                 _conexion = new SqlConnection(_cadenaConexion);
                 _conexion.Open();
+                _cmd = new SqlCommand("[dbo].[buscar_rutina]", _conexion);
+                _cmd.CommandType = CommandType.StoredProcedure;
+                _cmd.Parameters.AddWithValue("@id_ruti", id_rutina);
+                _dr = _cmd.ExecuteReader();
 
-                string listarut = "Select * from Rutina where id_rutina=" + id_rutina + "";
-                SqlDataAdapter _querylista = new SqlDataAdapter(listarut, _conexion);
-                DataSet tabla = new DataSet();
-                _querylista.Fill(tabla, "Rutina");
-                if (tabla.Tables[0].Rows.Count == 1)
+                while (_dr.Read())
                 {
-                    Rutina _lista = new Rutina();
-                    for (int i = 0; i < tabla.Tables[0].Rows.Count; i++)
-                    {
-                        _lista.Descripcion = tabla.Tables[0].Rows[i]["descripcion"].ToString();
-                        _lista.Repeteciones = int.Parse(tabla.Tables[0].Rows[i]["repeticiones"].ToString());
-                        _lista.Tiempo = DateTime.Parse(tabla.Tables[0].Rows[i]["duracion"].ToString());
-                        _lista.Id_rutina = int.Parse(tabla.Tables[0].Rows[i]["id_rutina"].ToString());
-                        _listarutina.Add(_lista);
-
-                    }
-
-                    _conexion.Close();
+                    _ruti.Descripcion =_dr.GetValue(0).ToString();
+                    tiempo = _dr.GetValue(1).ToString();
+                    _miTiempo = new DateTime();
+                    _miTiempo = DateTime.ParseExact(tiempo, "HH:mm",null);
+                    _ruti.Tiempo = _miTiempo;
+                    _ruti.Repeteciones = Convert.ToInt32(_dr.GetValue(2));
+                    _listarutina.Add(_ruti);
+                
                 }
+                db.CerrarConexion();
+                if (_listarutina != null)
+                    return _listarutina;
             }
             catch (SqlException e)
             {
@@ -67,40 +69,61 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
         {
             string _cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
             SqlConnection _conexion = new SqlConnection();
-            SqlCommand _cmd = new SqlCommand();
+            SqlCommand _insertar = new SqlCommand();
+            SqlDataReader _execute;
             _conexion = new SqlConnection(_cadenaConexion);
-
+            try
+            {
             _conexion.Open();
-            string _inserutina = "Insert into Rutina values(@descripcion, @duracion,  @repeticiones)";
-            SqlCommand _insertar = new SqlCommand(_inserutina, _conexion);
+
+             _insertar = new SqlCommand("[dbo].[insertar_Rutina]", _conexion);
+             _insertar.CommandType = CommandType.StoredProcedure;
             _insertar.Parameters.Add("@descripcion", SqlDbType.NChar, 100).Value = insertaRutina.Descripcion;
             _insertar.Parameters.Add("@duracion", SqlDbType.Time, 7).Value = insertaRutina.Tiempo;
             _insertar.Parameters.Add("@duracion", SqlDbType.Int).Value = insertaRutina.Repeteciones;
-            _insertar.ExecuteNonQuery();
+            _execute=_insertar.ExecuteReader();
+                 if (_execute.Read())
+                {
+                    db.CerrarConexion();
+                    return true;
+                }
+                
+            }
+            catch (SqlException error)
+            {
 
-            _conexion.Close();
-            return true;
+                throw (new ExcepcionConexion(("Error: " + error.Message), error));
 
-
-
+            }
+            finally
+            {
+                db.CerrarConexion();
+            }
+            return false;
         }
 
-        public void BDUpadteRutina(Rutina updateRutina)
+
+        
+
+
+        public bool BDUpadteRutina(Rutina updateRutina)
         {
+            bool _updateo = false;
             string _cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
             SqlConnection _conexion = new SqlConnection();
+            SqlCommand _updatear = new SqlCommand();
+            SqlDataReader _execute;
             _conexion = new SqlConnection(_cadenaConexion);
             _conexion.Open();
-            string sqlModificaRutina = "UPDATE Rutina ";
-            sqlModificaRutina += "SET Descripcion ='" + updateRutina.Descripcion + "'";
-            sqlModificaRutina += ",Duracion ='" + updateRutina.Tiempo+ "'";
-            sqlModificaRutina += ",repeticiones ='" + updateRutina.Repeteciones + "'";
-            sqlModificaRutina += " WHERE id_rutina =" + updateRutina.Id_rutina + "";
-            SqlCommand companiaupdate = new SqlCommand(sqlModificaRutina, _conexion);
-            companiaupdate.ExecuteNonQuery();
+            _updatear = new SqlCommand("[dbo].[update_Rutina]", _conexion);
+            _updatear.CommandType = CommandType.StoredProcedure;
+            _updatear.Parameters.AddWithValue("@id_ruti", updateRutina.Id_rutina);
+            _updatear.Parameters.AddWithValue("@descripcion", updateRutina.Descripcion);
+            _updatear.Parameters.AddWithValue("@duracion", updateRutina.Tiempo);
+           _updatear.Parameters.AddWithValue("@repeticiones", updateRutina.Repeteciones);
+           _execute = _updatear.ExecuteReader();
             _conexion.Close();
-
-
+             return _updateo =true;
         }
 
 
