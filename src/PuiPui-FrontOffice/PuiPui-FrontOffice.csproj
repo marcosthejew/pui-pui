@@ -43,6 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.1.51116.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\PuiPui-BackOffice\bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -88,6 +92,8 @@
     <Content Include="Presentacion\Vista\Modulo4\ReservarInstructor\Consultar.aspx" />
     <Content Include="Presentacion\Vista\Modulo4\ReservarInstructor\Eliminar.aspx" />
     <Content Include="Presentacion\Vista\Modulo4\ReservarInstructor\Modificar.aspx" />
+    <Content Include="Presentacion\Vista\Modulo6\Cliente\Consultar.aspx" />
+    <Content Include="Presentacion\Vista\Modulo6\Cliente\Modificar.aspx" />
     <Content Include="Presentacion\Vista\Modulo6\Login.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -105,6 +111,7 @@
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerPersona.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerRutina.cs" />
     <Compile Include="Entidades\Cliente\Acceso.cs" />
+    <Compile Include="Entidades\Rutina\Historial_Ejercicio.cs" />
     <Compile Include="Entidades\Rutina\Rutina.cs" />
     <Compile Include="LogicaDeNegocios\Cliente\LogicaPersona.cs" />
     <Compile Include="LogicaDeNegocios\Exepciones\ExcepcionConexion.cs" />
@@ -304,6 +311,20 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentacion\Vista\Modulo4\ReservarInstructor\Modificar.aspx.designer.cs">
+      <DependentUpon>Modificar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Vista\Modulo6\Cliente\Consultar.aspx.cs">
+      <DependentUpon>Consultar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Vista\Modulo6\Cliente\Consultar.aspx.designer.cs">
+      <DependentUpon>Consultar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Vista\Modulo6\Cliente\Modificar.aspx.cs">
+      <DependentUpon>Modificar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Vista\Modulo6\Cliente\Modificar.aspx.designer.cs">
       <DependentUpon>Modificar.aspx</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Vista\Modulo6\Login.aspx.cs">

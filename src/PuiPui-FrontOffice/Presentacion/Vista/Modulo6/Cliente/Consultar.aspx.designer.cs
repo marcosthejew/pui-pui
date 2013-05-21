@@ -7,173 +7,207 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
-{
-
-
-    public partial class Consultar
-    {
-
+namespace PuiPui_FrontOffice.Presentacion.Vista.Modulo6.Cliente {
+    
+    
+    public partial class Consultar {
+        
         /// <summary>
-        /// lExito control.
+        /// falla control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lExito;
-
+        protected global::System.Web.UI.WebControls.Label falla;
+        
         /// <summary>
-        /// ddlInstructores control.
+        /// Exito control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlInstructores;
-
+        protected global::System.Web.UI.WebControls.Label Exito;
+        
         /// <summary>
-        /// lbCedula control.
+        /// LIdentificador control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbCedula;
-
+        protected global::System.Web.UI.WebControls.TextBox LIdentificador;
+        
         /// <summary>
-        /// lbGenero control.
+        /// LFechaIngreso control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbGenero;
-
+        protected global::System.Web.UI.WebControls.TextBox LFechaIngreso;
+        
         /// <summary>
-        /// lbNombre1 control.
+        /// LCedula control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbNombre1;
-
+        protected global::System.Web.UI.WebControls.TextBox LCedula;
+        
         /// <summary>
-        /// lbNombre2 control.
+        /// ComboTipo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbNombre2;
-
+        protected global::System.Web.UI.WebControls.DropDownList ComboTipo;
+        
         /// <summary>
-        /// lbApellido1 control.
+        /// LFechaNacimiento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbApellido1;
-
+        protected global::System.Web.UI.WebControls.Calendar LFechaNacimiento;
+        
         /// <summary>
-        /// lbApellido2 control.
+        /// ComboGenero control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbApellido2;
-
+        protected global::System.Web.UI.WebControls.DropDownList ComboGenero;
+        
         /// <summary>
-        /// lbTlfLocal control.
+        /// LPrimerNombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbTlfLocal;
-
+        protected global::System.Web.UI.WebControls.TextBox LPrimerNombre;
+        
         /// <summary>
-        /// lbTlfCel control.
+        /// LSegundoNombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbTlfCel;
-
+        protected global::System.Web.UI.WebControls.TextBox LSegundoNombre;
+        
         /// <summary>
-        /// lbCiudad control.
+        /// LPrimerApellido control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbCiudad;
-
+        protected global::System.Web.UI.WebControls.TextBox LPrimerApellido;
+        
         /// <summary>
-        /// lbDireccion control.
+        /// LSegundoApellido control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbDireccion;
-
+        protected global::System.Web.UI.WebControls.TextBox LSegundoApellido;
+        
         /// <summary>
-        /// lbFechaNac control.
+        /// LTelefonoCelular control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbFechaNac;
-
+        protected global::System.Web.UI.WebControls.TextBox LTelefonoCelular;
+        
         /// <summary>
-        /// lbMail control.
+        /// LTelefonoLocal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbMail;
-
+        protected global::System.Web.UI.WebControls.TextBox LTelefonoLocal;
+        
         /// <summary>
-        /// lbFechaRes control.
+        /// LNombreContactoEmergencia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbFechaRes;
-
+        protected global::System.Web.UI.WebControls.TextBox LNombreContactoEmergencia;
+        
         /// <summary>
-        /// lbStatus control.
+        /// LTelefonoContactoEmergencia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbStatus;
-
+        protected global::System.Web.UI.WebControls.TextBox LTelefonoContactoEmergencia;
+        
         /// <summary>
-        /// lbNomContacto control.
+        /// LCorreo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbNomContacto;
-
+        protected global::System.Web.UI.WebControls.TextBox LCorreo;
+        
         /// <summary>
-        /// lbTLfContacto control.
+        /// LCiudad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbTLfContacto;
+        protected global::System.Web.UI.WebControls.TextBox LCiudad;
+        
+        /// <summary>
+        /// LDireccion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox LDireccion;
+        
+        /// <summary>
+        /// LUsuario control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox LUsuario;
+        
+        /// <summary>
+        /// LContrasena control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox LContrasena;
+        
+        /// <summary>
+        /// ComboStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ComboStatus;
     }
 }
