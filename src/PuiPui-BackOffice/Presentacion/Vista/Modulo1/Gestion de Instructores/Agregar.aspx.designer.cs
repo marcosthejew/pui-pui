@@ -157,13 +157,13 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores {
         protected global::System.Web.UI.WebControls.TextBox tb12;
         
         /// <summary>
-        /// CheckBox6 control.
+        /// cb6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox6;
+        protected global::System.Web.UI.WebControls.CheckBox cb6;
         
         /// <summary>
         /// dp1 control.
@@ -184,13 +184,13 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores {
         protected global::System.Web.UI.WebControls.DropDownList dp2;
         
         /// <summary>
-        /// CheckBox7 control.
+        /// cb11 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox7;
+        protected global::System.Web.UI.WebControls.CheckBox cb11;
         
         /// <summary>
         /// dp3 control.
@@ -211,13 +211,13 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores {
         protected global::System.Web.UI.WebControls.DropDownList dp4;
         
         /// <summary>
-        /// CheckBox2 control.
+        /// cb7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox2;
+        protected global::System.Web.UI.WebControls.CheckBox cb7;
         
         /// <summary>
         /// dp5 control.
@@ -238,13 +238,13 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores {
         protected global::System.Web.UI.WebControls.DropDownList dp6;
         
         /// <summary>
-        /// CheckBox8 control.
+        /// cb12 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox8;
+        protected global::System.Web.UI.WebControls.CheckBox cb12;
         
         /// <summary>
         /// dp7 control.
@@ -265,13 +265,13 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores {
         protected global::System.Web.UI.WebControls.DropDownList dp8;
         
         /// <summary>
-        /// CheckBox3 control.
+        /// cb8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox3;
+        protected global::System.Web.UI.WebControls.CheckBox cb8;
         
         /// <summary>
         /// dp9 control.
@@ -292,13 +292,13 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores {
         protected global::System.Web.UI.WebControls.DropDownList dp10;
         
         /// <summary>
-        /// CheckBox9 control.
+        /// cb13 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox9;
+        protected global::System.Web.UI.WebControls.CheckBox cb13;
         
         /// <summary>
         /// dp11 control.
@@ -319,13 +319,13 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores {
         protected global::System.Web.UI.WebControls.DropDownList dp12;
         
         /// <summary>
-        /// CheckBox4 control.
+        /// cb9 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox4;
+        protected global::System.Web.UI.WebControls.CheckBox cb9;
         
         /// <summary>
         /// dp13 control.
@@ -346,13 +346,13 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores {
         protected global::System.Web.UI.WebControls.DropDownList dp14;
         
         /// <summary>
-        /// CheckBox10 control.
+        /// cb14 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox10;
+        protected global::System.Web.UI.WebControls.CheckBox cb14;
         
         /// <summary>
         /// dp15 control.
@@ -373,13 +373,13 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores {
         protected global::System.Web.UI.WebControls.DropDownList dp16;
         
         /// <summary>
-        /// CheckBox5 control.
+        /// cb10 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox5;
+        protected global::System.Web.UI.WebControls.CheckBox cb10;
         
         /// <summary>
         /// dp17 control.
@@ -400,13 +400,13 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores {
         protected global::System.Web.UI.WebControls.DropDownList dp18;
         
         /// <summary>
-        /// CheckBox11 control.
+        /// cb15 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox11;
+        protected global::System.Web.UI.WebControls.CheckBox cb15;
         
         /// <summary>
         /// dp19 control.
