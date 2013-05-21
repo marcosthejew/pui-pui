@@ -88,8 +88,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 _conexion.Open();
                 _cmd = new SqlCommand("[dbo].[AgregarClase]", _conexion);
                 _cmd.CommandType = CommandType.StoredProcedure;
-                _dr = _cmd.ExecuteReader();
-
+                
                 _param = new SqlParameter("@Nombre", clase.Nombre);
                 _cmd.Parameters.Add(_param);
 
@@ -98,6 +97,8 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 
                 _param = new SqlParameter("@Status", clase.Status);
                 _cmd.Parameters.Add(_param);
+
+                _dr = _cmd.ExecuteReader();
 
                 insercion = true;
                 _db.CerrarConexion();
@@ -128,8 +129,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 _conexion.Open();
                 _cmd = new SqlCommand("[dbo].[ModificarClase]", _conexion);
                 _cmd.CommandType = CommandType.StoredProcedure;
-                _dr = _cmd.ExecuteReader();
-
+                
                 _param = new SqlParameter("@Id_clase", clase.IdClase);
                 _cmd.Parameters.Add(_param);
 
@@ -141,6 +141,8 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 
                 _param = new SqlParameter("@Status", clase.Status);
                 _cmd.Parameters.Add(_param);
+
+                _dr = _cmd.ExecuteReader();
 
                 insercion = true;
                 _db.CerrarConexion();
@@ -171,13 +173,13 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 _conexion.Open();
                 _cmd = new SqlCommand("[dbo].[DetalleClases]", _conexion);
                 _cmd.CommandType = CommandType.StoredProcedure;
-                _dr = _cmd.ExecuteReader();
-
                 _param = new SqlParameter("@Id_clase", id);
                 _cmd.Parameters.Add(_param);
 
+                _dr = _cmd.ExecuteReader();
 
-                //Llena el objeto clase detallado
+
+
 
                 _objetoClase = new Clase();
 
@@ -199,6 +201,84 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 _db.CerrarConexion();
             }
             return _objetoClase;
+        }
+
+        public List<Clase> BusquedaNombreClase(String clase)
+        {
+
+            try
+            {
+                _conexion = new SqlConnection(_cadenaConexion);
+                _conexion.Open();
+                _cmd = new SqlCommand("[dbo].[BusquedaNombreClase]", _conexion);
+                _cmd.CommandType = CommandType.StoredProcedure;
+                _param = new SqlParameter("@Id_Clase", clase);
+                _cmd.Parameters.Add(_param);
+                
+                _dr = _cmd.ExecuteReader();
+
+                while (_dr.Read())
+                {
+                    _objetoClase = new Clase();
+                    _objetoClase.IdClase = Convert.ToInt32(_dr.GetValue(0));
+                    _objetoClase.Nombre = _dr.GetValue(1).ToString();
+                    _objetoClase.Descripcion = _dr.GetValue(2).ToString();
+                    _objetoClase.Status = Convert.ToInt32(_dr.GetValue(3));
+                    _listaClases.Add(_objetoClase);
+                }
+
+                _db.CerrarConexion();
+
+            }
+            catch (SqlException error)
+            {
+                //En caso de que se viole alguna restriccion sobre la BD
+                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+            }
+            finally
+            {
+                _db.CerrarConexion();
+            }
+            return _listaClases;
+        }
+
+        public List<Clase> BusquedaStatusClase(int stat)
+        {
+
+            try
+            {
+                _conexion = new SqlConnection(_cadenaConexion);
+                _conexion.Open();
+                _cmd = new SqlCommand("[dbo].[BusquedaStatusClase]", _conexion);
+                _cmd.CommandType = CommandType.StoredProcedure;
+                _param = new SqlParameter("@Status", stat);
+                _cmd.Parameters.Add(_param);
+
+                _dr = _cmd.ExecuteReader();
+
+                while (_dr.Read())
+                {
+                    _objetoClase = new Clase();
+                    _objetoClase.IdClase = Convert.ToInt32(_dr.GetValue(0));
+                    _objetoClase.Nombre = _dr.GetValue(1).ToString();
+                    _objetoClase.Descripcion = _dr.GetValue(2).ToString();
+                    _objetoClase.Status = Convert.ToInt32(_dr.GetValue(3));
+                    _listaClases.Add(_objetoClase);
+                }
+
+                _db.CerrarConexion();
+
+            }
+            catch (SqlException error)
+            {
+                //En caso de que se viole alguna restriccion sobre la BD
+                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+            }
+            finally
+            {
+                _db.CerrarConexion();
+            }
+            return _listaClases;
         }
 
         #endregion
