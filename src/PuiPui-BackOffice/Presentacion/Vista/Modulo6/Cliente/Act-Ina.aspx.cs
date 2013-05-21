@@ -14,22 +14,32 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo6.Cliente
 {
     public partial class Act_Ina : System.Web.UI.Page
     {
-
+        Acceso acceso;
+        string loginPersona;
         List<Persona> listaPersona;
         LogicaPersona miPersona = new LogicaPersona();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            listaPersona = miPersona.ConsultarActivarDesactivarPersona();
-
-            if (!IsPostBack)
+            try
             {
-                cargarTabla();
+                acceso = (Acceso)Session["loginPersona"];
+                loginPersona = acceso.Login;
+                listaPersona = miPersona.ConsultarActivarDesactivarPersona();
+                if (!IsPostBack)
+                {
+                    cargarTabla();
+                }
+                else
+                    
+                    GridActivarDesactivar.Visible = true;
             }
-            else
-                //Exito.Visible = false;
+            catch (NullReferenceException)
+            {
 
-                GridActivarDesactivar.Visible = true;
+                Response.Redirect("../../Home/Login.aspx");
+            }
+            
         }
 
         public void cargarTabla()
@@ -50,6 +60,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo6.Cliente
             GridActivarDesactivar.DataSource = table;
             GridActivarDesactivar.DataBind();
         }
+
         protected void GridActivarDesactivar_SelectedIndexChanged(object sender, EventArgs e)
         {
             int seleccion = GridActivarDesactivar.SelectedIndex;
@@ -58,7 +69,6 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo6.Cliente
             lpersona.CambiarEstado(persona);
             Response.Redirect("Act-Ina.aspx");
         }
-
 
         protected void GridActivarDesactivar_RowCommand(Object sender, GridViewCommandEventArgs e)
         {

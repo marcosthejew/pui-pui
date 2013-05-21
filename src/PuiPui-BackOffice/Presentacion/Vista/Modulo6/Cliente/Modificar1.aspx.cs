@@ -13,25 +13,40 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo6.Cliente
     public partial class Modificar1 : System.Web.UI.Page
     {
         Persona persona;
+        Acceso acceso;
+        string loginPersona;
         LogicaPersona logicaPersona = new LogicaPersona();
         Persona objPersona = new Persona();
         Persona nuevaPersona = new Persona();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            try
             {
-                Exito.Visible = false;
-                falla.Visible = false;
+                acceso = (Acceso)Session["loginPersona"];
+                loginPersona = acceso.Login;
+                
+                if (!IsPostBack)
+                {
+                    Exito.Visible = false;
+                    falla.Visible = false;
 
-                persona = (Persona)Session["idPersona"];
-                int idPersona = persona.IdPersona;
-                objPersona = logicaPersona.ConsultarDetallePersona(idPersona);
-                llenarGenero(ComboGenero);
-                llenarTipo(ComboTipo);
-                CargarDatos();
+                    persona = (Persona)Session["idPersona"];
+                    int idPersona = persona.IdPersona;
+                    objPersona = logicaPersona.ConsultarDetallePersona(idPersona);
+                    llenarGenero(ComboGenero);
+                    llenarTipo(ComboTipo);
+                    CargarDatos();
 
+                }
+            
             }
+            catch (NullReferenceException)
+            {
+
+                Response.Redirect("../../Home/Login.aspx");
+            }
+
         }
         protected void BRegistrar_Click(object sender, EventArgs e)
         {
