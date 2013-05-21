@@ -21,7 +21,7 @@ BEGIN
 	SET NOCOUNT ON;
 
     
-    Insert Clase values(@Nombre,@Descripcion,@Status);
+    Insert Clase values(@Nombre,@Descripcion,0);
 	
 END
 
