@@ -162,6 +162,45 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 
         }
 
+        public Clase DetalleClases(int id)
+        {
+
+            try
+            {
+                _conexion = new SqlConnection(_cadenaConexion);
+                _conexion.Open();
+                _cmd = new SqlCommand("[dbo].[DetalleClases]", _conexion);
+                _cmd.CommandType = CommandType.StoredProcedure;
+                _dr = _cmd.ExecuteReader();
+
+                _param = new SqlParameter("@Id_clase", id);
+                _cmd.Parameters.Add(_param);
+
+
+                //Llena el objeto clase detallado
+
+                _objetoClase = new Clase();
+
+                _objetoClase.IdClase = Convert.ToInt32(_dr.GetValue(0));
+                _objetoClase.Nombre = _dr.GetValue(1).ToString();
+                _objetoClase.Descripcion = _dr.GetValue(2).ToString();
+                _objetoClase.Status = Convert.ToInt32(_dr.GetValue(3));
+
+                _db.CerrarConexion();
+
+            }
+            catch (SqlException error)
+            {
+                //En caso de que se viole alguna restriccion sobre la BD
+                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+            }
+            finally
+            {
+                _db.CerrarConexion();
+            }
+            return _objetoClase;
+        }
+
         #endregion
     }
 }
