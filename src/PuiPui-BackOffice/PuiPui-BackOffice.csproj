@@ -85,13 +85,12 @@
     <Content Include="Presentacion\Estilo\Scripts\jquery-1.4.1.js" />
     <Content Include="Presentacion\Estilo\Scripts\jquery-1.4.1.min.js" />
     <Content Include="Presentacion\Vista\Home\Login.aspx" />
-    <Content Include="Presentacion\Vista\Modulo1\Gestion de Ejercicios\Act-Ina.aspx" />
     <Content Include="Presentacion\Vista\Modulo1\Gestion de Ejercicios\Agregar.aspx" />
     <Content Include="Presentacion\Vista\Modulo1\Gestion de Ejercicios\Consultar.aspx" />
     <Content Include="Presentacion\Vista\Modulo1\Gestion de Ejercicios\AgregarEjercicio.aspx" />
     <Content Include="Presentacion\Vista\Modulo1\Gestion de Ejercicios\Eliminar.aspx" />
+    <Content Include="Presentacion\Vista\Modulo1\Gestion de Ejercicios\EliminarEjercicio.aspx" />
     <Content Include="Presentacion\Vista\Modulo1\Gestion de Ejercicios\Modificar.aspx" />
-    <Content Include="Presentacion\Vista\Modulo1\Gestion de Instructores\Act-Ina.aspx" />
     <Content Include="Presentacion\Vista\Modulo1\Gestion de Instructores\Agregar.aspx" />
     <Content Include="Presentacion\Vista\Modulo1\Gestion de Instructores\Consultar.aspx" />
     <Content Include="Presentacion\Vista\Modulo1\Gestion de Instructores\Eliminar.aspx" />
@@ -223,13 +222,6 @@
     <Compile Include="Presentacion\Vista\Home\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Vista\Modulo1\Gestion de Ejercicios\Act-Ina.aspx.cs">
-      <DependentUpon>Act-Ina.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Vista\Modulo1\Gestion de Ejercicios\Act-Ina.aspx.designer.cs">
-      <DependentUpon>Act-Ina.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Presentacion\Vista\Modulo1\Gestion de Ejercicios\Agregar.aspx.cs">
       <DependentUpon>Agregar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -258,19 +250,18 @@
     <Compile Include="Presentacion\Vista\Modulo1\Gestion de Ejercicios\Eliminar.aspx.designer.cs">
       <DependentUpon>Eliminar.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Vista\Modulo1\Gestion de Ejercicios\EliminarEjercicio.aspx.cs">
+      <DependentUpon>EliminarEjercicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Vista\Modulo1\Gestion de Ejercicios\EliminarEjercicio.aspx.designer.cs">
+      <DependentUpon>EliminarEjercicio.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Vista\Modulo1\Gestion de Ejercicios\Modificar.aspx.cs">
       <DependentUpon>Modificar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentacion\Vista\Modulo1\Gestion de Ejercicios\Modificar.aspx.designer.cs">
       <DependentUpon>Modificar.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\Vista\Modulo1\Gestion de Instructores\Act-Ina.aspx.cs">
-      <DependentUpon>Act-Ina.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Vista\Modulo1\Gestion de Instructores\Act-Ina.aspx.designer.cs">
-      <DependentUpon>Act-Ina.aspx</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Vista\Modulo1\Gestion de Instructores\Agregar.aspx.cs">
       <DependentUpon>Agregar.aspx</DependentUpon>
@@ -519,6 +510,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Presentacion\MasterPage\Site1.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
