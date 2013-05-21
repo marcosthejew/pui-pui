@@ -11,7 +11,7 @@ as
 BEGIN
 	set nocount on
 		
-	SELECT P.idPersona, P.nombrePersona1, P.apellidoPersona1, P.fechaIngresoPersona
+	SELECT P.idPersona, P.cedulaPersona, P.nombrePersona1, P.apellidoPersona1, P.fechaIngresoPersona
 	FROM Persona P
 		
 END;
@@ -22,7 +22,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-ALTER procedure [dbo].[consultarPersonaCedula]
+CREATE procedure [dbo].[consultarPersonaCedula]
 @cedulaPersona bigint
 as
 BEGIN
@@ -40,7 +40,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-ALTER procedure [dbo].[consultarPersonaNombre]
+CREATE procedure [dbo].[consultarPersonaNombre]
 @nombrePersona1 nchar (50)
 as
 BEGIN
