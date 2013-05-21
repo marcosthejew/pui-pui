@@ -89,5 +89,16 @@ namespace PuiPui_FrontOffice.LogicaDeNegocios.Cliente
             return false;
         }
         #endregion
+
+        #region ConsultarPersonaPorLogin
+        public Persona ConsultarPersonaPorLogin(string loginPersona)
+        {
+            Persona miPersona = new Persona();
+            SQLServerPersona objDataBase = new SQLServerPersona();
+            miPersona = objDataBase.ConsultarPersonaPorLogin(loginPersona);
+            return miPersona;
+        }
+        #endregion
+
     }
 }
