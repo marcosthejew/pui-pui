@@ -13,17 +13,22 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo6.Cliente
 {
     public partial class Modificar : System.Web.UI.Page
     {
-
+        Acceso acceso;
+        string loginPersona;
         List<Persona> listaPersona;
         LogicaPersona miHistoriaClinica = new LogicaPersona();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            listaPersona = miHistoriaClinica.ConsultarPersona();
 
-            if (!IsPostBack)
+            try
             {
-                cargarTabla();
+                acceso = (Acceso)Session["loginPersona"];
+                loginPersona = acceso.Login;
+                listaPersona = miHistoriaClinica.ConsultarPersona();
+                if (!IsPostBack)
+                {
+                    cargarTabla();
 
                 //Habilito si quiero buscar por ci o nombre, pero no ambos a la vez
                 if (cedulaRadioButton.Checked == true)
@@ -36,10 +41,19 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo6.Cliente
                     CiConsTextBox.Enabled = false;
                     NombreTextBox.Enabled = true;
                 }
+                }
+                else
+                    GridModificar.Visible = true;
+                    
             }
-            else
-                //Exito.Visible = false;
-                GridModificar.Visible = true;
+            catch (NullReferenceException)
+            {
+
+                Response.Redirect("../../Home/Login.aspx");
+            }
+            
+            
+            
         }
 
         #region Buscar por Cedula o Cargo

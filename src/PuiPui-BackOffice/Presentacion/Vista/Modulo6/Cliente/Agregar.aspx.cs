@@ -12,16 +12,28 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo6.Cliente
 {
     public partial class Agregar : System.Web.UI.Page
     {
-
+        Acceso acceso;
+        string loginPersona;
         Persona persona;
         LogicaPersona logicaPersona = new LogicaPersona();
         Persona objPersona = new Persona();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Exito.Visible = false;
-            falla.Visible = false;
+            try
+            {
+                acceso = (Acceso)Session["loginPersona"];
+                loginPersona = acceso.Login;
+                Exito.Visible = false;
+                falla.Visible = false;
+                
+            }
+            catch (NullReferenceException)
+            {
 
+                Response.Redirect("../../Home/Login.aspx");
+            }
+            
         }
 
 

@@ -13,32 +13,45 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo6.Cliente
 {
     public partial class Consultar : System.Web.UI.Page
     {
-
+        Acceso acceso;
+        string loginPersona;
         List<Persona> listaPersona;
         LogicaPersona miListaPersona = new LogicaPersona();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            listaPersona = miListaPersona.ConsultarPersona();
-
-            if (!IsPostBack)
+            try
             {
-                cargarTabla();
+                acceso = (Acceso)Session["loginPersona"];
+                loginPersona = acceso.Login;
+                listaPersona = miListaPersona.ConsultarPersona();
 
-                //Habilito si quiero buscar por ci o nombre, pero no ambos a la vez
-                if (cedulaRadioButton.Checked == true)
+                if (!IsPostBack)
                 {
-                    NombreTextBox.Enabled = false;
-                    CiConsTextBox.Enabled = true;
+                    cargarTabla();
+
+                    //Habilito si quiero buscar por ci o nombre, pero no ambos a la vez
+                    if (cedulaRadioButton.Checked == true)
+                    {
+                        NombreTextBox.Enabled = false;
+                        CiConsTextBox.Enabled = true;
+                    }
+                    if (cargoRadioButton.Checked == true)
+                    {
+                        CiConsTextBox.Enabled = false;
+                        NombreTextBox.Enabled = true;
+                    }
                 }
-                if (cargoRadioButton.Checked == true)
-                {
-                    CiConsTextBox.Enabled = false;
-                    NombreTextBox.Enabled = true;
-                }
+                else
+                    GridConsultar.Visible = true;
+
             }
-            else
-                GridConsultar.Visible = true;
+            catch (NullReferenceException)
+            {
+
+                Response.Redirect("../../Home/Login.aspx");
+            }
+        
         }
 
         #region Buscar por Cedula o Cargo
