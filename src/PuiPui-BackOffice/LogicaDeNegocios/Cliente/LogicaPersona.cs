@@ -29,6 +29,32 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.Cliente
             return miPersona;
         }
         #endregion
+        
+        #region Consultar una Persona por Cedula
+        public List<Persona> ConsultarPorCedula(String cedula)
+        {
+            Persona miPersona = new Persona();
+            SQLServerPersona objDataBase = new SQLServerPersona();
+            List<Persona> miListaPersona = new List<Persona>();
+            
+            miListaPersona = objDataBase.ConsultarPersonaPorCedula(cedula);
+
+            return miListaPersona;
+        }
+        #endregion Consultar  una Persona por Cedula
+
+        #region ConsultarPorNombre
+        public List<Persona> ConsultarPorNombre(string nombre)
+        {
+            Persona miPersona = new Persona();
+            SQLServerPersona objDataBase = new SQLServerPersona();
+            List<Persona> miListaPersona = new List<Persona>();
+
+            miListaPersona = objDataBase.ConsultarPersonaPorNombre(nombre);
+
+            return miListaPersona;
+        }
+        #endregion
 
         #region Agregar Cliente
         public Persona AgregoCliente (Persona miPersona)
@@ -89,5 +115,7 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.Cliente
             return false;
         }
         #endregion
+
+      
     }
 }

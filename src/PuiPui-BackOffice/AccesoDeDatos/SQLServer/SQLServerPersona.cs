@@ -43,9 +43,64 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 
 
                     objetoPersona.IdPersona = Convert.ToInt32(dr.GetValue(0));
-                    objetoPersona.NombrePersona1 = dr.GetValue(1).ToString();
-                    objetoPersona.ApellidoPersona1 = dr.GetValue(2).ToString();
-                    objetoPersona.FechaIngresoPersona = Convert.ToDateTime(dr.GetValue(3));
+                    objetoPersona.CedulaPersona = Convert.ToInt32(dr.GetValue(1));
+                    objetoPersona.NombrePersona1 = dr.GetValue(2).ToString();
+                    objetoPersona.ApellidoPersona1 = dr.GetValue(3).ToString();
+                    objetoPersona.FechaIngresoPersona = Convert.ToDateTime(dr.GetValue(4));
+
+
+                    miLista.Add(objetoPersona);
+                }
+
+                db.CerrarConexion();
+
+            }
+            catch (SqlException error)
+            {
+                //En caso de que se viole alguna restriccion sobre la BD
+                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+            }
+            finally
+            {
+                db.CerrarConexion();
+            }
+            return miLista;
+        }
+        #endregion
+
+        #region ConsultarPersonaPorCedula
+        public List<Persona> ConsultarPersonaPorCedula(string cedula)
+        {
+            string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader dr;
+            Persona objetoPersona = new Persona();
+            List<Persona> miLista = new List<Persona>();
+            int _cedula = Convert.ToInt32(cedula);
+
+            try
+            {
+                conexion = new SqlConnection(cadenaConexion);
+                conexion.Open();
+                cmd = new SqlCommand("[dbo].[consultarPersonaCedula]", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@cedulaPersona", _cedula);
+                dr = cmd.ExecuteReader();
+
+                //Se recorre cada row
+                while (dr.Read())
+                {
+
+                    objetoPersona = new Persona();
+
+
+                    objetoPersona.IdPersona = Convert.ToInt32(dr.GetValue(0));
+                    objetoPersona.CedulaPersona = Convert.ToInt32(dr.GetValue(1));
+                    objetoPersona.NombrePersona1 = dr.GetValue(2).ToString();
+                    objetoPersona.ApellidoPersona1 = dr.GetValue(3).ToString();
+                    objetoPersona.FechaIngresoPersona = Convert.ToDateTime(dr.GetValue(4));
 
 
                     miLista.Add(objetoPersona);
@@ -330,7 +385,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
         }
         #endregion
 
-        #region ConsultarDetallePersona
+        #region ConsultarAccesoPersona
         public bool ConsultarAccesoPersona(Acceso persona)
         {
             string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
@@ -367,5 +422,58 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
         }
         #endregion
 
+        #region ConsultarPersonaPorNombre
+        public List<Persona> ConsultarPersonaPorNombre(string nombre)
+        {
+            string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader dr;
+            Persona objetoPersona = new Persona();
+            List<Persona> miLista = new List<Persona>();
+            
+
+            try
+            {
+                conexion = new SqlConnection(cadenaConexion);
+                conexion.Open();
+                cmd = new SqlCommand("[dbo].[consultarPersonaNombre]", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@nombrePersona1", nombre);
+                dr = cmd.ExecuteReader();
+
+                //Se recorre cada row
+                while (dr.Read())
+                {
+
+                    objetoPersona = new Persona();
+
+
+                    objetoPersona.IdPersona = Convert.ToInt32(dr.GetValue(0));
+                    objetoPersona.CedulaPersona = Convert.ToInt32(dr.GetValue(1));
+                    objetoPersona.NombrePersona1 = dr.GetValue(2).ToString();
+                    objetoPersona.ApellidoPersona1 = dr.GetValue(3).ToString();
+                    objetoPersona.FechaIngresoPersona = Convert.ToDateTime(dr.GetValue(4));
+
+
+                    miLista.Add(objetoPersona);
+                }
+
+                db.CerrarConexion();
+
+            }
+            catch (SqlException error)
+            {
+                //En caso de que se viole alguna restriccion sobre la BD
+                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+            }
+            finally
+            {
+                db.CerrarConexion();
+            }
+            return miLista;
+        }
+        #endregion
     }
 }

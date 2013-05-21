@@ -15,7 +15,42 @@ BEGIN
 	FROM Persona P
 		
 END;
-
+USE [puipuiDB]
+GO
+/****** Object:  StoredProcedure [dbo].[consultarPersonaCedula]    Script Date: 21/05/2013 9:58:28 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[consultarPersonaCedula]
+@cedulaPersona bigint
+as
+BEGIN
+	set nocount on
+		
+	SELECT P.idPersona, P.cedulaPersona, P.nombrePersona1, P.apellidoPersona1, P.fechaIngresoPersona
+	FROM Persona P
+	where P.cedulaPersona = @cedulaPersona
+		
+END;
+USE [puipuiDB]
+GO
+/****** Object:  StoredProcedure [dbo].[consultarPersonaNombre]    Script Date: 21/05/2013 10:37:12 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[consultarPersonaNombre]
+@nombrePersona1 nchar (50)
+as
+BEGIN
+	set nocount on
+		
+	SELECT P.idPersona, P.cedulaPersona, P.nombrePersona1, P.apellidoPersona1, P.fechaIngresoPersona
+	FROM Persona P
+	where P.nombrePersona1 = @nombrePersona1
+		
+END;
 GO
 /****** Object:  StoredProcedure [dbo].[consultarDetallePersona]   Script Date: 12/06/2012 18:39:36 ******/
 SET ANSI_NULLS ON
@@ -34,8 +69,8 @@ BEGIN
 	where P.idPersona = @idPersona
 
 END;
-GO
 
+GO
 
 /* Insertar cliente */
 
