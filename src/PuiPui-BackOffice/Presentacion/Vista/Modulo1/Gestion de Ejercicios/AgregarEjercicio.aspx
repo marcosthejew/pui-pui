@@ -72,7 +72,7 @@ AutoEventWireup="true" CodeBehind="AgregarEjercicio.aspx.cs" Inherits="PuiPui_Ba
 
                 <td class="style1">
 
-                    &nbsp;<asp:TextBox ID="taDescripcion" runat="server" Height="62px" Width="256px" TextMode="MultiLine"></asp:TextBox>
+                    &nbsp;<asp:TextBox ID="taDescripcion" runat="server" Height="62px" Width="256px" TextMode="MultiLine" Font-Names="Arial"></asp:TextBox>
 
                 </td>
 

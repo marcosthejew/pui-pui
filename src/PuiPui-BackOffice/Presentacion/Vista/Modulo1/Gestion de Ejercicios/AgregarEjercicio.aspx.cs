@@ -41,19 +41,13 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Ejercicios
 
 
 
-
-
-
-
-
-
-
         protected void bAgregar_Click(object sender, EventArgs e)
         {
             if ( ( Nombre.Text == "") || (taDescripcion.Text=="") || (ddlMusculo.SelectedIndex == 0)) 
             {
                 // Mostrar que los campos estan vacios.
                 lExito.Text = "Los campos no pueden estar vacios.";
+                lExito.ForeColor = System.Drawing.Color.Red;
                 lExito.Visible = true;    
             }
             else
@@ -63,11 +57,13 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Ejercicios
                 if (lEjercicio.AgregarEjercicio(Nombre.Text, taDescripcion.Text, ddlMusculo.SelectedIndex))
                 {
                     lExito.Text = "Ya existe el ejercicio.";
+                    lExito.ForeColor = System.Drawing.Color.Red;
                     lExito.Visible = true;
                 }
                 else
                 {
                     lExito.Text = "Se agrego exitosamente el ejercicio.";
+                    lExito.ForeColor = System.Drawing.Color.Blue;
                     lExito.Visible = true;
                     Nombre.Text = "";
                     taDescripcion.Text = "";

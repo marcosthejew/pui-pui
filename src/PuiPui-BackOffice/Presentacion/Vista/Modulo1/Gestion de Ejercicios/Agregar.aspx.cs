@@ -21,6 +21,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Ejercicios
             {
                 // Mostrar que los campos estan vacios.
                 lExito.Text = "Los campos no pueden estar vacios.";
+                lExito.ForeColor = System.Drawing.Color.Red;
                 lExito.Visible = true;
             }
             else
@@ -30,11 +31,13 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Ejercicios
                 if (lMusculo.AgregarMusculo(tbNombre.Text))
                 {
                     lExito.Text = "Ya existe el musculo.";
+                    lExito.ForeColor = System.Drawing.Color.Red;
                     lExito.Visible = true;
                 }
                 else
                 {
                     lExito.Text = "Se agrego exitosamente el musculo.";
+                    lExito.ForeColor = System.Drawing.Color.Blue;
                     lExito.Visible = true;
                     tbNombre.Text = "";
                 }

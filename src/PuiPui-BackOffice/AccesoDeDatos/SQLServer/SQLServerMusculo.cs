@@ -91,8 +91,6 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
             return false;
         }
 
-
-
         public List<Musculo> ConsultarMusculos()
         {
 
@@ -138,6 +136,104 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
             }
             return null;
         }
-   
+
+        public int BuscarIdMusculo(string nombreMusculo)
+        {
+            string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader dr;
+            int idMusculo = 0;
+
+            try
+            {
+                conexion = new SqlConnection(cadenaConexion);
+                conexion.Open();
+                cmd = new SqlCommand("[dbo].[existeMusculo]", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@nombreMusculo", nombreMusculo);
+                dr = cmd.ExecuteReader();
+
+                //Se recorre cada row
+                if (dr.Read())
+                    idMusculo = Convert.ToInt32(dr.GetValue(0));
+
+
+                db.CerrarConexion();
+            }
+            catch (SqlException error)
+            {
+                //En caso de que se viole alguna restriccion sobre la BD
+                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+            }
+            finally
+            {
+                db.CerrarConexion();
+            }
+            return idMusculo;
+        }
+
+        public void EliminarMusculo(int idMusculo)
+        {
+            string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader dr;
+
+            try
+            {
+                conexion = new SqlConnection(cadenaConexion);
+                conexion.Open();
+                cmd = new SqlCommand("[dbo].[eliminarMusculo]", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idMusculo", idMusculo);
+                dr = cmd.ExecuteReader();
+
+                db.CerrarConexion();
+            }
+            catch (SqlException error)
+            {
+                //En caso de que se viole alguna restriccion sobre la BD
+                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+            }
+            finally
+            {
+                db.CerrarConexion();
+            }
+        }
+
+        public bool ExisteEjercicioConMusculo(int idMusculo)
+        {
+            string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader dr;
+            bool existe = false;
+            try
+            {
+                conexion = new SqlConnection(cadenaConexion);
+                conexion.Open();
+                cmd = new SqlCommand("[dbo].[existeEjercicioConMusculo]", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idMusculo", idMusculo);
+                dr = cmd.ExecuteReader();
+
+                //Se recorre cada row
+                if (dr.Read())
+                    existe = true;
+
+                db.CerrarConexion();
+            }
+            catch (SqlException error)
+            {
+                //En caso de que se viole alguna restriccion sobre la BD
+                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+            }
+            finally
+            {
+                db.CerrarConexion();
+            }
+            return existe;
+        }
     }
 }
