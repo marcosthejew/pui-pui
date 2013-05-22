@@ -1,5 +1,30 @@
 USE [puipuiDB]
 GO
+/****** Object:  StoredProcedure [dbo].[consultarActivarDesactivarPersona]    Script Date: 22/05/2013 16:58:59 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE procedure [dbo].[ActivarDesactivarPersona]
+@estadoPersona nchar (50),
+@idPersona bigint
+as
+
+BEGIN
+	set nocount on
+		
+	  
+	UPDATE [Persona]
+	SET 
+		[Persona].estadoPersona = @estadoPersona
+		
+	WHERE [Persona].idPersona = @idPersona
+
+		
+END;
+
+USE [puipuiDB]
+GO
 /****** Object:  StoredProcedure [dbo].[consultarPersona]   Script Date: 12/06/2012 18:39:36 ******/
 SET ANSI_NULLS ON
 GO
