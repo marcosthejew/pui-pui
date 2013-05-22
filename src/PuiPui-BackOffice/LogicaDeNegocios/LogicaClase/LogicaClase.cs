@@ -57,7 +57,14 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaClase
             return miTabla;
         }
 
-            
+        public List<Clase> ObtenerClases()
+        {
+            //conectar a la bd
+            _listaClase = _accesoClase.ConsultarClases();
+
+
+            return _listaClase;
+        }
         public Boolean ModificarClase(Clase clase)
         {
 
@@ -89,13 +96,13 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaClase
 
             _listaClase = _accesoClase.BusquedaNombreClase(nombre);
 
-            miTabla.Columns.Add("No.", typeof(string));
+            miTabla.Columns.Add("No", typeof(string));
             miTabla.Columns.Add("Nombre", typeof(string));
             miTabla.Columns.Add("Estatus", typeof(string));
-
+            
             foreach (Clase clase in _listaClase)
             {
-                 if (clase.Status==1)
+                if (clase.Status==1)
                 {
                     stat="Activa";
                 }
@@ -104,8 +111,36 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaClase
                     stat = "Inactiva";
                 }
                 miTabla.Rows.Add(clase.IdClase, clase.Nombre, stat);
-            }               
+            }              
            
+            return miTabla;
+            
+        }
+
+        public DataTable ConsultarClaseStatus(int stat)
+        {
+            DataTable miTabla = new DataTable();
+            String statu = null;
+
+            _listaClase = _accesoClase.BusquedaStatusClase(stat);
+
+            miTabla.Columns.Add("No", typeof(string));
+            miTabla.Columns.Add("Nombre", typeof(string));
+            miTabla.Columns.Add("Estatus", typeof(string));
+
+            foreach (Clase clase in _listaClase)
+            {
+                if (clase.Status == 1)
+                {
+                    statu = "Activa";
+                }
+                else
+                {
+                    statu = "Inactiva";
+                }
+                miTabla.Rows.Add(clase.IdClase, clase.Nombre, statu);
+            }
+
             return miTabla;
         }
        

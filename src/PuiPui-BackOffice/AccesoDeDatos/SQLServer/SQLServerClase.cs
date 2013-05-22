@@ -9,6 +9,7 @@ using PuiPui_BackOffice.AccesoDeDatos.Conexion;
 using PuiPui_BackOffice.AccesoDeDatos.Conexion.IConexion;
 using PuiPui_BackOffice.AccesoDeDatos.Excepciones_BD;
 using PuiPui_BackOffice.Entidades.Clase;
+using PuiPui_BackOffice.LogicaDeNegocios.LogicaClase;
 
 namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 {
@@ -41,7 +42,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 
         public List<Clase> ConsultarClases()
         {
-
+            _listaClases.RemoveRange(0, _listaClases.Count);
             try
             {
                 _conexion = new SqlConnection(_cadenaConexion);
@@ -204,14 +205,14 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 
         public List<Clase> BusquedaNombreClase(String clase)
         {
-
+            _listaClases.RemoveRange(0, _listaClases.Count);
             try
             {
                 _conexion = new SqlConnection(_cadenaConexion);
                 _conexion.Open();
                 _cmd = new SqlCommand("[dbo].[BusquedaNombreClase]", _conexion);
                 _cmd.CommandType = CommandType.StoredProcedure;
-                _param = new SqlParameter("@Id_Clase", clase);
+                _param = new SqlParameter("@Nombre", clase);
                 _cmd.Parameters.Add(_param);
                 
                 _dr = _cmd.ExecuteReader();
@@ -243,7 +244,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 
         public List<Clase> BusquedaStatusClase(int stat)
         {
-
+            _listaClases.RemoveRange(0, _listaClases.Count);
             try
             {
                 _conexion = new SqlConnection(_cadenaConexion);
