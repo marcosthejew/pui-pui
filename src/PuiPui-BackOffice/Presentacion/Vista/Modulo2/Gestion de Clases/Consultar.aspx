@@ -57,7 +57,7 @@ AutoEventWireup="true" CodeBehind="Consultar.aspx.cs" Inherits="PuiPui_BackOffic
           
         <div style="margin-top:60px">
                         <asp:GridView ID="GridConsultar" runat="server" CellPadding="4" ForeColor="#333333" 
-                        GridLines="None" align="center" Height="16px" Width="687px" 
+                        GridLines="None" Height="16px" Width="687px" 
                         OnRowCommand="GridConsultar_RowCommand" AllowPaging="True" PageSize="10" 
                         OnPageIndexChanging="GridConsultar_PageIndexChanging" 
                         OnSelectedIndexChanged="GridConsultar_SelectedIndexChanged" HorizontalAlign="Center">
