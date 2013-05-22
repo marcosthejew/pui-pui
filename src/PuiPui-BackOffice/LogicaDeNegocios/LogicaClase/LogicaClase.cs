@@ -24,6 +24,7 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaClase
             _clase = new Clase();
             _accesoClase = new SQLServerClase();
 
+
         }
 
         #endregion
@@ -34,15 +35,23 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaClase
         {
             //conectar a la bd
             _listaClase = _accesoClase.ConsultarClases();
-                         
+            String stat=null;             
             DataTable miTabla = new DataTable();
+            miTabla.Columns.Add("No.", typeof(string));
             miTabla.Columns.Add("Nombre", typeof(string));
             miTabla.Columns.Add("Estatus", typeof(string));
 
             foreach (Clase clase in _listaClase)
             {
-
-                miTabla.Rows.Add(clase.IdClase, clase.Nombre, clase.Status);
+                if (clase.Status==1)
+                {
+                    stat="Activa";
+                }
+                else
+                {
+                    stat = "Inactiva";
+                }
+                miTabla.Rows.Add(clase.IdClase, clase.Nombre, stat);
             }
 
             return miTabla;
@@ -73,6 +82,32 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaClase
 
         }
 
+        public DataTable ConsultarClasesNombre(String nombre)
+        {
+            DataTable miTabla = new DataTable();
+            String stat = null; 
+
+            _listaClase = _accesoClase.BusquedaNombreClase(nombre);
+
+            miTabla.Columns.Add("No.", typeof(string));
+            miTabla.Columns.Add("Nombre", typeof(string));
+            miTabla.Columns.Add("Estatus", typeof(string));
+
+            foreach (Clase clase in _listaClase)
+            {
+                 if (clase.Status==1)
+                {
+                    stat="Activa";
+                }
+                else
+                {
+                    stat = "Inactiva";
+                }
+                miTabla.Rows.Add(clase.IdClase, clase.Nombre, stat);
+            }               
+           
+            return miTabla;
+        }
        
 
         #endregion

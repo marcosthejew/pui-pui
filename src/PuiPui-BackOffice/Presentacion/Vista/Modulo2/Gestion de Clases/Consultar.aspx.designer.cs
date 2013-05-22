@@ -13,15 +13,6 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_de_Clases {
     public partial class Consultar {
         
         /// <summary>
-        /// cambioPagina control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label cambioPagina;
-        
-        /// <summary>
         /// RadioButtonConsultaCompleta control.
         /// </summary>
         /// <remarks>
