@@ -17,6 +17,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_de_Clases
         public Agregar() 
         {
             this._objLogica = new LogicaClase();
+            
         }
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -25,8 +26,20 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_de_Clases
 
         protected void defaultButton_Click(object sender, EventArgs e)
         {
+           bool resultado = _objLogica.AgregarClase(nombreNuevaClase.Text, descripcioNuevaClase.Text);
 
-            _objLogica.AgregarClase(nombreNuevaClase.Text, descripcioNuevaClase.Text);
+           if (resultado != false)
+           {
+               Exito.Visible = true;
+             
+           }
+           else
+           {
+               falla.Visible = true;
+           }
+
+
+            
         }
     }
 }
