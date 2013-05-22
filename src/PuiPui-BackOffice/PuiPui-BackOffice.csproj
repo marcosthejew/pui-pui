@@ -498,7 +498,7 @@
     <Compile Include="PruebasUnitarias\Instructor\PruebaInstructor.cs" />
     <Compile Include="PruebasUnitarias\PruebaConexion.cs" />
     <Compile Include="PruebasUnitarias\Rutina\PruebaRutina.cs" />
-    <Compile Include="PruebasUnitarias\Salon\PruebaSalon.cs" />
+    <Compile Include="PruebasUnitarias\SalonTest\PruebaSalon.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

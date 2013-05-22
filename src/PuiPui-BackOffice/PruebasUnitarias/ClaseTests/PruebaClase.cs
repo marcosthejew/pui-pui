@@ -11,6 +11,7 @@ using PuiPui_BackOffice.AccesoDeDatos.Excepciones_BD;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PuiPui_BackOffice.Entidades.Clase;
 using PuiPui_BackOffice.AccesoDeDatos.SQLServer;
+
 namespace PuiPui_BackOffice.PruebasUnitarias.ClaseTests
 {
     [TestClass]
@@ -137,12 +138,13 @@ namespace PuiPui_BackOffice.PruebasUnitarias.ClaseTests
         }
 
         [TestMethod]
-        public void BuscarStatusTest()
+        public void BuscarStatusTrueTest()
         {
             try
             {
                 _accesoClase = new SQLServerClase();
                 _listaClase = _accesoClase.BusquedaStatusClase(1);
+
 
                 foreach (Clase clas in _listaClase)
                 {
@@ -156,5 +158,29 @@ namespace PuiPui_BackOffice.PruebasUnitarias.ClaseTests
             {
             }
         }
+
+        [TestMethod]
+        public void BuscarStatusFalseTest()
+        {
+            try
+            {
+                _accesoClase = new SQLServerClase();
+                _listaClase = _accesoClase.BusquedaStatusClase(0);
+
+
+                foreach (Clase clas in _listaClase)
+                {
+
+                    Assert.IsTrue(clas.Status == 0);
+
+                }
+
+            }
+            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion E)
+            {
+            }
+        }
+
+
     }
 }

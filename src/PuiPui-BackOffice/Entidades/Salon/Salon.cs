@@ -50,6 +50,14 @@ namespace PuiPui_BackOffice.Entidades.Salon
             this._ubicacion = ubicacion;
 
         }
+        public Salon(int idSalon, String ubicacion, int capacidad, int st)
+        {
+            this.status = st;
+            this._capacidad = capacidad;
+            this._idSalon = idSalon;
+            this._ubicacion = ubicacion;
+
+        }
         public Salon()
         {
 
