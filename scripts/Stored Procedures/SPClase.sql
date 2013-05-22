@@ -102,7 +102,7 @@ BEGIN
 	  
     Select id_clase, nombre,descripcion,estatus
     from clase
-    where nombre like @Nombre;
+    where LOWER(nombre) like LOWER(@Nombre+'%');
 	
 END
 GO

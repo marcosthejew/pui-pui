@@ -32,7 +32,7 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
 
         #endregion
 
-        #region Metodos
+        #region Metodos Salon
 
         private DataTable ConsultarSalones()
         {
@@ -160,5 +160,72 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
 
         #endregion
 
+        #region Metodos Clase Salon Instructor
+
+        private DataTable ConsultarSalonesClase()
+        {
+            DataTable miTabla = new DataTable();
+
+            _miLista = _accesoSalon.ConsultarSalones();
+
+            miTabla.Columns.Add("Nro.Salon", typeof(string));
+            miTabla.Columns.Add("Ubicacion", typeof(string));
+            miTabla.Columns.Add("Capacidad", typeof(string));
+            miTabla.Columns.Add("Estatus", typeof(string));
+
+            foreach (Salon salon in _miLista)
+            {
+
+                miTabla.Rows.Add(salon.IdSalon, salon.Ubicacion, salon.Capacidad, salon.Status);
+            }
+
+            return miTabla;
+        }
+
+        private Boolean ModificarSalonesClase(Salon salon)
+        {
+
+            Boolean retorno = false;
+
+            retorno = _accesoSalon.ModificarSalon(salon);
+
+            return retorno;
+
+        }
+
+        private Boolean AgregarSalonesClase(String ubicacion, int capacidad)
+        {
+            Boolean resultado = false;
+            _salon.Ubicacion = ubicacion;
+            _salon.Capacidad = capacidad;
+            _salon.Status = 0;
+            resultado = _accesoSalon.AgregarSalon(_salon);
+            //conectar a la bd
+
+            return resultado;
+
+        }
+
+        private DataTable ConsultarSalonesClaseUbicacion(String ubi)
+        {
+            DataTable miTabla = new DataTable();
+
+            _miLista = _accesoSalon.BusquedaUbicacion(ubi);
+
+            miTabla.Columns.Add("Nro.Salon", typeof(string));
+            miTabla.Columns.Add("Ubicacion", typeof(string));
+            miTabla.Columns.Add("Capacidad", typeof(string));
+            miTabla.Columns.Add("Estatus", typeof(string));
+
+            foreach (Salon salon in _miLista)
+            {
+
+                miTabla.Rows.Add(salon.IdSalon, salon.Ubicacion, salon.Capacidad, salon.Status);
+            }
+
+            return miTabla;
+        }
+
+        #endregion
     }
 }
