@@ -48,7 +48,6 @@
       <HintPath>bin\AjaxControlToolkit.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="nunit.framework, Version=2.6.2.12296, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -492,7 +491,7 @@
     <Compile Include="Presentacion\MasterPage\Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
-    <Compile Include="PruebasUnitarias\Clase\PruebaClase.cs" />
+    <Compile Include="PruebasUnitarias\ClaseTests\PruebaClase.cs" />
     <Compile Include="PruebasUnitarias\Cliente\PruebaCliente.cs" />
     <Compile Include="PruebasUnitarias\Ejercicio\PruebaEjercicio.cs" />
     <Compile Include="PruebasUnitarias\Excepciones\ExcepcionConexion.cs" />
