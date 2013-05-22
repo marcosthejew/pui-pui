@@ -55,7 +55,12 @@ namespace PuiPui_BackOffice.Entidades.Clase
 
         public ClaseSalon() { 
         }
-
+        public ClaseSalon(Salon.Salon sal, Clase clas, Instructor.Instructor ins)
+        {
+            this.Instructor = ins;
+            this.Salon = sal;
+            this.Clase = clas;
+        }
         #endregion
 
     }

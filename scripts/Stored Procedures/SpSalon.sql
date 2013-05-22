@@ -103,7 +103,7 @@ BEGIN
 	  
     Select id_salon,ubicacion,capacidad,estatus
     from Salon
-    where ubicacion like @Ubicacion;
+    where LOWER(ubicacion) like LOWER(@Ubicacion+'%');
 	
 END
 GO
@@ -196,7 +196,8 @@ CREATE PROCEDURE [dbo].[ModificarSalonClase]
 @Id_salon NVARCHAR(50),
 @Id_clase int,
 @Id_instructor int,
-@Id_clase_salon int
+@Id_clase_salon int,
+@disponibilidad int
 AS
 
 BEGIN
@@ -205,7 +206,7 @@ BEGIN
 
 	
     
-    update Clase_Salon set id_clase=@Id_clase,id_salon=@Id_salon,id_instructor= @Id_instructor where id_clase_salon=@Id_clase_salon ;
+    update Clase_Salon set id_clase=@Id_clase,id_salon=@Id_salon,id_instructor= @Id_instructor, isReservado=@disponibilidad where id_clase_salon=@Id_clase_salon ;
 	
 END
 
@@ -223,7 +224,7 @@ BEGIN
 	SET NOCOUNT ON;
 
     
-        Select clas.nombre,sal.ubicacion,ins.primer_nombre+' '+ins.primer_apellido, clasal.isReservado
+    Select clasal.id_clase_salon, clasal.id_clase_salon, clasal.id_clase_salon, clas.nombre,sal.ubicacion,ins.primer_nombre, ins.primer_apellido, clasal.isReservado
     from Clase clas, Salon sal, Instructor ins, Clase_Salon clasal
 	where clasal.id_clase=clas.id_clase
 	and clasal.id_salon=sal.id_salon
@@ -238,7 +239,7 @@ AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
 drop procedure [ListarSalonesClaseTclase]
 go
 CREATE PROCEDURE [dbo].[ListarSalonesClaseTclase]
-@id_clase int 
+@nombre int 
 AS
 
 BEGIN
@@ -246,9 +247,9 @@ BEGIN
 	SET NOCOUNT ON;
 
     
-    Select clas.nombre,sal.ubicacion,ins.primer_nombre+' '+ins.primer_apellido, clasal.isReservado
+    Select clasal.id_clase_salon, clas.nombre,sal.ubicacion,ins.primer_nombre+' '+ins.primer_apellido, clasal.isReservado
     from Clase clas, Salon sal, Instructor ins, Clase_Salon clasal
-	where clas.id_clase=@id_clase
+	where LOWER(clas.nombre) like LOWER(@nombre+'%')
 	and clasal.id_clase=clas.id_clase
 	and clasal.id_salon=sal.id_salon
 	and clasal.id_instructor=ins.id_instructor;
@@ -262,7 +263,7 @@ AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
 drop procedure [ListarSalonesClaseTsalon]
 go
 CREATE PROCEDURE [dbo].[ListarSalonesClaseTsalon]
-@Id_Salon int 
+@Ubicacion int 
 AS
 
 BEGIN
@@ -270,9 +271,9 @@ BEGIN
 	SET NOCOUNT ON;
 
     
-    Select clas.nombre,sal.ubicacion,ins.primer_nombre+' '+ins.primer_apellido, clasal.isReservado
+    Select clasal.id_clase_salon, clas.nombre,sal.ubicacion,ins.primer_nombre+' '+ins.primer_apellido, clasal.isReservado
     from Clase clas, Salon sal, Instructor ins, Clase_Salon clasal
-	where sal.id_salon=@Id_Salon
+	where LOWER(sal.ubicacion) like LOWER(@Ubicacion+'%')
 	and clasal.id_clase=clas.id_clase
 	and clasal.id_salon=sal.id_salon
 	and clasal.id_instructor=ins.id_instructor;
@@ -286,7 +287,7 @@ AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
 drop procedure [ListarSalonesClaseTinstructor]
 go
 CREATE PROCEDURE [dbo].[ListarSalonesClaseTinstructor]
-@Id_Instructor int 
+@Nombre int 
 AS
 
 BEGIN
@@ -294,9 +295,10 @@ BEGIN
 	SET NOCOUNT ON;
 
     
-    Select clas.nombre,sal.ubicacion,ins.primer_nombre+' '+ins.primer_apellido, clasal.isReservado
+    Select clasal.id_clase_salon,clas.nombre,sal.ubicacion,ins.primer_nombre+' '+ins.primer_apellido, clasal.isReservado
     from Clase clas, Salon sal, Instructor ins, Clase_Salon clasal
-	where ins.id_instructor=@Id_Instructor
+	where LOWER(ins.primer_nombre) like LOWER(@Nombre+'%')
+	or LOWER(ins.primer_apellido) like LOWER(@Nombre+'%')
 	and clasal.id_clase=clas.id_clase
 	and clasal.id_salon=sal.id_salon
 	and clasal.id_instructor=ins.id_instructor;
@@ -318,7 +320,7 @@ BEGIN
 	SET NOCOUNT ON;
 
     
-    Select clas.nombre,sal.ubicacion,ins.primer_nombre+' '+ins.primer_apellido, clasal.isReservado
+    Select clasal.id_clase_salon, clas.nombre,sal.ubicacion,ins.primer_nombre+' '+ins.primer_apellido, clasal.isReservado
     from Clase clas, Salon sal, Instructor ins, Clase_Salon clasal
 	where clasal.isReservado=@reservacion
 	and clasal.id_clase=clas.id_clase
@@ -328,3 +330,4 @@ BEGIN
 END
 
 GO
+
