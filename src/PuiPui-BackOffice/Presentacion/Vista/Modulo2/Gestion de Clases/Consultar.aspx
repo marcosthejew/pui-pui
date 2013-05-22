@@ -18,7 +18,7 @@ AutoEventWireup="true" CodeBehind="Consultar.aspx.cs" Inherits="PuiPui_BackOffic
                     </td>
                 <td align="left" rowspan="0" class="auto-style5" nowrap="nowrap">
                     <asp:RadioButton ID="consultaClasePorNombres" runat="server" 
-                        GroupName="ConsultarClases" Text="Nombre:"  
+                        GroupName="ConsultarClases" Text="Nombre:" OnCheckedChanged="consultaClasePorNombres_CheckedChanged"  
                        />
 
                     </td>
@@ -30,7 +30,7 @@ AutoEventWireup="true" CodeBehind="Consultar.aspx.cs" Inherits="PuiPui_BackOffic
               
                 <td rowspan="0" class="auto-style6" nowrap="nowrap">
                     <asp:RadioButton ID="consultaClasePorEstatus" runat="server" 
-                        GroupName="ConsultarClases" Text="Estatus:"/>
+                        GroupName="ConsultarClases" Text="Estatus:" OnCheckedChanged="consultaClasePorEstatus_CheckedChanged1"/>
                        
                     
                     </td>
@@ -38,9 +38,10 @@ AutoEventWireup="true" CodeBehind="Consultar.aspx.cs" Inherits="PuiPui_BackOffic
                 <td rowspan="0" class="style47" nowrap="nowrap">
                    
 
-                    <asp:DropDownList ID="DropDownListEstatusClase" runat="server" Width="87px">
-                        <asp:ListItem Value="0">Activos</asp:ListItem>
-                        <asp:ListItem Value="1">Inativos</asp:ListItem>
+                    <asp:DropDownList ID="DropDownListEstatusClase" runat="server" Width="87px" OnSelectedIndexChanged="DropDownListEstatusClase_SelectedIndexChanged">
+                        <asp:ListItem Value="0">Activa</asp:ListItem>
+                        <asp:ListItem Value="1">Inactiva</asp:ListItem>
+                        
                     </asp:DropDownList>
 
 
@@ -57,7 +58,7 @@ AutoEventWireup="true" CodeBehind="Consultar.aspx.cs" Inherits="PuiPui_BackOffic
           
         <div style="margin-top:60px">
                         <asp:GridView ID="GridConsultar" runat="server" CellPadding="4" ForeColor="#333333" 
-                        GridLines="None" align="center" Height="16px" Width="687px" 
+                        GridLines="None" Height="16px" Width="687px" 
                         OnRowCommand="GridConsultar_RowCommand" AllowPaging="True" PageSize="10" 
                         OnPageIndexChanging="GridConsultar_PageIndexChanging" 
                         OnSelectedIndexChanged="GridConsultar_SelectedIndexChanged" HorizontalAlign="Center">
