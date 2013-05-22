@@ -52,6 +52,15 @@ namespace PuiPui_FrontOffice.LogicaDeNegocios.Rutinas
    
                 }
 
+         /*Metodo para tener datos de un ejercicio por nombre */
+        public PuiPui_BackOffice.Entidades.Ejercicio.Ejercicio BuscaDatos_Ejercicio (string nombre)
+    {
+        PuiPui_BackOffice.AccesoDeDatos.SQLServer.SQLServerEjercicio ejercicio = new PuiPui_BackOffice.AccesoDeDatos.SQLServer.SQLServerEjercicio();
+       PuiPui_BackOffice.Entidades.Ejercicio.Ejercicio datos_ejercicio = new PuiPui_BackOffice.Entidades.Ejercicio.Ejercicio();
+       datos_ejercicio = ejercicio.ConsultarEjercicio(nombre);
+       return datos_ejercicio;
+       
+    }
         /*Metodo para cargar todos los ejercicios disponibles en la BD */
         public List<PuiPui_BackOffice.Entidades.Ejercicio.Ejercicio> ConsultaTodoEjercicios()
         {

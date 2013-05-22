@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -53,7 +54,10 @@ namespace PuiPui_BackOffice.Entidades.Salon
         {
 
         }
-
+        public Salon(int id)
+        {
+            this.IdSalon = id;
+        }
         #endregion
 
         #region Metodos
