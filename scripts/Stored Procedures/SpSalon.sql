@@ -103,7 +103,7 @@ BEGIN
 	  
     Select id_salon,ubicacion,capacidad,estatus
     from Salon
-    where ubicacion like @Ubicacion;
+    where LOWER(ubicacion) like LOWER(@Ubicacion+'%');
 	
 END
 GO
@@ -165,3 +165,169 @@ BEGIN
 	
 END
 GO
+
+IF EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'[AgregarSalonClase]')
+AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [AgregarSalonClase]
+go
+CREATE PROCEDURE [dbo].[AgregarSalonClase]
+@Id_salon NVARCHAR(50),
+@Id_clase int,
+@Id_instructor int
+AS
+
+BEGIN
+
+	SET NOCOUNT ON;
+
+	
+    
+    Insert Clase_Salon values(0,@Id_clase,@Id_salon,@Id_instructor);
+	
+END
+
+GO
+
+IF EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'[ModificarSalonClase]')
+AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [ModificarSalonClase]
+go
+CREATE PROCEDURE [dbo].[ModificarSalonClase]
+@Id_salon NVARCHAR(50),
+@Id_clase int,
+@Id_instructor int,
+@Id_clase_salon int,
+@disponibilidad int
+AS
+
+BEGIN
+
+	SET NOCOUNT ON;
+
+	
+    
+    update Clase_Salon set id_clase=@Id_clase,id_salon=@Id_salon,id_instructor= @Id_instructor, isReservado=@disponibilidad where id_clase_salon=@Id_clase_salon ;
+	
+END
+
+GO
+
+IF EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'[ListarSalonesClase]')
+AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [ListarSalonesClase]
+go
+CREATE PROCEDURE [dbo].[ListarSalonesClase]
+AS
+
+BEGIN
+
+	SET NOCOUNT ON;
+
+    
+    Select clasal.id_clase_salon, clasal.id_clase_salon, clasal.id_clase_salon, clas.nombre,sal.ubicacion,ins.primer_nombre, ins.primer_apellido, clasal.isReservado
+    from Clase clas, Salon sal, Instructor ins, Clase_Salon clasal
+	where clasal.id_clase=clas.id_clase
+	and clasal.id_salon=sal.id_salon
+	and clasal.id_instructor=ins.id_instructor;
+	
+END
+
+GO
+
+IF EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'[ListarSalonesClaseTclase]')
+AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [ListarSalonesClaseTclase]
+go
+CREATE PROCEDURE [dbo].[ListarSalonesClaseTclase]
+@nombre int 
+AS
+
+BEGIN
+
+	SET NOCOUNT ON;
+
+    
+    Select clasal.id_clase_salon, clas.nombre,sal.ubicacion,ins.primer_nombre+' '+ins.primer_apellido, clasal.isReservado
+    from Clase clas, Salon sal, Instructor ins, Clase_Salon clasal
+	where LOWER(clas.nombre) like LOWER(@nombre+'%')
+	and clasal.id_clase=clas.id_clase
+	and clasal.id_salon=sal.id_salon
+	and clasal.id_instructor=ins.id_instructor;
+	
+END
+
+GO
+
+IF EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'[ListarSalonesClaseTsalon]')
+AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [ListarSalonesClaseTsalon]
+go
+CREATE PROCEDURE [dbo].[ListarSalonesClaseTsalon]
+@Ubicacion int 
+AS
+
+BEGIN
+
+	SET NOCOUNT ON;
+
+    
+    Select clasal.id_clase_salon, clas.nombre,sal.ubicacion,ins.primer_nombre+' '+ins.primer_apellido, clasal.isReservado
+    from Clase clas, Salon sal, Instructor ins, Clase_Salon clasal
+	where LOWER(sal.ubicacion) like LOWER(@Ubicacion+'%')
+	and clasal.id_clase=clas.id_clase
+	and clasal.id_salon=sal.id_salon
+	and clasal.id_instructor=ins.id_instructor;
+	
+END
+
+GO
+
+IF EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'[ListarSalonesClaseTinstructor]')
+AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [ListarSalonesClaseTinstructor]
+go
+CREATE PROCEDURE [dbo].[ListarSalonesClaseTinstructor]
+@Nombre int 
+AS
+
+BEGIN
+
+	SET NOCOUNT ON;
+
+    
+    Select clasal.id_clase_salon,clas.nombre,sal.ubicacion,ins.primer_nombre+' '+ins.primer_apellido, clasal.isReservado
+    from Clase clas, Salon sal, Instructor ins, Clase_Salon clasal
+	where LOWER(ins.primer_nombre) like LOWER(@Nombre+'%')
+	or LOWER(ins.primer_apellido) like LOWER(@Nombre+'%')
+	and clasal.id_clase=clas.id_clase
+	and clasal.id_salon=sal.id_salon
+	and clasal.id_instructor=ins.id_instructor;
+	
+END
+
+GO
+
+IF EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'[ListarSalonesClaseTdisponible]')
+AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [ListarSalonesClaseTdisponible]
+go
+CREATE PROCEDURE [dbo].[ListarSalonesClaseTdisponible]
+@reservacion int 
+AS
+
+BEGIN
+
+	SET NOCOUNT ON;
+
+    
+    Select clasal.id_clase_salon, clas.nombre,sal.ubicacion,ins.primer_nombre+' '+ins.primer_apellido, clasal.isReservado
+    from Clase clas, Salon sal, Instructor ins, Clase_Salon clasal
+	where clasal.isReservado=@reservacion
+	and clasal.id_clase=clas.id_clase
+	and clasal.id_salon=sal.id_salon
+	and clasal.id_instructor=ins.id_instructor;
+	
+END
+
+GO
+

@@ -9,7 +9,6 @@ using PuiPui_BackOffice.AccesoDeDatos.Conexion;
 using PuiPui_BackOffice.AccesoDeDatos.Conexion.IConexion;
 using PuiPui_BackOffice.AccesoDeDatos.Excepciones_BD;
 using PuiPui_BackOffice.Entidades.Clase;
-using PuiPui_BackOffice.LogicaDeNegocios.LogicaClase;
 
 namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 {

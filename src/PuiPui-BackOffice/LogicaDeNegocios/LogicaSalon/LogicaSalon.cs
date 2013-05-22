@@ -32,9 +32,9 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
 
         #endregion
 
-        #region Metodos
+        #region Metodos Salon
 
-        private DataTable ConsultarSalones()
+        public DataTable ConsultarSalones()
         {
             DataTable miTabla = new DataTable();
 
@@ -54,7 +54,7 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
             return miTabla;
         }
 
-        private Boolean ModificarSalones(Salon salon)
+        public Boolean ModificarSalones(Salon salon)
         {
 
             Boolean retorno = false;
@@ -65,7 +65,7 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
 
         }
 
-        private Boolean AgregarSalones(String ubicacion, int capacidad)
+        public Boolean AgregarSalones(String ubicacion, int capacidad)
         {
             Boolean resultado = false;
             _salon.Ubicacion = ubicacion;
@@ -78,7 +78,7 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
 
         }
 
-        private DataTable ConsultarSalonesUbicacion(String ubi)
+        public DataTable ConsultarSalonesUbicacion(String ubi)
         {
             DataTable miTabla = new DataTable();
 
@@ -98,7 +98,7 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
             return miTabla;
         }
 
-        private DataTable ConsultarSalonesCapacidadMayo(int capa)
+        public DataTable ConsultarSalonesCapacidadMayo(int capa)
         {
             DataTable miTabla = new DataTable();
 
@@ -118,7 +118,7 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
             return miTabla;
         }
 
-        private DataTable ConsultarSalonesCapacidadMenor(int capa)
+        public DataTable ConsultarSalonesCapacidadMenor(int capa)
         {
             DataTable miTabla = new DataTable();
 
@@ -138,7 +138,7 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
             return miTabla;
         }
 
-        private DataTable ConsultarSalonesStatus(int stat)
+        public DataTable ConsultarSalonesStatus(int stat)
         {
             DataTable miTabla = new DataTable();
 
@@ -160,5 +160,72 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
 
         #endregion
 
+        #region Metodos Clase Salon Instructor
+
+        public DataTable ConsultarSalonesClase()
+        {
+            DataTable miTabla = new DataTable();
+
+            _miLista = _accesoSalon.ConsultarSalones();
+
+            miTabla.Columns.Add("Nro.Salon", typeof(string));
+            miTabla.Columns.Add("Ubicacion", typeof(string));
+            miTabla.Columns.Add("Capacidad", typeof(string));
+            miTabla.Columns.Add("Estatus", typeof(string));
+
+            foreach (Salon salon in _miLista)
+            {
+
+                miTabla.Rows.Add(salon.IdSalon, salon.Ubicacion, salon.Capacidad, salon.Status);
+            }
+
+            return miTabla;
+        }
+
+        public Boolean ModificarSalonesClase(Salon salon)
+        {
+
+            Boolean retorno = false;
+
+            retorno = _accesoSalon.ModificarSalon(salon);
+
+            return retorno;
+
+        }
+
+        public Boolean AgregarSalonesClase(String ubicacion, int capacidad)
+        {
+            Boolean resultado = false;
+            _salon.Ubicacion = ubicacion;
+            _salon.Capacidad = capacidad;
+            _salon.Status = 0;
+            resultado = _accesoSalon.AgregarSalon(_salon);
+            //conectar a la bd
+
+            return resultado;
+
+        }
+
+        public DataTable ConsultarSalonesClaseUbicacion(String ubi)
+        {
+            DataTable miTabla = new DataTable();
+
+            _miLista = _accesoSalon.BusquedaUbicacion(ubi);
+
+            miTabla.Columns.Add("Nro.Salon", typeof(string));
+            miTabla.Columns.Add("Ubicacion", typeof(string));
+            miTabla.Columns.Add("Capacidad", typeof(string));
+            miTabla.Columns.Add("Estatus", typeof(string));
+
+            foreach (Salon salon in _miLista)
+            {
+
+                miTabla.Rows.Add(salon.IdSalon, salon.Ubicacion, salon.Capacidad, salon.Status);
+            }
+
+            return miTabla;
+        }
+
+        #endregion
     }
 }

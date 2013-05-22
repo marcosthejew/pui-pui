@@ -53,8 +53,19 @@ namespace PuiPui_BackOffice.Entidades.Clase
             this._nombre = Nombre;
             this._idClase = IdClase;
         }
+        public Clase(String Nombre, int IdClase, String Descripcion,int stat)
+        {
+            this.Status = stat;
+            this._descripcion = Descripcion;
+            this._nombre = Nombre;
+            this._idClase = IdClase;
+        }
         public Clase()
         {
+        }
+        public Clase(int id)
+        {
+            this.IdClase = id;
         }
 
         #endregion
