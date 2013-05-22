@@ -54,9 +54,28 @@ namespace PuiPui_BackOffice.PruebasUnitarias.ClaseTests
         [TestMethod]
         public void DetalleTest()
         {
-             _accesoClase = new SQLServerClase();
-             _clase = new Clase("TaeBox",3,"clase de ejercicios fuertes",1);
-             
+            try
+            {
+
+                _listaClaseAux = new List<Clase>();
+                _accesoClase = new SQLServerClase();
+                _clase = new Clase("Tae Box", 3, "clase de ejercicios fuertes", 1);
+
+
+                _listaClase = _accesoClase.BusquedaNombreClase("Tae Box");
+
+                foreach (Clase clas in _listaClase)
+                {
+
+                    Assert.Equals(clas.Descripcion, _clase.Descripcion);
+
+
+                }
+
+            }
+            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion E)
+            {
+            }
         }
 
         [TestMethod]
@@ -93,7 +112,49 @@ namespace PuiPui_BackOffice.PruebasUnitarias.ClaseTests
         [TestMethod]
         public void BuscarNombreTest()
         {
-            
+            try
+            {
+
+                _listaClaseAux = new List<Clase>();
+                _accesoClase = new SQLServerClase();
+                _clase = new Clase("Tae Box", 3, "clase de ejercicios fuertes", 1);
+             
+
+                _listaClase = _accesoClase.BusquedaNombreClase("Tae Box");
+                
+                foreach (Clase clas in _listaClase)
+                {
+                    
+                    Assert.Equals(clas.Nombre, _clase.Nombre);
+                    
+
+                }
+
+            }
+            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion E)
+            {
+            }
+        }
+
+        [TestMethod]
+        public void BuscarStatusTest()
+        {
+            try
+            {
+                _accesoClase = new SQLServerClase();
+                _listaClase = _accesoClase.BusquedaStatusClase(1);
+
+                foreach (Clase clas in _listaClase)
+                {
+
+                    Assert.IsTrue(clas.Status==1);
+
+                }
+
+            }
+            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion E)
+            {
+            }
         }
     }
 }

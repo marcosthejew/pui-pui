@@ -34,7 +34,7 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
 
         #region Metodos Salon
 
-        private DataTable ConsultarSalones()
+        public DataTable ConsultarSalones()
         {
             DataTable miTabla = new DataTable();
 
@@ -54,7 +54,7 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
             return miTabla;
         }
 
-        private Boolean ModificarSalones(Salon salon)
+        public Boolean ModificarSalones(Salon salon)
         {
 
             Boolean retorno = false;
@@ -65,7 +65,7 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
 
         }
 
-        private Boolean AgregarSalones(String ubicacion, int capacidad)
+        public Boolean AgregarSalones(String ubicacion, int capacidad)
         {
             Boolean resultado = false;
             _salon.Ubicacion = ubicacion;
@@ -78,7 +78,7 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
 
         }
 
-        private DataTable ConsultarSalonesUbicacion(String ubi)
+        public DataTable ConsultarSalonesUbicacion(String ubi)
         {
             DataTable miTabla = new DataTable();
 
@@ -98,7 +98,7 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
             return miTabla;
         }
 
-        private DataTable ConsultarSalonesCapacidadMayo(int capa)
+        public DataTable ConsultarSalonesCapacidadMayo(int capa)
         {
             DataTable miTabla = new DataTable();
 
@@ -118,7 +118,7 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
             return miTabla;
         }
 
-        private DataTable ConsultarSalonesCapacidadMenor(int capa)
+        public DataTable ConsultarSalonesCapacidadMenor(int capa)
         {
             DataTable miTabla = new DataTable();
 
@@ -138,7 +138,7 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
             return miTabla;
         }
 
-        private DataTable ConsultarSalonesStatus(int stat)
+        public DataTable ConsultarSalonesStatus(int stat)
         {
             DataTable miTabla = new DataTable();
 
@@ -162,7 +162,7 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
 
         #region Metodos Clase Salon Instructor
 
-        private DataTable ConsultarSalonesClase()
+        public DataTable ConsultarSalonesClase()
         {
             DataTable miTabla = new DataTable();
 
@@ -182,7 +182,7 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
             return miTabla;
         }
 
-        private Boolean ModificarSalonesClase(Salon salon)
+        public Boolean ModificarSalonesClase(Salon salon)
         {
 
             Boolean retorno = false;
@@ -193,7 +193,7 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
 
         }
 
-        private Boolean AgregarSalonesClase(String ubicacion, int capacidad)
+        public Boolean AgregarSalonesClase(String ubicacion, int capacidad)
         {
             Boolean resultado = false;
             _salon.Ubicacion = ubicacion;
@@ -206,7 +206,7 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
 
         }
 
-        private DataTable ConsultarSalonesClaseUbicacion(String ubi)
+        public DataTable ConsultarSalonesClaseUbicacion(String ubi)
         {
             DataTable miTabla = new DataTable();
 
