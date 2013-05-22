@@ -6,6 +6,11 @@
 
         <fieldset style="width:740px; height:100px; margin-left:0px auto 0px auto;">
             <legend>Buscar Empleados</legend>
+
+            <div style="height:30px; text-align:center; font-family:Verdana; font-size: 1em;">
+                <asp:Label ID="info" runat="server" AssociatedControlID="cargoRadioButton" Visible="true" ForeColor="Red">Para realizar la busqueda por nombre; solo debe introducir UN nombre o apellido.</asp:Label>
+            </div>  
+
             <table align="center" border="0" cellpadding="0" cellspacing="0">
                 <tr>
                     <td>
@@ -42,10 +47,10 @@
                     <asp:CommandField AccessibleHeaderText="Seleccion" ButtonType="Image" HeaderText="Detalle"
                         SelectImageUrl="~/Presentacion/Imagenes/Editar.png" ShowSelectButton="True" />
                      <asp:BoundField DataField="idPersona" HeaderText="idPersona" Visible="false"/>
-                    <asp:BoundField DataField="cedulaPersona" HeaderText="cedulaPersona"/>
-                    <asp:BoundField DataField="nombrePersona1" HeaderText="nombrePersona1" />
-                    <asp:BoundField DataField="apellidoPersona1" HeaderText="apellidoPersona1" />
-                    <asp:BoundField DataField="fechaIngresoPersona" HeaderText="fechaIngresoPersona" />
+                    <asp:BoundField DataField="cedulaPersona" HeaderText="CEDULA"/>
+                    <asp:BoundField DataField="nombrePersona1" HeaderText="NOMBRES" />
+                    <asp:BoundField DataField="apellidoPersona1" HeaderText="APELLIDOS" />
+                    <asp:BoundField DataField="fechaIngresoPersona" HeaderText="FECHA INGRESO" />
                 </Columns>
                 <EditRowStyle BackColor="#2461BF" HorizontalAlign="Center" VerticalAlign="Middle" />
                 <EmptyDataRowStyle HorizontalAlign="Center" VerticalAlign="Middle" />

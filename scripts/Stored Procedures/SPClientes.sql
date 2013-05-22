@@ -11,7 +11,8 @@ as
 BEGIN
 	set nocount on
 		
-	SELECT P.idPersona, P.cedulaPersona, P.nombrePersona1, P.apellidoPersona1, P.fechaIngresoPersona
+	SELECT P.idPersona, P.cedulaPersona, P.nombrePersona1 +' '+ P.nombrePersona2 as nombrePersona1, 
+	       P.apellidoPersona1+' '+P.apellidoPersona2 as apellidoPersona1, P.fechaIngresoPersona
 	FROM Persona P
 		
 END;
@@ -28,7 +29,8 @@ as
 BEGIN
 	set nocount on
 		
-	SELECT P.idPersona, P.cedulaPersona, P.nombrePersona1, P.apellidoPersona1, P.fechaIngresoPersona
+	SELECT P.idPersona, P.cedulaPersona, P.nombrePersona1 +' '+ P.nombrePersona2 as nombrePersona1, 
+	       P.apellidoPersona1+' '+P.apellidoPersona2 as apellidoPersona1, P.fechaIngresoPersona
 	FROM Persona P
 	where P.cedulaPersona = @cedulaPersona
 		
@@ -46,9 +48,11 @@ as
 BEGIN
 	set nocount on
 		
-	SELECT P.idPersona, P.cedulaPersona, P.nombrePersona1, P.apellidoPersona1, P.fechaIngresoPersona
+	SELECT P.idPersona, P.cedulaPersona, P.nombrePersona1 +' '+ P.nombrePersona2 as nombrePersona1, 
+	       P.apellidoPersona1+' '+P.apellidoPersona2 as apellidoPersona1, P.fechaIngresoPersona
 	FROM Persona P
-	where P.nombrePersona1 = @nombrePersona1
+	where (P.nombrePersona1 = @nombrePersona1 or P.nombrePersona2 = @nombrePersona1 or 
+	       P.apellidoPersona1 = @nombrePersona1 or P.apellidoPersona2 = @nombrePersona1)
 		
 END;
 GO
