@@ -224,7 +224,7 @@ BEGIN
 	SET NOCOUNT ON;
 
     
-    Select clasal.id_clase_salon, clasal.id_clase_salon, clasal.id_clase_salon, clas.nombre,sal.ubicacion,ins.primer_nombre, ins.primer_apellido, clasal.isReservado
+    Select clasal.id_clase_salon, clas.nombre,sal.ubicacion,ins.primer_nombre, ins.primer_apellido, clasal.isReservado
     from Clase clas, Salon sal, Instructor ins, Clase_Salon clasal
 	where clasal.id_clase=clas.id_clase
 	and clasal.id_salon=sal.id_salon
