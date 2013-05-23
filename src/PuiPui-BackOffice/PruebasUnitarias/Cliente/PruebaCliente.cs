@@ -121,8 +121,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.Cliente
             miPersona.FechaNacimientoPersona = Convert.ToDateTime("1988-07-29");
             miPersona.FechaIngresoPersona = Convert.ToDateTime("2013-05-14");
             miPersona.CiudadPersona = "Caracas";
-            miPersona.DireccionPersona = "plaza venezuela";
-            miPersona.DireccionPersona = "Los chorros";
+            miPersona.DireccionPersona = "Plaza venezuela";
             miPersona.TelefonoCelularPersona = "04149876543";
             miPersona.TelefonoLocalPersona = "02122345678";
             miPersona.CorreoPersona = "ilismile@gmail.com";
