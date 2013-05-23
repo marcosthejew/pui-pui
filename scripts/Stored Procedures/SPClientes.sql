@@ -6,7 +6,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-ALTER PROCEDURE [dbo].[cambiarContraseña]
+CREATE PROCEDURE [dbo].[cambiarContraseña]
 
 	@idPersona bigint,
 	@passwordPersona [nchar](50)
@@ -25,7 +25,7 @@ BEGIN
 	WHERE [Persona].idPersona = @idPersona
 	
 END;
-
+GO
 
 USE [puipuiDB]
 GO
@@ -51,6 +51,7 @@ BEGIN
 
 		
 END;
+GO
 
 USE [puipuiDB]
 GO
@@ -70,6 +71,7 @@ BEGIN
 	FROM Persona P
 		
 END;
+go
 USE [puipuiDB]
 GO
 /****** Object:  StoredProcedure [dbo].[consultarPersonaCedula]    Script Date: 21/05/2013 9:58:28 ******/
@@ -89,6 +91,7 @@ BEGIN
 	where P.cedulaPersona = @cedulaPersona
 		
 END;
+go
 USE [puipuiDB]
 GO
 /****** Object:  StoredProcedure [dbo].[consultarPersonaNombre]    Script Date: 21/05/2013 10:37:12 ******/
