@@ -2,18 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-//using NUnit.Framework;
+using NUnit.Framework;
 using PuiPui_BackOffice.AccesoDeDatos.SQLServer;
 using PuiPui_BackOffice.Entidades.Ejercicio;
 using PuiPui_BackOffice.LogicaDeNegocios.Ejercicio;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace PuiPui_BackOffice.PruebasUnitarias.Ejercicio
 {
-    [TestClass]
-    public class SQLMusculoTest
+    [TestFixture]
+    public class PruebaMusculo
     {
-        [TestMethod]
+        [Test]
         public void TestAgregarMusculo()
         {
             LogicaMusculo objMusculo = new LogicaMusculo();
@@ -21,7 +20,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.Ejercicio
             Assert.AreEqual(true, objMusculo.AgregarMusculo(nombreMusculo));
         }
 
-        [TestMethod]
+        [Test]
         public void TestEliminarMusculo()
         {
             LogicaMusculo objMusculo = new LogicaMusculo();
