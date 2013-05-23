@@ -21,7 +21,8 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 
         public int BuscarId(string cedula)
         {
-            string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            //string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
             SqlConnection conexion = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
             SqlDataReader dr;
@@ -62,7 +63,8 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 
         public void agregarHorario(Horario horario,int a)
         {
-            string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            //string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
             SqlConnection conexion = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
             SqlDataReader dr;
@@ -104,7 +106,8 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 
         public List<Horario> ConsultarHorarios(String cedula)
         {
-            string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            //string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
             SqlConnection conexion = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
             SqlDataReader dr;

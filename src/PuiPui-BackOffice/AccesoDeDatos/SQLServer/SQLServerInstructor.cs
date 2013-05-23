@@ -22,7 +22,8 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 
         public bool ExisteInstructor(string tb1)
         {
-            string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            //string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
             SqlConnection conexion = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
             SqlDataReader dr;
@@ -63,7 +64,8 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
         public bool insertarInstructor(string tb1, string tb2, string tb3, int tb4, string tb5, string tb6, string tb7, int tb8, string tb9, string tb10, string tb11, int tb12, DateTime calendar, string cb)
         {
 
-            string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            //string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
             SqlConnection conexion = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
             SqlDataReader dr;
@@ -119,7 +121,8 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
         public List<Instructor> ConsultarInstructores()
         {
 
-            string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+           // string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
             SqlConnection conexion = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
             SqlDataReader dr;
@@ -170,7 +173,8 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 
         public Instructor ConsultarIntructor(string cedula)
         {
-            string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            //string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
             SqlConnection conexion = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
             SqlDataReader dr;
@@ -231,7 +235,8 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
         public bool eliminarInstructor(string a) 
         {
 
-            string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            //string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
             SqlConnection conexion = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
             SqlDataReader dr;
