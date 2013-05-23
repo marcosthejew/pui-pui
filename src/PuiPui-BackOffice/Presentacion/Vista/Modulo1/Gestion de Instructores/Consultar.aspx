@@ -112,13 +112,118 @@
             <td class="auto-style6">
                 <asp:Label ID="lbNomContacto" runat="server" BackColor="White" ForeColor="Black" Text="Label"></asp:Label>
             </td>
-            <td class="auto-style7">Telefono:
+            <td class="auto-style34">Telefono:
+                 </td>
+            <td class="style1">
                  <asp:Label ID="lbTLfContacto" runat="server" BackColor="White" ForeColor="Black" Text="Label"></asp:Label>
             </td>
-            <td class="style1">&nbsp;</td>
         </tr>
     </table>
-    <br />
+
+
+     <br />
+        <h3>
+             Horario:
+         </h3> 
+        <hr />
+        <table style="width: 899px">
+          <tr>
+                <td class="auto-style8">
+                    
+                    <asp:Label ID="Label1" runat="server" Text="Label" Visible="False"></asp:Label>
+                </td>
+               <td class="auto-style35">
+                    
+                    &nbsp;</td>
+          </tr>
+          <tr>
+                <td class="auto-style2">
+                    &nbsp;&nbsp;</td>
+                <td class="auto-style35">
+                    &nbsp;<asp:Label ID="Label2" runat="server" Text="Label" Visible="False"></asp:Label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                 <td class="auto-style7">
+                     <asp:Label ID="Label3" runat="server" Text="Label" Visible="False"></asp:Label>
+                </td>
+                <td class="style1">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+           </tr> 
+           <tr>
+                  <td class="auto-style2">
+                      <asp:Label ID="Label4" runat="server" Text="Label" Visible="False"></asp:Label>
+                  </td>
+                </tr>
+                 <tr>
+                <td class="auto-style9">
+                    &nbsp;&nbsp;</td>
+                <td class="auto-style35">
+                    &nbsp;<asp:Label ID="Label5" runat="server" Text="Label" Visible="False"></asp:Label>
+                    </td>
+                <td class="auto-style11">
+                    <asp:Label ID="Label6" runat="server" Text="Label" Visible="False"></asp:Label>
+                     </td>
+                <td class="auto-style12">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+            </tr>
+            <tr>
+                  <td class="auto-style2">
+                      <asp:Label ID="Label7" runat="server" Text="Label" Visible="False"></asp:Label>
+                  </td>
+            </tr>
+            <tr>
+                <td class="auto-style2">
+                    &nbsp;&nbsp;</td>
+                <td class="auto-style35">
+                    <asp:Label ID="Label8" runat="server" Text="Label" Visible="False"></asp:Label>
+                    </td>
+                <td class="auto-style7">
+                    <asp:Label ID="Label9" runat="server" Text="Label" Visible="False"></asp:Label>
+                </td>
+                <td class="style1">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+            </tr> 
+                 <tr>
+                  <td class="auto-style2">
+                      <asp:Label ID="Label10" runat="server" Text="Label" Visible="False"></asp:Label>
+                     </td>
+                </tr>
+                 <tr>
+                <td class="auto-style2">
+                    &nbsp;&nbsp;</td>
+                <td class="auto-style35">
+                    &nbsp;<asp:Label ID="Label11" runat="server" Text="Label" Visible="False"></asp:Label>
+                    </td>
+                <td class="auto-style7">
+                    <asp:Label ID="Label12" runat="server" Text="Label" Visible="False"></asp:Label>
+                     </td>
+                <td class="style1">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+            </tr>   
+            <tr>
+                  <td class="auto-style2">
+                      <asp:Label ID="Label13" runat="server" Text="Label" Visible="False"></asp:Label>
+                  </td>
+            </tr>
+                 <tr>
+                <td class="auto-style2">
+                    &nbsp;&nbsp;&nbsp;</td>
+                <td class="auto-style35">
+                    <asp:Label ID="Label14" runat="server" Text="Label" Visible="False"></asp:Label>
+                    </td>
+                <td class="auto-style7">
+                    <asp:Label ID="Label15" runat="server" Text="Label" Visible="False"></asp:Label>
+                     </td>
+                <td class="style1">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+            </tr>    
+        </table>
+        <br />
 
 
     </asp:Content>
@@ -183,6 +288,12 @@
         .auto-style33 {
             width: 172px;
             height: 29px;
+        }
+        .auto-style34 {
+            width: 65px;
+        }
+        .auto-style35 {
+            width: 147px;
         }
     </style>
 </asp:Content>

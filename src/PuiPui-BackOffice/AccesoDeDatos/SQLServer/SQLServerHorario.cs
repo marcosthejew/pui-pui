@@ -102,7 +102,51 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 
 
 
-
+        public List<Horario> ConsultarHorarios(String cedula)
+        {
+            string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader dr;
+ 
+            List<Horario> horarios = new List<Horario>();
+            try
+            {
+                conexion = new SqlConnection(cadenaConexion);
+                conexion.Open();
+                cmd = new SqlCommand("[dbo].[consultarHorariosInstructor]", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@cedula", cedula);
+                dr = cmd.ExecuteReader();
+               // List<Horario> horarios = new List<Horario>();
+                bool entra = false;
+                //Se recorre cada row
+                
+                while (dr.Read())
+                {
+                    entra = true;
+                    Horario horario = new Horario();
+                    horario.dia = dr.GetValue(0).ToString();
+                    horario.horaini = DateTime.Parse(dr.GetValue(1).ToString());
+                    horario.horafin = DateTime.Parse(dr.GetValue(2).ToString());
+                    horarios.Add(horario);
+                }
+                db.CerrarConexion();
+              //  if (entra)
+                   // return horarios;
+            }
+            catch (SqlException error)
+            {
+                //En caso de que se viole alguna restriccion sobre la BD
+                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+            }
+            finally
+            {
+                db.CerrarConexion();
+            }
+           // return null;
+            return horarios;
+        }
 
 
 
