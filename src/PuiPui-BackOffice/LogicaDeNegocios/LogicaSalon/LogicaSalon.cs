@@ -214,13 +214,17 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
 
         }
 
-        public Boolean AgregarSalonesClase(String ubicacion, int capacidad)
+        public Boolean AgregarSalonesClase(int idclas, int idins, int idsa)
         {
             Boolean resultado = false;
-            _salon.Ubicacion = ubicacion;
-            _salon.Capacidad = capacidad;
+
+            ClaseSalon newclase= new ClaseSalon( );
+
+            newclase.Clase.IdClase=idclas;
+            newclase.Salon.IdSalon=idsa;
+            newclase.Instructor.IdPersona=idsa;
             _salon.Status = 0;
-            resultado = _accesoSalon.AgregarSalon(_salon);
+            resultado = _accesoSalonClase.AgregarClaseSalon(newclase);
             //conectar a la bd
 
             return resultado;
