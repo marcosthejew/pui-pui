@@ -10,13 +10,12 @@ using PuiPui_BackOffice.AccesoDeDatos.Conexion.IConexion;
 using PuiPui_BackOffice.AccesoDeDatos.Excepciones_BD;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PuiPui_BackOffice.Entidades.Salon;
-using NUnit.Framework;
 using PuiPui_BackOffice.AccesoDeDatos.SQLServer;
 
 
 namespace PuiPui_BackOffice.PruebasUnitarias.SalonTest
 {
-    [TestFixture]
+    [TestClass]
     public class PruebaSalon
     {
 

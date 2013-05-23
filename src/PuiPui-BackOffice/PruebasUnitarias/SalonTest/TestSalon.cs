@@ -8,23 +8,20 @@ using System.Configuration;
 using PuiPui_BackOffice.AccesoDeDatos.Conexion;
 using PuiPui_BackOffice.AccesoDeDatos.Conexion.IConexion;
 using PuiPui_BackOffice.AccesoDeDatos.Excepciones_BD;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PuiPui_BackOffice.Entidades.Salon;
 using NUnit.Framework;
 using PuiPui_BackOffice.AccesoDeDatos.SQLServer;
 
-
 namespace PuiPui_BackOffice.PruebasUnitarias.SalonTest
 {
     [TestFixture]
-    public class PruebaSalon
+    public class TestSalon
     {
-
         Salon _salon;
         SQLServerSalon _accesoSalon;
         List<Salon> _listaSalonAux, _listaSalon;
 
-        [TestMethod]
+        [Test]
         public void AgregarSalonTest()
         {
             try
@@ -41,7 +38,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.SalonTest
 
         }
 
-        [TestMethod]
+        [Test]
         public void ModificarTest()
         {
             try
@@ -56,7 +53,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.SalonTest
             }
         }
 
-        [TestMethod]
+        [Test]
         public void BusuedaUbicacionTest()
         {
             try
@@ -83,7 +80,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.SalonTest
             }
         }
 
-        [TestMethod]
+        [Test]
         public void ConsultarTest()
         {
             try
@@ -106,7 +103,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.SalonTest
                     Assert.Equals(clas.Ubicacion, _listaSalonAux[i].Ubicacion);
                     Assert.IsTrue(clas.Capacidad == _listaSalonAux[i].Capacidad);
                     i++;
-                    if (i==3)
+                    if (i == 3)
                     {
                         break;
                     }
@@ -119,7 +116,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.SalonTest
             }
         }
 
-        [TestMethod]
+        [Test]
         public void BuscarCapacidadMenorTest()
         {
             try
@@ -135,7 +132,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.SalonTest
                 foreach (Salon clas in _listaSalon)
                 {
 
-                    Assert.IsTrue(clas.Capacidad<=90);
+                    Assert.IsTrue(clas.Capacidad <= 90);
 
 
                 }
@@ -146,7 +143,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.SalonTest
             }
         }
 
-        [TestMethod]
+        [Test]
         public void BuscarCapacidadMayorTest()
         {
             try
@@ -173,7 +170,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.SalonTest
             }
         }
 
-        [TestMethod]
+        [Test]
         public void BuscarStatusTrueTest()
         {
             try
@@ -195,7 +192,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.SalonTest
             }
         }
 
-        [TestMethod]
+        [Test]
         public void BuscarStatusFalseTest()
         {
             try

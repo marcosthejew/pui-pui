@@ -559,11 +559,11 @@
     <Compile Include="PruebasUnitarias\Instructor\PruebaInstructor.cs" />
     <Compile Include="PruebasUnitarias\PruebaConexion.cs" />
     <Compile Include="PruebasUnitarias\Rutina\PruebaRutina.cs" />
+    <Compile Include="PruebasUnitarias\SalonTest\TestSalon.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Fakes\" />
-    <Folder Include="PruebasUnitarias\Salon\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Account\Web.config" />
