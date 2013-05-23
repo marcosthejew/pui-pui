@@ -54,6 +54,7 @@ BEGIN
 END;
 GO
 
+
 USE [puipuiDB]
 GO
 SET ANSI_NULLS ON
@@ -71,3 +72,25 @@ BEGIN
 	WHERE cedula=@cedula
 END;
 GO
+
+
+
+USE [puipuiDB]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE procedure [dbo].[eliminarInstructor]
+@cedula nchar (50)
+
+as
+
+BEGIN
+	UPDATE Instructor
+	SET status='Inactivo'
+	WHERE @cedula=cedula
+END;
+GO
+
+

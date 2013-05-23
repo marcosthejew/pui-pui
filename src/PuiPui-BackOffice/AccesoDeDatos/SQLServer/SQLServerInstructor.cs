@@ -225,7 +225,46 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 
 
 
+        public bool eliminarInstructor(string a) 
+        {
 
+            string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader dr;
+
+            try
+            {
+                conexion = new SqlConnection(cadenaConexion);
+                conexion.Open();
+                cmd = new SqlCommand("[dbo].[eliminarInstructor]", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@cedula", a);
+                dr = cmd.ExecuteReader();
+
+                //Se recorre cada row
+                if (dr.Read())
+                {
+                    db.CerrarConexion();
+                    return false;
+                }
+
+                db.CerrarConexion();
+            }
+            catch (SqlException error)
+            {
+                //En caso de que se viole alguna restriccion sobre la BD
+                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+            }
+            finally
+            {
+                db.CerrarConexion();
+            }
+            return true;
+        
+        
+        
+        }
 
 
 
