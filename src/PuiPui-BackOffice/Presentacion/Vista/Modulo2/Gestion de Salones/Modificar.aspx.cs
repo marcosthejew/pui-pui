@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using PuiPui_BackOffice.Entidades.Salon;
 using PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon;
+using PuiPui_BackOffice.Entidades.Cliente; 
 
 namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Geestion_de_Salones
 {
@@ -13,6 +14,9 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Geestion_de_Salones
     {
         private LogicaSalon  _objetoLogica = new LogicaSalon();
         private Salon _objetoSalon;
+        Persona persona;
+        Acceso acceso;
+        string loginPersona;
         
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -22,6 +26,10 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Geestion_de_Salones
             String _status = Convert.ToString((Request.QueryString["status"] != null) ? Request.QueryString["status"] : "");
 
             _objetoSalon = new Salon(Convert.ToInt32(_id));
+             try
+            {
+                acceso = (Acceso)Session["loginPersona"];//recibo a través del SESSION el objeto "acceso" que esta compuesto por el login y el password de la persona que inicio sesión
+                loginPersona = acceso.Login; //le asigno a la variable loginPersona el login de la persona que acaba de iniciar sesión, si nadie ha iniciado sesión esto se va al catch y te redirige al login, si la persona inicio sesión ya tengo su login y se quien es con esto puedo ir a la bd y ver que persona es para hacer las operaciones necesarias
 
             if (!IsPostBack)
             {
@@ -38,37 +46,49 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Geestion_de_Salones
                 TextBoxCapacidad.Text = _capacidad;
 
             }
+            }
+             catch (NullReferenceException) //si la persona no ha iniciado sesión y simplemente pegó el URL en el navegador va a caer en esta excepción
+             {
 
+                 Response.Redirect("../../Home/Login.aspx"); //lo redirigimos al LOGIN para que a juro se tenga que autenticar
+             }
         }
 
         protected void Cancelar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../Presentacion/Vista/Modulo2/Geestion%20de%20Salones/Consultar.aspx");
+            Response.Redirect("../../Modulo2/Gestion de Salones/Consultar.aspx");
         }
 
         protected void Aceptar_Click(object sender, EventArgs e)
         {
-            //nombreClaseAModificar.Text, TextArea.Text
-            _objetoSalon.Ubicacion = TextBoxUbicacion.Text;
-            _objetoSalon.Capacidad = Convert.ToInt32(TextBoxCapacidad.Text);
-            if (Activo.Checked)
+            if ((TextBoxUbicacion.Text.Equals("")) || (TextBoxCapacidad.Text.Equals("")))
             {
-                _objetoSalon.Status = 1;
-            }
-            if (Inactivo.Checked)
-            {
-                _objetoSalon.Status = 0;
-            }
-
-            bool _resultado = _objetoLogica.ModificarSalones(_objetoSalon);
-
-            if (_resultado != false)
-            {
-                Exito.Visible = true;
+                NClase.Visible = true;
             }
             else
             {
-                falla.Visible = true;
+                //nombreClaseAModificar.Text, TextArea.Text
+                _objetoSalon.Ubicacion = TextBoxUbicacion.Text;
+                _objetoSalon.Capacidad = Convert.ToInt32(TextBoxCapacidad.Text);
+                if (Activo.Checked)
+                {
+                    _objetoSalon.Status = 1;
+                }
+                if (Inactivo.Checked)
+                {
+                    _objetoSalon.Status = 0;
+                }
+                NClase.Visible = false;
+                bool _resultado = _objetoLogica.ModificarSalones(_objetoSalon);
+
+                if (_resultado != false)
+                {
+                    Exito.Visible = true;
+                }
+                else
+                {
+                    falla.Visible = true;
+                }
             }
         }
     }
