@@ -31,6 +31,15 @@ namespace PuiPui_FrontOffice {
         protected global::System.Web.UI.HtmlControls.HtmlForm Form1;
         
         /// <summary>
+        /// BRegistrar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BRegistrar;
+        
+        /// <summary>
         /// NavigationMenu control.
         /// </summary>
         /// <remarks>

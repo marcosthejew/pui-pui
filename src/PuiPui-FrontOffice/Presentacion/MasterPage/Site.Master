@@ -12,11 +12,17 @@
     <form id="Form1" runat="server">
     <div class="page">
         <div class="header">
-            <div class="title">
-                <h1>
-                    c PUI PUI FrontOffice
-                </h1>
-            </div>
+            <table style="width: 959px">
+                <tr>
+                    <td>
+                    <h1>
+                    Pui-Pui FrontOffice&nbsp;</h1>
+                    </td>
+                    <td colspan="4" align="center">
+                        <asp:Button ID="BRegistrar" runat="server" CssClass="button" onclick="BRegistrar_Click" Text="Cerrar Sesión" />
+                    </td>
+                </tr>
+                    </table>
             <%--<div class="loginDisplay">
                 <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
                     <AnonymousTemplate>                        
