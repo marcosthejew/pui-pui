@@ -5,6 +5,8 @@ using System.Web;
 using System.Data;
 using PuiPui_BackOffice.Entidades.Clase;
 using PuiPui_BackOffice.AccesoDeDatos.SQLServer;
+using PuiPui_BackOffice.AccesoDeDatos.Excepciones_BD;
+using PuiPui_BackOffice.LogicaDeNegocios.Excepciones;
 namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaClase
 {
     public class LogicaClase
@@ -34,33 +36,59 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaClase
         public DataTable ConsultarClase()
         {
             //conectar a la bd
-            _listaClase = _accesoClase.ConsultarClases();
+            
             String stat=null;             
             DataTable miTabla = new DataTable();
             miTabla.Columns.Add("No.", typeof(string));
             miTabla.Columns.Add("Nombre", typeof(string));
             miTabla.Columns.Add("Estatus", typeof(string));
-
-            foreach (Clase clase in _listaClase)
+            try
             {
-                if (clase.Status==1)
-                {
-                    stat="Activa";
-                }
-                else
-                {
-                    stat = "Inactiva";
-                }
-                miTabla.Rows.Add(clase.IdClase, clase.Nombre, stat);
-            }
 
+                _listaClase = _accesoClase.ConsultarClases();
+                foreach (Clase clase in _listaClase)
+                {
+                    if (clase.Status == 1)
+                    {
+                        stat = "Activa";
+                    }
+                    else
+                    {
+                        stat = "Inactiva";
+                    }
+                    miTabla.Rows.Add(clase.IdClase, clase.Nombre, stat);
+                }
+
+            }
+            catch (ExecpcionClaseSalon e)
+            {
+
+                throw new ExecpcionClaseSalon("No se pudo consultar en la BD", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new ExcepcionClaseSalonLogica("Objetos vacios para la consulta", e);
+            }
             return miTabla;
         }
 
         public Clase ObtenerDetalleClases(int id)
         {
             //conectar a la bd
-            _clase = _accesoClase.DetalleClases(id);
+            try
+            {
+                _clase = _accesoClase.DetalleClases(id);
+            }
+            catch (ExecpcionClaseSalon e)
+            {
+
+                throw new ExecpcionClaseSalon("No se pudo consultar en la BD", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new ExcepcionClaseSalonLogica("Objetos vacios para la consulta", e);
+            }
+            
 
             return _clase;
         }
