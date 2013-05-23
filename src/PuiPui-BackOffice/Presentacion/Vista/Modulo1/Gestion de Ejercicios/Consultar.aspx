@@ -76,8 +76,7 @@ AutoEventWireup="true" CodeBehind="Consultar.aspx.cs" Inherits="PuiPui_BackOffic
                 <td class="auto-style6">
                     Nombre del Ejercicio: </td>
                 <td class="auto-style7">
-                    <asp:TextBox ID="tbNombre" runat="server" Width="270px" ReadOnly="True"></asp:TextBox>
-
+                    <asp:Label ID="tbNombre" runat="server" ForeColor="Black"></asp:Label>
                 </td>
             </tr>
             <tr>
@@ -99,7 +98,7 @@ AutoEventWireup="true" CodeBehind="Consultar.aspx.cs" Inherits="PuiPui_BackOffic
 
                 <td class="auto-style7">
 
-                    <asp:TextBox ID="tbMusculo" runat="server" Width="270px" ReadOnly="True"></asp:TextBox>
+                    <asp:Label ID="tbMusculo" runat="server" ForeColor="Black"></asp:Label>
 
                 </td>
 
