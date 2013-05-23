@@ -41,7 +41,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 
         public List<Salon> ConsultarSalones()
         {
-
+            _listaSalones.RemoveRange(0, _listaSalones.Count);
             try
             {
                 _conexion = new SqlConnection(_cadenaConexion);
@@ -166,7 +166,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 
         public List<Salon> BusquedaUbicacion(String ubicacion)
         {
-
+            _listaSalones.RemoveRange(0, _listaSalones.Count);
             try
             {
                 _conexion = new SqlConnection(_cadenaConexion);
@@ -205,7 +205,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 
         public List<Salon> BusquedaCapacidadMayorSalon(int capacidad)
         {
-
+            _listaSalones.RemoveRange(0, _listaSalones.Count);
             try
             {
                 _conexion = new SqlConnection(_cadenaConexion);
@@ -244,7 +244,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 
         public List<Salon> BusquedaCapacidadMenorSalon(int stat)
         {
-
+            _listaSalones.RemoveRange(0, _listaSalones.Count);
             try
             {
                 _conexion = new SqlConnection(_cadenaConexion);
@@ -283,7 +283,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 
         public List<Salon> BusquedaStatusSalon(int stat)
         {
-
+            _listaSalones.RemoveRange(0, _listaSalones.Count);
             try
             {
                 _conexion = new SqlConnection(_cadenaConexion);

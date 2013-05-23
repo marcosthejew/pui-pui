@@ -53,7 +53,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 
         public List<ClaseSalon> ListarSalonesClase()
         {
-
+            _listaClaseSalon.RemoveRange(0, _listaClaseSalon.Count);
             try
             {
                 _conexion = new SqlConnection(_cadenaConexion);
@@ -63,19 +63,20 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 _dr = _cmd.ExecuteReader();
 
                 //Llena la lista de salones
+                int idaux = 0, dispaux=0;
                 while (_dr.Read())
                 {
-
                     _objetoSalon = new Salon();
                     _objetoClase = new Clase();
                     _objetoInstructor = new Instructor();
-                    
-                    _objetoClaseSalon.Id = Convert.ToInt32(_dr.GetValue(0));
+
+                    idaux = Convert.ToInt32(_dr.GetValue(0));
                     _objetoClase.Nombre = _dr.GetValue(1).ToString();
                     _objetoSalon.Ubicacion = _dr.GetValue(2).ToString();
                     _objetoInstructor.NombrePersona1 = _dr.GetValue(3).ToString();
+                    
 
-                    _objetoClaseSalon = new ClaseSalon(_objetoSalon, _objetoClase, _objetoInstructor);
+                    _objetoClaseSalon = new ClaseSalon(idaux, _objetoSalon, _objetoClase, _objetoInstructor, dispaux);
 
                     _listaClaseSalon.Add(_objetoClaseSalon);
                 }
@@ -184,7 +185,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 
         public List<ClaseSalon> ListarSalonesClaseTclase(String nombreClase)
         {
-
+            _listaClaseSalon.RemoveRange(0, _listaClaseSalon.Count);
             try
             {
                 _conexion = new SqlConnection(_cadenaConexion);
@@ -195,20 +196,20 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 _cmd.Parameters.Add(_param);
 
                 _dr = _cmd.ExecuteReader();
-
+                int idaux = 0,dispaux;
                 while (_dr.Read())
                 {
                     _objetoSalon = new Salon();
                     _objetoClase = new Clase();
                     _objetoInstructor = new Instructor();
 
-                    _objetoClaseSalon.Id = Convert.ToInt32(_dr.GetValue(0));
+                    idaux = Convert.ToInt32(_dr.GetValue(0));
                     _objetoClase.Nombre = _dr.GetValue(1).ToString();
                     _objetoSalon.Ubicacion = _dr.GetValue(2).ToString();
                     _objetoInstructor.NombrePersona1 = _dr.GetValue(3).ToString();
-                    _objetoClaseSalon.Disponibilidad = Convert.ToInt32(_dr.GetValue(4));
+                    dispaux = Convert.ToInt32(_dr.GetValue(4));
 
-                    _objetoClaseSalon = new ClaseSalon(_objetoSalon, _objetoClase, _objetoInstructor);
+                    _objetoClaseSalon = new ClaseSalon(idaux,_objetoSalon, _objetoClase, _objetoInstructor,dispaux);
 
                     _listaClaseSalon.Add(_objetoClaseSalon);
                 }
@@ -230,7 +231,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 
         public List<ClaseSalon> ListarSalonesClaseTsalon(String ubicacion)
         {
-
+            _listaClaseSalon.RemoveRange(0, _listaClaseSalon.Count);
             try
             {
                 _conexion = new SqlConnection(_cadenaConexion);
@@ -241,20 +242,20 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 _cmd.Parameters.Add(_param);
 
                 _dr = _cmd.ExecuteReader();
-
+                int idaux = 0, dispaux;
                 while (_dr.Read())
                 {
                     _objetoSalon = new Salon();
                     _objetoClase = new Clase();
                     _objetoInstructor = new Instructor();
 
-                    _objetoClaseSalon.Id = Convert.ToInt32(_dr.GetValue(0));
+                    idaux = Convert.ToInt32(_dr.GetValue(0));
                     _objetoClase.Nombre = _dr.GetValue(1).ToString();
                     _objetoSalon.Ubicacion = _dr.GetValue(2).ToString();
                     _objetoInstructor.NombrePersona1 = _dr.GetValue(3).ToString();
-                    _objetoClaseSalon.Disponibilidad = Convert.ToInt32(_dr.GetValue(4));
+                    dispaux = Convert.ToInt32(_dr.GetValue(4));
 
-                    _objetoClaseSalon = new ClaseSalon(_objetoSalon, _objetoClase, _objetoInstructor);
+                    _objetoClaseSalon = new ClaseSalon(idaux, _objetoSalon, _objetoClase, _objetoInstructor, dispaux);
 
                     _listaClaseSalon.Add(_objetoClaseSalon);
                 }
@@ -276,7 +277,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 
         public List<ClaseSalon> ListarSalonesClaseTinstructor(String instruc)
         {
-
+            _listaClaseSalon.RemoveRange(0, _listaClaseSalon.Count);
             try
             {
                 _conexion = new SqlConnection(_cadenaConexion);
@@ -288,19 +289,20 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 
                 _dr = _cmd.ExecuteReader();
 
+                int idaux = 0, dispaux;
                 while (_dr.Read())
                 {
                     _objetoSalon = new Salon();
                     _objetoClase = new Clase();
                     _objetoInstructor = new Instructor();
 
-                    _objetoClaseSalon.Id = Convert.ToInt32(_dr.GetValue(0));
+                    idaux = Convert.ToInt32(_dr.GetValue(0));
                     _objetoClase.Nombre = _dr.GetValue(1).ToString();
                     _objetoSalon.Ubicacion = _dr.GetValue(2).ToString();
                     _objetoInstructor.NombrePersona1 = _dr.GetValue(3).ToString();
-                    _objetoClaseSalon.Disponibilidad = Convert.ToInt32(_dr.GetValue(4));
+                    dispaux = Convert.ToInt32(_dr.GetValue(4));
 
-                    _objetoClaseSalon = new ClaseSalon(_objetoSalon, _objetoClase, _objetoInstructor);
+                    _objetoClaseSalon = new ClaseSalon(idaux, _objetoSalon, _objetoClase, _objetoInstructor, dispaux);
 
                     _listaClaseSalon.Add(_objetoClaseSalon);
                 }
@@ -322,7 +324,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 
         public List<ClaseSalon> ListarSalonesClaseTdisponible(int stst)
         {
-
+            _listaClaseSalon.RemoveRange(0, _listaClaseSalon.Count);
             try
             {
                 _conexion = new SqlConnection(_cadenaConexion);
@@ -334,19 +336,20 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 
                 _dr = _cmd.ExecuteReader();
 
+                int idaux = 0, dispaux;
                 while (_dr.Read())
                 {
                     _objetoSalon = new Salon();
                     _objetoClase = new Clase();
                     _objetoInstructor = new Instructor();
 
-                    _objetoClaseSalon.Id = Convert.ToInt32(_dr.GetValue(0));
+                    idaux = Convert.ToInt32(_dr.GetValue(0));
                     _objetoClase.Nombre = _dr.GetValue(1).ToString();
                     _objetoSalon.Ubicacion = _dr.GetValue(2).ToString();
                     _objetoInstructor.NombrePersona1 = _dr.GetValue(3).ToString();
-                    _objetoClaseSalon.Disponibilidad = Convert.ToInt32(_dr.GetValue(4));
+                    dispaux = Convert.ToInt32(_dr.GetValue(4));
 
-                    _objetoClaseSalon = new ClaseSalon(_objetoSalon, _objetoClase, _objetoInstructor);
+                    _objetoClaseSalon = new ClaseSalon(idaux, _objetoSalon, _objetoClase, _objetoInstructor, dispaux);
 
                     _listaClaseSalon.Add(_objetoClaseSalon);
                 }

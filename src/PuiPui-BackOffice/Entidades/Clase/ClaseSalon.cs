@@ -61,6 +61,14 @@ namespace PuiPui_BackOffice.Entidades.Clase
             this.Salon = sal;
             this.Clase = clas;
         }
+        public ClaseSalon(int iid,Salon.Salon sal, Clase clas, Instructor.Instructor ins, int disp)
+        {
+            this._id = iid;
+            this._instructor = ins;
+            this._salon = sal;
+            this._clase = clas;
+            this._disponibilidad = disp;
+        }
         #endregion
 
     }
