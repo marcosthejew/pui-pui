@@ -15,7 +15,7 @@ AutoEventWireup="true" CodeBehind="Consultar.aspx.cs" Inherits="PuiPui_BackOffic
     <div  style="float:left;">
         <fieldset style="width:775px; height:auto; margin-left:7.5%; fit-position:center;">
         <legend style="text-align:center; font-family:Helvetica; font-size:14px;">Consultar Clase</legend>
-             <table border="0" cellspacing="0" cellpadding="0" style="width: 720px">
+             <table border="0" cellspacing="0" cellpadding="0" style="width: 720px" >
             <tr>
                 <td rowspan="0" nowrap="nowrap" class="auto-style18">
                     Buscar por:</td>

@@ -2,22 +2,22 @@
  AutoEventWireup="true" CodeBehind="Modificar.aspx.cs" Inherits="PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_de_Clases.Modificar" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <div style="text-align:center; font-family:Helvetica; font-size:16px;">
+    <div style="text-align:center; font-family:Helvetica; font-size:16px;height:30px;">
     <asp:Label ID="Label6" runat="server" Text="CLASE"></asp:Label>
     </div>
 
-    <div style="height:30px; text-align:center; font-family:Helvetica; font-size:14px;">
-        <asp:Label ID="falla" runat="server" Text="Operación Fallida" CssClass="falla" 
-            Visible="False" ForeColor="Red"></asp:Label>
+    <div style="height:20px; text-align:left; font-family:Helvetica; font-size:16px;">
         <asp:Label ID="Exito" runat="server" Text="Operación Exitosa" CssClass="Exito" 
             Visible="False"></asp:Label>
+        <asp:Label ID="falla" runat="server" Text="Operación Fallida" CssClass="falla" 
+            Visible="False" ForeColor="Red"></asp:Label>
     </div>
 
     <div  style="float:left;">
         <fieldset style="width:775px; height:auto; margin-left:7.5%; fit-position:center;">
         <legend style="text-align:center; font-family:Helvetica; font-size:14px;">Modificar Clase</legend>
                
-            <table style="margin:5% auto auto 8%; height: 140px; width: 476px;" border="0" cellspacing="0" cellpadding="0" >
+            <table style="margin:5% auto auto 22%; height: 140px; width: 476px;" border="0" cellspacing="0" cellpadding="0" >
             <tr>
                 <td class="auto-style7" align="center">
                     <asp:Label ID="Label4" runat="server" Text="Label">Nombre de la clase:</asp:Label>
@@ -51,7 +51,7 @@
             </tr>
                 <tr>
                 <td class="auto-style5" align="center">
-                <asp:Button ID="botonRegresar" runat="server" Text="Regresar" CssClass="button" Font-Names="Tomoha Plain" Font-Size="14px" Height="25px" Width="120px"  />
+                <asp:Button ID="botonRegresar" runat="server" Text="Regresar" CssClass="button" Font-Names="Tomoha Plain" Font-Size="14px" Height="25px" Width="120px" OnClick="botonRegresar_Click"  />
                     </td>
                 <td class="auto-style6" colspan="0" align="center">
                 <asp:Button ID="botonAceptar" runat="server" Text="Aceptar" CssClass="button" Font-Names="Tomoha Plain" Font-Size="14px" Height="25px" Width="120px" OnClick="botonAceptar_Click"  />

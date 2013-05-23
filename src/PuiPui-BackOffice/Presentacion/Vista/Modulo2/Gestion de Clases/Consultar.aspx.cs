@@ -5,25 +5,35 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using PuiPui_BackOffice.Entidades.Cliente; 
 using PuiPui_BackOffice.Entidades.Clase;
 using PuiPui_BackOffice.LogicaDeNegocios.LogicaClase;
 
 namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_de_Clases
 {
     public partial class Consultar : System.Web.UI.Page
-    { 
+    {
+        #region Atributos
         private List<Clase> _listaClase;       
         private  LogicaClase _logicaClase= new LogicaClase();
         private int Estatus;
         private int seleccionCheck;
-       
+        Persona persona;
+        Acceso acceso;
+        string loginPersona;
+        #endregion
+
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+
             try
             {
+                acceso = (Acceso)Session["loginPersona"];//recibo a través del SESSION el objeto "acceso" que esta compuesto por el login y el password de la persona que inicio sesión
+                loginPersona = acceso.Login; //le asigno a la variable loginPersona el login de la persona que acaba de iniciar sesión, si nadie ha iniciado sesión esto se va al catch y te redirige al login, si la persona inicio sesión ya tengo su login y se quien es con esto puedo ir a la bd y ver que persona es para hacer las operaciones necesarias
+
                 _listaClase = _logicaClase.ObtenerClases();
                 
+
                 if (!IsPostBack)
                 {
                     GridConsultar.Visible = false;
@@ -32,10 +42,17 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_de_Clases
                 else
                 {
                     GridConsultar.Visible = true;
-                   // cargarTabla();
+                    // cargarTabla();
                 }
+
             }
-            catch (NullReferenceException)
+            catch (NullReferenceException) //si la persona no ha iniciado sesión y simplemente pegó el URL en el navegador va a caer en esta excepción
+            {
+
+                Response.Redirect("../../Home/Login.aspx"); //lo redirigimos al LOGIN para que a juro se tenga que autenticar
+            }
+
+            catch (Exception)
             {
                 
                Response.Redirect("../../Vista/Modulo2/Gestion_de_Clases/Consultar.aspx");

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using PuiPui_BackOffice.Entidades.Cliente;
 using PuiPui_BackOffice.Entidades.Clase;
 using PuiPui_BackOffice.LogicaDeNegocios.LogicaClase;
 
@@ -11,9 +12,13 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_de_Clases
 {
     public partial class Modificar : System.Web.UI.Page
     {
-
-        private LogicaClase _objLogica= new LogicaClase();
+        #region Atributos
+        Persona persona;
+        Acceso acceso;
+        string loginPersona;
+        private LogicaClase _objLogica = new LogicaClase();
         private Clase _objetoClase;
+        #endregion
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,19 +28,31 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_de_Clases
             String descripcion = Convert.ToString((Request.QueryString["Desc"] != null) ? Request.QueryString["Desc"] : "");
             _objetoClase = new Clase(Convert.ToInt32(id));
 
-            if (!IsPostBack)
+            try
             {
-               
-                if (estatus.Equals("Activa"))
+                if (!IsPostBack)
                 {
-                    Activo.Checked = true;
+                    acceso = (Acceso)Session["loginPersona"];//recibo a través del SESSION el objeto "acceso" que esta compuesto por el login y el password de la persona que inicio sesión
+                    loginPersona = acceso.Login; //le asigno a la variable loginPersona el login de la persona que acaba de iniciar sesión, si nadie ha iniciado sesión esto se va al catch y te redirige al login, si la persona inicio sesión ya tengo su login y se quien es con esto puedo ir a la bd y ver que persona es para hacer las operaciones necesarias
+
+                    nombreClaseAModificar.Text = nombre;
+                    TextArea.Text = descripcion;
+
+                    if (estatus.Equals("Activa"))
+                    {
+                        Activo.Checked = true;
+                    }
+                    if (estatus.Equals("Inactiva"))
+                    {
+                        Inactivo.Checked = true;
+                    }
                 }
-                if (estatus.Equals("Inactiva"))
-                {
-                    Inactivo.Checked = true;
-                }
-                nombreClaseAModificar.Text = nombre;
-                TextArea.Text = descripcion;
+
+            }
+            catch (NullReferenceException) //si la persona no ha iniciado sesión y simplemente pegó el URL en el navegador va a caer en esta excepción
+            {
+
+                Response.Redirect("../../Home/Login.aspx"); //lo redirigimos al LOGIN para que a juro se tenga que autenticar
             }
         }
 
@@ -46,16 +63,18 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_de_Clases
 
         protected void botonAceptar_Click(object sender, EventArgs e)
         {
-            //nombreClaseAModificar.Text, TextArea.Text
             _objetoClase.Descripcion = TextArea.Text;
             _objetoClase.Nombre = nombreClaseAModificar.Text;
-            if (Activo.Checked){
-                _objetoClase.Status=1;    
-	        }
-            if (Inactivo.Checked){
-		        _objetoClase.Status=0;    
+
+            if (Activo.Checked)
+            {
+                _objetoClase.Status = 1;
             }
-            
+            if (Inactivo.Checked)
+            {
+                _objetoClase.Status = 0;
+            }
+
             bool resultado = _objLogica.ModificarClase(_objetoClase);
 
 
@@ -70,6 +89,11 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_de_Clases
             }
         }
 
-        
+        protected void botonRegresar_Click(object sender, EventArgs e)
+        {
+           Response.Redirect("../../Modulo2/Gestion de Clases/Consultar.aspx");
+        }
+
+
     }
 }
