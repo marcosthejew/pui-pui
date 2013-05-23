@@ -171,7 +171,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
             {
                 _conexion = new SqlConnection(_cadenaConexion);
                 _conexion.Open();
-                _cmd = new SqlCommand("[dbo].[BusquedaNombreClase]", _conexion);
+                _cmd = new SqlCommand("[dbo].[BusquedaUbicacionSalon]", _conexion);
                 _cmd.CommandType = CommandType.StoredProcedure;
                 _param = new SqlParameter("@Ubicacion", ubicacion);
                 _cmd.Parameters.Add(_param);

@@ -98,11 +98,12 @@
     <Content Include="Presentacion\Vista\Modulo1\Gestion de Instructores\Eliminar.aspx" />
     <Content Include="Presentacion\Vista\Modulo1\Gestion de Instructores\Modificar.aspx" />
     <Content Include="Presentacion\Vista\Modulo1\Modulo1.aspx" />
-    <Content Include="Presentacion\Vista\Modulo2\Geestion de Salones\Act-Ina.aspx" />
-    <Content Include="Presentacion\Vista\Modulo2\Geestion de Salones\Agregar.aspx" />
-    <Content Include="Presentacion\Vista\Modulo2\Geestion de Salones\Consultar.aspx" />
-    <Content Include="Presentacion\Vista\Modulo2\Geestion de Salones\VerDetalle.aspx" />
-    <Content Include="Presentacion\Vista\Modulo2\Geestion de Salones\Modificar.aspx" />
+    <Content Include="Presentacion\Vista\Modulo2\Gestion Clase Salon Instructor\DetalleClaseSalonInstructor.aspx" />
+    <Content Include="Presentacion\Vista\Modulo2\Gestion de Salones\Act-Ina.aspx" />
+    <Content Include="Presentacion\Vista\Modulo2\Gestion de Salones\Agregar.aspx" />
+    <Content Include="Presentacion\Vista\Modulo2\Gestion de Salones\Consultar.aspx" />
+    <Content Include="Presentacion\Vista\Modulo2\Gestion de Salones\VerDetalle.aspx" />
+    <Content Include="Presentacion\Vista\Modulo2\Gestion de Salones\Modificar.aspx" />
     <Content Include="Presentacion\Vista\Modulo2\Gestion Clase Salon Instructor\AgregarClaseSalon.aspx" />
     <Content Include="Presentacion\Vista\Modulo2\Gestion Clase Salon Instructor\ConsultarClasesSalon.aspx" />
     <Content Include="Presentacion\Vista\Modulo2\Gestion de Clases\Act-Ina.aspx" />
@@ -329,39 +330,46 @@
     <Compile Include="Presentacion\Vista\Modulo1\Modulo1.aspx.designer.cs">
       <DependentUpon>Modulo1.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Vista\Modulo2\Geestion de Salones\Act-Ina.aspx.cs">
+    <Compile Include="Presentacion\Vista\Modulo2\Gestion Clase Salon Instructor\DetalleClaseSalonInstructor.aspx.cs">
+      <DependentUpon>DetalleClaseSalonInstructor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Vista\Modulo2\Gestion Clase Salon Instructor\DetalleClaseSalonInstructor.aspx.designer.cs">
+      <DependentUpon>DetalleClaseSalonInstructor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Vista\Modulo2\Gestion de Salones\Act-Ina.aspx.cs">
       <DependentUpon>Act-Ina.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Presentacion\Vista\Modulo2\Geestion de Salones\Act-Ina.aspx.designer.cs">
+    <Compile Include="Presentacion\Vista\Modulo2\Gestion de Salones\Act-Ina.aspx.designer.cs">
       <DependentUpon>Act-Ina.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Vista\Modulo2\Geestion de Salones\Agregar.aspx.cs">
+    <Compile Include="Presentacion\Vista\Modulo2\Gestion de Salones\Agregar.aspx.cs">
       <DependentUpon>Agregar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Presentacion\Vista\Modulo2\Geestion de Salones\Agregar.aspx.designer.cs">
+    <Compile Include="Presentacion\Vista\Modulo2\Gestion de Salones\Agregar.aspx.designer.cs">
       <DependentUpon>Agregar.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Vista\Modulo2\Geestion de Salones\Consultar.aspx.cs">
+    <Compile Include="Presentacion\Vista\Modulo2\Gestion de Salones\Consultar.aspx.cs">
       <DependentUpon>Consultar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Presentacion\Vista\Modulo2\Geestion de Salones\Consultar.aspx.designer.cs">
+    <Compile Include="Presentacion\Vista\Modulo2\Gestion de Salones\Consultar.aspx.designer.cs">
       <DependentUpon>Consultar.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Vista\Modulo2\Geestion de Salones\VerDetalle.aspx.cs">
+    <Compile Include="Presentacion\Vista\Modulo2\Gestion de Salones\VerDetalle.aspx.cs">
       <DependentUpon>VerDetalle.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Presentacion\Vista\Modulo2\Geestion de Salones\VerDetalle.aspx.designer.cs">
+    <Compile Include="Presentacion\Vista\Modulo2\Gestion de Salones\VerDetalle.aspx.designer.cs">
       <DependentUpon>VerDetalle.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Vista\Modulo2\Geestion de Salones\Modificar.aspx.cs">
+    <Compile Include="Presentacion\Vista\Modulo2\Gestion de Salones\Modificar.aspx.cs">
       <DependentUpon>Modificar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Presentacion\Vista\Modulo2\Geestion de Salones\Modificar.aspx.designer.cs">
+    <Compile Include="Presentacion\Vista\Modulo2\Gestion de Salones\Modificar.aspx.designer.cs">
       <DependentUpon>Modificar.aspx</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Vista\Modulo2\Gestion Clase Salon Instructor\AgregarClaseSalon.aspx.cs">
