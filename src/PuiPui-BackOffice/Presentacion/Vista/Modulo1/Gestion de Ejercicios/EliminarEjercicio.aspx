@@ -13,10 +13,6 @@
         height: 66px;
     }
 
-        .auto-style4 {
-            width: 166px;
-            height: 30px;
-        }
         .auto-style5 {
             width: 185px;
             height: 30px;
@@ -64,7 +60,7 @@
                 <td class="auto-style6">
                     Nombre del Ejercicio: </td>
                 <td class="auto-style5">
-                    <asp:TextBox ID="tbNombre" runat="server" Width="269px" ReadOnly="True" Enabled="False"></asp:TextBox>
+                    <asp:Label ID="tbNombre" runat="server" ForeColor="Black"></asp:Label>
 
                 </td>
             </tr>
@@ -84,7 +80,7 @@
                 <td class="auto-style6">
                     Musculo a ejercitar:</td>
                 <td class="auto-style5">
-                    <asp:TextBox ID="tbMusculo" runat="server" Width="269px" ReadOnly="True" Enabled="False"></asp:TextBox>
+                    <asp:Label ID="tbMusculo" runat="server" ForeColor="Black"></asp:Label>
                 </td>
 
             </tr>

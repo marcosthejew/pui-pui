@@ -37,7 +37,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Ejercicios {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbNombre;
+        protected global::System.Web.UI.WebControls.Label tbNombre;
         
         /// <summary>
         /// tbDescripcion control.
@@ -55,6 +55,6 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Ejercicios {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbMusculo;
+        protected global::System.Web.UI.WebControls.Label tbMusculo;
     }
 }
