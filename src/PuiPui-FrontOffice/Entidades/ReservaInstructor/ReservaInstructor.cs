@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using PuiPui_FrontOffice.Entidades.Cliente;
 using PuiPui_FrontOffice.Entidades.Instructor;
+using PuiPui_FrontOffice.Entidades.Excepciones;
 using System.Linq;
 using System.Web;
 
@@ -29,7 +30,7 @@ namespace PuiPui_FrontOffice.Entidades.ReservaInstructor
             {
                 if (value == null)
                 {
-                    //lanza una excepcion "Debe especificarse un instructor al momento de reservar un instructor"
+                    throw new ExcepcionReservaInstructorSinInstructor("Debe especificarse un instructor al momento de reservar un instructor");
                 }
                 else
                 {
@@ -45,7 +46,7 @@ namespace PuiPui_FrontOffice.Entidades.ReservaInstructor
             {
                 if (value == null)
                 {
-                    //lanza una excepcion "Debe especificarse un cliente al momento de reservar un instructor"
+                    throw new ExcepcionReservaInstructorSinCliente("Debe especificarse un cliente al momento de reservar un instructor");
                 }
                 else
                 {
@@ -67,17 +68,17 @@ namespace PuiPui_FrontOffice.Entidades.ReservaInstructor
             {
                 if (value == null)
                 {
-                    //lanza una excepcion "Debe especificarse una fecha de inicio para la reservacion del instructor"
+                    throw new ExcepcionReservaInstructorSinFechaInicio("Debe especificarse una fecha de inicio para la reservacion del instructor");
                 }
                 else if (value < DateTime.Now)
                 {
-                    //lanza una excepcion "La fecha de inicio de una reservacion debe ser una fecha futura"
+                    throw new ExcepcionReservaInstructorFechaInicioPasada("La fecha de inicio de una reservacion debe ser una fecha futura");
                 }
                 else
                 {
                     if ((FechaFin != null) && (FechaFin < value))
                     {
-                        //lanza una excepcion "La fecha de inicio no puede ser posterior a la fecha de fin"
+                        throw new ExcepcionReservaInstructorFechaInicioPosteriorAFutura("La fecha de inicio no puede ser posterior a la fecha de fin");
                     }
                     else
                     {
@@ -94,13 +95,13 @@ namespace PuiPui_FrontOffice.Entidades.ReservaInstructor
             {
                 if (value == null)
                 {
-                    //lanza una excepcion "Debe especificarse una fecha de fin para la reservacion del instructor"
+                    throw new ExcepcionReservaInstructorSinFechaFin("Debe especificarse una fecha de fin para la reservacion del instructor");
                 }
                 else
                 {
                     if ((FechaInicio != null) && (FechaInicio > value))
                     {
-                        //lanza una excepcion "La fecha de fin no puede ser anterior a la fecha de inicio"
+                        throw new ExcepcionReservaInstructorFechaInicioPosteriorAFutura("La fecha de fin no puede ser anterior a la fecha de inicio");
                     }
                     else
                     {
@@ -110,7 +111,7 @@ namespace PuiPui_FrontOffice.Entidades.ReservaInstructor
             }
         }
 
-        public string Status // completada cancelada espera
+        public string Status
         {
             get { return _status; }
             set
@@ -121,7 +122,8 @@ namespace PuiPui_FrontOffice.Entidades.ReservaInstructor
                 }
                 else
                 {
-                    //lanza una excepcion "Status especificado para la reservacion es invalido. El status debe ser completada, cancelada o espera"
+                    throw new ExcepcionReservaInstructorStatusInvalido("El status especificado para la reservacion es invalido." + 
+                                                                          "El status debe ser 'completada', 'cancelada' o 'espera'");
                 }
             }
         }

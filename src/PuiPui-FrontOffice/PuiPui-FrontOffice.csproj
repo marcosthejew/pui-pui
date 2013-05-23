@@ -135,6 +135,13 @@
     <Compile Include="Entidades\Cliente\Acceso.cs" />
     <Compile Include="Entidades\EEvaluacionInstructor\EEvaluacionInstructor.cs" />
     <Compile Include="Entidades\Evaluacion.cs" />
+    <Compile Include="Entidades\Excepciones\ExcepcionReservaInstructorFechaInicioPasada.cs" />
+    <Compile Include="Entidades\Excepciones\ExcepcionReservaInstructorFechaInicioPosteriorAFutura.cs" />
+    <Compile Include="Entidades\Excepciones\ExcepcionReservaInstructorSinCliente.cs" />
+    <Compile Include="Entidades\Excepciones\ExcepcionReservaInstructorSinFechaFin.cs" />
+    <Compile Include="Entidades\Excepciones\ExcepcionReservaInstructorSinFechaInicio.cs" />
+    <Compile Include="Entidades\Excepciones\ExcepcionReservaInstructorSinInstructor.cs" />
+    <Compile Include="Entidades\Excepciones\ExcepcionReservaInstructorStatusInvalido.cs" />
     <Compile Include="Entidades\ReservarClase\ClaseSalon.cs" />
     <Compile Include="Entidades\ReservarClase\EventoCalendario.cs" />
     <Compile Include="Entidades\ReservarClase\HorarioReservacionClase.cs" />
