@@ -2,24 +2,33 @@
     CodeBehind="ConsultarClasesSalon.aspx.cs" 
     Inherits="PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_Clase_Salon_Instructor.ConsultarClasesSalon" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-     <div class="superior">
-    <h2 style="margin-left:350px">Consultar clases con Salon</h2>
+    <div style="text-align:center; font-family:Helvetica; font-size:16px;">
+    <asp:Label ID="Label1" runat="server" Text="CLASE - SALON"></asp:Label>
     </div>
     
-    <div style="margin-left:100px; margin-top:40px">
+    <div style="height:30px; text-align:center; font-family:Helvetica; font-size:14px;">
+        <asp:Label ID="falla" runat="server" Text="Operación Fallida" CssClass="falla" 
+            Visible="False" ForeColor="Red"></asp:Label>
+        <asp:Label ID="Exito" runat="server" Text="Operación Exitosa" CssClass="Exito" 
+            Visible="False"></asp:Label>
+    </div>
+
+    <div  style="float:left;">
+        <fieldset style="width:775px; height:auto; margin-left:7.5%; fit-position:center;">
+        <legend style="text-align:center; font-family:Helvetica; font-size:14px;">Consultar Clase - Salón</legend>
              <table border="0" cellspacing="0" cellpadding="0" style="width: 707px">
             <tr>
                 <td rowspan="0" nowrap="nowrap" class="auto-style3">
                     Buscar por:</td>
                 <td rowspan="0" class="auto-style6" nowrap="nowrap">
                      <asp:RadioButton ID="RadioButtonConsultaCompleta" runat="server" 
-                        GroupName="ConsultarClases" Text="Clase" OnCheckedChanged="RadioButtonConsultaCompleta_CheckedChanged1" /> 
+                        GroupName="ConsultarClases" Text="Clase:" OnCheckedChanged="RadioButtonConsultaCompleta_CheckedChanged1" /> 
                               
 
-                    </td>
+                     </td>
                 <td align="left" rowspan="0" class="auto-style10" nowrap="nowrap">
                     <asp:RadioButton ID="consultaClasePorNombres" runat="server" 
-                        GroupName="ConsultarClases" Text="Salon:" OnCheckedChanged="consultaClasePorNombres_CheckedChanged"  
+                        GroupName="ConsultarClases" Text="Salón:" OnCheckedChanged="consultaClasePorNombres_CheckedChanged"  
                        />
 
                     </td>
@@ -62,16 +71,23 @@
                 <td class="auto-style3">
 
 
-                <asp:Button ID="botonBuscarClase" runat="server" Text="Buscar" CssClass="button" OnClick="botonBuscarClase_Click"/>
+                <asp:Button ID="botonBuscarClase" runat="server" Text="Buscar" CssClass="button" OnClick="botonBuscarClase_Click" Font-Names="tahoma plain" Font-Size="14px" Height="25px" Width="120px"/>
 
 
                 </td>
               
             </tr>
+
+            <tr>
+                <td class="auto-style1">
+                    &nbsp;</td>
+                <td class="auto-style2">
+                    &nbsp;</td>
+            </tr>
+
             </table> 
-     </div>
+     
           
-        <div style="margin-top:60px">
                         <asp:GridView ID="GridConsultar" runat="server" CellPadding="4" ForeColor="#333333" 
                         GridLines="None" Height="16px" Width="687px" 
                         OnRowCommand="GridConsultar_RowCommand" AllowPaging="True" PageSize="10" 
@@ -94,7 +110,7 @@
                         <SortedDescendingCellStyle BackColor="#E9EBEF" HorizontalAlign="Center" />
                         <SortedDescendingHeaderStyle BackColor="#4870BE" HorizontalAlign="Center" />
                     </asp:GridView>      
-
+    </fieldset>
     </div>
   
 </asp:Content>

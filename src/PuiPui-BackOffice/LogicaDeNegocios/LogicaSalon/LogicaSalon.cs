@@ -242,12 +242,12 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
             return _listaGrande;
         }
 
-        public Boolean ModificarSalonesClase(Salon salon)
+        public Boolean ModificarSalonesClase(ClaseSalon salon)
         {
 
             Boolean retorno = false;
 
-            retorno = _accesoSalon.ModificarSalon(salon);
+            retorno = _accesoSalonClase.ModificarSalonClase(salon);
 
             return retorno;
 

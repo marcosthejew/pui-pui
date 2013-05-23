@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Presentacion/MasterPage/Site.Master" AutoEventWireup="true" CodeBehind="DetalleClaseSalonInstructor.aspx.cs" Inherits="PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_Clase_Salon_Instructor.WebForm1" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div style="text-align:center; font-family:Helvetica; font-size:16px;">
-    <asp:Label ID="Label2" runat="server" Text="CLASE"></asp:Label>
+    <asp:Label ID="Label1" runat="server" Text="CLASE - SALON"></asp:Label>
     </div>
 
     <div style="height:30px; text-align:center; font-family:Helvetica; font-size:14px;">
@@ -13,54 +13,82 @@
 
     <div  style="float:left;">
         <fieldset style="width:775px; height:auto; margin-left:7.5%; fit-position:center;">
-        <legend style="text-align:center; font-family:Helvetica; font-size:14px;">Detalle Clase Salon Instructor</legend>       
+        <legend style="text-align:center; font-family:Helvetica; font-size:14px;">Detalle Clase - Salón -&nbsp; Instructor</legend>
                
-            <table style="margin:5% auto auto 8%; height: 140px; width: 476px;" border="0" cellspacing="0" cellpadding="0" >
+            <table style="margin:5% auto auto 18%; height: 140px; width: 440px;" border="0" cellspacing="0" cellpadding="0" >
             <tr>
-                <td class="auto-style7" align="center">
-                    <asp:Label ID="Label4" runat="server" Text="Label">Nombre de la clase:</asp:Label>
+                <td class="auto-style3" align="left">
+                    <asp:Label ID="Label2" runat="server" Text="Nombre de la Clase:" Font-Names="Arial" Font-Size="12px"></asp:Label>
+                    
                 </td>
-                <td class="auto-style8" align="left">
-                    <asp:TextBox ID="nombreClaseActual" runat="server" Height="22px" Width="270px" Enabled="False"
-                      ></asp:TextBox>
+                <td class="auto-style4" style="text-align:left">
+                   <asp:TextBox ID="etiqueta_clase" runat="server" Font-Names="Arial" Font-Size="12px" Width="150px" Enabled="False"></asp:TextBox>
+                    
                 </td>
-            </tr>
-            <tr>
-                <td class="auto-style1" align="center">
-                    <asp:Label ID="Label3" runat="server" Text="Label">Descripción:</asp:Label>
-                </td>
-                <td class="auto-style2" colspan="0" align="left">
-                    <asp:TextBox id="TextArea" runat="server" Wrap="true" TextMode="MultiLine" Enabled="False" Width="200px" Height="115px"></asp:TextBox>
-                </td>    
+                <td class="auto-style8"><asp:DropDownList ID="ComboClase" runat="server" Height="22px" Width="120px">
+                    </asp:DropDownList></td>
             </tr>
             <tr>
-                <td class="auto-style3" align="center">
-                    Status:</td>
-                <td class="auto-style4" colspan="0">
-                    <asp:TextBox ID="EstatusActual" runat="server" Height="22px" Width="270px" Enabled="False"
-                      ></asp:TextBox>
-                    </td>
+                <td class="auto-style9" align="left">
+                    <asp:Label ID="Label4" runat="server" Text="Ubicación del Salón:" Font-Names="Arial" Font-Size="12px"></asp:Label>
+                    
+                </td>
+                <td class="auto-style10" colspan="0" style="text-align:left">
+                                      
+                   <asp:TextBox ID="etiqueta_salonA" runat="server" Font-Names="Arial" Font-Size="12px" Width="150px" Enabled="False"></asp:TextBox>
+                    
+                </td>
+                <td class="auto-style11">
+                    
+                    <asp:DropDownList ID="ComboSalon" runat="server" Height="22px" Width="120px">
+                    </asp:DropDownList>
+                </td>
             </tr>
-                <tr>
-                <td class="auto-style5">
-                    &nbsp;</td>
-                <td class="auto-style6" colspan="0">
-                    </td>
-            </tr>
-                <tr>
-                <td class="auto-style5" align="center">
-                <asp:Button ID="botonRegresar" runat="server" Text="Regresar" CssClass="button" Font-Names="Tomoha Plain" Font-Size="14px" Height="25px" OnClick="botonRegresar_Click" Width="120px"  />
-                    </td>
-                <td class="auto-style6" colspan="0" align="center">
-                <asp:Button ID="botonAceptar" runat="server" Text="Modificar" CssClass="button" Font-Names="Tomoha Plain" Font-Size="14px" OnClick="botonAceptar_Click" Height="25px" Width="120px"  />
-                    </td>
 
+            <tr>
+                <td class="auto-style5" align="left">
+                    <asp:Label ID="Label3" runat="server" Text="Instructor:" Font-Names="Arial" Font-Size="12px"></asp:Label>
+                    
+                    </td>
+                <td class="auto-style6" colspan="0" style="text-align:left" align="left">
+                    
+                   <asp:TextBox ID="etiqueta_instructorA" runat="server" Font-Names="Arial" Font-Size="12px" Width="150px" Enabled="False"></asp:TextBox>
+                    
+                    </td>
+                <td class="auto-style7">
+                    
+                    <asp:DropDownList ID="ComboInstructor" runat="server" Height="22px" Width="120px">
+                    </asp:DropDownList>
+                    </td>
             </tr>
+
+            <tr>
+                <td class="auto-style1">
+                    Estatus:</td>
+                <td class="auto-style2">
+                    
+                    <asp:RadioButton ID="Activo" Text="Activo" runat="server" OnCheckedChanged="Activo_CheckedChanged" GroupName="radio"/>
+                    
+                    <asp:RadioButton ID="Inactivo" Text="Inactivo"  runat="server" OnCheckedChanged="Inactivo_CheckedChanged" GroupName="radio" />
+                    
+                    </td>
+            </tr>
+
+            <tr>
+                <td class="auto-style1">
+                    &nbsp;</td>
+                <td class="auto-style2">
+                    &nbsp;</td>
+            </tr>
+
             <tr >
                 <td colspan="2"  style="text-align:center">
-                    &nbsp;</td>
+                
+                <asp:Button ID="Cancelar" runat="server" Text="Cancelar" Height="25px" Width="120px" Font-Names="Tomoha Plain" Font-Size="14px" OnClick="Cancelar_Click"/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td><asp:Button ID="defaultButton" runat="server" Text="Aceptar" CssClass="button" OnClick="defaultButton_Click" Font-Names="tomoha plain" Font-Size="14px" Height="25px" Width="120px" />
+                </td>
             </tr>
-
             </table>          
         </fieldset>
     </div>
@@ -69,39 +97,49 @@
 <asp:Content ID="Content3" runat="server" contentplaceholderid="HeadContent">
     <style type="text/css">
         .auto-style1 {
-            width: 127px;
-            height: 134px;
+            width: 125px;
         }
         .auto-style2 {
-            width: 246px;
-            height: 134px;
+            width: 172px;
         }
         .auto-style3 {
-            width: 127px;
-            height: 34px;
+            width: 125px;
+            height: 43px;
         }
         .auto-style4 {
-            width: 246px;
-            height: 34px;
+            width: 172px;
+            height: 43px;
         }
         .auto-style5 {
-            width: 127px;
-            height: 24px;
+            width: 125px;
+            height: 34px;
         }
         .auto-style6 {
-            width: 246px;
-            height: 24px;
+            width: 172px;
+            height: 34px;
         }
         #TextArea1 {
             height: 71px;
         }
         .auto-style7 {
-            width: 127px;
-            height: 36px;
+            height: 34px;
         }
         .auto-style8 {
-            width: 246px;
-            height: 36px;
+            height: 43px;
+        }
+        .auto-style9 {
+            width: 125px;
+            height: 39px;
+        }
+        .auto-style10 {
+            width: 172px;
+            height: 39px;
+        }
+        .auto-style11 {
+            height: 39px;
         }
     </style>
 </asp:Content>
+
+
+
