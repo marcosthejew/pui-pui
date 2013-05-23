@@ -551,6 +551,7 @@
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
     <Compile Include="PruebasUnitarias\ClaseTests\ClaseSalonTest.cs" />
+    <Compile Include="PruebasUnitarias\ClaseTests\LogicaClaseTest.cs" />
     <Compile Include="PruebasUnitarias\ClaseTests\PruebaClase.cs" />
     <Compile Include="PruebasUnitarias\Cliente\PruebaCliente.cs" />
     <Compile Include="PruebasUnitarias\Ejercicio\PruebaEjercicio.cs" />
@@ -559,6 +560,7 @@
     <Compile Include="PruebasUnitarias\Instructor\PruebaInstructor.cs" />
     <Compile Include="PruebasUnitarias\PruebaConexion.cs" />
     <Compile Include="PruebasUnitarias\Rutina\PruebaRutina.cs" />
+    <Compile Include="PruebasUnitarias\SalonTest\LogicaSalonTest.cs" />
     <Compile Include="PruebasUnitarias\SalonTest\TestSalon.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -27,7 +27,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.SalonTest
             try
             {
 
-                _salon = new Salon(0, "a la derecha", 43, 1);
+                _salon = new Salon(1, "a la derecha", 43, 1);
                 _accesoSalon = new SQLServerSalon();
                 Assert.IsTrue(_accesoSalon.AgregarSalon(_salon));
             }
@@ -44,7 +44,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.SalonTest
             try
             {
                 _accesoSalon = new SQLServerSalon();
-                _salon = new Salon(0, "a la derecha", 43, 1);
+                _salon = new Salon(1, "a la derecha", 43, 1);
                 Assert.IsTrue(_accesoSalon.ModificarSalon(_salon));
             }
             catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion e)
