@@ -12,6 +12,7 @@ namespace PuiPui_BackOffice.Entidades.Ejercicio
         private string _descripcion;
         private Musculo _musculo;
 
+        #region MetodosGetSet
         public int Id
         {
             get { return _id; }
@@ -35,8 +36,10 @@ namespace PuiPui_BackOffice.Entidades.Ejercicio
         {
             get { return _nombre; }
             set { _nombre = value; }
-        } 
+        }
+        #endregion MetodosGetSet
 
+        #region Constructores
         public Ejercicio()
         {    
         }
@@ -48,5 +51,6 @@ namespace PuiPui_BackOffice.Entidades.Ejercicio
             _descripcion = descripcion;
             _musculo = musculo;
         }
+        #endregion Constructores
     }
 }

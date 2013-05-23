@@ -29,7 +29,7 @@ AutoEventWireup="true" CodeBehind="Agregar.aspx.cs" Inherits="PuiPui_BackOffice.
 
                 <td class="style1">
 
-                    <asp:TextBox ID="tbNombre" runat="server" Width="268px"></asp:TextBox>
+                    <asp:TextBox ID="tbNombre" runat="server" Width="270px"></asp:TextBox>
 
                 </td>
 

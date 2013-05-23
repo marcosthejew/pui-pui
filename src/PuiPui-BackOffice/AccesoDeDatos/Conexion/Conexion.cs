@@ -21,6 +21,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.Conexion
             try
             {
                 objetoConexion = null;
+                //cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
                 cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
                 conexion = new SqlConnection(cadenaConexion);
             }

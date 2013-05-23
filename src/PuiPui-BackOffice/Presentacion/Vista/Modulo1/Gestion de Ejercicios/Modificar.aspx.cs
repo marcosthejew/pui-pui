@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using PuiPui_BackOffice.LogicaDeNegocios.Ejercicio;
 using PuiPui_BackOffice.Entidades.Ejercicio;
+using PuiPui_BackOffice.LogicaDeNegocios.Excepciones;
 
 namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Ejercicios
 {
@@ -29,16 +30,24 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Ejercicios
             if (ddlEjercicios.SelectedIndex > 0)
             {
                 LogicaEjercicio objetoLogica = new LogicaEjercicio();
-
-                Ejercicio ejercicio = objetoLogica.ConsultarEjercicio(ddlEjercicios.SelectedValue);
-                if (ejercicio != null)
+                try
                 {
-                    hfEjercicio.Value = ejercicio.Nombre;
-                    tbNombre.Text = ejercicio.Nombre;                    
-                    tbDescripcion.Text = ejercicio.Descripcion;
-                    ddlMusculo_Cargar(true);
-                    ddlMusculo.SelectedValue = ejercicio.Musculo.NombreMusculo;
-                    bModificar.Enabled = true;
+                    Ejercicio ejercicio = objetoLogica.ConsultarEjercicio(ddlEjercicios.SelectedValue);
+                    if (ejercicio != null)
+                    {
+                        hfEjercicio.Value = ejercicio.Nombre;
+                        tbNombre.Text = ejercicio.Nombre;
+                        tbDescripcion.Text = ejercicio.Descripcion;
+                        ddlMusculo_Cargar(true);
+                        ddlMusculo.SelectedValue = ejercicio.Musculo.NombreMusculo;
+                        bModificar.Enabled = true;
+                    }
+                }
+                catch (EjercicioException error)
+                {
+                    lExito.Text = error.Message;
+                    lExito.ForeColor = System.Drawing.Color.Red;
+                    lExito.Visible = true;
                 }
             }
             else
@@ -61,24 +70,33 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Ejercicios
         {
             ddlEjercicios.Items.Clear();
             LogicaEjercicio objetoLogica = new LogicaEjercicio();
-            if (objetoLogica.ConsultarTodosEjercicios() != null)
+            try
             {
-                ddlEjercicios.Items.Insert(0, new ListItem("Seleccione", "0"));
-                List<Ejercicio> ejercicios = objetoLogica.ConsultarTodosEjercicios();
-                int i = 1;
-                foreach (Ejercicio ejercicio in ejercicios)
+                if (objetoLogica.ConsultarTodosEjercicios() != null)
                 {
-                    ddlEjercicios.Items.Insert(i, ejercicio.Nombre);
-                    i++;
+                    ddlEjercicios.Items.Insert(0, new ListItem("Seleccione", "0"));
+                    List<Ejercicio> ejercicios = objetoLogica.ConsultarTodosEjercicios();
+                    int i = 1;
+                    foreach (Ejercicio ejercicio in ejercicios)
+                    {
+                        ddlEjercicios.Items.Insert(i, ejercicio.Nombre);
+                        i++;
+                    }
+                    ddlEjercicios.Enabled = true;
                 }
-                ddlEjercicios.Enabled = true;
+                else
+                {
+                    lExito.Text = "No hay ejercicios.";
+                    lExito.Visible = true;
+                    lExito.ForeColor = System.Drawing.Color.Red;
+                    ddlEjercicios.Enabled = false;
+                }
             }
-            else
+            catch (EjercicioException error)
             {
-                lExito.Text = "No hay ejercicios.";
-                lExito.Visible = true;
+                lExito.Text = error.Message;
                 lExito.ForeColor = System.Drawing.Color.Red;
-                ddlEjercicios.Enabled = false;
+                lExito.Visible = true;
             }
 
         }
@@ -87,17 +105,26 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Ejercicios
         {
             ddlMusculo.Items.Clear();
             LogicaMusculo objetoLogica = new LogicaMusculo();
-            if (objetoLogica.ConsultarTodosMusculos() != null)
+            try
             {
-                List<Musculo> musculos = objetoLogica.ConsultarTodosMusculos();
-                int i = 0;
-                foreach (Musculo musculo in musculos)
+                if (objetoLogica.ConsultarTodosMusculos() != null)
                 {
-                    ddlMusculo.DataTextField = musculo.NombreMusculo;
-                    ddlMusculo.DataValueField = musculo.IdMusculo.ToString();
-                    ddlMusculo.Items.Insert(i, musculo.NombreMusculo);
-                    i++;
+                    List<Musculo> musculos = objetoLogica.ConsultarTodosMusculos();
+                    int i = 0;
+                    foreach (Musculo musculo in musculos)
+                    {
+                        ddlMusculo.DataTextField = musculo.NombreMusculo;
+                        ddlMusculo.DataValueField = musculo.IdMusculo.ToString();
+                        ddlMusculo.Items.Insert(i, musculo.NombreMusculo);
+                        i++;
+                    }
                 }
+            }
+            catch (MusculoException error)
+            {
+                lExito.Text = error.Message;
+                lExito.ForeColor = System.Drawing.Color.Red;
+                lExito.Visible = true;
             }
             ddlMusculo.Enabled = bEnabled;
         }
@@ -110,14 +137,29 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Ejercicios
                 Ejercicio ejercicio = new Ejercicio();
                 ejercicio.Nombre = tbNombre.Text;
                 ejercicio.Descripcion = tbDescripcion.Text;
-
-                if (objetoLogica.ActualizarEjercicio(hfEjercicio.Value, ejercicio, ddlMusculo.SelectedValue))
+                try
                 {
-                    tbInit();
-                    ddlEjercicio_Cargar();
-                    ddlMusculo_Cargar(false);
-                    lExito.Text = "Se ha modificado exitosamente.";
-                    lExito.ForeColor = System.Drawing.Color.Blue;
+                    if (objetoLogica.ActualizarEjercicio(hfEjercicio.Value, ejercicio, ddlMusculo.SelectedValue))
+                    {
+                        tbInit();
+                        ddlEjercicio_Cargar();
+                        ddlMusculo_Cargar(false);
+                        lExito.Text = "Se ha modificado exitosamente.";
+                        lExito.ForeColor = System.Drawing.Color.Blue;
+                        lExito.Visible = true;
+                    }
+                    else
+                    {
+                        lExito.Text = "El nombre ya se encuentra asociado a otro ejercicio.";
+                        lExito.ForeColor = System.Drawing.Color.Red;
+                        lExito.Visible = true;
+
+                    }
+                }
+                catch (EjercicioException error)
+                {
+                    lExito.Text = error.Message;
+                    lExito.ForeColor = System.Drawing.Color.Red;
                     lExito.Visible = true;
                 }
             }

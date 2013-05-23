@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using PuiPui_BackOffice.LogicaDeNegocios.Ejercicio;
 using PuiPui_BackOffice.Entidades.Ejercicio;
+using PuiPui_BackOffice.LogicaDeNegocios.Excepciones;
 
 namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Ejercicios
 {
@@ -16,25 +17,42 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Ejercicios
             if (!IsPostBack)
             {
                 LogicaEjercicio objetoLogica = new LogicaEjercicio();
-                if (objetoLogica.ConsultarTodosEjercicios() != null)
+                try
                 {
-                    ddlEjercicios.Items.Insert(0, new ListItem("Seleccione", "0"));
-                    List<Ejercicio> ejercicios = objetoLogica.ConsultarTodosEjercicios();
-                    int i = 1;
-                    foreach (Ejercicio ejercicio in ejercicios)
+                    if (objetoLogica.ConsultarTodosEjercicios() != null)
                     {
-                        ddlEjercicios.DataTextField = ejercicio.Nombre;
-                        ddlEjercicios.DataValueField = ejercicio.Id.ToString();
-                        ddlEjercicios.Items.Insert(i, ejercicio.Nombre);
-                        i++;
+                        ddlEjercicios.Items.Insert(0, new ListItem("Seleccione", "0"));
+                        List<Ejercicio> ejercicios = objetoLogica.ConsultarTodosEjercicios();
+                        int i = 1;
+                        foreach (Ejercicio ejercicio in ejercicios)
+                        {
+                            ddlEjercicios.DataTextField = ejercicio.Nombre;
+                            ddlEjercicios.DataValueField = ejercicio.Id.ToString();
+                            ddlEjercicios.Items.Insert(i, ejercicio.Nombre);
+                            i++;
+                        }
+                    }
+                    else
+                    {
+                        ddlEjercicios.Enabled = false;
+                        lExito.Visible = true;
                     }
                 }
-                else
+                catch (EjercicioException error)
                 {
-                    ddlEjercicios.Enabled = false;
+                    lExito.Text = error.Message;
+                    lExito.ForeColor = System.Drawing.Color.Red;
                     lExito.Visible = true;
                 }
+
             }
+        }
+        
+        protected void tb_Init()
+        {
+            tbNombre.Text = "";
+            tbMusculo.Text = "";
+            tbDescripcion.Text = "";
         }
 
         protected void ddlEjercicios_SelectedIndexChanged(object sender, EventArgs e)
@@ -42,32 +60,29 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Ejercicios
             if (ddlEjercicios.SelectedIndex > 0)
             {
                 LogicaEjercicio objetoLogica = new LogicaEjercicio();
-                
-                Ejercicio ejercicio = objetoLogica.ConsultarEjercicio(ddlEjercicios.SelectedValue);
-                if (ejercicio != null) 
+                try
                 {
-                    tbNombre.Text = ejercicio.Nombre;
-                    tbMusculo.Text = ejercicio.Musculo.NombreMusculo;
-                    tbDescripcion.Text = ejercicio.Descripcion;
+                    Ejercicio ejercicio = objetoLogica.ConsultarEjercicio(ddlEjercicios.SelectedValue);
+                    if (ejercicio != null)
+                    {
+                        tbNombre.Text = ejercicio.Nombre;
+                        tbMusculo.Text = ejercicio.Musculo.NombreMusculo;
+                        tbDescripcion.Text = ejercicio.Descripcion;
+                    }
+                    else
+                        tb_Init();
                 }
-                else
+                catch (EjercicioException error)
                 {
-                    tbNombre.Text = "";
-                    tbMusculo.Text = "";
-                    tbDescripcion.Text = "";
+                    lExito.Text = error.Message;
+                    lExito.ForeColor = System.Drawing.Color.Red;
+                    lExito.Visible = true;
                 }
-
             }
             else
-            {
-                tbNombre.Text = "";
-                tbMusculo.Text = "";
-                tbDescripcion.Text = "";
-            }
+                tb_Init();
+
         }
-
-
-
 
     }
 }
