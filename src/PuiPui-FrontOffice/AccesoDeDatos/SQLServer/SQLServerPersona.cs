@@ -57,7 +57,7 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
             catch (SqlException error)
             {
                 //En caso de que se viole alguna restriccion sobre la BD
-                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+                throw (new ExcepcionPersona(("Error: " + error.Message), error));
             }
             finally
             {
@@ -119,7 +119,7 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
             catch (SqlException error)
             {
                 //En caso de que se viole alguna restriccion sobre la BD
-                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+                throw (new ExcepcionPersona(("Error: " + error.Message), error));
             }
             finally
             {
@@ -177,7 +177,7 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
             catch (SqlException error)
             {
                 //En caso de que se viole alguna restriccion sobre la BD
-                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+                throw (new ExcepcionPersona(("Error: " + error.Message), error));
             }
             finally
             {
@@ -230,7 +230,7 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
             catch (SqlException error)
             {
                 //En caso de que se viole alguna restriccion sobre la BD
-                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+                throw (new ExcepcionPersona(("Error: " + error.Message), error));
                 return false;
             }
 
@@ -281,7 +281,7 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
             catch (SqlException error)
             {
                 //En caso de que se viole alguna restriccion sobre la BD
-                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+                throw (new ExcepcionPersona(("Error: " + error.Message), error));
             }
             finally
             {
@@ -319,7 +319,7 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
             catch (SqlException error)
             {
                 //En caso de que se viole alguna restriccion sobre la BD
-                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+                throw (new ExcepcionPersona(("Error: " + error.Message), error));
             }
             finally
             {
@@ -356,7 +356,7 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
             catch (SqlException error)
             {
                 //En caso de que se viole alguna restriccion sobre la BD
-                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+                throw (new ExcepcionPersona(("Error: " + error.Message), error));
             }
             finally
             {
@@ -418,7 +418,7 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
             catch (SqlException error)
             {
                 //En caso de que se viole alguna restriccion sobre la BD
-                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+                throw (new ExcepcionPersona(("Error: " + error.Message), error));
             }
             finally
             {
