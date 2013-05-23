@@ -1,9 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="../../../MasterPage/Site.master"
- AutoEventWireup="true" CodeBehind="Modificar.aspx.cs" Inherits="PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_de_Clases.Modificar" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Presentacion/MasterPage/Site.Master" AutoEventWireup="true" CodeBehind="ConsultaDetalle.aspx.cs" Inherits="PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_de_Clases.ConsultaDetalle" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div style="font-family:Helvetica;font-size:16px;margin-left:360px;margin-top:40px">
-         <asp:Label ID="Titulo" runat="server" Text="Modificar Clase" 
+         <asp:Label ID="Titulo" runat="server" Text="Consultar detalle de las Clases" 
             Visible="true"></asp:Label>
     
     </div>
@@ -24,7 +22,7 @@
                     <asp:Label ID="Label4" runat="server" Text="Label">Nombre de la clase:</asp:Label>
                 </td>
                 <td class="auto-style8" align="left">
-                    <asp:TextBox ID="nombreClaseAModificar" runat="server" Height="22px" Width="270px"
+                    <asp:TextBox ID="nombreClaseActual" runat="server" Height="22px" Width="270px" Enabled="False"
                       ></asp:TextBox>
                 </td>
             </tr>
@@ -33,15 +31,15 @@
                     <asp:Label ID="Label3" runat="server" Text="Label">Descripcion:</asp:Label>
                 </td>
                 <td class="auto-style2" colspan="0" align="left">
-                    <asp:TextBox id="TextArea" runat="server" Wrap="true" TextMode="MultiLine" Width="200px" Height="115px"></asp:TextBox>
+                    <asp:TextBox id="TextArea" runat="server" Wrap="true" TextMode="MultiLine" Enabled="False" Width="200px" Height="115px"></asp:TextBox>
                 </td>    
             </tr>
             <tr>
                 <td class="auto-style3">
                     Estatus:</td>
                 <td class="auto-style4" colspan="0">
-                    <asp:RadioButton ID="Activo" runat="server" GroupName="EstatusClases" Text="Activa" />
-                    <asp:RadioButton ID="Inactivo" runat="server" GroupName="EstatusClases" Text="Inactiva" />
+                    <asp:TextBox ID="EstatusActual" runat="server" Height="22px" Width="270px" Enabled="False"
+                      ></asp:TextBox>
                     </td>
             </tr>
                 <tr>
@@ -52,10 +50,10 @@
             </tr>
                 <tr>
                 <td class="auto-style5" align="center">
-                <asp:Button ID="botonRegresar" runat="server" Text="Regresar" CssClass="button" Font-Names="Tomoha Plain" Font-Size="14px" Height="25px" Width="120px"  />
+                <asp:Button ID="botonRegresar" runat="server" Text="Regresar" CssClass="button" Font-Names="Tomoha Plain" Font-Size="14px" Height="25px" OnClick="botonRegresar_Click" Width="120px"  />
                     </td>
                 <td class="auto-style6" colspan="0" align="center">
-                <asp:Button ID="botonAceptar" runat="server" Text="Aceptar" CssClass="button" Font-Names="Tomoha Plain" Font-Size="14px" Height="25px" Width="120px" OnClick="botonAceptar_Click"  />
+                <asp:Button ID="botonAceptar" runat="server" Text="Modificar" CssClass="button" Font-Names="Tomoha Plain" Font-Size="14px" OnClick="botonAceptar_Click" Height="25px" Width="120px"  />
                     </td>
 
             </tr>
