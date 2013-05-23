@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using PuiPui_BackOffice.Entidades.Salon;
 using PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon;
+using PuiPui_BackOffice.Entidades.Cliente;
 
 namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Geestion_de_Salones
 {
@@ -21,24 +22,31 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Geestion_de_Salones
         private int _statusCapacidad;
         private LogicaSalon _logicaSalon;
         private int _checkSeleccion;
+        Persona persona;
+        Acceso acceso;
+        string loginPersona;
 
         #endregion
 
-        #region Metodos
+        #region Constructor
 
         public Consultar() 
         {
 
             this._logicaSalon = new LogicaSalon();
-        
         }
+
+        #endregion
+
+        #region Metodos
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            try 
+            try
             {
+                acceso = (Acceso)Session["loginPersona"];
+                loginPersona = acceso.Login;
                 _listaSalon = _logicaSalon.ObtenerSalones();
-
                 if (!IsPostBack)
                 {
                     GridConsultar.Visible = false;
@@ -47,10 +55,14 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Geestion_de_Salones
                 else
                 {
                     GridConsultar.Visible = true;
-                }
-            
+                }          
             }
             catch (NullReferenceException)
+            {
+
+                Response.Redirect("../../Home/Login.aspx");
+            }
+            catch (Exception)
             {
                 Response.Redirect("../../Home/Modulo2/Geestion_de_Salones/Consultar.aspx");
             }
@@ -124,9 +136,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Geestion_de_Salones
                 char[] charsToTrim1 = { '*', ' ', '\'', ':' };
                 _ubicacion = _ubicacion.Trim(charsToTrim1);
                 Response.Redirect("VerDetalle.aspx?ubicacion=" + _ubicacion + "&status=" + _status + "&id=" + _id + "&capacidad=" + _capacidad);
-
             }
-
         }
         
         protected void botonBuscarSalon_Click(object sender, EventArgs e)
@@ -225,6 +235,5 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Geestion_de_Salones
         }
 
         #endregion Metodos
-
     }
 }
