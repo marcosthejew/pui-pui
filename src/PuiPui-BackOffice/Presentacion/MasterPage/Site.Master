@@ -14,9 +14,19 @@
     <div class="page">
         <div class="header">
             <div class="title">
-                <h1>
-                    Pui-Pui BackOffice&nbsp;
-                </h1>
+                <table style="width: 959px">
+                <tr>
+                    <td>
+                    <h1>
+                    Pui-Pui BackOffice&nbsp;</h1>
+                    </td>
+                    <td colspan="4" align="center">
+                        <asp:Button ID="BRegistrar" runat="server" CssClass="button" onclick="BRegistrar_Click" Text="Cerrar Sesión" />
+                    </td>
+                </tr>
+                    </table>
+                    
+                
                 
         
                 
@@ -87,7 +97,7 @@
                                 <asp:MenuItem NavigateUrl="../Vista/Modulo6/Cliente/Agregar.aspx" Text="Agregar" />
                                 <asp:MenuItem NavigateUrl="../Vista/Modulo6/Cliente/Consultar.aspx" Text="Consultar" />
                                 <asp:MenuItem NavigateUrl="../Vista/Modulo6/Cliente/Modificar.aspx" Text="Modificar" />
-                                <asp:MenuItem NavigateUrl="../Vista/Modulo6/Cliente/Eliminar.aspx" Text="Eliminar" />
+                                
                                 <asp:MenuItem NavigateUrl="../Vista/Modulo6/Cliente/Act-Ina.aspx" Text="Activar/Inactivar" />
                             </asp:MenuItem>
                         </asp:MenuItem>
@@ -95,6 +105,7 @@
                         <asp:MenuItem NavigateUrl="../Vista/Home/About.aspx" Text="Creditos" />
                     </Items>
                 </asp:Menu>
+
             </div>
         </div>
         <div class="main">

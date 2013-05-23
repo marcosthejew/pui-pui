@@ -11,7 +11,7 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.Instructor
     public class LogicaInstructor
     {
 
-
+       
 
         public bool AgregarInstructor(string tb1, string tb2, string tb3, int tb4, string tb5, string tb6, string tb7, int tb8, string tb9, string tb10, string tb11, int tb12, DateTime calendar, string cb)
         {
@@ -51,6 +51,22 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.Instructor
                 return objDataBase.ConsultarIntructor(cedula);
             }
             return null;
+        }
+
+
+
+        public bool eliminarInstructor(string a)
+        {
+            SQLServerInstructor instructor = new SQLServerInstructor();
+
+            if (instructor.eliminarInstructor(a)==true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
     }

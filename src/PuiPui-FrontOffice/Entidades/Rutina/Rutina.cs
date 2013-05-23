@@ -20,10 +20,16 @@ namespace PuiPui_FrontOffice.Entidades.Rutina
 
            public Rutina()
         {
+            this.id_rutina = 0;
             this.repeticiones = 0;
             this.descripcion = "";
         
         }
+           
+          public Rutina(int id_rutina)
+           {
+               this.id_rutina = id_rutina;
+           }
         public Rutina(string descripcion, DateTime tiempo)
         {
             this.descripcion = descripcion;

@@ -79,8 +79,8 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
              _insertar = new SqlCommand("[dbo].[insertar_Rutina]", _conexion);
              _insertar.CommandType = CommandType.StoredProcedure;
             _insertar.Parameters.Add("@descripcion", SqlDbType.NChar, 100).Value = insertaRutina.Descripcion;
-            _insertar.Parameters.Add("@duracion", SqlDbType.Time, 7).Value = insertaRutina.Tiempo;
-            _insertar.Parameters.Add("@duracion", SqlDbType.Int).Value = insertaRutina.Repeteciones;
+            _insertar.Parameters.Add("@duracion", SqlDbType.DateTime, 7).Value = insertaRutina.Tiempo;
+            _insertar.Parameters.Add("@repeticiones", SqlDbType.Int).Value = insertaRutina.Repeteciones;
             _execute=_insertar.ExecuteReader();
                  if (_execute.Read())
                 {
@@ -102,7 +102,44 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
             return false;
         }
 
+        public Rutina BDUltimo_ID_Rutina()
+        {
+            string _cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            SqlConnection _conexion = new SqlConnection();
+            SqlCommand _cmd = new SqlCommand();
+            SqlDataReader _dr;
+            Rutina _ruti = new Rutina();
+            try
+            {
+                _conexion = new SqlConnection(_cadenaConexion);
+                _conexion.Open();
+                _cmd = new SqlCommand("[dbo].[buscar_ultimo_id]", _conexion);
+                _cmd.CommandType = CommandType.StoredProcedure;
+                _dr = _cmd.ExecuteReader();
+                while (_dr.Read())
+                {
+                    _ruti.Id_rutina = Convert.ToInt32(_dr.GetValue(0));
 
+                }
+                
+                db.CerrarConexion();
+                return _ruti;
+
+
+            }
+            catch (SqlException error)
+            {
+                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+
+
+            }
+            finally
+            {
+                db.CerrarConexion();
+            
+            }
+            return _ruti;
+        }
         
 
 

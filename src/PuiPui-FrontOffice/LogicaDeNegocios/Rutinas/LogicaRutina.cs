@@ -118,7 +118,14 @@ namespace PuiPui_FrontOffice.LogicaDeNegocios.Rutinas
         }
 
 
+        public Rutina Devuelve_Ultimo_ID()
+        {
+            Rutina find_id = new Rutina();
+            SQLServerRutina busca_id= new SQLServerRutina();
+            find_id = busca_id.BDUltimo_ID_Rutina();
+            return find_id;
         
+        }
 
 
         public Rutina Logirutina

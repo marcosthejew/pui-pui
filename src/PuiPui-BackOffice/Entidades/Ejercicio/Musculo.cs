@@ -10,6 +10,7 @@ namespace PuiPui_BackOffice.Entidades.Ejercicio
         private int _idMusculo;
         private string _nombreMusculo;
 
+        #region MetodosGetSet
         public string NombreMusculo
         {
             get { return _nombreMusculo; }
@@ -22,7 +23,9 @@ namespace PuiPui_BackOffice.Entidades.Ejercicio
             set { _idMusculo = value; }
 
         }
-        
+        #endregion MetodoGetSet
+
+        #region Constructores
         public Musculo(int id, string nombre)
         {
             _idMusculo = id;
@@ -38,5 +41,6 @@ namespace PuiPui_BackOffice.Entidades.Ejercicio
         {
 
         }
+        #endregion Constructores
     }
 }

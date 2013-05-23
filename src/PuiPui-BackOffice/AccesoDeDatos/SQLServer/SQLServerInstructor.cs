@@ -190,7 +190,6 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 //Se recorre cada row
                 if (dr.Read())
                 {
-                    //  instructor.IdPersona = Convert.ToInt32(dr.GetValue(0));
                     instructor1.CedulaPersona = Convert.ToInt32(dr.GetValue(0));
                     instructor1.NombrePersona1 = dr.GetValue(1).ToString();
                     instructor1.NombrePersona2 = dr.GetValue(2).ToString();
@@ -209,6 +208,10 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                     instructor1.EstadoPersona = dr.GetValue(15).ToString();
                 }
                 db.CerrarConexion();
+                SQLServerHorario obj = new SQLServerHorario();
+                if (obj.ConsultarHorarios(dr.GetValue(0).ToString()) != null)
+                instructor1.Horario = obj.ConsultarHorarios(cedula);
+
                 return instructor1;
             }
             catch (SqlException error)
@@ -225,7 +228,46 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 
 
 
+        public bool eliminarInstructor(string a) 
+        {
 
+            string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader dr;
+
+            try
+            {
+                conexion = new SqlConnection(cadenaConexion);
+                conexion.Open();
+                cmd = new SqlCommand("[dbo].[eliminarInstructor]", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@cedula", a);
+                dr = cmd.ExecuteReader();
+
+                //Se recorre cada row
+                if (dr.Read())
+                {
+                    db.CerrarConexion();
+                    return false;
+                }
+
+                db.CerrarConexion();
+            }
+            catch (SqlException error)
+            {
+                //En caso de que se viole alguna restriccion sobre la BD
+                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+            }
+            finally
+            {
+                db.CerrarConexion();
+            }
+            return true;
+        
+        
+        
+        }
 
 
 
