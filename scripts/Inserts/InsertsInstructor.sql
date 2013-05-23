@@ -27,9 +27,6 @@ USE [puipuiDB]
 	 VALUES ('viernes','8:00:00','12:00:00',1);
 	 INSERT
 	 INTO Horario_Trabajo(dia,hora_inicio,hora_fin,id_instructor)
-	 VALUES ('sabado','8:00:00','12:00:00',1);
-	 INSERT
-	 INTO Horario_Trabajo(dia,hora_inicio,hora_fin,id_instructor)
 	 VALUES ('lunes','14:00:00','18:00:00',1); 
 	 INSERT
 	 INTO Horario_Trabajo(dia,hora_inicio,hora_fin,id_instructor)
@@ -43,9 +40,6 @@ USE [puipuiDB]
 	 INSERT
 	 INTO Horario_Trabajo(dia,hora_inicio,hora_fin,id_instructor)
 	 VALUES ('viernes','14:00:00','18:00:00',1);
-	 INSERT
-	 INTO Horario_Trabajo(dia,hora_inicio,hora_fin,id_instructor)
-	 VALUES ('sabado','14:00:00','18:00:00',1);
 	 
 /*INSERTA HORARIO AL INSTRUCTOR 2 */	 
 	 INSERT
@@ -63,9 +57,6 @@ USE [puipuiDB]
 	 INSERT
 	 INTO Horario_Trabajo(dia,hora_inicio,hora_fin,id_instructor)
 	 VALUES ('viernes','8:00:00','12:00:00',2);
-	 INSERT
-	 INTO Horario_Trabajo(dia,hora_inicio,hora_fin,id_instructor)
-	 VALUES ('sabado','8:00:00','12:00:00',2);
 	 
 /*INSERTA HORARIO AL INSTRUCTOR 3 */	
 	 INSERT
@@ -83,6 +74,3 @@ USE [puipuiDB]
 	 INSERT
 	 INTO Horario_Trabajo(dia,hora_inicio,hora_fin,id_instructor)
 	 VALUES ('viernes','14:00:00','18:00:00',3);
-	 INSERT
-	 INTO Horario_Trabajo(dia,hora_inicio,hora_fin,id_instructor)
-	 VALUES ('sabado','14:00:00','18:00:00',3);

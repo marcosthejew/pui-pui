@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
-{
-
-
-    public partial class Consultar
-    {
-
+namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores {
+    
+    
+    public partial class Consultar {
+        
         /// <summary>
         /// lExito control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lExito;
-
+        
         /// <summary>
         /// ddlInstructores control.
         /// </summary>
@@ -31,7 +29,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlInstructores;
-
+        
         /// <summary>
         /// lbCedula control.
         /// </summary>
@@ -40,7 +38,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbCedula;
-
+        
         /// <summary>
         /// lbGenero control.
         /// </summary>
@@ -49,7 +47,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbGenero;
-
+        
         /// <summary>
         /// lbNombre1 control.
         /// </summary>
@@ -58,7 +56,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbNombre1;
-
+        
         /// <summary>
         /// lbNombre2 control.
         /// </summary>
@@ -67,7 +65,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbNombre2;
-
+        
         /// <summary>
         /// lbApellido1 control.
         /// </summary>
@@ -76,7 +74,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbApellido1;
-
+        
         /// <summary>
         /// lbApellido2 control.
         /// </summary>
@@ -85,7 +83,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbApellido2;
-
+        
         /// <summary>
         /// lbTlfLocal control.
         /// </summary>
@@ -94,7 +92,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbTlfLocal;
-
+        
         /// <summary>
         /// lbTlfCel control.
         /// </summary>
@@ -103,7 +101,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbTlfCel;
-
+        
         /// <summary>
         /// lbCiudad control.
         /// </summary>
@@ -112,7 +110,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbCiudad;
-
+        
         /// <summary>
         /// lbDireccion control.
         /// </summary>
@@ -121,7 +119,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbDireccion;
-
+        
         /// <summary>
         /// lbFechaNac control.
         /// </summary>
@@ -130,7 +128,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbFechaNac;
-
+        
         /// <summary>
         /// lbMail control.
         /// </summary>
@@ -139,7 +137,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbMail;
-
+        
         /// <summary>
         /// lbFechaRes control.
         /// </summary>
@@ -148,7 +146,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbFechaRes;
-
+        
         /// <summary>
         /// lbStatus control.
         /// </summary>
@@ -157,7 +155,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbStatus;
-
+        
         /// <summary>
         /// lbNomContacto control.
         /// </summary>
@@ -166,7 +164,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbNomContacto;
-
+        
         /// <summary>
         /// lbTLfContacto control.
         /// </summary>
@@ -175,5 +173,140 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbTLfContacto;
+        
+        /// <summary>
+        /// Label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
+        
+        /// <summary>
+        /// Label2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label2;
+        
+        /// <summary>
+        /// Label3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label3;
+        
+        /// <summary>
+        /// Label4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label4;
+        
+        /// <summary>
+        /// Label5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label5;
+        
+        /// <summary>
+        /// Label6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label6;
+        
+        /// <summary>
+        /// Label7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label7;
+        
+        /// <summary>
+        /// Label8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label8;
+        
+        /// <summary>
+        /// Label9 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label9;
+        
+        /// <summary>
+        /// Label10 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label10;
+        
+        /// <summary>
+        /// Label11 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label11;
+        
+        /// <summary>
+        /// Label12 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label12;
+        
+        /// <summary>
+        /// Label13 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label13;
+        
+        /// <summary>
+        /// Label14 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label14;
+        
+        /// <summary>
+        /// Label15 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label15;
     }
 }
