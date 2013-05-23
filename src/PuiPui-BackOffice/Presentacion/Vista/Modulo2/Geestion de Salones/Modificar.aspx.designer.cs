@@ -85,13 +85,13 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Geestion_de_Salones {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// Control RadioButton1.
+        /// Control Activo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton RadioButton1;
+        protected global::System.Web.UI.WebControls.RadioButton Activo;
         
         /// <summary>
         /// Control Label2.
@@ -103,13 +103,13 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Geestion_de_Salones {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// Control RadioButton2.
+        /// Control Inactivo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton RadioButton2;
+        protected global::System.Web.UI.WebControls.RadioButton Inactivo;
         
         /// <summary>
         /// Control Label5.

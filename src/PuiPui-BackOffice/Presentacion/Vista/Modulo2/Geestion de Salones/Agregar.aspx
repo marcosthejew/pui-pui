@@ -27,7 +27,7 @@
             </tr>
             <tr>
                 <td class="auto-style1" align="center">
-                    <asp:Label ID="Label3" runat="server" Text="Capacidad:" Font-Names="Arial" Font-Size="12px"></asp:Label>
+                    <asp:Label ID="Label3" runat="server" Text="Capacidad (# de personas):" Font-Names="Arial" Font-Size="12px"></asp:Label>
                 </td>
                 <td class="auto-style2">
                     &nbsp;<asp:TextBox ID="TextBoxCapacidad" runat="server" Height="22px" Width="270px"></asp:TextBox>

@@ -28,60 +28,44 @@
                 <td rowspan="0" class="auto-style5" nowrap="nowrap" style="text-align:center">
                     <asp:RadioButton ID="consultarSalonPorUbicacion" runat="server" 
                         GroupName="ConsultarSalon" Text="Ubicacion:" OnCheckedChanged="consultarSalonPorUbicacion_CheckedChanged"/>
+                    &nbsp;<asp:TextBox ID="salon" runat="server" Height="22px" Width="270px"></asp:TextBox>
 
                 </td>
               
                 <td align="left" rowspan="1" nowrap="nowrap" class="auto-style2" style="text-align:center">
-                    &nbsp;<asp:TextBox ID="salon" runat="server" Height="22px" Width="270px"></asp:TextBox>
+                  
 
                     </td>
-              
-                <td rowspan="0" class="auto-style6" nowrap="nowrap" style="text-align:center">
-                    &nbsp;<asp:RadioButton ID="consultaSalonPorStatus" runat="server" 
-                        GroupName="ConsultarSalon" Text="Status:" OnCheckedChanged="consultaSalonPorStatus_CheckedChanged"/>
-                       
-                    
-                    </td>
-              
-                <td rowspan="0" class="style47" nowrap="nowrap" style="text-align:center">
-                   
-
-                    &nbsp;<asp:DropDownList ID="DropDownListStatusSalon" runat="server" Width="100px" OnSelectedIndexChanged="DropDownListStatusSalon_SelectedIndexChanged">
-                        <asp:ListItem Value="0">Activo</asp:ListItem>
-                        <asp:ListItem Value="1">Inactivo</asp:ListItem>
-                    </asp:DropDownList>
-
-
-                </td>
                         
             </tr>
 
             <tr>
-                <td></td>
+                <td>
+                <asp:RadioButton ID="consultaSalonPorStatus" runat="server" 
+                        GroupName="ConsultarSalon" Text="Status:" OnCheckedChanged="consultaSalonPorStatus_CheckedChanged"/>
+                        &nbsp;<asp:DropDownList ID="DropDownListStatusSalon" runat="server" Width="100px" OnSelectedIndexChanged="DropDownListStatusSalon_SelectedIndexChanged">
+                        <asp:ListItem Value="0">Activo</asp:ListItem>
+                        <asp:ListItem Value="1">Inactivo</asp:ListItem>
+                    </asp:DropDownList>
+
+                </td>
                 
                 <td rowspan="0" class="auto-style6" nowrap="nowrap" style="text-align:center">
                      <asp:RadioButton ID="consultarSalonPorCapacidad" runat="server" 
                         GroupName="ConsultarSalon" Text="Capacidad:" OnCheckedChanged="consultaCapacidad_CheckedChanged1" />
-                </td>
-
-                <td rowspan="0" class="style47" nowrap="nowrap" style="text-align:center">
-                   
-
-                    &nbsp;<asp:DropDownList ID="DropDownListCapacidadSalon" runat="server" Width="100px" OnSelectedIndexChanged="DropDownListCapacidadSalon_SelectedIndexChanged">
+                     &nbsp;<asp:DropDownList ID="DropDownListCapacidadSalon" runat="server" Width="100px" OnSelectedIndexChanged="DropDownListCapacidadSalon_SelectedIndexChanged">
                         <asp:ListItem Value="0">Mayor a</asp:ListItem>
                         <asp:ListItem Value="1">Menor a</asp:ListItem>
                     </asp:DropDownList>
+                </td>
 
+                <td rowspan="0" class="style47" nowrap="nowrap" style="text-align:center">
+                    <asp:TextBox ID="TextBoxCapacidad" runat="server" Height="22px" Width="270px"></asp:TextBox>
 
                 </td>
 
                 <td align="left" rowspan="1" nowrap="nowrap" class="auto-style2" style="text-align:center">
-                    &nbsp;<asp:TextBox ID="TextBoxCapacidad" runat="server" Height="22px" Width="270px"></asp:TextBox>
-
-                    </td>
-
-                <td rowspan="0" nowrap="nowrap" class="style48" style="text-align:center">
-                &nbsp;<asp:Button ID="botonBuscarSalon" runat="server" Height="25px" Width="120px" Text="Buscar" CssClass="button" OnClick="botonBuscarSalon_Click"/>
+                <asp:Button ID="botonBuscarSalon" runat="server" Height="25px" Width="120px" Text="Buscar" CssClass="button" OnClick="botonBuscarSalon_Click" Font-Size="14px"/>    
 
                 </td>
 

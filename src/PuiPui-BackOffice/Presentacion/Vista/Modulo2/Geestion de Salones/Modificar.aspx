@@ -45,9 +45,9 @@ AutoEventWireup="true" CodeBehind="Modificar.aspx.cs" Inherits="PuiPui_BackOffic
                 <td class="auto-style1" align="center">
                     <asp:Label ID="Label1" runat="server" Text="Status:" Font-Names="Arial" Font-Size="12px"></asp:Label></td>
                 <td class="auto-style2" align="center">
-                    &nbsp;<asp:RadioButton ID="RadioButton1" runat="server" />
+                    &nbsp;<asp:RadioButton ID="Activo" runat="server" />
                     <asp:Label ID="Label2" runat="server" Text="Activo" Font-Names="Arial" Font-Size="12px"></asp:Label>
-                    &nbsp;&nbsp;&nbsp;<asp:RadioButton ID="RadioButton2" runat="server" />
+                    &nbsp;&nbsp;&nbsp;<asp:RadioButton ID="Inactivo" runat="server" />
                     <asp:Label ID="Label5" runat="server" Text="Inactivo" Font-Names="Arial" Font-Size="12px"></asp:Label>
                 </td>
             </tr>
@@ -75,8 +75,8 @@ AutoEventWireup="true" CodeBehind="Modificar.aspx.cs" Inherits="PuiPui_BackOffic
 
             <tr >
                 <td colspan="2"  style="text-align:center">
-                <asp:Button ID="Cancelar" runat="server" Text="Cancelar" Height="25px" Width="120px" Font-Size="14px"/>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="Aceptar" runat="server" Text="Aceptar" Height="25px" Width="120px" Font-Size="14px"/>
+                <asp:Button ID="Cancelar" runat="server" Text="Cancelar" Height="25px" Width="120px" Font-Size="14px" OnClick="Cancelar_Click"/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="Aceptar" runat="server" Text="Aceptar" Height="25px" Width="120px" Font-Size="14px" OnClick="Aceptar_Click"/>
                 </td>
             </tr>
             </table>          

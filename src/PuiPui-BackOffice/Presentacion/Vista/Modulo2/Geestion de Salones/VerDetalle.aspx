@@ -21,7 +21,7 @@
                     <asp:Label ID="Label4" runat="server" Text="Ubicación:" Font-Names="Arial" Font-Size="12px"></asp:Label>
                 </td>
                 <td class="auto-style2">
-                    &nbsp;<asp:TextBox ID="TextBoxUbicacion" runat="server" Height="22px" Width="270px"></asp:TextBox>
+                    &nbsp;<asp:TextBox ID="TextBoxUbicacion" runat="server" Height="22px" Width="270px" Enabled="False"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -29,7 +29,7 @@
                     <asp:Label ID="Label3" runat="server" Text="Capacidad:" Font-Names="Arial" Font-Size="12px"></asp:Label>
                 </td>
                 <td class="auto-style2">
-                    &nbsp;<asp:TextBox ID="TextBoxCapacidad" runat="server" Height="22px" Width="270px"></asp:TextBox>
+                    &nbsp;<asp:TextBox ID="TextBoxCapacidad" runat="server" Height="22px" Width="270px" Enabled="False"></asp:TextBox>
                 </td>
             </tr>
             
@@ -38,7 +38,7 @@
                     <asp:Label ID="Label1" runat="server" Text="Status:" Font-Names="Arial" Font-Size="12px"></asp:Label>
                 </td>
                 <td class="auto-style2">
-                    &nbsp;<asp:TextBox ID="TextBoxStatus" runat="server" Height="22px" Width="270px"></asp:TextBox>
+                    &nbsp;<asp:TextBox ID="TextBoxStatus" runat="server" Height="22px" Width="270px" Enabled="False"></asp:TextBox>
                 </td>
             </tr>
 
