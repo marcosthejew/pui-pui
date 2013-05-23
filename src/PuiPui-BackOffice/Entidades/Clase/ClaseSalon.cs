@@ -53,7 +53,10 @@ namespace PuiPui_BackOffice.Entidades.Clase
 
         #region Constructor
 
-        public ClaseSalon() { 
+        public ClaseSalon() {
+            _clase = new Clase();
+            _salon = new Salon.Salon();
+            _instructor = new Instructor.Instructor();
         }
         public ClaseSalon(Salon.Salon sal, Clase clas, Instructor.Instructor ins)
         {

@@ -112,13 +112,15 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_Clase_Salon_Instr
                 GridViewRow row = GridConsultar.Rows[index];
                 String id = Convert.ToString(row.Cells[1].Text);
                 String nombre_clase = Convert.ToString(row.Cells[2].Text);
-                String estatus = Convert.ToString(row.Cells[3].Text);
+                String ubicacion_salon = Convert.ToString(row.Cells[3].Text);
+                String Nombre_instructor = Convert.ToString(row.Cells[4].Text);
+                String Estatus = Convert.ToString(row.Cells[5].Text);
                 Session["idClase"] = id;
                 char[] charsToTrim = { '*', ' ', '\'', 'O', ':' };
                 char[] charsToTrim1 = { '*', ' ', '\'', ':' };
                 nombre_clase = nombre_clase.Trim(charsToTrim1);
 
-                Response.Redirect("DetalleClaseSalonInstructor.aspx?nombre=" + nombre_clase + "&estatus=" + estatus + "&id=" + id);
+                Response.Redirect("DetalleClaseSalonInstructor.aspx?nombre=" + nombre_clase + "&estatus=" + Estatus + "&id=" + id+"&ubicacion="+ubicacion_salon+"&instruct="+Nombre_instructor);
 
             }
 
