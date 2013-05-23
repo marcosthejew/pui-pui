@@ -25,8 +25,8 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
         
         public List<Clase> ListarClasesDisponibles()
         {
-            //string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
-            string cadenaConexion = "Data Source=DT_DESARROLLO\\SQLEXPRESS;Initial Catalog=puipuiDB;Integrated Security=True";
+            string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
+            //string cadenaConexion = "Data Source=DT_DESARROLLO\\SQLEXPRESS;Initial Catalog=puipuiDB;Integrated Security=True";
             SqlConnection conexion = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
             SqlDataReader dr;
