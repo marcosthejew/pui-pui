@@ -15,22 +15,27 @@ AutoEventWireup="true" CodeBehind="Agregar.aspx.cs" Inherits="PuiPui_BackOffice.
     <div  >
         <fieldset style="width:775px; height:auto; margin-left:7.5%; fit-position:center;">
         <legend style="text-align:center; font-family:Helvetica; font-size:14px;">Agregar Clase</legend>
-               
-            <table style="margin:5% 0px auto 22%; height: 140px; width: 476px;" border="0" cellspacing="0" cellpadding="0" >
+        <div style="height:20px; text-align:left; font-family:Helvetica; font-size:16px;">
+        <asp:Label ID="NClase" runat="server" Text="Debe introducir todos los campos obligatorios" CssClass="NClase" 
+            Visible="False" ForeColor="Red" Font-Names="Arial" Font-Size="14px"></asp:Label>
+        </div>       
+            <table style="margin:0px auto auto 22%; height: 140px; width: 476px;" border="0" cellspacing="0" cellpadding="0" >
             <tr>
-                <td class="auto-style3" align="center">
+                <td class="auto-style3" align="left">
+                    <asp:Label ID="Rojo" runat="server" Text="Label" ForeColor="Red" Font-Names="Arial" Font-Size="12px">*</asp:Label>
                     <asp:Label ID="Label4" runat="server" Text="Label" Font-Names="Arial" Font-Size="12px">Nombre de la nueva clase:</asp:Label>
                 </td>
                 <td class="auto-style4">
-                    &nbsp;<asp:TextBox ID="nombreNuevaClase" runat="server" Height="22px" Width="270px"></asp:TextBox>
+                    &nbsp;<asp:TextBox ID="nombreNuevaClase" runat="server" Height="22px" Width="270px" Font-Names="Arial" Font-Size="12px"></asp:TextBox>
                 </td>
             </tr>
             <tr>
-                <td class="auto-style1" align="center">
+                <td class="auto-style1" align="left">
+                    <asp:Label ID="Label6" runat="server" Text="Label" ForeColor="Red" Font-Names="Arial" Font-Size="12px">*</asp:Label>
                     <asp:Label ID="Label3" runat="server" Text="Label">Descripción:</asp:Label>
                 </td>
                 <td class="auto-style2">
-                    &nbsp;<asp:TextBox id="descripcioNuevaClase" runat="server" Wrap="true" TextMode="MultiLine" Width="200px" Height="115px"></asp:TextBox>
+                    &nbsp;<asp:TextBox id="descripcioNuevaClase" runat="server" Wrap="true" TextMode="MultiLine" Width="200px" Height="115px" Font-Names="Arial" Font-Size="12px"></asp:TextBox>
                 
                 </td>
             </tr>
@@ -42,10 +47,10 @@ AutoEventWireup="true" CodeBehind="Agregar.aspx.cs" Inherits="PuiPui_BackOffice.
             </tr>
 
             <tr>
-                <td class="auto-style1">
-                    &nbsp;</td>
-                <td class="auto-style2">
-                    &nbsp;</td>
+                <td class="auto-style7">
+                    <asp:Label ID="Label7" runat="server" Text="Label" ForeColor="Red" Font-Names="Arial" Font-Size="12px">* Campos Obligatorios</asp:Label>
+                   
+                    </td>
             </tr>
 
             <tr>
@@ -82,16 +87,16 @@ AutoEventWireup="true" CodeBehind="Agregar.aspx.cs" Inherits="PuiPui_BackOffice.
             width: 246px;
             height: 34px;
         }
-        .auto-style5 {
-            width: 127px;
-            height: 23px;
-        }
-        .auto-style6 {
-            width: 246px;
-            height: 23px;
-        }
         #TextArea1 {
             height: 71px;
+        }
+        .auto-style7 {
+            width: 127px;
+            height: 17px;
+        }
+        .auto-style8 {
+            width: 246px;
+            height: 17px;
         }
     </style>
 </asp:Content>

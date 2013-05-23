@@ -59,41 +59,10 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_Clase_Salon_Instr
             }
 
         }
-
         protected void defaultButton_Click(object sender, EventArgs e)
         {
             bool flag = false;
             int idc, ids, idi;
-
-            foreach (ClaseSalon item in _listClaseSalon)
-            {
-                if (ComboClase.SelectedItem.ToString().Equals(item.Clase.Nombre))
-                {
-                    flag = true;
-                    if (ComboSalon.SelectedItem.ToString().Equals(item.Salon.Ubicacion))
-                    {
-                        flag = true;
-                        if (ComboInstructor.SelectedItem.ToString().Equals(item.Instructor.NombrePersona1 + " " + item.Instructor.ApellidoPersona1))
-                        {
-                            flag = true;
-                        }
-                        else
-                        {
-                            flag = false;
-                        }
-                    }
-                    else
-                    {
-                        flag = false;
-                    }
-                }
-                if (flag == true)
-                {
-                    falla.Text = "Ya se encuentra registrada esta opcion";
-                    falla.Visible = true;
-                }
-                else
-                {
 
                     flag = _accesosSalon.AgregarSalonesClase(_listClase[ComboClase.SelectedIndex].IdClase, _listInstructor[ComboInstructor.SelectedIndex].IdPersona, _listSalon[ComboSalon.SelectedIndex].IdSalon);
                     if (flag == true)
@@ -105,11 +74,13 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_Clase_Salon_Instr
                         falla.Visible = true;
                     }
 
-                }
-
-            }
+              
 
 
+        }
+        protected void Cancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../../Home/Home.aspx");
         }
     }
 }
