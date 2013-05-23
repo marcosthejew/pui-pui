@@ -158,11 +158,6 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 insercion = false;
                 throw new ExecpcionClaseSalon("Objetos Vacios", e);
             }
-            catch (SqlException e)
-            {
-                insercion = false;
-                throw new ExecpcionClaseSalon("Error con la base de datos", e);
-            }
             catch (Exception e)
             {
                 insercion = false;
