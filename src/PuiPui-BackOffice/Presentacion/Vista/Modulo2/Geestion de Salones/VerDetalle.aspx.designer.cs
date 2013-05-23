@@ -10,16 +10,16 @@
 namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Geestion_de_Salones {
     
     
-    public partial class Agregar {
+    public partial class Eliminar {
         
         /// <summary>
-        /// Control Label1.
+        /// Control Label2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
         /// Control falla.
@@ -76,21 +76,39 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Geestion_de_Salones {
         protected global::System.Web.UI.WebControls.TextBox TextBoxCapacidad;
         
         /// <summary>
-        /// Control Cancelar.
+        /// Control Label1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Cancelar;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// Control Aceptar.
+        /// Control TextBoxStatus.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Aceptar;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxStatus;
+        
+        /// <summary>
+        /// Control Regresar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Regresar;
+        
+        /// <summary>
+        /// Control Modificar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Modificar;
     }
 }

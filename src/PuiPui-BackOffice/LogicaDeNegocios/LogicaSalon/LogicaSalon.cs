@@ -54,6 +54,13 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
             return miTabla;
         }
 
+        public List<Salon> ObtenerSalones()
+        {
+            //conectar a la bd
+            _miLista = _accesoSalon.ConsultarSalones();
+            return _miLista;
+        }
+        
         public Boolean ModificarSalones(Salon salon)
         {
 

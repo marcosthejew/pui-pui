@@ -99,7 +99,7 @@
     <Content Include="Presentacion\Vista\Modulo2\Geestion de Salones\Act-Ina.aspx" />
     <Content Include="Presentacion\Vista\Modulo2\Geestion de Salones\Agregar.aspx" />
     <Content Include="Presentacion\Vista\Modulo2\Geestion de Salones\Consultar.aspx" />
-    <Content Include="Presentacion\Vista\Modulo2\Geestion de Salones\Eliminar.aspx" />
+    <Content Include="Presentacion\Vista\Modulo2\Geestion de Salones\VerDetalle.aspx" />
     <Content Include="Presentacion\Vista\Modulo2\Geestion de Salones\Modificar.aspx" />
     <Content Include="Presentacion\Vista\Modulo2\Gestion de Clases\Act-Ina.aspx" />
     <Content Include="Presentacion\Vista\Modulo2\Gestion de Clases\Agregar.aspx" />
@@ -330,12 +330,12 @@
     <Compile Include="Presentacion\Vista\Modulo2\Geestion de Salones\Consultar.aspx.designer.cs">
       <DependentUpon>Consultar.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Vista\Modulo2\Geestion de Salones\Eliminar.aspx.cs">
-      <DependentUpon>Eliminar.aspx</DependentUpon>
+    <Compile Include="Presentacion\Vista\Modulo2\Geestion de Salones\VerDetalle.aspx.cs">
+      <DependentUpon>VerDetalle.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Presentacion\Vista\Modulo2\Geestion de Salones\Eliminar.aspx.designer.cs">
-      <DependentUpon>Eliminar.aspx</DependentUpon>
+    <Compile Include="Presentacion\Vista\Modulo2\Geestion de Salones\VerDetalle.aspx.designer.cs">
+      <DependentUpon>VerDetalle.aspx</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Vista\Modulo2\Geestion de Salones\Modificar.aspx.cs">
       <DependentUpon>Modificar.aspx</DependentUpon>

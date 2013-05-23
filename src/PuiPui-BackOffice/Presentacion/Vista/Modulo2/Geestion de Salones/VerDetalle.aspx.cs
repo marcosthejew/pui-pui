@@ -13,5 +13,15 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Geestion_de_Salones
         {
 
         }
+
+        protected void Regresar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../../Home/Modulo2/Geestion_de_Salones/Consultar.aspx");
+        }
+
+        protected void Modificar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../../Home/Modulo2/Geestion_de_Salones/Modificar.aspx");
+        }
     }
 }
