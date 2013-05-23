@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using PuiPui_BackOffice.LogicaDeNegocios.Ejercicio;
 using PuiPui_BackOffice.Entidades.Ejercicio;
+using PuiPui_BackOffice.LogicaDeNegocios.Excepciones;
 
 namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Ejercicios
 {
@@ -22,22 +23,31 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Ejercicios
         {
             ddlMusculo.Items.Clear();
             LogicaMusculo objetoLogica = new LogicaMusculo();
-            if (objetoLogica.ConsultarTodosMusculos() != null)
+            try
             {
-                ddlMusculo.Items.Insert(0, new ListItem("Seleccione", "0"));
-                List<Musculo> musculos = objetoLogica.ConsultarTodosMusculos();
-                int i = 1;
-                foreach (Musculo musculo in musculos)
+                if (objetoLogica.ConsultarTodosMusculos() != null)
                 {
-                    ddlMusculo.DataTextField = musculo.NombreMusculo;
-                    ddlMusculo.DataValueField = musculo.IdMusculo.ToString();
-                    ddlMusculo.Items.Insert(i, musculo.NombreMusculo);
-                    i++;
+                    ddlMusculo.Items.Insert(0, new ListItem("Seleccione", "0"));
+                    List<Musculo> musculos = objetoLogica.ConsultarTodosMusculos();
+                    int i = 1;
+                    foreach (Musculo musculo in musculos)
+                    {
+                        ddlMusculo.DataTextField = musculo.NombreMusculo;
+                        ddlMusculo.DataValueField = musculo.IdMusculo.ToString();
+                        ddlMusculo.Items.Insert(i, musculo.NombreMusculo);
+                        i++;
+                    }
+                }
+                else
+                {
+                    ddlMusculo.Enabled = false;
+                    lExito.Visible = true;
                 }
             }
-            else
+            catch (MusculoException error)
             {
-                ddlMusculo.Enabled = false;
+                lExito.Text = error.Message;
+                lExito.ForeColor = System.Drawing.Color.Red;
                 lExito.Visible = true;
             }
 
@@ -46,19 +56,27 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Ejercicios
         protected void bEliminar_Click(object sender, EventArgs e)
         {
             LogicaMusculo objetoLogica = new LogicaMusculo();
-            if (objetoLogica.EliminarMusculo(ddlMusculo.SelectedValue))
+            try
             {
-                lExito.Text = "Se elimino satisfactoriamente el musculo.";
-                lExito.ForeColor = System.Drawing.Color.Blue;
+                if (objetoLogica.EliminarMusculo(ddlMusculo.SelectedValue))
+                {
+                    lExito.Text = "Se elimino satisfactoriamente el musculo.";
+                    lExito.ForeColor = System.Drawing.Color.Blue;
+                }
+                else
+                {
+                    lExito.Text = "Hay ejercicios que usan del musculo.";
+                    lExito.ForeColor = System.Drawing.Color.Red;
+                }
+                ddlMusculo_Cargar();
+                lExito.Visible = true;
             }
-            else
+            catch (MusculoException error)
             {
-                lExito.Text = "Hay ejercicios que usan del musculo.";
+                lExito.Text = error.Message;
                 lExito.ForeColor = System.Drawing.Color.Red;
+                lExito.Visible = true;
             }
-            ddlMusculo_Cargar();
-            lExito.Visible = true;
-
         }
 
     }

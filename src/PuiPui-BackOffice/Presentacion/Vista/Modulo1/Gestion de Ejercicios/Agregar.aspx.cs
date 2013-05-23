@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using PuiPui_BackOffice.LogicaDeNegocios.Ejercicio;
+using PuiPui_BackOffice.LogicaDeNegocios.Excepciones;
 
 namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Ejercicios
 {
@@ -28,18 +29,27 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Ejercicios
             {
                 // Valido contra base de datos 
                 LogicaMusculo lMusculo = new LogicaMusculo();
-                if (lMusculo.AgregarMusculo(tbNombre.Text))
+                try
                 {
-                    lExito.Text = "Ya existe el musculo.";
+                    if (!lMusculo.AgregarMusculo(tbNombre.Text))
+                    {
+                        lExito.Text = "Ya existe el musculo.";
+                        lExito.ForeColor = System.Drawing.Color.Red;
+                        lExito.Visible = true;
+                    }
+                    else
+                    {
+                        lExito.Text = "Se agrego exitosamente el musculo.";
+                        lExito.ForeColor = System.Drawing.Color.Blue;
+                        lExito.Visible = true;
+                        tbNombre.Text = "";
+                    }
+                }
+                catch (MusculoException error)
+                {
+                    lExito.Text = error.Message;
                     lExito.ForeColor = System.Drawing.Color.Red;
                     lExito.Visible = true;
-                }
-                else
-                {
-                    lExito.Text = "Se agrego exitosamente el musculo.";
-                    lExito.ForeColor = System.Drawing.Color.Blue;
-                    lExito.Visible = true;
-                    tbNombre.Text = "";
                 }
 
             }

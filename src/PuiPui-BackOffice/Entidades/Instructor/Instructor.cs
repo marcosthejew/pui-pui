@@ -22,7 +22,13 @@ namespace PuiPui_BackOffice.Entidades.Instructor
 
         public Instructor()
         {
+            _horario = new List<Horario>();   
+        }
 
+        public List<Horario> Horario
+        {
+            get { return _horario; }
+            set { _horario = value; }
         }
 
     }

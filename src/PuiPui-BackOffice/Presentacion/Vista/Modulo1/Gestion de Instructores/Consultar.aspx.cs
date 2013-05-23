@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using PuiPui_BackOffice.LogicaDeNegocios.Instructor;
 using PuiPui_BackOffice.Entidades.Instructor;
+using PuiPui_BackOffice.Entidades;
 
 namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
 {
@@ -33,6 +34,21 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
                 lbStatus.Text = "";
                 lbNomContacto.Text = "";
                 lbTLfContacto.Text = "";
+                Label1.Text = "";
+                Label2.Text = "";
+                Label3.Text = "";
+                Label4.Text = "";
+                Label5.Text = "";
+                Label6.Text = "";
+                Label7.Text = "";
+                Label8.Text = "";
+                Label9.Text = "";
+                Label10.Text = "";
+                Label1.Text = "";
+                Label12.Text = "";
+                Label13.Text = "";
+                Label14.Text = "";
+                Label15.Text = "";
 
                 LogicaInstructor objetoLogica = new LogicaInstructor();
                 if (objetoLogica.ConsultarTodosInstructores() != null)
@@ -61,6 +77,21 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
         {
             if (ddlInstructores.SelectedIndex > 0)
             {
+                Label1.Text = "";
+                Label2.Text = "";
+                Label3.Text = "";
+                Label4.Text = "";
+                Label5.Text = "";
+                Label6.Text = "";
+                Label7.Text = "";
+                Label8.Text = "";
+                Label9.Text = "";
+                Label10.Text = "";
+                Label11.Text = "";
+                Label12.Text = "";
+                Label13.Text = "";
+                Label14.Text = "";
+                Label15.Text = "";
 
                 string[] words = ddlInstructores.SelectedValue.Split(' ');
                 foreach (string word in words)
@@ -104,9 +135,126 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
                      lbStatus.Text = instructor.EstadoPersona;
                      lbNomContacto.Text = instructor.ContactoNombrePersona;
                      lbTLfContacto.Text = "0" + instructor.ContactoTelefonoPersona;
-           
 
-                   
+                     if (instructor.Horario != null)
+                     {
+                         List<Horario> horarios = instructor.Horario;
+
+
+                         int turno = 1;
+                         foreach (Horario horario in horarios)
+                         {
+                             if (horario.dia.TrimEnd() == "lunes")
+                             {
+                                 if (turno == 1)
+                                 {
+                                     Label1.Text = horario.dia;
+                                     Label2.Text = horario.horaini.ToShortTimeString() + " - " + horario.horafin.ToShortTimeString();
+                                     Label1.Visible = true;
+                                     Label2.Visible = true;
+                                     turno++;
+                                 }
+                                 else
+                                 {
+                                     Label3.Text = horario.horaini.ToShortTimeString() + " - " + horario.horafin.ToShortTimeString();
+                                     Label3.Visible = true;
+                                 }
+                             }
+                         }
+
+
+
+                         turno = 1;
+                         foreach (Horario horario in horarios)
+                         {
+                             if (horario.dia.TrimEnd() == "martes")
+                             {
+                                 if (turno == 1)
+                                 {
+                                     Label4.Text = horario.dia;
+                                     Label5.Text = horario.horaini.ToShortTimeString() + " - " + horario.horafin.ToShortTimeString();
+                                     Label4.Visible = true;
+                                     Label5.Visible = true;
+                                     turno++;
+                                 }
+                                 else
+                                 {
+                                     Label6.Text = horario.horaini.ToShortTimeString() + " - " + horario.horafin.ToShortTimeString();
+                                     Label6.Visible = true;
+                                 }
+                             }
+                         }
+
+
+
+                         turno = 1;
+                         foreach (Horario horario in horarios)
+                         {
+                             if (horario.dia.TrimEnd() == "miercoles")
+                             {
+                                 if (turno == 1)
+                                 {
+                                     Label7.Text = horario.dia;
+                                     Label8.Text = horario.horaini.ToShortTimeString() + " - " + horario.horafin.ToShortTimeString();
+                                     Label7.Visible = true;
+                                     Label8.Visible = true;
+                                     turno++;
+                                 }
+                                 else
+                                 {
+                                     Label9.Text = horario.horaini.ToShortTimeString() + " - " + horario.horafin.ToShortTimeString();
+                                     Label9.Visible = true;
+                                 }
+                             }
+                         }
+
+
+
+                         turno = 1;
+                         foreach (Horario horario in horarios)
+                         {
+                             if (horario.dia.TrimEnd() == "jueves")
+                             {
+                                 if (turno == 1)
+                                 {
+                                     Label10.Text = horario.dia;
+                                     Label11.Text = horario.horaini.ToShortTimeString() + " - " + horario.horafin.ToShortTimeString();
+                                     Label10.Visible = true;
+                                     Label11.Visible = true;
+                                     turno++;
+                                 }
+                                 else
+                                 {
+                                     Label12.Text = horario.horaini.ToShortTimeString() + " - " + horario.horafin.ToShortTimeString();
+                                     Label12.Visible = true;
+                                 }
+                             }
+                         }
+
+
+
+                         turno = 1;
+                         foreach (Horario horario in horarios)
+                         {
+                             if (horario.dia.TrimEnd() == "viernes")
+                             {
+                                 if (turno == 1)
+                                 {
+                                     Label13.Text = horario.dia;
+                                     Label14.Text = horario.horaini.ToShortTimeString() + " - " + horario.horafin.ToShortTimeString();
+                                     Label13.Visible = true;
+                                     Label14.Visible = true;
+                                     turno++;
+                                 }
+                                 else
+
+                                 {
+                                     Label15.Text = horario.horaini.ToShortTimeString() + " - " + horario.horafin.ToShortTimeString();
+                                     Label15.Visible = true;
+                                 }
+                             }
+                         }
+                     }
                 }
                 else
                 {
@@ -126,6 +274,22 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
                      lbStatus.Text = "";
                      lbNomContacto.Text = "";
                      lbTLfContacto.Text = "";
+                     Label1.Text = "";
+                     Label2.Text = "";
+                     Label3.Text = "";
+                     Label4.Text = "";
+                     Label5.Text = "";
+                     Label6.Text = "";
+                     Label7.Text = "";
+                     Label8.Text = "";
+                     Label9.Text = "";
+                     Label10.Text = "";
+                     Label11.Text = "";
+                     Label12.Text = "";
+                     Label13.Text = "";
+                     Label14.Text = "";
+                     Label15.Text = "";
+
 
                 }
 
@@ -148,12 +312,23 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
                 lbStatus.Text = "";
                 lbNomContacto.Text = "";
                 lbTLfContacto.Text = "";
+                Label1.Text = "";
+                Label2.Text = "";
+                Label3.Text = "";
+                Label4.Text = "";
+                Label5.Text = "";
+                Label6.Text = "";
+                Label7.Text = "";
+                Label8.Text = "";
+                Label9.Text = "";
+                Label10.Text = "";
+                Label11.Text = "";
+                Label12.Text = "";
+                Label13.Text = "";
+                Label14.Text = "";
+                Label15.Text = "";
             }
         }
-
-
-
-
-
+        
     }
 }

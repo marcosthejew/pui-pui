@@ -58,4 +58,18 @@ update Rutina set descripcion=@descripcion , duracion=@duracion ,repeteciones=@r
 END;
 GO
 
-
+/*metodo para buscar el ultimo id insertado */
+USE [puipuiDB]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE procedure [dbo].[buscar_ultimo_id]
+as
+BEGIN
+	set nocount on
+		
+	SELECT max(id_rutina)
+	FROM Rutina 	
+END;

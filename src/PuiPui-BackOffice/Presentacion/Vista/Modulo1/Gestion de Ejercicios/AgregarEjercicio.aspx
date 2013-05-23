@@ -12,16 +12,34 @@ AutoEventWireup="true" CodeBehind="AgregarEjercicio.aspx.cs" Inherits="PuiPui_Ba
     }
 
     #taDescripcion {
-
-        width: 268px;
-
-        height: 66px;
-
     }
 
         .auto-style1 {
             height: 14px;
         }
+
+        .auto-style2 {
+        width: 166px;
+    }
+    .auto-style3 {
+        height: 14px;
+        width: 166px;
+    }
+
+        .auto-style4 {
+        width: 166px;
+        height: 86px;
+    }
+    .auto-style5 {
+        height: 86px;
+    }
+    .auto-style6 {
+        width: 166px;
+        height: 30px;
+    }
+    .auto-style7 {
+        height: 30px;
+    }
 
         </style>
 </asp:Content>
@@ -42,19 +60,19 @@ AutoEventWireup="true" CodeBehind="AgregarEjercicio.aspx.cs" Inherits="PuiPui_Ba
     <br />
 
 
-        <table style="width: 543px; height: 239px;" id="tablaEjercicio">
+        <table style="width: 543px; height: 154px;" id="tablaEjercicio">
 
             <tr>
 
-                <td class="style2">
+                <td class="auto-style6">
 
                     Nombre del ejercicio: </td>
 
-                <td class="style1">
+                <td class="auto-style7">
 
                    
 
-                    <asp:TextBox ID="Nombre" runat="server" AutoPostBack="True" Width="259px"></asp:TextBox>
+                    <asp:TextBox ID="Nombre" runat="server" AutoPostBack="True" Width="270px"></asp:TextBox>
 
                    
 
@@ -64,15 +82,15 @@ AutoEventWireup="true" CodeBehind="AgregarEjercicio.aspx.cs" Inherits="PuiPui_Ba
 
             <tr>
 
-                <td class="style2">
+                <td class="auto-style4">
 
                    Descripcion: 
 
                 </td>
 
-                <td class="style1">
+                <td class="auto-style5">
 
-                    &nbsp;<asp:TextBox ID="taDescripcion" runat="server" Height="62px" Width="256px" TextMode="MultiLine" Font-Names="Arial"></asp:TextBox>
+                    &nbsp;<asp:TextBox ID="taDescripcion" runat="server" Height="83px" Width="269px" TextMode="MultiLine" Font-Names="Arial"></asp:TextBox>
 
                 </td>
 
@@ -80,13 +98,13 @@ AutoEventWireup="true" CodeBehind="AgregarEjercicio.aspx.cs" Inherits="PuiPui_Ba
 
              <tr>
 
-                <td class="style2">
+                <td class="auto-style6">
 
                     Musculo a ejercitar:</td>
 
-                <td class="style1">
+                <td class="auto-style7">
 
-                    <asp:DropDownList ID="ddlMusculo" runat="server" Height="17px" Width="272px" AutoPostBack="True">
+                    <asp:DropDownList ID="ddlMusculo" runat="server" Height="16px" Width="275px" AutoPostBack="True">
                     </asp:DropDownList>
     
                 </td>
@@ -95,7 +113,7 @@ AutoEventWireup="true" CodeBehind="AgregarEjercicio.aspx.cs" Inherits="PuiPui_Ba
 
             <tr>
 
-                <td class="auto-style1">
+                <td class="auto-style3">
 
                     </td>
 
@@ -107,7 +125,7 @@ AutoEventWireup="true" CodeBehind="AgregarEjercicio.aspx.cs" Inherits="PuiPui_Ba
 
              <tr>
 
-                <td class="style2">
+                <td class="auto-style2">
 
                     &nbsp;
 
