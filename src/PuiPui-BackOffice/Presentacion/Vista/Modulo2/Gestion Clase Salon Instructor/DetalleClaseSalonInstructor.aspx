@@ -1,19 +1,19 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Presentacion/MasterPage/Site.Master" AutoEventWireup="true" CodeBehind="DetalleClaseSalonInstructor.aspx.cs" Inherits="PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_Clase_Salon_Instructor.WebForm1" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <div style="text-align:center; font-family:Helvetica; font-size:16px;">
+    <div style="text-align:center; font-family:Helvetica; font-size:16px;height:30px;">
     <asp:Label ID="Label1" runat="server" Text="CLASE - SALON"></asp:Label>
-    </div>
+    &nbsp;- INSTRUCTOR</div>
 
-    <div style="height:30px; text-align:center; font-family:Helvetica; font-size:14px;">
-        <asp:Label ID="falla" runat="server" Text="Operación Fallida" CssClass="falla" 
-            Visible="False" ForeColor="Red"></asp:Label>
+   <div style="height:20px; text-align:left; font-family:Helvetica; font-size:16px;">
         <asp:Label ID="Exito" runat="server" Text="Operación Exitosa" CssClass="Exito" 
             Visible="False"></asp:Label>
+        <asp:Label ID="falla" runat="server" Text="Operación Fallida" CssClass="falla" 
+            Visible="False" ForeColor="Red"></asp:Label>
     </div>
 
     <div  style="float:left;">
         <fieldset style="width:775px; height:auto; margin-left:7.5%; fit-position:center;">
-        <legend style="text-align:center; font-family:Helvetica; font-size:14px;">Detalle Clase - Salón -&nbsp; Instructor</legend>
+        <legend style="text-align:center; font-family:Helvetica; font-size:14px;">Modificar Clase - Salón -&nbsp; Instructor</legend>
                
             <table style="margin:5% auto auto 18%; height: 140px; width: 440px;" border="0" cellspacing="0" cellpadding="0" >
             <tr>

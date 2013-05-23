@@ -30,23 +30,29 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_Clase_Salon_Instr
         String instruc;
         protected void Page_Load(object sender, EventArgs e)
         {
+
             id = Convert.ToString((Request.QueryString["id"] != null) ? Request.QueryString["id"] : "");
             nombreClase = Convert.ToString((Request.QueryString["nombre"] != null) ? Request.QueryString["nombre"] : "");
             estatus = Convert.ToString((Request.QueryString["estatus"] != null) ? Request.QueryString["estatus"] : "");
             ubiSalon = Convert.ToString((Request.QueryString["ubicacion"] != null) ? Request.QueryString["ubicacion"] : "");
             instruc = Convert.ToString((Request.QueryString["instruct"] != null) ? Request.QueryString["instruct"] : "");
-            etiqueta_instructorA.Text = instruc;
-            etiqueta_salonA.Text = ubiSalon;
-            etiqueta_clase.Text = nombreClase;
-            if (estatus.Equals("Activa"))
-            {
-                Activo.Checked = true;
-            }
-            else
-            {
-                Inactivo.Checked = true;
-            }
             LlenarCombos();
+            if (!IsPostBack)
+            {
+                etiqueta_instructorA.Text = instruc;
+                etiqueta_salonA.Text = ubiSalon;
+                etiqueta_clase.Text = nombreClase;
+                if (estatus.Equals("Activa"))
+                {
+                    Activo.Checked = true;
+                }
+                else
+                {
+                    Inactivo.Checked = true;
+                }
+            }
+           
+            
 
         }
         private void LlenarCombos()

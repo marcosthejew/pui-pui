@@ -3,19 +3,13 @@
     Inherits="PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_Clase_Salon_Instructor.ConsultarClasesSalon" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div style="text-align:center; font-family:Helvetica; font-size:16px;">
-    <asp:Label ID="Label1" runat="server" Text="CLASE - SALON"></asp:Label>
+    <asp:Label ID="Label1" runat="server" Text="CLASE - SALON - INSTRUCTOR"></asp:Label>
     </div>
     
-    <div style="height:30px; text-align:center; font-family:Helvetica; font-size:14px;">
-        <asp:Label ID="falla" runat="server" Text="Operación Fallida" CssClass="falla" 
-            Visible="False" ForeColor="Red"></asp:Label>
-        <asp:Label ID="Exito" runat="server" Text="Operación Exitosa" CssClass="Exito" 
-            Visible="False"></asp:Label>
-    </div>
-
+    
     <div  style="float:left;">
         <fieldset style="width:775px; height:auto; margin-left:7.5%; fit-position:center;">
-        <legend style="text-align:center; font-family:Helvetica; font-size:14px;">Consultar Clase - Salón</legend>
+        <legend style="text-align:center; font-family:Helvetica; font-size:14px;">Consultar Clase - Salón - Instructor</legend>
              <table border="0" cellspacing="0" cellpadding="0" style="width: 707px">
             <tr>
                 <td rowspan="0" nowrap="nowrap" class="auto-style3">
@@ -43,13 +37,21 @@
                 <td rowspan="0" class="auto-style12" nowrap="nowrap">
                    
 
+                    <asp:TextBox ID="nombreClase" runat="server" Width="111px"></asp:TextBox>
+
+
+                    </td>
+              
+                <td rowspan="0" class="auto-style12" nowrap="nowrap">
+                   
+
                     <asp:RadioButton ID="consultaClasePorEstatus" runat="server" 
                         GroupName="ConsultarClases" Text="Estatus:" OnCheckedChanged="consultaClasePorEstatus_CheckedChanged1"/>
                        
                     
                     </td>
               
-                <td rowspan="0" nowrap="nowrap">
+                <td rowspan="0" nowrap="nowrap" class="auto-style8" align="left">
                    
 
                     <asp:DropDownList ID="DropDownListEstatusClase" runat="server" Width="75px" OnSelectedIndexChanged="DropDownListEstatusClase_SelectedIndexChanged" Height="18px" style="margin-left: 0px">
@@ -59,19 +61,11 @@
                     </asp:DropDownList>
 
 
-                    </td>
-              
-                <td rowspan="0" nowrap="nowrap" class="auto-style8">
-                   
-
-                    <asp:TextBox ID="nombreClase" runat="server" Width="111px"></asp:TextBox>
-
-
                 </td>
                 <td class="auto-style3">
 
 
-                <asp:Button ID="botonBuscarClase" runat="server" Text="Buscar" CssClass="button" OnClick="botonBuscarClase_Click" Font-Names="tahoma plain" Font-Size="14px" Height="25px" Width="120px"/>
+                <asp:Button ID="botonBuscarClase" runat="server" Text="Buscar" CssClass="button" OnClick="botonBuscarClase_Click" Font-Names="tahoma plain" Font-Size="14px" Height="24px" Width="110px"/>
 
 
                 </td>
@@ -125,7 +119,7 @@
             width: 65px;
         }
         .auto-style8 {
-            width: 125px;
+            width: 110px;
         }
         .auto-style10 {
             width: 68px;
@@ -135,6 +129,9 @@
         }
         .auto-style12 {
             width: 80px;
+        }
+        .button {
+            margin-left: 0px;
         }
         </style>
     </asp:Content>
