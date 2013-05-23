@@ -77,6 +77,7 @@
     <Content Include="Account\Register.aspx" />
     <Content Include="Presentacion\Estilo\Site.css" />
     <Content Include="Global.asax" />
+    <Content Include="Presentacion\Vista\Home\CambiarContraseña.aspx" />
     <Content Include="Presentacion\Vista\Home\Home.aspx" />
     <Content Include="Presentacion\Vista\Home\Login.aspx" />
     <Content Include="Presentacion\Vista\Modulo3\EvaluarClase\Agregar.aspx" />
@@ -183,6 +184,13 @@
     <Compile Include="Entidades\Salon\Salon.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Vista\Home\CambiarContraseña.aspx.cs">
+      <DependentUpon>CambiarContraseña.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Vista\Home\CambiarContraseña.aspx.designer.cs">
+      <DependentUpon>CambiarContraseña.aspx</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Vista\Home\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>

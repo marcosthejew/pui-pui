@@ -116,6 +116,25 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.Cliente
         }
         #endregion
 
-      
+        #region ConsultarPersonaPorLogin
+        public Persona ConsultarPersonaPorLogin(string loginPersona)
+        {
+            Persona miPersona = new Persona();
+            SQLServerPersona objDataBase = new SQLServerPersona();
+            miPersona = objDataBase.ConsultarPersonaPorLogin(loginPersona);
+            return miPersona;
+        }
+        #endregion
+
+        #region CambiarContraseña
+        public bool CambiarContraseña(Persona persona)
+        {
+            bool miPersona;
+            SQLServerPersona objDataBase = new SQLServerPersona();
+            miPersona = objDataBase.CambiarContraseña(persona);
+            return miPersona;
+        }
+        #endregion
+
     }
 }

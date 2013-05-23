@@ -1,5 +1,34 @@
 USE [puipuiDB]
 GO
+/****** Object:  StoredProcedure [dbo].[cambiarContraseña]    Script Date: 23/05/2013 1:56:30 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER PROCEDURE [dbo].[cambiarContraseña]
+
+	@idPersona bigint,
+	@passwordPersona [nchar](50)
+	
+AS
+
+BEGIN
+
+	SET NOCOUNT ON;
+
+    
+	UPDATE [Persona]
+	SET [Persona].passwordPersona = @passwordPersona
+		
+
+	WHERE [Persona].idPersona = @idPersona
+	
+END;
+
+
+USE [puipuiDB]
+GO
 /****** Object:  StoredProcedure [dbo].[ActivarDesactivarPersona]    Script Date: 22/05/2013 17:10:52 ******/
 SET ANSI_NULLS ON
 GO

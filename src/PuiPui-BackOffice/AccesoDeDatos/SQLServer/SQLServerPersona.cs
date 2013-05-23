@@ -476,5 +476,105 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
             return miLista;
         }
         #endregion
-    }
+
+        #region Consultar persona por login
+        public Persona ConsultarPersonaPorLogin(string loginPersona)
+        {
+            string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader dr;
+            Persona objetoPersona = new Persona();
+
+            try
+            {
+                conexion = new SqlConnection(cadenaConexion);
+                conexion.Open();
+                cmd = new SqlCommand("[dbo].[consultarPersonaPorLogin]", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@loginPersona", loginPersona);
+                dr = cmd.ExecuteReader();
+
+                //Se recorre cada row
+                while (dr.Read())
+                {
+
+                    objetoPersona = new Persona();
+
+                    objetoPersona.IdPersona = Convert.ToInt32(dr.GetValue(0));
+                    objetoPersona.CedulaPersona = Convert.ToInt32(dr.GetValue(1));
+                    objetoPersona.NombrePersona1 = dr.GetValue(2).ToString();
+                    objetoPersona.NombrePersona2 = dr.GetValue(3).ToString();
+                    objetoPersona.ApellidoPersona1 = dr.GetValue(4).ToString();
+                    objetoPersona.ApellidoPersona2 = dr.GetValue(5).ToString();
+                    objetoPersona.GeneroPersona = dr.GetValue(6).ToString();
+                    objetoPersona.FechaNacimientoPersona = Convert.ToDateTime(dr.GetValue(7));
+                    objetoPersona.FechaIngresoPersona = Convert.ToDateTime(dr.GetValue(8));
+                    objetoPersona.CiudadPersona = dr.GetValue(9).ToString();
+                    objetoPersona.DireccionPersona = dr.GetValue(10).ToString();
+                    objetoPersona.TelefonoLocalPersona = dr.GetValue(11).ToString();
+                    objetoPersona.TelefonoCelularPersona = dr.GetValue(12).ToString();
+                    objetoPersona.CorreoPersona = dr.GetValue(13).ToString();
+                    objetoPersona.ContactoNombrePersona = dr.GetValue(14).ToString();
+                    objetoPersona.ContactoTelefonoPersona = dr.GetValue(13).ToString();
+                    objetoPersona.EstadoPersona = dr.GetValue(16).ToString();
+                    objetoPersona.LoginPersona = dr.GetValue(17).ToString();
+                    objetoPersona.PasswordPersona = dr.GetValue(18).ToString();
+                    objetoPersona.TipoPersona = dr.GetValue(19).ToString();
+                }
+
+                db.CerrarConexion();
+
+            }
+            catch (SqlException error)
+            {
+                //En caso de que se viole alguna restriccion sobre la BD
+                throw (new ExcepcionPersona(("Error: " + error.Message), error));
+            }
+            finally
+            {
+                db.CerrarConexion();
+            }
+            return objetoPersona;
+        }
+        #endregion
+
+        #region CambiarContraseña
+        public bool CambiarContraseña(Persona persona)
+        {
+            string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader dr;
+            
+
+            try
+            {
+                conexion = new SqlConnection(cadenaConexion);
+                conexion.Open();
+                cmd = new SqlCommand("[dbo].[cambiarContraseña]", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idPersona", persona.IdPersona);
+                cmd.Parameters.AddWithValue("@passwordPersona", persona.PasswordPersona);
+
+
+                dr = cmd.ExecuteReader();
+                dr.Read();
+                db.CerrarConexion();
+                return true;
+                
+            }
+            catch (SqlException error)
+            {
+                //En caso de que se viole alguna restriccion sobre la BD
+                throw (new ExcepcionPersona(("Error: " + error.Message), error));
+            }
+            finally
+            {
+                db.CerrarConexion();
+            }
+
+        }
+        #endregion
+    }    
 }
