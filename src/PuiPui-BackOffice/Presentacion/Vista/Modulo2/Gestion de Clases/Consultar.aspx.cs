@@ -14,8 +14,8 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_de_Clases
     { 
         private List<Clase> _listaClase;       
         private  LogicaClase _logicaClase= new LogicaClase();
-        private int seleccionCheck;
         private int Estatus;
+        private int seleccionCheck;
        
         protected void Page_Load(object sender, EventArgs e)
         {

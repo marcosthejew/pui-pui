@@ -239,7 +239,7 @@ AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
 drop procedure [ListarSalonesClaseTclase]
 go
 CREATE PROCEDURE [dbo].[ListarSalonesClaseTclase]
-@nombre int 
+@nombre varchar(50) 
 AS
 
 BEGIN
