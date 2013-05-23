@@ -147,7 +147,7 @@ CREATE procedure [dbo].[insertarCliente]
 	@segundoNombreCliente nchar(50),
 	@primerApellidoCliente nchar(50),
 	@segundoaApellidoCliente nchar(50),
-	@genero nchar(1),
+	@genero nchar(10),
 	@fechaNacimiento datetime,
 	@fechaRegistro datetime,
 	@ciudad nchar(50),

@@ -74,7 +74,6 @@ namespace PuiPui_FrontOffice.PruebasUnitarias.Client
             Assert.AreEqual(miPersona.TelefonoLocalPersona, personita.TelefonoLocalPersona.TrimEnd());
             Assert.AreEqual(miPersona.TelefonoCelularPersona, personita.TelefonoCelularPersona.TrimEnd());
             Assert.AreEqual(miPersona.ContactoNombrePersona, personita.ContactoNombrePersona.TrimEnd());
-           // Assert.AreEqual(miPersona.ContactoTelefonoPersona, personita.ContactoTelefonoPersona.TrimEnd());
             Assert.AreEqual(miPersona.CorreoPersona, personita.CorreoPersona.TrimEnd());
             Assert.AreEqual(miPersona.EstadoPersona, personita.EstadoPersona.TrimEnd());
             Assert.AreEqual(miPersona.LoginPersona, personita.LoginPersona.TrimEnd());
