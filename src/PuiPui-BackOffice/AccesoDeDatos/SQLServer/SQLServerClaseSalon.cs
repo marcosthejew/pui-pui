@@ -84,10 +84,25 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 _db.CerrarConexion();
 
             }
-            catch (SqlException error)
+            catch (ArgumentException e)
             {
-                //En caso de que se viole alguna restriccion sobre la BD
-                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+                throw new ExecpcionClaseSalon("Parametros invalidos", e);
+            }
+            catch (InvalidOperationException e)
+            {
+                throw new ExecpcionClaseSalon("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new ExecpcionClaseSalon("Objetos Vacios", e);
+            }
+            catch (SqlException e)
+            {
+                throw new ExecpcionClaseSalon("Error con la base de datos", e);
+            }
+            catch (Exception e)
+            {
+                throw new ExecpcionClaseSalon("Falla", e);
             }
             finally
             {
@@ -128,6 +143,31 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 throw (new ExcepcionConexion(("Error: " + error.Message), error));
 
             }
+            catch (ArgumentException e)
+            {
+                insercion = false;
+                throw new ExecpcionClaseSalon("Parametros invalidos", e);
+            }
+            catch (InvalidOperationException e)
+            {
+                insercion = false;
+                throw new ExecpcionClaseSalon("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                insercion = false;
+                throw new ExecpcionClaseSalon("Objetos Vacios", e);
+            }
+            catch (SqlException e)
+            {
+                insercion = false;
+                throw new ExecpcionClaseSalon("Error con la base de datos", e);
+            }
+            catch (Exception e)
+            {
+                insercion = false;
+                throw new ExecpcionClaseSalon("Falla", e);
+            }
             finally
             {
                 _db.CerrarConexion();
@@ -167,12 +207,30 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 _db.CerrarConexion();
 
             }
-            catch (SqlException error)
+            catch (ArgumentException e)
             {
-                //En caso de que se viole alguna restriccion sobre la BD
                 insercion = false;
-                throw (new ExcepcionConexion(("Error: " + error.Message), error));
-
+                throw new ExecpcionClaseSalon("Parametros invalidos", e);
+            }
+            catch (InvalidOperationException e)
+            {
+                insercion = false;
+                throw new ExecpcionClaseSalon("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                insercion = false;
+                throw new ExecpcionClaseSalon("Objetos Vacios", e);
+            }
+            catch (SqlException e)
+            {
+                insercion = false;
+                throw new ExecpcionClaseSalon("Error con la base de datos", e);
+            }
+            catch (Exception e)
+            {
+                insercion = false;
+                throw new ExecpcionClaseSalon("Falla", e);
             }
             finally
             {
@@ -217,10 +275,25 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 _db.CerrarConexion();
 
             }
-            catch (SqlException error)
+            catch (ArgumentException e)
             {
-                //En caso de que se viole alguna restriccion sobre la BD
-                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+                throw new ExecpcionClaseSalon("Parametros invalidos", e);
+            }
+            catch (InvalidOperationException e)
+            {
+                throw new ExecpcionClaseSalon("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new ExecpcionClaseSalon("Objetos Vacios", e);
+            }
+            catch (SqlException e)
+            {
+                throw new ExecpcionClaseSalon("Error con la base de datos", e);
+            }
+            catch (Exception e)
+            {
+                throw new ExecpcionClaseSalon("Falla", e);
             }
             finally
             {
@@ -263,10 +336,25 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 _db.CerrarConexion();
 
             }
-            catch (SqlException error)
+            catch (ArgumentException e)
             {
-                //En caso de que se viole alguna restriccion sobre la BD
-                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+                throw new ExecpcionClaseSalon("Parametros invalidos", e);
+            }
+            catch (InvalidOperationException e)
+            {
+                throw new ExecpcionClaseSalon("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new ExecpcionClaseSalon("Objetos Vacios", e);
+            }
+            catch (SqlException e)
+            {
+                throw new ExecpcionClaseSalon("Error con la base de datos", e);
+            }
+            catch (Exception e)
+            {
+                throw new ExecpcionClaseSalon("Falla", e);
             }
             finally
             {
@@ -310,10 +398,25 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 _db.CerrarConexion();
 
             }
-            catch (SqlException error)
+            catch (ArgumentException e)
             {
-                //En caso de que se viole alguna restriccion sobre la BD
-                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+                throw new ExecpcionClaseSalon("Parametros invalidos", e);
+            }
+            catch (InvalidOperationException e)
+            {
+                throw new ExecpcionClaseSalon("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new ExecpcionClaseSalon("Objetos Vacios", e);
+            }
+            catch (SqlException e)
+            {
+                throw new ExecpcionClaseSalon("Error con la base de datos", e);
+            }
+            catch (Exception e)
+            {
+                throw new ExecpcionClaseSalon("Falla", e);
             }
             finally
             {
@@ -357,10 +460,25 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 _db.CerrarConexion();
 
             }
-            catch (SqlException error)
+            catch (ArgumentException e)
             {
-                //En caso de que se viole alguna restriccion sobre la BD
-                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+                throw new ExecpcionClaseSalon("Parametros invalidos", e);
+            }
+            catch (InvalidOperationException e)
+            {
+                throw new ExecpcionClaseSalon("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new ExecpcionClaseSalon("Objetos Vacios", e);
+            }
+            catch (SqlException e)
+            {
+                throw new ExecpcionClaseSalon("Error con la base de datos", e);
+            }
+            catch (Exception e)
+            {
+                throw new ExecpcionClaseSalon("Falla", e);
             }
             finally
             {

@@ -144,6 +144,7 @@
     <Compile Include="AccesoDeDatos\Excepciones_BD\EjercicioBDException.cs" />
     <Compile Include="AccesoDeDatos\Excepciones_BD\ExcepcionConexion.cs" />
     <Compile Include="AccesoDeDatos\Excepciones_BD\ExcepcionPersona.cs" />
+    <Compile Include="AccesoDeDatos\Excepciones_BD\ExecpcionClaseSalon.cs" />
     <Compile Include="AccesoDeDatos\Excepciones_BD\HorarioBDException.cs" />
     <Compile Include="AccesoDeDatos\Excepciones_BD\InstructorBDException.cs" />
     <Compile Include="AccesoDeDatos\Excepciones_BD\MusculoBDException.cs" />
@@ -187,6 +188,7 @@
     <Compile Include="Entidades\Cliente\Acceso.cs" />
     <Compile Include="Entidades\Ejercicio\Musculo.cs" />
     <Compile Include="LogicaDeNegocios\Excepciones\EjercicioException.cs" />
+    <Compile Include="LogicaDeNegocios\Excepciones\ExcepcionClaseSalonLogica.cs" />
     <Compile Include="LogicaDeNegocios\Excepciones\HorarioException.cs" />
     <Compile Include="LogicaDeNegocios\Excepciones\InstructorException.cs" />
     <Compile Include="LogicaDeNegocios\Excepciones\MusculoException.cs" />
