@@ -2,25 +2,24 @@
  AutoEventWireup="true" CodeBehind="Modificar.aspx.cs" Inherits="PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_de_Clases.Modificar" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <div style="font-family:Helvetica;font-size:16px;margin-left:360px;margin-top:40px">
-         <asp:Label ID="Titulo" runat="server" Text="Modificar Clase" 
-            Visible="true"></asp:Label>
-    
+    <div style="text-align:center; font-family:Helvetica; font-size:16px;">
+    <asp:Label ID="Label6" runat="server" Text="CLASE"></asp:Label>
     </div>
 
-    <div style="height:30px; text-align:center; font-family:Verdana;font-size: 1.5em;">
+    <div style="height:30px; text-align:center; font-family:Helvetica; font-size:14px;">
         <asp:Label ID="falla" runat="server" Text="Operación Fallida" CssClass="falla" 
             Visible="False" ForeColor="Red"></asp:Label>
         <asp:Label ID="Exito" runat="server" Text="Operación Exitosa" CssClass="Exito" 
             Visible="False"></asp:Label>
     </div>
 
-    <div  >
-        <fieldset style="width:500px; height:280px; margin-left:23%;">
+    <div  style="float:left;">
+        <fieldset style="width:775px; height:auto; margin-left:7.5%; fit-position:center;">
+        <legend style="text-align:center; font-family:Helvetica; font-size:14px;">Modificar Clase</legend>
                
             <table style="margin:5% auto auto 8%; height: 140px; width: 476px;" border="0" cellspacing="0" cellpadding="0" >
             <tr>
-                <td class="auto-style7">
+                <td class="auto-style7" align="center">
                     <asp:Label ID="Label4" runat="server" Text="Label">Nombre de la clase:</asp:Label>
                 </td>
                 <td class="auto-style8" align="left">
@@ -29,16 +28,16 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style1">
-                    <asp:Label ID="Label3" runat="server" Text="Label">Descripcion:</asp:Label>
+                <td class="auto-style1" align="center">
+                    <asp:Label ID="Label3" runat="server" Text="Label">Descripción:</asp:Label>
                 </td>
                 <td class="auto-style2" colspan="0" align="left">
                     <asp:TextBox id="TextArea" runat="server" Wrap="true" TextMode="MultiLine" Width="200px" Height="115px"></asp:TextBox>
                 </td>    
             </tr>
             <tr>
-                <td class="auto-style3">
-                    Estatus:</td>
+                <td class="auto-style3" align="center">
+                    Status:</td>
                 <td class="auto-style4" colspan="0">
                     <asp:RadioButton ID="Activo" runat="server" GroupName="EstatusClases" Text="Activa" />
                     <asp:RadioButton ID="Inactivo" runat="server" GroupName="EstatusClases" Text="Inactiva" />
@@ -59,10 +58,7 @@
                     </td>
 
             </tr>
-            <tr >
-                <td colspan="2"  style="text-align:center">
-                    &nbsp;</td>
-            </tr>
+            
 
             </table>          
         </fieldset>
