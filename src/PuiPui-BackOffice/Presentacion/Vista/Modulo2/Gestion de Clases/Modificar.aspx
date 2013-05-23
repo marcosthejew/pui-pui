@@ -16,7 +16,10 @@
     <div  style="float:left;">
         <fieldset style="width:775px; height:auto; margin-left:7.5%; fit-position:center;">
         <legend style="text-align:center; font-family:Helvetica; font-size:14px;">Modificar Clase</legend>
-               
+         <div style="height:20px; text-align:left; font-family:Helvetica; font-size:16px;">
+        <asp:Label ID="NClase" runat="server" Text="Debe introducir todos los campos obligatorios" CssClass="NClase" 
+            Visible="False" ForeColor="Red" Font-Names="Arial" Font-Size="14px"></asp:Label>
+        </div>         
             <table style="margin:5% auto auto 22%; height: 140px; width: 476px;" border="0" cellspacing="0" cellpadding="0" >
             <tr>
                 <td class="auto-style7" align="center">

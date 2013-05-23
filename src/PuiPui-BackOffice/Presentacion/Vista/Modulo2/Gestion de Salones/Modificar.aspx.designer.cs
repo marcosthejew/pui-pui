@@ -22,6 +22,15 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Geestion_de_Salones {
         protected global::System.Web.UI.WebControls.Label Label6;
         
         /// <summary>
+        /// Exito control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Exito;
+        
+        /// <summary>
         /// falla control.
         /// </summary>
         /// <remarks>
@@ -31,13 +40,13 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Geestion_de_Salones {
         protected global::System.Web.UI.WebControls.Label falla;
         
         /// <summary>
-        /// Exito control.
+        /// NClase control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Exito;
+        protected global::System.Web.UI.WebControls.Label NClase;
         
         /// <summary>
         /// Label4 control.

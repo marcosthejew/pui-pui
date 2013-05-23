@@ -63,29 +63,40 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_de_Clases
 
         protected void botonAceptar_Click(object sender, EventArgs e)
         {
-            _objetoClase.Descripcion = TextArea.Text;
-            _objetoClase.Nombre = nombreClaseAModificar.Text;
+            bool resultado;
 
-            if (Activo.Checked)
+            if ((nombreClaseAModificar.Text.Equals("")) || (TextArea.Text.Equals("")))
             {
-                _objetoClase.Status = 1;
-            }
-            if (Inactivo.Checked)
-            {
-                _objetoClase.Status = 0;
-            }
-
-            bool resultado = _objLogica.ModificarClase(_objetoClase);
-
-
-            if (resultado != false)
-            {
-                Exito.Visible = true;
-
+                NClase.Visible = true;
             }
             else
             {
-                falla.Visible = true;
+
+                _objetoClase.Descripcion = TextArea.Text;
+                _objetoClase.Nombre = nombreClaseAModificar.Text;
+
+                if (Activo.Checked)
+                {
+                    _objetoClase.Status = 1;
+                }
+                if (Inactivo.Checked)
+                {
+                    _objetoClase.Status = 0;
+                }
+
+                resultado = _objLogica.ModificarClase(_objetoClase);
+
+
+                if (resultado != false)
+                {
+                    Exito.Visible = true;
+                    NClase.Visible = false;
+
+                }
+                else
+                {
+                    falla.Visible = true;
+                }
             }
         }
 

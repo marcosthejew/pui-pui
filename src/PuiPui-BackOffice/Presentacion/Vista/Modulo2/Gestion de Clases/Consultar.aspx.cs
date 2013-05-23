@@ -42,7 +42,6 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_de_Clases
                 else
                 {
                     GridConsultar.Visible = true;
-                    // cargarTabla();
                 }
 
             }
@@ -61,34 +60,14 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_de_Clases
 
         protected void GridConsultar_SelectedIndexChanged(object sender, EventArgs e)
         {
-      /* int seleccion = GridConsultar.SelectedIndex;
-           Clase clases = _listaClase[seleccion];
-           Session["No"] = clases;
-           Response.Redirect("DetalleConsultar.aspx");*/
+     
         }
 
         protected void GridConsultar_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             GridConsultar.PageIndex = e.NewPageIndex;
             cargarTabla();
-           /*  if ((consultaClasePorEstatus.Checked==false)&&(consultaClasePorNombres.Checked==false))
-            {
-                cargarTabla();
-            }
-             if (consultaClasePorNombres.Checked==true)
-             {
-                  GridConsultar.DataSource = _logicaClase.ConsultarClasesNombre(nombreClase.Text);
-                    GridConsultar.DataBind();
-             }
-             if (consultaClasePorEstatus.Checked==true)
-             {
-                  GridConsultar.DataSource = _logicaClase.ConsultarClaseStatus(DropDownListEstatusClase.SelectedIndex);
-                    GridConsultar.DataBind();
-             }
-             if (RadioButtonConsultaCompleta.Checked==true)
-             {
-                 cargarTabla();
-             }*/
+       
             switch (seleccionCheck)
             {
                 case 1:

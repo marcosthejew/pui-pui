@@ -37,21 +37,12 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_de_Clases
                 EstatusActual.Text = estatus;
                 Desc = objetoLogico.ObtenerDetalleClases(Convert.ToInt32(id)).Descripcion;
                 TextArea.Text = Desc;
-
-                if (!IsPostBack)
-                {
-                    //el código que quieran!
-                }
-
             }
             catch (NullReferenceException) //si la persona no ha iniciado sesión y simplemente pegó el URL en el navegador va a caer en esta excepción
             {
-
                 Response.Redirect("../../Home/Login.aspx"); //lo redirigimos al LOGIN para que a juro se tenga que autenticar
             }
 
-
-           
         }
 
         protected void botonAceptar_Click(object sender, EventArgs e)

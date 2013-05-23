@@ -11,10 +11,12 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_de_Clases
 {
     public partial class Agregar : System.Web.UI.Page
     {
+        #region Atributos
         private LogicaClase _objLogica;
         Persona persona;
         Acceso acceso;
         string loginPersona;
+        #endregion
 
         public Agregar()
         {
@@ -40,8 +42,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_de_Clases
         protected void Aceptar_Click(object sender, EventArgs e)
         {
             bool resultado;
-
-            
+                        
             if ((nombreNuevaClase.Text.Equals(""))||(descripcioNuevaClase.Text.Equals("")))
             {
                 NClase.Visible = true;

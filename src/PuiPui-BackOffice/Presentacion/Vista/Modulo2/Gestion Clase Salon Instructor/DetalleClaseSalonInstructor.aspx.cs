@@ -11,10 +11,13 @@ using PuiPui_BackOffice.Entidades.Instructor;
 using PuiPui_BackOffice.LogicaDeNegocios.LogicaClase;
 using PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon;
 using PuiPui_BackOffice.LogicaDeNegocios.Instructor;
+using PuiPui_BackOffice.Entidades.Cliente; 
+
 namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_Clase_Salon_Instructor
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
+        #region Atributos
         List<Clase> _listClase = new List<Clase>();
         List<Salon> _listSalon = new List<Salon>();
         List<Instructor> _listInstructor = new List<Instructor>();
@@ -28,6 +31,11 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_Clase_Salon_Instr
         String estatus;
         String ubiSalon;
         String instruc;
+        Persona persona;
+        Acceso acceso;
+        string loginPersona;
+        #endregion
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -37,21 +45,33 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_Clase_Salon_Instr
             ubiSalon = Convert.ToString((Request.QueryString["ubicacion"] != null) ? Request.QueryString["ubicacion"] : "");
             instruc = Convert.ToString((Request.QueryString["instruct"] != null) ? Request.QueryString["instruct"] : "");
             LlenarCombos();
-            if (!IsPostBack)
+
+
+            try
             {
-                etiqueta_instructorA.Text = instruc;
-                etiqueta_salonA.Text = ubiSalon;
-                etiqueta_clase.Text = nombreClase;
-                if (estatus.Equals("Activa"))
+                acceso = (Acceso)Session["loginPersona"];
+                loginPersona = acceso.Login;
+
+                if (!IsPostBack)
                 {
-                    Activo.Checked = true;
-                }
-                else
-                {
-                    Inactivo.Checked = true;
+                    etiqueta_instructorA.Text = instruc;
+                    etiqueta_salonA.Text = ubiSalon;
+                    etiqueta_clase.Text = nombreClase;
+                    if (estatus.Equals("Activa"))
+                    {
+                        Activo.Checked = true;
+                    }
+                    else
+                    {
+                        Inactivo.Checked = true;
+                    }
                 }
             }
-           
+            catch (NullReferenceException) 
+            {
+
+                Response.Redirect("../../Home/Login.aspx");
+            }     
             
 
         }

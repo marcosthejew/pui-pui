@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using PuiPui_BackOffice.Entidades.Cliente;
 using PuiPui_BackOffice.Entidades.Salon;
 using PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon;
 
@@ -21,6 +22,9 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Geestion_de_Salones
         private int _statusCapacidad;
         private LogicaSalon _logicaSalon;
         private int _checkSeleccion;
+        Persona persona;
+        Acceso acceso;
+        string loginPersona;
 
         #endregion
 
@@ -35,8 +39,11 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Geestion_de_Salones
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            try 
+            try
             {
+                acceso = (Acceso)Session["loginPersona"];//recibo a través del SESSION el objeto "acceso" que esta compuesto por el login y el password de la persona que inicio sesión
+                loginPersona = acceso.Login; //le asigno a la variable loginPersona el login de la persona que acaba de iniciar sesión, si nadie ha iniciado sesión esto se va al catch y te redirige al login, si la persona inicio sesión ya tengo su login y se quien es con esto puedo ir a la bd y ver que persona es para hacer las operaciones necesarias
+
                 _listaSalon = _logicaSalon.ObtenerSalones();
 
                 if (!IsPostBack)
@@ -48,11 +55,15 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Geestion_de_Salones
                 {
                     GridConsultar.Visible = true;
                 }
-            
+
             }
             catch (NullReferenceException)
             {
-                Response.Redirect("../../Home/Modulo2/Geestion_de_Salones/Consultar.aspx");
+                Response.Redirect("../../Home/Login.aspx"); //lo redirigimos al LOGIN para que a juro se tenga que autenticar
+            }
+            catch (Exception)
+            {
+                Response.Redirect("../../Modulo2/Gestion de Salones/Consultar.aspx");
             }
         }
 
