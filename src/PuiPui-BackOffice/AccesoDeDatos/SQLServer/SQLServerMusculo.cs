@@ -17,13 +17,15 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
     {
         IConexionSqlServer db = new ConexionSqlServer();
 
+        #region ExisteMusculo
         public bool ExisteMusculo(string nombreMusculo)
         {
-            string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
+            //ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
             SqlConnection conexion = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
             SqlDataReader dr;
-
+            bool existe = false;
             try
             {
                 conexion = new SqlConnection(cadenaConexion);
@@ -33,33 +35,48 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 cmd.Parameters.AddWithValue("@nombreMusculo", nombreMusculo);
                 dr = cmd.ExecuteReader();
 
-                //Se recorre cada row
                 if (dr.Read())
-                {
-                    db.CerrarConexion();
-                    return true;                   
-                }
+                    existe = true;
 
                 db.CerrarConexion();
             }
-            catch (SqlException error)
+            catch (ArgumentException e)
             {
-                //En caso de que se viole alguna restriccion sobre la BD
-                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+                 throw new MusculoBDException("Parametros invalidos", e);
+            }
+            catch (InvalidOperationException e)
+            {
+                 throw new MusculoBDException("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new MusculoBDException("Musculo no encontrado", e);
+            }
+            catch (SqlException e)
+            { 
+                throw new MusculoBDException("Error con base de datos", e);
+            }
+            catch (Exception e)
+            {
+                throw new MusculoBDException("Error general", e);  
             }
             finally
             {
                 db.CerrarConexion();
             }
-            return false;
+            return existe;
         }
+        #endregion ExisteMusculo
 
-        public bool insertarMusculo(string nombreMusculo)
+        #region InsertarMusculo
+        public bool InsertarMusculo(string nombreMusculo)
         {
-            string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
+            //ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
             SqlConnection conexion = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
             SqlDataReader dr;
+            bool inserto = false;
 
             try
             {
@@ -69,32 +86,42 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@nombreMusculo", nombreMusculo);
                 dr = cmd.ExecuteReader();
-
-                //Se recorre cada row
-                if (dr.Read())
-                {
-                    db.CerrarConexion();
-                    return true;
-                }
-
+                inserto = true;
                 db.CerrarConexion();
             }
-            catch (SqlException error)
+            catch (ArgumentException e)
             {
-                //En caso de que se viole alguna restriccion sobre la BD
-                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+                throw new MusculoBDException("Parametros invalidos", e);
+            }
+            catch (InvalidOperationException e)
+            {
+                throw new MusculoBDException("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new MusculoBDException("Musculo no encontrado", e);
+            }
+            catch (SqlException e)
+            {
+                throw new MusculoBDException("Error con base de datos", e);
+            }
+            catch (Exception e)
+            {
+                throw new MusculoBDException("Error general", e);
             }
             finally
             {
                 db.CerrarConexion();
             }
-            return false;
+            return inserto;
         }
+        #endregion InsertarMusculo
 
+        #region ConsultarMusculos
         public List<Musculo> ConsultarMusculos()
         {
-
-            string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
+            //string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
             SqlConnection conexion = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
             SqlDataReader dr;
@@ -110,8 +137,6 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 
                 bool entra = false;
 
-                //Se recorre cada row
-
                 while (dr.Read())
                 {
                     entra = true;
@@ -124,22 +149,39 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 if (entra)
                     return musculos;
             }
-            catch (SqlException error)
+            catch (ArgumentException e)
             {
-                //En caso de que se viole alguna restriccion sobre la BD
-                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+                throw new MusculoBDException("Parametros invalidos", e);
             }
-
+            catch (InvalidOperationException e)
+            {
+                throw new MusculoBDException("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new MusculoBDException("Musculo no encontrado", e);
+            }
+            catch (SqlException e)
+            {
+                throw new MusculoBDException("Error con base de datos", e);
+            }
+            catch (Exception e)
+            {
+                throw new MusculoBDException("Error general musculo", e);
+            }
             finally
             {
                 db.CerrarConexion();
             }
             return null;
         }
+        #endregion ConsultarMusculos
 
+        #region BuscarIdMusculo
         public int BuscarIdMusculo(string nombreMusculo)
         {
-            string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
+            //string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
             SqlConnection conexion = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
             SqlDataReader dr;
@@ -154,17 +196,30 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 cmd.Parameters.AddWithValue("@nombreMusculo", nombreMusculo);
                 dr = cmd.ExecuteReader();
 
-                //Se recorre cada row
                 if (dr.Read())
                     idMusculo = Convert.ToInt32(dr.GetValue(0));
 
-
                 db.CerrarConexion();
             }
-            catch (SqlException error)
+            catch (ArgumentException e)
             {
-                //En caso de que se viole alguna restriccion sobre la BD
-                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+                throw new MusculoBDException("Parametros invalidos", e);
+            }
+            catch (InvalidOperationException e)
+            {
+                throw new MusculoBDException("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new MusculoBDException("Musculo no encontrado", e);
+            }
+            catch (SqlException e)
+            {
+                throw new MusculoBDException("Error con base de datos", e);
+            }
+            catch (Exception e)
+            {
+                throw new MusculoBDException("Error general", e);
             }
             finally
             {
@@ -172,10 +227,13 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
             }
             return idMusculo;
         }
+        #endregion BuscarIdMusculo
 
+        #region EliminarMusculo
         public void EliminarMusculo(int idMusculo)
         {
-            string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
+            //string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
             SqlConnection conexion = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
             SqlDataReader dr;
@@ -188,23 +246,40 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@idMusculo", idMusculo);
                 dr = cmd.ExecuteReader();
-
                 db.CerrarConexion();
             }
-            catch (SqlException error)
+            catch (ArgumentException e)
             {
-                //En caso de que se viole alguna restriccion sobre la BD
-                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+                throw new MusculoBDException("Parametros invalidos", e);
+            }
+            catch (InvalidOperationException e)
+            {
+                throw new MusculoBDException("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new MusculoBDException("Musculo no encontrado", e);
+            }
+            catch (SqlException e)
+            {
+                throw new MusculoBDException("Error con base de datos", e);
+            }
+            catch (Exception e)
+            {
+                throw new MusculoBDException("Error general", e);
             }
             finally
             {
                 db.CerrarConexion();
             }
         }
+        #endregion EliminarMusculo
 
+        #region ExisteEjercicioConMusculo
         public bool ExisteEjercicioConMusculo(int idMusculo)
         {
-            string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
+            //string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
             SqlConnection conexion = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
             SqlDataReader dr;
@@ -218,16 +293,30 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 cmd.Parameters.AddWithValue("@idMusculo", idMusculo);
                 dr = cmd.ExecuteReader();
 
-                //Se recorre cada row
                 if (dr.Read())
                     existe = true;
 
                 db.CerrarConexion();
             }
-            catch (SqlException error)
+            catch (ArgumentException e)
             {
-                //En caso de que se viole alguna restriccion sobre la BD
-                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+                throw new MusculoBDException("Parametros invalidos", e);
+            }
+            catch (InvalidOperationException e)
+            {
+                throw new MusculoBDException("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new MusculoBDException("Musculo no encontrado", e);
+            }
+            catch (SqlException e)
+            {
+                throw new MusculoBDException("Error con base de datos", e);
+            }
+            catch (Exception e)
+            {
+                throw new MusculoBDException("Error general", e);
             }
             finally
             {
@@ -235,5 +324,6 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
             }
             return existe;
         }
+        #endregion ExisteEjercicioConMusculo
     }
 }

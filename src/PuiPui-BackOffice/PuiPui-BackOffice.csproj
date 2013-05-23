@@ -135,7 +135,10 @@
   <ItemGroup>
     <Compile Include="AccesoDeDatos\Conexion\Conexion.cs" />
     <Compile Include="AccesoDeDatos\Conexion\IConexion\IConexionSQLServer.cs" />
+    <Compile Include="AccesoDeDatos\Excepciones_BD\EjercicioBDException.cs" />
     <Compile Include="AccesoDeDatos\Excepciones_BD\ExcepcionConexion.cs" />
+    <Compile Include="AccesoDeDatos\Excepciones_BD\InstructorBDException.cs" />
+    <Compile Include="AccesoDeDatos\Excepciones_BD\MusculoBDException.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerClase.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerClaseSalon.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerEjercicio.cs" />
@@ -175,6 +178,9 @@
     <Compile Include="Entidades\Clase\ClaseSalon.cs" />
     <Compile Include="Entidades\Cliente\Acceso.cs" />
     <Compile Include="Entidades\Ejercicio\Musculo.cs" />
+    <Compile Include="LogicaDeNegocios\Excepciones\EjercicioException.cs" />
+    <Compile Include="LogicaDeNegocios\Excepciones\InstructorException.cs" />
+    <Compile Include="LogicaDeNegocios\Excepciones\MusculoException.cs" />
     <Compile Include="LogicaDeNegocios\Instructor\LogicaHorario.cs" />
     <Compile Include="LogicaDeNegocios\LogicaClase\LogicaClase.cs" />
     <Compile Include="LogicaDeNegocios\Cliente\LogicaPersona.cs" />
@@ -494,6 +500,7 @@
     <Compile Include="PruebasUnitarias\ClaseTests\PruebaClase.cs" />
     <Compile Include="PruebasUnitarias\Cliente\PruebaCliente.cs" />
     <Compile Include="PruebasUnitarias\Ejercicio\PruebaEjercicio.cs" />
+    <Compile Include="PruebasUnitarias\Ejercicio\PruebaMusculo.cs" />
     <Compile Include="PruebasUnitarias\Excepciones\ExcepcionConexion.cs" />
     <Compile Include="PruebasUnitarias\Instructor\PruebaInstructor.cs" />
     <Compile Include="PruebasUnitarias\PruebaConexion.cs" />

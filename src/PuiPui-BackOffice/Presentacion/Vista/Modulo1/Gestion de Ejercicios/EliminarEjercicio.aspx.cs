@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using PuiPui_BackOffice.LogicaDeNegocios.Ejercicio;
 using PuiPui_BackOffice.Entidades.Ejercicio;
+using PuiPui_BackOffice.LogicaDeNegocios.Excepciones;
 
 namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Ejercicios
 {
@@ -19,49 +20,66 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Ejercicios
                 bEliminar.Enabled = false;
             }    
         }     
+        
         protected void ddlEjercicios_Cargar()
         {
             LogicaEjercicio objetoLogica = new LogicaEjercicio();
-            if (objetoLogica.ConsultarTodosEjercicios() != null)
+            try
             {
-                ddlEjercicios.Items.Insert(0, new ListItem("Seleccione", "0"));
-                List<Ejercicio> ejercicios = objetoLogica.ConsultarTodosEjercicios();
-                int i = 1;
-                foreach (Ejercicio ejercicio in ejercicios)
+                if (objetoLogica.ConsultarTodosEjercicios() != null)
                 {
-                    ddlEjercicios.DataTextField = ejercicio.Nombre;
-                    ddlEjercicios.DataValueField = ejercicio.Id.ToString();
-                    ddlEjercicios.Items.Insert(i, ejercicio.Nombre);
-                    i++;
+                    ddlEjercicios.Items.Insert(0, new ListItem("Seleccione", "0"));
+                    List<Ejercicio> ejercicios = objetoLogica.ConsultarTodosEjercicios();
+                    int i = 1;
+                    foreach (Ejercicio ejercicio in ejercicios)
+                    {
+                        ddlEjercicios.DataTextField = ejercicio.Nombre;
+                        ddlEjercicios.DataValueField = ejercicio.Id.ToString();
+                        ddlEjercicios.Items.Insert(i, ejercicio.Nombre);
+                        i++;
+                    }
+                }
+                else
+                {
+                    ddlEjercicios.Enabled = false;
+                    lExito.Visible = true;
                 }
             }
-            else
+            catch (EjercicioException error)
             {
-                ddlEjercicios.Enabled = false;
+                lExito.Text = error.Message;
+                lExito.ForeColor = System.Drawing.Color.Red;
                 lExito.Visible = true;
             }
-
         }
+        
         protected void ddlEjercicios_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ddlEjercicios.SelectedIndex > 0)
             {
                 LogicaEjercicio objetoLogica = new LogicaEjercicio();
-
-                Ejercicio ejercicio = objetoLogica.ConsultarEjercicio(ddlEjercicios.SelectedValue);
-                if (ejercicio != null)
+                try
                 {
-                    tbNombre.Text = ejercicio.Nombre;
-                    tbMusculo.Text = ejercicio.Musculo.NombreMusculo;
-                    tbDescripcion.Text = ejercicio.Descripcion;
-                    bEliminar.Enabled = true;
+                    Ejercicio ejercicio = objetoLogica.ConsultarEjercicio(ddlEjercicios.SelectedValue);
+                    if (ejercicio != null)
+                    {
+                        tbNombre.Text = ejercicio.Nombre;
+                        tbMusculo.Text = ejercicio.Musculo.NombreMusculo;
+                        tbDescripcion.Text = ejercicio.Descripcion;
+                        bEliminar.Enabled = true;
+                    }
+                    else
+                    {
+                        tbInit();
+                        bEliminar.Enabled = false;
+                    }
                 }
-                else
+                catch (EjercicioException error)
                 {
-                    tbInit();
-                    bEliminar.Enabled = false;
+                    lExito.Text = error.Message;
+                    lExito.ForeColor = System.Drawing.Color.Red;
+                    lExito.Visible = true;
                 }
-
             }
             else
             {
@@ -70,44 +88,54 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Ejercicios
             }
 
         }
+        
         protected void tbInit()
         {
             tbNombre.Text = "";
             tbMusculo.Text = "";
             tbDescripcion.Text = "";
         }
+       
         protected void bEliminar_Click(object sender, EventArgs e)
         {
             LogicaEjercicio objetoLogica = new LogicaEjercicio();
-            if (objetoLogica.EliminarEjercicio(tbNombre.Text))
+            try
             {
-                lExito.Text = "Se elimino satisfactoriamente.";
-                lExito.ForeColor = System.Drawing.Color.Blue;
-                lExito.Visible = true;
-
-                tbInit();
-                ddlEjercicios.Items.Clear();
-
-                if (objetoLogica.ConsultarTodosEjercicios() != null)
+                if (objetoLogica.EliminarEjercicio(tbNombre.Text))
                 {
-                    ddlEjercicios.Items.Insert(0, new ListItem("Seleccione", "0"));
-                    List<Ejercicio> ejercicios = objetoLogica.ConsultarTodosEjercicios();
-                    int i = 1;
-                    foreach (Ejercicio ejercicio in ejercicios)
+                    lExito.Text = "Se elimino satisfactoriamente.";
+                    lExito.ForeColor = System.Drawing.Color.Blue;
+                    lExito.Visible = true;
+
+                    tbInit();
+                    ddlEjercicios.Items.Clear();
+
+                    if (objetoLogica.ConsultarTodosEjercicios() != null)
                     {
-                        ddlEjercicios.Items.Insert(i, ejercicio.Nombre);
-                        i++;
+                        ddlEjercicios.Items.Insert(0, new ListItem("Seleccione", "0"));
+                        List<Ejercicio> ejercicios = objetoLogica.ConsultarTodosEjercicios();
+                        int i = 1;
+                        foreach (Ejercicio ejercicio in ejercicios)
+                        {
+                            ddlEjercicios.Items.Insert(i, ejercicio.Nombre);
+                            i++;
+                        }
+                    }
+                    else
+                    {
+                        lExito.Text = "No hay ejercicios.";
+                        lExito.ForeColor = System.Drawing.Color.Red;
+                        ddlEjercicios.Enabled = false;
+                        lExito.Visible = true;
                     }
                 }
-                else
-                {
-                    lExito.Text = "No hay ejercicios.";
-                    lExito.ForeColor = System.Drawing.Color.Red;
-                    ddlEjercicios.Enabled = false;
-                    lExito.Visible = true;
-                }
-                
             }
+            catch (EjercicioException error)
+            {
+                lExito.Text = error.Message;
+                lExito.ForeColor = System.Drawing.Color.Red;
+                lExito.Visible = true;
+            }     
 
         }
     }
