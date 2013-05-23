@@ -30,7 +30,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE procedure [dbo].[consultarPersona]
+create procedure [dbo].[consultarPersona]
 as
 
 BEGIN
@@ -259,4 +259,26 @@ BEGIN
 		FROM Persona AS P
 		where P.loginPersona = @loginPersona and P.passwordPersona = @passwordPersona
 		and P.tipoPersona = 'Cliente'
+END;
+
+GO
+
+USE [puipuiDB]
+GO
+/****** Object:  StoredProcedure [dbo].[consultarPersonaPorLogin]    Script Date: 22/05/2013 23:37:00 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE procedure [dbo].[consultarPersonaPorLogin]
+@loginPersona nchar (50)
+as
+
+BEGIN
+ set nocount on
+  
+  SELECT *
+ FROM Persona AS P
+ where P.loginPersona = @loginPersona
+
 END;

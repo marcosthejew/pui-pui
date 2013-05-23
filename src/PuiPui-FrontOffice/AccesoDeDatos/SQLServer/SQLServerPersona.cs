@@ -20,7 +20,7 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
         #region ConsultarPersona
         public List<Persona> ConsultarPersona()
         {
-            string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
             SqlConnection conexion = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
             SqlDataReader dr;
@@ -70,7 +70,7 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
         #region ConsultarDetallePersona
         public Persona ConsultarDetallePersona(int idPersona)
         {
-            string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
             SqlConnection conexion = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
             SqlDataReader dr;
@@ -132,7 +132,7 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
         #region AgregarCliente
         public Persona AgregarCliente(Persona miPersona)
         {
-            string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
             SqlConnection conexion = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
             SqlDataReader dr;
@@ -183,14 +183,14 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
             {
                 db.CerrarConexion();
             }
-            return objPersona;
+            return miPersona;
         }
         #endregion
 
         #region Modificar Persona
         public bool ModificarPersona(Persona nuevaPersona)
         {
-            string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
             SqlConnection conexion = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
             SqlDataReader dr;
@@ -244,7 +244,7 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
         #region ConsultarActivarDesactivarPersona
         public List<Persona> ConsultarActivarDesactivarPersona()
         {
-            string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
             SqlConnection conexion = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
             SqlDataReader dr;
@@ -294,7 +294,7 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
         #region ActivarDesactivarPersona
         public bool ActivarDesactivarPersona(Persona persona)
         {
-            string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
             SqlConnection conexion = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
             SqlDataReader dr;
@@ -332,7 +332,7 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
         #region ConsultarAccesoPersona
         public bool ConsultarAccesoPersona(Acceso persona)
         {
-            string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
             SqlConnection conexion = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
             SqlDataReader dr;
@@ -366,9 +366,10 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
         }
         #endregion
 
+        #region Consultar persona por login
         public Persona ConsultarPersonaPorLogin(string loginPersona)
         {
-            string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
             SqlConnection conexion = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
             SqlDataReader dr;
@@ -425,5 +426,8 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
             }
             return objetoPersona;
         }
+#endregion
+
+
     }
 }

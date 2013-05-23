@@ -20,12 +20,12 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.Conexion
             try
             {
                 objetoConexion = null;
-                cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+                cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
                 conexion = new SqlConnection(cadenaConexion);
             }
             catch (NullReferenceException)
             {
-                throw new ExcepcionConexion("El estring de conexion del WebConfig no puede ser localizado");
+                throw new ExcepcionConexion("El string de conexion del WebConfig no puede ser localizado");
             }
         }
 
