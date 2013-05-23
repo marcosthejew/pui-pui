@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using PuiPui_BackOffice.LogicaDeNegocios.Instructor;
 using System.Drawing;
 using PuiPui_BackOffice.Entidades;
+using PuiPui_BackOffice.LogicaDeNegocios.Excepciones;
 
 
 namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
@@ -16,89 +17,109 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
         protected void Page_Load(object sender, EventArgs e)
         {
             //dp1.Enabled=false;
-            DateTime hora = new DateTime(2013, 11, 10, 6, 0, 0);
+           
             if (!IsPostBack)
             {
-                for (int i = 0; i <= 36; i++)
-                {
-                    hora = hora.AddMinutes(30);            
+                ddl_Cargar();
+            }
+        }
+       
+        protected void ddl_Cargar()
+        {
+            DateTime hora = new DateTime(2013, 11, 10, 6, 0, 0);
+            for (int i = 0; i <= 36; i++)
+            {
+                hora = hora.AddMinutes(30);
 
-                    string a = hora.ToShortTimeString();
-                    dp1.Items.Insert(i,a);
-                    dp2.Items.Insert(i,a);
-                    dp5.Items.Insert(i,a);
-                    dp6.Items.Insert(i,a);
-                    dp9.Items.Insert(i,a);
-                    dp10.Items.Insert(i,a);
-                    dp13.Items.Insert(i,a);
-                    dp14.Items.Insert(i,a);
-                    dp17.Items.Insert(i,a);
-                    dp18.Items.Insert(i,a);
-                    dp1.Enabled= false;
-                    dp2.Enabled = false;
-                    dp3.Enabled = false;
-                    dp4.Enabled = false;
-                    dp5.Enabled = false;
-                    dp6.Enabled = false;
-                    dp7.Enabled = false;
-                    dp8.Enabled = false;
-                    dp9.Enabled = false;
-                    dp10.Enabled = false;
-                    dp11.Enabled = false;
-                    dp12.Enabled = false;
-                    dp13.Enabled = false;
-                    dp14.Enabled = false;
-                    dp15.Enabled = false;
-                    dp16.Enabled = false;
-                    dp17.Enabled = false;
-                    dp18.Enabled = false;
-                    dp19.Enabled = false;
-                    dp20.Enabled = false;
+                string a = hora.ToShortTimeString();
+                dp1.Items.Insert(i, a);
+                dp2.Items.Insert(i, a);
+                dp5.Items.Insert(i, a);
+                dp6.Items.Insert(i, a);
+                dp9.Items.Insert(i, a);
+                dp10.Items.Insert(i, a);
+                dp13.Items.Insert(i, a);
+                dp14.Items.Insert(i, a);
+                dp17.Items.Insert(i, a);
+                dp18.Items.Insert(i, a);
+                dp1.Enabled = false;
+                dp2.Enabled = false;
+                dp3.Enabled = false;
+                dp4.Enabled = false;
+                dp5.Enabled = false;
+                dp6.Enabled = false;
+                dp7.Enabled = false;
+                dp8.Enabled = false;
+                dp9.Enabled = false;
+                dp10.Enabled = false;
+                dp11.Enabled = false;
+                dp12.Enabled = false;
+                dp13.Enabled = false;
+                dp14.Enabled = false;
+                dp15.Enabled = false;
+                dp16.Enabled = false;
+                dp17.Enabled = false;
+                dp18.Enabled = false;
+                dp19.Enabled = false;
+                dp20.Enabled = false;
 
-                }
             }
 
-
         }
-
+        
+        protected void tb_Init()
+        {
+            tb1.Text = "";
+            tb2.Text = "";
+            tb3.Text = "";
+            tb4.Text = "";
+            tb5.Text = "";
+            tb6.Text = "";
+            tb7.Text = "";
+            tb8.Text = "";
+            tb9.Text = "";
+            tb10.Text = "";
+            tb11.Text = "";
+            tb12.Text = "";
+        }
+        
         protected void Button1_Click(object sender, EventArgs e)
         {
             if (tb1.Text == "" || tb2.Text == "" || tb3.Text == "" || tb4.Text == "" || tb5.Text == "" || tb6.Text == "" || tb7.Text == "" || tb7.Text == "" || tb8.Text == "" || tb9.Text == "" || tb10.Text == "" || tb11.Text == "" || tb12.Text == "")
             {
                 // Mostrar que los campos estan vacios.
                 lexito.Text = "Los campos no pueden estar vacios.";
-                lexito.Visible = true;
-                
+                lexito.ForeColor = System.Drawing.Color.Red;
+                lexito.Visible = true;               
             }
-
             else
             {
                 // Valido contra base de datos 
                 LogicaInstructor linstructor = new LogicaInstructor();
                 if (cb1.Checked == true || cb2.Checked == true || cb2.Checked == false || cb1.Checked == false)
                 {
-
                     try
                     {
                         int.Parse(tb4.Text);
                         int.Parse(tb8.Text);
                         int.Parse(tb12.Text);
-
-
-
                         
                         if (cb1.Checked == true && cb2.Checked == false)
                         {
                             char cb0 = 'M';
-                            if (linstructor.AgregarInstructor(tb1.Text, tb2.Text, tb3.Text, int.Parse(tb4.Text), tb5.Text, tb6.Text, tb7.Text, int.Parse(tb8.Text), tb9.Text, tb10.Text, tb11.Text, int.Parse(tb12.Text), Calendar.SelectedDate, cb0.ToString()))
+                            if (!linstructor.AgregarInstructor(tb1.Text, tb2.Text, tb3.Text, int.Parse(tb4.Text), tb5.Text, tb6.Text, tb7.Text, int.Parse(tb8.Text), tb9.Text, tb10.Text, tb11.Text, int.Parse(tb12.Text), Calendar.SelectedDate, cb0.ToString()))
                             {
                                 lexito.Text = "Ya existe el instructor.";
+                                lexito.ForeColor = System.Drawing.Color.Red;
                                 lexito.Visible = true;
                             }
                             else
                             {
                                 lexito.Text = "Se agrego exitosamente el instructor.";
+                                lexito.ForeColor = System.Drawing.Color.Blue;
                                 lexito.Visible = true;
+                                tb_Init();
+                                ddl_Cargar();
 
                             }
                         }
@@ -106,15 +127,19 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
                         if (cb2.Checked == true && cb1.Checked == false)
                         {
                             char cb0 = 'F';
-                            if (linstructor.AgregarInstructor(tb1.Text, tb2.Text, tb3.Text, int.Parse(tb4.Text), tb5.Text, tb6.Text, tb7.Text, int.Parse(tb8.Text), tb9.Text, tb10.Text, tb11.Text, int.Parse(tb12.Text), Calendar.SelectedDate, cb0.ToString()))
+                            if (!linstructor.AgregarInstructor(tb1.Text, tb2.Text, tb3.Text, int.Parse(tb4.Text), tb5.Text, tb6.Text, tb7.Text, int.Parse(tb8.Text), tb9.Text, tb10.Text, tb11.Text, int.Parse(tb12.Text), Calendar.SelectedDate, cb0.ToString()))
                             {
                                 lexito.Text = "Ya existe el instructor.";
+                                lexito.ForeColor = System.Drawing.Color.Red;
                                 lexito.Visible = true;
                             }
                             else
                             {
                                 lexito.Text = "Se agrego exitosamente el instructor.";
+                                lexito.ForeColor = System.Drawing.Color.Blue;
                                 lexito.Visible = true;
+                                tb_Init();
+                                ddl_Cargar();
                             }
                         }
 
@@ -123,6 +148,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
 
                             lexito.Visible = true;
                             lexito.Text = "Seleccion solo uno de los dos Sexos";
+                            lexito.ForeColor = System.Drawing.Color.Red;
                             cb1.BorderColor = Color.Red;
                             cb2.BorderColor = Color.Red;
 
@@ -133,13 +159,10 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
 
                             lexito.Visible = true;
                             lexito.Text = "Seleccion Alguno de los dos Sexos";
+                            lexito.ForeColor = System.Drawing.Color.Red;
                             cb1.BorderColor = Color.Red;
                             cb2.BorderColor = Color.Red;
                         }
-
-
-
-
 
                         if (cb6.Checked == true) 
                         {
@@ -242,7 +265,18 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
 
                     }
 
-
+                    catch (HorarioException error)
+                    {
+                        lexito.Text = error.Message;
+                        lexito.ForeColor = System.Drawing.Color.Red;
+                        lexito.Visible = true;
+                    }
+                    catch (InstructorException error)
+                    {
+                        lexito.Text = error.Message;
+                        lexito.ForeColor = System.Drawing.Color.Red;
+                        lexito.Visible = true;
+                    }
                     catch (Exception ex)
                     {
                         lexito.Visible = true;
@@ -250,10 +284,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
                         tb4.BorderColor = Color.Red;
                         tb8.BorderColor = Color.Red;
                         tb12.BorderColor = Color.Red;
-                    }
-
-
-
+                    }                    
                 }
             }
         }
