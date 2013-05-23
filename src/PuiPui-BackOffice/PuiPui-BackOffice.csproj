@@ -102,6 +102,7 @@
     <Content Include="Presentacion\Vista\Modulo2\Geestion de Salones\Consultar.aspx" />
     <Content Include="Presentacion\Vista\Modulo2\Geestion de Salones\VerDetalle.aspx" />
     <Content Include="Presentacion\Vista\Modulo2\Geestion de Salones\Modificar.aspx" />
+    <Content Include="Presentacion\Vista\Modulo2\Gestion Clase Salon Instructor\AgregarClaseSalon.aspx" />
     <Content Include="Presentacion\Vista\Modulo2\Gestion Clase Salon Instructor\ConsultarClasesSalon.aspx" />
     <Content Include="Presentacion\Vista\Modulo2\Gestion de Clases\Act-Ina.aspx" />
     <Content Include="Presentacion\Vista\Modulo2\Gestion de Clases\Agregar.aspx" />
@@ -352,6 +353,13 @@
     </Compile>
     <Compile Include="Presentacion\Vista\Modulo2\Geestion de Salones\Modificar.aspx.designer.cs">
       <DependentUpon>Modificar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Vista\Modulo2\Gestion Clase Salon Instructor\AgregarClaseSalon.aspx.cs">
+      <DependentUpon>AgregarClaseSalon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Vista\Modulo2\Gestion Clase Salon Instructor\AgregarClaseSalon.aspx.designer.cs">
+      <DependentUpon>AgregarClaseSalon.aspx</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Vista\Modulo2\Gestion Clase Salon Instructor\ConsultarClasesSalon.aspx.cs">
       <DependentUpon>ConsultarClasesSalon.aspx</DependentUpon>
