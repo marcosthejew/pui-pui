@@ -24,8 +24,7 @@ namespace PuiPui_FrontOffice
             }
             catch (NullReferenceException)
             {
-
-
+         
             }
 
         }
@@ -36,6 +35,7 @@ namespace PuiPui_FrontOffice
             acceso.Password = null;
 
             Session.Abandon();
+
             Response.Redirect("../../Home/Login.aspx");
 
 

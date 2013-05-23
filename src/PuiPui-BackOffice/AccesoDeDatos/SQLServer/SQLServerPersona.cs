@@ -161,7 +161,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                     objetoPersona.TelefonoCelularPersona = dr.GetValue(12).ToString();
                     objetoPersona.CorreoPersona = dr.GetValue(13).ToString();
                     objetoPersona.ContactoNombrePersona = dr.GetValue(14).ToString();
-                    objetoPersona.ContactoTelefonoPersona = dr.GetValue(13).ToString();
+                    objetoPersona.ContactoTelefonoPersona = dr.GetValue(15).ToString();
                     objetoPersona.EstadoPersona = dr.GetValue(16).ToString();
                     objetoPersona.LoginPersona = dr.GetValue(17).ToString();
                     objetoPersona.PasswordPersona = dr.GetValue(18).ToString();
@@ -516,7 +516,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                     objetoPersona.TelefonoCelularPersona = dr.GetValue(12).ToString();
                     objetoPersona.CorreoPersona = dr.GetValue(13).ToString();
                     objetoPersona.ContactoNombrePersona = dr.GetValue(14).ToString();
-                    objetoPersona.ContactoTelefonoPersona = dr.GetValue(13).ToString();
+                    objetoPersona.ContactoTelefonoPersona = dr.GetValue(15).ToString();
                     objetoPersona.EstadoPersona = dr.GetValue(16).ToString();
                     objetoPersona.LoginPersona = dr.GetValue(17).ToString();
                     objetoPersona.PasswordPersona = dr.GetValue(18).ToString();
