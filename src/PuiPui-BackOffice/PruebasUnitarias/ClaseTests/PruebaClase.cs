@@ -5,22 +5,22 @@ using System.Web;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using NUnit.Framework;
 using PuiPui_BackOffice.AccesoDeDatos.Conexion;
 using PuiPui_BackOffice.AccesoDeDatos.Conexion.IConexion;
 using PuiPui_BackOffice.AccesoDeDatos.Excepciones_BD;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PuiPui_BackOffice.Entidades.Clase;
 using PuiPui_BackOffice.AccesoDeDatos.SQLServer;
 
 namespace PuiPui_BackOffice.PruebasUnitarias.ClaseTests
 {
-    [TestClass]
+    [TestFixture]
     public class SQLClaseTest
     {
         Clase _clase;
         SQLServerClase _accesoClase;
         List<Clase> _listaClaseAux, _listaClase;
-        [TestMethod]
+        [Test]
         public void AgregarClaseTest()
             {
                 try
@@ -37,7 +37,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.ClaseTests
               
             }
 
-        [TestMethod]
+       [Test]
         public void ModificarTest()
         {
             try
@@ -52,7 +52,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.ClaseTests
             }
         }
 
-        [TestMethod]
+      [Test]
         public void DetalleTest()
         {
             try
@@ -79,7 +79,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.ClaseTests
             }
         }
 
-        [TestMethod]
+       [Test]
         public void ConsultarTest()
         {
             try
@@ -110,7 +110,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.ClaseTests
             }
         }
 
-        [TestMethod]
+       [Test]
         public void BuscarNombreTest()
         {
             try
@@ -137,7 +137,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.ClaseTests
             }
         }
 
-        [TestMethod]
+       [Test]
         public void BuscarStatusTrueTest()
         {
             try
@@ -159,7 +159,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.ClaseTests
             }
         }
 
-        [TestMethod]
+       [Test]
         public void BuscarStatusFalseTest()
         {
             try
