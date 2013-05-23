@@ -103,7 +103,7 @@ BEGIN
 	  
     Select id_salon,ubicacion,capacidad,estatus
     from Salon
-    where LOWER(ubicacion) like LOWER(@Ubicacion+'%');
+    where LOWER(ubicacion) like LOWER('%'+@Ubicacion+'%');
 	
 END
 GO

@@ -22,15 +22,6 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_de_Clases {
         protected global::System.Web.UI.WebControls.Label Label6;
         
         /// <summary>
-        /// falla control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label falla;
-        
-        /// <summary>
         /// Exito control.
         /// </summary>
         /// <remarks>
@@ -38,6 +29,15 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_de_Clases {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Exito;
+        
+        /// <summary>
+        /// falla control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label falla;
         
         /// <summary>
         /// Label4 control.

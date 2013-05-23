@@ -15,7 +15,7 @@
         <fieldset style="width:775px; height:auto; margin-left:7.5%; fit-position:center;">
         <legend style="text-align:center; font-family:Helvetica; font-size:14px;">Detalle Clase</legend>       
                
-            <table style="margin:5% auto auto 8%; height: 140px; width: 476px;" border="0" cellspacing="0" cellpadding="0" >
+            <table style="margin:5% auto auto 22%; height: 140px; width: 476px;" border="0" cellspacing="0" cellpadding="0" >
             <tr>
                 <td class="auto-style7" align="center">
                     <asp:Label ID="Label4" runat="server" Text="Label">Nombre de la clase:</asp:Label>
