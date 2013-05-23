@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using PuiPui_BackOffice.Entidades.Cliente;
-using PuiPui_BackOffice.PruebasUnitarias.Cliente;
 using PuiPui_BackOffice.LogicaDeNegocios.Cliente;
 
 namespace PuiPui_BackOffice.Presentacion.Vista.Modulo6.Cliente
@@ -26,8 +25,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo6.Cliente
                 acceso = (Acceso)Session["loginPersona"];
                 loginPersona = acceso.Login;
                 
-                if (!IsPostBack)
-                {
+                
                     Exito.Visible = false;
                     falla.Visible = false;
 
@@ -38,7 +36,6 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo6.Cliente
                     llenarTipo(ComboTipo);
                     CargarDatos();
 
-                }
             
             }
             catch (NullReferenceException)
@@ -47,6 +44,13 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo6.Cliente
                 Response.Redirect("../../Home/Login.aspx");
             }
 
+        }
+        protected void Cambiar_Click(object sender, EventArgs e)
+        {
+            
+            Session["idPersona"] = persona;
+            
+            Response.Redirect("../../Home/CambiarContraseña.aspx");
         }
         protected void BRegistrar_Click(object sender, EventArgs e)
         {
@@ -68,8 +72,6 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo6.Cliente
             string contactoNombrePersona = LNombreContactoEmergencia.Text;
             string contactoTelefonoPersona = LTelefonoContactoEmergencia.Text;
             string estadoPersona = ComboStatus.SelectedItem.Text;
-            string loginPersona = LUsuario.Text;
-            string passwordPersona = LContrasena.Text;
 
             nuevaPersona.IdPersona = idCliente;
             nuevaPersona.FechaIngresoPersona = fechaIngreso;
@@ -89,8 +91,6 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo6.Cliente
             nuevaPersona.ContactoNombrePersona = contactoNombrePersona;
             nuevaPersona.ContactoTelefonoPersona = contactoTelefonoPersona;
             nuevaPersona.EstadoPersona = estadoPersona;
-            nuevaPersona.LoginPersona = loginPersona;
-            nuevaPersona.PasswordPersona = passwordPersona;
 
             persona = (Persona)Session["idPersona"];
             int a = persona.IdPersona;
@@ -120,8 +120,6 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo6.Cliente
             LNombreContactoEmergencia.Enabled = false;
             LTelefonoContactoEmergencia.Enabled = false;
             ComboStatus.Enabled = false;
-            LUsuario.Enabled = false;
-            LContrasena.Enabled = false;
             BRegistrar.Visible = false;
         }
         public void llenarGenero(DropDownList ComboGenero)
@@ -148,7 +146,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo6.Cliente
             LFechaIngreso.Text = objPersona.FechaIngresoPersona.ToString("dd-MM-yyyy");
             LFechaIngreso.Enabled = false;
             LFechaNacimiento.SelectedDate = objPersona.FechaNacimientoPersona;
-            ComboGenero.SelectedValue = objPersona.GeneroPersona.ToString();
+            ComboGenero.SelectedValue = objPersona.GeneroPersona.ToString().TrimEnd();
             LPrimerNombre.Text = objPersona.NombrePersona1.ToString();
             LSegundoNombre.Text = objPersona.NombrePersona2.ToString();
             LPrimerApellido.Text = objPersona.ApellidoPersona1.ToString();
@@ -158,29 +156,14 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo6.Cliente
             LDireccion.Text = objPersona.DireccionPersona.ToString();
 
             LCorreo.Text = objPersona.CorreoPersona.ToString();
-            ComboTipo.SelectedValue = objPersona.TipoPersona;
+            ComboTipo.SelectedValue = objPersona.TipoPersona.TrimEnd();
             ComboTipo.Enabled = false;
             LCedula.Text = objPersona.CedulaPersona.ToString();
             LCiudad.Text = objPersona.CiudadPersona.ToString();
             LNombreContactoEmergencia.Text = objPersona.ContactoNombrePersona.ToString();
             LTelefonoContactoEmergencia.Text = objPersona.ContactoTelefonoPersona.ToString();
             ComboStatus.Text = objPersona.EstadoPersona.ToString();
-            LUsuario.Text = objPersona.LoginPersona.ToString();
-            LContrasena.Text = objPersona.PasswordPersona.ToString();
 
         }
-
-        //int a = persona.NumeroHistoria;
-
-        //string[] _arreglorespuesta = { resp1, resp2, resp3, resp4, resp5, resp6, 
-        //                               resp7, resp8, resp9, resp10, resp11, resp12,
-        //                               resp13, resp14, resp15, resp16 };
-
-        //LogicaHistoriaClinica historia = new LogicaHistoriaClinica();
-        //historia.ModificarHistoriaClinica(_arreglorespuesta, a);
-
-        //Response.Redirect("DetalleHistoriaClinica.aspx");
-
-
     }
 }

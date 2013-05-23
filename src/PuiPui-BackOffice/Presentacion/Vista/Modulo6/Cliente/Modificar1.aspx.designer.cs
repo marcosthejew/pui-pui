@@ -184,22 +184,13 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo6.Cliente {
         protected global::System.Web.UI.WebControls.TextBox LDireccion;
         
         /// <summary>
-        /// LUsuario control.
+        /// Cambiar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox LUsuario;
-        
-        /// <summary>
-        /// LContrasena control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox LContrasena;
+        protected global::System.Web.UI.WebControls.Button Cambiar;
         
         /// <summary>
         /// ComboStatus control.
@@ -443,42 +434,6 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo6.Cliente {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.ValidatorCalloutExtender validarDireccion;
-        
-        /// <summary>
-        /// usuario control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator usuario;
-        
-        /// <summary>
-        /// validarUsuario control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.ValidatorCalloutExtender validarUsuario;
-        
-        /// <summary>
-        /// contrasena control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator contrasena;
-        
-        /// <summary>
-        /// validarContrasena control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.ValidatorCalloutExtender validarContrasena;
         
         /// <summary>
         /// _cedula control.

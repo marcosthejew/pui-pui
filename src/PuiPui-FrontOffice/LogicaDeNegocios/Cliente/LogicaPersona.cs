@@ -100,5 +100,14 @@ namespace PuiPui_FrontOffice.LogicaDeNegocios.Cliente
         }
         #endregion
 
+        #region CambiarContraseña
+        public bool CambiarContraseña(Persona persona)
+        {
+            bool miPersona;
+            SQLServerPersona objDataBase = new SQLServerPersona();
+            miPersona = objDataBase.CambiarContraseña(persona);
+            return miPersona;
+        }
+        #endregion
     }
 }

@@ -12,6 +12,8 @@ namespace PuiPui_FrontOffice.Presentacion.Vista.Modulo6.Cliente
     public partial class Modificar : System.Web.UI.Page
     {
         Acceso acceso;
+        Persona persona;
+
         string loginPersona;
         LogicaPersona logicaPersona = new LogicaPersona();
         Persona nuevaPersona = new Persona();
@@ -42,6 +44,14 @@ namespace PuiPui_FrontOffice.Presentacion.Vista.Modulo6.Cliente
                 Response.Redirect("../../Home/Login.aspx");
             }
         }
+        protected void Cambiar_Click(object sender, EventArgs e)
+        {
+            persona = (Persona)Session["idPersona"];
+            Session["idPersona"] = persona;
+
+            Response.Redirect("../../Home/CambiarContraseña.aspx");
+        }
+
         protected void BRegistrar_Click(object sender, EventArgs e)
         {
             int idCliente = Convert.ToInt32(LIdentificador.Text);
@@ -62,8 +72,6 @@ namespace PuiPui_FrontOffice.Presentacion.Vista.Modulo6.Cliente
             string contactoNombrePersona = LNombreContactoEmergencia.Text;
             string contactoTelefonoPersona = LTelefonoContactoEmergencia.Text;
             string estadoPersona = ComboStatus.SelectedItem.Text;
-            string loginPersona = LUsuario.Text;
-            string passwordPersona = LContrasena.Text;
 
             nuevaPersona.IdPersona = idCliente;
             nuevaPersona.FechaIngresoPersona = fechaIngreso;
@@ -83,8 +91,6 @@ namespace PuiPui_FrontOffice.Presentacion.Vista.Modulo6.Cliente
             nuevaPersona.ContactoNombrePersona = contactoNombrePersona;
             nuevaPersona.ContactoTelefonoPersona = contactoTelefonoPersona;
             nuevaPersona.EstadoPersona = estadoPersona;
-            nuevaPersona.LoginPersona = loginPersona;
-            nuevaPersona.PasswordPersona = passwordPersona;
 
           
 
@@ -113,8 +119,6 @@ namespace PuiPui_FrontOffice.Presentacion.Vista.Modulo6.Cliente
             LNombreContactoEmergencia.Enabled = false;
             LTelefonoContactoEmergencia.Enabled = false;
             ComboStatus.Enabled = false;
-            LUsuario.Enabled = false;
-            LContrasena.Enabled = false;
             BRegistrar.Visible = false;
         }
         public void llenarGenero(DropDownList ComboGenero)
@@ -158,8 +162,6 @@ namespace PuiPui_FrontOffice.Presentacion.Vista.Modulo6.Cliente
             LNombreContactoEmergencia.Text = nuevaPersona.ContactoNombrePersona.ToString();
             LTelefonoContactoEmergencia.Text = nuevaPersona.ContactoTelefonoPersona.ToString();
             ComboStatus.Text = nuevaPersona.EstadoPersona.ToString();
-            LUsuario.Text = nuevaPersona.LoginPersona.ToString();
-            LContrasena.Text = nuevaPersona.PasswordPersona.ToString();
 
         }
 

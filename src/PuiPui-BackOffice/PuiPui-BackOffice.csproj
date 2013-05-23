@@ -79,6 +79,7 @@
     <Content Include="bin\PuiPui-BackOffice.pdb" />
     <Content Include="Presentacion\Estilo\Site.css" />
     <Content Include="Presentacion\Vista\Home\About.aspx" />
+    <Content Include="Presentacion\Vista\Home\CambiarContraseña.aspx" />
     <Content Include="Presentacion\Vista\Home\Home.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Presentacion\Estilo\Scripts\jquery-1.4.1-vsdoc.js" />
@@ -206,6 +207,13 @@
     </Compile>
     <Compile Include="Presentacion\Vista\Home\About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Vista\Home\CambiarContraseña.aspx.cs">
+      <DependentUpon>CambiarContraseña.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Vista\Home\CambiarContraseña.aspx.designer.cs">
+      <DependentUpon>CambiarContraseña.aspx</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Vista\Home\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>

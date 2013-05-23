@@ -428,6 +428,43 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
         }
 #endregion
 
+        #region CambiarContraseña
+        public bool CambiarContraseña(Persona persona)
+        {
+            string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader dr;
+
+
+            try
+            {
+                conexion = new SqlConnection(cadenaConexion);
+                conexion.Open();
+                cmd = new SqlCommand("[dbo].[cambiarContraseña]", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idPersona", persona.IdPersona);
+                cmd.Parameters.AddWithValue("@passwordPersona", persona.PasswordPersona);
+
+
+                dr = cmd.ExecuteReader();
+                dr.Read();
+                db.CerrarConexion();
+                return true;
+
+            }
+            catch (SqlException error)
+            {
+                //En caso de que se viole alguna restriccion sobre la BD
+                throw (new ExcepcionPersona(("Error: " + error.Message), error));
+            }
+            finally
+            {
+                db.CerrarConexion();
+            }
+
+        }
+        #endregion
 
     }
 }

@@ -112,18 +112,12 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style6">Usuario</td>
+                    <td class="auto-style6">Cambiar Contraseña</td>
                     <td class="auto-style2">
-                        <asp:TextBox ID="LUsuario" runat="server" Height="20px" Width="190px"></asp:TextBox>
+                        <asp:Button ID="Cambiar" runat="server" CssClass="button" onclick="Cambiar_Click" Text="Cambiar Contraseña" />
                     </td>
-                    <td class="auto-style6">Contrasena</td>
-                    <td class="auto-style2">
-                        <asp:TextBox ID="LContrasena" runat="server" Height="20px" Width="190px"></asp:TextBox>
-                    </td>
-                </tr>
-                <tr>
                     <td class="auto-style6">Status</td>
-                    <td class="auto-style2"colspan="3">
+                    <td class="auto-style2">
                         <asp:DropDownList ID="ComboStatus" runat="server" Height="20px" Width="90px">
                             <asp:ListItem Value="Activo">Activo</asp:ListItem>
                             <asp:ListItem Value="Inactivo">Inactivo</asp:ListItem>
@@ -238,22 +232,6 @@
             ControlToValidate="LDireccion" CssClass="itemError">&nbsp;&nbsp;&nbsp;&nbsp;
         </asp:RequiredFieldValidator>
         <cc1:validatorcalloutextender ID="validarDireccion" runat="server" TargetControlID="direccion"
-            Width="200px" HighlightCssClass="highlight">
-        </cc1:validatorcalloutextender>
-
-        <asp:RequiredFieldValidator ID="usuario" runat="server" Display="Dynamic"
-            ErrorMessage="El campo &lt;strong>usuario</strong> es requerido. Verifique"
-            ControlToValidate="LUsuario" CssClass="itemError">&nbsp;&nbsp;&nbsp;&nbsp;
-        </asp:RequiredFieldValidator>
-        <cc1:validatorcalloutextender ID="validarUsuario" runat="server" TargetControlID="usuario"
-            Width="200px" HighlightCssClass="highlight">
-        </cc1:validatorcalloutextender> 
-
-        <asp:RequiredFieldValidator ID="contrasena" runat="server" Display="Dynamic"
-            ErrorMessage="El campo &lt;strong>contrasena</strong> es requerido. Verifique"
-            ControlToValidate="LContrasena" CssClass="itemError">&nbsp;&nbsp;&nbsp;&nbsp;
-        </asp:RequiredFieldValidator>
-        <cc1:validatorcalloutextender ID="validarContrasena" runat="server" TargetControlID="contrasena"
             Width="200px" HighlightCssClass="highlight">
         </cc1:validatorcalloutextender>
 

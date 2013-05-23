@@ -8,5 +8,5 @@
     <asp:Login ID="Login1" runat="server" OnAuthenticate="Login1_Authenticate" LoginButtonText="Ingresar" 
         PasswordLabelText="Password" RememberMeText="Recordarme la proxima vez" TitleText=" " UserNameLabelText="Login">
     </asp:Login>
-                     
+              
 </asp:Content>
