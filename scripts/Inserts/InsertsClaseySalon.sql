@@ -18,3 +18,8 @@ INSERT INTO SALON VALUES ('Tercer Piso',100,1);
 INSERT INTO SALON VALUES ('Primer Piso-Ala Este',50,1);
 INSERT INTO SALON VALUES ('Primer Piso-Ala Oeste',20,1);
 
+INSERT INTO Clase_Salon VALUES (1,1,1,1);
+INSERT INTO Clase_Salon VALUES (1,2,2,1);
+INSERT INTO Clase_Salon VALUES (1,3,5,2);
+INSERT INTO Clase_Salon VALUES (1,4,3,3);
+INSERT INTO Clase_Salon VALUES (1,5,4,2);
