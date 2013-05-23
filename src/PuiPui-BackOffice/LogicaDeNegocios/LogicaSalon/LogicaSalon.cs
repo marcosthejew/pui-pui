@@ -6,6 +6,8 @@ using System.Data;
 using PuiPui_BackOffice.Entidades.Salon;
 using PuiPui_BackOffice.Entidades.Clase;
 using PuiPui_BackOffice.AccesoDeDatos.SQLServer;
+using PuiPui_BackOffice.AccesoDeDatos.Excepciones_BD;
+using PuiPui_BackOffice.LogicaDeNegocios.Excepciones;
 
 namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
 {
@@ -28,9 +30,9 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
         {
             _salon = new Salon();
             _accesoSalon = new SQLServerSalon();
-            _miLista= new List<Salon>();
+            _miLista = new List<Salon>();
             _listaGrande = new List<ClaseSalon>();
-            _accesoSalonClase= new SQLServerClaseSalon();
+            _accesoSalonClase = new SQLServerClaseSalon();
         }
 
         #endregion
@@ -40,45 +42,85 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
         public DataTable ConsultarSalones()
         {
             DataTable miTabla = new DataTable();
-
-            _miLista = _accesoSalon.ConsultarSalones();
-            String stat = null; 
+            String stat = null;
 
             miTabla.Columns.Add("Nro.Salon", typeof(string));
             miTabla.Columns.Add("Ubicacion", typeof(string));
             miTabla.Columns.Add("Capacidad", typeof(string));
             miTabla.Columns.Add("Estatus", typeof(string));
 
-            foreach (Salon salon in _miLista)
+
+            try
             {
-                if (salon.Status == 1)
+                _miLista = _accesoSalon.ConsultarSalones();
+
+                foreach (Salon salon in _miLista)
                 {
-                    stat = "Activo";
+                    if (salon.Status == 1)
+                    {
+                        stat = "Activo";
+                    }
+                    else
+                    {
+                        stat = "Inactivo";
+                    }
+                    miTabla.Rows.Add(salon.IdSalon, salon.Ubicacion, salon.Capacidad, stat);
                 }
-                else
-                {
-                    stat = "Inactivo";
-                }
-                miTabla.Rows.Add(salon.IdSalon, salon.Ubicacion, salon.Capacidad, stat);
             }
 
+            catch (ExecpcionClaseSalon e)
+            {
+
+                throw new ExecpcionClaseSalon("No se pudo consultar en la BD", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new ExcepcionClaseSalonLogica("Objetos vacios para la consulta", e);
+            }
             return miTabla;
         }
 
         public List<Salon> ObtenerSalones()
         {
             //conectar a la bd
-            _miLista = _accesoSalon.ConsultarSalones();
+
+            try
+            {
+                _miLista = _accesoSalon.ConsultarSalones();
+            }
+
+            catch (ExecpcionClaseSalon e)
+            {
+
+                throw new ExecpcionClaseSalon("No se pudo consultar en la BD", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new ExcepcionClaseSalonLogica("Objetos vacios para la consulta", e);
+            }
             return _miLista;
         }
-        
+
         public Boolean ModificarSalones(Salon salon)
         {
 
             Boolean retorno = false;
 
-            retorno = _accesoSalon.ModificarSalon(salon);
 
+            try
+            {
+                retorno = _accesoSalon.ModificarSalon(salon);
+            }
+
+            catch (ExecpcionClaseSalon e)
+            {
+
+                throw new ExecpcionClaseSalon("No se pudo Modificar en la BD", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new ExcepcionClaseSalonLogica("Objetos vacios para la consulta", e);
+            }
             return retorno;
 
         }
@@ -89,9 +131,22 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
             _salon.Ubicacion = ubicacion;
             _salon.Capacidad = capacidad;
             _salon.Status = 0;
-            resultado = _accesoSalon.AgregarSalon(_salon);
-            //conectar a la bd
 
+            //conectar a la bd
+            try
+            {
+                resultado = _accesoSalon.AgregarSalon(_salon);
+            }
+
+            catch (ExecpcionClaseSalon e)
+            {
+
+                throw new ExecpcionClaseSalon("No se pudo Agregar en la BD", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new ExcepcionClaseSalonLogica("Objetos vacios para la consulta", e);
+            }
             return resultado;
 
         }
@@ -100,27 +155,39 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
         {
             DataTable miTabla = new DataTable();
             String stat = null;
-
-            _miLista = _accesoSalon.BusquedaUbicacion(ubi);
-
             miTabla.Columns.Add("Nro.Salon", typeof(string));
             miTabla.Columns.Add("Ubicacion", typeof(string));
             miTabla.Columns.Add("Capacidad", typeof(string));
             miTabla.Columns.Add("Estatus", typeof(string));
 
-            foreach (Salon salon in _miLista)
+            try
             {
-                if (salon.Status == 1)
+                _miLista = _accesoSalon.BusquedaUbicacion(ubi);
+
+
+                foreach (Salon salon in _miLista)
                 {
-                    stat = "Activo";
+                    if (salon.Status == 1)
+                    {
+                        stat = "Activo";
+                    }
+                    else
+                    {
+                        stat = "Inactivo";
+                    }
+                    miTabla.Rows.Add(salon.IdSalon, salon.Ubicacion, salon.Capacidad, stat);
                 }
-                else
-                {
-                    stat = "Inactivo";
-                }
-                miTabla.Rows.Add(salon.IdSalon, salon.Ubicacion, salon.Capacidad, stat);
             }
 
+            catch (ExecpcionClaseSalon e)
+            {
+
+                throw new ExecpcionClaseSalon("No se pudo consultar en la BD", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new ExcepcionClaseSalonLogica("Objetos vacios para la consulta", e);
+            }
             return miTabla;
         }
 
@@ -128,27 +195,39 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
         {
             DataTable miTabla = new DataTable();
             String stat = null;
-
-            _miLista = _accesoSalon.BusquedaCapacidadMayorSalon(capa);
-
             miTabla.Columns.Add("Nro.Salon", typeof(string));
             miTabla.Columns.Add("Ubicacion", typeof(string));
             miTabla.Columns.Add("Capacidad", typeof(string));
             miTabla.Columns.Add("Estatus", typeof(string));
 
-            foreach (Salon salon in _miLista)
+
+            try
             {
-                if (salon.Status == 1)
+                _miLista = _accesoSalon.BusquedaCapacidadMayorSalon(capa);
+
+                foreach (Salon salon in _miLista)
                 {
-                    stat = "Activo";
+                    if (salon.Status == 1)
+                    {
+                        stat = "Activo";
+                    }
+                    else
+                    {
+                        stat = "Inactivo";
+                    }
+                    miTabla.Rows.Add(salon.IdSalon, salon.Ubicacion, salon.Capacidad, stat);
                 }
-                else
-                {
-                    stat = "Inactivo";
-                }
-                miTabla.Rows.Add(salon.IdSalon, salon.Ubicacion, salon.Capacidad, stat);
             }
 
+            catch (ExecpcionClaseSalon e)
+            {
+
+                throw new ExecpcionClaseSalon("No se pudo consultar en la BD", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new ExcepcionClaseSalonLogica("Objetos vacios para la consulta", e);
+            }
             return miTabla;
         }
 
@@ -156,27 +235,40 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
         {
             DataTable miTabla = new DataTable();
             String stat = null;
-
-            _miLista = _accesoSalon.BusquedaCapacidadMenorSalon(capa);
-
             miTabla.Columns.Add("Nro.Salon", typeof(string));
             miTabla.Columns.Add("Ubicacion", typeof(string));
             miTabla.Columns.Add("Capacidad", typeof(string));
             miTabla.Columns.Add("Estatus", typeof(string));
 
-            foreach (Salon salon in _miLista)
+
+            try
             {
-                if (salon.Status == 1)
+                _miLista = _accesoSalon.BusquedaCapacidadMenorSalon(capa);
+
+
+                foreach (Salon salon in _miLista)
                 {
-                    stat = "Activo";
+                    if (salon.Status == 1)
+                    {
+                        stat = "Activo";
+                    }
+                    else
+                    {
+                        stat = "Inactivo";
+                    }
+                    miTabla.Rows.Add(salon.IdSalon, salon.Ubicacion, salon.Capacidad, stat);
                 }
-                else
-                {
-                    stat = "Inactivo";
-                }
-                miTabla.Rows.Add(salon.IdSalon, salon.Ubicacion, salon.Capacidad, stat);
             }
 
+            catch (ExecpcionClaseSalon e)
+            {
+
+                throw new ExecpcionClaseSalon("No se pudo consultar en la BD", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new ExcepcionClaseSalonLogica("Objetos vacios para la consulta", e);
+            }
             return miTabla;
         }
 
@@ -184,27 +276,40 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
         {
             DataTable miTabla = new DataTable();
             String statu = null;
-
-            _miLista = _accesoSalon.BusquedaStatusSalon(stat);
-
             miTabla.Columns.Add("Nro.Salon", typeof(string));
             miTabla.Columns.Add("Ubicacion", typeof(string));
             miTabla.Columns.Add("Capacidad", typeof(string));
             miTabla.Columns.Add("Estatus", typeof(string));
 
-            foreach (Salon salon in _miLista)
+
+            try
             {
-                if (salon.Status == 1)
+                _miLista = _accesoSalon.BusquedaStatusSalon(stat);
+
+
+                foreach (Salon salon in _miLista)
                 {
-                    statu = "Activo";
+                    if (salon.Status == 1)
+                    {
+                        statu = "Activo";
+                    }
+                    else
+                    {
+                        statu = "Inactivo";
+                    }
+                    miTabla.Rows.Add(salon.IdSalon, salon.Ubicacion, salon.Capacidad, statu);
                 }
-                else
-                {
-                    statu = "Inactivo";
-                }
-                miTabla.Rows.Add(salon.IdSalon, salon.Ubicacion, salon.Capacidad, statu);
             }
 
+            catch (ExecpcionClaseSalon e)
+            {
+
+                throw new ExecpcionClaseSalon("No se pudo consultar en la BD", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new ExcepcionClaseSalonLogica("Objetos vacios para la consulta", e);
+            }
             return miTabla;
         }
 
@@ -216,19 +321,32 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
         {
             DataTable miTabla = new DataTable();
 
-            _miLista = _accesoSalon.ConsultarSalones();
-
             miTabla.Columns.Add("Nro.Salon", typeof(string));
             miTabla.Columns.Add("Ubicacion", typeof(string));
             miTabla.Columns.Add("Capacidad", typeof(string));
             miTabla.Columns.Add("Estatus", typeof(string));
 
-            foreach (Salon salon in _miLista)
-            {
 
-                miTabla.Rows.Add(salon.IdSalon, salon.Ubicacion, salon.Capacidad, salon.Status);
+            try
+            {
+                _miLista = _accesoSalon.ConsultarSalones();
+
+                foreach (Salon salon in _miLista)
+                {
+
+                    miTabla.Rows.Add(salon.IdSalon, salon.Ubicacion, salon.Capacidad, salon.Status);
+                }
             }
 
+            catch (ExecpcionClaseSalon e)
+            {
+
+                throw new ExecpcionClaseSalon("No se pudo consultar en la BD", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new ExcepcionClaseSalonLogica("Objetos vacios para la consulta", e);
+            }
             return miTabla;
         }
 
@@ -236,9 +354,22 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
         {
             DataTable miTabla = new DataTable();
 
-            _listaGrande = _accesoSalonClase.ListarSalonesClase();
 
-            
+            try
+            {
+                _listaGrande = _accesoSalonClase.ListarSalonesClase();
+            }
+
+            catch (ExecpcionClaseSalon e)
+            {
+
+                throw new ExecpcionClaseSalon("No se pudo consultar en la BD", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new ExcepcionClaseSalonLogica("Objetos vacios para la consulta", e);
+            }
+
             return _listaGrande;
         }
 
@@ -247,8 +378,21 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
 
             Boolean retorno = false;
 
-            retorno = _accesoSalonClase.ModificarSalonClase(salon);
 
+            try
+            {
+                retorno = _accesoSalonClase.ModificarSalonClase(salon);
+            }
+
+            catch (ExecpcionClaseSalon e)
+            {
+
+                throw new ExecpcionClaseSalon("No se pudo Modificar en la BD", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new ExcepcionClaseSalonLogica("Objetos vacios para la consulta", e);
+            }
             return retorno;
 
         }
@@ -257,15 +401,28 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
         {
             Boolean resultado = false;
 
-            ClaseSalon newclase= new ClaseSalon( );
+            ClaseSalon newclase = new ClaseSalon();
 
-            newclase.Clase.IdClase=idclas;
-            newclase.Salon.IdSalon=idsa;
-            newclase.Instructor.IdPersona=idsa;
+            newclase.Clase.IdClase = idclas;
+            newclase.Salon.IdSalon = idsa;
+            newclase.Instructor.IdPersona = idsa;
             _salon.Status = 0;
-            resultado = _accesoSalonClase.AgregarClaseSalon(newclase);
-            //conectar a la bd
 
+            //conectar a la bd
+            try
+            {
+                resultado = _accesoSalonClase.AgregarClaseSalon(newclase);
+            }
+
+            catch (ExecpcionClaseSalon e)
+            {
+
+                throw new ExecpcionClaseSalon("No se pudo Agregar en la BD", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new ExcepcionClaseSalonLogica("Objetos vacios para la consulta", e);
+            }
             return resultado;
 
         }
@@ -274,28 +431,42 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
         {
             DataTable miTabla = new DataTable();
 
-            _listaGrande = _accesoSalonClase.ListarSalonesClaseTclase(clase);
-
             miTabla.Columns.Add("Id", typeof(string));
             miTabla.Columns.Add("Nombre Clase", typeof(string));
             miTabla.Columns.Add("Salon", typeof(string));
             miTabla.Columns.Add("Instructor", typeof(string));
             miTabla.Columns.Add("Estatus", typeof(string));
 
-            String stat;
-            foreach (ClaseSalon salon in _listaGrande)
+
+            try
             {
-                if (salon.Disponibilidad == 1)
+                _listaGrande = _accesoSalonClase.ListarSalonesClaseTclase(clase);
+
+
+                String stat;
+                foreach (ClaseSalon salon in _listaGrande)
                 {
-                    stat = "Activa";
+                    if (salon.Disponibilidad == 1)
+                    {
+                        stat = "Activa";
+                    }
+                    else
+                    {
+                        stat = "Inactiva";
+                    }
+                    miTabla.Rows.Add(salon.Id, salon.Clase.Nombre, salon.Salon.Ubicacion, salon.Instructor.NombrePersona1 + salon.Instructor.ApellidoPersona1, stat);
                 }
-                else
-                {
-                    stat = "Inactiva";
-                }
-                miTabla.Rows.Add(salon.Id, salon.Clase.Nombre, salon.Salon.Ubicacion, salon.Instructor.NombrePersona1 + salon.Instructor.ApellidoPersona1, stat);
             }
 
+            catch (ExecpcionClaseSalon e)
+            {
+
+                throw new ExecpcionClaseSalon("No se pudo consultar en la BD", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new ExcepcionClaseSalonLogica("Objetos vacios para la consulta", e);
+            }
             return miTabla;
         }
 
@@ -303,25 +474,39 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
         {
             DataTable miTabla = new DataTable();
 
-            _listaGrande = _accesoSalonClase.ListarSalonesClaseTsalon(ubi);
-
             miTabla.Columns.Add("Id", typeof(string));
             miTabla.Columns.Add("Nombre Clase", typeof(string));
             miTabla.Columns.Add("Salon", typeof(string));
             miTabla.Columns.Add("Instructor", typeof(string));
             miTabla.Columns.Add("Estatus", typeof(string));
             String stat;
-            foreach (ClaseSalon salon in _listaGrande)
+
+            try
             {
-                if (salon.Disponibilidad == 1)
+                _listaGrande = _accesoSalonClase.ListarSalonesClaseTsalon(ubi);
+
+                foreach (ClaseSalon salon in _listaGrande)
                 {
-                    stat = "Activa";
+                    if (salon.Disponibilidad == 1)
+                    {
+                        stat = "Activa";
+                    }
+                    else
+                    {
+                        stat = "Inactiva";
+                    }
+                    miTabla.Rows.Add(salon.Id, salon.Clase.Nombre, salon.Salon.Ubicacion, salon.Instructor.NombrePersona1 + salon.Instructor.ApellidoPersona1, stat);
                 }
-                else
-                {
-                    stat = "Inactiva";
-                }
-                miTabla.Rows.Add(salon.Id, salon.Clase.Nombre, salon.Salon.Ubicacion, salon.Instructor.NombrePersona1 + salon.Instructor.ApellidoPersona1, stat);
+            }
+
+            catch (ExecpcionClaseSalon e)
+            {
+
+                throw new ExecpcionClaseSalon("No se pudo consultar en la BD", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new ExcepcionClaseSalonLogica("Objetos vacios para la consulta", e);
             }
             return miTabla;
         }
@@ -330,26 +515,41 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
         {
             DataTable miTabla = new DataTable();
 
-            _listaGrande = _accesoSalonClase.ListarSalonesClaseTinstructor(ins);
-
             miTabla.Columns.Add("Id", typeof(string));
             miTabla.Columns.Add("Nombre Clase", typeof(string));
             miTabla.Columns.Add("Salon", typeof(string));
             miTabla.Columns.Add("Instructor", typeof(string));
             miTabla.Columns.Add("Estatus", typeof(string));
 
-            String stat;
-            foreach (ClaseSalon salon in _listaGrande)
+
+            try
             {
-                if (salon.Disponibilidad == 1)
+                _listaGrande = _accesoSalonClase.ListarSalonesClaseTinstructor(ins);
+
+                String stat;
+                foreach (ClaseSalon salon in _listaGrande)
                 {
-                    stat = "Activa";
+                    if (salon.Disponibilidad == 1)
+                    {
+                        stat = "Activa";
+                    }
+                    else
+                    {
+                        stat = "Inactiva";
+                    }
+                    miTabla.Rows.Add(salon.Id, salon.Clase.Nombre, salon.Salon.Ubicacion, salon.Instructor.NombrePersona1 + salon.Instructor.ApellidoPersona1, stat);
                 }
-                else
-                {
-                    stat = "Inactiva";
-                }
-                miTabla.Rows.Add(salon.Id, salon.Clase.Nombre, salon.Salon.Ubicacion, salon.Instructor.NombrePersona1 + salon.Instructor.ApellidoPersona1, stat);
+
+            }
+
+            catch (ExecpcionClaseSalon e)
+            {
+
+                throw new ExecpcionClaseSalon("No se pudo consultar en la BD", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new ExcepcionClaseSalonLogica("Objetos vacios para la consulta", e);
             }
 
             return miTabla;
@@ -359,27 +559,40 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
         {
             DataTable miTabla = new DataTable();
 
-            _listaGrande = _accesoSalonClase.ListarSalonesClaseTdisponible(st);
-
             miTabla.Columns.Add("Id", typeof(string));
             miTabla.Columns.Add("Nombre Clase", typeof(string));
             miTabla.Columns.Add("Salon", typeof(string));
             miTabla.Columns.Add("Instructor", typeof(string));
             miTabla.Columns.Add("Estatus", typeof(string));
-            String stat;
-            foreach (ClaseSalon salon in _listaGrande)
+
+            try
             {
-                if (salon.Disponibilidad == 1)
+                _listaGrande = _accesoSalonClase.ListarSalonesClaseTdisponible(st);
+
+                String stat;
+                foreach (ClaseSalon salon in _listaGrande)
                 {
-                    stat = "Activa";
+                    if (salon.Disponibilidad == 1)
+                    {
+                        stat = "Activa";
+                    }
+                    else
+                    {
+                        stat = "Inactiva";
+                    }
+                    miTabla.Rows.Add(salon.Id, salon.Clase.Nombre, salon.Salon.Ubicacion, salon.Instructor.NombrePersona1 + salon.Instructor.ApellidoPersona1, stat);
                 }
-                else
-                {
-                    stat = "Inactiva";
-                }
-                miTabla.Rows.Add(salon.Id, salon.Clase.Nombre, salon.Salon.Ubicacion, salon.Instructor.NombrePersona1 + salon.Instructor.ApellidoPersona1, stat);
             }
 
+            catch (ExecpcionClaseSalon e)
+            {
+
+                throw new ExecpcionClaseSalon("No se pudo consultar en la BD", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new ExcepcionClaseSalonLogica("Objetos vacios para la consulta", e);
+            }
             return miTabla;
         }
 
