@@ -2,10 +2,10 @@
  AutoEventWireup="true" CodeBehind="Consultar.aspx.cs" Inherits="PuiPui_BackOffice.Presentacion.Vista.Modulo2.Geestion_de_Salones.Consultar" %>
 <asp:Content ID="Content1" runat="server" contentplaceholderid="MainContent">
     <div style="text-align:center; font-family:Helvetica; font-size:16px;">
-    <asp:Label ID="Label1" runat="server" Text="SALON"></asp:Label>
+    <asp:Label ID="Label1" runat="server" Text="Salón"></asp:Label>
     </div>
 
-    <div style="height:30px; text-align:center; font-family:Helvetica; font-size:14px;">
+    <div style="height:30px; text-align:left; font-family:Helvetica; font-size:14px;">
         <asp:Label ID="falla" runat="server" Text="Operación Fallida" CssClass="falla" 
             Visible="False" ForeColor="Red"></asp:Label>
         <asp:Label ID="Exito" runat="server" Text="Operación Exitosa" CssClass="Exito" 
@@ -16,7 +16,7 @@
         <fieldset style="width:775px; height:auto; margin-left:7.5%; fit-position:center;">
         <legend style="text-align:center; font-family:Helvetica; font-size:14px;">Consultar Salón</legend>
                
-            <table border="0" cellspacing="0" cellpadding="0" style="width: 596px; margin-left:100px" >
+            <table border="0" cellspacing="0" cellpadding="0" style="width: 596px; margin-left:100px" align="center">
             <tr>
                 <td rowspan="0" nowrap="nowrap" class="auto-style3" style="text-align:center">
                     Buscar por:</td>
