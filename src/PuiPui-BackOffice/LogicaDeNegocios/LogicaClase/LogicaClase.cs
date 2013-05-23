@@ -56,6 +56,7 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaClase
 
             return miTabla;
         }
+
         public Clase ObtenerDetalleClases(int id)
         {
             //conectar a la bd
@@ -72,6 +73,7 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaClase
 
             return _listaClase;
         }
+
         public Boolean ModificarClase(Clase clase)
         {
 

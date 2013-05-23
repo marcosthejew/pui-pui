@@ -33,7 +33,6 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
             _accesoSalonClase= new SQLServerClaseSalon();
         }
 
-
         #endregion
 
         #region Metodos Salon
@@ -43,6 +42,7 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
             DataTable miTabla = new DataTable();
 
             _miLista = _accesoSalon.ConsultarSalones();
+            String stat = null; 
 
             miTabla.Columns.Add("Nro.Salon", typeof(string));
             miTabla.Columns.Add("Ubicacion", typeof(string));
@@ -51,8 +51,15 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
 
             foreach (Salon salon in _miLista)
             {
-
-                miTabla.Rows.Add(salon.IdSalon,salon.Ubicacion,salon.Capacidad,salon.Status);
+                if (salon.Status == 1)
+                {
+                    stat = "Activo";
+                }
+                else
+                {
+                    stat = "Inactivo";
+                }
+                miTabla.Rows.Add(salon.IdSalon, salon.Ubicacion, salon.Capacidad, stat);
             }
 
             return miTabla;
@@ -92,6 +99,7 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
         public DataTable ConsultarSalonesUbicacion(String ubi)
         {
             DataTable miTabla = new DataTable();
+            String stat = null;
 
             _miLista = _accesoSalon.BusquedaUbicacion(ubi);
 
@@ -102,8 +110,15 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
 
             foreach (Salon salon in _miLista)
             {
-
-                miTabla.Rows.Add(salon.IdSalon, salon.Ubicacion, salon.Capacidad, salon.Status);
+                if (salon.Status == 1)
+                {
+                    stat = "Activo";
+                }
+                else
+                {
+                    stat = "Inactivo";
+                }
+                miTabla.Rows.Add(salon.IdSalon, salon.Ubicacion, salon.Capacidad, stat);
             }
 
             return miTabla;
@@ -112,6 +127,7 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
         public DataTable ConsultarSalonesCapacidadMayo(int capa)
         {
             DataTable miTabla = new DataTable();
+            String stat = null;
 
             _miLista = _accesoSalon.BusquedaCapacidadMayorSalon(capa);
 
@@ -122,8 +138,15 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
 
             foreach (Salon salon in _miLista)
             {
-
-                miTabla.Rows.Add(salon.IdSalon, salon.Ubicacion, salon.Capacidad, salon.Status);
+                if (salon.Status == 1)
+                {
+                    stat = "Activo";
+                }
+                else
+                {
+                    stat = "Inactivo";
+                }
+                miTabla.Rows.Add(salon.IdSalon, salon.Ubicacion, salon.Capacidad, stat);
             }
 
             return miTabla;
@@ -132,6 +155,7 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
         public DataTable ConsultarSalonesCapacidadMenor(int capa)
         {
             DataTable miTabla = new DataTable();
+            String stat = null;
 
             _miLista = _accesoSalon.BusquedaCapacidadMenorSalon(capa);
 
@@ -142,8 +166,15 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
 
             foreach (Salon salon in _miLista)
             {
-
-                miTabla.Rows.Add(salon.IdSalon, salon.Ubicacion, salon.Capacidad, salon.Status);
+                if (salon.Status == 1)
+                {
+                    stat = "Activo";
+                }
+                else
+                {
+                    stat = "Inactivo";
+                }
+                miTabla.Rows.Add(salon.IdSalon, salon.Ubicacion, salon.Capacidad, stat);
             }
 
             return miTabla;
@@ -152,6 +183,7 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
         public DataTable ConsultarSalonesStatus(int stat)
         {
             DataTable miTabla = new DataTable();
+            String statu = null;
 
             _miLista = _accesoSalon.BusquedaStatusSalon(stat);
 
@@ -162,8 +194,15 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaSalon
 
             foreach (Salon salon in _miLista)
             {
-
-                miTabla.Rows.Add(salon.IdSalon, salon.Ubicacion, salon.Capacidad, salon.Status);
+                if (salon.Status == 1)
+                {
+                    statu = "Activo";
+                }
+                else
+                {
+                    statu = "Inactivo";
+                }
+                miTabla.Rows.Add(salon.IdSalon, salon.Ubicacion, salon.Capacidad, statu);
             }
 
             return miTabla;

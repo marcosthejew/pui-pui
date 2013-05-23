@@ -7,19 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_de_Clases {
+namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Geestion_de_Salones {
     
     
-    public partial class Consultar {
+    public partial class Modificar {
         
         /// <summary>
-        /// Label1 control.
+        /// Label6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label Label6;
         
         /// <summary>
         /// falla control.
@@ -40,66 +40,102 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_de_Clases {
         protected global::System.Web.UI.WebControls.Label Exito;
         
         /// <summary>
-        /// RadioButtonConsultaCompleta control.
+        /// Label4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton RadioButtonConsultaCompleta;
+        protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
-        /// consultaClasePorNombres control.
+        /// TextBoxUbicacion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton consultaClasePorNombres;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxUbicacion;
         
         /// <summary>
-        /// nombreClase control.
+        /// Label3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox nombreClase;
+        protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// consultaClasePorEstatus control.
+        /// TextBoxCapacidad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton consultaClasePorEstatus;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxCapacidad;
         
         /// <summary>
-        /// DropDownListEstatusClase control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListEstatusClase;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// botonBuscarClase control.
+        /// Activo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button botonBuscarClase;
+        protected global::System.Web.UI.WebControls.RadioButton Activo;
         
         /// <summary>
-        /// GridConsultar control.
+        /// Label2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridConsultar;
+        protected global::System.Web.UI.WebControls.Label Label2;
+        
+        /// <summary>
+        /// Inactivo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton Inactivo;
+        
+        /// <summary>
+        /// Label5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label5;
+        
+        /// <summary>
+        /// Cancelar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Cancelar;
+        
+        /// <summary>
+        /// Aceptar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Aceptar;
     }
 }

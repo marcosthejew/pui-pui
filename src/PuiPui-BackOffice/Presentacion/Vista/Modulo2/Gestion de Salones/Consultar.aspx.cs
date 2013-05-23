@@ -24,7 +24,10 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Geestion_de_Salones
 
         #endregion
 
-        public Consultar() {
+        #region Metodos
+
+        public Consultar() 
+        {
 
             this._logicaSalon = new LogicaSalon();
         
@@ -35,6 +38,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Geestion_de_Salones
             try 
             {
                 _listaSalon = _logicaSalon.ObtenerSalones();
+
                 if (!IsPostBack)
                 {
                     GridConsultar.Visible = false;
@@ -48,7 +52,6 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Geestion_de_Salones
             }
             catch (NullReferenceException)
             {
-
                 Response.Redirect("../../Home/Modulo2/Geestion_de_Salones/Consultar.aspx");
             }
         }
@@ -59,27 +62,35 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Geestion_de_Salones
         }
 
         protected void GridConsultar_PageIndexChanging(object sender, GridViewPageEventArgs e)
-        {
-            
+        {            
             GridConsultar.PageIndex = e.NewPageIndex;
+            cargarTabla();
+
             switch (_checkSeleccion)
-            {
-                
+            {                
                 case 1:
+
                     GridConsultar.DataSource = _logicaSalon.ConsultarSalones();
                     GridConsultar.DataBind();
                     break;
+
                 case 2:
+
                     this._ubicacion = salon.Text;
                     GridConsultar.DataSource = _logicaSalon.ConsultarSalonesUbicacion(_ubicacion);
                     GridConsultar.DataBind();
                     break;
+
                 case 3:
+
                     GridConsultar.DataSource = _logicaSalon.ConsultarSalonesStatus(DropDownListStatusSalon.SelectedIndex);
                     GridConsultar.DataBind();
                     break;
+
                 case 4:
+
                     this._capacidad = Convert.ToInt32(TextBoxCapacidad.Text);
+
                     if (DropDownListCapacidadSalon.SelectedItem.ToString().Equals("Mayor a"))
                     {
                         //_statusCapacidad = 1;
@@ -195,7 +206,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Geestion_de_Salones
             _miTabla.Columns.Add("No.", typeof(string));
             _miTabla.Columns.Add("Ubicacion", typeof(string));
             _miTabla.Columns.Add("Capacidad", typeof(string));
-            _miTabla.Columns.Add("Status", typeof(string));
+            _miTabla.Columns.Add("Estatus", typeof(string));
 
             foreach (Salon salon in _listaSalon)
             {
@@ -213,11 +224,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Geestion_de_Salones
             GridConsultar.DataBind();
         }
 
-        protected void DropDownListStatusSalon_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        #endregion Metodos
 
     }
 }

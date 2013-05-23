@@ -7,19 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_de_Clases {
+namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_Clase_Salon_Instructor {
     
     
-    public partial class Consultar {
+    public partial class WebForm1 {
         
         /// <summary>
-        /// Label1 control.
+        /// Label2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
         /// falla control.
@@ -40,66 +40,66 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_de_Clases {
         protected global::System.Web.UI.WebControls.Label Exito;
         
         /// <summary>
-        /// RadioButtonConsultaCompleta control.
+        /// Label4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton RadioButtonConsultaCompleta;
+        protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
-        /// consultaClasePorNombres control.
+        /// nombreClaseActual control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton consultaClasePorNombres;
+        protected global::System.Web.UI.WebControls.TextBox nombreClaseActual;
         
         /// <summary>
-        /// nombreClase control.
+        /// Label3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox nombreClase;
+        protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// consultaClasePorEstatus control.
+        /// TextArea control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton consultaClasePorEstatus;
+        protected global::System.Web.UI.WebControls.TextBox TextArea;
         
         /// <summary>
-        /// DropDownListEstatusClase control.
+        /// EstatusActual control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListEstatusClase;
+        protected global::System.Web.UI.WebControls.TextBox EstatusActual;
         
         /// <summary>
-        /// botonBuscarClase control.
+        /// botonRegresar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button botonBuscarClase;
+        protected global::System.Web.UI.WebControls.Button botonRegresar;
         
         /// <summary>
-        /// GridConsultar control.
+        /// botonAceptar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridConsultar;
+        protected global::System.Web.UI.WebControls.Button botonAceptar;
     }
 }

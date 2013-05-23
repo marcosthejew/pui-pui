@@ -12,6 +12,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_de_Clases
     public partial class ConsultaDetalle : System.Web.UI.Page
     {
         private String Desc;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             String id = Convert.ToString((Request.QueryString["id"] != null) ? Request.QueryString["id"] : "");

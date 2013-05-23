@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_de_Clases {
+namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Geestion_de_Salones {
     
     
     public partial class Consultar {
@@ -40,58 +40,85 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_de_Clases {
         protected global::System.Web.UI.WebControls.Label Exito;
         
         /// <summary>
-        /// RadioButtonConsultaCompleta control.
+        /// consultaCompleta control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton RadioButtonConsultaCompleta;
+        protected global::System.Web.UI.WebControls.RadioButton consultaCompleta;
         
         /// <summary>
-        /// consultaClasePorNombres control.
+        /// consultarSalonPorUbicacion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton consultaClasePorNombres;
+        protected global::System.Web.UI.WebControls.RadioButton consultarSalonPorUbicacion;
         
         /// <summary>
-        /// nombreClase control.
+        /// salon control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox nombreClase;
+        protected global::System.Web.UI.WebControls.TextBox salon;
         
         /// <summary>
-        /// consultaClasePorEstatus control.
+        /// consultarSalonPorCapacidad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton consultaClasePorEstatus;
+        protected global::System.Web.UI.WebControls.RadioButton consultarSalonPorCapacidad;
         
         /// <summary>
-        /// DropDownListEstatusClase control.
+        /// DropDownListCapacidadSalon control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListEstatusClase;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListCapacidadSalon;
         
         /// <summary>
-        /// botonBuscarClase control.
+        /// TextBoxCapacidad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button botonBuscarClase;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxCapacidad;
+        
+        /// <summary>
+        /// consultaSalonPorStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton consultaSalonPorStatus;
+        
+        /// <summary>
+        /// DropDownListStatusSalon control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListStatusSalon;
+        
+        /// <summary>
+        /// Button1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
         /// GridConsultar control.
