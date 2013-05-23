@@ -6,18 +6,25 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using PuiPui_BackOffice.LogicaDeNegocios.Instructor;
 using PuiPui_BackOffice.Entidades.Instructor;
-
+using PuiPui_BackOffice.LogicaDeNegocios.Excepciones;
 namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
 {
     public partial class Eliminar : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+                ddl_Cargar();
+        }
+
+        protected void ddl_Cargar()
+        {
+            dp1.Items.Clear();
             LogicaInstructor objetoLogica = new LogicaInstructor();
-            if (objetoLogica.ConsultarTodosInstructores() != null)
+            if (objetoLogica.ConsultarTodosInstructoresActivos() != null)
             {
                 dp1.Items.Insert(0, new ListItem("Seleccione", "0"));
-                List<Instructor> instructores = objetoLogica.ConsultarTodosInstructores();
+                List<Instructor> instructores = objetoLogica.ConsultarTodosInstructoresActivos();
                 int i = 1;
                 foreach (Instructor instructor in instructores)
                 {
@@ -42,17 +49,28 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
             LogicaInstructor obj = new LogicaInstructor();
             string a=dp1.SelectedValue;
             string[] cedula=a.Split(' ');
+            try
+            {
+                if (obj.EliminarInstructor(cedula[1]))
+                {
+                    lExito.Text = "El instructor ha sido inactivado";
+                    lExito.ForeColor = System.Drawing.Color.Blue;
+                    lExito.Visible = true;
+                    ddl_Cargar();
 
-            if (obj.eliminarInstructor(cedula[1]) == true)
-            {
-                lExito.Text = "El instructor ha sido cambiado a inactivo";
-                lExito.Visible = true;
-               
+                }
+                else
+                {
+                    lExito.Visible = true;
+                    lExito.ForeColor = System.Drawing.Color.Red;
+                    lExito.Text = "El instructor tiene reservaciones pendientes.";
+                }
             }
-            else
+            catch (InstructorException error)
             {
+                lExito.Text = error.Message;
+                lExito.ForeColor = System.Drawing.Color.Red;
                 lExito.Visible = true;
-                lExito.Text = "No se pudo Eliminar ";
             }
         }
     }

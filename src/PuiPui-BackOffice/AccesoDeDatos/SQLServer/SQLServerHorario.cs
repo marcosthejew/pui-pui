@@ -19,6 +19,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
         IConexionSqlServer db = new ConexionSqlServer();
         IConexionSqlServer db2 = new ConexionSqlServer();
 
+        #region BuscarId
         public int BuscarId(string cedula)
         {
             //string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
@@ -46,10 +47,25 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 
                 db.CerrarConexion();
             }
-            catch (SqlException error)
+            catch (ArgumentException e)
             {
-                //En caso de que se viole alguna restriccion sobre la BD
-                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+                throw new EjercicioBDException("Parametros invalidos", e);
+            }
+            catch (InvalidOperationException e)
+            {
+                throw new EjercicioBDException("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new EjercicioBDException("Horario no encontrado", e);
+            }
+            catch (SqlException e)
+            {
+                throw new EjercicioBDException("Error con base de datos", e);
+            }
+            catch (Exception e)
+            {
+                throw new EjercicioBDException("Error general", e);
             }
             finally
             {
@@ -57,10 +73,9 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
             }
             return 0;
            }
+        #endregion BuscarId
 
-
-
-
+        #region AgregarHorario
         public void agregarHorario(Horario horario,int a)
         {
             //string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
@@ -80,20 +95,28 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 cmd.Parameters.AddWithValue("@hora_fin", horario.horafin);
                 cmd.Parameters.AddWithValue("@id_instructor", a);
                 dr = cmd.ExecuteReader();
-
-                //Se recorre cada row
-                if (dr.Read())
-                {
-                    db2.CerrarConexion();
-                   
-                }
-
+                 
                 db2.CerrarConexion();
             }
-            catch (SqlException error)
+            catch (ArgumentException e)
             {
-                //En caso de que se viole alguna restriccion sobre la BD
-                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+                throw new EjercicioBDException("Parametros invalidos", e);
+            }
+            catch (InvalidOperationException e)
+            {
+                throw new EjercicioBDException("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new EjercicioBDException("Horario no encontrado", e);
+            }
+            catch (SqlException e)
+            {
+                throw new EjercicioBDException("Error con base de datos", e);
+            }
+            catch (Exception e)
+            {
+                throw new EjercicioBDException("Error general", e);
             }
             finally
             {
@@ -101,9 +124,9 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
             }
            
         }
+        #endregion AgregarHorario
 
-
-
+        #region ConsultarHorarios
         public List<Horario> ConsultarHorarios(String cedula)
         {
             //string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
@@ -121,10 +144,8 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@cedula", cedula);
                 dr = cmd.ExecuteReader();
-               // List<Horario> horarios = new List<Horario>();
                 bool entra = false;
-                //Se recorre cada row
-                
+
                 while (dr.Read())
                 {
                     entra = true;
@@ -135,31 +156,34 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                     horarios.Add(horario);
                 }
                 db.CerrarConexion();
-              //  if (entra)
-                   // return horarios;
             }
-            catch (SqlException error)
+            catch (ArgumentException e)
             {
-                //En caso de que se viole alguna restriccion sobre la BD
-                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+                throw new EjercicioBDException("Parametros invalidos", e);
+            }
+            catch (InvalidOperationException e)
+            {
+                throw new EjercicioBDException("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new EjercicioBDException("Horario no encontrado", e);
+            }
+            catch (SqlException e)
+            {
+                throw new EjercicioBDException("Error con base de datos", e);
+            }
+            catch (Exception e)
+            {
+                throw new EjercicioBDException("Error general", e);
             }
             finally
             {
                 db.CerrarConexion();
             }
-           // return null;
             return horarios;
         }
-
-
-
-
-
-
-
-
-
-
+        #endregion ConsultarHorarios
 
     }
 }

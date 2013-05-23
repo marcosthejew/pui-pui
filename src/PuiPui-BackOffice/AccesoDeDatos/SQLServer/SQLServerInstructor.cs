@@ -17,9 +17,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
     {
         IConexionSqlServer db = new ConexionSqlServer();
 
-
-
-
+        #region ExisteInstructor
         public bool ExisteInstructor(string tb1)
         {
             //string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
@@ -27,7 +25,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
             SqlConnection conexion = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
             SqlDataReader dr;
-
+            bool exito = false;
             try
             {
                 conexion = new SqlConnection(cadenaConexion);
@@ -37,39 +35,49 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 cmd.Parameters.AddWithValue("@cedula", tb1);
                 dr = cmd.ExecuteReader();
 
-                //Se recorre cada row
                 if (dr.Read())
-                {
-                    db.CerrarConexion();
-                    return true;
-                }
+                    exito = true;
 
                 db.CerrarConexion();
             }
-            catch (SqlException error)
+            catch (ArgumentException e)
             {
-                //En caso de que se viole alguna restriccion sobre la BD
-                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+                throw new InstructorBDException("Parametros invalidos", e);
+            }
+            catch (InvalidOperationException e)
+            {
+                throw new InstructorBDException("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new InstructorBDException("Instructor no encontrado", e);
+            }
+            catch (SqlException e)
+            {
+                throw new InstructorBDException("Error con base de datos", e);
+            }
+            catch (Exception e)
+            {
+                throw new InstructorBDException("Error general", e);
             }
             finally
             {
                 db.CerrarConexion();
             }
-            return false;
+            return exito;
 
         }
+        #endregion ExisteInstructor
 
-
-
+        #region InsertarInstructor
         public bool insertarInstructor(string tb1, string tb2, string tb3, int tb4, string tb5, string tb6, string tb7, int tb8, string tb9, string tb10, string tb11, int tb12, DateTime calendar, string cb)
         {
-
             //string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
             string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
             SqlConnection conexion = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
             SqlDataReader dr;
-
+            bool exito = false;
             try
             {
                 conexion = new SqlConnection(cadenaConexion);
@@ -94,33 +102,40 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 cmd.Parameters.AddWithValue("@status", "Activo");
                 dr = cmd.ExecuteReader();
 
-                //Se recorre cada row
-                if (dr.Read())
-                {
-                    db.CerrarConexion();
-                    return true;
-                }
-
+                exito = true;
                 db.CerrarConexion();
             }
-            catch (SqlException error)
+            catch (ArgumentException e)
             {
-                //En caso de que se viole alguna restriccion sobre la BD
-                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+                throw new InstructorBDException("Parametros invalidos", e);
+            }
+            catch (InvalidOperationException e)
+            {
+                throw new InstructorBDException("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new InstructorBDException("Instructor no encontrado", e);
+            }
+            catch (SqlException e)
+            {
+                throw new InstructorBDException("Error con base de datos", e);
+            }
+            catch (Exception e)
+            {
+                throw new InstructorBDException("Error general", e);
             }
             finally
             {
                 db.CerrarConexion();
             }
-            return false;
+            return exito;
         }
+        #endregion InsertarInstructor
 
-
-
-
+        #region ConsultarInstructores
         public List<Instructor> ConsultarInstructores()
         {
-
            // string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
             string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
             SqlConnection conexion = new SqlConnection();
@@ -139,8 +154,6 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 
                 bool entra = false;
 
-                //Se recorre cada row
-
                 while (dr.Read())
                 {
                     entra = true;
@@ -155,22 +168,35 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 if (entra)
                     return instructores;
             }
-            catch (SqlException error)
+            catch (ArgumentException e)
             {
-                //En caso de que se viole alguna restriccion sobre la BD
-                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+                throw new InstructorBDException("Parametros invalidos", e);
             }
-
+            catch (InvalidOperationException e)
+            {
+                throw new InstructorBDException("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new InstructorBDException("ejercicio no encontrado", e);
+            }
+            catch (SqlException e)
+            {
+                throw new InstructorBDException("Error con base de datos", e);
+            }
+            catch (Exception e)
+            {
+                throw new InstructorBDException("Error general", e);
+            }
             finally
             {
                 db.CerrarConexion();
             }
             return null;
         }
+        #endregion ConsultarInstructores
 
-
-
-
+        #region ConsultarInstructor
         public Instructor ConsultarIntructor(string cedula)
         {
             //string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
@@ -178,8 +204,6 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
             SqlConnection conexion = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
             SqlDataReader dr;
-
-
 
             try
             {
@@ -191,7 +215,6 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 dr = cmd.ExecuteReader();
                 Instructor instructor1 = new Instructor();
 
-                //Se recorre cada row
                 if (dr.Read())
                 {
                     instructor1.CedulaPersona = Convert.ToInt32(dr.GetValue(0));
@@ -214,33 +237,46 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 db.CerrarConexion();
                 SQLServerHorario obj = new SQLServerHorario();
                 if (obj.ConsultarHorarios(dr.GetValue(0).ToString()) != null)
-                instructor1.Horario = obj.ConsultarHorarios(cedula);
+                    instructor1.Horario = obj.ConsultarHorarios(cedula);
 
                 return instructor1;
             }
-            catch (SqlException error)
+            catch (ArgumentException e)
             {
-                //En caso de que se viole alguna restriccion sobre la BD
-                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+                throw new InstructorBDException("Parametros invalidos", e);
+            }
+            catch (InvalidOperationException e)
+            {
+                throw new InstructorBDException("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new InstructorBDException("Instructor no encontrado", e);
+            }
+            catch (SqlException e)
+            {
+                throw new InstructorBDException("Error con base de datos", e);
+            }
+            catch (Exception e)
+            {
+                throw new InstructorBDException("Error general", e);
             }
             finally
             {
                 db.CerrarConexion();
             }
         }
+        #endregion ConsultarInstructor
 
-
-
-
-        public bool eliminarInstructor(string a) 
+        #region EliminarInstructor
+        public bool EliminarInstructor(string a) 
         {
-
             //string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
             string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
             SqlConnection conexion = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
             SqlDataReader dr;
-
+            bool exito = false;
             try
             {
                 conexion = new SqlConnection(cadenaConexion);
@@ -250,30 +286,256 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 cmd.Parameters.AddWithValue("@cedula", a);
                 dr = cmd.ExecuteReader();
 
-                //Se recorre cada row
-                if (dr.Read())
-                {
-                    db.CerrarConexion();
-                    return false;
-                }
-
+                exito = true;
                 db.CerrarConexion();
             }
-            catch (SqlException error)
+            catch (ArgumentException e)
             {
-                //En caso de que se viole alguna restriccion sobre la BD
-                throw (new ExcepcionConexion(("Error: " + error.Message), error));
+                throw new InstructorBDException("Parametros invalidos", e);
+            }
+            catch (InvalidOperationException e)
+            {
+                throw new InstructorBDException("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new InstructorBDException("Instructor no encontrado", e);
+            }
+            catch (SqlException e)
+            {
+                throw new InstructorBDException("Error con base de datos", e);
+            }
+            catch (Exception e)
+            {
+                throw new InstructorBDException("Error general", e);
             }
             finally
             {
                 db.CerrarConexion();
             }
-            return true;
-        
-        
-        
-        }
+            return exito;
 
+        }
+        #endregion EliminarInstructor
+
+        #region ConsultarInstructoresActivos
+        public List<Instructor> ConsultarInstructoresActivos()
+        {
+            // string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader dr;
+
+            try
+            {
+                conexion = new SqlConnection(cadenaConexion);
+                conexion.Open();
+                cmd = new SqlCommand("[dbo].[consultarTodosInstructoresActivos]", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                dr = cmd.ExecuteReader();
+
+                List<Instructor> instructores = new List<Instructor>();
+
+                bool entra = false;
+
+                while (dr.Read())
+                {
+                    entra = true;
+                    Instructor instructor = new Instructor();
+                    instructor.IdPersona = Convert.ToInt32(dr.GetValue(0));
+                    instructor.CedulaPersona = Convert.ToInt32(dr.GetValue(1));
+                    instructor.NombrePersona1 = dr.GetValue(2).ToString();
+                    instructor.ApellidoPersona1 = dr.GetValue(3).ToString();
+                    instructores.Add(instructor);
+                }
+                db.CerrarConexion();
+                if (entra)
+                    return instructores;
+            }
+            catch (ArgumentException e)
+            {
+                throw new InstructorBDException("Parametros invalidos", e);
+            }
+            catch (InvalidOperationException e)
+            {
+                throw new InstructorBDException("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new InstructorBDException("ejercicio no encontrado", e);
+            }
+            catch (SqlException e)
+            {
+                throw new InstructorBDException("Error con base de datos", e);
+            }
+            catch (Exception e)
+            {
+                throw new InstructorBDException("Error general", e);
+            }
+            finally
+            {
+                db.CerrarConexion();
+            }
+            return null;
+        }
+        #endregion ConsultarInstructoresActivos
+
+        #region TieneClase
+        public bool TieneClase(string cedula)
+        {
+            //string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader dr;
+            bool exito = false;
+            try
+            {
+                conexion = new SqlConnection(cadenaConexion);
+                conexion.Open();
+                cmd = new SqlCommand("[dbo].[tieneClase]", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@cedula", cedula);
+                dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                    exito = true;
+
+                db.CerrarConexion();
+            }
+            catch (ArgumentException e)
+            {
+                throw new InstructorBDException("Parametros invalidos", e);
+            }
+            catch (InvalidOperationException e)
+            {
+                throw new InstructorBDException("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new InstructorBDException("Instructor no encontrado", e);
+            }
+            catch (SqlException e)
+            {
+                throw new InstructorBDException("Error con base de datos", e);
+            }
+            catch (Exception e)
+            {
+                throw new InstructorBDException("Error general", e);
+            }
+            finally
+            {
+                db.CerrarConexion();
+            }
+            return exito;
+
+        }
+        #endregion TieneClase
+
+        #region TieneCliente
+        public bool TieneCliente(string cedula)
+        {
+            //string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader dr;
+            bool exito = false;
+            try
+            {
+                conexion = new SqlConnection(cadenaConexion);
+                conexion.Open();
+                cmd = new SqlCommand("[dbo].[tieneCliente]", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@cedula", cedula);
+                dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                    exito = true;
+
+                db.CerrarConexion();
+            }
+            catch (ArgumentException e)
+            {
+                throw new InstructorBDException("Parametros invalidos", e);
+            }
+            catch (InvalidOperationException e)
+            {
+                throw new InstructorBDException("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new InstructorBDException("Instructor no encontrado", e);
+            }
+            catch (SqlException e)
+            {
+                throw new InstructorBDException("Error con base de datos", e);
+            }
+            catch (Exception e)
+            {
+                throw new InstructorBDException("Error general", e);
+            }
+            finally
+            {
+                db.CerrarConexion();
+            }
+            return exito;
+
+        }
+        #endregion TieneCliente
+
+        #region TieneEvaluacion
+        public bool TieneEvaluacion(string cedula)
+        {
+            //string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader dr;
+            bool exito = false;
+            try
+            {
+                conexion = new SqlConnection(cadenaConexion);
+                conexion.Open();
+                cmd = new SqlCommand("[dbo].[tieneEvaluacion]", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@cedula", cedula);
+                dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                    exito = true;
+
+                db.CerrarConexion();
+            }
+            catch (ArgumentException e)
+            {
+                throw new InstructorBDException("Parametros invalidos", e);
+            }
+            catch (InvalidOperationException e)
+            {
+                throw new InstructorBDException("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new InstructorBDException("Instructor no encontrado", e);
+            }
+            catch (SqlException e)
+            {
+                throw new InstructorBDException("Error con base de datos", e);
+            }
+            catch (Exception e)
+            {
+                throw new InstructorBDException("Error general", e);
+            }
+            finally
+            {
+                db.CerrarConexion();
+            }
+            return exito;
+
+        }
+        #endregion TieneEvaluacion
 
 
     }

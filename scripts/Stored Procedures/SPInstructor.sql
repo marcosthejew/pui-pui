@@ -68,7 +68,8 @@ as
 BEGIN
 set nocount on	
 select  I.id_instructor, I.cedula, I.primer_nombre, I.primer_apellido
-        from Instructor I	
+        from Instructor I
+        order by I.primer_nombre, I.primer_apellido ASC
 END;
 GO
 
@@ -128,6 +129,77 @@ as
 BEGIN
 	UPDATE Instructor
 	SET status='Inactivo'
-	WHERE @cedula=cedula
+	WHERE cedula=@cedula
+END;
+GO
+
+USE [puipuiDB]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON 
+GO
+CREATE procedure [dbo].[consultarTodosInstructoresActivos]
+as
+BEGIN
+set nocount on	
+select  I.id_instructor, I.cedula, I.primer_nombre, I.primer_apellido
+        from Instructor I
+        where I.status = 'Activo'
+        order by I.primer_nombre, I.primer_apellido ASC
+END;
+GO
+
+USE [puipuiDB]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON 
+GO
+CREATE procedure [dbo].[tieneClase]
+@cedula nchar(50)
+as
+BEGIN
+set nocount on	
+        select C.id_instructor
+        from Clase_Salon C, Instructor I
+        where C.id_instructor = I.id_instructor
+        and I.cedula = @cedula
+END;
+GO
+
+USE [puipuiDB]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON 
+GO
+CREATE procedure [dbo].[tieneCliente]
+@cedula nchar(50)
+as
+BEGIN
+set nocount on	
+        select R.id_instructor
+		from Reservacion_Instructor R, Instructor I
+		where R.id_instructor = I.id_instructor
+		and I.cedula = @cedula
+END;
+GO
+
+USE [puipuiDB]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON 
+GO
+CREATE procedure [dbo].[tieneEvaluacion]
+@cedula nchar(50)
+as
+BEGIN
+set nocount on	
+        select E.id_instructor
+		from Evaluacion E, Instructor I
+		where E.id_instructor = I.id_instructor
+		and I.cedula = @cedula
 END;
 GO

@@ -92,6 +92,7 @@
     <Content Include="Presentacion\Vista\Modulo1\Gestion de Ejercicios\Eliminar.aspx" />
     <Content Include="Presentacion\Vista\Modulo1\Gestion de Ejercicios\EliminarEjercicio.aspx" />
     <Content Include="Presentacion\Vista\Modulo1\Gestion de Ejercicios\Modificar.aspx" />
+    <Content Include="Presentacion\Vista\Modulo1\Gestion de Instructores\Act-Ina.aspx" />
     <Content Include="Presentacion\Vista\Modulo1\Gestion de Instructores\Agregar.aspx" />
     <Content Include="Presentacion\Vista\Modulo1\Gestion de Instructores\Consultar.aspx" />
     <Content Include="Presentacion\Vista\Modulo1\Gestion de Instructores\Eliminar.aspx" />
@@ -142,6 +143,7 @@
     <Compile Include="AccesoDeDatos\Excepciones_BD\EjercicioBDException.cs" />
     <Compile Include="AccesoDeDatos\Excepciones_BD\ExcepcionConexion.cs" />
     <Compile Include="AccesoDeDatos\Excepciones_BD\ExcepcionPersona.cs" />
+    <Compile Include="AccesoDeDatos\Excepciones_BD\HorarioBDException.cs" />
     <Compile Include="AccesoDeDatos\Excepciones_BD\InstructorBDException.cs" />
     <Compile Include="AccesoDeDatos\Excepciones_BD\MusculoBDException.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerClase.cs" />
@@ -184,6 +186,7 @@
     <Compile Include="Entidades\Cliente\Acceso.cs" />
     <Compile Include="Entidades\Ejercicio\Musculo.cs" />
     <Compile Include="LogicaDeNegocios\Excepciones\EjercicioException.cs" />
+    <Compile Include="LogicaDeNegocios\Excepciones\HorarioException.cs" />
     <Compile Include="LogicaDeNegocios\Excepciones\InstructorException.cs" />
     <Compile Include="LogicaDeNegocios\Excepciones\MusculoException.cs" />
     <Compile Include="LogicaDeNegocios\Instructor\LogicaHorario.cs" />
@@ -283,6 +286,13 @@
     </Compile>
     <Compile Include="Presentacion\Vista\Modulo1\Gestion de Ejercicios\Modificar.aspx.designer.cs">
       <DependentUpon>Modificar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Vista\Modulo1\Gestion de Instructores\Act-Ina.aspx.cs">
+      <DependentUpon>Act-Ina.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Vista\Modulo1\Gestion de Instructores\Act-Ina.aspx.designer.cs">
+      <DependentUpon>Act-Ina.aspx</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Vista\Modulo1\Gestion de Instructores\Agregar.aspx.cs">
       <DependentUpon>Agregar.aspx</DependentUpon>
