@@ -125,6 +125,7 @@
     <Compile Include="AccesoDeDatos\Conexion\Conexion.cs" />
     <Compile Include="AccesoDeDatos\Conexion\IConexion\IConexionSQLServer.cs" />
     <Compile Include="AccesoDeDatos\Excepciones_BD\ExcepcionConexion.cs" />
+    <Compile Include="AccesoDeDatos\Excepciones_BD\ExcepcionPersona.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerEvaluacionInstructor.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerHistorialEjercicios.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerPersona.cs" />
