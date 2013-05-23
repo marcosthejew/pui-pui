@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-//using NUnit.Framework;
+using NUnit.Framework;
 using PuiPui_BackOffice.AccesoDeDatos.SQLServer;
 using PuiPui_BackOffice.Entidades.Ejercicio;
 using PuiPui_BackOffice.LogicaDeNegocios.Ejercicio;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 
 namespace PuiPui_BackOffice.PruebasUnitarias.Ejercicio
 {
-    [TestClass]
-    public class SQLEjercicioTest
+    [TestFixture]
+    public class PruebaEjercicio
     {
-        [TestMethod]
+        [Test]
         public void TestAgregarEjercicio()
         {
             LogicaEjercicio objEjercicio = new LogicaEjercicio();
@@ -23,7 +23,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.Ejercicio
             Assert.AreEqual(true, objEjercicio.AgregarEjercicio(nombre, descripcion, musculo));
         }
 
-        [TestMethod]
+        [Test]
         public void TestActualizarEjercicio()
         {
             LogicaEjercicio objEjercicio = new LogicaEjercicio();
@@ -35,7 +35,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.Ejercicio
             Assert.AreEqual(true, objEjercicio.ActualizarEjercicio(nombreInicial, ejercicio, nombreMusculo));
         }
 
-        [TestMethod]
+        [Test]
         public void TestConsultarEjercicio()
         {
             LogicaEjercicio objEjercicio = new LogicaEjercicio();
@@ -46,7 +46,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.Ejercicio
             Assert.AreEqual(ejercicio.Descripcion, objEjercicio.ConsultarEjercicio(ejercicio.Nombre).Descripcion.TrimEnd());
         }
 
-        [TestMethod]
+        [Test]
         public void TestEliminarEjercicio()
         {
             LogicaEjercicio objEjercicio = new LogicaEjercicio();
