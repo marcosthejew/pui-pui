@@ -10,7 +10,7 @@
 namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_de_Clases {
     
     
-    public partial class Modificar {
+    public partial class ConsultaDetalle {
         
         /// <summary>
         /// Titulo control.
@@ -49,13 +49,13 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_de_Clases {
         protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
-        /// nombreClaseAModificar control.
+        /// nombreClaseActual control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox nombreClaseAModificar;
+        protected global::System.Web.UI.WebControls.TextBox nombreClaseActual;
         
         /// <summary>
         /// Label3 control.
@@ -76,22 +76,13 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_de_Clases {
         protected global::System.Web.UI.WebControls.TextBox TextArea;
         
         /// <summary>
-        /// Activo control.
+        /// EstatusActual control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton Activo;
-        
-        /// <summary>
-        /// Inactivo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton Inactivo;
+        protected global::System.Web.UI.WebControls.TextBox EstatusActual;
         
         /// <summary>
         /// botonRegresar control.

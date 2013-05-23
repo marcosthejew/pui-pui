@@ -171,9 +171,9 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
             {
                 _conexion = new SqlConnection(_cadenaConexion);
                 _conexion.Open();
-                _cmd = new SqlCommand("[dbo].[DetalleClases]", _conexion);
+                _cmd = new SqlCommand("[dbo].[DetalleClase]", _conexion);
                 _cmd.CommandType = CommandType.StoredProcedure;
-                _param = new SqlParameter("@Id_clase", id);
+                _param = new SqlParameter("@Idclass", id);
                 _cmd.Parameters.Add(_param);
 
                 _dr = _cmd.ExecuteReader();
@@ -182,12 +182,14 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 
 
                 _objetoClase = new Clase();
+                while (_dr.Read())
+                {
 
-                _objetoClase.IdClase = Convert.ToInt32(_dr.GetValue(0));
-                _objetoClase.Nombre = _dr.GetValue(1).ToString();
-                _objetoClase.Descripcion = _dr.GetValue(2).ToString();
-                _objetoClase.Status = Convert.ToInt32(_dr.GetValue(3));
+                    _objetoClase.Nombre = _dr.GetValue(0).ToString();
+                    _objetoClase.Descripcion = _dr.GetValue(1).ToString();
+                    _objetoClase.Status = Convert.ToInt32(_dr.GetValue(2));
 
+                }
                 _db.CerrarConexion();
 
             }

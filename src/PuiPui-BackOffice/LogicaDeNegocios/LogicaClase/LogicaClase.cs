@@ -56,6 +56,13 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.LogicaClase
 
             return miTabla;
         }
+        public Clase ObtenerDetalleClases(int id)
+        {
+            //conectar a la bd
+            _clase = _accesoClase.DetalleClases(id);
+
+            return _clase;
+        }
 
         public List<Clase> ObtenerClases()
         {

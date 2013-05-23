@@ -23,6 +23,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_de_Clases
             try
             {
                 _listaClase = _logicaClase.ObtenerClases();
+                
                 if (!IsPostBack)
                 {
                     GridConsultar.Visible = false;
@@ -31,18 +32,19 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_de_Clases
                 else
                 {
                     GridConsultar.Visible = true;
+                   // cargarTabla();
                 }
             }
             catch (NullReferenceException)
             {
                 
-               Response.Redirect("../../Home/Modulo2/Gestion_de_Clases/Consultar.aspx");
+               Response.Redirect("../../Vista/Modulo2/Gestion_de_Clases/Consultar.aspx");
             }
         }
 
         protected void GridConsultar_SelectedIndexChanged(object sender, EventArgs e)
         {
-      /*  int seleccion = GridConsultar.SelectedIndex;
+      /* int seleccion = GridConsultar.SelectedIndex;
            Clase clases = _listaClase[seleccion];
            Session["No"] = clases;
            Response.Redirect("DetalleConsultar.aspx");*/
@@ -51,9 +53,25 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_de_Clases
         protected void GridConsultar_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             GridConsultar.PageIndex = e.NewPageIndex;
-            //cargarTabla();
-
-
+            cargarTabla();
+           /*  if ((consultaClasePorEstatus.Checked==false)&&(consultaClasePorNombres.Checked==false))
+            {
+                cargarTabla();
+            }
+             if (consultaClasePorNombres.Checked==true)
+             {
+                  GridConsultar.DataSource = _logicaClase.ConsultarClasesNombre(nombreClase.Text);
+                    GridConsultar.DataBind();
+             }
+             if (consultaClasePorEstatus.Checked==true)
+             {
+                  GridConsultar.DataSource = _logicaClase.ConsultarClaseStatus(DropDownListEstatusClase.SelectedIndex);
+                    GridConsultar.DataBind();
+             }
+             if (RadioButtonConsultaCompleta.Checked==true)
+             {
+                 cargarTabla();
+             }*/
             switch (seleccionCheck)
             {
                 case 1:
@@ -76,6 +94,8 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_de_Clases
 
                     break;
 
+               
+
             }
         }
 
@@ -91,9 +111,9 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_de_Clases
                 Session["idClase"] = id;
                 char[] charsToTrim = { '*', ' ', '\'', 'O', ':' };
                 char[] charsToTrim1 = { '*', ' ', '\'', ':' };    
-                nombre = nombre.Trim(charsToTrim1);  
+                nombre = nombre.Trim(charsToTrim1);
 
-                Response.Redirect("DetalleConsultar.aspx?nombre=" + nombre + "&estatus=" + estatus + "&id=" + id);
+                Response.Redirect("ConsultaDetalle.aspx?nombre=" + nombre + "&estatus=" + estatus + "&id=" + id);
 
             }
 
@@ -101,7 +121,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_de_Clases
 
         protected void botonBuscarClase_Click(object sender, EventArgs e)
         {
-            
+           
             switch (seleccionCheck)
             {
                 case 1: 

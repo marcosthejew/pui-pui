@@ -103,6 +103,7 @@
     <Content Include="Presentacion\Vista\Modulo2\Geestion de Salones\Modificar.aspx" />
     <Content Include="Presentacion\Vista\Modulo2\Gestion de Clases\Act-Ina.aspx" />
     <Content Include="Presentacion\Vista\Modulo2\Gestion de Clases\Agregar.aspx" />
+    <Content Include="Presentacion\Vista\Modulo2\Gestion de Clases\ConsultaDetalle.aspx" />
     <Content Include="Presentacion\Vista\Modulo2\Gestion de Clases\Consultar.aspx" />
     <Content Include="Presentacion\Vista\Modulo2\Gestion de Clases\Eliminar.aspx" />
     <Content Include="Presentacion\Vista\Modulo2\Gestion de Clases\Modificar.aspx" />
@@ -357,6 +358,13 @@
     <Compile Include="Presentacion\Vista\Modulo2\Gestion de Clases\Agregar.aspx.designer.cs">
       <DependentUpon>Agregar.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Vista\Modulo2\Gestion de Clases\ConsultaDetalle.aspx.cs">
+      <DependentUpon>ConsultaDetalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Vista\Modulo2\Gestion de Clases\ConsultaDetalle.aspx.designer.cs">
+      <DependentUpon>ConsultaDetalle.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Vista\Modulo2\Gestion de Clases\Consultar.aspx.cs">
       <DependentUpon>Consultar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -506,11 +514,11 @@
     <Compile Include="PruebasUnitarias\Instructor\PruebaInstructor.cs" />
     <Compile Include="PruebasUnitarias\PruebaConexion.cs" />
     <Compile Include="PruebasUnitarias\Rutina\PruebaRutina.cs" />
-    <Compile Include="PruebasUnitarias\SalonTest\PruebaSalon.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Fakes\" />
+    <Folder Include="PruebasUnitarias\Salon\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Account\Web.config" />
