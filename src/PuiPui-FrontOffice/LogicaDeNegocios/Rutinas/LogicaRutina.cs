@@ -7,8 +7,7 @@ using System.Web;
 using PuiPui_FrontOffice.AccesoDeDatos.Conexion;
 using PuiPui_FrontOffice.Entidades.Rutina;
 using PuiPui_FrontOffice.AccesoDeDatos.SQLServer;
-using PuiPui_BackOffice.AccesoDeDatos.SQLServer;
-using PuiPui_BackOffice.Entidades;
+using PuiPui_FrontOffice.Entidades;
 namespace PuiPui_FrontOffice.LogicaDeNegocios.Rutinas
 
 {
@@ -126,6 +125,27 @@ namespace PuiPui_FrontOffice.LogicaDeNegocios.Rutinas
             return find_id;
         
         }
+        public Entidades.Ejercicio.Ejercicio BuscaIDEjercicio(string nombre_ejercicio)
+        {
+            Entidades.Ejercicio.Ejercicio ejercicio = new Entidades.Ejercicio.Ejercicio();
+            SQLServerEjercicio busca_ejercicio = new    SQLServerEjercicio();
+            ejercicio = busca_ejercicio.ConsultarEjercicio(nombre_ejercicio);
+            return ejercicio;
+        
+        
+        }
+        public Entidades.Cliente.Persona BuscaIDNombrePersona(string nombre_persona)
+        {
+            Entidades.Cliente.Persona persona = new Entidades.Cliente.Clientes();
+            SQLServerPersona busca_persona = new SQLServerPersona();
+            persona = busca_persona.ConsultarPersonaPorLogin(nombre_persona);
+            return persona;
+
+
+        }
+
+
+
 
 
         public Rutina Logirutina

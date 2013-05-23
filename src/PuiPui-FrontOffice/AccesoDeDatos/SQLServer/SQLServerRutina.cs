@@ -38,14 +38,64 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
 
                 while (_dr.Read())
                 {
-                    _ruti.Descripcion =_dr.GetValue(0).ToString();
-                    tiempo = _dr.GetValue(1).ToString();
+
+                    _ruti.Descripcion =_dr.GetValue(1).ToString();
+                    tiempo = _dr.GetValue(2).ToString();
                     _miTiempo = new DateTime();
                     _miTiempo = DateTime.ParseExact(tiempo, "HH:mm",null);
                     _ruti.Tiempo = _miTiempo;
-                    _ruti.Repeteciones = Convert.ToInt32(_dr.GetValue(2));
+                    _ruti.Repeteciones = Convert.ToInt32(_dr.GetValue(3));
                     _listarutina.Add(_ruti);
                 
+                }
+                db.CerrarConexion();
+                if (_listarutina != null)
+                    return _listarutina;
+            }
+            catch (SqlException e)
+            {
+                throw (new ExcepcionConexion(("Error: " + e.Message), e));
+
+
+            }
+
+            finally
+            {
+                _conexion.Close();
+            }
+            return _listarutina;
+        }
+        public List<Rutina> BDTodosConsultaRutinas()
+        {
+
+
+            string _cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            SqlConnection _conexion = new SqlConnection();
+            SqlCommand _cmd = new SqlCommand();
+            SqlDataReader _dr;
+            Rutina _ruti = new Rutina();
+            List<Rutina> _listarutina = new List<Rutina>();
+            DateTime _miTiempo;
+            string tiempo = "";
+            try
+            {
+                _conexion = new SqlConnection(_cadenaConexion);
+                _conexion.Open();
+                _cmd = new SqlCommand("[dbo].[buscar_rutina]", _conexion);
+                _dr = _cmd.ExecuteReader();
+
+                while (_dr.Read())
+                {
+                    
+                    _ruti.Id_rutina = Convert.ToInt32(_dr.GetValue(0));
+                    _ruti.Descripcion = _dr.GetValue(1).ToString();
+                    tiempo = _dr.GetValue(2).ToString();
+                    _miTiempo = new DateTime();
+                    _miTiempo = DateTime.ParseExact(tiempo, "HH:mm", null);
+                    _ruti.Tiempo = _miTiempo;
+                    _ruti.Repeteciones = Convert.ToInt32(_dr.GetValue(3));
+                    _listarutina.Add(_ruti);
+
                 }
                 db.CerrarConexion();
                 if (_listarutina != null)
