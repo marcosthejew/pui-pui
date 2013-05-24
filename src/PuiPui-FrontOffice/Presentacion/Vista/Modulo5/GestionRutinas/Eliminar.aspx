@@ -58,7 +58,7 @@
                 <td class="auto-style6">
                     Nombre Rutina</td>
                 <td class="auto-style5">
-                    <asp:Label ID="tbNombre" runat="server" ForeColor="Black"></asp:Label>
+                    <asp:Label ID="tbNombre" runat="server" ForeColor="White"></asp:Label>
 
                 </td>
             </tr>
@@ -77,7 +77,7 @@
                 <td class="auto-style6">
                     Tiempo</td>
                 <td class="auto-style5">
-                    <asp:Label ID="tbTiempo" runat="server" ForeColor="Black"></asp:Label>
+                    <asp:Label ID="tbTiempo" runat="server" ForeColor="White"></asp:Label>
                 </td>
 
             </tr>
@@ -90,7 +90,7 @@
                     Repeticiones&nbsp;&nbsp;&nbsp;
                     <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:Label ID="tbRepeticiones" runat="server" ForeColor="Black"></asp:Label>
+                    <asp:Label ID="tbRepeticiones" runat="server" ForeColor="White"></asp:Label>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <br />
                  </td>

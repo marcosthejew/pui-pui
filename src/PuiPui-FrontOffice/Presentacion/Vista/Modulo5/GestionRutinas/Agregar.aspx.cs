@@ -7,12 +7,13 @@ using System.Web.UI.WebControls;
 using PuiPui_FrontOffice.LogicaDeNegocios.Rutinas;
 using PuiPui_FrontOffice.Entidades.Cliente; //en caso de estar en el back Office
 
-using PuiPui_FrontOffice.Entidades.Ejercicio; //en caso de estar en el front Office
+using PuiPui_FrontOffice.Entidades.Ejercicio;
+using PuiPui_FrontOffice.LogicaDeNegocios.Excepciones; //en caso de estar en el front Office
 
 
 
 
-namespace PuiPui_FrontOffice.Presentacion.Vista.Modulo5
+namespace PuiPui_FrontOffice.Presentacion.Vista.Modulo5.GestionRutinas
 {
 
 
@@ -38,18 +39,29 @@ namespace PuiPui_FrontOffice.Presentacion.Vista.Modulo5
 
                 if (!IsPostBack)
                 {
-                    LogicaRutina larutina = new LogicaRutina();
 
-                    List<Ejercicio> ejercicios = larutina.ConsultaTodoEjercicios();
-                    int i = 0;
-                    foreach (Ejercicio ejer in ejercicios)
+
+
+                    try
                     {
-                        DropDownList1.DataTextField = ejer.Nombre;
-                        DropDownList1.DataValueField = ejer.Id.ToString();
-                        DropDownList1.Items.Insert(i, ejer.Nombre);
-                        i = i++;
-                    }
 
+
+                        LogicaRutina larutina = new LogicaRutina();
+
+                        List<Ejercicio> ejercicios = larutina.ConsultaTodoEjercicios();
+                        int i = 0;
+                        foreach (Ejercicio ejer in ejercicios)
+                        {
+                            DropDownList1.DataTextField = ejer.Nombre;
+                            DropDownList1.DataValueField = ejer.Id.ToString();
+                            DropDownList1.Items.Insert(i, ejer.Nombre);
+                            i = i++;
+                        }
+                    }
+                    catch (EjercicioException error)
+                    {
+                        ShowAlertMessage(error.Message);
+                    }
 
 
 
@@ -84,8 +96,19 @@ namespace PuiPui_FrontOffice.Presentacion.Vista.Modulo5
         }
 
 
-        //hacer un  VALIDAR q no exista la rutina
-        protected void Button1_Click(object sender, EventArgs e)
+        
+
+        public static void ShowAlertMessage(string message)
+        {
+            Page page = HttpContext.Current.Handler as Page;
+            if (page != null)
+            {
+                message = message.Replace("'", "\'");
+                System.Web.UI.ScriptManager.RegisterStartupScript(page, page.GetType(), "err_msg", "alert('" + message + "');", true);
+            }
+        }
+
+        protected void bAgregar_Ejercicio_Click(object sender, EventArgs e)
         {
             LogicaRutina larutina = new LogicaRutina();
             ListaEjerText.Text += "*" + DropDownList1.SelectedItem.Value + "\n";
@@ -99,71 +122,107 @@ namespace PuiPui_FrontOffice.Presentacion.Vista.Modulo5
 
 
         //boton de enviar tienen q estar llenos todos los campos
-        protected void Button2_Click(object sender, EventArgs e)
+        protected void bInsertar_Rutina_Click(object sender, EventArgs e)
         {
+            //bool validarTiempo;
+            //bool textboxVacios;
 
-
-            int hora = Convert.ToInt32(TextBoxHora.Text.ToString());
-            int minuto = Convert.ToInt32(TextBoxMin.Text.ToString());
-            int segundo = Convert.ToInt32(TextBoxSeg.Text.ToString());
-
-            int repeticiones = Convert.ToInt32((TextBoxRe.Text.ToString()));
-
-
-
-            String descri = TextBoxDescripcion.Text.ToString();
+            int repeticiones = 0;
+            int hora = 0;
+            int minuto = 0;
+            int segundo = 0;
+                
 
 
 
-            DateTime hora_insertar = new DateTime(2013, 11, 12, hora, minuto, segundo);
-
-
-            LogicaRutina RutiAinsert = new LogicaRutina();
-
-            RutiAinsert.InsertaRutina(descri, hora_insertar, repeticiones);
-
-
-
-            //int cliente_id;
-            int ultima_rutina_id;
-            Ejercicio ejer_id = new Ejercicio();
-            Persona per_id = new Persona();
-
-
-            for (int j = 0; j < nombre_ejercicios.Count; j++)
+            if (TextBoxHora.Text == "" || TextBoxMin.Text == "" || TextBoxSeg.Text == "" || TextBoxDescripcion.Text == "")
             {
-                ejer_id = RutiAinsert.BuscaDatos_Ejercicio(nombre_ejercicios[j]);
+                //textboxVacios = true;
 
-                id_ejercicios.Add(ejer_id.Id);
-                ListaEjerText.Text += id_ejercicios[j] + "\n";
+                ShowAlertMessage("Hay campos vacios");
+                
+                //Response.Write("<script>alert('Hay campos vacios');</script>");
+                
             }
-            
-
-
-            ultima_rutina_id = RutiAinsert.Devuelve_Ultimo_ID();
-            ListaEjerText.Text += "\n" + loginPersona;
-            per_id = RutiAinsert.BuscaIDNombrePersona(loginPersona);
-
-
-            
-            ListaEjerText.Text += "\n" + per_id.IdPersona;
-            ListaEjerText.Text += "\n" + ultima_rutina_id;
-
-
-            bool inserto;
-            inserto = RutiAinsert.Inserta_Historial(per_id.IdPersona, ultima_rutina_id, 3);
-
-
-
-
-            for (int j = 0; j < nombre_ejercicios.Count; j++)
+            else
             {
-                inserto = RutiAinsert.Inserta_Historial(per_id.IdPersona, ultima_rutina_id, id_ejercicios[j]);
-            }
+                //textboxVacios = false;
 
+                hora = Convert.ToInt32(TextBoxHora.Text.ToString());
+                minuto = Convert.ToInt32(TextBoxMin.Text.ToString());
+                segundo = Convert.ToInt32(TextBoxSeg.Text.ToString());
+
+                if (TextBoxRe.Text=="")
+                    repeticiones = 0;
+                else
+                    repeticiones = Convert.ToInt32(TextBoxRe.Text.ToString());
+                
+                
+                if (minuto<=0 || minuto >= 59  || segundo<=0 || segundo >= 59 || hora<=0 || hora>=24 )
+                {
+                    //validarTiempo = true;
+                    ShowAlertMessage("El formato correcto del tiempo es hora/minuto/segundo");
+                }
+                else
+                {
+
+                    //validarTiempo = false;
+
+
+                    String descri = TextBoxDescripcion.Text.ToString();
+                    DateTime hora_insertar = new DateTime(2013, 11, 12, hora, minuto, segundo);
+                    LogicaRutina RutiAinsert = new LogicaRutina();
+
+
+
+
+                    RutiAinsert.InsertaRutina(descri, hora_insertar, repeticiones);
+
+
+
+                    //int cliente_id;
+                    int ultima_rutina_id;
+                    Ejercicio ejer_id = new Ejercicio();
+                    Persona per_id = new Persona();
+
+
+                    for (int j = 0; j < nombre_ejercicios.Count; j++)
+                    {
+                        ejer_id = RutiAinsert.BuscaDatos_Ejercicio(nombre_ejercicios[j]);
+
+                        id_ejercicios.Add(ejer_id.Id);
+                        //ListaEjerText.Text += id_ejercicios[j] + "\n";
+                    }
+
+
+
+                    ultima_rutina_id = RutiAinsert.Devuelve_Ultimo_ID();
+
+                    //ListaEjerText.Text += "\n" + loginPersona;
+
+                    per_id = RutiAinsert.BuscaIDNombrePersona(loginPersona);
+
+                    //ListaEjerText.Text += "\n" + per_id.IdPersona;
+                    //ListaEjerText.Text += "\n" + ultima_rutina_id;
+
+
+                    bool inserto;
+                    
+                    //inserto = RutiAinsert.Inserta_Historial(per_id.IdPersona, ultima_rutina_id, 3);
+
+                    for (int j = 0; j < nombre_ejercicios.Count; j++)
+                    {
+                        inserto = RutiAinsert.Inserta_Historial(per_id.IdPersona, ultima_rutina_id, id_ejercicios[j]);
+                    }
+
+                }
+                
+            }
+            //ShowAlertMessage("Nueva Rutina Creada");
+            
+            //Server.Transfer(" /Presentacion/Vista/Modulo5/Agregar.aspx",true);
+            //Server.Transfer("/Presentacion/Vista/Home/Home.aspx", true);
+            Response.Redirect("/Presentacion/Vista/Modulo5/Agregar.aspx");
         }
-
-
-
     }
 }

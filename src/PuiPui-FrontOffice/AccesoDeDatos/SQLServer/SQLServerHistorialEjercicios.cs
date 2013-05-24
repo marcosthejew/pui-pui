@@ -18,7 +18,7 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
 
         public bool BDInsertarHistorial(int id_cliente, int id_rutina, int id_ejercicio_)
         {
-            string _cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            string _cadenaConexion = "Server= localhost;database=puipuiDB;integrated security=true";
             SqlConnection _conexion = new SqlConnection();
             SqlCommand _insertar = new SqlCommand();
             SqlDataReader _execute;
@@ -37,7 +37,7 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
                 if (_execute.Read())
                 {
                     db.CerrarConexion();
-                    return true;
+                    return false;
                 }
             }
             catch (SqlException error)
@@ -50,12 +50,12 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
             {
                 db.CerrarConexion();
             }
-            return false;
+            return true;
         }
 
         public List<Historial_Ejercicio> listaIdejercicios(int id_cliente, int id_rutina)
         {
-            string _cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            string _cadenaConexion = "Server= localhost;database=puipuiDB;integrated security=true";
             SqlConnection _conexion = new SqlConnection();
             SqlCommand _cmd = new SqlCommand();
             List<Historial_Ejercicio> lista = new List<Historial_Ejercicio>();
@@ -98,7 +98,7 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
         }
         public List<Historial_Ejercicio> busca_id_rutina(int id_cliente)
         {
-            string _cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            string _cadenaConexion = "Server= localhost;database=puipuiDB;integrated security=true";
             SqlConnection _conexion = new SqlConnection();
             SqlCommand _cmd = new SqlCommand();
             List<Historial_Ejercicio> lista = new List<Historial_Ejercicio>();
@@ -142,8 +142,8 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
         public bool BDEliminaHistorial(int id_cliente, int id_rutina)
         {
 
-    
-            string _cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+
+            string _cadenaConexion = "Server= localhost;database=puipuiDB;integrated security=true";
             SqlConnection _conexion = new SqlConnection();
             SqlCommand _borrar = new SqlCommand();
             SqlDataReader _execute;
