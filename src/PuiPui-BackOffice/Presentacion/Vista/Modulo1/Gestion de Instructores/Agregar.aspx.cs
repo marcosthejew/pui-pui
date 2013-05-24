@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using PuiPui_BackOffice.LogicaDeNegocios.Instructor;
 using System.Drawing;
 using PuiPui_BackOffice.Entidades;
@@ -277,7 +272,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
                         lexito.ForeColor = System.Drawing.Color.Red;
                         lexito.Visible = true;
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                         lexito.Visible = true;
                         lexito.Text = "Los Campos De Telefono deben ser estrictamente numericos";

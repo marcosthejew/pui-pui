@@ -9,8 +9,6 @@
 
 namespace PuiPui_BackOffice.Account
 {
-
-
     public partial class ChangePasswordSuccess
     {
     }

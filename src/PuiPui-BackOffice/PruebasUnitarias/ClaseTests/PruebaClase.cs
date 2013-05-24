@@ -30,7 +30,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.ClaseTests
                     _accesoClase = new SQLServerClase();
                     Assert.IsTrue(_accesoClase.AgregarClase(_clase));
                 }
-                catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion e)
+                catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion)
                 {
                     
                 }
@@ -46,7 +46,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.ClaseTests
                 _clase = new Clase("TaeBox",3,"clase de ejercicios fuertes",1);
                 Assert.IsTrue(_accesoClase.ModificarClase(_clase));
             }
-            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion e)
+            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion)
             {
                 
             }
@@ -74,7 +74,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.ClaseTests
                 }
 
             }
-            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion E)
+            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion)
             {
             }
         }
@@ -105,7 +105,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.ClaseTests
             }
 
             }
-            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion E)
+            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion)
             {
             }
         }
@@ -132,7 +132,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.ClaseTests
                 }
 
             }
-            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion E)
+            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion)
             {
             }
         }
@@ -154,7 +154,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.ClaseTests
                 }
 
             }
-            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion E)
+            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion)
             {
             }
         }
@@ -176,7 +176,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.ClaseTests
                 }
 
             }
-            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion E)
+            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion)
             {
             }
         }

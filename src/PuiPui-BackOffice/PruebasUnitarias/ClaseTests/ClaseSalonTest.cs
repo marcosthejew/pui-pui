@@ -20,9 +20,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.ClaseTests
    
     public class ClaseSalonTest
     {
-        Clase _clase;
-        SQLServerClase _accesoClase;
-        List<ClaseSalon> _listaClaseAux, _listaClase;
+         List<ClaseSalon> _listaClaseAux, _listaClase;
         SQLServerClaseSalon _accesoClaseSalon;
         ClaseSalon _claseSalon;
 
@@ -56,7 +54,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.ClaseTests
                 _accesoClaseSalon = new SQLServerClaseSalon();
                 Assert.IsTrue(_accesoClaseSalon.AgregarClaseSalon(_claseSalon));
             }
-            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion e)
+            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion)
             {
 
             }
@@ -74,7 +72,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.ClaseTests
                 _accesoClaseSalon = new SQLServerClaseSalon();
                 Assert.IsTrue(_accesoClaseSalon.ModificarSalonClase(_claseSalon));
             }
-            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion e)
+            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion)
             {
 
             }
@@ -93,7 +91,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.ClaseTests
                 Assert.NotNull(_listaClase);
 
             }
-            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion E)
+            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion)
             {
             }
         }
@@ -119,7 +117,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.ClaseTests
                 }
 
             }
-            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion E)
+            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion)
             {
             }
         }
@@ -145,7 +143,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.ClaseTests
                 }
 
             }
-            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion E)
+            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion)
             {
             }
         }
@@ -170,7 +168,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.ClaseTests
                 }
 
             }
-            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion E)
+            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion)
             {
             }
         }
@@ -192,7 +190,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.ClaseTests
                 }
 
             }
-            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion E)
+            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion)
             {
             }
         }
@@ -214,7 +212,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.ClaseTests
                 }
 
             }
-            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion E)
+            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion)
             {
             }
         }

@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using PuiPui_BackOffice.Entidades.Salon;
-using PuiPui_BackOffice.Entidades.Clase;
-using PuiPui_BackOffice.Entidades.Instructor;
-
-namespace PuiPui_BackOffice.Entidades.Clase
+﻿namespace PuiPui_BackOffice.Entidades.Clase
 {
     public class ClaseSalon
     {

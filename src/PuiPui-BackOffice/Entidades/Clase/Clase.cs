@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace PuiPui_BackOffice.Entidades.Clase
 {
     public class Clase
     {
-
         #region Atributos
 
         private String _nombre;
@@ -30,13 +26,13 @@ namespace PuiPui_BackOffice.Entidades.Clase
             get { return _descripcion; }
             set { _descripcion = value; }
         }
+       
         public int IdClase
         {
             get { return _idClase; }
             set { _idClase = value; }
         }
        
-     
         public String Nombre
         {
             get { return _nombre; }
@@ -47,30 +43,29 @@ namespace PuiPui_BackOffice.Entidades.Clase
 
         #region Constructores
 
-        public Clase(String Nombre, int IdClase, String Descripcion)
+        public Clase(String nombre, int idClase, String descripcion)
         {
-            this._descripcion = Descripcion;
-            this._nombre = Nombre;
-            this._idClase = IdClase;
+            this._descripcion = descripcion;
+            this._nombre = nombre;
+            this._idClase = idClase;
         }
-        public Clase(String Nombre, int IdClase, String Descripcion,int st)
+
+        public Clase(String nombre, int idClase, String descripcion,int st)
         {
-            this.Status = st;
-            this._descripcion = Descripcion;
-            this._nombre = Nombre;
-            this._idClase = IdClase;
+            this._status = st;
+            this._descripcion = descripcion;
+            this._nombre = nombre;
+            this._idClase = idClase;
         }
+
         public Clase()
         {
         }
+
         public Clase(int id)
         {
-            this.IdClase = id;
+            this._idClase = id;
         }
-
-        #endregion
-
-        #region Metodos
 
         #endregion
     }

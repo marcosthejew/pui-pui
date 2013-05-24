@@ -19,10 +19,8 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Geestion_de_Salones
         private String _ubicacion;
         private int _capacidad;
         private int _status;
-        private int _statusCapacidad;
         private LogicaSalon _logicaSalon;
         private int _checkSeleccion;
-        Persona persona;
         Acceso acceso;
         string loginPersona;
 

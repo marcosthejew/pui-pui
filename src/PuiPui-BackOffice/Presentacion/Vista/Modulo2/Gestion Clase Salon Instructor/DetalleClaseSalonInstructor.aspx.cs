@@ -31,7 +31,6 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_Clase_Salon_Instr
         String estatus;
         String ubiSalon;
         String instruc;
-        Persona persona;
         Acceso acceso;
         string loginPersona;
         #endregion

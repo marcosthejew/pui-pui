@@ -11,7 +11,6 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Geestion_de_Salones
 {
     public partial class Eliminar : System.Web.UI.Page
     {
-        Persona persona;
         Acceso acceso;
         string loginPersona;
 

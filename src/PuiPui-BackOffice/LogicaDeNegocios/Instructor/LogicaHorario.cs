@@ -44,7 +44,7 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.Instructor
 
             }
 
-            catch (Exception e)
+            catch (Exception)
             {
                
             }

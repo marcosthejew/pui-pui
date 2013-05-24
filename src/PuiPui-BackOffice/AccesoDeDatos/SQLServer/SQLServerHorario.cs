@@ -144,11 +144,9 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@cedula", cedula);
                 dr = cmd.ExecuteReader();
-                bool entra = false;
 
                 while (dr.Read())
                 {
-                    entra = true;
                     Horario horario = new Horario();
                     horario.dia = dr.GetValue(0).ToString();
                     horario.horaini = DateTime.Parse(dr.GetValue(1).ToString());
@@ -211,7 +209,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 dr = cmd.ExecuteReader();
                 db.CerrarConexion();
             }
-            catch (Exception e)
+            catch (Exception)
             {
 
             }

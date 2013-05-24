@@ -14,7 +14,6 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_de_Clases
     {
         #region Atributos
         private String Desc;
-        Persona persona;
         Acceso acceso;
         string loginPersona;
         #endregion
