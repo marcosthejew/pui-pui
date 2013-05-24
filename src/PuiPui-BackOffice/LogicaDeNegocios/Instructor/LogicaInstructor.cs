@@ -14,7 +14,7 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.Instructor
     {
 
         #region AgregarInstructor
-        public bool AgregarInstructor(string tb1, string tb2, string tb3, int tb4, string tb5, string tb6, string tb7, int tb8, string tb9, string tb10, string tb11, int tb12, DateTime calendar, string cb)
+        public bool AgregarInstructor(string tb1, string tb2, string tb3, long tb4, string tb5, string tb6, string tb7, long tb8, string tb9, string tb10, string tb11, long tb12, DateTime calendar, string cb)
         {
             SQLServerInstructor objDataBase = new SQLServerInstructor();
             try
@@ -109,5 +109,35 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.Instructor
             }
         }
         #endregion ConsultarTodosInstructoresActivos
+
+
+        #region ActualizarInstructor
+        public bool ActualizarInstructor(Entidades.Instructor.Instructor instructor, String CIinicial)
+        {
+
+            SQLServerHorario objDataBase = new SQLServerHorario();
+            bool exito = false;
+            try
+            {
+                int id = objDataBase.BuscarId(CIinicial);
+
+                SQLServerInstructor objDataBase2 = new SQLServerInstructor();
+                objDataBase2.ActualizarIntructor(instructor, id);
+                exito = true;
+
+            }
+
+            catch (InstructorBDException e)
+            {
+                throw new InstructorException("No se pudo actualizar el instructor: " + e.Message, e);
+            }
+            return exito;
+        }
+        #endregion ActualizarInstructor
+
+
+
+
     }
+
 }

@@ -28,7 +28,31 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.Instructor
 
             }
         #endregion AgregarHorario
-        
+
+        #region ActualizarHorario
+        public bool ActualizarHorario(Entidades.Horario horario, String CIinicial)
+        {
+
+            SQLServerHorario objDataBase = new SQLServerHorario();
+            bool exito = false;
+            try
+            {
+                int id = objDataBase.BuscarId(CIinicial);
+
+                objDataBase.ActualizarHorario(horario, id);
+                exito = true;
+
+            }
+
+            catch (Exception e)
+            {
+               
+            }
+            return exito;
+        }
+        #endregion ActualizarHorario
+
+
     }
 
     

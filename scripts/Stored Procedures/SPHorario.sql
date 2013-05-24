@@ -39,3 +39,27 @@ select  H.dia, H.hora_inicio, H.hora_fin
 		where I.id_instructor=H.id_instructor and I.cedula=	@cedula
 END;
 GO
+
+
+/*MODIFICAR UN HORARIO */
+USE [puipuiDB]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE procedure [dbo].[actualizarHorario]
+@idInstructor int,
+@dia nchar(20), 
+@horaini time(7),
+@horafin time(7)
+as
+
+BEGIN
+    update Horario_Trabajo 
+    set dia = @dia, 
+		hora_inicio = @horaini,
+		hora_fin = @horafin
+    where id_instructor = @idInstructor
+END;
+GO
