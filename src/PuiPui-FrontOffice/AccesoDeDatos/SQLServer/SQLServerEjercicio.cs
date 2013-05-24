@@ -9,20 +9,19 @@ using PuiPui_FrontOffice.AccesoDeDatos.Excepciones_BD;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
-using PuiPui_BackOffice.AccesoDeDatos.Excepciones_BD;
 
 namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
 {
     public class SQLServerEjercicio
     {
         IConexionSqlServer db = new ConexionSqlServer();
-
+        string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
         #region ExisteEjercicio
         public bool ExisteEjercicio(string nombreEjercicio)
         {
             //string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
             string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";//ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
-            
+
             SqlConnection conexion = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
             SqlDataReader dr;
@@ -74,7 +73,7 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
         {
             //string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
             string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";//ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
-            
+
             SqlConnection conexion = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
             SqlDataReader dr;
@@ -129,7 +128,7 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
             SqlConnection conexion = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
             SqlDataReader dr;
-            
+
             try
             {
                 conexion = new SqlConnection(cadenaConexion);
@@ -184,7 +183,7 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
         public Ejercicio ConsultarEjercicio(string nombre)
         {
             string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";//ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
-            
+
             //string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
             SqlConnection conexion = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
@@ -246,7 +245,7 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
         {
             //string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
             string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";//ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
-            
+
             SqlConnection conexion = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
             SqlDataReader dr;
@@ -261,7 +260,7 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
                 dr = cmd.ExecuteReader();
 
                 if (dr.Read())
-                     existe = true;
+                    existe = true;
 
                 db.CerrarConexion();
             }
@@ -298,7 +297,7 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
         {
             //string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
             string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";//ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
-            
+
             SqlConnection conexion = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
             SqlDataReader dr;
@@ -347,7 +346,7 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
         {
             //string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
             string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";//ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
-            
+
             SqlConnection conexion = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
             SqlDataReader dr;
@@ -399,7 +398,7 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
         {
             //string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
             string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";//ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
-            
+
             SqlConnection conexion = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
             SqlDataReader dr;
@@ -446,5 +445,61 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
             return exito;
         }
         #endregion ExisteEjercicioOtroId
+
+        public Ejercicio ConsultarEjercicioId(int id_ejercicio)
+        {
+            string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";//ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            List<Ejercicio> lista_ejercicios = new List<Ejercicio>();
+
+            //string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader dr;
+
+            try
+            {
+                conexion = new SqlConnection(cadenaConexion);
+                conexion.Open();
+                cmd = new SqlCommand("[dbo].[consultarEjercicioId]", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idEjercicio", id_ejercicio);
+                dr = cmd.ExecuteReader();
+                Ejercicio ejercicio = new Ejercicio();
+
+                while (dr.Read())
+                {
+                    ejercicio.Id = Convert.ToInt32(dr.GetValue(0));
+                    ejercicio.Nombre = dr.GetValue(1).ToString();
+                    lista_ejercicios.Add(ejercicio);
+                }
+
+                db.CerrarConexion();
+                return ejercicio;
+            }
+            catch (ArgumentException e)
+            {
+                throw new EjercicioBDException("Parametros invalidos", e);
+            }
+            catch (InvalidOperationException e)
+            {
+                throw new EjercicioBDException("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new EjercicioBDException("ejercicio no encontrado", e);
+            }
+            catch (SqlException e)
+            {
+                throw new EjercicioBDException("Error con base de datos", e);
+            }
+            catch (Exception e)
+            {
+                throw new EjercicioBDException("Error general", e);
+            }
+            finally
+            {
+                db.CerrarConexion();
+            }
+        }
     }
 }
