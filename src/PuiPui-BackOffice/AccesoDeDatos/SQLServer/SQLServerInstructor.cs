@@ -70,7 +70,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
         #endregion ExisteInstructor
 
         #region InsertarInstructor
-        public bool insertarInstructor(string tb1, string tb2, string tb3, int tb4, string tb5, string tb6, string tb7, int tb8, string tb9, string tb10, string tb11, int tb12, DateTime calendar, string cb)
+        public bool insertarInstructor(string tb1, string tb2, string tb3, long tb4, string tb5, string tb6, string tb7, long tb8, string tb9, string tb10, string tb11, long tb12, DateTime calendar, string cb)
         {
             //string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
             string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
@@ -536,6 +536,69 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 
         }
         #endregion TieneEvaluacion
+
+        #region ActualizarIntructor
+        public void ActualizarIntructor(Instructor instructor, int id)
+        {
+            string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader dr;
+
+            try
+            {
+                conexion = new SqlConnection(cadenaConexion);
+                conexion.Open();
+                cmd = new SqlCommand("[dbo].[actualizarInstructor]", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@cedula", instructor.CedulaPersona.ToString());
+                cmd.Parameters.AddWithValue("@primerNombre", instructor.NombrePersona1.ToString());
+                cmd.Parameters.AddWithValue("@segundoNombre", instructor.NombrePersona2.ToString());
+                cmd.Parameters.AddWithValue("@primerApellido", instructor.ApellidoPersona1.ToString());
+                cmd.Parameters.AddWithValue("@segundoApelldo", instructor.ApellidoPersona2.ToString());
+                cmd.Parameters.AddWithValue("@genero", instructor.GeneroPersona.ToString());
+                cmd.Parameters.AddWithValue("@fecha_nacimiento", instructor.FechaNacimientoPersona);
+                cmd.Parameters.AddWithValue("@ciudad", instructor.CiudadPersona.ToString());
+                cmd.Parameters.AddWithValue("@direccion", instructor.DireccionPersona.ToString());
+                cmd.Parameters.AddWithValue("@telefonoLocal", long.Parse(instructor.TelefonoLocalPersona));
+                cmd.Parameters.AddWithValue("@telefonoCelular", long.Parse(instructor.TelefonoCelularPersona));
+                cmd.Parameters.AddWithValue("@correoElectronico", instructor.CorreoPersona.ToString());
+                cmd.Parameters.AddWithValue("@nombreEmergencia", instructor.ContactoNombrePersona.ToString());
+                cmd.Parameters.AddWithValue("@contactoEmergencia", long.Parse(instructor.ContactoTelefonoPersona));
+                cmd.Parameters.AddWithValue("@status", instructor.EstadoPersona.ToString());
+
+                dr = cmd.ExecuteReader();
+                db.CerrarConexion();
+            }
+            catch (ArgumentException e)
+            {
+                throw new InstructorBDException("Parametros invalidos", e);
+            }
+            catch (InvalidOperationException e)
+            {
+                throw new InstructorBDException("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new InstructorBDException("Instructor no encontrado", e);
+            }
+            catch (SqlException e)
+            {
+                throw new InstructorBDException("Error con base de datos", e);
+            }
+            catch (Exception e)
+            {
+                throw new InstructorBDException("Error general", e);
+            }
+            finally
+            {
+                db.CerrarConexion();
+            }
+
+        }
+        #endregion ActualizarIntructor
 
 
     }

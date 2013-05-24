@@ -133,6 +133,7 @@ BEGIN
 END;
 GO
 
+/*CONSULTA INSTRUCTORES ACTIVOS*/
 USE [puipuiDB]
 GO
 SET ANSI_NULLS ON
@@ -201,5 +202,56 @@ set nocount on
 		from Evaluacion E, Instructor I
 		where E.id_instructor = I.id_instructor
 		and I.cedula = @cedula
+END;
+GO
+
+
+
+/*MODIFICAR  INSTRUCTOR*/
+USE [puipuiDB]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE procedure [dbo].[actualizarInstructor]
+@id int,
+@cedula nchar(50),
+@primerNombre nchar(50),
+@segundoNombre nchar(50),
+@primerApellido nchar(50),
+@segundoApelldo nchar(50),
+@genero nchar(1),
+@fecha_nacimiento date,
+@ciudad nchar(50),
+@direccion nchar(255),
+@telefonoLocal bigint,
+@telefonoCelular bigint,
+@correoElectronico nchar(50),
+@nombreEmergencia nchar(50),
+@contactoEmergencia bigint,
+@status nchar(15)
+as
+
+BEGIN
+    update Instructor
+    set
+	 cedula = lower (@cedula),
+	 primer_nombre= lower(@primerNombre),
+	 segundo_nombre= lower(@segundoNombre),
+	 primer_apellido= lower(@primerApellido),
+	 segundo_apelldo= lower(@segundoApelldo),
+	 genero= lower(@genero),
+	 fecha_nacimiento= (@fecha_nacimiento),
+	 ciudad= lower(@ciudad),
+	 direccion= lower(@direccion),
+	 telefono_local= (@telefonoLocal),
+	 telefono_celular=(@telefonoCelular),
+	 correo_electronico= lower(@correoElectronico),
+	 nombre_contacto_emergencia= lower(@nombreEmergencia),
+	 telefono_contacto_emergencia=(@contactoEmergencia),
+	 status= lower(@status)	
+	
+    where id_instructor = @id
 END;
 GO

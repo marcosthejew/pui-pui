@@ -185,5 +185,42 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
         }
         #endregion ConsultarHorarios
 
+
+
+        #region ActualizarHorario
+        public void ActualizarHorario(Horario horario, int idInstructor)
+        {
+            //string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";//ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader dr;
+
+            try
+            {
+                conexion = new SqlConnection(cadenaConexion);
+                conexion.Open();
+                cmd = new SqlCommand("[dbo].[actualizarHorario]", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idInstructor", idInstructor);
+                cmd.Parameters.AddWithValue("@dia", horario.dia);
+                cmd.Parameters.AddWithValue("@horaini", horario.horaini);
+                cmd.Parameters.AddWithValue("@horafin", horario.horafin);
+
+                dr = cmd.ExecuteReader();
+                db.CerrarConexion();
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                db.CerrarConexion();
+            }
+        }
+        #endregion ActualizarHorario
+
     }
 }
