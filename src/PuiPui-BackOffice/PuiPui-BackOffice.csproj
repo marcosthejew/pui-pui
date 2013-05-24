@@ -78,6 +78,18 @@
     <Content Include="bin\PuiPui-BackOffice.dll" />
     <Content Include="bin\PuiPui-BackOffice.pdb" />
     <Content Include="Presentacion\Estilo\Site.css" />
+    <Content Include="Presentacion\Imagenes\templatemo_content_bg.jpg" />
+    <Content Include="Presentacion\Imagenes\templatemo_footer.jpg" />
+    <Content Include="Presentacion\Imagenes\templatemo_header.jpg" />
+    <Content Include="Presentacion\Imagenes\templatemo_leftmenu_bot.jpg" />
+    <Content Include="Presentacion\Imagenes\templatemo_leftmenu_mid.jpg" />
+    <Content Include="Presentacion\Imagenes\templatemo_leftmenu_top.jpg" />
+    <Content Include="Presentacion\Imagenes\templatemo_left_corner.jpg" />
+    <Content Include="Presentacion\Imagenes\templatemo_page_bg.jpg" />
+    <Content Include="Presentacion\Imagenes\templatemo_right_corner.jpg" />
+    <Content Include="Presentacion\Imagenes\templatemo_title_bg.jpg" />
+    <Content Include="Presentacion\Imagenes\templatemo_top_current.jpg" />
+    <Content Include="Presentacion\Imagenes\templatemo_top_menu_level2.jpg" />
     <Content Include="Presentacion\Vista\Home\About.aspx" />
     <Content Include="Presentacion\Vista\Home\CambiarContraseña.aspx" />
     <Content Include="Presentacion\Vista\Home\Home.aspx" />
@@ -114,11 +126,11 @@
     <Content Include="Presentacion\Vista\Modulo2\Gestion de Clases\Modificar.aspx" />
     <Content Include="Presentacion\Vista\Modulo2\Modulo2.aspx" />
     <Content Include="Presentacion\Vista\Modulo5\Modulo5.aspx" />
-    <Content Include="Presentacion\Vista\Modulo5\Rutina de Ejerciico\Act-Ina.aspx" />
-    <Content Include="Presentacion\Vista\Modulo5\Rutina de Ejerciico\Agregar.aspx" />
-    <Content Include="Presentacion\Vista\Modulo5\Rutina de Ejerciico\Consultar.aspx" />
-    <Content Include="Presentacion\Vista\Modulo5\Rutina de Ejerciico\Eliminar.aspx" />
-    <Content Include="Presentacion\Vista\Modulo5\Rutina de Ejerciico\Modificar.aspx" />
+    <Content Include="Presentacion\Vista\Modulo5\Rutina de Ejercicio\Act-Ina.aspx" />
+    <Content Include="Presentacion\Vista\Modulo5\Rutina de Ejercicio\Agregar.aspx" />
+    <Content Include="Presentacion\Vista\Modulo5\Rutina de Ejercicio\Consultar.aspx" />
+    <Content Include="Presentacion\Vista\Modulo5\Rutina de Ejercicio\Eliminar.aspx" />
+    <Content Include="Presentacion\Vista\Modulo5\Rutina de Ejercicio\Modificar.aspx" />
     <Content Include="Presentacion\Vista\Modulo6\Cliente\Act-Ina.aspx" />
     <Content Include="Presentacion\Vista\Modulo6\Cliente\Agregar.aspx" />
     <Content Include="Presentacion\Vista\Modulo6\Cliente\Consultar.aspx" />
@@ -444,39 +456,39 @@
     <Compile Include="Presentacion\Vista\Modulo5\Modulo5.aspx.designer.cs">
       <DependentUpon>Modulo5.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Vista\Modulo5\Rutina de Ejerciico\Act-Ina.aspx.cs">
+    <Compile Include="Presentacion\Vista\Modulo5\Rutina de Ejercicio\Act-Ina.aspx.cs">
       <DependentUpon>Act-Ina.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Presentacion\Vista\Modulo5\Rutina de Ejerciico\Act-Ina.aspx.designer.cs">
+    <Compile Include="Presentacion\Vista\Modulo5\Rutina de Ejercicio\Act-Ina.aspx.designer.cs">
       <DependentUpon>Act-Ina.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Vista\Modulo5\Rutina de Ejerciico\Agregar.aspx.cs">
+    <Compile Include="Presentacion\Vista\Modulo5\Rutina de Ejercicio\Agregar.aspx.cs">
       <DependentUpon>Agregar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Presentacion\Vista\Modulo5\Rutina de Ejerciico\Agregar.aspx.designer.cs">
+    <Compile Include="Presentacion\Vista\Modulo5\Rutina de Ejercicio\Agregar.aspx.designer.cs">
       <DependentUpon>Agregar.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Vista\Modulo5\Rutina de Ejerciico\Consultar.aspx.cs">
+    <Compile Include="Presentacion\Vista\Modulo5\Rutina de Ejercicio\Consultar.aspx.cs">
       <DependentUpon>Consultar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Presentacion\Vista\Modulo5\Rutina de Ejerciico\Consultar.aspx.designer.cs">
+    <Compile Include="Presentacion\Vista\Modulo5\Rutina de Ejercicio\Consultar.aspx.designer.cs">
       <DependentUpon>Consultar.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Vista\Modulo5\Rutina de Ejerciico\Eliminar.aspx.cs">
+    <Compile Include="Presentacion\Vista\Modulo5\Rutina de Ejercicio\Eliminar.aspx.cs">
       <DependentUpon>Eliminar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Presentacion\Vista\Modulo5\Rutina de Ejerciico\Eliminar.aspx.designer.cs">
+    <Compile Include="Presentacion\Vista\Modulo5\Rutina de Ejercicio\Eliminar.aspx.designer.cs">
       <DependentUpon>Eliminar.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Vista\Modulo5\Rutina de Ejerciico\Modificar.aspx.cs">
+    <Compile Include="Presentacion\Vista\Modulo5\Rutina de Ejercicio\Modificar.aspx.cs">
       <DependentUpon>Modificar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Presentacion\Vista\Modulo5\Rutina de Ejerciico\Modificar.aspx.designer.cs">
+    <Compile Include="Presentacion\Vista\Modulo5\Rutina de Ejercicio\Modificar.aspx.designer.cs">
       <DependentUpon>Modificar.aspx</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Vista\Modulo6\Cliente\Act-Ina.aspx.cs">
@@ -579,6 +591,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.sitemap" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

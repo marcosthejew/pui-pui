@@ -2,121 +2,113 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<head id="Head1" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
-     <link href="../Estilo/Site.css" rel="stylesheet" type="text/css" />
+    <link href="../Estilo/Site.css" rel="stylesheet" type="text/css" />
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form runat="server">
-    <div class="page">
-        <div class="header">
-            <div class="title">
-                <table style="width: 959px">
-                <tr>
-                    <td>
-                    <h1>
-                    Pui-Pui BackOffice&nbsp;</h1>
-                    </td>
-                    <td colspan="4" align="center">
-                        <asp:Button ID="BRegistrar" runat="server" CssClass="button" onclick="BRegistrar_Click" Text="Cerrar Sesión" />
-                    </td>
-                </tr>
-                    </table>
-                    
-                
-                
-        
-                
-            </div>
-            <%--<div class="loginDisplay">
-                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
-                    <AnonymousTemplate>
-                        [ <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server">Iniciar sesión</a> ]
-                    </AnonymousTemplate>
-                    <LoggedInTemplate>
-                        Pantalla de bienvenida <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
-                        [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Cerrar sesión" LogoutPageUrl="~/"/> ]
-                    </LoggedInTemplate>
-                </asp:LoginView>
-            </div>--%>
-            <div class="clear hideSkiplink">
-                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false"
-                    IncludeStyleBlock="false" Orientation="Horizontal">
-                    <Items>
-                        
-                        <asp:MenuItem NavigateUrl="../Vista/Home/Home.aspx" Text="Inicio" />
-                        <asp:MenuItem NavigateUrl="../Vista/Modulo1/Modulo1.aspx" Text="Modulo 1">
-                            <asp:MenuItem Text="Musculo">
-                                <asp:MenuItem NavigateUrl="../Vista/Modulo1/Gestion%20de%20Ejercicios/Agregar.aspx" Text="Agregar" />
-                                <asp:MenuItem NavigateUrl="../Vista/Modulo1/Gestion%20de%20Ejercicios/Eliminar.aspx" Text="Eliminar" />
-                            </asp:MenuItem>
-                            <asp:MenuItem Text="Ejercicio">
-                                <asp:MenuItem NavigateUrl="../Vista/Modulo1/Gestion%20de%20Ejercicios/AgregarEjercicio.aspx" Text="Agregar" />
-                                <asp:MenuItem NavigateUrl="../Vista/Modulo1/Gestion%20de%20Ejercicios/Consultar.aspx" Text="Consultar" />
-                                <asp:MenuItem NavigateUrl="../Vista/Modulo1/Gestion%20de%20Ejercicios/Modificar.aspx" Text="Modificar" />
-                                <asp:MenuItem NavigateUrl="../Vista/Modulo1/Gestion%20de%20Ejercicios/EliminarEjercicio.aspx" Text="Eliminar" />
-                             </asp:MenuItem>
-                            <asp:MenuItem Text="Instructor">
-                                <asp:MenuItem NavigateUrl="../Vista/Modulo1/Gestion%20de%20Instructores/Agregar.aspx" Text="Agregar" />
-                                <asp:MenuItem NavigateUrl="../Vista/Modulo1/Gestion%20de%20Instructores/Consultar.aspx" Text="Consultar" />
-                                <asp:MenuItem NavigateUrl="../Vista/Modulo1/Gestion%20de%20Instructores/Modificar.aspx" Text="Modificar" />
-                                <asp:MenuItem NavigateUrl="../Vista/Modulo1/Gestion%20de%20Instructores/Eliminar.aspx" Text="Eliminar" />
-                                <asp:MenuItem NavigateUrl="../Vista/Modulo1/Gestion%20de%20Instructores/Act-Ina.aspx" Text="Activar/Inactivar" />
-                            </asp:MenuItem>
-                        </asp:MenuItem>
-                        <asp:MenuItem NavigateUrl="../Vista/Modulo2/Modulo2.aspx" Text="Modulo 2">
-                            <asp:MenuItem Text="Clases">
-                                <asp:MenuItem NavigateUrl="../Vista/Modulo2/Gestion%20de%20Clases/Agregar.aspx" Text="Agregar" />
-                                <asp:MenuItem NavigateUrl="../Vista/Modulo2/Gestion%20de%20Clases/Consultar.aspx" Text="Consultar" />
-                                <asp:MenuItem NavigateUrl="../Vista/Modulo2/Gestion%20de%20Clases/Modificar.aspx" Text="Modificar" />
-                                <asp:MenuItem NavigateUrl="../Vista/Modulo2/Gestion%20de%20Clases/Eliminar.aspx" Text="Eliminar" />
-                                <asp:MenuItem NavigateUrl="../Vista/Modulo2/Gestion%20de%20Clases/Act-Ina.aspx" Text="Activar/Inactivar" />
-                            </asp:MenuItem>
-                            <asp:MenuItem Text="Salones">
-                                <asp:MenuItem NavigateUrl="../Vista/Modulo2/Gestion%20de%20Salones/Agregar.aspx" Text="Agregar" />
-                                <asp:MenuItem NavigateUrl="../Vista/Modulo2/Gestion%20de%20Salones/Consultar.aspx" Text="Consultar" />
-                                <asp:MenuItem NavigateUrl="../Vista/Modulo2/Gestion%20de%20Salones/Modificar.aspx" Text="Modificar" />
-                                <asp:MenuItem NavigateUrl="../Vista/Modulo2/Gestion%20de%20Salones/Eliminar.aspx" Text="Eliminar" />
-                                <asp:MenuItem NavigateUrl="../Vista/Modulo2/Gestion%20de%20Salones/Act-Ina.aspx" Text="Activar/Inactivar" />
-                            </asp:MenuItem>
-                        </asp:MenuItem>
-                        <asp:MenuItem NavigateUrl="../Vista/Modulo5/Modulo5.aspx" Text="Modulo 5">
-                            <asp:MenuItem Text="Rutinas de ejercicio">
-                                <asp:MenuItem NavigateUrl="../Vista/Modulo5/RutinasEjercicio/Agregar.aspx" Text="Agregar" />
-                                <asp:MenuItem NavigateUrl="../Vista/Modulo5/RutinasEjercicio/Consultar.aspx" Text="Consultar" />
-                                <asp:MenuItem NavigateUrl="../Vista/Modulo5/RutinasEjercicio/Modificar.aspx" Text="Modificar" />
-                                <asp:MenuItem NavigateUrl="../Vista/Modulo5/RutinasEjercicio/Eliminar.aspx" Text="Eliminar" />
-                                <asp:MenuItem NavigateUrl="../Vista/Modulo5/RutinasEjercicio/Act-Ina.aspx" Text="Activar/Inactivar" />
-                            </asp:MenuItem>
-                        </asp:MenuItem>
-                        <asp:MenuItem NavigateUrl="../Vista/Modulo6/Modulo6.aspx" Text="Modulo 6">
-                            <asp:MenuItem  Text="Cliente">
-                                <asp:MenuItem NavigateUrl="../Vista/Modulo6/Cliente/Agregar.aspx" Text="Agregar" />
-                                <asp:MenuItem NavigateUrl="../Vista/Modulo6/Cliente/Consultar.aspx" Text="Consultar" />
-                                <asp:MenuItem NavigateUrl="../Vista/Modulo6/Cliente/Modificar.aspx" Text="Modificar" />
-                                
-                                <asp:MenuItem NavigateUrl="../Vista/Modulo6/Cliente/Act-Ina.aspx" Text="Activar/Inactivar" />
-                            </asp:MenuItem>
-                        </asp:MenuItem>
-                        
-                        <asp:MenuItem NavigateUrl="../Vista/Home/About.aspx" Text="Creditos" />
-                    </Items>
-                </asp:Menu>
+    <form id="Form1" runat="server">
+        <div class="page">
+            <div class="header">
+                <div id="templatemo_container">
+                    <div class="migas" id="migas">
+                        <asp:SiteMapPath ID="SiteMapPath1" runat="server">
+                            <RootNodeTemplate>
+                                <asp:HyperLink ID="HyperLink1" runat="server"
+                                    Text='<%# Eval("title") %>' NavigateUrl='<%# Eval("url") %>' CssClass="migasLink" />
+                            </RootNodeTemplate>
 
+                            <NodeTemplate>
+                                <asp:HyperLink ID="HyperLink2" runat="server"
+                                    Text='<%# Eval("title") %>' NavigateUrl='<%# Eval("url") %>' CssClass="migasLink" />
+                            </NodeTemplate>
+                        </asp:SiteMapPath>
+                    </div>
+                    <div id="templatemo_header_section">
+                        <div id="templatemo_title_section">
+                            Pui-Pui BackOffice
+                        </div>
+                        <div class="templatemo_topmenu">
+                            <asp:Menu ID="NavigationMenu" runat="server" CssClass="Menu" EnableViewState="false"
+                                IncludeStyleBlock="false" Orientation="Horizontal">
+                                <Items>
+
+                                    <asp:MenuItem NavigateUrl="../Vista/Home/Home.aspx" Text="Inicio" />
+                                    <asp:MenuItem NavigateUrl="../Vista/Modulo1/Modulo1.aspx" Text="Modulo 1">
+                                        <asp:MenuItem Text="Musculo">
+                                            <asp:MenuItem NavigateUrl="../Vista/Modulo1/Gestion%20de%20Ejercicios/Agregar.aspx" Text="Agregar" />
+                                            <asp:MenuItem NavigateUrl="../Vista/Modulo1/Gestion%20de%20Ejercicios/Eliminar.aspx" Text="Eliminar" />
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="Ejercicio">
+                                            <asp:MenuItem NavigateUrl="../Vista/Modulo1/Gestion%20de%20Ejercicios/AgregarEjercicio.aspx" Text="Agregar" />
+                                            <asp:MenuItem NavigateUrl="../Vista/Modulo1/Gestion%20de%20Ejercicios/Consultar.aspx" Text="Consultar" />
+                                            <asp:MenuItem NavigateUrl="../Vista/Modulo1/Gestion%20de%20Ejercicios/Modificar.aspx" Text="Modificar" />
+                                            <asp:MenuItem NavigateUrl="../Vista/Modulo1/Gestion%20de%20Ejercicios/EliminarEjercicio.aspx" Text="Eliminar" />
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="Instructor">
+                                            <asp:MenuItem NavigateUrl="../Vista/Modulo1/Gestion%20de%20Instructores/Agregar.aspx" Text="Agregar" />
+                                            <asp:MenuItem NavigateUrl="../Vista/Modulo1/Gestion%20de%20Instructores/Consultar.aspx" Text="Consultar" />
+                                            <asp:MenuItem NavigateUrl="../Vista/Modulo1/Gestion%20de%20Instructores/Modificar.aspx" Text="Modificar" />
+                                            <asp:MenuItem NavigateUrl="../Vista/Modulo1/Gestion%20de%20Instructores/Eliminar.aspx" Text="Eliminar" />
+                                            <asp:MenuItem NavigateUrl="../Vista/Modulo1/Gestion%20de%20Instructores/Act-Ina.aspx" Text="Activar/ Inactivar" />
+                                        </asp:MenuItem>
+                                    </asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="../Vista/Modulo2/Modulo2.aspx" Text="Modulo 2">
+                                        <asp:MenuItem Text="Clases">
+                                            <asp:MenuItem NavigateUrl="../Vista/Modulo2/Gestion%20de%20Clases/Agregar.aspx" Text="Agregar" />
+                                            <asp:MenuItem NavigateUrl="../Vista/Modulo2/Gestion%20de%20Clases/Consultar.aspx" Text="Consultar" />
+                                            <asp:MenuItem NavigateUrl="../Vista/Modulo2/Gestion%20de%20Clases/Modificar.aspx" Text="Modificar" />
+                                            <asp:MenuItem NavigateUrl="../Vista/Modulo2/Gestion%20de%20Clases/Eliminar.aspx" Text="Eliminar" />
+                                            <asp:MenuItem NavigateUrl="../Vista/Modulo2/Gestion%20de%20Clases/Act-Ina.aspx" Text="Activar/ Inactivar" />
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="Salones">
+                                            <asp:MenuItem NavigateUrl="../Vista/Modulo2/Gestion%20de%20Salones/Agregar.aspx" Text="Agregar" />
+                                            <asp:MenuItem NavigateUrl="../Vista/Modulo2/Gestion%20de%20Salones/Consultar.aspx" Text="Consultar" />
+                                            <asp:MenuItem NavigateUrl="../Vista/Modulo2/Gestion%20de%20Salones/Modificar.aspx" Text="Modificar" />
+                                            <asp:MenuItem NavigateUrl="../Vista/Modulo2/Gestion%20de%20Salones/Eliminar.aspx" Text="Eliminar" />
+                                            <asp:MenuItem NavigateUrl="../Vista/Modulo2/Gestion%20de%20Salones/Act-Ina.aspx" Text="Activar/ Inactivar" />
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="Designacion de aulas">
+                                            <asp:MenuItem NavigateUrl="../Vista/Modulo2/Gestion%20Clase%20Salon%20Instructor/AgregarClaseSalon.aspx" Text="Agregar designacion de aulas" />
+                                            <asp:MenuItem NavigateUrl="../Vista/Modulo2/Gestion%20Clase%20Salon%20Instructor/ConsultarClasesSalon.aspx" Text="Consultar designacion de aulas" />
+                                        </asp:MenuItem>
+                                    </asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="../Vista/Modulo5/Modulo5.aspx" Text="Modulo 5">
+
+                                    </asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="../Vista/Modulo6/Modulo6.aspx" Text="Modulo 6">
+                                        <asp:MenuItem Text="Cliente">
+                                            <asp:MenuItem NavigateUrl="../Vista/Modulo6/Cliente/Agregar.aspx" Text="Agregar" />
+                                            <asp:MenuItem NavigateUrl="../Vista/Modulo6/Cliente/Consultar.aspx" Text="Consultar" />
+                                            <asp:MenuItem NavigateUrl="../Vista/Modulo6/Cliente/Modificar.aspx" Text="Modificar" />
+                                            <asp:MenuItem NavigateUrl="../Vista/Modulo6/Cliente/Act-Ina.aspx" Text="Activar/ Inactivar" />
+                                        </asp:MenuItem>
+                                    </asp:MenuItem>
+
+                                    <asp:MenuItem NavigateUrl="../Vista/Home/About.aspx" Text="Creditos" />
+                                </Items>
+                            </asp:Menu>
+                        </div>
+                    </div>
+                    <div id="templatemo_content_section">
+                        <div id="templatemo_content_left"></div>
+                        <div id="templatemo_content_mid">
+                            <div class="main">
+                                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+                            </div>
+                            <div class="clear">
+                            </div>
+                            <div class="footer">
+                            </div>
+                        </div>
+                        <div id="templatemo_content_right"></div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="main">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
-        </div>
-        <div class="clear">
-        </div>
-    </div>
-    <div class="footer">
-        
-    </div>
     </form>
 </body>
 </html>

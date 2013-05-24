@@ -132,8 +132,11 @@
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerReservaInstructor.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerReservarClase.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerRutina.cs" />
+    <Compile Include="Entidades\ClaseSalon\ClaseSalon.cs" />
     <Compile Include="Entidades\Cliente\Acceso.cs" />
     <Compile Include="Entidades\EEvaluacionInstructor\EEvaluacionInstructor.cs" />
+    <Compile Include="Entidades\Ejercicio\Ejercicio.cs" />
+    <Compile Include="Entidades\Ejercicio\Musculo.cs" />
     <Compile Include="Entidades\Evaluacion.cs" />
     <Compile Include="Entidades\Excepciones\ExcepcionReservaInstructorFechaInicioPasada.cs" />
     <Compile Include="Entidades\Excepciones\ExcepcionReservaInstructorFechaInicioPosteriorAFutura.cs" />
