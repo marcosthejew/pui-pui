@@ -33,40 +33,15 @@ namespace PuiPui_FrontOffice.Presentacion.Vista.Modulo4.EvaluarInstructor
 
         }
 
-        //protected void cargarInstructores()
-        //{
-        //    Instructores.Items.Add("Seleccione un Instructor");
-        //    Instructores.Items.Add("Instructor1 Prueba");
-        //    Instructores.Items.Add("Instructor2 Prueba");
-        //    Instructores.Items.Add("Instructor2 Prueba");
-        //    Instructores.DataBind();
-
-        //}
-
         #region Llenar DropDownList Instructores
         protected void cargarInstructores()
         {
 
             LogicaInstructor instructores = new LogicaInstructor();
             Instructores.DataSource = _listaInstructores;
-            Instructores.DataTextField = "NombreCompleto";//"NombrePersona1";
+            Instructores.DataTextField = "NombreCompleto";
             Instructores.DataValueField = "IdPersona";
             Instructores.DataBind();
-
-            //// Crea la nueva DataColumn
-            //DataColumn dcNombre = new DataColumn("name", Type.GetType("System.String"));
-            //// Establece la sentencia a calcular con las columnas existentes
-            //dcNombre.Expression = "NombrePersona1 + ' ' + ApellidoPersona1";
-            //// Agrega la nueva columna al DataTable
-            //dtAutores.Columns.Add(dcNombre);
-            //// Asigna el DataTable Autores como fuente de datos para el DropDownList
-            //ddlComputedColumns.DataSource = dtAutores.DefaultView;
-            //// Asigno el valor a mostrar en el DropDownList
-            //ddlComputedColumns.DataTextField = "name";
-            //// Asigno el valor del value en el DropDownList
-            //ddlComputedColumns.DataValueField = "au_id";
-            //// Llena el DropDownList con los datos
-            //ddlComputedColumns.DataBind();
 
         }
         #endregion
