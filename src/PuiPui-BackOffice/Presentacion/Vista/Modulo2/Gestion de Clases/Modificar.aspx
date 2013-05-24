@@ -3,7 +3,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div style="text-align:center; font-family:Helvetica; font-size:16px;height:30px;">
-    <asp:Label ID="Label6" runat="server" Text="CLASE"></asp:Label>
+    <asp:Label ID="Label6" runat="server" Text="<h1>CLASE</h1>"></asp:Label>
     </div>
 
     <div style="height:20px; text-align:left; font-family:Helvetica; font-size:16px;">
@@ -15,7 +15,7 @@
 
     <div  style="float:left;">
         <fieldset style="width:775px; height:auto; margin-left:7.5%; fit-position:center;">
-        <legend style="text-align:center; font-family:Helvetica; font-size:14px;">Modificar Clase</legend>
+        <legend style="text-align:center; font-family:Helvetica; font-size:14px;"><h2>Modificar Clase</h2></legend>
          <div style="height:20px; text-align:left; font-family:Helvetica; font-size:16px;">
         <asp:Label ID="NClase" runat="server" Text="Debe introducir todos los campos obligatorios" CssClass="NClase" 
             Visible="False" ForeColor="Red" Font-Names="Arial" Font-Size="14px"></asp:Label>
@@ -23,7 +23,7 @@
             <table style="margin:5% auto auto 22%; height: 140px; width: 476px;" border="0" cellspacing="0" cellpadding="0" >
             <tr>
                 <td class="auto-style7" align="center">
-                    <asp:Label ID="Label4" runat="server" Text="Label">Nombre de la clase:</asp:Label>
+                    <asp:Label ID="Label4" runat="server" Text="Label"><h2>Nombre de la clase:</h2></asp:Label>
                 </td>
                 <td class="auto-style8" align="left">
                     <asp:TextBox ID="nombreClaseAModificar" runat="server" Height="22px" Width="270px"
@@ -32,7 +32,7 @@
             </tr>
             <tr>
                 <td class="auto-style1" align="center">
-                    <asp:Label ID="Label3" runat="server" Text="Label">Descripción:</asp:Label>
+                    <asp:Label ID="Label3" runat="server" Text="Label"><h2>Descripción:</h2></asp:Label>
                 </td>
                 <td class="auto-style2" colspan="0" align="left">
                     <asp:TextBox id="TextArea" runat="server" Wrap="true" TextMode="MultiLine" Width="200px" Height="115px"></asp:TextBox>
@@ -40,10 +40,10 @@
             </tr>
             <tr>
                 <td class="auto-style3" align="center">
-                    Status:</td>
+                    <h2>Status:</h2></td>
                 <td class="auto-style4" colspan="0">
-                    <asp:RadioButton ID="Activo" runat="server" GroupName="EstatusClases" Text="Activa" />
-                    <asp:RadioButton ID="Inactivo" runat="server" GroupName="EstatusClases" Text="Inactiva" />
+                    <asp:RadioButton ID="Activo" runat="server" GroupName="EstatusClases" Text="<h2>Activa</h2>" />
+                    <asp:RadioButton ID="Inactivo" runat="server" GroupName="EstatusClases" Text="<h2>Inactiva</h2>" />
                     </td>
             </tr>
                 <tr>

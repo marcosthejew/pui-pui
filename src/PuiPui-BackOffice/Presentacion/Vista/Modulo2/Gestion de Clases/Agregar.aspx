@@ -2,19 +2,19 @@
 AutoEventWireup="true" CodeBehind="Agregar.aspx.cs" Inherits="PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_de_Clases.Agregar" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div style="text-align:center; font-family:Helvetica; font-size:16px;height:30px;">
-    <asp:Label ID="Label1" runat="server" Text="Clase"></asp:Label>
+    <asp:Label ID="Label1" runat="server" Text="<h1>CLASE</h1>"></asp:Label>
     </div>
 
     <div style="height:20px; text-align:left; font-family:Helvetica; font-size:16px;">
         <asp:Label ID="Exito" runat="server" Text="Operación Exitosa" CssClass="Exito" 
-            Visible="False"></asp:Label>
+            Visible="False" ForeColor="White"></asp:Label>
         <asp:Label ID="falla" runat="server" Text="Operación Fallida" CssClass="falla" 
             Visible="False" ForeColor="Red"></asp:Label>
     </div>
 
     <div  >
         <fieldset style="width:775px; height:auto; margin-left:7.5%; fit-position:center;">
-        <legend style="text-align:center; font-family:Helvetica; font-size:14px;">Agregar Clase</legend>
+        <legend style="text-align:center; font-family:Helvetica; font-size:14px;"><h2>Agregar Clase</h2></legend>
         <div style="height:20px; text-align:left; font-family:Helvetica; font-size:16px;">
         <asp:Label ID="NClase" runat="server" Text="Debe introducir todos los campos obligatorios" CssClass="NClase" 
             Visible="False" ForeColor="Red" Font-Names="Arial" Font-Size="14px"></asp:Label>
@@ -23,7 +23,7 @@ AutoEventWireup="true" CodeBehind="Agregar.aspx.cs" Inherits="PuiPui_BackOffice.
             <tr>
                 <td class="auto-style3" align="left">
                     <asp:Label ID="Rojo" runat="server" Text="Label" ForeColor="Red" Font-Names="Arial" Font-Size="12px">*</asp:Label>
-                    <asp:Label ID="Label4" runat="server" Text="Label" Font-Names="Arial" Font-Size="12px">Nombre de la nueva clase:</asp:Label>
+                    <asp:Label ID="Label4" runat="server" Text="Label" Font-Names="Arial" Font-Size="12px"><h3>Nombre de la nueva clase:</h3></asp:Label>
                 </td>
                 <td class="auto-style4">
                     &nbsp;<asp:TextBox ID="nombreNuevaClase" runat="server" Height="22px" Width="270px" Font-Names="Arial" Font-Size="12px"></asp:TextBox>
@@ -32,7 +32,7 @@ AutoEventWireup="true" CodeBehind="Agregar.aspx.cs" Inherits="PuiPui_BackOffice.
             <tr>
                 <td class="auto-style1" align="left">
                     <asp:Label ID="Label6" runat="server" Text="Label" ForeColor="Red" Font-Names="Arial" Font-Size="12px">*</asp:Label>
-                    <asp:Label ID="Label3" runat="server" Text="Label">Descripción:</asp:Label>
+                    <asp:Label ID="Label3" runat="server" Text="Label"><h3>Descripción:</h3></asp:Label>
                 </td>
                 <td class="auto-style2">
                     &nbsp;<asp:TextBox id="descripcioNuevaClase" runat="server" Wrap="true" TextMode="MultiLine" Width="200px" Height="115px" Font-Names="Arial" Font-Size="12px"></asp:TextBox>
