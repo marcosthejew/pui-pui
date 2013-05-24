@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Presentacion/MasterPage/Site.Master" AutoEventWireup="true" 
     CodeBehind="ConsultarClasesSalon.aspx.cs" 
     Inherits="PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_Clase_Salon_Instructor.ConsultarClasesSalon" %>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div style="text-align:center; font-family:Helvetica; font-size:16px;">
     <asp:Label ID="Label1" runat="server" Text="CLASE - SALON - INSTRUCTOR"></asp:Label>

@@ -29,7 +29,7 @@ namespace PuiPui_FrontOffice.Entidades.Ejercicio
         {
             get { return _musculo; }
             set { _musculo = value; }
-        } 
+        }
 
 
         public string Nombre
@@ -41,7 +41,7 @@ namespace PuiPui_FrontOffice.Entidades.Ejercicio
 
         #region Constructores
         public Ejercicio()
-        {    
+        {
         }
 
         public Ejercicio(int id, string nombre, string descripcion, Musculo musculo)
