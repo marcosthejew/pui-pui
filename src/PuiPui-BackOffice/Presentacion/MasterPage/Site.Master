@@ -27,6 +27,7 @@
                             </NodeTemplate>
                         </asp:SiteMapPath>
                     </div>
+                    <asp:Button ID="BRegistrar" runat="server" CssClass="button" onclick="BRegistrar_Click" Text="Cerrar Sesión" />
                     <div id="templatemo_header_section">
                         <div id="templatemo_title_section">
                             Pui-Pui BackOffice
@@ -53,7 +54,6 @@
                                             <asp:MenuItem NavigateUrl="../Vista/Modulo1/Gestion%20de%20Instructores/Consultar.aspx" Text="Consultar" />
                                             <asp:MenuItem NavigateUrl="../Vista/Modulo1/Gestion%20de%20Instructores/Modificar.aspx" Text="Modificar" />
                                             <asp:MenuItem NavigateUrl="../Vista/Modulo1/Gestion%20de%20Instructores/Eliminar.aspx" Text="Eliminar" />
-                                            <asp:MenuItem NavigateUrl="../Vista/Modulo1/Gestion%20de%20Instructores/Act-Ina.aspx" Text="Activar/ Inactivar" />
                                         </asp:MenuItem>
                                     </asp:MenuItem>
                                     <asp:MenuItem NavigateUrl="../Vista/Modulo2/Modulo2.aspx" Text="Modulo 2">
@@ -67,8 +67,7 @@
                                         <asp:MenuItem Text="Salones">
                                             <asp:MenuItem NavigateUrl="../Vista/Modulo2/Gestion%20de%20Salones/Agregar.aspx" Text="Agregar" />
                                             <asp:MenuItem NavigateUrl="../Vista/Modulo2/Gestion%20de%20Salones/Consultar.aspx" Text="Consultar" />
-                                            <asp:MenuItem NavigateUrl="../Vista/Modulo2/Gestion%20de%20Salones/Modificar.aspx" Text="Modificar" />
-                                            <asp:MenuItem NavigateUrl="../Vista/Modulo2/Gestion%20de%20Salones/Eliminar.aspx" Text="Eliminar" />
+                                            <asp:MenuItem NavigateUrl="../Vista/Modulo2/Gestion%20de%20Salones/Modificar.aspx" Text="Modificar" />                                            
                                             <asp:MenuItem NavigateUrl="../Vista/Modulo2/Gestion%20de%20Salones/Act-Ina.aspx" Text="Activar/ Inactivar" />
                                         </asp:MenuItem>
                                         <asp:MenuItem Text="Designacion de aulas">
@@ -104,7 +103,7 @@
                             <div class="footer">
                             </div>
                         </div>
-                        <div id="templatemo_content_right"></div>
+                        
                     </div>
                 </div>
             </div>
