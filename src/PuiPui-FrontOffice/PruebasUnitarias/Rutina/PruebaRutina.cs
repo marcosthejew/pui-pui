@@ -105,8 +105,51 @@ namespace PuiPui_FrontOffice.PruebasUnitarias.Rutina
             int idInsert = PruebaRutina.ObtenerUltimoInsert();
             bool resultadoEsperado = logicaRutinaAuxiliar.Inserta_Historial(1,idInsert,1);
             Assert.True(resultadoEsperado);
-        }                                                                                                                                                                                                                   
+        }
 
+        [Test]
+        public void PruebaEliminaHistorico()
+        {
+            LogicaDeNegocios.Rutinas.LogicaRutina logicaRutinaAuxiliar = new LogicaDeNegocios.Rutinas.LogicaRutina();
+            int idInsert = PruebaRutina.ObtenerUltimoInsert();
+            bool resultadoEsperado = logicaRutinaAuxiliar.Elimina_Historico(1, idInsert);
+            Assert.True(resultadoEsperado);
+        }
+
+        [Test]
+        public void PruebaTodasRutinas()
+        {
+            LogicaDeNegocios.Rutinas.LogicaRutina logicaRutinaAuxiliar = new LogicaDeNegocios.Rutinas.LogicaRutina();
+
+            List<Entidades.Rutina.Rutina> resultadoEsperado = logicaRutinaAuxiliar.TodasRutinas();
+            Assert.NotNull(resultadoEsperado);
+        }
+
+        [Test]
+        public void PruebaConstructoresRutina()
+        {
+            Entidades.Rutina.Rutina rutinaAuxiliar1 = new Entidades.Rutina.Rutina(1000);
+            Assert.NotNull(rutinaAuxiliar1);
+            Entidades.Rutina.Rutina rutinaAuxiliar2 = new Entidades.Rutina.Rutina("descripcion", new DateTime(1998, 12, 12));
+            Assert.NotNull(rutinaAuxiliar2);
+            Entidades.Rutina.Rutina rutinaAuxiliar3 = new Entidades.Rutina.Rutina("descripcion", new DateTime(1998, 12, 12), 5);
+            Assert.NotNull(rutinaAuxiliar3);
+            Entidades.Rutina.Rutina rutinaAuxiliar4 = new Entidades.Rutina.Rutina(1000, "descripcion", new DateTime(1998, 12, 12), 5);
+            Assert.NotNull(rutinaAuxiliar4);
+        }
+
+        [Test]
+        public void PruebaConstructoresHistorialEjercicio()
+        {
+            Entidades.Rutina.Historial_Ejercicio HistorialAuxiliar1 = new Entidades.Rutina.Historial_Ejercicio(1000);
+            Assert.NotNull(HistorialAuxiliar1);
+            Entidades.Rutina.Historial_Ejercicio HistorialAuxiliar2 = new Entidades.Rutina.Historial_Ejercicio(1000, 1);
+            Assert.NotNull(HistorialAuxiliar2);
+            Entidades.Rutina.Historial_Ejercicio HistorialAuxiliar3 = new Entidades.Rutina.Historial_Ejercicio(1000, 1, 1);
+            Assert.NotNull(HistorialAuxiliar3);
+            Entidades.Rutina.Historial_Ejercicio HistorialAuxiliar4 = new Entidades.Rutina.Historial_Ejercicio();
+            Assert.NotNull(HistorialAuxiliar4);
+        }
                                                                                                                                                                                             
 
    
