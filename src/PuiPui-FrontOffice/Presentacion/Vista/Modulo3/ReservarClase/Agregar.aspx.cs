@@ -1,5 +1,5 @@
 ﻿using PuiPui_FrontOffice.Entidades.ClaseSalon;
-using PuiPui_FrontOffice.LogicaDeNegocios.EvaluacionClases;
+//using PuiPui_FrontOffice.LogicaDeNegocios.EvaluacionClases;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,14 +13,14 @@ namespace PuiPui_FrontOffice.Presentacion.Vista.Modulo3.ReservarClase
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Panel1.Visible = false;
-            EvaluacionClase evaluacionClase = new EvaluacionClase();
-            List<ClaseSalon> listaClases =  evaluacionClase.consultarEvaluacionClases();
+  //          Panel1.Visible = false;
+    //        EvaluacionClase evaluacionClase = new EvaluacionClase();
+      //      List<ClaseSalon> listaClases =  evaluacionClase.consultarEvaluacionClases();
 
-            foreach (ClaseSalon objetoC in listaClases)
-            {
-                DropDownListClases.Items.Add("Clase: "+objetoC.FkIdClase.Nombre + " del Instructor: " + objetoC.FkIdInstructor.NombrePersona1 + " " + objetoC.FkIdInstructor.ApellidoPersona1);
-            }
+        //    foreach (ClaseSalon objetoC in listaClases)
+          //  {
+            //    DropDownListClases.Items.Add("Clase: "+objetoC.FkIdClase.Nombre + " del Instructor: " + objetoC.FkIdInstructor.NombrePersona1 + " " + objetoC.FkIdInstructor.ApellidoPersona1);
+            //}
             
         }
 

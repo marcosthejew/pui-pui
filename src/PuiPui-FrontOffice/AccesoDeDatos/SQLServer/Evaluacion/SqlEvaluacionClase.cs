@@ -1,5 +1,5 @@
 ﻿using PuiPui_FrontOffice.Entidades.ClaseSalon;
-using PuiPui_FrontOffice.Entidades.Evaluacion;
+using PuiPui_FrontOffice.Entidades.Evaluacionn;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
