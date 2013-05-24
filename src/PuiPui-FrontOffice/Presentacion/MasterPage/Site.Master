@@ -56,6 +56,14 @@
                                 <asp:MenuItem NavigateUrl="../Vista/Modulo4/EvaluarInstructor/Eliminar.aspx" Text="Eliminar" />
                             </asp:MenuItem>
                         </asp:MenuItem>
+                          <asp:MenuItem NavigateUrl="../Vista/Modulo5/Modulo5.aspx" Text="Modulo 5">
+                            <asp:MenuItem Text="Reservar Instructor">
+                                <asp:MenuItem NavigateUrl="../Vista/Modulo5/GestionRutinas/Agregar.aspx" Text="Agregar" />
+                                <asp:MenuItem NavigateUrl="../Vista/Modulo5/GestionRutinas/Consultar.aspx" Text="Consultar" />
+                                <asp:MenuItem NavigateUrl="../Vista/Modulo5/GestionRutinas/Modificar.aspx" Text="Modificar" />
+                                <asp:MenuItem NavigateUrl="../Vista/Modulo5/GestionRutinas/Eliminar.aspx" Text="Eliminar" />
+                            </asp:MenuItem>
+                        </asp:MenuItem>
                             <asp:MenuItem NavigateUrl="../Vista/Modulo6/Modulo6.aspx" Text="Modulo 6">
                             <asp:MenuItem Text="Cliente">
                                 

@@ -15,7 +15,7 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
     {
         IConexionSqlServer db = new ConexionSqlServer();
 
-        public List<Rutina> BDConsultaRutinas(int id_rutina)
+        public Rutina BDConsultaRutinas(int id_rutina)
         {
 
 
@@ -39,18 +39,18 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
                 while (_dr.Read())
                 {
 
-                    _ruti.Descripcion =_dr.GetValue(1).ToString();
+                    _ruti.Descripcion = _dr.GetValue(1).ToString();
                     tiempo = _dr.GetValue(2).ToString();
                     _miTiempo = new DateTime();
-                    _miTiempo = DateTime.ParseExact(tiempo, "HH:mm",null);
+                    _miTiempo = DateTime.ParseExact(tiempo, "HH:mm:ss", null);
                     _ruti.Tiempo = _miTiempo;
                     _ruti.Repeteciones = Convert.ToInt32(_dr.GetValue(3));
                     _listarutina.Add(_ruti);
-                
+
                 }
                 db.CerrarConexion();
                 if (_listarutina != null)
-                    return _listarutina;
+                    return _ruti;
             }
             catch (SqlException e)
             {
@@ -63,7 +63,7 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
             {
                 _conexion.Close();
             }
-            return _listarutina;
+            return _ruti;
         }
         public List<Rutina> BDTodosConsultaRutinas()
         {
@@ -73,7 +73,7 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
             SqlConnection _conexion = new SqlConnection();
             SqlCommand _cmd = new SqlCommand();
             SqlDataReader _dr;
-            Rutina _ruti = new Rutina();
+
             List<Rutina> _listarutina = new List<Rutina>();
             DateTime _miTiempo;
             string tiempo = "";
@@ -81,19 +81,29 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
             {
                 _conexion = new SqlConnection(_cadenaConexion);
                 _conexion.Open();
-                _cmd = new SqlCommand("[dbo].[buscar_rutina]", _conexion);
+                _cmd = new SqlCommand("[dbo].[buscar_rutina_todas]", _conexion);
                 _dr = _cmd.ExecuteReader();
 
                 while (_dr.Read())
                 {
-                    
+                    Rutina _ruti = new Rutina();
                     _ruti.Id_rutina = Convert.ToInt32(_dr.GetValue(0));
                     _ruti.Descripcion = _dr.GetValue(1).ToString();
                     tiempo = _dr.GetValue(2).ToString();
                     _miTiempo = new DateTime();
-                    _miTiempo = DateTime.ParseExact(tiempo, "HH:mm", null);
+                    _miTiempo = DateTime.ParseExact(tiempo, "HH:mm:ss", null);
                     _ruti.Tiempo = _miTiempo;
-                    _ruti.Repeteciones = Convert.ToInt32(_dr.GetValue(3));
+                    if (_dr[3] != DBNull.Value)
+                    {
+                        _ruti.Repeteciones = Convert.ToInt32(_dr.GetValue(3));
+
+                    }
+                    else
+                    {
+                        _ruti.Repeteciones = 0;
+                    }
+
+
                     _listarutina.Add(_ruti);
 
                 }
@@ -124,20 +134,20 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
             _conexion = new SqlConnection(_cadenaConexion);
             try
             {
-            _conexion.Open();
+                _conexion.Open();
 
-             _insertar = new SqlCommand("[dbo].[insertar_Rutina]", _conexion);
-             _insertar.CommandType = CommandType.StoredProcedure;
-            _insertar.Parameters.Add("@descripcion", SqlDbType.NChar, 100).Value = insertaRutina.Descripcion;
-            _insertar.Parameters.Add("@duracion", SqlDbType.DateTime, 7).Value = insertaRutina.Tiempo;
-            _insertar.Parameters.Add("@repeticiones", SqlDbType.Int).Value = insertaRutina.Repeteciones;
-            _execute=_insertar.ExecuteReader();
-                 if (_execute.Read())
+                _insertar = new SqlCommand("[dbo].[insertar_Rutina]", _conexion);
+                _insertar.CommandType = CommandType.StoredProcedure;
+                _insertar.Parameters.Add("@descripcion", SqlDbType.NChar, 100).Value = insertaRutina.Descripcion;
+                _insertar.Parameters.Add("@duracion", SqlDbType.DateTime, 7).Value = insertaRutina.Tiempo;
+                _insertar.Parameters.Add("@repeticiones", SqlDbType.Int).Value = insertaRutina.Repeteciones;
+                _execute = _insertar.ExecuteReader();
+                if (_execute.Read())
                 {
                     db.CerrarConexion();
                     return true;
                 }
-                
+
             }
             catch (SqlException error)
             {
@@ -171,7 +181,7 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
                     _ruti.Id_rutina = Convert.ToInt32(_dr.GetValue(0));
 
                 }
-                
+
                 db.CerrarConexion();
                 return _ruti;
 
@@ -186,11 +196,11 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
             finally
             {
                 db.CerrarConexion();
-            
+
             }
             return _ruti;
         }
-        
+
 
 
         public bool BDUpadteRutina(Rutina updateRutina)
@@ -207,14 +217,14 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
             _updatear.Parameters.AddWithValue("@id_ruti", updateRutina.Id_rutina);
             _updatear.Parameters.AddWithValue("@descripcion", updateRutina.Descripcion);
             _updatear.Parameters.AddWithValue("@duracion", updateRutina.Tiempo);
-           _updatear.Parameters.AddWithValue("@repeticiones", updateRutina.Repeteciones);
-           _execute = _updatear.ExecuteReader();
+            _updatear.Parameters.AddWithValue("@repeticiones", updateRutina.Repeteciones);
+            _execute = _updatear.ExecuteReader();
             _conexion.Close();
-             return _updateo =true;
+            return _updateo = true;
         }
 
 
-       
+
     }
 
 }
