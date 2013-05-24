@@ -2,30 +2,32 @@
 AutoEventWireup="true" CodeBehind="Consultar.aspx.cs" Inherits="PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_de_Clases.Consultar" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div style="text-align:center; font-family:Helvetica; font-size:16px;">
-    <asp:Label ID="Label1" runat="server" Text="CLASE"></asp:Label>
+    <asp:Label ID="Label1" runat="server" Text="<h1>CLASE</h1>"></asp:Label>
     </div>
     
-    <div style="height:30px; text-align:center; font-family:Helvetica; font-size:14px;">
+    <div style="height:30px; text-align:left; font-family:Helvetica; font-size:14px;">
         <asp:Label ID="falla" runat="server" Text="Operación Fallida" CssClass="falla" 
             Visible="False" ForeColor="Red"></asp:Label>
         <asp:Label ID="Exito" runat="server" Text="Operación Exitosa" CssClass="Exito" 
-            Visible="False"></asp:Label>
+            Visible="False" ForeColor="#ffffff"></asp:Label>
     </div>
     
     <div  style="float:left;">
         <fieldset style="width:775px; height:auto; margin-left:7.5%; fit-position:center;">
-        <legend style="text-align:center; font-family:Helvetica; font-size:14px;">Consultar Clase</legend>
+        <legend style="text-align:center; font-family:Helvetica; font-size:14px;"><h2>Consultar Clase</h2></legend>
              <table border="0" cellspacing="0" cellpadding="0" style="width: 720px" >
             <tr>
                 <td rowspan="0" nowrap="nowrap" class="auto-style18">
-                    Buscar por:</td>
-                <td rowspan="0" class="auto-style14" nowrap="nowrap">
+                    <h3>Buscar por:</h3></td>
+                <td rowspan="0" class="auto-style20" nowrap="nowrap" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
+margin-top: 0px;">
                      <asp:RadioButton ID="RadioButtonConsultaCompleta" runat="server" 
                         GroupName="ConsultarClases" Text="Todos los parámetros" OnCheckedChanged="RadioButtonConsultaCompleta_CheckedChanged1" /> 
                               
 
                     </td>
-                <td rowspan="0" class="auto-style15" nowrap="nowrap" >
+                <td rowspan="0" class="auto-style15" nowrap="nowrap" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
+margin-top: 0px;">
                     <asp:RadioButton ID="consultaClasePorNombres" runat="server" 
                         GroupName="ConsultarClases" Text="Nombre:" OnCheckedChanged="consultaClasePorNombres_CheckedChanged"  
                        />
@@ -37,14 +39,15 @@ AutoEventWireup="true" CodeBehind="Consultar.aspx.cs" Inherits="PuiPui_BackOffic
 
                     </td>
               
-                <td rowspan="0" class="auto-style16" nowrap="nowrap" align="left">
+                <td rowspan="0" class="auto-style16" nowrap="nowrap" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
+margin-top: 0px;">
                     <asp:RadioButton ID="consultaClasePorEstatus" runat="server" 
                         GroupName="ConsultarClases" Text="Estatus:" OnCheckedChanged="consultaClasePorEstatus_CheckedChanged1"/>
                        
                     
                     </td>
               
-                <td rowspan="0" class="auto-style17" nowrap="nowrap">
+                <td rowspan="0" class="auto-style21" nowrap="nowrap">
                    
 
                     <asp:DropDownList ID="DropDownListEstatusClase" runat="server" Width="70px" OnSelectedIndexChanged="DropDownListEstatusClase_SelectedIndexChanged" Height="22px" style="margin-left: 0px" >
@@ -57,7 +60,7 @@ AutoEventWireup="true" CodeBehind="Consultar.aspx.cs" Inherits="PuiPui_BackOffic
                 </td>
               
                 <td rowspan="0" nowrap="nowrap" style="text-align:left">
-                <asp:Button ID="botonBuscarClase" runat="server" Text="Buscar" Width="83px" Height="25px" CssClass="button" OnClick="botonBuscarClase_Click" Font-Names="tomoha plain" Font-Size="14px"/>
+                <asp:Button ID="botonBuscarClase" runat="server" Text="Buscar" Width="50px" Height="25px" CssClass="button" OnClick="botonBuscarClase_Click" Font-Names="tomoha plain" Font-Size="14px"/>
 
                 </td>
             </tr>
@@ -97,23 +100,23 @@ AutoEventWireup="true" CodeBehind="Consultar.aspx.cs" Inherits="PuiPui_BackOffic
         .button {
             margin-left: 50px;
         }
-        .auto-style14 {
-            width: 152px;
-        }
         .auto-style15 {
             width: 81px;
         }
         .auto-style16 {
             width: 83px;
         }
-        .auto-style17 {
-            width: 79px;
-        }
         .auto-style18 {
             width: 73px;
         }
         .auto-style19 {
             width: 169px;
+        }
+        .auto-style20 {
+            width: 180px;
+        }
+        .auto-style21 {
+            width: 71px;
         }
     </style>
     </asp:Content>
