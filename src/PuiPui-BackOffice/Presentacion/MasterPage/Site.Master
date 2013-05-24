@@ -27,7 +27,7 @@
                             </NodeTemplate>
                         </asp:SiteMapPath>
                     </div>
-                    <asp:Button ID="BRegistrar" runat="server" CssClass="button" onclick="BRegistrar_Click" Text="Cerrar Sesión" />
+                    <asp:Button ID="BRegistrar" runat="server" CssClass="button" onclick="BRegistrar_Click" Text="Cerrar Sesión" Font-Names="Tahoma" />
                     <div id="templatemo_header_section">
                         <div id="templatemo_title_section">
                             Pui-Pui BackOffice

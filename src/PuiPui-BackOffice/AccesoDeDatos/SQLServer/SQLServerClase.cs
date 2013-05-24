@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
@@ -9,14 +7,12 @@ using PuiPui_BackOffice.AccesoDeDatos.Conexion;
 using PuiPui_BackOffice.AccesoDeDatos.Conexion.IConexion;
 using PuiPui_BackOffice.AccesoDeDatos.Excepciones_BD;
 using PuiPui_BackOffice.Entidades.Clase;
-using PuiPui_BackOffice.LogicaDeNegocios.LogicaClase;
 
 namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 {
     public class SQLServerClase
     {
         #region Atributos
-
         private List<Clase> _listaClases;
         private Clase _objetoClase;
         private IConexionSqlServer _db;
@@ -54,7 +50,6 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 //Llena la lista de Clases
                 while (_dr.Read())
                 {
-
                     _objetoClase = new Clase();
 
                     _objetoClase.IdClase = Convert.ToInt32(_dr.GetValue(0));
@@ -63,9 +58,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 
                     _listaClases.Add(_objetoClase);
                 }
-
                 _db.CerrarConexion();
-
             }
             catch (ArgumentException e)
             {
@@ -103,7 +96,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 _conexion.Open();
                 _cmd = new SqlCommand("[dbo].[AgregarClase]", _conexion);
                 _cmd.CommandType = CommandType.StoredProcedure;
-                
+               
                 _param = new SqlParameter("@Nombre", clase.Nombre);
                 _cmd.Parameters.Add(_param);
 
@@ -150,7 +143,6 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 
             }
             return insercion;
-
         }
 
         public Boolean ModificarClase(Clase clase)
@@ -229,20 +221,14 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 
                 _dr = _cmd.ExecuteReader();
 
-
-
-
                 _objetoClase = new Clase();
                 while (_dr.Read())
                 {
-
                     _objetoClase.Nombre = _dr.GetValue(0).ToString();
                     _objetoClase.Descripcion = _dr.GetValue(1).ToString();
                     _objetoClase.Status = Convert.ToInt32(_dr.GetValue(2));
-
                 }
                 _db.CerrarConexion();
-
             }
             catch (ArgumentException e)
             {

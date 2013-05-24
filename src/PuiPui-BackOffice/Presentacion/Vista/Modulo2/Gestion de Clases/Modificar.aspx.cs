@@ -13,7 +13,6 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_de_Clases
     public partial class Modificar : System.Web.UI.Page
     {
         #region Atributos
-        Persona persona;
         Acceso acceso;
         string loginPersona;
         private LogicaClase _objLogica = new LogicaClase();

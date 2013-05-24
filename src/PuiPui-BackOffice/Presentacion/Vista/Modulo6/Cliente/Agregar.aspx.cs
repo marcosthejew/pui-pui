@@ -14,7 +14,6 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo6.Cliente
     {
         Acceso acceso;
         string loginPersona;
-        Persona persona;
         LogicaPersona logicaPersona = new LogicaPersona();
         Persona objPersona = new Persona();
 

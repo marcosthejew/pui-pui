@@ -18,7 +18,6 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_de_Clases
         private  LogicaClase _logicaClase= new LogicaClase();
         private int Estatus;
         private int seleccionCheck;
-        Persona persona;
         Acceso acceso;
         string loginPersona;
         #endregion

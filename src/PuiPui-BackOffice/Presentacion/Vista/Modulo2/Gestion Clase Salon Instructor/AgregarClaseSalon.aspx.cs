@@ -1,10 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Data;
 using PuiPui_BackOffice.Entidades.Clase;
 using PuiPui_BackOffice.Entidades.Salon;
 using PuiPui_BackOffice.Entidades.Instructor;
@@ -25,7 +20,6 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_Clase_Salon_Instr
         LogicaClase _accesoClase = new LogicaClase();
         LogicaSalon _accesosSalon = new LogicaSalon();
         LogicaInstructor _accesoInstructor = new LogicaInstructor();
-        Persona persona;
         Acceso acceso;
         string loginPersona;
         #endregion
@@ -86,7 +80,6 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_Clase_Salon_Instr
         protected void defaultButton_Click(object sender, EventArgs e)
         {
             bool flag = false;
-            int idc, ids, idi;
 
                     flag = _accesosSalon.AgregarSalonesClase(_listClase[ComboClase.SelectedIndex].IdClase, _listInstructor[ComboInstructor.SelectedIndex].IdPersona, _listSalon[ComboSalon.SelectedIndex].IdSalon);
                     if (flag == true)

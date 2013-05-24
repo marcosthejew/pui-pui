@@ -9,11 +9,8 @@
 
 namespace PuiPui_BackOffice.Account
 {
-
-
     public partial class Register
     {
-
         /// <summary>
         /// Control RegisterUser.
         /// </summary>

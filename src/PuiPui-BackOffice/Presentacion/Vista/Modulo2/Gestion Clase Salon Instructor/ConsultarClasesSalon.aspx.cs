@@ -20,7 +20,6 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_Clase_Salon_Instr
         LogicaSalon _accesoLogica=new LogicaSalon();
         private int Estatus;
         private int seleccionCheck;
-        Persona persona;
         Acceso acceso;
         string loginPersona;
         #endregion

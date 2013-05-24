@@ -31,7 +31,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.SalonTest
                 _accesoSalon = new SQLServerSalon();
                 Assert.IsTrue(_accesoSalon.AgregarSalon(_salon));
             }
-            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion e)
+            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion)
             {
 
             }
@@ -47,7 +47,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.SalonTest
                 _salon = new Salon(1, "a la derecha", 43, 1);
                 Assert.IsTrue(_accesoSalon.ModificarSalon(_salon));
             }
-            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion e)
+            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion)
             {
 
             }
@@ -75,7 +75,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.SalonTest
                 }
 
             }
-            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion E)
+            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion)
             {
             }
         }
@@ -111,7 +111,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.SalonTest
                 }
 
             }
-            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion E)
+            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion)
             {
             }
         }
@@ -138,7 +138,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.SalonTest
                 }
 
             }
-            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion E)
+            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion)
             {
             }
         }
@@ -165,7 +165,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.SalonTest
                 }
 
             }
-            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion E)
+            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion)
             {
             }
         }
@@ -187,7 +187,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.SalonTest
                 }
 
             }
-            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion E)
+            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion)
             {
             }
         }
@@ -209,7 +209,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.SalonTest
                 }
 
             }
-            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion E)
+            catch (AccesoDeDatos.Excepciones_BD.ExcepcionConexion)
             {
             }
         }

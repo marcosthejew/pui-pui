@@ -1,18 +1,15 @@
 ﻿using PuiPui_FrontOffice.Entidades.ClaseSalon;
-using PuiPui_FrontOffice.Entidades.Evaluacionn;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
 
 namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
 {
     public class SqlEvaluacionClase
     {
 
-        private string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+        private string _cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
 
         private static String DEFAULT_QUERY_CONSULTA_CLASE_SALON = "SELECT CS.id_clase_salon, CS.id_clase, CS.id_salon, CS.id_instructor, C.nombre, S.ubicacion, I.primer_nombre, I.primer_apellido  " +
                                                                     "FROM Clase_Salon CS "+
@@ -23,13 +20,12 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
 
         public List<ClaseSalon> consultarClaseEvaluacion()
         {
-
             List<ClaseSalon> listaEvaluaciones = new List<ClaseSalon>();
 
             SqlConnection conexion = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
 
-            conexion = new SqlConnection(cadenaConexion);
+            conexion = new SqlConnection(_cadenaConexion);
             conexion.Open();
             cmd = new SqlCommand(DEFAULT_QUERY_CONSULTA_CLASE_SALON, conexion);
 
@@ -37,7 +33,6 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
 
             while (dataReader.Read())
             {
-
                 int idClaseSalon = Convert.ToInt16(dataReader["id_clase_salon"].ToString());
                 int idClase = Convert.ToInt16(dataReader["id_clase"].ToString());
                 int idSalon = Convert.ToInt16(dataReader["id_salon"].ToString());
@@ -64,8 +59,6 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
             dataReader.Close();
             
             return listaEvaluaciones;
-
         }
-
     }
 }

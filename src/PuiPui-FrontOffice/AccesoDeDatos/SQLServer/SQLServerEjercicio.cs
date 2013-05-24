@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using PuiPui_BackOffice.AccesoDeDatos.Excepciones_BD;
 using PuiPui_FrontOffice.Entidades.Ejercicio;
 using PuiPui_FrontOffice.AccesoDeDatos.Conexion;
 using PuiPui_FrontOffice.AccesoDeDatos.Conexion.IConexion;
-using PuiPui_FrontOffice.AccesoDeDatos.Excepciones_BD;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;

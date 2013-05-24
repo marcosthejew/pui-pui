@@ -7,7 +7,6 @@ namespace PuiPui_BackOffice.Entidades.Rutina
 {
     public class Rutina
     {
-        private String _nombrerutina;
         IList<Ejercicio.Ejercicio> _list;
 
         public Rutina()

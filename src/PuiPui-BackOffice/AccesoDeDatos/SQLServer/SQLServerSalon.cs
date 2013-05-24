@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
@@ -14,7 +12,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
 {
     public class SQLServerSalon
     {
-              #region Atributos
+        #region Atributos
          
         private List<Salon> _listaSalones ;
         private Salon _objetoSalon;

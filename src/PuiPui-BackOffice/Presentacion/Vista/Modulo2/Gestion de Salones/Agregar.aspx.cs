@@ -12,7 +12,6 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Geestion_de_Salones
     public partial class Agregar : System.Web.UI.Page
     {
         private LogicaSalon _objetoLogica;
-        Persona persona;
         Acceso acceso;
         string loginPersona;
 

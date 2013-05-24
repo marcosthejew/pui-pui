@@ -75,8 +75,6 @@
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="bin\AjaxControlToolkit.dll" />
-    <Content Include="bin\PuiPui-BackOffice.dll" />
-    <Content Include="bin\PuiPui-BackOffice.pdb" />
     <Content Include="Presentacion\Estilo\Site.css" />
     <Content Include="Presentacion\Imagenes\templatemo_content_bg.jpg" />
     <Content Include="Presentacion\Imagenes\templatemo_footer.jpg" />
@@ -576,7 +574,6 @@
     <Compile Include="PruebasUnitarias\SalonTest\TestSalon.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Fakes\" />
   </ItemGroup>
   <ItemGroup>

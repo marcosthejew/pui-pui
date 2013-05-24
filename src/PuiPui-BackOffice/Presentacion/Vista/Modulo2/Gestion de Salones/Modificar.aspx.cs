@@ -14,7 +14,6 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Geestion_de_Salones
     {
         private LogicaSalon  _objetoLogica = new LogicaSalon();
         private Salon _objetoSalon;
-        Persona persona;
         Acceso acceso;
         string loginPersona;
         

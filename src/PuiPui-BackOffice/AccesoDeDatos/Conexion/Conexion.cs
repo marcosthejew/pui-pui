@@ -1,28 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Data.SqlClient;
-using System.Configuration;
 using PuiPui_BackOffice.AccesoDeDatos.Excepciones_BD;
 using PuiPui_BackOffice.AccesoDeDatos.Conexion.IConexion;
 
- 
 namespace PuiPui_BackOffice.AccesoDeDatos.Conexion
 {
     public class ConexionSqlServer : IConexionSqlServer
     {
-        private static String cadenaConexion;
-        SqlConnection objetoConexion;
-        private static SqlConnection conexion;
+        private static String _cadenaConexion;
+        SqlConnection _objetoConexion;
 
         public ConexionSqlServer()
         {
             try
             {
-                objetoConexion = null;
-                cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
-                conexion = new SqlConnection(cadenaConexion);
+                _objetoConexion = null;
+                _cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
+                AccederAconexion = new SqlConnection(_cadenaConexion);
             }
             catch (NullReferenceException)
             {
@@ -30,54 +24,38 @@ namespace PuiPui_BackOffice.AccesoDeDatos.Conexion
             }
         }
 
-        public static SqlConnection AccederAconexion
-        {
-
-            get { return conexion; }
-
-            set { conexion = value; }
-
-        }
+        public static SqlConnection AccederAconexion { get; set; }
 
         //Metodo para abrir la conexion
         public void AbrirConexion()
         {
+            if (String.IsNullOrEmpty(_cadenaConexion)) 
+                return;
+            _objetoConexion = new SqlConnection(_cadenaConexion);
+            _objetoConexion.Open();
 
-            if (!String.IsNullOrEmpty(cadenaConexion))
+            if (_objetoConexion.State.ToString() == "Open") return;
+
+            while (_objetoConexion.State.ToString() != "Open")
             {
-                objetoConexion = new SqlConnection(cadenaConexion);
-                objetoConexion.Open();
 
-                if (objetoConexion.State.ToString() != "Open")
-                {
-                    while (objetoConexion.State.ToString() != "Open")
-                    {
-
-                    }
-                }
             }
         }
 
         //Metodo para cerrar la conexion
         public void CerrarConexion()
         {
-            if (objetoConexion != null)
-            {
-                if (objetoConexion.State.ToString() == "Open")
-                {
-                    objetoConexion.Close();
-                    objetoConexion.Dispose();
-                }
-            }
+            if (_objetoConexion == null) return;
+            if (_objetoConexion.State.ToString() != "Open") return;
+            _objetoConexion.Close();
+            _objetoConexion.Dispose();
         }
 
 
         public SqlConnection ObjetoConexion()
         {
-            return (objetoConexion);
-
+            return (_objetoConexion);
         }
-
     }
 }
     
