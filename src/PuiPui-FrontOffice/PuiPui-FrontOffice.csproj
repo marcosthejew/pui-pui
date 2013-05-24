@@ -130,9 +130,10 @@
     <Compile Include="Entidades\EEvaluacionInstructor\EEvaluacionInstructor.cs" />
     <Compile Include="Entidades\Evaluacion.cs" />
     <Compile Include="Entidades\ReservarClase\ClaseSalon.cs" />
+    <Compile Include="Entidades\ReservarClase\EventoCalendario.cs" />
     <Compile Include="Entidades\ReservarClase\HorarioReservacionClase.cs" />
     <Compile Include="Entidades\ReservarClase\InstructorClase.cs" />
-    <Compile Include="Entidades\ReservarClase\ReservaInstructorClase.cs" />
+    <Compile Include="Entidades\ReservarClase\ReservacionClase.cs" />
     <Compile Include="Entidades\Rutina\Historial_Ejercicio.cs" />
     <Compile Include="Entidades\Rutina\Rutina.cs" />
     <Compile Include="LogicaDeNegocios\Cliente\LogicaPersona.cs" />
