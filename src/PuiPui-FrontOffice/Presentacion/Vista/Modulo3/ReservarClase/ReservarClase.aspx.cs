@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using PuiPui_FrontOffice.Entidades.Cliente;
+using PuiPui_FrontOffice.LogicaDeNegocios.Cliente;
 using PuiPui_FrontOffice.Entidades.Clase;
 using PuiPui_FrontOffice.LogicaDeNegocios.ReservarClase;
 
@@ -13,16 +15,23 @@ namespace PuiPui_FrontOffice.Presentacion.Vista.Modulo3.ReservarClase
 {
     public partial class ReservarClase : System.Web.UI.Page
     {
-
-        LogicaReservarClase logicaReservarClase = new LogicaReservarClase();
+        string loginPersona;
+        Acceso acceso;
         Clase objClase = new Clase();
-
+        Persona objPersona = new Persona();
+        LogicaReservarClase logicaReservarClase = new LogicaReservarClase();
+        LogicaPersona logicaPersona = new LogicaPersona();
+        
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-           if (!IsPostBack)
-           {
-               LoadDdlClasesDisponibles();
-           }
+            acceso = (Acceso)Session["loginPersona"];
+            loginPersona = acceso.Login;
+               if (!IsPostBack)
+               {
+                   objPersona = logicaPersona.ConsultarPersonaPorLogin(loginPersona);
+                   LoadDdlClasesDisponibles();
+               }
         }
 
         protected void ddlClasesDisponibles_SelectedIndexChanged(object sender, EventArgs e)
