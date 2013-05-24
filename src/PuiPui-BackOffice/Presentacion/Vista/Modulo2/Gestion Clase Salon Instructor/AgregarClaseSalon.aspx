@@ -2,25 +2,26 @@
     AutoEventWireup="true" CodeBehind="AgregarClaseSalon.aspx.cs" 
     Inherits="PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_Clase_Salon_Instructor.AgregarClaseSalon" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <div style="text-align:center; font-family:Helvetica; font-size:16px;height:30px;">
-    <asp:Label ID="Label1" runat="server" Text="CLASE - SALON - INSTRUCTOR"></asp:Label>
+    <div style="text-align:center;">
+    <h1>CLASE - SALON - INSTRUCTOR</h1>
+        
     </div>
 
     <div style="height:20px; text-align:left; font-family:Helvetica; font-size:16px;">
         <asp:Label ID="Exito" runat="server" Text="Operación Exitosa" CssClass="Exito" 
-            Visible="False"></asp:Label>
+            Visible="False" ForeColor="#ffffff"></asp:Label>
         <asp:Label ID="falla" runat="server" Text="Operación Fallida" CssClass="falla" 
             Visible="False" ForeColor="Red"></asp:Label>
     </div>
 
     <div  style="float:left;">
         <fieldset style="width:775px; height:auto; margin-left:7.5%; fit-position:center;">
-        <legend style="text-align:center; font-family:Helvetica; font-size:14px;">Asignación de Clase - Salón - Instructor</legend>
+        <legend style="text-align:center;"><h2>Asignación de Clase - Salón - Instructor</h2></legend>
                
-            <table style="margin:0px auto auto 30%; height: 140px; width: 288px;" border="0" cellspacing="0" cellpadding="0" >
+            <table style="margin:20px auto auto 30%; height: 140px; width: 288px;" border="0" cellspacing="0" cellpadding="0" >
             <tr>
                 <td class="auto-style5" align="left">
-                    <asp:Label ID="Label2" runat="server" Text="Nombre de la Clase:" Font-Names="Arial" Font-Size="12px"></asp:Label>
+                    <h3>Nombre de la Clase:</h3>              
                     
                 </td>
                 <td class="auto-style6" align="left">
@@ -30,8 +31,8 @@
             </tr>
             <tr>
                 <td class="auto-style5" align="left">
-                    <asp:Label ID="Label4" runat="server" Text="Ubicación del Salón:" Font-Names="Arial" Font-Size="12px"></asp:Label>
-                    
+                    <h3>Ubicación del Salón:</h3>
+                                        
                 </td>
                 <td class="auto-style6" colspan="0" align="left">
                     <asp:DropDownList ID="ComboSalon" runat="server" Height="18px" Width="120px">
@@ -41,7 +42,7 @@
 
             <tr>
                 <td class="auto-style5" align="left">
-                    <asp:Label ID="Label3" runat="server" Text="Instructor:" Font-Names="Arial" Font-Size="12px"></asp:Label>
+                    <h3>Instructor:</h3>            
                     
                     </td>
                 <td class="auto-style6" colspan="0" align="left">
@@ -51,31 +52,27 @@
             </tr>
 
             <tr>
-                <td class="auto-style1">
-                    &nbsp;</td>
-                <td class="auto-style2">
-                    &nbsp;</td>
-            </tr>
-
-            <tr>
-                <td class="auto-style7">
+                <td class="auto-style9">
                     </td>
-                <td class="auto-style8">
+                <td class="auto-style10">
                     </td>
             </tr>
 
             <tr>
                 <td class="auto-style1">
+                
                     &nbsp;</td>
                 <td class="auto-style2">
                     &nbsp;</td>
             </tr>
 
             <tr >
-                <td colspan="2"  style="text-align:left">
+                <td>
                 
                 <asp:Button ID="Cancelar" runat="server" Text="Cancelar" Height="25px" Width="120px" Font-Names="Tomoha Plain" Font-Size="14px" OnClick="Cancelar_Click"/>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="defaultButton" runat="server" Text="Aceptar" CssClass="button" OnClick="defaultButton_Click" Font-Names="tomoha plain" Font-Size="14px" Height="25px" Width="120px" />
+                </td>
+                <td>
+                    <asp:Button ID="defaultButton" runat="server" Text="Aceptar" CssClass="button" OnClick="defaultButton_Click" Font-Names="tomoha plain" Font-Size="14px" Height="25px" Width="120px" />
                 </td>
             </tr>
             </table>          
@@ -102,13 +99,13 @@
         #TextArea1 {
             height: 71px;
         }
-        .auto-style7 {
+        .auto-style9 {
             width: 216px;
-            height: 17px;
+            height: 18px;
         }
-        .auto-style8 {
+        .auto-style10 {
             width: 164px;
-            height: 17px;
+            height: 18px;
         }
         </style>
 </asp:Content>

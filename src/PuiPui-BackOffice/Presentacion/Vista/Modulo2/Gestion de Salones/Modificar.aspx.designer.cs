@@ -13,15 +13,6 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Geestion_de_Salones {
     public partial class Modificar {
         
         /// <summary>
-        /// Label6 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label6;
-        
-        /// <summary>
         /// Exito control.
         /// </summary>
         /// <remarks>
@@ -49,6 +40,15 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Geestion_de_Salones {
         protected global::System.Web.UI.WebControls.Label NClase;
         
         /// <summary>
+        /// Rojo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Rojo;
+        
+        /// <summary>
         /// Label4 control.
         /// </summary>
         /// <remarks>
@@ -67,6 +67,15 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Geestion_de_Salones {
         protected global::System.Web.UI.WebControls.TextBox TextBoxUbicacion;
         
         /// <summary>
+        /// Label6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label6;
+        
+        /// <summary>
         /// Label3 control.
         /// </summary>
         /// <remarks>
@@ -83,6 +92,15 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Geestion_de_Salones {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxCapacidad;
+        
+        /// <summary>
+        /// Label7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label7;
         
         /// <summary>
         /// Label1 control.

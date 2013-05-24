@@ -1,36 +1,42 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="../../../MasterPage/Site.master"
 AutoEventWireup="true" CodeBehind="Modificar.aspx.cs" Inherits="PuiPui_BackOffice.Presentacion.Vista.Modulo2.Geestion_de_Salones.Modificar" %>
 <asp:Content ID="Content1" runat="server" contentplaceholderid="MainContent">
-    <div style="text-align:center; font-family:Helvetica; font-size:16px;height:30px">
-    <asp:Label ID="Label6" runat="server" Text="Salón"></asp:Label>
+    <div style="text-align:center;">
+    <h1>SALON</h1>
     </div>
 
 <div style="height:20px; text-align:left; font-family:Helvetica; font-size:16px;">
         <asp:Label ID="Exito" runat="server" Text="Operación Exitosa" CssClass="Exito" 
-            Visible="False"></asp:Label>
+            Visible="False" ForeColor="#ffffff"></asp:Label>
         <asp:Label ID="falla" runat="server" Text="Operación Fallida" CssClass="falla" 
             Visible="False" ForeColor="Red"></asp:Label>
     </div>
 
     <div  style="float:left;">
         <fieldset style="width:775px; height:auto; margin-left:7.5%; fit-position:center;">
-        <legend style="text-align:center; font-family:Helvetica; font-size:14px;">Modificar Salón</legend>
+       <legend style="text-align:center;"><h2>Agregar Salón</h2></legend>
       <div style="height:20px; text-align:left; font-family:Helvetica; font-size:16px;">
         <asp:Label ID="NClase" runat="server" Text="Debe introducir todos los campos obligatorios" CssClass="NClase" 
             Visible="False" ForeColor="Red" Font-Names="Arial" Font-Size="14px"></asp:Label>
         </div>                
-            <table style="margin:5% auto auto 26%; height: 140px; width: 390px;" border="0" cellspacing="0" cellpadding="0" align="center">
+            <table style="margin:5% auto auto 26%; height: 140px; width: 432px;" border="0" cellspacing="0" cellpadding="0" align="center">
             <tr>
-                <td class="auto-style1" align="left">
-                    <asp:Label ID="Label4" runat="server" Text="Ubicación:" Font-Names="Arial" Font-Size="12px"></asp:Label>
+                <td class="auto-style1" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
+margin-top: 0px;">
+                   <asp:Label ID="Rojo" runat="server" Text="Label" ForeColor="Red" Font-Names="Arial" Font-Size="12px">*</asp:Label>
+                    <asp:Label ID="Label4" runat="server" Text="Ubicación:"></asp:Label>
                 </td>
                 <td class="auto-style2">
                     &nbsp;<asp:TextBox ID="TextBoxUbicacion" runat="server" Height="22px" Width="270px"></asp:TextBox>
                 </td>
             </tr>
             <tr>
-                <td class="auto-style1" align="left">
-                    <asp:Label ID="Label3" runat="server" Text="Capacidad:" Font-Names="Arial" Font-Size="12px"></asp:Label>
+                <td class="auto-style1" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
+margin-top: 0px;">
+                    <asp:Label ID="Label6" runat="server" Text="Label" ForeColor="Red" Font-Names="Arial" Font-Size="12px">*</asp:Label>
+                    <asp:Label ID="Label3" runat="server" Text="Capacidad:" ></asp:Label>
+                    <br />
+                    (Número de personas)
                 </td>
                 <td class="auto-style2">
                     &nbsp;<asp:TextBox ID="TextBoxCapacidad" runat="server" Height="22px" Width="270px"></asp:TextBox>
@@ -45,13 +51,16 @@ AutoEventWireup="true" CodeBehind="Modificar.aspx.cs" Inherits="PuiPui_BackOffic
             </tr>
 
             <tr>
-                <td class="auto-style1" align="left">
-                    <asp:Label ID="Label1" runat="server" Text="Status:" Font-Names="Arial" Font-Size="12px"></asp:Label></td>
-                <td class="auto-style2" align="center">
+                <td class="auto-style1" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
+margin-top: 0px;">
+                  <asp:Label ID="Label7" runat="server" Text="Label" ForeColor="Red" Font-Names="Arial" Font-Size="12px">*</asp:Label>
+                      <asp:Label ID="Label1" runat="server" Text="Status:"></asp:Label></td>
+                <td class="auto-style2" align="center" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
+margin-top: 0px;">
                     &nbsp;<asp:RadioButton ID="Activo" runat="server" GroupName="EstatusSalon" />
-                    <asp:Label ID="Label2" runat="server" Text="Activo" Font-Names="Arial" Font-Size="12px"></asp:Label>
+                    <asp:Label ID="Label2" runat="server" Text="Activo"></asp:Label>
                     &nbsp;&nbsp;&nbsp;<asp:RadioButton ID="Inactivo" runat="server" GroupName="EstatusSalon"/>
-                    <asp:Label ID="Label5" runat="server" Text="Inactivo" Font-Names="Arial" Font-Size="12px"></asp:Label>
+                    <asp:Label ID="Label5" runat="server" Text="Inactivo"></asp:Label>
                 </td>
             </tr>
 
@@ -93,7 +102,7 @@ AutoEventWireup="true" CodeBehind="Modificar.aspx.cs" Inherits="PuiPui_BackOffic
             width: 92px;
         }
         .auto-style2 {
-            width: 207px;
+            width: 254px;
         }
     </style>
 </asp:Content>
