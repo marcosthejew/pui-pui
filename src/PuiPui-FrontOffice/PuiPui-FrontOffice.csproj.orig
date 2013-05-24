@@ -97,17 +97,6 @@
     <Content Include="Presentacion\Vista\Modulo6\Cliente\Consultar.aspx" />
     <Content Include="Presentacion\Vista\Modulo6\Cliente\Modificar.aspx" />
     <Content Include="Presentacion\Vista\Modulo6\Login.aspx" />
-    <Content Include="Scripts\fullcalendar\fullcalendar.css" />
-    <Content Include="Scripts\fullcalendar\fullcalendar.js" />
-    <Content Include="Scripts\fullcalendar\fullcalendar.min.js" />
-    <Content Include="Scripts\fullcalendar\fullcalendar.print.css" />
-    <Content Include="Scripts\fullcalendar\gcal.js" />
-    <Content Include="Scripts\gym2.js" />
-    <None Include="Scripts\jquery-1.4.1-vsdoc.js" />
-    <Content Include="Scripts\jquery-1.4.1.js" />
-    <Content Include="Scripts\jquery-1.4.1.min.js" />
-    <Content Include="Scripts\jquery\jquery-1.9.1.min.js" />
-    <Content Include="Scripts\jquery\jquery-ui-1.10.2.custom.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -120,27 +109,21 @@
     <Compile Include="AccesoDeDatos\Conexion\Conexion.cs" />
     <Compile Include="AccesoDeDatos\Conexion\IConexion\IConexionSQLServer.cs" />
     <Compile Include="AccesoDeDatos\Excepciones_BD\ExcepcionConexion.cs" />
-    <Compile Include="AccesoDeDatos\SQLServer\SQLServerEvaluacionInstructor.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerHistorialEjercicios.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerPersona.cs" />
-    <Compile Include="AccesoDeDatos\SQLServer\SQLServerReservaInstructor.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerReservarClase.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerRutina.cs" />
     <Compile Include="Entidades\Cliente\Acceso.cs" />
-    <Compile Include="Entidades\EEvaluacionInstructor\EEvaluacionInstructor.cs" />
-    <Compile Include="Entidades\Evaluacion.cs" />
     <Compile Include="Entidades\ReservarClase\ClaseSalon.cs" />
     <Compile Include="Entidades\ReservarClase\HorarioReservacionClase.cs" />
     <Compile Include="Entidades\ReservarClase\InstructorClase.cs" />
-    <Compile Include="Entidades\ReservarClase\ReservaInstructorClase.cs" />
     <Compile Include="Entidades\Rutina\Historial_Ejercicio.cs" />
     <Compile Include="Entidades\Rutina\Rutina.cs" />
     <Compile Include="LogicaDeNegocios\Cliente\LogicaPersona.cs" />
-    <Compile Include="LogicaDeNegocios\EvaluacionInstructor\LogicaEvaluacionInstructor.cs" />
     <Compile Include="LogicaDeNegocios\Exepciones\ExcepcionConexion.cs" />
     <Compile Include="LogicaDeNegocios\Login\Login.cs" />
     <Compile Include="LogicaDeNegocios\ReservaClase\ReservaClase.cs" />
-    <Compile Include="LogicaDeNegocios\ReservaInstructor\LogicaReservaInstructor.cs" />
+    <Compile Include="LogicaDeNegocios\ReservaInstructor\ReservaInstructor.cs" />
     <Compile Include="LogicaDeNegocios\ReservarClase\LogicaReservarClase.cs" />
     <Compile Include="LogicaDeNegocios\ReservarClase\ReservaClase.cs" />
     <Compile Include="LogicaDeNegocios\Rutinas\LogicaRutina.cs" />
@@ -277,7 +260,6 @@
     </Compile>
     <Compile Include="Presentacion\Vista\Modulo3\ReservarClase\ReservarClase.aspx.cs">
       <DependentUpon>ReservarClase.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentacion\Vista\Modulo3\ReservarClase\ReservarClase.aspx.designer.cs">
       <DependentUpon>ReservarClase.aspx</DependentUpon>
