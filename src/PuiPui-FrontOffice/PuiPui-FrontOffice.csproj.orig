@@ -49,10 +49,6 @@
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="nunit.framework, Version=2.6.2.12296, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\PuiPui-BackOffice\bin\nunit.framework.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
@@ -77,7 +73,6 @@
     <Content Include="Account\Register.aspx" />
     <Content Include="Presentacion\Estilo\Site.css" />
     <Content Include="Global.asax" />
-    <Content Include="Presentacion\Vista\Home\CambiarContraseña.aspx" />
     <Content Include="Presentacion\Vista\Home\Home.aspx" />
     <Content Include="Presentacion\Vista\Home\Login.aspx" />
     <Content Include="Presentacion\Vista\Modulo3\EvaluarClase\Agregar.aspx" />
@@ -203,13 +198,6 @@
     <Compile Include="Entidades\Salon\Salon.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\Vista\Home\CambiarContraseña.aspx.cs">
-      <DependentUpon>CambiarContraseña.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Vista\Home\CambiarContraseña.aspx.designer.cs">
-      <DependentUpon>CambiarContraseña.aspx</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Vista\Home\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
@@ -390,7 +378,6 @@
     <Compile Include="Presentacion\MasterPage\Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
-    <Compile Include="PruebasUnitarias\Client\PruebaCliente.cs" />
     <Compile Include="PruebasUnitarias\Login\Pruebalogin.cs" />
     <Compile Include="PruebasUnitarias\ReservaClase\PruebaReservaClase.cs" />
     <Compile Include="PruebasUnitarias\ReservaInstructor\PruebaReservaInstructor.cs" />
@@ -424,7 +411,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>2574</DevelopmentServerPort>
+          <DevelopmentServerPort>53993</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
