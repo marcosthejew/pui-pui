@@ -111,6 +111,10 @@
     <Content Include="Presentacion\Vista\Modulo4\ReservarInstructor\Consultar.aspx" />
     <Content Include="Presentacion\Vista\Modulo4\ReservarInstructor\Eliminar.aspx" />
     <Content Include="Presentacion\Vista\Modulo4\ReservarInstructor\Modificar.aspx" />
+    <Content Include="Presentacion\Vista\Modulo5\GestionRutinas\Agregar.aspx" />
+    <Content Include="Presentacion\Vista\Modulo5\GestionRutinas\Consultar.aspx" />
+    <Content Include="Presentacion\Vista\Modulo5\GestionRutinas\Eliminar.aspx" />
+    <Content Include="Presentacion\Vista\Modulo5\GestionRutinas\Modificar.aspx" />
     <Content Include="Presentacion\Vista\Modulo6\Cliente\Consultar.aspx" />
     <Content Include="Presentacion\Vista\Modulo6\Cliente\Modificar.aspx" />
     <Content Include="Presentacion\Vista\Modulo6\Login.aspx" />
@@ -126,6 +130,7 @@
     <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="Scripts\jquery\jquery-1.9.1.min.js" />
     <Content Include="Scripts\jquery\jquery-ui-1.10.2.custom.min.js" />
+    <Content Include="Scripts\ValidarText.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -138,8 +143,13 @@
   <ItemGroup>
     <Compile Include="AccesoDeDatos\Conexion\Conexion.cs" />
     <Compile Include="AccesoDeDatos\Conexion\IConexion\IConexionSQLServer.cs" />
+    <Compile Include="AccesoDeDatos\Excepciones_BD\EjercicioBDException.cs" />
+    <Compile Include="AccesoDeDatos\Excepciones_BD\ExcepcionBDRutina.cs" />
     <Compile Include="AccesoDeDatos\Excepciones_BD\ExcepcionConexion.cs" />
     <Compile Include="AccesoDeDatos\Excepciones_BD\ExcepcionPersona.cs" />
+    <Compile Include="AccesoDeDatos\Excepciones_BD\ExceptionBDHistorialRutina.cs" />
+    <Compile Include="AccesoDeDatos\Excepciones_BD\ExceptionHistorialRutina.cs" />
+    <Compile Include="AccesoDeDatos\Excepciones_BD\ExceptionRutina.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\Evaluacion\SqlEvaluacionClase.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerEjercicio.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerEvaluacionInstructor.cs" />
@@ -173,7 +183,9 @@
     <Compile Include="Entidades\Rutina\Rutina.cs" />
     <Compile Include="LogicaDeNegocios\Cliente\LogicaPersona.cs" />
     <Compile Include="LogicaDeNegocios\EvaluacionInstructor\LogicaEvaluacionInstructor.cs" />
+    <Compile Include="LogicaDeNegocios\Exepciones\EjercicioException.cs" />
     <Compile Include="LogicaDeNegocios\Exepciones\ExcepcionConexion.cs" />
+    <Compile Include="LogicaDeNegocios\Exepciones\ExcepcionRutina.cs" />
     <Compile Include="LogicaDeNegocios\Instructor\LogicaHorario.cs" />
     <Compile Include="LogicaDeNegocios\Instructor\LogicaInstructor.cs" />
     <Compile Include="LogicaDeNegocios\Login\Login.cs" />
@@ -393,6 +405,34 @@
     <Compile Include="Presentacion\Vista\Modulo4\ReservarInstructor\Modificar.aspx.designer.cs">
       <DependentUpon>Modificar.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Vista\Modulo5\GestionRutinas\Agregar.aspx.cs">
+      <DependentUpon>Agregar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Vista\Modulo5\GestionRutinas\Agregar.aspx.designer.cs">
+      <DependentUpon>Agregar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Vista\Modulo5\GestionRutinas\Consultar.aspx.cs">
+      <DependentUpon>Consultar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Vista\Modulo5\GestionRutinas\Consultar.aspx.designer.cs">
+      <DependentUpon>Consultar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Vista\Modulo5\GestionRutinas\Eliminar.aspx.cs">
+      <DependentUpon>Eliminar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Vista\Modulo5\GestionRutinas\Eliminar.aspx.designer.cs">
+      <DependentUpon>Eliminar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Vista\Modulo5\GestionRutinas\Modificar.aspx.cs">
+      <DependentUpon>Modificar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Vista\Modulo5\GestionRutinas\Modificar.aspx.designer.cs">
+      <DependentUpon>Modificar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Vista\Modulo6\Cliente\Consultar.aspx.cs">
       <DependentUpon>Consultar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -426,6 +466,7 @@
     <Compile Include="PruebasUnitarias\Login\Pruebalogin.cs" />
     <Compile Include="PruebasUnitarias\ReservaClase\PruebaReservaClase.cs" />
     <Compile Include="PruebasUnitarias\ReservaInstructor\PruebaReservaInstructor.cs" />
+    <Compile Include="PruebasUnitarias\Rutina\PruebaRutina.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Presentacion\MasterPage\Site1.Master" />

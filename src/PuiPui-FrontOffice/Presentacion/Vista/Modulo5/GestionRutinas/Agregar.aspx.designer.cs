@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PuiPui_FrontOffice.Presentacion.Vista.Modulo5
-{
-
-
-    public partial class Agregar
-    {
-
+namespace PuiPui_FrontOffice.Presentacion.Vista.Modulo5.GestionRutinas {
+    
+    
+    public partial class Agregar {
+        
         /// <summary>
         /// DropDownList1 control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace PuiPui_FrontOffice.Presentacion.Vista.Modulo5
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
-
+        
         /// <summary>
         /// ListaEjerText control.
         /// </summary>
@@ -31,7 +29,7 @@ namespace PuiPui_FrontOffice.Presentacion.Vista.Modulo5
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox ListaEjerText;
-
+        
         /// <summary>
         /// TextBoxDescripcion control.
         /// </summary>
@@ -40,7 +38,7 @@ namespace PuiPui_FrontOffice.Presentacion.Vista.Modulo5
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxDescripcion;
-
+        
         /// <summary>
         /// TextBoxHora control.
         /// </summary>
@@ -49,7 +47,7 @@ namespace PuiPui_FrontOffice.Presentacion.Vista.Modulo5
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxHora;
-
+        
         /// <summary>
         /// TextBoxMin control.
         /// </summary>
@@ -58,7 +56,7 @@ namespace PuiPui_FrontOffice.Presentacion.Vista.Modulo5
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxMin;
-
+        
         /// <summary>
         /// TextBoxSeg control.
         /// </summary>
@@ -67,7 +65,7 @@ namespace PuiPui_FrontOffice.Presentacion.Vista.Modulo5
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxSeg;
-
+        
         /// <summary>
         /// TextBoxRe control.
         /// </summary>
@@ -76,7 +74,7 @@ namespace PuiPui_FrontOffice.Presentacion.Vista.Modulo5
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxRe;
-
+        
         /// <summary>
         /// Button1 control.
         /// </summary>
@@ -85,7 +83,7 @@ namespace PuiPui_FrontOffice.Presentacion.Vista.Modulo5
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button1;
-
+        
         /// <summary>
         /// Button2 control.
         /// </summary>

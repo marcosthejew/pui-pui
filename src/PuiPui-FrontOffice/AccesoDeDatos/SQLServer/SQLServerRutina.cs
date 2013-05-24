@@ -19,7 +19,7 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
         {
 
 
-            string _cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            string _cadenaConexion = "Server= localhost;database=puipuiDB;integrated security=true";
             SqlConnection _conexion = new SqlConnection();
             SqlCommand _cmd = new SqlCommand();
             SqlDataReader _dr;
@@ -69,7 +69,7 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
         {
 
 
-            string _cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            string _cadenaConexion = "Server= localhost;database=puipuiDB;integrated security=true";
             SqlConnection _conexion = new SqlConnection();
             SqlCommand _cmd = new SqlCommand();
             SqlDataReader _dr;
@@ -127,7 +127,7 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
 
         public bool BDInsertarRutina(Rutina insertaRutina)
         {
-            string _cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            string _cadenaConexion = "Server= localhost;database=puipuiDB;integrated security=true";
             SqlConnection _conexion = new SqlConnection();
             SqlCommand _insertar = new SqlCommand();
             SqlDataReader _execute;
@@ -145,7 +145,7 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
                 if (_execute.Read())
                 {
                     db.CerrarConexion();
-                    return true;
+                    return false;
                 }
 
             }
@@ -159,12 +159,12 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
             {
                 db.CerrarConexion();
             }
-            return false;
+            return true;
         }
 
         public Rutina BDUltimo_ID_Rutina()
         {
-            string _cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            string _cadenaConexion = "Server= localhost;database=puipuiDB;integrated security=true";
             SqlConnection _conexion = new SqlConnection();
             SqlCommand _cmd = new SqlCommand();
             SqlDataReader _dr;
@@ -206,7 +206,7 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
         public bool BDUpadteRutina(Rutina updateRutina)
         {
             bool _updateo = false;
-            string _cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            string _cadenaConexion = "Server=localhost;database=puipuiDB;integrated security=true";
             SqlConnection _conexion = new SqlConnection();
             SqlCommand _updatear = new SqlCommand();
             SqlDataReader _execute;

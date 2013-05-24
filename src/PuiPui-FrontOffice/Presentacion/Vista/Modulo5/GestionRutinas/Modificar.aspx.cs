@@ -10,9 +10,9 @@ using PuiPui_FrontOffice.Entidades.Ejercicio;
 using PuiPui_FrontOffice.Entidades.Cliente;
 using PuiPui_FrontOffice.LogicaDeNegocios.Exepciones;
 
-namespace PuiPui_FrontOffice.Presentacion.Vista.Modulo5
+namespace PuiPui_FrontOffice.Presentacion.Vista.Modulo5.GestionRutinas
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class Modificar : System.Web.UI.Page
     {
         #region Atributos
      static   PuiPui_FrontOffice.Entidades.Cliente.Persona persona;
@@ -60,6 +60,18 @@ namespace PuiPui_FrontOffice.Presentacion.Vista.Modulo5
             }
 
         }
+
+        public static void ShowAlertMessage(string message)
+        {
+            Page page = HttpContext.Current.Handler as Page;
+            if (page != null)
+            {
+                message = message.Replace("'", "\'");
+                System.Web.UI.ScriptManager.RegisterStartupScript(page, page.GetType(), "err_msg", "alert('" + message + "');", true);
+            }
+        }
+
+
         protected void Cargar_Rutinas(List<Rutina> lista_rutinas)
         {
 
@@ -159,33 +171,80 @@ namespace PuiPui_FrontOffice.Presentacion.Vista.Modulo5
         protected void bModificar_Click(object sender, EventArgs e)
         {
 
+            int repeticiones;
+            int minuto;
+            int hora;
+            int segundo;
+            
+            
 
-            int hora = Convert.ToInt32(TextBoxHora.Text.ToString());
-            int minuto = Convert.ToInt32(TextBoxMin.Text.ToString());
-            int segundo = Convert.ToInt32(TextBoxSeg.Text.ToString());
-            int repeticiones = Convert.ToInt32((TextBoxRe.Text.ToString()));
-            String descri = tbNombreNuevo.Text.ToString();
-            DateTime hora_insertar = new DateTime(2013, 11, 12, hora, minuto, segundo);
-            Rutina upd_rutina = new Rutina(mod_rutina.Id_rutina, descri, hora_insertar, repeticiones);
-            bool actualizo = rutinas_modificar.Update_Rutina(upd_rutina);
-             if(actualizo==true)
-             {
-             
 
-                lista_id_ejercicios = rutinas_modificar.Lista_Ejercicios_Historial(per_id.IdPersona, mod_rutina.Id_rutina);
-                 lExito.Text = "Se ha modificado exitosamente.";
-                 lExito.ForeColor = System.Drawing.Color.Blue;
-                 lExito.Visible = true;
-             
-             
-             }
-             else
-             {
-                 lExito.Text = "El nombre de la rutina ya se encuentra asociado a otro Rutina.";
-                 lExito.ForeColor = System.Drawing.Color.Red;
-                 lExito.Visible = true;
+            if (TextBoxHora.Text == "" || TextBoxMin.Text == "" || TextBoxSeg.Text == "" || tbNombreNuevo.Text == "")
+            {
+                //textboxVacios = true;
 
-             }
-        }
+                ShowAlertMessage("Hay campos vacios");
+
+                //Response.Write("<script>alert('Hay campos vacios');</script>");
+
+            }
+
+            else
+            {
+                if (TextBoxRe.Text == "")
+                    repeticiones = 0;
+                else
+                    repeticiones = Convert.ToInt32(TextBoxRe.Text.ToString());
+
+              
+               hora = Convert.ToInt32(TextBoxHora.Text.ToString());
+               minuto = Convert.ToInt32(TextBoxMin.Text.ToString());
+               segundo = Convert.ToInt32(TextBoxSeg.Text.ToString());
+
+               if (minuto <= 0 || minuto >= 59 || segundo <= 0 || segundo >= 59 || hora <= 0 || hora >= 24)
+               {
+                   //validarTiempo = true;
+                   ShowAlertMessage("El formato correcto del tiempo es hora/minuto/segundo");
+               }
+               else
+               {
+
+
+                   String descri = tbNombreNuevo.Text.ToString();
+                   DateTime hora_insertar = new DateTime(2013, 11, 12, hora, minuto, segundo);
+
+
+                   Rutina upd_rutina = new Rutina(mod_rutina.Id_rutina, descri, hora_insertar, repeticiones);
+                   bool actualizo = rutinas_modificar.Update_Rutina(upd_rutina);
+
+                   if (actualizo == true)
+                   {
+
+
+                       lista_id_ejercicios = rutinas_modificar.Lista_Ejercicios_Historial(per_id.IdPersona, mod_rutina.Id_rutina);
+                       lExito.Text = "Se ha modificado exitosamente.";
+                       lExito.ForeColor = System.Drawing.Color.Blue;
+                       lExito.Visible = true;
+
+
+                   }
+                   else
+                   {
+                       lExito.Text = "El nombre de la rutina ya se encuentra asociado a otro Rutina.";
+                       lExito.ForeColor = System.Drawing.Color.Red;
+                       lExito.Visible = true;
+
+                   }
+               }
+
+
+                
+                }
+
+
+
+
+            Response.Redirect("/Presentacion/Vista/Modulo5/Modificar.aspx");
+            }  
+      }
     }
-}

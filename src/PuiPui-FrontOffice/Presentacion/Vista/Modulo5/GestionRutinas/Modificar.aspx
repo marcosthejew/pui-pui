@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Presentacion/MasterPage/Site.Master" AutoEventWireup="true" CodeBehind="Modificar.aspx.cs" Inherits="PuiPui_FrontOffice.Presentacion.Vista.Modulo5.WebForm1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Presentacion/MasterPage/Site.Master" AutoEventWireup="true" CodeBehind="Modificar.aspx.cs" Inherits="PuiPui_FrontOffice.Presentacion.Vista.Modulo5.GestionRutinas.Modificar" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <style type="text/css">
 
@@ -87,6 +87,8 @@
         MODIFICAR Rutinas</h2>
 
     <br />
+
+    <script language="javascript" type="text/javascript" src="../../../Scripts/ValidarText.js"></script>
 
     <asp:Label ID="lExito" runat="server" Text="El ejercicio se ha modificado correctamente." Visible="False"> </asp:Label>
     <br />
@@ -177,7 +179,7 @@
 
                     Modificicacion de la repeticiones:&nbsp;
                     <asp:TextBox ID="TextBoxRe" runat="server" Height="16px" Width="85px" onkeypress="CheckNumeric(event);"></asp:TextBox>
-
+                      
                 </td>
 
             </tr>

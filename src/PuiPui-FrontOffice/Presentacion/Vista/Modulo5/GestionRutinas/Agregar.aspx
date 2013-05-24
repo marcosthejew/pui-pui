@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Presentacion/MasterPage/Site.Master" AutoEventWireup="true" CodeBehind="Agregar.aspx.cs" Inherits="PuiPui_FrontOffice.Presentacion.Vista.Modulo5.Agregar" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Presentacion/MasterPage/Site.Master" AutoEventWireup="true" CodeBehind="Agregar.aspx.cs" Inherits="PuiPui_FrontOffice.Presentacion.Vista.Modulo5.GestionRutinas.Agregar" %>
 
 
 
@@ -118,7 +118,7 @@
             <asp:TextBox ID="TextBoxHora" runat="server" Height="16px" Width="31px"    onkeypress="CheckNumeric(event);" xmlns:asp="#unknown"></asp:TextBox>
 &nbsp;:
             <asp:TextBox ID="TextBoxMin" runat="server" Height="17px" Width="33px"   onkeypress="CheckNumeric(event);"  xmlns:asp="#unknown"> </asp:TextBox>
-&nbsp;:<asp:TextBox ID="TextBoxSeg" runat="server" Height="16px" Width="26px" onkeypress="CheckNumeric(event);" xmlns:asp="#unknown">  </asp:TextBox>
+&nbsp;:<asp:TextBox ID="TextBoxSeg" runat="server" Height="16px" Width="26px" onkeypress="CheckNumeric(event);" xmlns:asp="#unknown"> </asp:TextBox>
 &nbsp;hh/mm/ss</td>
         <td class="auto-style22">
             &nbsp;</td>
@@ -142,10 +142,10 @@
             &nbsp;</td>
         <td class="auto-style25">
             
-            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" Enabled="true" />
+            <asp:Button ID="Button1" runat="server" OnClick="bAgregar_Ejercicio_Click" Text="Agregar Ejercicio" Enabled="true" />
            
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Button" />
+            <asp:Button ID="Button2" runat="server" OnClick="bInsertar_Rutina_Click" Text="Guardar" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             
         </td>

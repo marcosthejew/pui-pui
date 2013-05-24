@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PuiPui_FrontOffice.Presentacion.Vista.Modulo5 {
+namespace PuiPui_FrontOffice.Presentacion.Vista.Modulo5.GestionRutinas {
     
     
-    public partial class WebForm1 {
+    public partial class Modificar {
         
         /// <summary>
         /// lExito control.
