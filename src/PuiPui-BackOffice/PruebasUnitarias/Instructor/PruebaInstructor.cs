@@ -50,7 +50,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.Instructor
             instructor.ApellidoPersona2 = "Arocha";
             instructor.TelefonoLocalPersona = "9759730";
             instructor.CiudadPersona = "Caracas";
-            instructor.CedulaPersona = 424149773;
+            instructor.TelefonoCelularPersona = "424149773";
             instructor.DireccionPersona = "Colinas de Valle Arriba";
             instructor.CorreoPersona = "karemsegura@gmail.com";
             instructor.ContactoNombrePersona = "Laura Arocha";
@@ -78,9 +78,25 @@ namespace PuiPui_BackOffice.PruebasUnitarias.Instructor
             LogicaInstructor objInstructor = new LogicaInstructor();
 
             Entidades.Instructor.Instructor instructor = new Entidades.Instructor.Instructor();
-            string cedula = "19290620";
+            string cedulaInicial = "19290620";
+            instructor.IdPersona = 4;
+            instructor.CedulaPersona = 13555000;
+            instructor.NombrePersona1 = "Prueba";
+            instructor.NombrePersona2 = "prueba";
+            instructor.ApellidoPersona1 = "Segura";
+            instructor.ApellidoPersona2 = "Arocha";
+            instructor.TelefonoLocalPersona = "9759730";
+            instructor.CiudadPersona = "Caracas";
+            instructor.TelefonoCelularPersona = "424149773";
+            instructor.DireccionPersona = "Colinas de Valle Arriba";
+            instructor.CorreoPersona = "karemsegura@gmail.com";
+            instructor.ContactoNombrePersona = "Laura Arocha";
+            instructor.ContactoTelefonoPersona = "9757979";
+            instructor.FechaNacimientoPersona = new DateTime(1990, 12, 11);
+            instructor.GeneroPersona = "F";
+            instructor.EstadoPersona = "Activo";
 
-           // Assert.AreEqual(true, objInstructor.ModificarInstructor(cedula));
+            Assert.AreEqual(true, objInstructor.ActualizarInstructor(instructor, cedulaInicial));
         }
 
     }
