@@ -3,47 +3,52 @@
     Inherits="PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_Clase_Salon_Instructor.ConsultarClasesSalon" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <div style="text-align:center; font-family:Helvetica; font-size:16px;">
-    <asp:Label ID="Label1" runat="server" Text="CLASE - SALON - INSTRUCTOR"></asp:Label>
+    <div style="text-align:center;">
+    <h1>CLASE - SALON - INSTRUCTOR</h1>        
     </div>
-    
-    
+        
     <div  style="float:left;">
         <fieldset style="width:775px; height:auto; margin-left:7.5%; fit-position:center;">
-        <legend style="text-align:center; font-family:Helvetica; font-size:14px;">Consultar Clase - Salón - Instructor</legend>
-             <table border="0" cellspacing="0" cellpadding="0" style="width: 707px">
+       <legend style="text-align:center;"><h2>Asignación de Clase - Salón - Instructor</h2></legend>
+               
+             <table border="0" cellspacing="0" cellpadding="0" style="width: 782px; margin-left:0px">
             <tr>
-                <td rowspan="0" nowrap="nowrap" class="auto-style3">
+                <td rowspan="0" nowrap="nowrap" class="auto-style14" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
+margin-top: 0px;" >
                     Buscar por:</td>
-                <td rowspan="0" class="auto-style6" nowrap="nowrap">
+                <td rowspan="0" class="auto-style21" nowrap="nowrap" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
+margin-top: 0px;">
                      <asp:RadioButton ID="RadioButtonConsultaCompleta" runat="server" 
                         GroupName="ConsultarClases" Text="Clase:" OnCheckedChanged="RadioButtonConsultaCompleta_CheckedChanged1" /> 
                               
 
                      </td>
-                <td align="left" rowspan="0" class="auto-style10" nowrap="nowrap">
+                <td rowspan="0" class="auto-style22" nowrap="nowrap" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
+margin-top: 0px;">
                     <asp:RadioButton ID="consultaClasePorNombres" runat="server" 
                         GroupName="ConsultarClases" Text="Salón:" OnCheckedChanged="consultaClasePorNombres_CheckedChanged"  
                        />
 
                     </td>
               
-                <td align="left" rowspan="1" nowrap="nowrap" class="auto-style11">
+                <td rowspan="1" nowrap="nowrap" class="auto-style24" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
+margin-top: 0px;">
                     <asp:RadioButton ID="consultaClasePorInstructor" runat="server" 
                         GroupName="ConsultarClases" Text="Instructor:" OnCheckedChanged="consultaClasePorInstructor_CheckedChanged" />
                        
                     
                     </td>
               
-                <td rowspan="0" class="auto-style12" nowrap="nowrap">
+                <td rowspan="0" class="auto-style23" nowrap="nowrap">
                    
 
-                    <asp:TextBox ID="nombreClase" runat="server" Width="111px"></asp:TextBox>
+                    <asp:TextBox ID="nombreClase" runat="server" Width="111px" style="margin-left: 0px" ></asp:TextBox>
 
 
                     </td>
               
-                <td rowspan="0" class="auto-style12" nowrap="nowrap">
+                <td rowspan="0" class="auto-style19" nowrap="nowrap" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
+margin-top: 0px;">
                    
 
                     <asp:RadioButton ID="consultaClasePorEstatus" runat="server" 
@@ -52,7 +57,7 @@
                     
                     </td>
               
-                <td rowspan="0" nowrap="nowrap" class="auto-style8" align="left">
+                <td rowspan="0" nowrap="nowrap" class="auto-style17" align="left">
                    
 
                     <asp:DropDownList ID="DropDownListEstatusClase" runat="server" Width="75px" OnSelectedIndexChanged="DropDownListEstatusClase_SelectedIndexChanged" Height="18px" style="margin-left: 0px">
@@ -66,21 +71,16 @@
                 <td class="auto-style3">
 
 
-                <asp:Button ID="botonBuscarClase" runat="server" Text="Buscar" CssClass="button" OnClick="botonBuscarClase_Click" Font-Names="tahoma plain" Font-Size="14px" Height="24px" Width="110px"/>
+                <asp:Button ID="botonBuscarClase" runat="server" Text="Buscar" CssClass="button" OnClick="botonBuscarClase_Click" Font-Names="tahoma plain" Font-Size="14px" Height="25px" Width="120px"/>
 
 
                 </td>
               
             </tr>
 
-            <tr>
-                <td class="auto-style1">
-                    &nbsp;</td>
-                <td class="auto-style2">
-                    &nbsp;</td>
-            </tr>
-
             </table> 
+           </br>
+           
      
           
                         <asp:GridView ID="GridConsultar" runat="server" CellPadding="4" ForeColor="#333333" 
@@ -116,23 +116,29 @@
         .auto-style3 {
             width: 86px;
         }
-        .auto-style6 {
-            width: 65px;
-        }
-        .auto-style8 {
-            width: 110px;
-        }
-        .auto-style10 {
-            width: 68px;
-        }
-        .auto-style11 {
-            width: 92px;
-        }
-        .auto-style12 {
-            width: 80px;
-        }
         .button {
             margin-left: 0px;
+        }
+        .auto-style14 {
+            width: 64px;
+        }
+        .auto-style17 {
+            width: 76px;
+        }
+        .auto-style19 {
+            width: 65px;
+        }
+        .auto-style21 {
+            width: 53px;
+        }
+        .auto-style22 {
+            width: 54px;
+        }
+        .auto-style23 {
+            width: 89px;
+        }
+        .auto-style24 {
+            width: 92px;
         }
         </style>
     </asp:Content>

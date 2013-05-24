@@ -1,32 +1,35 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="../../../MasterPage/Site.master"
  AutoEventWireup="true" CodeBehind="VerDetalle.aspx.cs" Inherits="PuiPui_BackOffice.Presentacion.Vista.Modulo2.Geestion_de_Salones.Eliminar" %>
 <asp:Content ID="Content1" runat="server" contentplaceholderid="MainContent">
-    <div style="text-align:center; font-family:Helvetica; font-size:16px;">
-    <asp:Label ID="Label2" runat="server" Text="SALON"></asp:Label>
+    <div style="text-align:center;">
+    <h1>SALON</h1>
     </div>
 
-    <div style="height:30px; text-align:center; font-family:Helvetica; font-size:14px;">
+    <div style="height:30px; text-align:left; font-family:Helvetica; font-size:14px;">
         <asp:Label ID="falla" runat="server" Text="Operación Fallida" CssClass="falla" 
             Visible="False" ForeColor="Red"></asp:Label>
         <asp:Label ID="Exito" runat="server" Text="Operación Exitosa" CssClass="Exito" 
-            Visible="False"></asp:Label>
+            Visible="False" ForeColor="#ffffff"></asp:Label>
     </div>
 
     <div  style="float:left;">
-        <fieldset style="width:775px; height:auto; margin-left:7.5%; fit-position:center;">
-        <legend style="text-align:center; font-family:Helvetica; font-size:14px;">Detalle Salón</legend>       
+        <fieldset style="width:775px; height:auto; margin-left:7.5%; fit-position:center;">            <legend style="text-align:center;"><h2>Detalle Salón</h2></legend>     
             <table style="margin:5% auto auto 26%; height: 140px; width: 455px;" border="0" cellspacing="0" cellpadding="0" align="center">
             <tr>
-                <td class="auto-style1" align="center">
-                    <asp:Label ID="Label4" runat="server" Text="Ubicación:" Font-Names="Arial" Font-Size="12px"></asp:Label>
+                <td class="auto-style1" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
+margin-top: 0px;">
+                    
+                    <asp:Label ID="Label4" runat="server" Text="Ubicación:"></asp:Label>
                 </td>
                 <td class="auto-style2">
                     &nbsp;<asp:TextBox ID="TextBoxUbicacion" runat="server" Height="22px" Width="270px" Enabled="False"></asp:TextBox>
                 </td>
             </tr>
             <tr>
-                <td class="auto-style1" align="center">
-                    <asp:Label ID="Label3" runat="server" Text="Capacidad:" Font-Names="Arial" Font-Size="12px"></asp:Label>
+                <td class="auto-style1" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
+margin-top: 0px;">
+                    
+                    <asp:Label ID="Label3" runat="server" Text="Capacidad:" ></asp:Label>
                 </td>
                 <td class="auto-style2">
                     &nbsp;<asp:TextBox ID="TextBoxCapacidad" runat="server" Height="22px" Width="270px" Enabled="False"></asp:TextBox>
@@ -34,8 +37,10 @@
             </tr>
             
             <tr>
-                <td class="auto-style1" align="center">
-                    <asp:Label ID="Label1" runat="server" Text="Status:" Font-Names="Arial" Font-Size="12px"></asp:Label>
+                <td class="auto-style1" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
+margin-top: 0px;">
+                    
+                    <asp:Label ID="Label2" runat="server" Text="Status:" ></asp:Label>
                 </td>
                 <td class="auto-style2">
                     &nbsp;<asp:TextBox ID="TextBoxStatus" runat="server" Height="22px" Width="270px" Enabled="False"></asp:TextBox>

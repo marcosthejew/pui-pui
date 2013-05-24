@@ -1,24 +1,25 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Presentacion/MasterPage/Site.Master" AutoEventWireup="true" CodeBehind="DetalleClaseSalonInstructor.aspx.cs" Inherits="PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_Clase_Salon_Instructor.WebForm1" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <div style="text-align:center; font-family:Helvetica; font-size:16px;height:30px;">
-    <asp:Label ID="Label1" runat="server" Text="CLASE - SALON"></asp:Label>
-    &nbsp;- INSTRUCTOR</div>
+    <div style="text-align:center;">
+    <h1>CLASE - SALON - INSTRUCTOR</h1>
+        
+    </div>
 
    <div style="height:20px; text-align:left; font-family:Helvetica; font-size:16px;">
         <asp:Label ID="Exito" runat="server" Text="Operación Exitosa" CssClass="Exito" 
-            Visible="False"></asp:Label>
+            Visible="False" ForeColor="#ffffff"></asp:Label>
         <asp:Label ID="falla" runat="server" Text="Operación Fallida" CssClass="falla" 
             Visible="False" ForeColor="Red"></asp:Label>
     </div>
 
     <div  style="float:left;">
         <fieldset style="width:775px; height:auto; margin-left:7.5%; fit-position:center;">
-        <legend style="text-align:center; font-family:Helvetica; font-size:14px;">Modificar Clase - Salón -&nbsp; Instructor</legend>
+        <legend style="text-align:center;"><h2>Asignación de Clase - Salón - Instructor</h2></legend>
                
             <table style="margin:5% auto auto 18%; height: 140px; width: 440px;" border="0" cellspacing="0" cellpadding="0" >
             <tr>
                 <td class="auto-style3" align="left">
-                    <asp:Label ID="Label2" runat="server" Text="Nombre de la Clase:" Font-Names="Arial" Font-Size="12px"></asp:Label>
+                    <h3>Nombre de la Clase:</h3>
                     
                 </td>
                 <td class="auto-style4" style="text-align:left">
@@ -30,7 +31,7 @@
             </tr>
             <tr>
                 <td class="auto-style9" align="left">
-                    <asp:Label ID="Label4" runat="server" Text="Ubicación del Salón:" Font-Names="Arial" Font-Size="12px"></asp:Label>
+                    <h3>Ubicación del Salón:</h3>
                     
                 </td>
                 <td class="auto-style10" colspan="0" style="text-align:left">
@@ -47,7 +48,7 @@
 
             <tr>
                 <td class="auto-style5" align="left">
-                    <asp:Label ID="Label3" runat="server" Text="Instructor:" Font-Names="Arial" Font-Size="12px"></asp:Label>
+                    <h3>Instructor:</h3>
                     
                     </td>
                 <td class="auto-style6" colspan="0" style="text-align:left" align="left">
@@ -64,8 +65,9 @@
 
             <tr>
                 <td class="auto-style1">
-                    Estatus:</td>
-                <td class="auto-style2">
+                    <h3>Estatus:</h3></td>
+                <td class="auto-style2" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
+margin-top: 0px;">
                     
                     <asp:RadioButton ID="Activo" Text="Activo" runat="server" OnCheckedChanged="Activo_CheckedChanged" GroupName="radio"/>
                     

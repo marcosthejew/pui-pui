@@ -1,27 +1,29 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="../../../MasterPage/Site.master"
  AutoEventWireup="true" CodeBehind="Consultar.aspx.cs" Inherits="PuiPui_BackOffice.Presentacion.Vista.Modulo2.Geestion_de_Salones.Consultar" %>
 <asp:Content ID="Content1" runat="server" contentplaceholderid="MainContent">
-    <div style="text-align:center; font-family:Helvetica; font-size:16px;">
-    <asp:Label ID="Label1" runat="server" Text="SALON"></asp:Label>
+     <div style="text-align:center;">
+    <h1>SALON</h1>
     </div>
 
-    <div style="height:30px; text-align:center; font-family:Helvetica; font-size:14px;">
+    <div style="height:30px; text-align:left; font-family:Helvetica; font-size:14px;">
         <asp:Label ID="falla" runat="server" Text="Operación Fallida" CssClass="falla" 
             Visible="False" ForeColor="Red"></asp:Label>
         <asp:Label ID="Exito" runat="server" Text="Operación Exitosa" CssClass="Exito" 
-            Visible="False"></asp:Label>
+            Visible="False" ForeColor="#ffffff"></asp:Label>
     </div>
 
     <div  style="float:left;">
         <fieldset style="width:775px; height:auto; margin-left:7.5%; fit-position:center;">
-        <legend style="text-align:center; font-family:Helvetica; font-size:14px;">Consultar Salón</legend>
+       <legend style="text-align:center;"><h2>Agregar Salón</h2></legend>
                
-            <table border="0" cellspacing="0" cellpadding="0" style="width: 596px; margin-left:100px" >
+            <table border="0" cellspacing="0" cellpadding="0" style="width: 654px; margin-left:100px" >
             <tr>
-                <td rowspan="0" nowrap="nowrap" class="auto-style3" style="text-align:center">
+                <td rowspan="0" nowrap="nowrap" class="auto-style3" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
+margin-top: 0px;">
                     Buscar por:</td>
               
-                <td align="left" rowspan="1" nowrap="nowrap" class="auto-style4">
+                <td rowspan="1" nowrap="nowrap" class="auto-style4" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
+margin-top: 0px;">
                      <asp:RadioButton ID="consultaCompleta" runat="server" 
                         GroupName="ConsultarSalon" Text="Todos los parámetros" OnCheckedChanged="consultaCompleta_CheckedChanged1" /> 
                 </td>              
@@ -30,7 +32,8 @@
             </tr>
                 <tr>
                 <td></td>                
-                <td class="auto-style9">
+                <td class="auto-style9" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
+margin-top: 0px;">
                     <asp:RadioButton ID="consultarSalonPorUbicacion" runat="server" 
                         GroupName="ConsultarSalon" Text="Ubicación:" OnCheckedChanged="consultarSalonPorUbicacion_CheckedChanged"/>
                     </td>  
@@ -43,7 +46,8 @@
             <tr>
                 <td class="auto-style3"></td>
                 
-                <td align="left" rowspan="1" nowrap="nowrap" class="auto-style4" >
+                <td rowspan="1" nowrap="nowrap" class="auto-style4" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
+margin-top: 0px;" >
                      <asp:RadioButton ID="consultarSalonPorCapacidad" runat="server" 
                         GroupName="ConsultarSalon" Text="Capacidad:" OnCheckedChanged="consultaCapacidad_CheckedChanged1" />
                     </td>
@@ -60,7 +64,8 @@
             </tr>
             <tr>
                 <td></td>                
-                <td class="auto-style9">
+                <td class="auto-style9" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
+margin-top: 0px;">
                     <asp:RadioButton ID="consultaSalonPorStatus" runat="server" 
                         GroupName="ConsultarSalon" Text="Status:" OnCheckedChanged="consultaSalonPorStatus_CheckedChanged"/>
                        
@@ -120,14 +125,14 @@
             height: 31px;
         }
         .auto-style4 {
-            width: 152px;
+            width: 182px;
             height: 31px;
         }
         .auto-style7 {
             width: 140px;
         }
         .auto-style9 {
-            width: 152px;
+            width: 182px;
         }
         .auto-style10 {
             width: 187px;
