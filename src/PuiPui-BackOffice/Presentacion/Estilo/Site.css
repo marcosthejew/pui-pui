@@ -39,7 +39,7 @@ a:active, a:hover { color: #BBBB00; text-decoration: none; font-weight: bold; }
 
 h1 {
 
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Helvetica, sans-serif;
 
 	font-size: 18px;
 
@@ -55,9 +55,37 @@ h1 {
 
 h2 {
 
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Helvetica, sans-serif;
+
+	font-size: 16px;
+
+	font-weight: bold;
+
+	color: #fff;
+
+	margin-top: 0px;
+
+}
+
+h3 {
+    
+	font-family: Arial,Helvetica, sans-serif;
 
 	font-size: 14px;
+
+	font-weight: bold;
+
+	color: #fff;
+
+	margin-top: 0px;
+
+}
+
+h4 {
+    
+	font-family: Arial,Helvetica, sans-serif;
+
+	font-size: 12px;
 
 	font-weight: bold;
 
