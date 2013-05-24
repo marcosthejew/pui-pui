@@ -82,18 +82,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.Cliente
 
         }
 
-        [Test]
-        public void TestConsultarPorNombre()
-        {
-            string nombre = "Karla";
-
-            List<Persona> listaPersona = new List<Persona>();
-
-            listaPersona = logPersona.ConsultarPorNombre(nombre);
-
-            Assert.AreEqual(listaPersona[0].NombrePersona1.TrimEnd(), nombre);
-        }
-
+        
         [Test]
         public void TestCambiarEstado()
         {
@@ -146,9 +135,9 @@ namespace PuiPui_BackOffice.PruebasUnitarias.Cliente
             miPersona.IdPersona = 2;
             miPersona.CedulaPersona = Convert.ToInt32("18777876");
             miPersona.NombrePersona1 = "Leonardo";
-            miPersona.NombrePersona2 = "Jose                                              ";
+            miPersona.NombrePersona2 = "Jose";
             miPersona.ApellidoPersona1 = "Pita";
-            miPersona.ApellidoPersona2 = "Perez                                             ";
+            miPersona.ApellidoPersona2 = "Perez";
             miPersona.GeneroPersona = "Masculino";
             miPersona.FechaNacimientoPersona = Convert.ToDateTime("1985-01-07");
             miPersona.FechaIngresoPersona = Convert.ToDateTime("2013-05-14");
@@ -169,9 +158,9 @@ namespace PuiPui_BackOffice.PruebasUnitarias.Cliente
             personita = logPersona.ConsultarDetallePersona(2);
 
             Assert.AreEqual(miPersona.NombrePersona1, personita.NombrePersona1.TrimEnd());
-            Assert.AreEqual(miPersona.NombrePersona2, personita.NombrePersona2);
+            Assert.AreEqual(miPersona.NombrePersona2, personita.NombrePersona2.TrimEnd());
             Assert.AreEqual(miPersona.ApellidoPersona1, personita.ApellidoPersona1.TrimEnd());
-            Assert.AreEqual(miPersona.ApellidoPersona2, personita.ApellidoPersona2);
+            Assert.AreEqual(miPersona.ApellidoPersona2, personita.ApellidoPersona2.TrimEnd());
             Assert.AreEqual(miPersona.GeneroPersona, personita.GeneroPersona.TrimEnd());
             Assert.AreEqual(miPersona.FechaNacimientoPersona, personita.FechaNacimientoPersona);
             Assert.AreEqual(miPersona.FechaIngresoPersona, personita.FechaIngresoPersona);

@@ -28,7 +28,7 @@ namespace PuiPui_FrontOffice.PruebasUnitarias.Client
         {
 
             miAcceso.Login = "karla";
-            miAcceso.Password = "1234";
+            miAcceso.Password = "hola";
 
             resultado = logPersona.LoginCorrecto(miAcceso.Login, miAcceso.Password);
                 
@@ -42,15 +42,15 @@ namespace PuiPui_FrontOffice.PruebasUnitarias.Client
         {
             miPersona.CedulaPersona = Convert.ToInt32("19887778");
             miPersona.NombrePersona1 = "Sandra";
-            miPersona.NombrePersona2 = "Lissete                                           ";
+            miPersona.NombrePersona2 = "Lissete";
             miPersona.ApellidoPersona1 = "Villamizar";
-            miPersona.ApellidoPersona2 = "Meza                                              ";
+            miPersona.ApellidoPersona2 = "Meza";
             miPersona.GeneroPersona = "Femenino";
             miPersona.FechaNacimientoPersona = Convert.ToDateTime("1987-04-03");
             miPersona.FechaIngresoPersona = Convert.ToDateTime("2013-05-14");
             miPersona.CiudadPersona = "Caracas";
             miPersona.DireccionPersona = "El Junquito, Km 4";
-            miPersona.TelefonoLocalPersona = "021298766678";
+            miPersona.TelefonoLocalPersona = "02129876668";
             miPersona.TelefonoCelularPersona = "04169876678";
             miPersona.ContactoNombrePersona = "Iliana Pita";
             miPersona.ContactoTelefonoPersona = "04129876543";
@@ -63,9 +63,9 @@ namespace PuiPui_FrontOffice.PruebasUnitarias.Client
             personita = logPersona.ConsultarPersonaPorLogin("Sandra");
 
             Assert.AreEqual(miPersona.NombrePersona1, personita.NombrePersona1.TrimEnd());
-            Assert.AreEqual(miPersona.NombrePersona2, personita.NombrePersona2);
+            Assert.AreEqual(miPersona.NombrePersona2, personita.NombrePersona2.TrimEnd());
             Assert.AreEqual(miPersona.ApellidoPersona1, personita.ApellidoPersona1.TrimEnd());
-            Assert.AreEqual(miPersona.ApellidoPersona2, personita.ApellidoPersona2);
+            Assert.AreEqual(miPersona.ApellidoPersona2, personita.ApellidoPersona2.TrimEnd());
             Assert.AreEqual(miPersona.GeneroPersona, personita.GeneroPersona.TrimEnd());
             Assert.AreEqual(miPersona.FechaNacimientoPersona, personita.FechaNacimientoPersona);
             Assert.AreEqual(miPersona.FechaIngresoPersona, personita.FechaIngresoPersona);
@@ -89,9 +89,9 @@ namespace PuiPui_FrontOffice.PruebasUnitarias.Client
             miPersona.IdPersona = 7;
             miPersona.CedulaPersona = Convert.ToInt32("18777876");
             miPersona.NombrePersona1 = "Karla";
-            miPersona.NombrePersona2 = "Andreina                                          ";
+            miPersona.NombrePersona2 = "Andreina";
             miPersona.ApellidoPersona1 = "Rodriguez";
-            miPersona.ApellidoPersona2 = "Ramirez                                              ";
+            miPersona.ApellidoPersona2 = "Ramirez";
             miPersona.GeneroPersona = "Fsemenino";
             miPersona.FechaNacimientoPersona = Convert.ToDateTime("1987-09-30");
             miPersona.FechaIngresoPersona = Convert.ToDateTime("2013-05-14");
