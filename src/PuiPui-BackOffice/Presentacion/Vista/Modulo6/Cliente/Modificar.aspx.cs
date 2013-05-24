@@ -62,7 +62,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo6.Cliente
             if (cedulaRadioButton.Checked && !CiConsTextBox.Text.Equals(""))
             {
                 LogicaPersona logicaPersona = new LogicaPersona();
-                GridModificar.DataSource = logicaPersona.ConsultarPorCedula(CiConsTextBox.Text);
+                GridModificar.DataSource = logicaPersona.ConsultarPorCedula(CiConsTextBox.Text.TrimEnd());
                 GridModificar.DataBind();
             }
             if (cargoRadioButton.Checked && !NombreTextBox.Text.Equals(""))
@@ -70,7 +70,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo6.Cliente
                 LogicaPersona logicaPersona = new LogicaPersona();
                 if (!NombreTextBox.Text.ToString().Contains("Elija un Cargo"))
                 {
-                    GridModificar.DataSource = logicaPersona.ConsultarPorNombre(NombreTextBox.Text);
+                    GridModificar.DataSource = logicaPersona.ConsultarPorNombre(NombreTextBox.Text.TrimEnd());
                     GridModificar.DataBind();
                 }
                 else

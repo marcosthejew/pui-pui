@@ -25,11 +25,15 @@ namespace PuiPui_FrontOffice.Presentacion.Vista.Modulo6.Cliente
                 acceso = (Acceso)Session["loginPersona"];
                 loginPersona = acceso.Login;
 
+                Exito.Visible = false;
+                falla.Visible = false;
+
+                persona = (Persona)Session["idPersona"];
+                int idPersona = persona.IdPersona;
+
                 if (!IsPostBack)
                 {
-                    Exito.Visible = false;
-                    falla.Visible = false;
-
+                    
                     nuevaPersona = logicaPersona.ConsultarPersonaPorLogin(loginPersona);
                     llenarGenero(ComboGenero);
                     llenarTipo(ComboTipo);
@@ -54,24 +58,24 @@ namespace PuiPui_FrontOffice.Presentacion.Vista.Modulo6.Cliente
 
         protected void BRegistrar_Click(object sender, EventArgs e)
         {
-            int idCliente = Convert.ToInt32(LIdentificador.Text);
-            DateTime fechaIngreso = Convert.ToDateTime(LFechaIngreso.Text);
+            int idCliente = Convert.ToInt32(LIdentificador.Text.TrimEnd());
+            DateTime fechaIngreso = Convert.ToDateTime(LFechaIngreso.Text.TrimEnd());
             DateTime fechaNacimiento = LFechaNacimiento.SelectedDate;
-            string generoPersona = ComboGenero.SelectedItem.Text;
-            string nombrePersona1 = LPrimerNombre.Text;
-            string nombrePersona2 = LSegundoNombre.Text;
-            string apellidoPersona1 = LPrimerApellido.Text;
-            string apellidoPersona2 = LSegundoApellido.Text;
-            string telefonoCelularPersona = LTelefonoCelular.Text;
-            string telefonoLocalPersona = LTelefonoLocal.Text;
-            string direccionPersona = LDireccion.Text;
-            string correoPersona = LCorreo.Text;
-            string tipoPersona = ComboTipo.SelectedItem.Text;
-            int cedulaPersona = Convert.ToInt32(LCedula.Text);
-            string ciudadPersona = LCiudad.Text;
-            string contactoNombrePersona = LNombreContactoEmergencia.Text;
-            string contactoTelefonoPersona = LTelefonoContactoEmergencia.Text;
-            string estadoPersona = ComboStatus.SelectedItem.Text;
+            string generoPersona = ComboGenero.SelectedItem.Text.TrimEnd();
+            string nombrePersona1 = LPrimerNombre.Text.TrimEnd();
+            string nombrePersona2 = LSegundoNombre.Text.TrimEnd();
+            string apellidoPersona1 = LPrimerApellido.Text.TrimEnd();
+            string apellidoPersona2 = LSegundoApellido.Text.TrimEnd();
+            string telefonoCelularPersona = LTelefonoCelular.Text.TrimEnd();
+            string telefonoLocalPersona = LTelefonoLocal.Text.TrimEnd();
+            string direccionPersona = LDireccion.Text.TrimEnd();
+            string correoPersona = LCorreo.Text.TrimEnd();
+            string tipoPersona = ComboTipo.SelectedItem.Text.TrimEnd();
+            int cedulaPersona = Convert.ToInt32(LCedula.Text.TrimEnd());
+            string ciudadPersona = LCiudad.Text.TrimEnd();
+            string contactoNombrePersona = LNombreContactoEmergencia.Text.TrimEnd();
+            string contactoTelefonoPersona = LTelefonoContactoEmergencia.Text.TrimEnd();
+            string estadoPersona = ComboStatus.SelectedItem.Text.TrimEnd();
 
             nuevaPersona.IdPersona = idCliente;
             nuevaPersona.FechaIngresoPersona = fechaIngreso;

@@ -35,7 +35,7 @@ namespace PuiPui_FrontOffice.Presentacion.Vista.Home
             catch (NullReferenceException)
             {
 
-                Response.Redirect("../../Home/Login.aspx");
+                Response.Redirect("Login.aspx");
             }
 
         }
