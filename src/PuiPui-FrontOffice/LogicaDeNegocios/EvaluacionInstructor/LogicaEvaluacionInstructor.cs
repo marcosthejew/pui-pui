@@ -67,7 +67,7 @@ namespace PuiPui_FrontOffice.LogicaDeNegocios.EvaluacionInstructor
                 if (_dr.GetValue(21) is DBNull)
                     _evaluacion.IdCliente = 0;
                 else
-                    _evaluacion.IdCliente = (int)_dr.GetValue(21);
+                    _evaluacion.IdCliente = Convert.ToInt32(_dr.GetValue(21));
                 _evaluacion.IdInstructor =(int)_dr.GetValue(22);
 
                 _listaEvaluacion.Add(_evaluacion);
@@ -109,16 +109,30 @@ namespace PuiPui_FrontOffice.LogicaDeNegocios.EvaluacionInstructor
         }
         #endregion
 
+        #region Consultar Evaluaciones por cliente
         //Metodo para consultar todas las evaluaciones de un cliente
-        public List<Evaluacion> ConsultarEvaluacion(Clientes cliente)
+        public List<EEvaluacionInstructor> ConsultarEvaluacion(Persona cliente)
         {
-            List<Evaluacion> evaluaciones = null;
+            List<EEvaluacionInstructor> evaluaciones = new List<EEvaluacionInstructor>();
+            List<EEvaluacionInstructor> evaluacionesCliente = new List<EEvaluacionInstructor>();
+            evaluaciones = null;
+            evaluacionesCliente = null;
+            evaluaciones = ConsultarEvaluacion();
+
+            foreach (EEvaluacionInstructor evaluacion in evaluaciones)
+            {
+                if (evaluacion.IdCliente == cliente.IdPersona)
+                {
+                    evaluaciones.Add(evaluacion);
+                }
+            }
             
             return evaluaciones;
         }
+        #endregion
 
         //Metodo para consultar las evaluaciones por cliente e instructor
-        public List<Evaluacion> ConsultarEvaluacion(Clientes cliente, Instructor instructor)
+        public List<Evaluacion> ConsultarEvaluacion(Clientes cliente, Entidades.Instructor.Instructor instructor)
         {
             List<Evaluacion> evaluaciones = null;
 
@@ -126,7 +140,7 @@ namespace PuiPui_FrontOffice.LogicaDeNegocios.EvaluacionInstructor
         }
 
         //Metodo para consultar todas las evaluaciones de un instructor
-        public List<Evaluacion> ConsultarEvaluacion(Instructor instructor)
+        public List<Evaluacion> ConsultarEvaluacion(Entidades.Instructor.Instructor instructor)
         {
             List<Evaluacion> evaluaciones = null;
 

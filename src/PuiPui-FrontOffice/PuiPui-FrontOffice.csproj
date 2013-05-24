@@ -131,6 +131,8 @@
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerEjercicio.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerEvaluacionInstructor.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerHistorialEjercicios.cs" />
+    <Compile Include="AccesoDeDatos\SQLServer\SQLServerHorario.cs" />
+    <Compile Include="AccesoDeDatos\SQLServer\SQLServerInstructor.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerPersona.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerReservaInstructor.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerReservarClase.cs" />
@@ -159,6 +161,8 @@
     <Compile Include="LogicaDeNegocios\Cliente\LogicaPersona.cs" />
     <Compile Include="LogicaDeNegocios\EvaluacionInstructor\LogicaEvaluacionInstructor.cs" />
     <Compile Include="LogicaDeNegocios\Exepciones\ExcepcionConexion.cs" />
+    <Compile Include="LogicaDeNegocios\Instructor\LogicaHorario.cs" />
+    <Compile Include="LogicaDeNegocios\Instructor\LogicaInstructor.cs" />
     <Compile Include="LogicaDeNegocios\Login\Login.cs" />
     <Compile Include="LogicaDeNegocios\ReservaClase\ReservaClase.cs" />
     <Compile Include="LogicaDeNegocios\ReservaInstructor\LogicaReservaInstructor.cs" />

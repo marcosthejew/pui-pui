@@ -39,7 +39,8 @@ GO
 CREATE PROCEDURE [dbo].[ModificarEvaluacionInstructor]
 @calificacion INT,
 @idCliente INT,
-@idInstructor INT
+@idInstructor INT,
+@idEvaluacion INT
 
 AS
 
@@ -47,7 +48,7 @@ BEGIN
 	SET NOCOUNT ON;
     
     UPDATE Evaluacion SET fecha_evaluacion=getdate(), calificacion=@calificacion 
-	WHERE id_instructor=@idInstructor AND id_cliente=@idCliente;
+	WHERE id_evaluacion = @idEvaluacion AND id_cliente = @idCliente;
 	
 END;
 

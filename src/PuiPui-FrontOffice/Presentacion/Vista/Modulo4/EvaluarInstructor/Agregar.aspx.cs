@@ -4,7 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
 using PuiPui_FrontOffice.LogicaDeNegocios.EvaluacionInstructor;
+using PuiPui_FrontOffice.LogicaDeNegocios.Instructor;
+using PuiPui_FrontOffice.Entidades.Instructor;
 
 namespace PuiPui_FrontOffice.Presentacion.Vista.Modulo4.EvaluarInstructor
 {
@@ -13,8 +16,13 @@ namespace PuiPui_FrontOffice.Presentacion.Vista.Modulo4.EvaluarInstructor
 
         LogicaEvaluacionInstructor _evaluacion = new LogicaEvaluacionInstructor();
 
+        List<Instructor> _listaInstructores;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            LogicaInstructor instructor = new LogicaInstructor();
+            _listaInstructores = instructor.ConsultarTodosInstructores();
 
             if (!IsPostBack)
             {
@@ -25,15 +33,43 @@ namespace PuiPui_FrontOffice.Presentacion.Vista.Modulo4.EvaluarInstructor
 
         }
 
+        //protected void cargarInstructores()
+        //{
+        //    Instructores.Items.Add("Seleccione un Instructor");
+        //    Instructores.Items.Add("Instructor1 Prueba");
+        //    Instructores.Items.Add("Instructor2 Prueba");
+        //    Instructores.Items.Add("Instructor2 Prueba");
+        //    Instructores.DataBind();
+
+        //}
+
+        #region Llenar DropDownList Instructores
         protected void cargarInstructores()
         {
-            Instructores.Items.Add("Seleccione un Instructor");
-            Instructores.Items.Add("Instructor1 Prueba");
-            Instructores.Items.Add("Instructor2 Prueba");
-            Instructores.Items.Add("Instructor2 Prueba");
+
+            LogicaInstructor instructores = new LogicaInstructor();
+            Instructores.DataSource = _listaInstructores;
+            Instructores.DataTextField = "NombreCompleto";//"NombrePersona1";
+            Instructores.DataValueField = "IdPersona";
             Instructores.DataBind();
 
+            //// Crea la nueva DataColumn
+            //DataColumn dcNombre = new DataColumn("name", Type.GetType("System.String"));
+            //// Establece la sentencia a calcular con las columnas existentes
+            //dcNombre.Expression = "NombrePersona1 + ' ' + ApellidoPersona1";
+            //// Agrega la nueva columna al DataTable
+            //dtAutores.Columns.Add(dcNombre);
+            //// Asigna el DataTable Autores como fuente de datos para el DropDownList
+            //ddlComputedColumns.DataSource = dtAutores.DefaultView;
+            //// Asigno el valor a mostrar en el DropDownList
+            //ddlComputedColumns.DataTextField = "name";
+            //// Asigno el valor del value en el DropDownList
+            //ddlComputedColumns.DataValueField = "au_id";
+            //// Llena el DropDownList con los datos
+            //ddlComputedColumns.DataBind();
+
         }
+        #endregion
 
         protected void ButtonAgregar_Click(object sender, EventArgs e)
         {
