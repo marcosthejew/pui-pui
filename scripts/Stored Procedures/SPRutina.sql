@@ -1,4 +1,20 @@
-﻿
+﻿USE [puipuiDB]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE procedure [dbo].[buscar_rutina_todas]
+as
+
+BEGIN
+	set nocount on
+		
+	SELECT *
+	FROM Rutina 	
+END;
+
+GO
 /*CONSULTAR RUTINAS*/
 
 USE [puipuiDB]

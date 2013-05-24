@@ -6,7 +6,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE procedure [dbo].[busca_rutina_idCliente]
-@id_cli int
+@id_cli bigint
 as
 
 BEGIN
@@ -27,7 +27,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE procedure [dbo].[insertar_HistorialEjercicio]
 @id_rutina int,
-@id_cliente int,
+@id_cliente bigint,
 @id_ejercicio int
 as
 
@@ -44,7 +44,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE procedure [dbo].[busca_rutina_idEjercicio]
-@id_cli int,
+@id_cli bigint,
 @id_ru int
 as
 
@@ -56,8 +56,6 @@ BEGIN
  where id_cliente = @id_cli and id_rutina=@id_ru;
 END;
 
-GO
-
 
 /*DELETE en el Historial RUTINAS*/
 USE [puipuiDB]
@@ -68,7 +66,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE procedure [dbo].[delete_Historial_Rutina]
 @id_ruti int,
-@id_cli  int
+@id_cli  bigint
 as
 BEGIN
 set nocount on	
