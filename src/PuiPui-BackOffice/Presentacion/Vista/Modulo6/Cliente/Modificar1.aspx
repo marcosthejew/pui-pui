@@ -11,28 +11,30 @@
         <asp:Label ID="Exito" runat="server" Text="Label" Visible="False" CssClass="Exito">Operación Realizada Exitosame</asp:Label>
     </div>
     <div style="float: left;">
-        
+          <div style="height: 30px; text-align: center; font-family: Verdana; font-size: 1.5em;">
+        <h1> Modificar Persona</h1></div>
+
         
          <table style="margin:auto;" border="0" cellspacing="10" cellpadding="10" >
         
                 <tr>
                     <td class="auto-style6">Identificador</td>
                     <td class="auto-style2">
-                        <asp:TextBox ID="LIdentificador" runat="server" Height="20px" Width="190px"></asp:TextBox>
+                        <asp:TextBox ID="LIdentificador" runat="server" Height="21px" Width="272px" Enabled="false"></asp:TextBox>
                     </td>
                     <td class="auto-style6">Fecha de Ingreso</td>
                     <td class="auto-style2">
-                        <asp:TextBox ID="LFechaIngreso" runat="server" Height="20px" Width="190px"></asp:TextBox>
+                        <asp:TextBox ID="LFechaIngreso" runat="server" Height="21px" Width="272px" Enabled="false"></asp:TextBox>
                     </td>
                 </tr>
                      <tr>
                     <td class="auto-style6">Cedula</td>
                     <td class="auto-style2">
-                        <asp:TextBox ID="LCedula" runat="server" Height="20px" Width="190px"></asp:TextBox>
+                        <asp:TextBox ID="LCedula" runat="server" Height="21px" Width="272px" MaxLength="8"></asp:TextBox>
                     </td>
                     <td class="auto-style6">Tipo Persona</td>
                     <td class="auto-style2">
-                        <asp:DropDownList ID="ComboTipo" runat="server" Height="21px" Width="120px">
+                        <asp:DropDownList ID="ComboTipo" runat="server" Height="22px" Width="100px">
                             <asp:ListItem Value="Cliente">Cliente</asp:ListItem>
                             <asp:ListItem Value="Administrador">Administrador</asp:ListItem>
                         </asp:DropDownList>
@@ -52,7 +54,7 @@
                     </td>
                     <td class="auto-style6">Genero</td>
                     <td class="auto-style2">
-                        <asp:DropDownList ID="ComboGenero" runat="server" Height="21px" Width="120px">
+                        <asp:DropDownList ID="ComboGenero" runat="server" Height="22px" Width="100px">
                             <asp:ListItem Value="Femenino">Femenino</asp:ListItem>
                             <asp:ListItem Value="Masculino">Masculino</asp:ListItem>
                         </asp:DropDownList>
@@ -61,57 +63,57 @@
                 <tr>
                     <td class="auto-style6">Primer Nombre</td>
                     <td class="auto-style2">
-                        <asp:TextBox ID="LPrimerNombre" runat="server" Height="20px" Width="190px"></asp:TextBox>
+                        <asp:TextBox ID="LPrimerNombre" runat="server" Height="21px" Width="272px" MaxLength="50"></asp:TextBox>
                     </td>
                     <td class="auto-style6">Segundo Nombre</td>
                     <td class="auto-style2">
-                        <asp:TextBox ID="LSegundoNombre" runat="server" Height="20px" Width="190px"></asp:TextBox>
+                        <asp:TextBox ID="LSegundoNombre" runat="server" Height="21px" Width="272px" MaxLength="50"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style6">Primer Apellido</td>
                     <td class="auto-style2">
-                        <asp:TextBox ID="LPrimerApellido" runat="server" Height="20px" Width="190px"></asp:TextBox>
+                        <asp:TextBox ID="LPrimerApellido" runat="server" Height="21px" Width="272px" MaxLength="50"></asp:TextBox>
                     </td>
                     <td class="auto-style6">Segundo Apellido</td>
                     <td class="auto-style2">
-                        <asp:TextBox ID="LSegundoApellido" runat="server" Height="20px" Width="190px"></asp:TextBox>
+                        <asp:TextBox ID="LSegundoApellido" runat="server" Height="21px" Width="272px" MaxLength="50"></asp:TextBox>
                     </td>
                 </tr>
                <tr>
                     <td class="auto-style6">Telefono Celular</td>
                     <td class="auto-style2">
-                        <asp:TextBox ID="LTelefonoCelular" runat="server" Height="20px" Width="190px"></asp:TextBox>
+                        <asp:TextBox ID="LTelefonoCelular" runat="server" Height="21px" Width="272px" MaxLength="50"></asp:TextBox>
                     </td>
                     <td class="auto-style6">Telefono Local</td>
                     <td class="auto-style2">
-                        <asp:TextBox ID="LTelefonoLocal" runat="server" Height="20px" Width="190px"></asp:TextBox>
+                        <asp:TextBox ID="LTelefonoLocal" runat="server" Height="21px" Width="272px" MaxLength="50"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style6">Nombre contacto emergencia</td>
                     <td class="auto-style2">
-                        <asp:TextBox ID="LNombreContactoEmergencia" runat="server" Height="20px" Width="190px"></asp:TextBox>
+                        <asp:TextBox ID="LNombreContactoEmergencia" runat="server" Height="21px" Width="272px" MaxLength="50"></asp:TextBox>
                     </td>
                     <td class="auto-style6">Telefono contacto emergencia</td>
                     <td class="auto-style2">
-                        <asp:TextBox ID="LTelefonoContactoEmergencia" runat="server" Height="20px" Width="190px"></asp:TextBox>
+                        <asp:TextBox ID="LTelefonoContactoEmergencia" runat="server" Height="21px" Width="272px" MaxLength="50"></asp:TextBox>
                     </td>
                 </tr>
                <tr>
                     <td class="auto-style6">Correo Electronico</td>
                     <td class="auto-style2">
-                        <asp:TextBox ID="LCorreo" runat="server" Height="20px" Width="190px"></asp:TextBox>
+                        <asp:TextBox ID="LCorreo" runat="server" Height="21px" Width="272px" MaxLength="50"></asp:TextBox>
                     </td>
                     <td class="auto-style6">Ciudad</td>
                     <td class="auto-style2">
-                        <asp:TextBox ID="LCiudad" runat="server" Height="20px" Width="190px"></asp:TextBox>
+                        <asp:TextBox ID="LCiudad" runat="server" Height="21px" Width="272px" MaxLength="50"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style6" >Direccion</td>
                     <td class="auto-style2"colspan="3">
-                        <asp:TextBox ID="LDireccion" runat="server" Height="20px" Width="690px"></asp:TextBox>
+                        <asp:TextBox ID="LDireccion" runat="server" Height="21px" Width="272px" MaxLength="50"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -129,7 +131,7 @@
                 </tr>
                   <tr>
                     <td colspan="4" align="center">
-                        <asp:Button ID="BRegistrar" runat="server" CssClass="button" onclick="BRegistrar_Click" Text="Aceptar" />
+                        <asp:Button ID="BRegistrar" runat="server" CssClass="button" onclick="BRegistrar_Click" Width="120" Height="25" Text="Guardar" />
                     </td>
                 </tr>
              </table>

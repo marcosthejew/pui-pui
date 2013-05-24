@@ -4,8 +4,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-        <fieldset style="width:740px; height:100px; margin-left:0px auto 0px auto;">
-            <legend>Buscar Empleados</legend>
+          <div style="height: 30px; text-align: center; font-family: Verdana; font-size: 1.5em;">
+        <h1> Buscar Persona</h1></div>
+
 
             <div style="height:30px; text-align:center; font-family:Verdana; font-size: 1em;">
                 <asp:Label ID="info" runat="server" AssociatedControlID="cargoRadioButton" Visible="true" ForeColor="Red">Para realizar la busqueda por nombre; solo debe introducir UN nombre o apellido.</asp:Label>
@@ -18,23 +19,23 @@
                             Checked="True" oncheckedchanged="cedulaRadioButton_CheckedChanged" AutoPostBack="true"/>
                         Cedula:</td>
                     <td>
-                        <asp:TextBox ID="CiConsTextBox" runat="server" Height="20px" Width="130px"></asp:TextBox>
+                        <asp:TextBox ID="CiConsTextBox" runat="server" Height="21px" Width="272px"></asp:TextBox>
                     </td>
                     <td>
                         <asp:RadioButton ID="cargoRadioButton" GroupName="Grupo1" runat="server" 
                             oncheckedchanged="cargoRadioButton_CheckedChanged" AutoPostBack="true"/>
                         Nombre:</td>
-                    <td><asp:TextBox ID="NombreTextBox" runat="server" Height="20px" Width="130px"></asp:TextBox>
+                    <td><asp:TextBox ID="NombreTextBox" runat="server" Height="21px" Width="272px"></asp:TextBox>
                     
                     </td>
               
                 </tr>
                 <tr><td colspan="4" style="text-align:center; padding-top:10px">
                     <asp:Button ID="buscarCiCargoButton" runat="server" CssClass="button" 
-                    onclick="buscarCiCargoButton_Click" Text="Buscar" />
+                    onclick="buscarCiCargoButton_Click" Text="Buscar" Width="120" Height="25"/>
                 </td></tr>
             </table> 
-         </fieldset><br />
+        <br />
 
 <asp:GridView ID="GridModificar"  runat="server" AllowPaging="True" AutoGenerateColumns="false"
                 Height="35px" GridLines="None" style="text-align: center" 

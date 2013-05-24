@@ -275,8 +275,8 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 cmd.Parameters.AddWithValue("@contactoNombrePersona", nuevaPersona.ContactoNombrePersona);
                 cmd.Parameters.AddWithValue("@contactoTelefonoPersona", nuevaPersona.ContactoTelefonoPersona);
                 cmd.Parameters.AddWithValue("@estadoPersona", nuevaPersona.EstadoPersona);
-                cmd.Parameters.AddWithValue("@loginPersona", nuevaPersona.LoginPersona);
-                cmd.Parameters.AddWithValue("@passwordPersona", nuevaPersona.PasswordPersona);
+                //cmd.Parameters.AddWithValue("@loginPersona", nuevaPersona.LoginPersona);
+                //cmd.Parameters.AddWithValue("@passwordPersona", nuevaPersona.PasswordPersona);
                 cmd.Parameters.AddWithValue("@tipoPersona", nuevaPersona.TipoPersona);
 
                 dr = cmd.ExecuteReader();

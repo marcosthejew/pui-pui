@@ -54,13 +54,13 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo6.Cliente
         
         }
 
-        #region Buscar por Cedula o Cargo
+        #region Buscar por Cedula o Nombre
         protected void buscarCiCargoButton_Click(object sender, EventArgs e)
         {
             if (cedulaRadioButton.Checked && !CiConsTextBox.Text.Equals(""))
             {
                 LogicaPersona logicaPersona = new LogicaPersona();
-                GridConsultar.DataSource = logicaPersona.ConsultarPorCedula(CiConsTextBox.Text);
+                GridConsultar.DataSource = logicaPersona.ConsultarPorCedula(CiConsTextBox.Text.TrimEnd());
                 GridConsultar.DataBind();
             }
             if (cargoRadioButton.Checked && !NombreTextBox.Text.Equals(""))
@@ -68,7 +68,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo6.Cliente
                 LogicaPersona logicaPersona = new LogicaPersona();
                 if (!NombreTextBox.Text.ToString().Contains("Elija un Cargo"))
                 {
-                    GridConsultar.DataSource = logicaPersona.ConsultarPorNombre(NombreTextBox.Text);
+                    GridConsultar.DataSource = logicaPersona.ConsultarPorNombre(NombreTextBox.Text.TrimEnd());
                     GridConsultar.DataBind();
                 }
                 else

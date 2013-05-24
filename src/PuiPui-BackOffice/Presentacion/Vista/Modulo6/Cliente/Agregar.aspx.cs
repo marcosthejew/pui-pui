@@ -41,23 +41,23 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo6.Cliente
 
             try
             {
-                int cedula = Convert.ToInt32(LCedula.Text);
-                string tipo = ComboTipo.SelectedItem.Text;
+                int cedula = Convert.ToInt32(LCedula.Text.TrimEnd());
+                string tipo = ComboTipo.SelectedItem.Text.TrimEnd();
                 DateTime fechaNacimiento = FechaNacimiento.SelectedDate;
-                string genero = ComboGenero.Text;
-                string primerNombre = LPrimerNombre.Text;
-                string segundoNombre = LSegundoNombre.Text;
-                string primerApellido = LPrimerApellido.Text;
-                string segundoApellido = LSegundoApellido.Text;
-                string telefonoCelular = LTelefonoCelular.Text;
-                string telefonoLocal = LTelefonoLocal.Text;
-                string nombreContactoEmergencia = LNombreContactoEmergencia.Text;
-                string numeroContactoEmergencia = LTelefonoContactoEmergencia.Text;
-                string correo = LCorreo.Text;
-                string ciudad = LCiudad.Text;
-                string direccion = LDireccion.Text;
-                string usuario = LUsuario.Text;
-                string contrasena = LContrasena.Text;
+                string genero = ComboGenero.Text.TrimEnd();
+                string primerNombre = LPrimerNombre.Text.TrimEnd();
+                string segundoNombre = LSegundoNombre.Text.TrimEnd();
+                string primerApellido = LPrimerApellido.Text.TrimEnd();
+                string segundoApellido = LSegundoApellido.Text.TrimEnd();
+                string telefonoCelular = LTelefonoCelular.Text.TrimEnd();
+                string telefonoLocal = LTelefonoLocal.Text.TrimEnd();
+                string nombreContactoEmergencia = LNombreContactoEmergencia.Text.TrimEnd();
+                string numeroContactoEmergencia = LTelefonoContactoEmergencia.Text.TrimEnd();
+                string correo = LCorreo.Text.TrimEnd();
+                string ciudad = LCiudad.Text.TrimEnd();
+                string direccion = LDireccion.Text.TrimEnd();
+                string usuario = LUsuario.Text.TrimEnd();
+                string contrasena = LContrasena.Text.TrimEnd();
                 string estado = "Activo";
 
 
