@@ -7,6 +7,7 @@ using System.Web;
 using PuiPui_FrontOffice.AccesoDeDatos.Conexion;
 using PuiPui_FrontOffice.Entidades.Rutina;
 using PuiPui_FrontOffice.AccesoDeDatos.SQLServer;
+using PuiPui_FrontOffice.AccesoDeDatos.SQLServer;
 using PuiPui_FrontOffice.Entidades;
 namespace PuiPui_FrontOffice.LogicaDeNegocios.Rutinas
 
@@ -31,14 +32,25 @@ namespace PuiPui_FrontOffice.LogicaDeNegocios.Rutinas
         /*Metodo para obtener  una Rutina*/
 
       
-        public List<Rutina> ConsultaRutina(int id_rutina)
+        public Rutina ConsultaRutina(int id_rutina)
+        {
+              Rutina rutinas = new Rutina();
+            SQLServerRutina _insertaRutina = new SQLServerRutina();
+            rutinas = _insertaRutina.BDConsultaRutinas(id_rutina);
+            return rutinas;
+        
+        }
+        /*
+        public List<Rutina> ConsultaRutina()
         {
             List<Rutina> _rutinas = new List<Rutina>();
             SQLServerRutina _insertaRutina = new SQLServerRutina();
             _rutinas = _insertaRutina.BDConsultaRutinas(id_rutina);
             return _rutinas;
-        
+
         }
+        */
+
 
         /*Metodo para updatear una Rutina*/
 
@@ -52,19 +64,19 @@ namespace PuiPui_FrontOffice.LogicaDeNegocios.Rutinas
                 }
 
          /*Metodo para tener datos de un ejercicio por nombre */
-        public PuiPui_BackOffice.Entidades.Ejercicio.Ejercicio BuscaDatos_Ejercicio (string nombre)
+        public PuiPui_FrontOffice.Entidades.Ejercicio.Ejercicio BuscaDatos_Ejercicio(string nombre)
     {
-        PuiPui_BackOffice.AccesoDeDatos.SQLServer.SQLServerEjercicio ejercicio = new PuiPui_BackOffice.AccesoDeDatos.SQLServer.SQLServerEjercicio();
-       PuiPui_BackOffice.Entidades.Ejercicio.Ejercicio datos_ejercicio = new PuiPui_BackOffice.Entidades.Ejercicio.Ejercicio();
+        PuiPui_FrontOffice.AccesoDeDatos.SQLServer.SQLServerEjercicio ejercicio = new PuiPui_FrontOffice.AccesoDeDatos.SQLServer.SQLServerEjercicio();
+        PuiPui_FrontOffice.Entidades.Ejercicio.Ejercicio datos_ejercicio = new PuiPui_FrontOffice.Entidades.Ejercicio.Ejercicio();
        datos_ejercicio = ejercicio.ConsultarEjercicio(nombre);
        return datos_ejercicio;
        
     }
         /*Metodo para cargar todos los ejercicios disponibles en la BD */
-        public List<PuiPui_BackOffice.Entidades.Ejercicio.Ejercicio> ConsultaTodoEjercicios()
+        public List<PuiPui_FrontOffice.Entidades.Ejercicio.Ejercicio> ConsultaTodoEjercicios()
         {
-            List<PuiPui_BackOffice.Entidades.Ejercicio.Ejercicio> _listaejercicios = new List<PuiPui_BackOffice.Entidades.Ejercicio.Ejercicio>();
-            PuiPui_BackOffice.AccesoDeDatos.SQLServer.SQLServerEjercicio _ejercicios = new PuiPui_BackOffice.AccesoDeDatos.SQLServer.SQLServerEjercicio();
+            List<PuiPui_FrontOffice.Entidades.Ejercicio.Ejercicio> _listaejercicios = new List<PuiPui_FrontOffice.Entidades.Ejercicio.Ejercicio>();
+            PuiPui_FrontOffice.AccesoDeDatos.SQLServer.SQLServerEjercicio _ejercicios = new PuiPui_FrontOffice.AccesoDeDatos.SQLServer.SQLServerEjercicio();
             _listaejercicios = _ejercicios.ConsultarEjercicios();
             return _listaejercicios;
 
@@ -117,34 +129,51 @@ namespace PuiPui_FrontOffice.LogicaDeNegocios.Rutinas
         }
 
 
-        public Rutina Devuelve_Ultimo_ID()
+        public int Devuelve_Ultimo_ID()
         {
+           // int id;
             Rutina find_id = new Rutina();
             SQLServerRutina busca_id= new SQLServerRutina();
             find_id = busca_id.BDUltimo_ID_Rutina();
-            return find_id;
+            return find_id.Id_rutina;
         
         }
+
         public Entidades.Ejercicio.Ejercicio BuscaIDEjercicio(string nombre_ejercicio)
         {
             Entidades.Ejercicio.Ejercicio ejercicio = new Entidades.Ejercicio.Ejercicio();
-            SQLServerEjercicio busca_ejercicio = new    SQLServerEjercicio();
+            PuiPui_FrontOffice.AccesoDeDatos.SQLServer.SQLServerEjercicio busca_ejercicio = new PuiPui_FrontOffice.AccesoDeDatos.SQLServer.SQLServerEjercicio();
             ejercicio = busca_ejercicio.ConsultarEjercicio(nombre_ejercicio);
             return ejercicio;
-        
-        
+
+
         }
         public Entidades.Cliente.Persona BuscaIDNombrePersona(string nombre_persona)
         {
             Entidades.Cliente.Persona persona = new Entidades.Cliente.Clientes();
-            SQLServerPersona busca_persona = new SQLServerPersona();
+            PuiPui_FrontOffice.AccesoDeDatos.SQLServer.SQLServerPersona busca_persona = new PuiPui_FrontOffice.AccesoDeDatos.SQLServer.SQLServerPersona();
             persona = busca_persona.ConsultarPersonaPorLogin(nombre_persona);
             return persona;
 
 
         }
+        
+        public Entidades.Ejercicio.Ejercicio ListaEjercicios_Rutina (int id_ejercicio)
+        {
+            Entidades.Ejercicio.Ejercicio ejercicios = new Entidades.Ejercicio.Ejercicio();
+            AccesoDeDatos.SQLServer.SQLServerEjercicio objeto = new AccesoDeDatos.SQLServer.SQLServerEjercicio();
+            ejercicios =objeto.ConsultarEjercicioId(id_ejercicio);
+            return ejercicios;
+        }
 
 
+        public List<Rutina> TodasRutinas()
+        {
+            List<Rutina> todas_rutinas = new List<Rutina>();
+            SQLServerRutina busca_id = new SQLServerRutina();
+            todas_rutinas = busca_id.BDTodosConsultaRutinas();
+            return todas_rutinas;
+        }
 
 
 
