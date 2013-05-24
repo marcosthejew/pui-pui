@@ -39,6 +39,7 @@ namespace PuiPui_FrontOffice.Presentacion.Vista.Modulo4.EvaluarInstructor
         }
         #endregion
 
+
         protected void EvaluacionesTodasGrid_SelectedIndexChanged(object sender, EventArgs e)
         {
             int seleccion = EvaluacionesTodasGrid.SelectedIndex;
