@@ -7,12 +7,13 @@ using System.Web.UI.WebControls;
 using PuiPui_BackOffice.LogicaDeNegocios.Instructor;
 using PuiPui_BackOffice.Entidades.Instructor;
 using PuiPui_BackOffice.Entidades;
-using PuiPui_BackOffice.LogicaDeNegocios.Excepciones;
 
 namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
 {
     public partial class Modificar : System.Web.UI.Page
     {
+
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,35 +21,31 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
             {
                 ddl_Cargar();
                 LogicaInstructor objetoLogica = new LogicaInstructor();
-                try
+                if (objetoLogica.ConsultarTodosInstructores() != null)
                 {
-                    if (objetoLogica.ConsultarTodosInstructores() != null)
+                    ddlInstructores.Items.Insert(0, new ListItem("Seleccione", "0"));
+                    List<Instructor> instructores = objetoLogica.ConsultarTodosInstructores();
+                    int i = 1;
+                    foreach (Instructor instructor in instructores)
                     {
-                        ddlInstructores.Items.Insert(0, new ListItem("Seleccione", "0"));
-                        List<Instructor> instructores = objetoLogica.ConsultarTodosInstructores();
-                        int i = 1;
-                        foreach (Instructor instructor in instructores)
-                        {
-                            ddlInstructores.Items.Insert(i, "CI: " + instructor.CedulaPersona.ToString() + " " + instructor.NombrePersona1 + " " + instructor.ApellidoPersona1);
-                            i++;
-                        }
-                    }
-                    else
-                    {
-                        ddlInstructores.Enabled = false;
-                        lexito.Visible = true;
+                        ddlInstructores.Items.Insert(i, "CI: " + instructor.CedulaPersona.ToString() + " " + instructor.NombrePersona1 + " " + instructor.ApellidoPersona1);
+                        i++;
                     }
                 }
-                catch (InstructorException error)
+                else
                 {
-                    lexito.Text = error.Message;
-                    lexito.ForeColor = System.Drawing.Color.Red;
-                    lexito.Visible = true;
                     ddlInstructores.Enabled = false;
+                    lexito.Visible = true;
                 }
+
                
             }
         }
+
+
+
+
+
 
         protected void ddl_Cargar()
         {
@@ -93,6 +90,15 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
 
         }
 
+
+
+
+
+
+
+
+
+
         protected void ddlInstructores_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ddlInstructores.SelectedIndex > 0)
@@ -100,8 +106,6 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
                 string[] words = ddlInstructores.SelectedValue.Split(' ');
 
                 LogicaInstructor objetoLogica = new LogicaInstructor();
-                try
-                {
                 Instructor instructor = objetoLogica.ConsultarInstructor(words[1]);
                 
                 if (instructor != null)
@@ -221,174 +225,154 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
                         }
                     }
                 }
-            }
-        //}
-            catch (InstructorException error)
-            {
-                lexito.Text = error.Message;
-                lexito.ForeColor = System.Drawing.Color.Red;
-                lexito.Visible = true;
-            }
+
             }
         }
+
+
+
 
         protected void Button1_Click(object sender, EventArgs e)
         {
             Instructor instructor = new Instructor();
-            try
+
+            instructor.CedulaPersona = Convert.ToInt32(cedula.Text);
+            instructor.NombrePersona1 = nombre1.Text;
+            instructor.NombrePersona2 = nombre2.Text;
+            instructor.ApellidoPersona1 = apellido1.Text;
+            instructor.ApellidoPersona2 = apellido2.Text;
+            instructor.GeneroPersona = genero.Text;
+            instructor.FechaNacimientoPersona = DateTime.Parse(fechanac.Text);
+            instructor.CiudadPersona = ciudad.Text;
+            instructor.DireccionPersona = direccion.Text;
+            instructor.TelefonoLocalPersona = tlflocal.Text;
+            instructor.TelefonoCelularPersona = tlfcel.Text;
+            instructor.CorreoPersona = mail.Text;
+            instructor.ContactoNombrePersona = contacto.Text;
+            instructor.ContactoTelefonoPersona = tlfcontacto.Text;
+            instructor.EstadoPersona = estado.Text;
+            
+
+            if (cb6.Checked == true)
             {
-                instructor.CedulaPersona = Convert.ToInt32(cedula.Text);
-                instructor.NombrePersona1 = nombre1.Text;
-                instructor.NombrePersona2 = nombre2.Text;
-                instructor.ApellidoPersona1 = apellido1.Text;
-                instructor.ApellidoPersona2 = apellido2.Text;
-                instructor.GeneroPersona = genero.Text;
-                instructor.FechaNacimientoPersona = DateTime.Parse(fechanac.Text);
-                instructor.CiudadPersona = ciudad.Text;
-                instructor.DireccionPersona = direccion.Text;
-                instructor.TelefonoLocalPersona = tlflocal.Text;
-                instructor.TelefonoCelularPersona = tlfcel.Text;
-                instructor.CorreoPersona = mail.Text;
-                instructor.ContactoNombrePersona = contacto.Text;
-                instructor.ContactoTelefonoPersona = tlfcontacto.Text;
-                instructor.EstadoPersona = estado.Text;
-
-
-                if (cb6.Checked == true)
-                {
-                    Horario horario = new Horario();
-                    horario.dia = "lunes";
-                    horario.horaini = Convert.ToDateTime(dp1.Text);
-                    horario.horafin = Convert.ToDateTime(dp2.Text);
-                    LogicaHorario logica = new LogicaHorario();
-                    logica.ActualizarHorario(horario, CIinicio.Text);
-                }
-
-                if (cb11.Checked == true)
-                {
-                    Horario horario = new Horario();
-                    horario.dia = "lunes";
-                    horario.horaini = Convert.ToDateTime(dp3.Text);
-                    horario.horafin = Convert.ToDateTime(dp4.Text);
-                    LogicaHorario logica = new LogicaHorario();
-                    logica.ActualizarHorario(horario, CIinicio.Text);
-                }
-
-                if (cb7.Checked == true)
-                {
-                    Horario horario = new Horario();
-                    horario.dia = "martes";
-                    horario.horaini = Convert.ToDateTime(dp5.Text);
-                    horario.horafin = Convert.ToDateTime(dp6.Text);
-                    LogicaHorario logica = new LogicaHorario();
-                    logica.ActualizarHorario(horario, CIinicio.Text);
-                }
-
-                if (cb12.Checked == true)
-                {
-                    Horario horario = new Horario();
-                    horario.dia = "martes";
-                    horario.horaini = Convert.ToDateTime(dp7.Text);
-                    horario.horafin = Convert.ToDateTime(dp8.Text);
-                    LogicaHorario logica = new LogicaHorario();
-                    logica.ActualizarHorario(horario, CIinicio.Text);
-                }
-
-                if (cb8.Checked == true)
-                {
-                    Horario horario = new Horario();
-                    horario.dia = "miercoles";
-                    horario.horaini = Convert.ToDateTime(dp9.Text);
-                    horario.horafin = Convert.ToDateTime(dp10.Text);
-                    LogicaHorario logica = new LogicaHorario();
-                    logica.ActualizarHorario(horario, CIinicio.Text);
-                }
-
-                if (cb13.Checked == true)
-                {
-                    Horario horario = new Horario();
-                    horario.dia = "miercoles";
-                    horario.horaini = Convert.ToDateTime(dp11.Text);
-                    horario.horafin = Convert.ToDateTime(dp12.Text);
-                    LogicaHorario logica = new LogicaHorario();
-                    logica.ActualizarHorario(horario, CIinicio.Text);
-                }
-
-                if (cb9.Checked == true)
-                {
-                    Horario horario = new Horario();
-                    horario.dia = "jueves";
-                    horario.horaini = Convert.ToDateTime(dp13.Text);
-                    horario.horafin = Convert.ToDateTime(dp14.Text);
-                    LogicaHorario logica = new LogicaHorario();
-                    logica.ActualizarHorario(horario, CIinicio.Text);
-                }
-
-                if (cb14.Checked == true)
-                {
-                    Horario horario = new Horario();
-                    horario.dia = "jueves";
-                    horario.horaini = Convert.ToDateTime(dp15.Text);
-                    horario.horafin = Convert.ToDateTime(dp16.Text);
-                    LogicaHorario logica = new LogicaHorario();
-                    logica.ActualizarHorario(horario, CIinicio.Text);
-                }
-
-                if (cb10.Checked == true)
-                {
-                    Horario horario = new Horario();
-                    horario.dia = "viernes";
-                    horario.horaini = Convert.ToDateTime(dp17.Text);
-                    horario.horafin = Convert.ToDateTime(dp18.Text);
-                    LogicaHorario logica = new LogicaHorario();
-                    logica.ActualizarHorario(horario, CIinicio.Text);
-                }
-                if (cb15.Checked == true)
-                {
-                    Horario horario = new Horario();
-                    horario.dia = "viernes";
-                    horario.horaini = Convert.ToDateTime(dp19.Text);
-                    horario.horafin = Convert.ToDateTime(dp20.Text);
-                    LogicaHorario logica = new LogicaHorario();
-                    logica.ActualizarHorario(horario, CIinicio.Text);
-                }
-
-
-
-                LogicaInstructor objetoLogica = new LogicaInstructor();
-                if (objetoLogica.ActualizarInstructor(instructor, CIinicio.Text))
-                {
-                    lexito.Text = "Se ha modificado exitosamente.";
-                    lexito.ForeColor = System.Drawing.Color.Blue;
-                    lexito.Visible = true;
-                }
-                else
-                {
-                    lexito.Text = "No se pudo modificar el instructor, los campos no estan conrrectos.";
-                    lexito.ForeColor = System.Drawing.Color.Red;
-                    lexito.Visible = true;
-
-                }
+                Horario horario = new Horario();
+                horario.dia = "lunes";
+                horario.horaini = Convert.ToDateTime(dp1.Text);
+                horario.horafin = Convert.ToDateTime(dp2.Text);
+                LogicaHorario logica = new LogicaHorario();
+                logica.ActualizarHorario(horario, CIinicio.Text);
             }
-            catch (InstructorException error)
+
+            if (cb11.Checked == true)
             {
-                lexito.Text = error.Message;
-                lexito.ForeColor = System.Drawing.Color.Red;
+                Horario horario = new Horario();
+                horario.dia = "lunes";
+                horario.horaini = Convert.ToDateTime(dp3.Text);
+                horario.horafin = Convert.ToDateTime(dp4.Text);
+                LogicaHorario logica = new LogicaHorario();
+                logica.ActualizarHorario(horario, CIinicio.Text);
+            }
+
+            if (cb7.Checked == true)
+            {
+                Horario horario = new Horario();
+                horario.dia = "martes";
+                horario.horaini = Convert.ToDateTime(dp5.Text);
+                horario.horafin = Convert.ToDateTime(dp6.Text);
+                LogicaHorario logica = new LogicaHorario();
+                logica.ActualizarHorario(horario, CIinicio.Text);
+            }
+
+            if (cb12.Checked == true)
+            {
+                Horario horario = new Horario();
+                horario.dia = "martes";
+                horario.horaini = Convert.ToDateTime(dp7.Text);
+                horario.horafin = Convert.ToDateTime(dp8.Text);
+                LogicaHorario logica = new LogicaHorario();
+                logica.ActualizarHorario(horario, CIinicio.Text);
+            }
+
+            if (cb8.Checked == true)
+            {
+                Horario horario = new Horario();
+                horario.dia = "miercoles";
+                horario.horaini = Convert.ToDateTime(dp9.Text);
+                horario.horafin = Convert.ToDateTime(dp10.Text);
+                LogicaHorario logica = new LogicaHorario();
+                logica.ActualizarHorario(horario, CIinicio.Text);
+            }
+
+            if (cb13.Checked == true)
+            {
+                Horario horario = new Horario();
+                horario.dia = "miercoles";
+                horario.horaini = Convert.ToDateTime(dp11.Text);
+                horario.horafin = Convert.ToDateTime(dp12.Text);
+                LogicaHorario logica = new LogicaHorario();
+                logica.ActualizarHorario(horario, CIinicio.Text);
+            }
+
+            if (cb9.Checked == true)
+            {
+                Horario horario = new Horario();
+                horario.dia = "jueves";
+                horario.horaini = Convert.ToDateTime(dp13.Text);
+                horario.horafin = Convert.ToDateTime(dp14.Text);
+                LogicaHorario logica = new LogicaHorario();
+                logica.ActualizarHorario(horario, CIinicio.Text);
+            }
+
+            if (cb14.Checked == true)
+            {
+                Horario horario = new Horario();
+                horario.dia = "jueves";
+                horario.horaini = Convert.ToDateTime(dp15.Text);
+                horario.horafin = Convert.ToDateTime(dp16.Text);
+                LogicaHorario logica = new LogicaHorario();
+                logica.ActualizarHorario(horario, CIinicio.Text);
+            }
+
+            if (cb10.Checked == true)
+            {
+                Horario horario = new Horario();
+                horario.dia = "viernes";
+                horario.horaini = Convert.ToDateTime(dp17.Text);
+                horario.horafin = Convert.ToDateTime(dp18.Text);
+                LogicaHorario logica = new LogicaHorario();
+                logica.ActualizarHorario(horario, CIinicio.Text);
+            }
+            if (cb15.Checked == true)
+            {
+                Horario horario = new Horario();
+                horario.dia = "viernes";
+                horario.horaini = Convert.ToDateTime(dp19.Text);
+                horario.horafin = Convert.ToDateTime(dp20.Text);
+                LogicaHorario logica = new LogicaHorario();
+                logica.ActualizarHorario(horario, CIinicio.Text);
+            }
+
+            
+
+            LogicaInstructor objetoLogica = new LogicaInstructor();
+            if (objetoLogica.ActualizarInstructor(instructor, CIinicio.Text))
+            {
+                lexito.Text = "Se ha modificado exitosamente.";
+                lexito.ForeColor = System.Drawing.Color.Blue;
                 lexito.Visible = true;
             }
-            catch (HorarioException error)
+            else
             {
-                lexito.Text = error.Message;
+                lexito.Text = "No se pudo modificar el instructor, los campos no estan conrrectos.";
                 lexito.ForeColor = System.Drawing.Color.Red;
                 lexito.Visible = true;
-            }
-            catch (Exception error)
-            {
-                lexito.Text = error.Message;
-                lexito.ForeColor = System.Drawing.Color.Red;
-                lexito.Visible = true;
-            }
+
+            }            
         }
+
+
+
+
 
         protected void masculino_CheckedChanged(object sender, EventArgs e)
         {
@@ -402,6 +386,8 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
             masculino.Checked = false; 
         }
         
+
+
         protected void activar_CheckedChanged(object sender, EventArgs e)
         {
             estado.Text = "activo";
@@ -414,10 +400,14 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
             activar.Checked = false; 
         }
 
+
+
         protected void Calendar_SelectionChanged(object sender, EventArgs e)
         {
             fechanac.Text = Calendar.SelectedDate.ToShortDateString();
         }
+
+
         
         protected void cb6_CheckedChanged(object sender, EventArgs e)
         {

@@ -1,4 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 using PuiPui_BackOffice.LogicaDeNegocios.Instructor;
 using System.Drawing;
 using PuiPui_BackOffice.Entidades;
@@ -95,14 +100,14 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
                 {
                     try
                     {
-                        int.Parse(tb4.Text);
-                        int.Parse(tb8.Text);
-                        int.Parse(tb12.Text);
+                        long.Parse(tb4.Text);
+                        long.Parse(tb8.Text);
+                        long.Parse(tb12.Text);
                         
                         if (cb1.Checked == true && cb2.Checked == false)
                         {
                             char cb0 = 'M';
-                            if (!linstructor.AgregarInstructor(tb1.Text, tb2.Text, tb3.Text, int.Parse(tb4.Text), tb5.Text, tb6.Text, tb7.Text, int.Parse(tb8.Text), tb9.Text, tb10.Text, tb11.Text, int.Parse(tb12.Text), Calendar.SelectedDate, cb0.ToString()))
+                            if (!linstructor.AgregarInstructor(tb1.Text, tb2.Text, tb3.Text, long.Parse(tb4.Text), tb5.Text, tb6.Text, tb7.Text, long.Parse(tb8.Text), tb9.Text, tb10.Text, tb11.Text, long.Parse(tb12.Text), Calendar.SelectedDate, cb0.ToString()))
                             {
                                 lexito.Text = "Ya existe el instructor.";
                                 lexito.ForeColor = System.Drawing.Color.Red;
@@ -122,7 +127,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
                         if (cb2.Checked == true && cb1.Checked == false)
                         {
                             char cb0 = 'F';
-                            if (!linstructor.AgregarInstructor(tb1.Text, tb2.Text, tb3.Text, int.Parse(tb4.Text), tb5.Text, tb6.Text, tb7.Text, int.Parse(tb8.Text), tb9.Text, tb10.Text, tb11.Text, int.Parse(tb12.Text), Calendar.SelectedDate, cb0.ToString()))
+                            if (!linstructor.AgregarInstructor(tb1.Text, tb2.Text, tb3.Text, long.Parse(tb4.Text), tb5.Text, tb6.Text, tb7.Text, long.Parse(tb8.Text), tb9.Text, tb10.Text, tb11.Text, long.Parse(tb12.Text), Calendar.SelectedDate, cb0.ToString()))
                             {
                                 lexito.Text = "Ya existe el instructor.";
                                 lexito.ForeColor = System.Drawing.Color.Red;
@@ -272,7 +277,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
                         lexito.ForeColor = System.Drawing.Color.Red;
                         lexito.Visible = true;
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
                         lexito.Visible = true;
                         lexito.Text = "Los Campos De Telefono deben ser estrictamente numericos";
