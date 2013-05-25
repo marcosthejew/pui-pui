@@ -110,6 +110,7 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.Instructor
         }
         #endregion ConsultarTodosInstructoresActivos
 
+
         #region ActualizarInstructor
         public bool ActualizarInstructor(Entidades.Instructor.Instructor instructor, String CIinicial)
         {
