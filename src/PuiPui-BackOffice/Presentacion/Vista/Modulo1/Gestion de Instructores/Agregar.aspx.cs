@@ -69,23 +69,23 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
         
         protected void tb_Init()
         {
-            tb1.Text = "";
-            tb2.Text = "";
-            tb3.Text = "";
-            tb4.Text = "";
-            tb5.Text = "";
-            tb6.Text = "";
-            tb7.Text = "";
-            tb8.Text = "";
-            tb9.Text = "";
-            tb10.Text = "";
-            tb11.Text = "";
-            tb12.Text = "";
+            tbcedula.Text = "";
+            tbprimer_nombre.Text = "";
+            tbprimer_apellido.Text = "";
+            tbtelefono_local.Text = "";
+            tbciudad.Text = "";
+            tbsegundo_nombre.Text = "";
+            tbsegundo_apellido.Text = "";
+            tbtelefono_celular.Text = "";
+            tbdireccion.Text = "";
+            tbemail.Text = "";
+            tbpersona_contacto.Text = "";
+            tbtelefono.Text = "";
         }
         
         protected void Button1_Click(object sender, EventArgs e)
         {
-            if (tb1.Text == "" || tb2.Text == "" || tb3.Text == "" || tb4.Text == "" || tb5.Text == "" || tb8.Text == "" || tb9.Text == "" || tb10.Text == "" || tb11.Text == "" || tb12.Text == "")
+            if (tbcedula.Text == "" || tbprimer_nombre.Text == "" || tbprimer_apellido.Text == "" || tbtelefono_local.Text == "" || tbciudad.Text == "" || tbtelefono_celular.Text == "" || tbdireccion.Text == "" || tbemail.Text == "" || tbpersona_contacto.Text == "" || tbtelefono.Text == "")
             {
                 // Mostrar que los campos estan vacios.
                 lexito.Text = "Los campos no pueden estar vacios.";
@@ -98,9 +98,9 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
                 LogicaInstructor linstructor = new LogicaInstructor();
                  try
                    {
-                        long.Parse(tb4.Text);
-                        long.Parse(tb8.Text);
-                        long.Parse(tb12.Text);
+                        long.Parse(tbtelefono_local.Text);
+                        long.Parse(tbtelefono_celular.Text);
+                        long.Parse(tbtelefono.Text);
 
                         GuardarInstructor(linstructor);
                         GuardarHorarios(linstructor);
@@ -137,28 +137,28 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
 
         protected void GuardarInstructor(LogicaInstructor linstructor)
         {
-            if (cb2.Checked == true && cb1.Checked == true)
+            if (cbfemenino.Checked == true && cbmasculino.Checked == true)
             {
                 lexito.Visible = true;
                 lexito.Text = "Seleccion solo uno de los dos Sexos";
                 lexito.ForeColor = System.Drawing.Color.Red;
-                cb1.BorderColor = Color.Red;
-                cb2.BorderColor = Color.Red;
+                cbmasculino.BorderColor = Color.Red;
+                cbfemenino.BorderColor = Color.Red;
             }
 
-            if (cb2.Checked == false && cb1.Checked == false)
+            if (cbfemenino.Checked == false && cbmasculino.Checked == false)
             {
                 lexito.Visible = true;
                 lexito.Text = "Seleccion Alguno de los dos Sexos";
                 lexito.ForeColor = System.Drawing.Color.Red;
-                cb1.BorderColor = Color.Red;
-                cb2.BorderColor = Color.Red;
+                cbmasculino.BorderColor = Color.Red;
+                cbfemenino.BorderColor = Color.Red;
             }
 
-            if (cb1.Checked == true && cb2.Checked == false)
+            if (cbmasculino.Checked == true && cbfemenino.Checked == false)
             {
-                char cb0 = 'M';
-                if (!linstructor.AgregarInstructor(tb1.Text, tb2.Text, tb3.Text, long.Parse(tb4.Text), tb5.Text, tb6.Text, tb7.Text, long.Parse(tb8.Text), tb9.Text, tb10.Text, tb11.Text, long.Parse(tb12.Text), Calendar.SelectedDate, cb0.ToString()))
+                char cbsexo = 'M';
+                if (!linstructor.AgregarInstructor(tbcedula.Text, tbprimer_nombre.Text, tbprimer_apellido.Text, long.Parse(tbtelefono_local.Text), tbciudad.Text, tbsegundo_nombre.Text, tbsegundo_apellido.Text, long.Parse(tbtelefono_celular.Text), tbdireccion.Text, tbemail.Text, tbpersona_contacto.Text, long.Parse(tbtelefono.Text), Calendar.SelectedDate, cbsexo.ToString()))
                 {
                     lexito.Text = "Ya existe el instructor.";
                     lexito.ForeColor = System.Drawing.Color.Red;
@@ -171,10 +171,10 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
                     lexito.Visible = true;               
                 }
             }
-            if (cb2.Checked == true && cb1.Checked == false)
+            if (cbfemenino.Checked == true && cbmasculino.Checked == false)
             {
-                char cb0 = 'F';
-                if (!linstructor.AgregarInstructor(tb1.Text, tb2.Text, tb3.Text, long.Parse(tb4.Text), tb5.Text, tb6.Text, tb7.Text, long.Parse(tb8.Text), tb9.Text, tb10.Text, tb11.Text, long.Parse(tb12.Text), Calendar.SelectedDate, cb0.ToString()))
+                char cbsexo = 'F';
+                if (!linstructor.AgregarInstructor(tbcedula.Text, tbprimer_nombre.Text, tbprimer_apellido.Text, long.Parse(tbtelefono_local.Text), tbciudad.Text, tbsegundo_nombre.Text, tbsegundo_apellido.Text, long.Parse(tbtelefono_celular.Text), tbdireccion.Text, tbemail.Text, tbpersona_contacto.Text, long.Parse(tbtelefono.Text), Calendar.SelectedDate, cbsexo.ToString()))
                 {
                     lexito.Text = "Ya existe el instructor.";
                     lexito.ForeColor = System.Drawing.Color.Red;
@@ -198,7 +198,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
                 horario.horaini = Convert.ToDateTime(dp1.Text);
                 horario.horafin = Convert.ToDateTime(dp2.Text);
                 LogicaHorario logica = new LogicaHorario();
-                logica.agregarHorario(horario, tb1.Text);
+                logica.agregarHorario(horario, tbcedula.Text);
             }
 
             if (cb11.Checked == true)
@@ -208,7 +208,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
                 horario.horaini = Convert.ToDateTime(dp3.Text);
                 horario.horafin = Convert.ToDateTime(dp4.Text);
                 LogicaHorario logica = new LogicaHorario();
-                logica.agregarHorario(horario, tb1.Text);
+                logica.agregarHorario(horario, tbcedula.Text);
             }
 
             if (cb7.Checked == true)
@@ -218,7 +218,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
                 horario.horaini = Convert.ToDateTime(dp5.Text);
                 horario.horafin = Convert.ToDateTime(dp6.Text);
                 LogicaHorario logica = new LogicaHorario();
-                logica.agregarHorario(horario, tb1.Text);
+                logica.agregarHorario(horario, tbcedula.Text);
             }
 
             if (cb12.Checked == true)
@@ -228,7 +228,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
                 horario.horaini = Convert.ToDateTime(dp7.Text);
                 horario.horafin = Convert.ToDateTime(dp8.Text);
                 LogicaHorario logica = new LogicaHorario();
-                logica.agregarHorario(horario, tb1.Text);
+                logica.agregarHorario(horario, tbcedula.Text);
             }
 
             if (cb8.Checked == true)
@@ -238,7 +238,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
                 horario.horaini = Convert.ToDateTime(dp9.Text);
                 horario.horafin = Convert.ToDateTime(dp10.Text);
                 LogicaHorario logica = new LogicaHorario();
-                logica.agregarHorario(horario, tb1.Text);
+                logica.agregarHorario(horario, tbcedula.Text);
             }
 
             if (cb13.Checked == true)
@@ -248,7 +248,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
                 horario.horaini = Convert.ToDateTime(dp11.Text);
                 horario.horafin = Convert.ToDateTime(dp12.Text);
                 LogicaHorario logica = new LogicaHorario();
-                logica.agregarHorario(horario, tb1.Text);
+                logica.agregarHorario(horario, tbcedula.Text);
             }
 
             if (cb9.Checked == true)
@@ -258,7 +258,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
                 horario.horaini = Convert.ToDateTime(dp13.Text);
                 horario.horafin = Convert.ToDateTime(dp14.Text);
                 LogicaHorario logica = new LogicaHorario();
-                logica.agregarHorario(horario, tb1.Text);
+                logica.agregarHorario(horario, tbcedula.Text);
             }
 
             if (cb14.Checked == true)
@@ -268,7 +268,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
                 horario.horaini = Convert.ToDateTime(dp15.Text);
                 horario.horafin = Convert.ToDateTime(dp16.Text);
                 LogicaHorario logica = new LogicaHorario();
-                logica.agregarHorario(horario, tb1.Text);
+                logica.agregarHorario(horario, tbcedula.Text);
             }
 
             if (cb10.Checked == true)
@@ -278,7 +278,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
                 horario.horaini = Convert.ToDateTime(dp17.Text);
                 horario.horafin = Convert.ToDateTime(dp18.Text);
                 LogicaHorario logica = new LogicaHorario();
-                logica.agregarHorario(horario, tb1.Text);
+                logica.agregarHorario(horario, tbcedula.Text);
             }
             if (cb15.Checked == true)
             {
@@ -287,7 +287,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
                 horario.horaini = Convert.ToDateTime(dp19.Text);
                 horario.horafin = Convert.ToDateTime(dp20.Text);
                 LogicaHorario logica = new LogicaHorario();
-                logica.agregarHorario(horario, tb1.Text);
+                logica.agregarHorario(horario, tbcedula.Text);
             }
         }
 

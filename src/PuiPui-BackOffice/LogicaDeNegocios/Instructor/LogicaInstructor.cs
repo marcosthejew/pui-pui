@@ -14,15 +14,15 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.Instructor
     {
 
         #region AgregarInstructor
-        public bool AgregarInstructor(string tb1, string tb2, string tb3, long tb4, string tb5, string tb6, string tb7, long tb8, string tb9, string tb10, string tb11, long tb12, DateTime calendar, string cb)
+        public bool AgregarInstructor(string tbcedula, string tbprimer_nombre, string tbprimer_apellido, long tbtelefono_local, string tbciudad, string tbsegundo_nombre, string tbsegundo_apellido, long tbtelefono_celular, string tbdireccion, string tbemail, string tbpersona_contacto, long tbtelefono, DateTime calendar, string sexo)
         {
             SQLServerInstructor objDataBase = new SQLServerInstructor();
             try
             {
-                if (objDataBase.ExisteInstructor(tb1))
+                if (objDataBase.ExisteInstructor(tbcedula))
                     return false;
                 else
-                    return objDataBase.insertarInstructor(tb1, tb2, tb3, tb4, tb5, tb6, tb7, tb8, tb9, tb10, tb11, tb12, calendar, cb);
+                    return objDataBase.insertarInstructor(tbcedula, tbprimer_nombre, tbprimer_apellido, tbtelefono_local, tbciudad, tbsegundo_nombre, tbsegundo_apellido, tbtelefono_celular, tbdireccion, tbemail, tbpersona_contacto, tbtelefono, calendar, sexo);
             }
             catch (InstructorBDException e)
             {
@@ -70,16 +70,12 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.Instructor
         #endregion ConsultarInstructor
 
         #region EliminarInstructor
-        public bool EliminarInstructor(string a)
+        public bool EliminarInstructor(string cedula)
         {
             SQLServerInstructor instructor = new SQLServerInstructor();
             try
             {
-                if (instructor.TieneClase(a))
-                    return false;
-                else if (instructor.TieneCliente(a))
-                    return false;
-                else if (instructor.EliminarInstructor(a))
+                if (instructor.EliminarInstructor(cedula))
                     return true;
 
                  return false;

@@ -18,7 +18,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
         IConexionSqlServer db = new ConexionSqlServer();
 
         #region ExisteInstructor
-        public bool ExisteInstructor(string tb1)
+        public bool ExisteInstructor(string tbcedula)
         {
             //string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
             string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
@@ -32,7 +32,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 conexion.Open();
                 cmd = new SqlCommand("[dbo].[existeInstructor]", conexion);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@cedula", tb1);
+                cmd.Parameters.AddWithValue("@cedula", tbcedula);
                 dr = cmd.ExecuteReader();
 
                 if (dr.Read())
@@ -70,7 +70,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
         #endregion ExisteInstructor
 
         #region InsertarInstructor
-        public bool insertarInstructor(string tb1, string tb2, string tb3, long tb4, string tb5, string tb6, string tb7, long tb8, string tb9, string tb10, string tb11, long tb12, DateTime calendar, string cb)
+        public bool insertarInstructor(string tbcedula, string tbprimer_nombre, string tbprimer_apellido, long tbtelefono_local, string tbciudad, string tbsegundo_nombre, string tbsegundo_apellido, long tbtelefono_celular, string tbdireccion, string tbemail, string tbpersona_contacto, long tbtelefono, DateTime calendar, string sexo)
         {
             //string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
             string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
@@ -84,21 +84,21 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 conexion.Open();
                 cmd = new SqlCommand("[dbo].[agregarInstructor]", conexion);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@cedula", tb1);
-                cmd.Parameters.AddWithValue("@primerNombre", tb2);
-                cmd.Parameters.AddWithValue("@segundoNombre", tb6);
-                cmd.Parameters.AddWithValue("@primerApellido", tb3);
-                cmd.Parameters.AddWithValue("@segundoApelldo", tb7);
-                cmd.Parameters.AddWithValue("@genero", cb);
+                cmd.Parameters.AddWithValue("@cedula", tbcedula);
+                cmd.Parameters.AddWithValue("@primerNombre", tbprimer_nombre);
+                cmd.Parameters.AddWithValue("@segundoNombre", tbsegundo_nombre);
+                cmd.Parameters.AddWithValue("@primerApellido", tbprimer_apellido);
+                cmd.Parameters.AddWithValue("@segundoApelldo", tbsegundo_apellido);
+                cmd.Parameters.AddWithValue("@genero", sexo);
                 cmd.Parameters.AddWithValue("@fecha_nacimiento", calendar);
                 cmd.Parameters.AddWithValue("@fecha_registro", DateTime.Today);
-                cmd.Parameters.AddWithValue("@ciudad", tb5);
-                cmd.Parameters.AddWithValue("@direccion", tb9);
-                cmd.Parameters.AddWithValue("@telefonoLocal", tb4);
-                cmd.Parameters.AddWithValue("@telefonoCelular", tb8);
-                cmd.Parameters.AddWithValue("@correoElectronico", tb10);
-                cmd.Parameters.AddWithValue("@nombreEmergencia", tb11);
-                cmd.Parameters.AddWithValue("@contactoEmergencia", tb12);
+                cmd.Parameters.AddWithValue("@ciudad", tbciudad);
+                cmd.Parameters.AddWithValue("@direccion", tbdireccion);
+                cmd.Parameters.AddWithValue("@telefonoLocal", tbtelefono_local);
+                cmd.Parameters.AddWithValue("@telefonoCelular", tbtelefono_celular);
+                cmd.Parameters.AddWithValue("@correoElectronico", tbemail);
+                cmd.Parameters.AddWithValue("@nombreEmergencia", tbpersona_contacto);
+                cmd.Parameters.AddWithValue("@contactoEmergencia", tbtelefono);
                 cmd.Parameters.AddWithValue("@status", "Activo");
                 dr = cmd.ExecuteReader();
 
@@ -269,7 +269,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
         #endregion ConsultarInstructor
 
         #region EliminarInstructor
-        public bool EliminarInstructor(string a) 
+        public bool EliminarInstructor(string cedula) 
         {
             //string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
             string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
@@ -283,7 +283,7 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
                 conexion.Open();
                 cmd = new SqlCommand("[dbo].[eliminarInstructor]", conexion);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@cedula", a);
+                cmd.Parameters.AddWithValue("@cedula", cedula);
                 dr = cmd.ExecuteReader();
 
                 exito = true;
@@ -381,161 +381,11 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
         }
         #endregion ConsultarInstructoresActivos
 
-        #region TieneClase
-        public bool TieneClase(string cedula)
-        {
-            //string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
-            string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
-            SqlConnection conexion = new SqlConnection();
-            SqlCommand cmd = new SqlCommand();
-            SqlDataReader dr;
-            bool exito = false;
-            try
-            {
-                conexion = new SqlConnection(cadenaConexion);
-                conexion.Open();
-                cmd = new SqlCommand("[dbo].[tieneClase]", conexion);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@cedula", cedula);
-                dr = cmd.ExecuteReader();
+        
 
-                if (dr.Read())
-                    exito = true;
+        
 
-                db.CerrarConexion();
-            }
-            catch (ArgumentException e)
-            {
-                throw new InstructorBDException("Parametros invalidos", e);
-            }
-            catch (InvalidOperationException e)
-            {
-                throw new InstructorBDException("Operacion Invalida", e);
-            }
-            catch (NullReferenceException e)
-            {
-                throw new InstructorBDException("Instructor no encontrado", e);
-            }
-            catch (SqlException e)
-            {
-                throw new InstructorBDException("Error con base de datos", e);
-            }
-            catch (Exception e)
-            {
-                throw new InstructorBDException("Error general", e);
-            }
-            finally
-            {
-                db.CerrarConexion();
-            }
-            return exito;
-
-        }
-        #endregion TieneClase
-
-        #region TieneCliente
-        public bool TieneCliente(string cedula)
-        {
-            //string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
-            string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
-            SqlConnection conexion = new SqlConnection();
-            SqlCommand cmd = new SqlCommand();
-            SqlDataReader dr;
-            bool exito = false;
-            try
-            {
-                conexion = new SqlConnection(cadenaConexion);
-                conexion.Open();
-                cmd = new SqlCommand("[dbo].[tieneCliente]", conexion);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@cedula", cedula);
-                dr = cmd.ExecuteReader();
-
-                if (dr.Read())
-                    exito = true;
-
-                db.CerrarConexion();
-            }
-            catch (ArgumentException e)
-            {
-                throw new InstructorBDException("Parametros invalidos", e);
-            }
-            catch (InvalidOperationException e)
-            {
-                throw new InstructorBDException("Operacion Invalida", e);
-            }
-            catch (NullReferenceException e)
-            {
-                throw new InstructorBDException("Instructor no encontrado", e);
-            }
-            catch (SqlException e)
-            {
-                throw new InstructorBDException("Error con base de datos", e);
-            }
-            catch (Exception e)
-            {
-                throw new InstructorBDException("Error general", e);
-            }
-            finally
-            {
-                db.CerrarConexion();
-            }
-            return exito;
-
-        }
-        #endregion TieneCliente
-
-        #region TieneEvaluacion
-        public bool TieneEvaluacion(string cedula)
-        {
-            //string cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
-            string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
-            SqlConnection conexion = new SqlConnection();
-            SqlCommand cmd = new SqlCommand();
-            SqlDataReader dr;
-            bool exito = false;
-            try
-            {
-                conexion = new SqlConnection(cadenaConexion);
-                conexion.Open();
-                cmd = new SqlCommand("[dbo].[tieneEvaluacion]", conexion);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@cedula", cedula);
-                dr = cmd.ExecuteReader();
-
-                if (dr.Read())
-                    exito = true;
-
-                db.CerrarConexion();
-            }
-            catch (ArgumentException e)
-            {
-                throw new InstructorBDException("Parametros invalidos", e);
-            }
-            catch (InvalidOperationException e)
-            {
-                throw new InstructorBDException("Operacion Invalida", e);
-            }
-            catch (NullReferenceException e)
-            {
-                throw new InstructorBDException("Instructor no encontrado", e);
-            }
-            catch (SqlException e)
-            {
-                throw new InstructorBDException("Error con base de datos", e);
-            }
-            catch (Exception e)
-            {
-                throw new InstructorBDException("Error general", e);
-            }
-            finally
-            {
-                db.CerrarConexion();
-            }
-            return exito;
-
-        }
-        #endregion TieneEvaluacion
+        
 
         #region ActualizarIntructor
         public void ActualizarIntructor(Instructor instructor, int id)
