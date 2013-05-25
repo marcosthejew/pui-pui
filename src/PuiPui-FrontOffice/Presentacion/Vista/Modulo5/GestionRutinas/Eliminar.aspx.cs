@@ -14,7 +14,6 @@ namespace PuiPui_FrontOffice.Presentacion.Vista.Modulo5
     public partial class Eliminar : System.Web.UI.Page
     {
         #region Atributos
-        PuiPui_FrontOffice.Entidades.Cliente.Persona persona;
         PuiPui_FrontOffice.Entidades.Cliente.Acceso acceso;
         string loginPersona;
         LogicaRutina rutinas_eliminar = new LogicaRutina();

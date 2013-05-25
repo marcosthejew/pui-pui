@@ -245,7 +245,6 @@
     <Compile Include="Entidades\Cliente\Persona.cs" />
     <Compile Include="Entidades\Horario.cs" />
     <Compile Include="Entidades\Instructor\Instructor.cs" />
-    <Compile Include="Entidades\ReservaClase\ReservaClase.cs" />
     <Compile Include="Entidades\ReservaInstructor\ReservaInstructor.cs" />
     <Compile Include="Entidades\Salon\Salon.cs" />
     <Compile Include="Global.asax.cs">
@@ -491,12 +490,6 @@
   <ItemGroup>
     <Content Include="Account\Web.config" />
     <Content Include="Presentacion\MasterPage\Site.Master" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\PuiPui-BackOffice\PuiPui-BackOffice.csproj">
-      <Project>{f44b4f89-28d2-44c8-aaee-20002b3092d7}</Project>
-      <Name>PuiPui-BackOffice</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Presentacion\Vista\Modulo3\ReservarClase\Reservas.ashx" />

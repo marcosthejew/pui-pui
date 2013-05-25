@@ -209,7 +209,6 @@
     <Compile Include="LogicaDeNegocios\Ejercicio\LogicaMusculo.cs" />
     <Compile Include="LogicaDeNegocios\Excepciones\ExcepcionClientes.cs" />
     <Compile Include="LogicaDeNegocios\Instructor\LogicaInstructor.cs" />
-    <Compile Include="LogicaDeNegocios\Rutina\LogicaRutina.cs" />
     <Compile Include="LogicaDeNegocios\LogicaSalon\LogicaSalon.cs" />
     <Compile Include="Presentacion\Imagenes\Imagenes.cs" />
     <Compile Include="Presentacion\MasterPage\Site1.Master.cs">
@@ -246,7 +245,6 @@
     <Compile Include="Entidades\Ejercicio\Ejercicio.cs" />
     <Compile Include="Entidades\Horario.cs" />
     <Compile Include="Entidades\Instructor\Instructor.cs" />
-    <Compile Include="Entidades\Rutina\Rutina.cs" />
     <Compile Include="Entidades\Salon\Salon.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

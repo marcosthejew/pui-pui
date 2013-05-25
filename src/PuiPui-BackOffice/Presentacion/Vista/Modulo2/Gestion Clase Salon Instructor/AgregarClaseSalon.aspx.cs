@@ -47,7 +47,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo2.Gestion_Clase_Salon_Instr
             }
 
         }
-        private void Init()
+        private void Init2()
         {
             _listClase = new List<Clase>();
             _listSalon = new List<Salon>();

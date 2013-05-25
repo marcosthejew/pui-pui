@@ -189,6 +189,7 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
             }
             catch (SqlException error)
             {
+                return _ruti;
                 throw (new ExcepcionConexion(("Error: " + error.Message), error));
 
 
@@ -198,7 +199,6 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
                 db.CerrarConexion();
 
             }
-            return _ruti;
         }
 
 
@@ -220,11 +220,8 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
             _updatear.Parameters.AddWithValue("@repeticiones", updateRutina.Repeteciones);
             _execute = _updatear.ExecuteReader();
             _conexion.Close();
-            return _updateo = true;
+            return _updateo;
         }
-
-
-
     }
 
 }

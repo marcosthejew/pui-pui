@@ -15,7 +15,6 @@ namespace PuiPui_FrontOffice.Presentacion.Vista.Modulo5.GestionRutinas
     public partial class Modificar : System.Web.UI.Page
     {
         #region Atributos
-     static   PuiPui_FrontOffice.Entidades.Cliente.Persona persona;
         PuiPui_FrontOffice.Entidades.Cliente.Acceso acceso;
         string loginPersona;
         LogicaRutina rutinas_modificar = new LogicaRutina();

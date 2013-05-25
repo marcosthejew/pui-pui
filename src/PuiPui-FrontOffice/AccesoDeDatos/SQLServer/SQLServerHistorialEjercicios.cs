@@ -175,8 +175,6 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
                 db.CerrarConexion();
                
             }
-            return false;
-           
         }
     }
 }

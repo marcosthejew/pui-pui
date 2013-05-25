@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using PuiPui_BackOffice.Entidades.Cliente;
 using PuiPui_BackOffice.AccesoDeDatos.SQLServer;
 
@@ -12,7 +10,6 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.Cliente
         #region ConsultarPersona
         public List<Persona> ConsultarPersona()
         {
-
             List<Persona> miListaPersona = new List<Persona>();
             SQLServerPersona objDataBase = new SQLServerPersona();
             miListaPersona = objDataBase.ConsultarPersona();
@@ -71,7 +68,6 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.Cliente
         {
             SQLServerPersona objDataBase = new SQLServerPersona();
             bool booleanito = objDataBase.ModificarPersona(nuevaPersona);
-
         }
         #endregion
 
@@ -108,8 +104,7 @@ namespace PuiPui_BackOffice.LogicaDeNegocios.Cliente
             acceso.Password = contraseña;
             persona = sqlserverPersona.ConsultarAccesoPersona(acceso);
 
-            if (persona)
-            
+            if (persona)   
                 return true;
             
             return false;

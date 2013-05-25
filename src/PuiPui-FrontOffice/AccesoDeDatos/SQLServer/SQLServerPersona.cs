@@ -231,7 +231,6 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
             {
                 //En caso de que se viole alguna restriccion sobre la BD
                 throw (new ExcepcionPersona(("Error: " + error.Message), error));
-                return false;
             }
 
             finally
@@ -325,7 +324,6 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
             {
                 db.CerrarConexion();
             }
-            return false;
         }
         #endregion
 
