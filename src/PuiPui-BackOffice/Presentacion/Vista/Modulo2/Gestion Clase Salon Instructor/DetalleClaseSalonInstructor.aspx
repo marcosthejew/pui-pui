@@ -65,7 +65,7 @@
 
             <tr>
                 <td class="auto-style1">
-                    <h3>Estatus:</h3></td>
+                    <h3>Status:</h3></td>
                 <td class="auto-style2" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
 margin-top: 0px;">
                     

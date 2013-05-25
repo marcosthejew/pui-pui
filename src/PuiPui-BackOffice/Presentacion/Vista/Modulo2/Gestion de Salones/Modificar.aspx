@@ -14,7 +14,7 @@ AutoEventWireup="true" CodeBehind="Modificar.aspx.cs" Inherits="PuiPui_BackOffic
 
     <div  style="float:left;">
         <fieldset style="width:775px; height:auto; margin-left:7.5%; fit-position:center;">
-       <legend style="text-align:center;"><h2>Agregar Salón</h2></legend>
+       <legend style="text-align:center;"><h2>Modificar Salón</h2></legend>
       <div style="height:20px; text-align:left; font-family:Helvetica; font-size:16px;">
         <asp:Label ID="NClase" runat="server" Text="Debe introducir todos los campos obligatorios" CssClass="NClase" 
             Visible="False" ForeColor="Red" Font-Names="Arial" Font-Size="14px"></asp:Label>
@@ -87,7 +87,7 @@ margin-top: 0px;">
 
             <tr >
                 <td colspan="2"  style="text-align:center">
-                <asp:Button ID="Cancelar" runat="server" Text="Cancelar" Height="25px" Width="120px" Font-Size="14px" OnClick="Cancelar_Click"/>
+                <asp:Button ID="Cancelar" runat="server" Text="Regresar" Height="25px" Width="120px" Font-Size="14px" OnClick="Cancelar_Click"/>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="Aceptar" runat="server" Text="Aceptar" Height="25px" Width="120px" Font-Size="14px" OnClick="Aceptar_Click"/>
                 </td>
             </tr>
