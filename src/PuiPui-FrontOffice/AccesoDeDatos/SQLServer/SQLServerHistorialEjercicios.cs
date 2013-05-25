@@ -15,15 +15,15 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
     public class SQLServerHistorialEjercicios
     {
         IConexionSqlServer db = new ConexionSqlServer();
-
+        string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
         public bool BDInsertarHistorial(int id_cliente, int id_rutina, int id_ejercicio_)
         {
-            string _cadenaConexion = "Server= localhost;database=puipuiDB;integrated security=true";
+
             SqlConnection _conexion = new SqlConnection();
             SqlCommand _insertar = new SqlCommand();
             SqlDataReader _execute;
-            _conexion = new SqlConnection(_cadenaConexion);
-          
+            _conexion = new SqlConnection(cadenaConexion);
+
             try
             {
                 _conexion.Open();
@@ -37,7 +37,7 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
                 if (_execute.Read())
                 {
                     db.CerrarConexion();
-                    return false;
+                    return true;
                 }
             }
             catch (SqlException error)
@@ -50,21 +50,21 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
             {
                 db.CerrarConexion();
             }
-            return true;
+            return false;
         }
 
         public List<Historial_Ejercicio> listaIdejercicios(int id_cliente, int id_rutina)
         {
-            string _cadenaConexion = "Server= localhost;database=puipuiDB;integrated security=true";
+
             SqlConnection _conexion = new SqlConnection();
             SqlCommand _cmd = new SqlCommand();
             List<Historial_Ejercicio> lista = new List<Historial_Ejercicio>();
             SqlDataReader _execute;
-            Historial_Ejercicio _id_ejer = new Historial_Ejercicio();
+
             try
             {
 
-                _conexion = new SqlConnection(_cadenaConexion);
+                _conexion = new SqlConnection(cadenaConexion);
                 _conexion.Open();
                 _cmd = new SqlCommand("[dbo].[busca_rutina_idEjercicio]", _conexion);
                 _cmd.CommandType = CommandType.StoredProcedure;
@@ -74,6 +74,7 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
 
                 while (_execute.Read())
                 {
+                    Historial_Ejercicio _id_ejer = new Historial_Ejercicio();
 
                     _id_ejer.Id_ejercicio = Convert.ToInt32(_execute.GetValue(0));
                     lista.Add(_id_ejer);
@@ -81,11 +82,11 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
                 }
 
                 _conexion.Close();
-
+                return lista;
             }
             catch (SqlException e)
             {
-
+                return lista;
                 throw (new ExcepcionConexion(("Error: " + e.Message), e));
 
             }
@@ -93,21 +94,21 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
             {
                 _conexion.Close();
             }
-            return lista;
+           
 
         }
         public List<Historial_Ejercicio> busca_id_rutina(int id_cliente)
         {
-            string _cadenaConexion = "Server= localhost;database=puipuiDB;integrated security=true";
+
             SqlConnection _conexion = new SqlConnection();
             SqlCommand _cmd = new SqlCommand();
             List<Historial_Ejercicio> lista = new List<Historial_Ejercicio>();
             SqlDataReader _execute;
-            Historial_Ejercicio _id_ruti = new Historial_Ejercicio();
+
             try
             {
 
-                _conexion = new SqlConnection(_cadenaConexion);
+                _conexion = new SqlConnection(cadenaConexion);
                 _conexion.Open();
                 _cmd = new SqlCommand("[dbo].[busca_rutina_idCliente]", _conexion);
                 _cmd.CommandType = CommandType.StoredProcedure;
@@ -116,17 +117,18 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
 
                 while (_execute.Read())
                 {
-
+                    Historial_Ejercicio _id_ruti = new Historial_Ejercicio();
                     _id_ruti.Id_rutina = Convert.ToInt32(_execute.GetValue(0));
                     lista.Add(_id_ruti);
 
                 }
 
                 db.CerrarConexion();
-
+                return lista;
             }
             catch (SqlException e)
             {
+                return lista;
 
                 throw (new ExcepcionConexion(("Error: " + e.Message), e));
 
@@ -135,7 +137,7 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
             {
                 _conexion.Close();
             }
-            return lista;
+          
 
         }
 
@@ -143,14 +145,14 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
         {
 
 
-            string _cadenaConexion = "Server= localhost;database=puipuiDB;integrated security=true";
+
             SqlConnection _conexion = new SqlConnection();
             SqlCommand _borrar = new SqlCommand();
             SqlDataReader _execute;
-         
+
             try
             {
-                _conexion = new SqlConnection(_cadenaConexion);
+                _conexion = new SqlConnection(cadenaConexion);
                 _conexion.Open();
                 _borrar = new SqlCommand("[dbo].[delete_Historial_Rutina]", _conexion);
                 _borrar.CommandType = CommandType.StoredProcedure;
@@ -158,23 +160,26 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
                 _borrar.Parameters.AddWithValue("@id_cli", id_cliente);
                 _execute = _borrar.ExecuteReader();
                 db.CerrarConexion();
-                return  true;
+                return true;
 
-               
+
             }
             catch (SqlException error)
             {
+                return false;
 
                 throw (new ExcepcionConexion(("Error: " + error.Message), error));
-                
+
             }
-               
+
             finally
             {
-               
+
                 db.CerrarConexion();
-               
+
             }
+            
+
         }
     }
 }

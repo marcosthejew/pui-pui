@@ -243,7 +243,7 @@ namespace PuiPui_FrontOffice.Presentacion.Vista.Modulo5.GestionRutinas
 
 
 
-            Response.Redirect("/Presentacion/Vista/Modulo5/Modificar.aspx");
+            Response.Redirect("/Presentacion/Vista/Modulo5/GestionRutinas/Modificar.aspx");
             }  
       }
     }
