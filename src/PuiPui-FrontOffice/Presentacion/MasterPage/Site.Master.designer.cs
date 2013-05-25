@@ -39,8 +39,6 @@ namespace PuiPui_FrontOffice {
         /// </remarks>
         protected global::System.Web.UI.WebControls.SiteMapPath SiteMapPath1;
         
-
-
         /// <summary>
         /// BRegistrar control.
         /// </summary>

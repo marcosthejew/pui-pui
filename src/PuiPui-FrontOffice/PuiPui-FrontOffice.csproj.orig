@@ -114,6 +114,11 @@
     <Content Include="Presentacion\Vista\Modulo6\Cliente\Consultar.aspx" />
     <Content Include="Presentacion\Vista\Modulo6\Cliente\Modificar.aspx" />
     <Content Include="Presentacion\Vista\Modulo6\Login.aspx" />
+    <Content Include="Presentacion\Vista\Mosulo5\Agregar.aspx" />
+    <Content Include="Presentacion\Vista\Mosulo5\Consultar.aspx" />
+    <Content Include="Presentacion\Vista\Mosulo5\Eliminar.aspx" />
+    <Content Include="Presentacion\Vista\Mosulo5\Modificar.aspx" />
+    <Content Include="Presentacion\Vista\Mosulo5\Modulo5.aspx" />
     <Content Include="Scripts\fullcalendar\fullcalendar.css" />
     <Content Include="Scripts\fullcalendar\fullcalendar.js" />
     <Content Include="Scripts\fullcalendar\fullcalendar.min.js" />
@@ -138,12 +143,19 @@
   <ItemGroup>
     <Compile Include="AccesoDeDatos\Conexion\Conexion.cs" />
     <Compile Include="AccesoDeDatos\Conexion\IConexion\IConexionSQLServer.cs" />
+    <Compile Include="AccesoDeDatos\Excepciones_BD\EjercicioBDException.cs" />
+    <Compile Include="AccesoDeDatos\Excepciones_BD\ExcepcionBDRutina.cs" />
     <Compile Include="AccesoDeDatos\Excepciones_BD\ExcepcionConexion.cs" />
     <Compile Include="AccesoDeDatos\Excepciones_BD\ExcepcionPersona.cs" />
+    <Compile Include="AccesoDeDatos\Excepciones_BD\ExceptionBDHistorialRutina.cs" />
+    <Compile Include="AccesoDeDatos\Excepciones_BD\ExceptionHistorialRutina.cs" />
+    <Compile Include="AccesoDeDatos\Excepciones_BD\ExceptionRutina.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\Evaluacion\SqlEvaluacionClase.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerEjercicio.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerEvaluacionInstructor.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerHistorialEjercicios.cs" />
+    <Compile Include="AccesoDeDatos\SQLServer\SQLServerHorario.cs" />
+    <Compile Include="AccesoDeDatos\SQLServer\SQLServerInstructor.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerPersona.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerReservaInstructor.cs" />
     <Compile Include="AccesoDeDatos\SQLServer\SQLServerReservarClase.cs" />
@@ -172,6 +184,8 @@
     <Compile Include="LogicaDeNegocios\Cliente\LogicaPersona.cs" />
     <Compile Include="LogicaDeNegocios\EvaluacionInstructor\LogicaEvaluacionInstructor.cs" />
     <Compile Include="LogicaDeNegocios\Exepciones\ExcepcionConexion.cs" />
+    <Compile Include="LogicaDeNegocios\Instructor\LogicaHorario.cs" />
+    <Compile Include="LogicaDeNegocios\Instructor\LogicaInstructor.cs" />
     <Compile Include="LogicaDeNegocios\Login\Login.cs" />
     <Compile Include="LogicaDeNegocios\ReservaClase\ReservaClase.cs" />
     <Compile Include="LogicaDeNegocios\ReservaInstructor\LogicaReservaInstructor.cs" />
@@ -410,6 +424,41 @@
     <Compile Include="Presentacion\Vista\Modulo6\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Vista\Mosulo5\Agregar.aspx.cs">
+      <DependentUpon>Agregar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Vista\Mosulo5\Agregar.aspx.designer.cs">
+      <DependentUpon>Agregar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Vista\Mosulo5\Consultar.aspx.cs">
+      <DependentUpon>Consultar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Vista\Mosulo5\Consultar.aspx.designer.cs">
+      <DependentUpon>Consultar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Vista\Mosulo5\Eliminar.aspx.cs">
+      <DependentUpon>Eliminar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Vista\Mosulo5\Eliminar.aspx.designer.cs">
+      <DependentUpon>Eliminar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Vista\Mosulo5\Modificar.aspx.cs">
+      <DependentUpon>Modificar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Vista\Mosulo5\Modificar.aspx.designer.cs">
+      <DependentUpon>Modificar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Vista\Mosulo5\Modulo5.aspx.cs">
+      <DependentUpon>Modulo5.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Vista\Mosulo5\Modulo5.aspx.designer.cs">
+      <DependentUpon>Modulo5.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Presentacion\MasterPage\Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -429,12 +478,6 @@
   <ItemGroup>
     <Content Include="Account\Web.config" />
     <Content Include="Presentacion\MasterPage\Site.Master" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\PuiPui-BackOffice\PuiPui-BackOffice.csproj">
-      <Project>{f44b4f89-28d2-44c8-aaee-20002b3092d7}</Project>
-      <Name>PuiPui-BackOffice</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Presentacion\Vista\Modulo3\ReservarClase\Reservas.ashx" />

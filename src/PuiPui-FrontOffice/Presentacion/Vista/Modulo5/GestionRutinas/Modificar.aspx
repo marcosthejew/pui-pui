@@ -84,7 +84,7 @@
 <asp:Content ID="Content2" runat="server" ContentPlaceHolderID="MainContent">
 
     <h2>
-        MODIFICAR Rutinas</h2>
+        MODIFICAR RUTINA</h2>
 
     <br />
 

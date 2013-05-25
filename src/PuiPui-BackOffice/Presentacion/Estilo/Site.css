@@ -39,7 +39,7 @@ a:active, a:hover { color: #BBBB00; text-decoration: none; font-weight: bold; }
 
 h1 {
 
-	font-family: Helvetica, sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
 
 	font-size: 18px;
 
@@ -55,21 +55,7 @@ h1 {
 
 h2 {
 
-	font-family: Helvetica, sans-serif;
-
-	font-size: 16px;
-
-	font-weight: bold;
-
-	color: #fff;
-
-	margin-top: 0px;
-
-}
-
-h3 {
-    
-	font-family: Arial,Helvetica, sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
 
 	font-size: 14px;
 
@@ -81,23 +67,9 @@ h3 {
 
 }
 
-h4 {
-    
-	font-family: Arial,Helvetica, sans-serif;
-
-	font-size: 12px;
-
-	font-weight: bold;
-
-	color: #fff;
-
-	margin-top: 0px;
-
-}
-
 #templatemo_container {
 
-	width: 900px;
+	width: 950px;
 
 	margin: auto;
 
@@ -107,7 +79,7 @@ h4 {
 
 	float: left;
 
-	width: 900px;
+	width: 950px;
 
 	height: 104px;
 
@@ -121,7 +93,7 @@ h4 {
 
 	float: left;
 
-	width: 281px;
+	width: 331px;
 
 	height: 40px;
 
@@ -129,7 +101,7 @@ h4 {
 
 	font-weight: bold;
 
-	margin: 23px 0px 0px 20px;
+	margin: 23px 10px 10px 20px;
 
 	padding: 28px 0px 0px 30px;
 
@@ -209,9 +181,9 @@ h4 {
 
 #templatemo_content_section {
 	float: left;
-	width: 900px;
+	width: 950px;
 	background: url(../Imagenes/templatemo_content_bg.jpg) repeat-x;
-	height: 721px;
+	height: 1000px;
 	overflow: auto;
 }
 
@@ -313,7 +285,7 @@ h4 {
 
 	width: 18px;
 
-	height: 721px;
+	height: 1000px;
 
 	background: url(../Imagenes/templatemo_left_corner.jpg) no-repeat;
 
@@ -325,7 +297,7 @@ h4 {
 
 	width: 814px;
 
-	height: 721px;
+	height: 1000px;
 
 }
 
@@ -335,7 +307,7 @@ h4 {
 
 	width: 68px;
 
-	height: 721px;
+	height: 1000px;
 
 	background: url(../Imagenes/templatemo_right_corner.jpg) no-repeat;
 
@@ -345,7 +317,7 @@ h4 {
 
 	float: left;
 
-	width: 900px;
+	width: 950px;
 
 	height: 159px;
 

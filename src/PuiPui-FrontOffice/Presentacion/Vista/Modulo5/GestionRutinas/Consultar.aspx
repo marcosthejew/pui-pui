@@ -34,7 +34,7 @@
 <asp:Content ID="Content2" runat="server" ContentPlaceHolderID="MainContent">
 
     <h2>
-        cONSULTAR rUTINA</h2>
+        CONSULTAR RUTINA</h2>
     <br />
     <asp:Label ID="lExito" runat="server" Text="No hay rutinas" Visible="False" Font-Bold="False" ForeColor="Red"></asp:Label>
     <br />

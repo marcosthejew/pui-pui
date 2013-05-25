@@ -69,7 +69,7 @@ h2 {
 
 #templatemo_container {
 
-	width: 900px;
+	width: 950px;
 
 	margin: auto;
 
@@ -79,7 +79,7 @@ h2 {
 
 	float: left;
 
-	width: 900px;
+	width: 950px;
 
 	height: 104px;
 
@@ -93,7 +93,7 @@ h2 {
 
 	float: left;
 
-	width: 281px;
+	width: 331px;
 
 	height: 40px;
 
@@ -101,7 +101,7 @@ h2 {
 
 	font-weight: bold;
 
-	margin: 23px 0px 0px 20px;
+	margin: 23px 10px 10px 20px;
 
 	padding: 28px 0px 0px 30px;
 
@@ -181,9 +181,9 @@ h2 {
 
 #templatemo_content_section {
 	float: left;
-	width: 900px;
+	width: 950px;
 	background: url(../Imagenes/templatemo_content_bg.jpg) repeat-x;
-	height: 721px;
+	height: 1000px;
 	overflow: auto;
 }
 
@@ -285,7 +285,7 @@ h2 {
 
 	width: 18px;
 
-	height: 721px;
+	height: 1000px;
 
 	background: url(../Imagenes/templatemo_left_corner.jpg) no-repeat;
 
@@ -297,7 +297,7 @@ h2 {
 
 	width: 814px;
 
-	height: 721px;
+	height: 1000px;
 
 }
 
@@ -307,7 +307,7 @@ h2 {
 
 	width: 68px;
 
-	height: 721px;
+	height: 1000px;
 
 	background: url(../Imagenes/templatemo_right_corner.jpg) no-repeat;
 
@@ -317,7 +317,7 @@ h2 {
 
 	float: left;
 
-	width: 900px;
+	width: 950px;
 
 	height: 159px;
 

@@ -17,8 +17,7 @@
                 <div id="templatemo_container">
                     <div id="templatemo_header_section">
                         <div id="templatemo_title_section">
-                            <h1>Pui-Pui FrontOffice
-                            </h1>
+                            Pui-Pui FrontOffice                            
                         </div>
                     </div>
                     <div id="templatemo_content_section">
@@ -32,7 +31,6 @@
                             <div class="footer">
                             </div>
                         </div>
-                        <div id="templatemo_content_right" />
                     </div>
                 </div>
             </div>

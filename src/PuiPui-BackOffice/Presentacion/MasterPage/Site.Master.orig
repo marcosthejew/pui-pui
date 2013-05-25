@@ -27,14 +27,11 @@
                             </NodeTemplate>
                         </asp:SiteMapPath>
                     </div>
-                        <table width="950" border="0" cellpadding="0" cellspacing="0" >
-                    <tr>
-                        <td align="center" style="width:800px;height:10px" />
-                        <td align="center" style="width:150px;height:30px" >
+                    
+                        <div id="cerrarcesion"></div>
                         <asp:Button ID="BRegistrar" runat="server" CssClass="button" onclick="BRegistrar_Click" Text="Cerrar Sesión" />
-                            </td>
-                    </tr>
-                    </table>
+                        
+                                                
                     <div id="templatemo_header_section">
                         <div id="templatemo_title_section">
                             Pui-Pui BackOffice
@@ -73,7 +70,8 @@
                                         </asp:MenuItem>
                                         <asp:MenuItem Text="Salones">
                                             <asp:MenuItem NavigateUrl="../Vista/Modulo2/Gestion%20de%20Salones/Agregar.aspx" Text="Agregar" />
-                                            <asp:MenuItem NavigateUrl="../Vista/Modulo2/Gestion%20de%20Salones/Consultar.aspx" Text="Consultar" />                                            
+                                            <asp:MenuItem NavigateUrl="../Vista/Modulo2/Gestion%20de%20Salones/Consultar.aspx" Text="Consultar" />
+                                            <asp:MenuItem NavigateUrl="../Vista/Modulo2/Gestion%20de%20Salones/Modificar.aspx" Text="Modificar" />                                            
                                         </asp:MenuItem>
                                         <asp:MenuItem Text="Designacion de aulas">
                                             <asp:MenuItem NavigateUrl="../Vista/Modulo2/Gestion%20Clase%20Salon%20Instructor/AgregarClaseSalon.aspx" Text="Agregar designacion de aulas" />

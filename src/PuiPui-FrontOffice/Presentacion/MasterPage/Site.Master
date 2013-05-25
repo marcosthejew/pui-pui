@@ -26,28 +26,30 @@
                             </NodeTemplate>
                         </asp:SiteMapPath>
                     </div>
-                    <asp:Button ID="BRegistrar" runat="server" CssClass="button" onclick="BRegistrar_Click" Text="Cerrar Sesión" />
+                    <table width="950" border="0" cellpadding="0" cellspacing="0" >
+                    <tr>
+                        <td align="center" style="width:800px;height:10px" />
+                        <td align="center" style="width:150px;height:30px" >
+                        <asp:Button ID="BRegistrar" runat="server" CssClass="button" onclick="BRegistrar_Click" Text="Cerrar Sesión" />
+                            </td>
+                    </tr>
+                    </table>
+                    
                     <div id="templatemo_header_section">
                         <div id="templatemo_title_section">
-                    Pui-Pui FrontOffice&nbsp;
+                                Pui-Pui FrontOffice&nbsp;
                       </div>
                         <div class="templatemo_topmenu">
                 <asp:Menu ID="NavigationMenu" runat="server" CssClass="Menu" EnableViewState="false"
                     IncludeStyleBlock="false" Orientation="Horizontal">
                     <Items>
                         <asp:MenuItem NavigateUrl="../Vista/Home/Home.aspx" Text="Inicio" />
-                        <asp:MenuItem NavigateUrl="../Vista/Modulo3/Modulo3.aspx" Text="Reservar Clases">
-                            <asp:MenuItem Text="Reservar Clase">
-                                <asp:MenuItem NavigateUrl="../Vista/Modulo3/ReservarClase/ReservarClase.aspx" Text="Reservar" />
-                                <asp:MenuItem NavigateUrl="../Vista/Modulo3/ReservarClase/Modificar.aspx" Text="Modificar" />
-                           </asp:MenuItem>
-                            <asp:MenuItem Text="Evaluar Clase">
-                                <asp:MenuItem NavigateUrl="../Vista/Modulo3/EvaluarClase/Agregar.aspx" Text="Agregar" />
-                                <asp:MenuItem NavigateUrl="../Vista/Modulo3/EvaluarClase/Consultar.aspx" Text="Consultar" />
-                                <asp:MenuItem NavigateUrl="../Vista/Modulo3/EvaluarClase/Modificar.aspx" Text="Modificar" />
-                                <asp:MenuItem NavigateUrl="../Vista/Modulo3/EvaluarClase/Eliminar.aspx" Text="Eliminar" />
-                            </asp:MenuItem>
+                        
+                        <asp:MenuItem NavigateUrl="../Vista/Modulo3/Modulo3.aspx" Text="Modulo 3">
+                            <asp:MenuItem NavigateUrl="../Vista/Modulo3/ReservarClase/ReservarClase.aspx" Text="Reservar Clase"/>                                
+                            <asp:MenuItem NavigateUrl="../Vista/Modulo3/ReservarClase/Agregar.aspx" Text="Evaluar Clase"/>
                         </asp:MenuItem>
+
                         <asp:MenuItem NavigateUrl="../Vista/Modulo4/Modulo4.aspx" Text="Modulo 4">
                             <asp:MenuItem Text="Reservar Instructor">
                                 <asp:MenuItem NavigateUrl="../Vista/Modulo4/EvaluarInstructor/Agregar.aspx" Text="Agregar" />
@@ -55,9 +57,16 @@
                                 <asp:MenuItem NavigateUrl="../Vista/Modulo4/EvaluarInstructor/Modificar.aspx" Text="Modificar" />
                                 <asp:MenuItem NavigateUrl="../Vista/Modulo4/EvaluarInstructor/Eliminar.aspx" Text="Eliminar" />
                             </asp:MenuItem>
+                            <asp:MenuItem Text="Evaluar Instructor">
+                                <asp:MenuItem NavigateUrl="../Vista/Modulo4/ReservarInstructor/Agregar.aspx" Text="Agregar" />
+                                <asp:MenuItem NavigateUrl="../Vista/Modulo4/ReservarInstructor/Consultar.aspx" Text="Consultar" />
+                                <asp:MenuItem NavigateUrl="../Vista/Modulo4/ReservarInstructor/Modificar.aspx" Text="Modificar" />
+                                <asp:MenuItem NavigateUrl="../Vista/Modulo4/ReservarInstructor/Eliminar.aspx" Text="Eliminar" />
+                            </asp:MenuItem>
                         </asp:MenuItem>
-                          <asp:MenuItem NavigateUrl="../Vista/Modulo5/Modulo5.aspx" Text="Modulo 5">
-                            <asp:MenuItem Text="Reservar Instructor">
+
+                        <asp:MenuItem NavigateUrl="../Vista/Modulo5/Modulo5.aspx" Text="Modulo 5">
+                            <asp:MenuItem Text="Rutinas">
                                 <asp:MenuItem NavigateUrl="../Vista/Modulo5/GestionRutinas/Agregar.aspx" Text="Agregar" />
                                 <asp:MenuItem NavigateUrl="../Vista/Modulo5/GestionRutinas/Consultar.aspx" Text="Consultar" />
                                 <asp:MenuItem NavigateUrl="../Vista/Modulo5/GestionRutinas/Modificar.aspx" Text="Modificar" />
@@ -71,12 +80,7 @@
                                 <asp:MenuItem NavigateUrl="../Vista/Modulo6/Cliente/Modificar.aspx" Text="Modificar" />
                                 </asp:MenuItem>
                             </asp:MenuItem>
-                            <asp:MenuItem Text="Evaluar Instructor">
-                                <asp:MenuItem NavigateUrl="../Vista/Modulo4/ReservarInstructor/Agregar.aspx" Text="Agregar" />
-                                <asp:MenuItem NavigateUrl="../Vista/Modulo4/ReservarInstructor/Consultar.aspx" Text="Consultar" />
-                                <asp:MenuItem NavigateUrl="../Vista/Modulo4/ReservarInstructor/Modificar.aspx" Text="Modificar" />
-                                <asp:MenuItem NavigateUrl="../Vista/Modulo4/ReservarInstructor/Eliminar.aspx" Text="Eliminar" />
-                            </asp:MenuItem>
+                            
                         
                         
                         <asp:MenuItem NavigateUrl="../Vista/Home/About.aspx" Text="Creditos" />
