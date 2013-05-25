@@ -76,7 +76,7 @@ AutoEventWireup="true" CodeBehind="Consultar.aspx.cs" Inherits="PuiPui_BackOffic
                 <td class="auto-style6">
                     Nombre del Ejercicio: </td>
                 <td class="auto-style7">
-                    <asp:Label ID="tbNombre" runat="server" ForeColor="Black"></asp:Label>
+                  <h4>  <asp:Label ID="tbNombre" runat="server" ForeColor="Black"></asp:Label> </h4>  
                 </td>
             </tr>
             <tr>
@@ -85,7 +85,7 @@ AutoEventWireup="true" CodeBehind="Consultar.aspx.cs" Inherits="PuiPui_BackOffic
                 </td>
 
                 <td class="auto-style5">
-                    <asp:TextBox ID="tbDescripcion" runat="server" Width="267px" ReadOnly="True" Columns="5" Height="83px" Rows="5" TextMode="MultiLine" style="margin-left: 2px" Font-Names="Arial"></asp:TextBox>
+                   <h4> <asp:TextBox ID="tbDescripcion" runat="server" Width="267px" ReadOnly="True" Columns="5" Height="83px" Rows="5" TextMode="MultiLine" style="margin-left: 2px" Font-Names="Arial"></asp:TextBox></h4>
 
                 </td>
 
@@ -98,7 +98,7 @@ AutoEventWireup="true" CodeBehind="Consultar.aspx.cs" Inherits="PuiPui_BackOffic
 
                 <td class="auto-style7">
 
-                    <asp:Label ID="tbMusculo" runat="server" ForeColor="Black"></asp:Label>
+                    <h4> <asp:Label ID="tbMusculo" runat="server" ForeColor="Black"></asp:Label> </h4>
 
                 </td>
 

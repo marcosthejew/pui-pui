@@ -85,7 +85,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
         
         protected void Button1_Click(object sender, EventArgs e)
         {
-            if (tb1.Text == "" || tb2.Text == "" || tb3.Text == "" || tb4.Text == "" || tb5.Text == "" || tb6.Text == "" || tb7.Text == "" || tb7.Text == "" || tb8.Text == "" || tb9.Text == "" || tb10.Text == "" || tb11.Text == "" || tb12.Text == "")
+            if (tb1.Text == "" || tb2.Text == "" || tb3.Text == "" || tb4.Text == "" || tb5.Text == "" || tb8.Text == "" || tb9.Text == "" || tb10.Text == "" || tb11.Text == "" || tb12.Text == "")
             {
                 // Mostrar que los campos estan vacios.
                 lexito.Text = "Los campos no pueden estar vacios.";
@@ -96,173 +96,20 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
             {
                 // Valido contra base de datos 
                 LogicaInstructor linstructor = new LogicaInstructor();
-                if (cb1.Checked == true || cb2.Checked == true || cb2.Checked == false || cb1.Checked == false)
-                {
-                    try
-                    {
+                 try
+                   {
                         long.Parse(tb4.Text);
                         long.Parse(tb8.Text);
                         long.Parse(tb12.Text);
-                        
-                        if (cb1.Checked == true && cb2.Checked == false)
-                        {
-                            char cb0 = 'M';
-                            if (!linstructor.AgregarInstructor(tb1.Text, tb2.Text, tb3.Text, long.Parse(tb4.Text), tb5.Text, tb6.Text, tb7.Text, long.Parse(tb8.Text), tb9.Text, tb10.Text, tb11.Text, long.Parse(tb12.Text), Calendar.SelectedDate, cb0.ToString()))
-                            {
-                                lexito.Text = "Ya existe el instructor.";
-                                lexito.ForeColor = System.Drawing.Color.Red;
-                                lexito.Visible = true;
-                            }
-                            else
-                            {
-                                lexito.Text = "Se agrego exitosamente el instructor.";
-                                lexito.ForeColor = System.Drawing.Color.Blue;
-                                lexito.Visible = true;
-                                tb_Init();
-                                ddl_Cargar();
 
-                            }
-                        }
-
-                        if (cb2.Checked == true && cb1.Checked == false)
-                        {
-                            char cb0 = 'F';
-                            if (!linstructor.AgregarInstructor(tb1.Text, tb2.Text, tb3.Text, long.Parse(tb4.Text), tb5.Text, tb6.Text, tb7.Text, long.Parse(tb8.Text), tb9.Text, tb10.Text, tb11.Text, long.Parse(tb12.Text), Calendar.SelectedDate, cb0.ToString()))
-                            {
-                                lexito.Text = "Ya existe el instructor.";
-                                lexito.ForeColor = System.Drawing.Color.Red;
-                                lexito.Visible = true;
-                            }
-                            else
-                            {
-                                lexito.Text = "Se agrego exitosamente el instructor.";
-                                lexito.ForeColor = System.Drawing.Color.Blue;
-                                lexito.Visible = true;
-                                tb_Init();
-                                ddl_Cargar();
-                            }
-                        }
-
-                        if (cb2.Checked == true && cb1.Checked == true)
-                        {
-
-                            lexito.Visible = true;
-                            lexito.Text = "Seleccion solo uno de los dos Sexos";
-                            lexito.ForeColor = System.Drawing.Color.Red;
-                            cb1.BorderColor = Color.Red;
-                            cb2.BorderColor = Color.Red;
-
-                        }
-
-                        if (cb2.Checked == false && cb1.Checked == false)
-                        {
-
-                            lexito.Visible = true;
-                            lexito.Text = "Seleccion Alguno de los dos Sexos";
-                            lexito.ForeColor = System.Drawing.Color.Red;
-                            cb1.BorderColor = Color.Red;
-                            cb2.BorderColor = Color.Red;
-                        }
-
-                        if (cb6.Checked == true) 
-                        {
-                            Horario horario = new Horario();
-                            horario.dia = "lunes";
-                            horario.horaini = Convert.ToDateTime(dp1.Text);
-                            horario.horafin = Convert.ToDateTime(dp2.Text);
-                            LogicaHorario logica = new LogicaHorario();
-                            logica.agregarHorario(horario, tb1.Text);
-                        }
-
-                        if (cb11.Checked == true)
-                        {
-                            Horario horario = new Horario();
-                            horario.dia = "lunes";
-                            horario.horaini = Convert.ToDateTime(dp3.Text);
-                            horario.horafin = Convert.ToDateTime(dp4.Text);
-                            LogicaHorario logica = new LogicaHorario();
-                            logica.agregarHorario(horario, tb1.Text);
-                        }
-
-                        if (cb7.Checked == true)
-                        {
-                            Horario horario = new Horario();
-                            horario.dia = "martes";
-                            horario.horaini = Convert.ToDateTime(dp5.Text);
-                            horario.horafin = Convert.ToDateTime(dp6.Text);
-                            LogicaHorario logica = new LogicaHorario();
-                            logica.agregarHorario(horario, tb1.Text);
-                        }
-
-                        if (cb12.Checked == true)
-                        {
-                            Horario horario = new Horario();
-                            horario.dia = "martes";
-                            horario.horaini = Convert.ToDateTime(dp7.Text);
-                            horario.horafin = Convert.ToDateTime(dp8.Text);
-                            LogicaHorario logica = new LogicaHorario();
-                            logica.agregarHorario(horario, tb1.Text);
-                        }
-
-                        if (cb8.Checked == true)
-                        {
-                            Horario horario = new Horario();
-                            horario.dia = "miercoles";
-                            horario.horaini = Convert.ToDateTime(dp9.Text);
-                            horario.horafin = Convert.ToDateTime(dp10.Text);
-                            LogicaHorario logica = new LogicaHorario();
-                            logica.agregarHorario(horario, tb1.Text);
-                        }
-
-                        if (cb13.Checked == true)
-                        {
-                            Horario horario = new Horario();
-                            horario.dia = "miercoles";
-                            horario.horaini = Convert.ToDateTime(dp11.Text);
-                            horario.horafin = Convert.ToDateTime(dp12.Text);
-                            LogicaHorario logica = new LogicaHorario();
-                            logica.agregarHorario(horario, tb1.Text);
-                        }
-
-                        if (cb9.Checked == true)
-                        {
-                            Horario horario = new Horario();
-                            horario.dia = "jueves";
-                            horario.horaini = Convert.ToDateTime(dp13.Text);
-                            horario.horafin = Convert.ToDateTime(dp14.Text);
-                            LogicaHorario logica = new LogicaHorario();
-                            logica.agregarHorario(horario, tb1.Text);
-                        }
-
-                        if (cb14.Checked == true)
-                        {
-                            Horario horario = new Horario();
-                            horario.dia = "jueves";
-                            horario.horaini = Convert.ToDateTime(dp15.Text);
-                            horario.horafin = Convert.ToDateTime(dp16.Text);
-                            LogicaHorario logica = new LogicaHorario();
-                            logica.agregarHorario(horario, tb1.Text);
-                        }
-
-                        if (cb10.Checked == true)
-                        {
-                            Horario horario = new Horario();
-                            horario.dia = "viernes";
-                            horario.horaini = Convert.ToDateTime(dp17.Text);
-                            horario.horafin = Convert.ToDateTime(dp18.Text);
-                            LogicaHorario logica = new LogicaHorario();
-                            logica.agregarHorario(horario, tb1.Text);
-                        }
-                        if (cb15.Checked == true)
-                        {
-                            Horario horario = new Horario();
-                            horario.dia = "viernes";
-                            horario.horaini = Convert.ToDateTime(dp19.Text);
-                            horario.horafin = Convert.ToDateTime(dp20.Text);
-                            LogicaHorario logica = new LogicaHorario();
-                            logica.agregarHorario(horario, tb1.Text);
-                        }
-
+                        GuardarInstructor(linstructor);
+                        GuardarHorarios(linstructor);
+                       
+                        lexito.Text = "Se ha agregado exitosamente al instructor";
+                        lexito.ForeColor = System.Drawing.Color.Blue;
+                        lexito.Visible = true;
+                        tb_Init();
+                        ddl_Cargar();
                     }
 
                     catch (HorarioException error)
@@ -280,14 +127,171 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
                     catch (Exception ex)
                     {
                         lexito.Visible = true;
-                        lexito.Text = "Los Campos De Telefono deben ser estrictamente numericos";
-                        tb4.BorderColor = Color.Red;
-                        tb8.BorderColor = Color.Red;
-                        tb12.BorderColor = Color.Red;
+                        
                     }                    
+               
+            }
+        }
+
+
+
+        protected void GuardarInstructor(LogicaInstructor linstructor)
+        {
+            if (cb2.Checked == true && cb1.Checked == true)
+            {
+                lexito.Visible = true;
+                lexito.Text = "Seleccion solo uno de los dos Sexos";
+                lexito.ForeColor = System.Drawing.Color.Red;
+                cb1.BorderColor = Color.Red;
+                cb2.BorderColor = Color.Red;
+            }
+
+            if (cb2.Checked == false && cb1.Checked == false)
+            {
+                lexito.Visible = true;
+                lexito.Text = "Seleccion Alguno de los dos Sexos";
+                lexito.ForeColor = System.Drawing.Color.Red;
+                cb1.BorderColor = Color.Red;
+                cb2.BorderColor = Color.Red;
+            }
+
+            if (cb1.Checked == true && cb2.Checked == false)
+            {
+                char cb0 = 'M';
+                if (!linstructor.AgregarInstructor(tb1.Text, tb2.Text, tb3.Text, long.Parse(tb4.Text), tb5.Text, tb6.Text, tb7.Text, long.Parse(tb8.Text), tb9.Text, tb10.Text, tb11.Text, long.Parse(tb12.Text), Calendar.SelectedDate, cb0.ToString()))
+                {
+                    lexito.Text = "Ya existe el instructor.";
+                    lexito.ForeColor = System.Drawing.Color.Red;
+                    lexito.Visible = true;
+                }
+                else
+                {
+                    lexito.Text = "Se agrego exitosamente el instructor.";
+                    lexito.ForeColor = System.Drawing.Color.Blue;
+                    lexito.Visible = true;               
+                }
+            }
+            if (cb2.Checked == true && cb1.Checked == false)
+            {
+                char cb0 = 'F';
+                if (!linstructor.AgregarInstructor(tb1.Text, tb2.Text, tb3.Text, long.Parse(tb4.Text), tb5.Text, tb6.Text, tb7.Text, long.Parse(tb8.Text), tb9.Text, tb10.Text, tb11.Text, long.Parse(tb12.Text), Calendar.SelectedDate, cb0.ToString()))
+                {
+                    lexito.Text = "Ya existe el instructor.";
+                    lexito.ForeColor = System.Drawing.Color.Red;
+                    lexito.Visible = true;
+                }
+                else
+                {
+                    lexito.Text = "Se agrego exitosamente el instructor.";
+                    lexito.ForeColor = System.Drawing.Color.Blue;
+                    lexito.Visible = true;  
                 }
             }
         }
+
+        protected void GuardarHorarios(LogicaInstructor linstructor)
+        {
+            if (cb6.Checked == true)
+            {
+                Horario horario = new Horario();
+                horario.dia = "lunes";
+                horario.horaini = Convert.ToDateTime(dp1.Text);
+                horario.horafin = Convert.ToDateTime(dp2.Text);
+                LogicaHorario logica = new LogicaHorario();
+                logica.agregarHorario(horario, tb1.Text);
+            }
+
+            if (cb11.Checked == true)
+            {
+                Horario horario = new Horario();
+                horario.dia = "lunes";
+                horario.horaini = Convert.ToDateTime(dp3.Text);
+                horario.horafin = Convert.ToDateTime(dp4.Text);
+                LogicaHorario logica = new LogicaHorario();
+                logica.agregarHorario(horario, tb1.Text);
+            }
+
+            if (cb7.Checked == true)
+            {
+                Horario horario = new Horario();
+                horario.dia = "martes";
+                horario.horaini = Convert.ToDateTime(dp5.Text);
+                horario.horafin = Convert.ToDateTime(dp6.Text);
+                LogicaHorario logica = new LogicaHorario();
+                logica.agregarHorario(horario, tb1.Text);
+            }
+
+            if (cb12.Checked == true)
+            {
+                Horario horario = new Horario();
+                horario.dia = "martes";
+                horario.horaini = Convert.ToDateTime(dp7.Text);
+                horario.horafin = Convert.ToDateTime(dp8.Text);
+                LogicaHorario logica = new LogicaHorario();
+                logica.agregarHorario(horario, tb1.Text);
+            }
+
+            if (cb8.Checked == true)
+            {
+                Horario horario = new Horario();
+                horario.dia = "miercoles";
+                horario.horaini = Convert.ToDateTime(dp9.Text);
+                horario.horafin = Convert.ToDateTime(dp10.Text);
+                LogicaHorario logica = new LogicaHorario();
+                logica.agregarHorario(horario, tb1.Text);
+            }
+
+            if (cb13.Checked == true)
+            {
+                Horario horario = new Horario();
+                horario.dia = "miercoles";
+                horario.horaini = Convert.ToDateTime(dp11.Text);
+                horario.horafin = Convert.ToDateTime(dp12.Text);
+                LogicaHorario logica = new LogicaHorario();
+                logica.agregarHorario(horario, tb1.Text);
+            }
+
+            if (cb9.Checked == true)
+            {
+                Horario horario = new Horario();
+                horario.dia = "jueves";
+                horario.horaini = Convert.ToDateTime(dp13.Text);
+                horario.horafin = Convert.ToDateTime(dp14.Text);
+                LogicaHorario logica = new LogicaHorario();
+                logica.agregarHorario(horario, tb1.Text);
+            }
+
+            if (cb14.Checked == true)
+            {
+                Horario horario = new Horario();
+                horario.dia = "jueves";
+                horario.horaini = Convert.ToDateTime(dp15.Text);
+                horario.horafin = Convert.ToDateTime(dp16.Text);
+                LogicaHorario logica = new LogicaHorario();
+                logica.agregarHorario(horario, tb1.Text);
+            }
+
+            if (cb10.Checked == true)
+            {
+                Horario horario = new Horario();
+                horario.dia = "viernes";
+                horario.horaini = Convert.ToDateTime(dp17.Text);
+                horario.horafin = Convert.ToDateTime(dp18.Text);
+                LogicaHorario logica = new LogicaHorario();
+                logica.agregarHorario(horario, tb1.Text);
+            }
+            if (cb15.Checked == true)
+            {
+                Horario horario = new Horario();
+                horario.dia = "viernes";
+                horario.horaini = Convert.ToDateTime(dp19.Text);
+                horario.horafin = Convert.ToDateTime(dp20.Text);
+                LogicaHorario logica = new LogicaHorario();
+                logica.agregarHorario(horario, tb1.Text);
+            }
+        }
+
+
 
         protected void cb1_CheckedChanged(object sender, EventArgs e)
         {
@@ -377,14 +381,12 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
 
             while (hora.Hour < horafin.Hour)
             {
-
                 hora = hora.AddMinutes(30);
                 string a = hora.ToShortTimeString();
                 dp11.Items.Add(a);
                 dp12.Items.Add(a);
                 dp11.Enabled = false;
                 dp12.Enabled = false;
-
             }
         }
 
@@ -400,16 +402,13 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
 
             while (hora.Hour < horafin.Hour)
             {
-
                 hora = hora.AddMinutes(30);
                 string a = hora.ToShortTimeString();
                 dp15.Items.Add(a);
                 dp16.Items.Add(a);
 
                 dp15.Enabled = false;
-                dp16.Enabled = false;
-                
-
+                dp16.Enabled = false;       
             }
         }
 

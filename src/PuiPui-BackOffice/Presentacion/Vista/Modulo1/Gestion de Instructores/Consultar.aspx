@@ -20,103 +20,105 @@
             <td class="auto-style31">Cedula: 
                 </td>
             <td class="auto-style13">
-                <asp:Label ID="lbCedula" runat="server" BackColor="White" ForeColor="Black" Text="Label"></asp:Label>
+                <asp:Label ID="lbCedula" runat="server"  Text="Label"></asp:Label>
             </td>
             <td class="auto-style25">Genero: 
                  </td>
-            <td class="style1"><asp:Label ID="lbGenero" runat="server" BackColor="White" ForeColor="Black" Text="Label"></asp:Label>
+           <td class="style1"><asp:Label ID="lbGenero" runat="server" Text="Label"></asp:Label>
             </td>
         </tr>
         <tr>
             <td class="auto-style32">Primer Nombre: 
                 </td>
             <td class="auto-style22">
-                <asp:Label ID="lbNombre1" runat="server" BackColor="White" ForeColor="Black" Text="Label"></asp:Label>
+                <asp:Label ID="lbNombre1" runat="server"  Text="Label"></asp:Label>
             </td>
             <td class="auto-style26">Segundo Nombre: 
                  </td>
             <td class="auto-style24">
-                <asp:Label ID="lbNombre2" runat="server" BackColor="White" ForeColor="Black" Text="Label"></asp:Label>
+                <asp:Label ID="lbNombre2" runat="server" Text="Label"></asp:Label>
             </td>
+
+            
         </tr>
         <tr>
             <td class="auto-style31">Primer Apellido: 
                 </td>
-            <td class="auto-style13">
-                <asp:Label ID="lbApellido1" runat="server" BackColor="White" ForeColor="Black" Text="Label"></asp:Label>
-            </td>
+          <h4>  <td class="auto-style13">
+                <asp:Label ID="lbApellido1" runat="server"  Text="Label"></asp:Label>
+            </td></h4>
             <td class="auto-style25">Segundo Apellido: 
                  </td>
-            <td class="style1">
-                <asp:Label ID="lbApellido2" runat="server" BackColor="White" ForeColor="Black" Text="Label"></asp:Label>
-            </td>
+           <h4> <td class="style1">
+                <asp:Label ID="lbApellido2" runat="server"  Text="Label"></asp:Label>
+            </td></h4>
         </tr>
         <tr>
             <td class="auto-style33">Telefono Local:
                 </td>
-            <td class="auto-style15">
-                <asp:Label ID="lbTlfLocal" runat="server" BackColor="White" ForeColor="Black" Text="Label"></asp:Label>
-            </td>
+          <h4>  <td class="auto-style15">
+                <asp:Label ID="lbTlfLocal" runat="server" Text="Label"></asp:Label>
+            </td></h4>
             <td class="auto-style27">Telefono Celular: 
                  </td>
-            <td class="auto-style14">
-                <asp:Label ID="lbTlfCel" runat="server" BackColor="White" ForeColor="Black" Text="Label"></asp:Label>
-            </td>
+           <h4> <td class="auto-style14">
+                <asp:Label ID="lbTlfCel" runat="server" BText="Label"></asp:Label>
+            </td></h4>
         </tr>
         <tr>
             <td class="auto-style31">Ciudad:
-                </td>
-            <td class="auto-style13">
-                <asp:Label ID="lbCiudad" runat="server" BackColor="White" ForeColor="Black" Text="Label"></asp:Label>
-            </td>
+               </td>
+           <h4> <td class="auto-style13">
+                <asp:Label ID="lbCiudad" runat="server" Text="Label"></asp:Label>
+            </td></h4>
             <td class="auto-style25">Direccion:
                  </td>
-            <td class="style1">
-                <asp:Label ID="lbDireccion" runat="server" BackColor="White" ForeColor="Black" Text="Label"></asp:Label>
-            </td>
+           <h4> <td class="style1">
+                <asp:Label ID="lbDireccion" runat="server"  Text="Label"></asp:Label>
+            </td></h4>
         </tr>
         <tr>
             <td class="auto-style31">Fecha nacimiento:
                 </td>
-            <td class="auto-style13">
-                <asp:Label ID="lbFechaNac" runat="server" BackColor="White" ForeColor="Black" Text="Label"></asp:Label>
-            </td>
+            <h4><td class="auto-style13">
+                <asp:Label ID="lbFechaNac" runat="server"  Text="Label"></asp:Label>
+            </td></h4>
             <td class="auto-style25">E-mail:
                  </td>
-            <td class="style1">
-                <asp:Label ID="lbMail" runat="server" BackColor="White" ForeColor="Black" Text="Label"></asp:Label>
-            </td>
+           <h4> <td class="style1">
+                <asp:Label ID="lbMail" runat="server"  Text="Label"></asp:Label>
+            </td></h4>
         </tr>
         <tr>
             <td class="auto-style28">Fecha de Registro:
                 </td>
-            <td class="auto-style29">
-                <asp:Label ID="lbFechaRes" runat="server" BackColor="White" ForeColor="Black" Text="Label"></asp:Label>
-            </td>
+           <h4> <td class="auto-style29">
+                <asp:Label ID="lbFechaRes" runat="server"  Text="Label"></asp:Label>
+            </td></h4>
              <td class="auto-style30">Estatus:
                  </td>
-            <td class="auto-style29">
-                <asp:Label ID="lbStatus" runat="server" BackColor="White" ForeColor="Black" Text="Label"></asp:Label>
-            </td>
+           <h4> <td class="auto-style29">
+                <asp:Label ID="lbStatus" runat="server" B Text="Label"></asp:Label>
+            </td></h4>
         </tr>
 
     </table>
     <br />
-    <h3>Datos de Emergencia:
-         </h3>
+    <h2>Datos de Emergencia:
+         </h2>
     <hr />
     <table style="width: 899px">
         <tr>
             <td class="auto-style2">Persona Contacto:
                 </td>
-            <td class="auto-style6">
-                <asp:Label ID="lbNomContacto" runat="server" BackColor="White" ForeColor="Black" Text="Label"></asp:Label>
-            </td>
+           <h4> <td class="auto-style6">
+                <asp:Label ID="lbNomContacto" runat="server"  Text="Label"></asp:Label>
+            </td></h4>
             <td class="auto-style34">Telefono:
                  </td>
-            <td class="style1">
-                 <asp:Label ID="lbTLfContacto" runat="server" BackColor="White" ForeColor="Black" Text="Label"></asp:Label>
-            </td>
+           <h4> <td class="style1">
+                 <asp:Label ID="lbTLfContacto" runat="server"  Text="Label"></asp:Label>
+            </td></h4>
         </tr>
     </table>
 
