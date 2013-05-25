@@ -40,13 +40,10 @@
         <siteMapNode url="~\Presentacion\Vista\Modulo2\Gestion Clase Salon Instructor/DetalleClaseSalonInstructor.aspx" title="Consultar Designacion de aulas"  description="Consultar Designacion de aulas" />
                
       </siteMapNode>
-
-      <!--Modulo 5-->
-      <siteMapNode url="~\Presentacion\Vista\Modulo5\Modulo5.aspx" title="Modulo5"  description="Modulo5" >      
-      </siteMapNode>
+      
 
       <!--Modulo 6-->
-      <siteMapNode url="~\Presentacion\Vista\Modulo6\Modulo6.aspx" title="Modulo6"  description="Modulo6" >
+      <siteMapNode url="~\Presentacion\Vista\Modulo6\Modulo6.aspx" title="Cliente"  description="Cliente" >
         <siteMapNode url="~\Presentacion\Vista\Modulo6\Cliente\Agregar.aspx" title="Cliente Agregar"  description="Cliente Agregar" />
         <siteMapNode url="~\Presentacion\Vista\Modulo6\Cliente\Act-Ina.aspx" title="Cliente Acticar-Inactivar"  description="Cliente Acticar-Inactivar" />
         <siteMapNode url="~\Presentacion\Vista\Modulo6\Cliente\Consultar.aspx" title="Cliente Consultar"  description="Cliente Consultar" />

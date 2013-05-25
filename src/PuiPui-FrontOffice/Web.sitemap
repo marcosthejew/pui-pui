@@ -24,16 +24,16 @@
 
     <!--Modulo 5-->
     <siteMapNode url="~\Presentacion\Vista\Modulo5\Modulo5.aspx" title="Rutinas"  description="Rutinas" >
-      <siteMapNode url="~\Presentacion\Vista\Modulo5\GestionRutinas\Agregar.aspx" title="Agregar Rutinas"  description="Evaluar Instructor Agregar" />
-      <siteMapNode url="~\Presentacion\Vista\Modulo5\GestionRutinas\Consultar.aspx" title="Consultar Rutinas"  description="Evaluar Instructor Consultar" />
-      <siteMapNode url="~\Presentacion\Vista\Modulo5\GestionRutinas\Eliminar.aspx" title="Eliminar Rutinas"  description="Evaluar Instructor Eliminar" />
-      <siteMapNode url="~\Presentacion\Vista\Modulo5\GestionRutinas\Modificar.aspx" title="Modificar Rutinas"  description="Evaluar Instructor Modificar" />
+      <siteMapNode url="~\Presentacion\Vista\Modulo5\GestionRutinas\Agregar.aspx" title="Agregar Rutinas"  description="Agregar Rutinas" />
+      <siteMapNode url="~\Presentacion\Vista\Modulo5\GestionRutinas\Consultar.aspx" title="Consultar Rutinas"  description="Consultar Rutinas" />
+      <siteMapNode url="~\Presentacion\Vista\Modulo5\GestionRutinas\Eliminar.aspx" title="Eliminar Rutinas"  description="Eliminar Rutinas" />
+      <siteMapNode url="~\Presentacion\Vista\Modulo5\GestionRutinas\Modificar.aspx" title="Modificar Rutinas"  description="Modificar Rutinas" />
     </siteMapNode>
 
     <!--Modulo 6-->
     <siteMapNode url="~\Presentacion\Vista\Modulo6\Modulo6.aspx" title="Cliente"  description="Cliente" >
-      <siteMapNode url="~\Presentacion\Vista\Modulo6\Cliente\Agregar.aspx" title="Agregar Cliente"  description="Agregar Cliente" />
-      <siteMapNode url="~\Presentacion\Vista\Modulo6\Cliente\Consultar.aspx" title="Modificar Cliente"  description="Modificar Cliente">
+      <siteMapNode url="~\Presentacion\Vista\Modulo6\Cliente\Consultar.aspx" title="Consultar Cliente"  description="Consultar Cliente" />
+      <siteMapNode url="~\Presentacion\Vista\Modulo6\Cliente\Modificar.aspx" title="Modificar Cliente"  description="Modificar Cliente">
         <siteMapNode url="~\Presentacion\Vista\Home\CambiarContraseña.aspx" title="Creditos"  description="Creditos" />
       </siteMapNode>
     </siteMapNode>
