@@ -91,7 +91,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.SalonTest
         public void ObtenerClaseSalonTest()
         {
             _listaClaseSalonAux = _acceso.SalonesClase();
-            Assert.NotNull(_listaSalonAux);
+            Assert.NotNull(_listaClaseSalonAux);
             Assert.True(_listaClaseSalonAux[0].Id == 1);
             Assert.True(_listaClaseSalonAux[1].Id == 2);
             Assert.True(_listaClaseSalonAux[2].Id == 3);

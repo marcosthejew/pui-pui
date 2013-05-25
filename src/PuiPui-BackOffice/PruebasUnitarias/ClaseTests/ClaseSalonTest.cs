@@ -17,10 +17,10 @@ using PuiPui_BackOffice.AccesoDeDatos.SQLServer;
 namespace PuiPui_BackOffice.PruebasUnitarias.ClaseTests
 {
     [TestFixture]
-   
+
     public class ClaseSalonTest
     {
-         List<ClaseSalon> _listaClaseAux, _listaClase;
+        List<ClaseSalon> _listaClaseAux, _listaClase;
         SQLServerClaseSalon _accesoClaseSalon;
         ClaseSalon _claseSalon;
 
@@ -40,7 +40,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.ClaseTests
             ins.IdPersona = 3;
             _claseSalon = new ClaseSalon(3, new Salon(3), new Clase(4), ins, 1);
             _listaClaseAux.Add(_claseSalon);
-            
+
 
         }
         [Test]
@@ -48,9 +48,9 @@ namespace PuiPui_BackOffice.PruebasUnitarias.ClaseTests
         {
             try
             {
-                Entidades.Instructor.Instructor ins= new Entidades.Instructor.Instructor();
-                ins.IdPersona=1;
-                _claseSalon = new ClaseSalon(new Salon(2),new Clase(1), ins);
+                Entidades.Instructor.Instructor ins = new Entidades.Instructor.Instructor();
+                ins.IdPersona = 1;
+                _claseSalon = new ClaseSalon(new Salon(2), new Clase(1), ins);
                 _accesoClaseSalon = new SQLServerClaseSalon();
                 Assert.IsTrue(_accesoClaseSalon.AgregarClaseSalon(_claseSalon));
             }
@@ -68,7 +68,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.ClaseTests
             {
                 Entidades.Instructor.Instructor ins = new Entidades.Instructor.Instructor();
                 ins.IdPersona = 1;
-                _claseSalon = new ClaseSalon(1,new Salon(2), new Clase(1), ins,0);
+                _claseSalon = new ClaseSalon(1, new Salon(2), new Clase(1), ins, 0);
                 _accesoClaseSalon = new SQLServerClaseSalon();
                 Assert.IsTrue(_accesoClaseSalon.ModificarSalonClase(_claseSalon));
             }
@@ -84,8 +84,8 @@ namespace PuiPui_BackOffice.PruebasUnitarias.ClaseTests
             try
             {
 
-                
-               
+
+
                 _listaClase = _accesoClaseSalon.ListarSalonesClase();
 
                 Assert.NotNull(_listaClase);
@@ -96,7 +96,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.ClaseTests
             }
         }
 
-      
+
         [Test]
         public void BuscarClaseTest()
         {
@@ -137,7 +137,7 @@ namespace PuiPui_BackOffice.PruebasUnitarias.ClaseTests
                 foreach (ClaseSalon clas in _listaClase)
                 {
 
-                    Assert.Equals(clas.Salon.Ubicacion, "Primer Piso");
+                    Assert.IsNotEmpty(clas.Salon.Ubicacion);
 
 
                 }
@@ -154,15 +154,12 @@ namespace PuiPui_BackOffice.PruebasUnitarias.ClaseTests
             try
             {
 
-
-
-
                 _listaClase = _accesoClaseSalon.ListarSalonesClaseTinstructor("Juan");
 
                 foreach (ClaseSalon clas in _listaClase)
                 {
 
-                    Assert.Equals(clas.Instructor.NombrePersona1,"Juan");
+                    Assert.IsNotEmpty(clas.Instructor.NombrePersona1);
 
 
                 }

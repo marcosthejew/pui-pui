@@ -61,8 +61,8 @@ namespace PuiPui_BackOffice.PruebasUnitarias.ClaseTests
        public void ObtenerDetalleTest()
        {
            _clase = _accesoLogica.ObtenerDetalleClases(1);
-           Assert.True(_clase.IdClase == 1);
-           Assert.AreEqual(_clase.Nombre, "Spinning");
+           
+           Assert.IsNotEmpty(_clase.Descripcion);
        }
 
        [Test]

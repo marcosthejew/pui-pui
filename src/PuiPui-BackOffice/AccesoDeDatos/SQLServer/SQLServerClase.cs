@@ -28,7 +28,8 @@ namespace PuiPui_BackOffice.AccesoDeDatos.SQLServer
         {
             _listaClases = new List<Clase>();
             _db = new ConexionSqlServer();
-            _cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            //_cadenaConexion = ConfigurationManager.ConnectionStrings["ConnPuiPui"].ToString();
+            _cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
             _conexion = new SqlConnection();
             _cmd = new SqlCommand();
         }
