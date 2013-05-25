@@ -22,103 +22,103 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores {
         protected global::System.Web.UI.WebControls.Label lexito;
         
         /// <summary>
-        /// tb1 control.
+        /// tbcedula control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb1;
+        protected global::System.Web.UI.WebControls.TextBox tbcedula;
         
         /// <summary>
-        /// cb1 control.
+        /// cbmasculino control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cb1;
+        protected global::System.Web.UI.WebControls.CheckBox cbmasculino;
         
         /// <summary>
-        /// cb2 control.
+        /// cbfemenino control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cb2;
+        protected global::System.Web.UI.WebControls.CheckBox cbfemenino;
         
         /// <summary>
-        /// tb2 control.
+        /// tbprimer_nombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb2;
+        protected global::System.Web.UI.WebControls.TextBox tbprimer_nombre;
         
         /// <summary>
-        /// tb6 control.
+        /// tbsegundo_nombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb6;
+        protected global::System.Web.UI.WebControls.TextBox tbsegundo_nombre;
         
         /// <summary>
-        /// tb3 control.
+        /// tbprimer_apellido control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb3;
+        protected global::System.Web.UI.WebControls.TextBox tbprimer_apellido;
         
         /// <summary>
-        /// tb7 control.
+        /// tbsegundo_apellido control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb7;
+        protected global::System.Web.UI.WebControls.TextBox tbsegundo_apellido;
         
         /// <summary>
-        /// tb4 control.
+        /// tbtelefono_local control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb4;
+        protected global::System.Web.UI.WebControls.TextBox tbtelefono_local;
         
         /// <summary>
-        /// tb8 control.
+        /// tbtelefono_celular control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb8;
+        protected global::System.Web.UI.WebControls.TextBox tbtelefono_celular;
         
         /// <summary>
-        /// tb5 control.
+        /// tbciudad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb5;
+        protected global::System.Web.UI.WebControls.TextBox tbciudad;
         
         /// <summary>
-        /// tb9 control.
+        /// tbdireccion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb9;
+        protected global::System.Web.UI.WebControls.TextBox tbdireccion;
         
         /// <summary>
         /// Calendar control.
@@ -130,31 +130,31 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores {
         protected global::System.Web.UI.WebControls.Calendar Calendar;
         
         /// <summary>
-        /// tb10 control.
+        /// tbemail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb10;
+        protected global::System.Web.UI.WebControls.TextBox tbemail;
         
         /// <summary>
-        /// tb11 control.
+        /// tbpersona_contacto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb11;
+        protected global::System.Web.UI.WebControls.TextBox tbpersona_contacto;
         
         /// <summary>
-        /// tb12 control.
+        /// tbtelefono control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb12;
+        protected global::System.Web.UI.WebControls.TextBox tbtelefono;
         
         /// <summary>
         /// cb6 control.
