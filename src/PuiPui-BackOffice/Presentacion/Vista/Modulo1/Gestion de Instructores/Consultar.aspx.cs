@@ -18,9 +18,10 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
             if (!IsPostBack)
             {
                 Init();
-                ddlInstructores_Cargar();               
+                ddlInstructores_Cargar();
             }
         }
+
 
         protected void ddlInstructores_Cargar()
         {
@@ -53,7 +54,10 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
                 ddlInstructores.Enabled = false;
             }
         }
-       
+
+
+
+
         protected void ddlInstructores_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -61,157 +65,14 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
                 if (ddlInstructores.SelectedIndex > 0)
                 {
                     label_Init();
-
                     string[] words = ddlInstructores.SelectedValue.Split(' ');
                     foreach (string word in words)
                     {
                         Console.WriteLine(word);
                     }
-
                     LogicaInstructor objetoLogica = new LogicaInstructor();
-
                     Instructor instructor = objetoLogica.ConsultarInstructor(words[1]);
-                    if (instructor != null)
-                    {
-                        lbCedula.Text = instructor.CedulaPersona.ToString();
-                        lbNombre1.Text = instructor.NombrePersona1;
-                        lbApellido1.Text = instructor.ApellidoPersona1;
-                        lbTlfLocal.Text = "0" + instructor.TelefonoLocalPersona;
-                        lbCiudad.Text = instructor.CiudadPersona;
-
-                        string[] fechaNAC = Convert.ToString(instructor.FechaNacimientoPersona).Split(' ');
-                        foreach (string fechaN in fechaNAC)
-                        {
-                            Console.WriteLine(fechaN);
-                        }
-
-                        lbFechaNac.Text = fechaNAC[0];
-
-                        string[] fechaRES = Convert.ToString(instructor.FechaIngresoPersona).Split(' ');
-                        foreach (string fechaR in fechaRES)
-                        {
-                            Console.WriteLine(fechaR);
-                        }
-
-                        lbFechaRes.Text = fechaRES[0];
-
-                        lbGenero.Text = instructor.GeneroPersona;
-                        lbNombre2.Text = instructor.NombrePersona2;
-                        lbApellido2.Text = instructor.ApellidoPersona2;
-                        lbTlfCel.Text = "0" + instructor.TelefonoCelularPersona;
-                        lbDireccion.Text = instructor.DireccionPersona;
-                        lbMail.Text = instructor.CorreoPersona;
-                        lbStatus.Text = instructor.EstadoPersona;
-                        lbNomContacto.Text = instructor.ContactoNombrePersona;
-                        lbTLfContacto.Text = "0" + instructor.ContactoTelefonoPersona;
-
-                        if (instructor.Horario != null)
-                        {
-                            List<Horario> horarios = instructor.Horario;
-                            int turno = 1;
-                            foreach (Horario horario in horarios)
-                            {
-                                if (horario.dia.TrimEnd() == "lunes")
-                                {
-                                    if (turno == 1)
-                                    {
-                                        Label1.Text = horario.dia;
-                                        Label2.Text = horario.horaini.ToShortTimeString() + " - " + horario.horafin.ToShortTimeString();
-                                        Label1.Visible = true;
-                                        Label2.Visible = true;
-                                        turno++;
-                                    }
-                                    else
-                                    {
-                                        Label3.Text = horario.horaini.ToShortTimeString() + " - " + horario.horafin.ToShortTimeString();
-                                        Label3.Visible = true;
-                                    }
-                                }
-                            }
-                            turno = 1;
-                            foreach (Horario horario in horarios)
-                            {
-                                if (horario.dia.TrimEnd() == "martes")
-                                {
-                                    if (turno == 1)
-                                    {
-                                        Label4.Text = horario.dia;
-                                        Label5.Text = horario.horaini.ToShortTimeString() + " - " + horario.horafin.ToShortTimeString();
-                                        Label4.Visible = true;
-                                        Label5.Visible = true;
-                                        turno++;
-                                    }
-                                    else
-                                    {
-                                        Label6.Text = horario.horaini.ToShortTimeString() + " - " + horario.horafin.ToShortTimeString();
-                                        Label6.Visible = true;
-                                    }
-                                }
-                            }
-                            turno = 1;
-                            foreach (Horario horario in horarios)
-                            {
-                                if (horario.dia.TrimEnd() == "miercoles")
-                                {
-                                    if (turno == 1)
-                                    {
-                                        Label7.Text = horario.dia;
-                                        Label8.Text = horario.horaini.ToShortTimeString() + " - " + horario.horafin.ToShortTimeString();
-                                        Label7.Visible = true;
-                                        Label8.Visible = true;
-                                        turno++;
-                                    }
-                                    else
-                                    {
-                                        Label9.Text = horario.horaini.ToShortTimeString() + " - " + horario.horafin.ToShortTimeString();
-                                        Label9.Visible = true;
-                                    }
-                                }
-                            }
-                            turno = 1;
-                            foreach (Horario horario in horarios)
-                            {
-                                if (horario.dia.TrimEnd() == "jueves")
-                                {
-                                    if (turno == 1)
-                                    {
-                                        Label10.Text = horario.dia;
-                                        Label11.Text = horario.horaini.ToShortTimeString() + " - " + horario.horafin.ToShortTimeString();
-                                        Label10.Visible = true;
-                                        Label11.Visible = true;
-                                        turno++;
-                                    }
-                                    else
-                                    {
-                                        Label12.Text = horario.horaini.ToShortTimeString() + " - " + horario.horafin.ToShortTimeString();
-                                        Label12.Visible = true;
-                                    }
-                                }
-                            }
-                            turno = 1;
-                            foreach (Horario horario in horarios)
-                            {
-                                if (horario.dia.TrimEnd() == "viernes")
-                                {
-                                    if (turno == 1)
-                                    {
-                                        Label13.Text = horario.dia;
-                                        Label14.Text = horario.horaini.ToShortTimeString() + " - " + horario.horafin.ToShortTimeString();
-                                        Label13.Visible = true;
-                                        Label14.Visible = true;
-                                        turno++;
-                                    }
-                                    else
-                                    {
-                                        Label15.Text = horario.horaini.ToShortTimeString() + " - " + horario.horafin.ToShortTimeString();
-                                        Label15.Visible = true;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    else
-                        Init();
+                    Cargar_Instructor(instructor);
                 }
                 else
                     Init();
@@ -228,15 +89,18 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
                 lExito.ForeColor = System.Drawing.Color.Red;
                 lExito.Visible = true;
             }
-
         }
-        
+
+
+
+
         protected void Init()
         {
             tb_Init();
             label_Init();
         }
-        
+
+
         protected void tb_Init()
         {
             lbCedula.Text = "";
@@ -256,9 +120,9 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
             lbNomContacto.Text = "";
             lbTLfContacto.Text = "";
             label_Init();
-
         }
-        
+
+
         protected void label_Init()
         {
             Label1.Text = "";
@@ -277,5 +141,182 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
             Label14.Text = "";
             Label15.Text = "";
         }
+
+
+        protected void Cargar_Instructor(Instructor instructor)
+        {
+            if (instructor != null)
+            {
+                lbCedula.Text = instructor.CedulaPersona.ToString();
+                lbNombre1.Text = instructor.NombrePersona1;
+                lbApellido1.Text = instructor.ApellidoPersona1;
+                lbTlfLocal.Text = "0" + instructor.TelefonoLocalPersona;
+                lbCiudad.Text = instructor.CiudadPersona;
+
+                string[] fechaNAC = Convert.ToString(instructor.FechaNacimientoPersona).Split(' ');
+                lbFechaNac.Text = fechaNAC[0];
+
+                string[] fechaRES = Convert.ToString(instructor.FechaIngresoPersona).Split(' ');
+                lbFechaRes.Text = fechaRES[0];
+
+                lbGenero.Text = instructor.GeneroPersona;
+                lbNombre2.Text = instructor.NombrePersona2;
+                lbApellido2.Text = instructor.ApellidoPersona2;
+                lbTlfCel.Text = "0" + instructor.TelefonoCelularPersona;
+                lbDireccion.Text = instructor.DireccionPersona;
+                lbMail.Text = instructor.CorreoPersona;
+                lbStatus.Text = instructor.EstadoPersona;
+                lbNomContacto.Text = instructor.ContactoNombrePersona;
+                lbTLfContacto.Text = "0" + instructor.ContactoTelefonoPersona;
+
+                Cargar_Horario(instructor);
+            }
+            else
+                Init();
+        }
+
+
+
+        protected void Cargar_Horario(Instructor instructor)
+        {
+            if (instructor.Horario != null)
+            {
+                List<Horario> horarios = instructor.Horario;
+
+                Cargar_Horario_lunes(horarios);
+                Cargar_Horario_martes(horarios);
+                Cargar_Horario_miercoles(horarios);
+                Cargar_Horario_jueves(horarios);
+                Cargar_Horario_viernes(horarios);
+            }
+
+        }
+
+
+
+        public void Cargar_Horario_lunes(List<Horario> horarios)
+        {
+            int turno = 1;
+            foreach (Horario horario in horarios)
+            {
+                if (horario.dia.TrimEnd() == "lunes")
+                {
+                    if (turno == 1)
+                    {
+                        Label1.Text = horario.dia;
+                        Label2.Text = horario.horaini.ToShortTimeString() + " - " + horario.horafin.ToShortTimeString();
+                        Label1.Visible = true;
+                        Label2.Visible = true;
+                        turno++;
+                    }
+                    else
+                    {
+                        Label3.Text = horario.horaini.ToShortTimeString() + " - " + horario.horafin.ToShortTimeString();
+                        Label3.Visible = true;
+                    }
+                }
+            }
+        }
+
+        public void Cargar_Horario_martes(List<Horario> horarios)
+        {
+            int turno = 1;
+            foreach (Horario horario in horarios)
+            {
+                if (horario.dia.TrimEnd() == "martes")
+                {
+                    if (turno == 1)
+                    {
+                        Label4.Text = horario.dia;
+                        Label5.Text = horario.horaini.ToShortTimeString() + " - " + horario.horafin.ToShortTimeString();
+                        Label4.Visible = true;
+                        Label5.Visible = true;
+                        turno++;
+                    }
+                    else
+                    {
+                        Label6.Text = horario.horaini.ToShortTimeString() + " - " + horario.horafin.ToShortTimeString();
+                        Label6.Visible = true;
+                    }
+                }
+            }
+        }
+
+        public void Cargar_Horario_miercoles(List<Horario> horarios)
+        {
+            int turno = 1;
+            foreach (Horario horario in horarios)
+            {
+                if (horario.dia.TrimEnd() == "miercoles")
+                {
+                    if (turno == 1)
+                    {
+                        Label7.Text = horario.dia;
+                        Label8.Text = horario.horaini.ToShortTimeString() + " - " + horario.horafin.ToShortTimeString();
+                        Label7.Visible = true;
+                        Label8.Visible = true;
+                        turno++;
+                    }
+                    else
+                    {
+                        Label9.Text = horario.horaini.ToShortTimeString() + " - " + horario.horafin.ToShortTimeString();
+                        Label9.Visible = true;
+                    }
+                }
+            }
+        }
+
+        public void Cargar_Horario_jueves(List<Horario> horarios)
+        {
+            int turno = 1;
+            foreach (Horario horario in horarios)
+            {
+                if (horario.dia.TrimEnd() == "jueves")
+                {
+                    if (turno == 1)
+                    {
+                        Label10.Text = horario.dia;
+                        Label11.Text = horario.horaini.ToShortTimeString() + " - " + horario.horafin.ToShortTimeString();
+                        Label10.Visible = true;
+                        Label11.Visible = true;
+                        turno++;
+                    }
+                    else
+                    {
+                        Label12.Text = horario.horaini.ToShortTimeString() + " - " + horario.horafin.ToShortTimeString();
+                        Label12.Visible = true;
+                    }
+                }
+            }
+        }
+
+        public void Cargar_Horario_viernes(List<Horario> horarios)
+        {
+            int turno = 1;
+            foreach (Horario horario in horarios)
+            {
+                if (horario.dia.TrimEnd() == "viernes")
+                {
+                    if (turno == 1)
+                    {
+                        Label13.Text = horario.dia;
+                        Label14.Text = horario.horaini.ToShortTimeString() + " - " + horario.horafin.ToShortTimeString();
+                        Label13.Visible = true;
+                        Label14.Visible = true;
+                        turno++;
+                    }
+                    else
+                    {
+                        Label5.Text = horario.horaini.ToShortTimeString() + " - " + horario.horafin.ToShortTimeString();
+                        Label5.Visible = true;
+                    }
+                }
+            }
+        }
+
+
+
+        
+
     }
 }
