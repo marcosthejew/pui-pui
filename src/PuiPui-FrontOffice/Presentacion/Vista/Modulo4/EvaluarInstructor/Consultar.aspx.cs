@@ -15,7 +15,7 @@ namespace PuiPui_FrontOffice.Presentacion.Vista.Modulo4.EvaluarInstructor
     {
 
         Persona persona;
-        LogicaPersona cliente;
+        LogicaPersona cliente = new LogicaPersona();
         Acceso acceso;
         string loginPersona;
 
@@ -24,21 +24,21 @@ namespace PuiPui_FrontOffice.Presentacion.Vista.Modulo4.EvaluarInstructor
         #region Page Load
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
             try
             {
                 acceso = (Acceso)Session["loginPersona"];//recibo a través del SESSION el objeto "acceso" que esta compuesto por el login y el password de la persona que inicio sesión
                 loginPersona = acceso.Login; //le asigno a la variable loginPersona el login de la persona que acaba de iniciar sesión, si nadie ha iniciado sesión esto se va al catch y te redirige al login, si la persona inicio sesión ya tengo su login y se quien es con esto puedo ir a la bd y ver que persona es para hacer las operaciones necesarias
 
 
-            LogicaEvaluacionInstructor evaluacion = new LogicaEvaluacionInstructor();
-            _listaEvaluacion = evaluacion.ConsultarEvaluacion();
+                LogicaEvaluacionInstructor evaluacion = new LogicaEvaluacionInstructor();
+                _listaEvaluacion = evaluacion.ConsultarEvaluacion();
 
             if (!IsPostBack)
             {
                 llenarGridViewEvaluaciones();
 
-                persona = cliente.ConsultarPersonaPorLogin(acceso.Login);
+                persona = cliente.ConsultarPersonaPorLogin(loginPersona);
                 //persona.LoginPersona = acceso.Login;
             }
 
