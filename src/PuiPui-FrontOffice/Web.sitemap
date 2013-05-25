@@ -4,12 +4,12 @@
     <siteMapNode url="~\Presentacion\Vista\Home\About.aspx" title="Creditos"  description="Creditos" />
     
     <!--Modulo 3-->
-    <siteMapNode url="~\Presentacion\Vista\Modulo3\Modulo3.aspx" title="Modulo3"  description="Modulo3" >
+    <siteMapNode url="~\Presentacion\Vista\Modulo3\Modulo3.aspx" title="Clase"  description="Clase" >
       <siteMapNode url="~\Presentacion\Vista\Modulo3/ReservarClase/Agregar.aspx" title="Evaluar Clase"  description="Evaluar Clase" />
       <siteMapNode url="~\Presentacion\Vista\Modulo3/ReservarClase/ReservarClase.aspx" title="Reservar Clase"  description="Reservar Clase" />
     </siteMapNode>
     <!--Modulo 4-->
-    <siteMapNode url="~\Presentacion\Vista\Modulo4\Modulo4.aspx" title="Modulo4"  description="Modulo4" >
+    <siteMapNode url="~\Presentacion\Vista\Modulo4\Modulo4.aspx" title="Instructor"  description="Instructor" >
       <siteMapNode url="~\Presentacion\Vista\Modulo4\EvaluarInstructor\Agregar.aspx" title="Evaluar Instructor Agregar"  description="Evaluar Instructor Agregar" />      
       <siteMapNode url="~\Presentacion\Vista\Modulo4\EvaluarInstructor\Consultar.aspx" title="Evaluar Instructor Consultar"  description="Evaluar Instructor Consultar" />
       <siteMapNode url="~\Presentacion\Vista\Modulo4\EvaluarInstructor\Eliminar.aspx" title="Evaluar Instructor Eliminar"  description="Evaluar Instructor Eliminar" />
@@ -23,7 +23,7 @@
     </siteMapNode>
 
     <!--Modulo 5-->
-    <siteMapNode url="~\Presentacion\Vista\Modulo5\Modulo5.aspx" title="Modulo5"  description="Modulo5" >
+    <siteMapNode url="~\Presentacion\Vista\Modulo5\Modulo5.aspx" title="Rutinas"  description="Rutinas" >
       <siteMapNode url="~\Presentacion\Vista\Modulo5\GestionRutinas\Agregar.aspx" title="Agregar Rutinas"  description="Evaluar Instructor Agregar" />
       <siteMapNode url="~\Presentacion\Vista\Modulo5\GestionRutinas\Consultar.aspx" title="Consultar Rutinas"  description="Evaluar Instructor Consultar" />
       <siteMapNode url="~\Presentacion\Vista\Modulo5\GestionRutinas\Eliminar.aspx" title="Eliminar Rutinas"  description="Evaluar Instructor Eliminar" />
@@ -31,7 +31,7 @@
     </siteMapNode>
 
     <!--Modulo 6-->
-    <siteMapNode url="~\Presentacion\Vista\Modulo6\Modulo6.aspx" title="Modulo6"  description="Modulo6" >
+    <siteMapNode url="~\Presentacion\Vista\Modulo6\Modulo6.aspx" title="Cliente"  description="Cliente" >
       <siteMapNode url="~\Presentacion\Vista\Modulo6\Cliente\Agregar.aspx" title="Agregar Cliente"  description="Agregar Cliente" />
       <siteMapNode url="~\Presentacion\Vista\Modulo6\Cliente\Consultar.aspx" title="Modificar Cliente"  description="Modificar Cliente">
         <siteMapNode url="~\Presentacion\Vista\Home\CambiarContraseña.aspx" title="Creditos"  description="Creditos" />
