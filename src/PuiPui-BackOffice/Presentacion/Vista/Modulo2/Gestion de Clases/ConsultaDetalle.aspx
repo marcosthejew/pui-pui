@@ -8,16 +8,16 @@
         <asp:Label ID="falla" runat="server" Text="Operación Fallida" CssClass="falla" 
             Visible="False" ForeColor="Red"></asp:Label>
         <asp:Label ID="Exito" runat="server" Text="Operación Exitosa" CssClass="Exito" 
-            Visible="False"></asp:Label>
+            Visible="False" ForeColor="#ffffff"></asp:Label> 
     </div>
 
     <div  style="float:left;">
         <fieldset style="width:775px; height:auto; margin-left:7.5%; fit-position:center;">
         <legend style="text-align:center; font-family:Helvetica; font-size:14px;"><h2>Detalle Clase</h2></legend>       
                
-            <table style="margin:5% auto auto 22%; height: 140px; width: 476px;" border="0" cellspacing="0" cellpadding="0" >
+            <table style="margin:5% auto auto 22%; height: 140px; width: 422px;" border="0" cellspacing="0" cellpadding="0" >
             <tr>
-                <td class="auto-style7" align="center">
+                <td class="auto-style7" align="left">
                     <asp:Label ID="Label4" runat="server" Text="Label"><h3>Nombre de la clase:</h3></asp:Label>
                 </td>
                 <td class="auto-style8" align="left">
@@ -26,7 +26,7 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style1" align="center">
+                <td class="auto-style1" align="left">
                     <asp:Label ID="Label3" runat="server" Text="Label"><h3>Descripción:</h3></asp:Label>
                 </td>
                 <td class="auto-style2" colspan="0" align="left">
@@ -34,8 +34,8 @@
                 </td>    
             </tr>
             <tr>
-                <td class="auto-style3" align="center">
-                    <h3>Estatus:</h3></td>
+                <td class="auto-style3" align="left">
+                    <h3>Status:</h3></td>
                 <td class="auto-style4" colspan="0">
                     <asp:TextBox ID="EstatusActual" runat="server" Height="22px" Width="270px" Enabled="False"
                       ></asp:TextBox>
@@ -69,7 +69,7 @@
 <asp:Content ID="Content3" runat="server" contentplaceholderid="HeadContent">
     <style type="text/css">
         .auto-style1 {
-            width: 127px;
+            width: 146px;
             height: 134px;
         }
         .auto-style2 {
@@ -77,7 +77,7 @@
             height: 134px;
         }
         .auto-style3 {
-            width: 127px;
+            width: 146px;
             height: 34px;
         }
         .auto-style4 {
@@ -85,7 +85,7 @@
             height: 34px;
         }
         .auto-style5 {
-            width: 127px;
+            width: 146px;
             height: 24px;
         }
         .auto-style6 {
@@ -96,7 +96,7 @@
             height: 71px;
         }
         .auto-style7 {
-            width: 127px;
+            width: 146px;
             height: 36px;
         }
         .auto-style8 {

@@ -42,7 +42,7 @@ margin-top: 0px;">
                 <td rowspan="0" class="auto-style16" nowrap="nowrap" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
 margin-top: 0px;">
                     <asp:RadioButton ID="consultaClasePorEstatus" runat="server" 
-                        GroupName="ConsultarClases" Text="Estatus:" OnCheckedChanged="consultaClasePorEstatus_CheckedChanged1"/>
+                        GroupName="ConsultarClases" Text="Status:" OnCheckedChanged="consultaClasePorEstatus_CheckedChanged1"/>
                        
                     
                     </td>

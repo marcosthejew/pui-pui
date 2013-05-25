@@ -52,7 +52,7 @@ margin-top: 0px;">
                    
 
                     <asp:RadioButton ID="consultaClasePorEstatus" runat="server" 
-                        GroupName="ConsultarClases" Text="Estatus:" OnCheckedChanged="consultaClasePorEstatus_CheckedChanged1"/>
+                        GroupName="ConsultarClases" Text="Status:" OnCheckedChanged="consultaClasePorEstatus_CheckedChanged1"/>
                        
                     
                     </td>

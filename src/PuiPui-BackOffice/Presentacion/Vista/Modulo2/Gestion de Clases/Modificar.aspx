@@ -8,7 +8,7 @@
 
     <div style="height:20px; text-align:left; font-family:Helvetica; font-size:16px;">
         <asp:Label ID="Exito" runat="server" Text="Operación Exitosa" CssClass="Exito" 
-            Visible="False"></asp:Label>
+            Visible="False" ForeColor="#ffffff"></asp:Label>
         <asp:Label ID="falla" runat="server" Text="Operación Fallida" CssClass="falla" 
             Visible="False" ForeColor="Red"></asp:Label>
     </div>
@@ -17,12 +17,12 @@
         <fieldset style="width:775px; height:auto; margin-left:7.5%; fit-position:center;">
         <legend style="text-align:center; font-family:Helvetica; font-size:14px;"><h2>Modificar Clase</h2></legend>
          <div style="height:20px; text-align:left; font-family:Helvetica; font-size:16px;">
-        <asp:Label ID="NClase" runat="server" Text="Debe introducir todos los campos obligatorios" CssClass="NClase" 
+        <asp:Label ID="NClase" runat="server" Text="No debe dejar campos vacios" CssClass="NClase" 
             Visible="False" ForeColor="Red" Font-Names="Arial" Font-Size="14px"></asp:Label>
         </div>         
-            <table style="margin:5% auto auto 22%; height: 140px; width: 476px;" border="0" cellspacing="0" cellpadding="0" >
+            <table style="margin:5% auto auto 22%; height: 140px; width: 439px;" border="0" cellspacing="0" cellpadding="0" >
             <tr>
-                <td class="auto-style7" align="center">
+                <td class="auto-style7" align="left">
                     <asp:Label ID="Label4" runat="server" Text="Label"><h2>Nombre de la clase:</h2></asp:Label>
                 </td>
                 <td class="auto-style8" align="left">
@@ -31,7 +31,7 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style1" align="center">
+                <td class="auto-style1" align="left">
                     <asp:Label ID="Label3" runat="server" Text="Label"><h2>Descripción:</h2></asp:Label>
                 </td>
                 <td class="auto-style2" colspan="0" align="left">
@@ -39,11 +39,12 @@
                 </td>    
             </tr>
             <tr>
-                <td class="auto-style3" align="center">
+                <td class="auto-style3" align="left">
                     <h2>Status:</h2></td>
-                <td class="auto-style4" colspan="0">
-                    <asp:RadioButton ID="Activo" runat="server" GroupName="EstatusClases" Text="<h2>Activa</h2>" />
-                    <asp:RadioButton ID="Inactivo" runat="server" GroupName="EstatusClases" Text="<h2>Inactiva</h2>" />
+                <td class="auto-style4" colspan="0" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
+margin-top: 0px;">
+                    <asp:RadioButton ID="Activo" runat="server" GroupName="EstatusClases" Text="Activa" />
+                    <asp:RadioButton ID="Inactivo" runat="server" GroupName="EstatusClases" Text="Inactiva" />
                     </td>
             </tr>
                 <tr>
@@ -71,7 +72,7 @@
 <asp:Content ID="Content3" runat="server" contentplaceholderid="HeadContent">
     <style type="text/css">
         .auto-style1 {
-            width: 127px;
+            width: 163px;
             height: 134px;
         }
         .auto-style2 {
@@ -79,7 +80,7 @@
             height: 134px;
         }
         .auto-style3 {
-            width: 127px;
+            width: 163px;
             height: 34px;
         }
         .auto-style4 {
@@ -87,7 +88,7 @@
             height: 34px;
         }
         .auto-style5 {
-            width: 127px;
+            width: 163px;
             height: 24px;
         }
         .auto-style6 {
@@ -98,7 +99,7 @@
             height: 71px;
         }
         .auto-style7 {
-            width: 127px;
+            width: 163px;
             height: 36px;
         }
         .auto-style8 {

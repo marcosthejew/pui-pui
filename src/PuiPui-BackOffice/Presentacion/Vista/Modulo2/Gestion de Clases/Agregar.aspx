@@ -7,7 +7,7 @@ AutoEventWireup="true" CodeBehind="Agregar.aspx.cs" Inherits="PuiPui_BackOffice.
 
     <div style="height:20px; text-align:left; font-family:Helvetica; font-size:16px;">
         <asp:Label ID="Exito" runat="server" Text="Operación Exitosa" CssClass="Exito" 
-            Visible="False" ForeColor="White"></asp:Label>
+            Visible="False" ForeColor="#ffffff"></asp:Label>
         <asp:Label ID="falla" runat="server" Text="Operación Fallida" CssClass="falla" 
             Visible="False" ForeColor="Red"></asp:Label>
     </div>
@@ -19,23 +19,25 @@ AutoEventWireup="true" CodeBehind="Agregar.aspx.cs" Inherits="PuiPui_BackOffice.
         <asp:Label ID="NClase" runat="server" Text="Debe introducir todos los campos obligatorios" CssClass="NClase" 
             Visible="False" ForeColor="Red" Font-Names="Arial" Font-Size="14px"></asp:Label>
         </div>       
-            <table style="margin:0px auto auto 22%; height: 140px; width: 476px;" border="0" cellspacing="0" cellpadding="0" >
+            <table style="margin:0px auto auto 22%; height: 140px; width: 484px;" border="0" cellspacing="0" cellpadding="0" >
             <tr>
-                <td class="auto-style3" align="left">
+                <td class="auto-style3" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
+margin-top: 0px;">
                     <asp:Label ID="Rojo" runat="server" Text="Label" ForeColor="Red" Font-Names="Arial" Font-Size="12px">*</asp:Label>
-                    <asp:Label ID="Label4" runat="server" Text="Label" Font-Names="Arial" Font-Size="12px"><h3>Nombre de la nueva clase:</h3></asp:Label>
+                    <asp:Label ID="Label4" runat="server" Text="Label">Nombre de la nueva clase:</asp:Label>
                 </td>
                 <td class="auto-style4">
-                    &nbsp;<asp:TextBox ID="nombreNuevaClase" runat="server" Height="22px" Width="270px" Font-Names="Arial" Font-Size="12px"></asp:TextBox>
+                    <asp:TextBox ID="nombreNuevaClase" runat="server" Height="22px" Width="270px" Font-Names="Arial" Font-Size="12px"></asp:TextBox>
                 </td>
             </tr>
             <tr>
-                <td class="auto-style1" align="left">
+                <td class="auto-style1" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
+margin-top: 0px;">
                     <asp:Label ID="Label6" runat="server" Text="Label" ForeColor="Red" Font-Names="Arial" Font-Size="12px">*</asp:Label>
-                    <asp:Label ID="Label3" runat="server" Text="Label"><h3>Descripción:</h3></asp:Label>
+                    <asp:Label ID="Label3" runat="server" Text="Label">Descripción:</asp:Label>
                 </td>
                 <td class="auto-style2">
-                    &nbsp;<asp:TextBox id="descripcioNuevaClase" runat="server" Wrap="true" TextMode="MultiLine" Width="200px" Height="115px" Font-Names="Arial" Font-Size="12px"></asp:TextBox>
+                   <asp:TextBox id="descripcioNuevaClase" runat="server" Wrap="true" TextMode="MultiLine" Width="200px" Height="115px" Font-Names="Arial" Font-Size="12px"></asp:TextBox>
                 
                 </td>
             </tr>
@@ -74,13 +76,13 @@ AutoEventWireup="true" CodeBehind="Agregar.aspx.cs" Inherits="PuiPui_BackOffice.
 <asp:Content ID="Content3" runat="server" contentplaceholderid="HeadContent">
     <style type="text/css">
         .auto-style1 {
-            width: 127px;
+            width: 192px;
         }
         .auto-style2 {
             width: 246px;
         }
         .auto-style3 {
-            width: 127px;
+            width: 192px;
             height: 34px;
         }
         .auto-style4 {
@@ -91,14 +93,10 @@ AutoEventWireup="true" CodeBehind="Agregar.aspx.cs" Inherits="PuiPui_BackOffice.
             height: 71px;
         }
         .auto-style7 {
-            width: 127px;
+            width: 192px;
             height: 17px;
         }
-        .auto-style8 {
-            width: 246px;
-            height: 17px;
-        }
-    </style>
+        </style>
 </asp:Content>
 
 
