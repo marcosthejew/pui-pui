@@ -28,12 +28,13 @@ namespace PuiPui_FrontOffice.PruebasUnitarias.Client
         {
 
             miAcceso.Login = "karla";
-            miAcceso.Password = "hola";
+            miAcceso.Password = "1234";
 
             resultado = logPersona.LoginCorrecto(miAcceso.Login, miAcceso.Password);
                 
             Assert.AreEqual(correcto, resultado);
         }
+        
 
 
         //arreglar
