@@ -102,41 +102,29 @@
     <Content Include="Presentacion\Vista\Modulo1\Gestion de Ejercicios\Eliminar.aspx" />
     <Content Include="Presentacion\Vista\Modulo1\Gestion de Ejercicios\EliminarEjercicio.aspx" />
     <Content Include="Presentacion\Vista\Modulo1\Gestion de Ejercicios\Modificar.aspx" />
-    <Content Include="Presentacion\Vista\Modulo1\Gestion de Instructores\Act-Ina.aspx" />
     <Content Include="Presentacion\Vista\Modulo1\Gestion de Instructores\Agregar.aspx" />
     <Content Include="Presentacion\Vista\Modulo1\Gestion de Instructores\Consultar.aspx" />
     <Content Include="Presentacion\Vista\Modulo1\Gestion de Instructores\Eliminar.aspx" />
     <Content Include="Presentacion\Vista\Modulo1\Gestion de Instructores\Modificar.aspx" />
     <Content Include="Presentacion\Vista\Modulo1\Modulo1.aspx" />
     <Content Include="Presentacion\Vista\Modulo2\Gestion Clase Salon Instructor\DetalleClaseSalonInstructor.aspx" />
-    <Content Include="Presentacion\Vista\Modulo2\Gestion de Salones\Act-Ina.aspx" />
     <Content Include="Presentacion\Vista\Modulo2\Gestion de Salones\Agregar.aspx" />
     <Content Include="Presentacion\Vista\Modulo2\Gestion de Salones\Consultar.aspx" />
     <Content Include="Presentacion\Vista\Modulo2\Gestion de Salones\VerDetalle.aspx" />
     <Content Include="Presentacion\Vista\Modulo2\Gestion de Salones\Modificar.aspx" />
     <Content Include="Presentacion\Vista\Modulo2\Gestion Clase Salon Instructor\AgregarClaseSalon.aspx" />
     <Content Include="Presentacion\Vista\Modulo2\Gestion Clase Salon Instructor\ConsultarClasesSalon.aspx" />
-    <Content Include="Presentacion\Vista\Modulo2\Gestion de Clases\Act-Ina.aspx" />
     <Content Include="Presentacion\Vista\Modulo2\Gestion de Clases\Agregar.aspx" />
     <Content Include="Presentacion\Vista\Modulo2\Gestion de Clases\ConsultaDetalle.aspx" />
     <Content Include="Presentacion\Vista\Modulo2\Gestion de Clases\Consultar.aspx" />
-    <Content Include="Presentacion\Vista\Modulo2\Gestion de Clases\Eliminar.aspx" />
     <Content Include="Presentacion\Vista\Modulo2\Gestion de Clases\Modificar.aspx" />
     <Content Include="Presentacion\Vista\Modulo2\Modulo2.aspx" />
-    <Content Include="Presentacion\Vista\Modulo5\Modulo5.aspx" />
-    <Content Include="Presentacion\Vista\Modulo5\Rutina de Ejercicio\Act-Ina.aspx" />
-    <Content Include="Presentacion\Vista\Modulo5\Rutina de Ejercicio\Agregar.aspx" />
-    <Content Include="Presentacion\Vista\Modulo5\Rutina de Ejercicio\Consultar.aspx" />
-    <Content Include="Presentacion\Vista\Modulo5\Rutina de Ejercicio\Eliminar.aspx" />
-    <Content Include="Presentacion\Vista\Modulo5\Rutina de Ejercicio\Modificar.aspx" />
     <Content Include="Presentacion\Vista\Modulo6\Cliente\Act-Ina.aspx" />
     <Content Include="Presentacion\Vista\Modulo6\Cliente\Agregar.aspx" />
     <Content Include="Presentacion\Vista\Modulo6\Cliente\Consultar.aspx" />
     <Content Include="Presentacion\Vista\Modulo6\Cliente\ConsultarDetalle.aspx" />
-    <Content Include="Presentacion\Vista\Modulo6\Cliente\Eliminar.aspx" />
     <Content Include="Presentacion\Vista\Modulo6\Cliente\Modificar.aspx" />
     <Content Include="Presentacion\Vista\Modulo6\Cliente\Modificar1.aspx" />
-    <Content Include="Presentacion\Vista\Modulo6\Login.aspx" />
     <Content Include="Presentacion\Vista\Modulo6\Modulo6.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -298,13 +286,6 @@
     <Compile Include="Presentacion\Vista\Modulo1\Gestion de Ejercicios\Modificar.aspx.designer.cs">
       <DependentUpon>Modificar.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Vista\Modulo1\Gestion de Instructores\Act-Ina.aspx.cs">
-      <DependentUpon>Act-Ina.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Vista\Modulo1\Gestion de Instructores\Act-Ina.aspx.designer.cs">
-      <DependentUpon>Act-Ina.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Presentacion\Vista\Modulo1\Gestion de Instructores\Agregar.aspx.cs">
       <DependentUpon>Agregar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -346,13 +327,6 @@
     </Compile>
     <Compile Include="Presentacion\Vista\Modulo2\Gestion Clase Salon Instructor\DetalleClaseSalonInstructor.aspx.designer.cs">
       <DependentUpon>DetalleClaseSalonInstructor.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\Vista\Modulo2\Gestion de Salones\Act-Ina.aspx.cs">
-      <DependentUpon>Act-Ina.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Vista\Modulo2\Gestion de Salones\Act-Ina.aspx.designer.cs">
-      <DependentUpon>Act-Ina.aspx</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Vista\Modulo2\Gestion de Salones\Agregar.aspx.cs">
       <DependentUpon>Agregar.aspx</DependentUpon>
@@ -396,13 +370,6 @@
     <Compile Include="Presentacion\Vista\Modulo2\Gestion Clase Salon Instructor\ConsultarClasesSalon.aspx.designer.cs">
       <DependentUpon>ConsultarClasesSalon.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Vista\Modulo2\Gestion de Clases\Act-Ina.aspx.cs">
-      <DependentUpon>Act-Ina.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Vista\Modulo2\Gestion de Clases\Act-Ina.aspx.designer.cs">
-      <DependentUpon>Act-Ina.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Presentacion\Vista\Modulo2\Gestion de Clases\Agregar.aspx.cs">
       <DependentUpon>Agregar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -424,13 +391,6 @@
     <Compile Include="Presentacion\Vista\Modulo2\Gestion de Clases\Consultar.aspx.designer.cs">
       <DependentUpon>Consultar.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Vista\Modulo2\Gestion de Clases\Eliminar.aspx.cs">
-      <DependentUpon>Eliminar.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Vista\Modulo2\Gestion de Clases\Eliminar.aspx.designer.cs">
-      <DependentUpon>Eliminar.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Presentacion\Vista\Modulo2\Gestion de Clases\Modificar.aspx.cs">
       <DependentUpon>Modificar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -444,48 +404,6 @@
     </Compile>
     <Compile Include="Presentacion\Vista\Modulo2\Modulo2.aspx.designer.cs">
       <DependentUpon>Modulo2.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\Vista\Modulo5\Modulo5.aspx.cs">
-      <DependentUpon>Modulo5.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Vista\Modulo5\Modulo5.aspx.designer.cs">
-      <DependentUpon>Modulo5.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\Vista\Modulo5\Rutina de Ejercicio\Act-Ina.aspx.cs">
-      <DependentUpon>Act-Ina.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Vista\Modulo5\Rutina de Ejercicio\Act-Ina.aspx.designer.cs">
-      <DependentUpon>Act-Ina.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\Vista\Modulo5\Rutina de Ejercicio\Agregar.aspx.cs">
-      <DependentUpon>Agregar.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Vista\Modulo5\Rutina de Ejercicio\Agregar.aspx.designer.cs">
-      <DependentUpon>Agregar.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\Vista\Modulo5\Rutina de Ejercicio\Consultar.aspx.cs">
-      <DependentUpon>Consultar.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Vista\Modulo5\Rutina de Ejercicio\Consultar.aspx.designer.cs">
-      <DependentUpon>Consultar.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\Vista\Modulo5\Rutina de Ejercicio\Eliminar.aspx.cs">
-      <DependentUpon>Eliminar.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Vista\Modulo5\Rutina de Ejercicio\Eliminar.aspx.designer.cs">
-      <DependentUpon>Eliminar.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\Vista\Modulo5\Rutina de Ejercicio\Modificar.aspx.cs">
-      <DependentUpon>Modificar.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Vista\Modulo5\Rutina de Ejercicio\Modificar.aspx.designer.cs">
-      <DependentUpon>Modificar.aspx</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Vista\Modulo6\Cliente\Act-Ina.aspx.cs">
       <DependentUpon>Act-Ina.aspx</DependentUpon>
@@ -515,13 +433,6 @@
     <Compile Include="Presentacion\Vista\Modulo6\Cliente\ConsultarDetalle.aspx.designer.cs">
       <DependentUpon>ConsultarDetalle.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Vista\Modulo6\Cliente\Eliminar.aspx.cs">
-      <DependentUpon>Eliminar.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Vista\Modulo6\Cliente\Eliminar.aspx.designer.cs">
-      <DependentUpon>Eliminar.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Presentacion\Vista\Modulo6\Cliente\Modificar.aspx.cs">
       <DependentUpon>Modificar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -535,13 +446,6 @@
     </Compile>
     <Compile Include="Presentacion\Vista\Modulo6\Cliente\Modificar1.aspx.designer.cs">
       <DependentUpon>Modificar1.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\Vista\Modulo6\Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Vista\Modulo6\Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Vista\Modulo6\Modulo6.aspx.cs">
       <DependentUpon>Modulo6.aspx</DependentUpon>
@@ -588,7 +492,9 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Web.sitemap" />
+    <Content Include="Web.sitemap">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

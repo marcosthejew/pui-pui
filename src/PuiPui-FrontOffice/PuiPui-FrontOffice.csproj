@@ -92,25 +92,15 @@
     <Content Include="Presentacion\Vista\Home\CambiarContraseña.aspx" />
     <Content Include="Presentacion\Vista\Home\Home.aspx" />
     <Content Include="Presentacion\Vista\Home\Login.aspx" />
-    <Content Include="Presentacion\Vista\Modulo3\EvaluarClase\Agregar.aspx" />
-    <Content Include="Presentacion\Vista\Modulo3\EvaluarClase\Consultar.aspx" />
-    <Content Include="Presentacion\Vista\Modulo3\EvaluarClase\Eliminar.aspx" />
-    <Content Include="Presentacion\Vista\Modulo3\EvaluarClase\Modificar.aspx" />
     <Content Include="Presentacion\Vista\Modulo3\Modulo3.aspx" />
     <Content Include="Presentacion\Vista\Modulo3\ReservarClase\Agregar.aspx" />
-    <Content Include="Presentacion\Vista\Modulo3\ReservarClase\Consultar.aspx" />
-    <Content Include="Presentacion\Vista\Modulo3\ReservarClase\Eliminar.aspx" />
-    <Content Include="Presentacion\Vista\Modulo3\ReservarClase\Modificar.aspx" />
     <Content Include="Presentacion\Vista\Modulo3\ReservarClase\ReservarClase.aspx" />
     <Content Include="Presentacion\Vista\Modulo4\EvaluarInstructor\Agregar.aspx" />
     <Content Include="Presentacion\Vista\Modulo4\EvaluarInstructor\Consultar.aspx" />
-    <Content Include="Presentacion\Vista\Modulo4\EvaluarInstructor\Eliminar.aspx" />
     <Content Include="Presentacion\Vista\Modulo4\EvaluarInstructor\Modificar.aspx" />
     <Content Include="Presentacion\Vista\Modulo4\Modulo4.aspx" />
     <Content Include="Presentacion\Vista\Modulo4\ReservarInstructor\Agregar.aspx" />
-    <Content Include="Presentacion\Vista\Modulo4\ReservarInstructor\Consultar.aspx" />
     <Content Include="Presentacion\Vista\Modulo4\ReservarInstructor\Eliminar.aspx" />
-    <Content Include="Presentacion\Vista\Modulo4\ReservarInstructor\Modificar.aspx" />
     <Content Include="Presentacion\Vista\Modulo5\GestionRutinas\Agregar.aspx" />
     <Content Include="Presentacion\Vista\Modulo5\GestionRutinas\Consultar.aspx" />
     <Content Include="Presentacion\Vista\Modulo5\GestionRutinas\Eliminar.aspx" />
@@ -118,7 +108,6 @@
     <Content Include="Presentacion\Vista\Modulo5\Modulo5.aspx" />
     <Content Include="Presentacion\Vista\Modulo6\Cliente\Consultar.aspx" />
     <Content Include="Presentacion\Vista\Modulo6\Cliente\Modificar.aspx" />
-    <Content Include="Presentacion\Vista\Modulo6\Login.aspx" />
     <Content Include="Presentacion\Vista\Modulo6\Modulo6.aspx" />
     <Content Include="Scripts\fullcalendar\fullcalendar.css" />
     <Content Include="Scripts\fullcalendar\fullcalendar.js" />
@@ -271,34 +260,6 @@
     <Compile Include="Presentacion\Vista\Home\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Vista\Modulo3\EvaluarClase\Agregar.aspx.cs">
-      <DependentUpon>Agregar.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Vista\Modulo3\EvaluarClase\Agregar.aspx.designer.cs">
-      <DependentUpon>Agregar.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\Vista\Modulo3\EvaluarClase\Consultar.aspx.cs">
-      <DependentUpon>Consultar.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Vista\Modulo3\EvaluarClase\Consultar.aspx.designer.cs">
-      <DependentUpon>Consultar.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\Vista\Modulo3\EvaluarClase\Eliminar.aspx.cs">
-      <DependentUpon>Eliminar.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Vista\Modulo3\EvaluarClase\Eliminar.aspx.designer.cs">
-      <DependentUpon>Eliminar.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\Vista\Modulo3\EvaluarClase\Modificar.aspx.cs">
-      <DependentUpon>Modificar.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Vista\Modulo3\EvaluarClase\Modificar.aspx.designer.cs">
-      <DependentUpon>Modificar.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Presentacion\Vista\Modulo3\Modulo3.aspx.cs">
       <DependentUpon>Modulo3.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -312,27 +273,6 @@
     </Compile>
     <Compile Include="Presentacion\Vista\Modulo3\ReservarClase\Agregar.aspx.designer.cs">
       <DependentUpon>Agregar.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\Vista\Modulo3\ReservarClase\Consultar.aspx.cs">
-      <DependentUpon>Consultar.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Vista\Modulo3\ReservarClase\Consultar.aspx.designer.cs">
-      <DependentUpon>Consultar.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\Vista\Modulo3\ReservarClase\Eliminar.aspx.cs">
-      <DependentUpon>Eliminar.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Vista\Modulo3\ReservarClase\Eliminar.aspx.designer.cs">
-      <DependentUpon>Eliminar.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\Vista\Modulo3\ReservarClase\Modificar.aspx.cs">
-      <DependentUpon>Modificar.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Vista\Modulo3\ReservarClase\Modificar.aspx.designer.cs">
-      <DependentUpon>Modificar.aspx</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Vista\Modulo3\ReservarClase\ReservarClase.aspx.cs">
       <DependentUpon>ReservarClase.aspx</DependentUpon>
@@ -358,13 +298,6 @@
     <Compile Include="Presentacion\Vista\Modulo4\EvaluarInstructor\Consultar.aspx.designer.cs">
       <DependentUpon>Consultar.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Vista\Modulo4\EvaluarInstructor\Eliminar.aspx.cs">
-      <DependentUpon>Eliminar.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Vista\Modulo4\EvaluarInstructor\Eliminar.aspx.designer.cs">
-      <DependentUpon>Eliminar.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Presentacion\Vista\Modulo4\EvaluarInstructor\Modificar.aspx.cs">
       <DependentUpon>Modificar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -386,26 +319,12 @@
     <Compile Include="Presentacion\Vista\Modulo4\ReservarInstructor\Agregar.aspx.designer.cs">
       <DependentUpon>Agregar.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Vista\Modulo4\ReservarInstructor\Consultar.aspx.cs">
-      <DependentUpon>Consultar.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Vista\Modulo4\ReservarInstructor\Consultar.aspx.designer.cs">
-      <DependentUpon>Consultar.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Presentacion\Vista\Modulo4\ReservarInstructor\Eliminar.aspx.cs">
       <DependentUpon>Eliminar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentacion\Vista\Modulo4\ReservarInstructor\Eliminar.aspx.designer.cs">
       <DependentUpon>Eliminar.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\Vista\Modulo4\ReservarInstructor\Modificar.aspx.cs">
-      <DependentUpon>Modificar.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Vista\Modulo4\ReservarInstructor\Modificar.aspx.designer.cs">
-      <DependentUpon>Modificar.aspx</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Vista\Modulo5\GestionRutinas\Agregar.aspx.cs">
       <DependentUpon>Agregar.aspx</DependentUpon>
@@ -455,13 +374,6 @@
     </Compile>
     <Compile Include="Presentacion\Vista\Modulo6\Cliente\Modificar.aspx.designer.cs">
       <DependentUpon>Modificar.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\Vista\Modulo6\Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Vista\Modulo6\Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Vista\Modulo6\Modulo6.aspx.cs">
       <DependentUpon>Modulo6.aspx</DependentUpon>
