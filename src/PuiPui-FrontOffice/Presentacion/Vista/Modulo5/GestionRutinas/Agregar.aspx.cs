@@ -6,7 +6,6 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using PuiPui_FrontOffice.LogicaDeNegocios.Rutinas;
 using PuiPui_FrontOffice.Entidades.Cliente; //en caso de estar en el back Office
-
 using PuiPui_FrontOffice.Entidades.Ejercicio;
 using PuiPui_FrontOffice.LogicaDeNegocios.Excepciones; //en caso de estar en el front Office
 
