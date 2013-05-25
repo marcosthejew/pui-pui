@@ -1,25 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Data;
-using System.Data.SqlClient;
-using System.Configuration;
-using PuiPui_BackOffice.AccesoDeDatos.Conexion;
-using PuiPui_BackOffice.AccesoDeDatos.Conexion.IConexion;
-using PuiPui_BackOffice.AccesoDeDatos.Excepciones_BD;
-using PuiPui_BackOffice.Entidades.Cliente;
-using PuiPui_BackOffice.LogicaDeNegocios.Cliente;
-using PuiPui_BackOffice.Presentacion.Vista.Modulo6.Cliente;
-using PuiPui_BackOffice.AccesoDeDatos.SQLServer;
-
-
 
 namespace PuiPui_BackOffice.Entidades.Cliente
 {
     public class Persona
     {
-
         #region Atributos
 
         private int _idPersona;
@@ -149,6 +133,7 @@ namespace PuiPui_BackOffice.Entidades.Cliente
         }
 
         #endregion
+
         #region Construccion
 
         public Persona()

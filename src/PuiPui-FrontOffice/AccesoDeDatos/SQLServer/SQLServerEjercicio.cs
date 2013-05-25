@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using PuiPui_BackOffice.AccesoDeDatos.Excepciones_BD;
+using PuiPui_FrontOffice.AccesoDeDatos.Excepciones_BD;
 using PuiPui_FrontOffice.Entidades.Ejercicio;
 using PuiPui_FrontOffice.AccesoDeDatos.Conexion;
 using PuiPui_FrontOffice.AccesoDeDatos.Conexion.IConexion;
@@ -13,7 +13,7 @@ namespace PuiPui_FrontOffice.AccesoDeDatos.SQLServer
     public class SQLServerEjercicio
     {
         IConexionSqlServer db = new ConexionSqlServer();
-        string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDB;Integrated Security=True";
+      
         #region ExisteEjercicio
         public bool ExisteEjercicio(string nombreEjercicio)
         {

@@ -13,7 +13,6 @@ namespace PuiPui_FrontOffice.LogicaDeNegocios.ReservaInstructor
 {
     public class LogicaReservaInstructor
     {
-        List<EntidadReservaInstructor.ReservaInstructor> _reservasInstructor;
 
         public void agregarReservaInstructor(string login, int iDInstructor, DateTime fechaInicio, DateTime fechaFin)
         {

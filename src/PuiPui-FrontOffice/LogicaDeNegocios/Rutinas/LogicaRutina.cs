@@ -1,14 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
-using PuiPui_FrontOffice.AccesoDeDatos.Conexion;
 using PuiPui_FrontOffice.Entidades.Rutina;
 using PuiPui_FrontOffice.AccesoDeDatos.SQLServer;
-using PuiPui_FrontOffice.AccesoDeDatos.SQLServer;
-using PuiPui_FrontOffice.Entidades;
+
 namespace PuiPui_FrontOffice.LogicaDeNegocios.Rutinas
 
 {

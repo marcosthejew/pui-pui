@@ -17,7 +17,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
         {
             if (!IsPostBack)
             {
-                Init();
+                Init2();
                 ddlInstructores_Cargar();
             }
         }
@@ -75,7 +75,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
                     Cargar_Instructor(instructor);
                 }
                 else
-                    Init();
+                    Init2();
             }
             catch (HorarioException error)
             {
@@ -94,7 +94,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
 
 
 
-        protected void Init()
+        protected void Init2()
         {
             tb_Init();
             label_Init();
@@ -172,7 +172,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
                 Cargar_Horario(instructor);
             }
             else
-                Init();
+                Init2();
         }
 
 

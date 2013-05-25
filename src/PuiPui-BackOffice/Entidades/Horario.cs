@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace PuiPui_BackOffice.Entidades
 {
     public class Horario
     {
         private String _dia;
-        private DateTime _horaini;
-        private DateTime _horafin;
+        private DateTime _horaInicio;
+        private DateTime _horaFin;
 
         public Horario()
         {
@@ -19,20 +16,18 @@ namespace PuiPui_BackOffice.Entidades
         {
             get { return _dia; }
             set { _dia = value; }
-
         }
 
         public DateTime horaini
         {
-            get { return _horaini; }
-            set { _horaini = value; }
+            get { return _horaInicio; }
+            set { _horaInicio = value; }
         }
 
         public DateTime horafin
         {
-            get { return _horafin; }
-            set { _horafin = value; }
+            get { return _horaFin; }
+            set { _horaFin = value; }
         }
-
     }
 }

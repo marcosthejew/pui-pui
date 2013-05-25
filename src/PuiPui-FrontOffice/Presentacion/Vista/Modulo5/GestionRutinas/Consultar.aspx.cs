@@ -21,7 +21,6 @@ namespace PuiPui_FrontOffice.Presentacion.Vista.Modulo5
         static List<String> nombre_ejercicios = new List<String>();
         static List<int> id_ejercicios = new List<int>();
 
-        PuiPui_FrontOffice.Entidades.Cliente.Persona persona;
         PuiPui_FrontOffice.Entidades.Cliente.Acceso acceso;
         string loginPersona;
         LogicaRutina RutiAinsert = new LogicaRutina();

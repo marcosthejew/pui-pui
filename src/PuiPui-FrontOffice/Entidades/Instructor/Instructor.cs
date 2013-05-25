@@ -8,7 +8,6 @@ namespace PuiPui_FrontOffice.Entidades.Instructor
     public class Instructor : Cliente.Persona
     {
         private List<Horario> _horario;
-        private string _nombreCompleto;
 
         public Instructor(int cedula, string nombre1, string nombre2, string apellido1, string apellido2,
          string genero, DateTime fechaNacimiento, string ciudad, string direccion, string correo, string contacto,

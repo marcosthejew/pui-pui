@@ -10,7 +10,6 @@ namespace PuiPui_FrontOffice
 {
     public partial class SiteMaster : System.Web.UI.MasterPage
     {
-        Persona persona;
         Acceso acceso;
         string loginPersona;
         protected void Page_Load(object sender, EventArgs e)

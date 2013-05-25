@@ -1,8 +1,5 @@
 ﻿
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace PuiPui_BackOffice.Entidades.Salon
 {
@@ -13,7 +10,7 @@ namespace PuiPui_BackOffice.Entidades.Salon
         private int _idSalon;
         private String _ubicacion;
         private int _capacidad;
-        private int status;
+        private int _status;
 
         #endregion
 
@@ -36,8 +33,8 @@ namespace PuiPui_BackOffice.Entidades.Salon
         }
         public int Status
         {
-            get { return status; }
-            set { status = value; }
+            get { return _status; }
+            set { _status = value; }
         }
         #endregion
 
@@ -52,7 +49,7 @@ namespace PuiPui_BackOffice.Entidades.Salon
         }
         public Salon(int idSalon, String ubicacion, int capacidad, int st)
         {
-            this.status = st;
+            this._status = st;
             this._capacidad = capacidad;
             this._idSalon = idSalon;
             this._ubicacion = ubicacion;

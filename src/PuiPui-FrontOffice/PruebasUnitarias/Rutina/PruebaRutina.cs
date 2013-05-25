@@ -19,7 +19,7 @@ namespace PuiPui_FrontOffice.PruebasUnitarias.Rutina
         public static int ObtenerUltimoInsert()
         {
             IConexionSqlServer db = new ConexionSqlServer();
-              string _cadenaConexion = "Server= localhost;database=puipuiDB;integrated security=true";
+            string _cadenaConexion = "Server= localhost;database=puipuiDB;integrated security=true";
             SqlConnection conexion = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
             SqlDataReader dr;
@@ -45,6 +45,7 @@ namespace PuiPui_FrontOffice.PruebasUnitarias.Rutina
 
             catch (Exception e)
             {
+                return resultado;
                 throw (new ExcepcionConexion(("Error: " + e.Message + valorAuxiliar), e));
 
 
@@ -53,9 +54,9 @@ namespace PuiPui_FrontOffice.PruebasUnitarias.Rutina
             finally
             {
                 conexion.Close();
-                
+           
             }
-            return resultado;
+            
         }
 
        

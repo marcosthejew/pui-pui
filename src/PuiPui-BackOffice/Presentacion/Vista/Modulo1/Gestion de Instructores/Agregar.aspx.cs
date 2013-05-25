@@ -124,7 +124,7 @@ namespace PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Instructores
                         lexito.ForeColor = System.Drawing.Color.Red;
                         lexito.Visible = true;
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                         lexito.Visible = true;
                         

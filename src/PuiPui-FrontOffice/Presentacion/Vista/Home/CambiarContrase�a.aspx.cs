@@ -12,10 +12,7 @@ namespace PuiPui_FrontOffice.Presentacion.Vista.Home
     public partial class CambiarContraseña : System.Web.UI.Page
     {
         Persona persona;
-        Acceso acceso;
         LogicaPersona logicaPersona = new LogicaPersona();
-        string loginPersona;
-        string passwordPersona;
 
         protected void Page_Load(object sender, EventArgs e)
         {

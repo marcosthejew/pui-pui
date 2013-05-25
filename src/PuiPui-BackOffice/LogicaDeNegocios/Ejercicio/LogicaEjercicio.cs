@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using PuiPui_BackOffice.Presentacion.Vista.Modulo1.Gestion_de_Ejercicios;
+﻿using System.Collections.Generic;
 using PuiPui_BackOffice.AccesoDeDatos.SQLServer;
-using PuiPui_BackOffice.Entidades.Ejercicio;
 using PuiPui_BackOffice.AccesoDeDatos.Excepciones_BD;
 using PuiPui_BackOffice.LogicaDeNegocios.Excepciones;
 namespace PuiPui_BackOffice.LogicaDeNegocios.Ejercicio
