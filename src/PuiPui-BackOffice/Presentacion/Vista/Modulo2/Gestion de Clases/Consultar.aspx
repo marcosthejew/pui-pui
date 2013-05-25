@@ -15,14 +15,14 @@ AutoEventWireup="true" CodeBehind="Consultar.aspx.cs" Inherits="PuiPui_BackOffic
     <div  style="float:left;">
         <fieldset style="width:775px; height:auto; margin-left:7.5%; fit-position:center;">
         <legend style="text-align:center; font-family:Helvetica; font-size:14px;"><h2>Consultar Clase</h2></legend>
-             <table border="0" cellspacing="0" cellpadding="0" style="width: 720px" >
+             <table border="0" cellspacing="0" cellpadding="0" style="width: 712px; height: 26px;" >
             <tr>
-                <td rowspan="0" nowrap="nowrap" class="auto-style18">
+                <td rowspan="0"  class="auto-style18" nowrap="nowrap">
                     <h3>Buscar por:</h3></td>
-                <td rowspan="0" class="auto-style20" nowrap="nowrap" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
+                <td rowspan="0" class="auto-style22" nowrap="nowrap" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
 margin-top: 0px;">
                      <asp:RadioButton ID="RadioButtonConsultaCompleta" runat="server" 
-                        GroupName="ConsultarClases" Text="Todos los parámetros" OnCheckedChanged="RadioButtonConsultaCompleta_CheckedChanged1" /> 
+                        GroupName="ConsultarClases" Text="Todos:" OnCheckedChanged="RadioButtonConsultaCompleta_CheckedChanged1" /> 
                               
 
                     </td>
@@ -50,7 +50,7 @@ margin-top: 0px;">
                 <td rowspan="0" class="auto-style21" nowrap="nowrap">
                    
 
-                    <asp:DropDownList ID="DropDownListEstatusClase" runat="server" Width="70px" OnSelectedIndexChanged="DropDownListEstatusClase_SelectedIndexChanged" Height="22px" style="margin-left: 0px" >
+                    <asp:DropDownList ID="DropDownListEstatusClase" runat="server" Width="104px" OnSelectedIndexChanged="DropDownListEstatusClase_SelectedIndexChanged" Height="22px" style="margin-left: 0px" >
                         <asp:ListItem Value="0">Activa</asp:ListItem>
                         <asp:ListItem Value="1">Inactiva</asp:ListItem>
                         
@@ -59,8 +59,8 @@ margin-top: 0px;">
 
                 </td>
               
-                <td rowspan="0" nowrap="nowrap" style="text-align:left">
-                <asp:Button ID="botonBuscarClase" runat="server" Text="Buscar" Width="50px" Height="25px" CssClass="button" OnClick="botonBuscarClase_Click" Font-Names="tomoha plain" Font-Size="14px"/>
+                <td rowspan="0" style="text-align:left">
+                <asp:Button ID="botonBuscarClase" runat="server" Text="Buscar" Width="120px" Height="25px" CssClass="button" OnClick="botonBuscarClase_Click" Font-Names="tomoha plain" Font-Size="14px"/>
 
                 </td>
             </tr>
@@ -104,19 +104,19 @@ margin-top: 0px;">
             width: 81px;
         }
         .auto-style16 {
-            width: 83px;
+            width: 65px;
         }
         .auto-style18 {
-            width: 73px;
+            width: 77px;
         }
         .auto-style19 {
-            width: 169px;
-        }
-        .auto-style20 {
-            width: 180px;
+            width: 114px;
         }
         .auto-style21 {
-            width: 71px;
+            width: 95px;
+        }
+        .auto-style22 {
+            width: 79px;
         }
     </style>
     </asp:Content>
