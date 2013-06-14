@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{34382788-2BE9-4E46-A493-1E6C416554E6}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PuiPuiCapaLogicaDeNegocios</RootNamespace>
+    <AssemblyName>PuiPuiCapaLogicaDeNegocios</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort>8080</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Default.aspx" />
+    <Content Include="Log4netConfig.xml" />
+    <Content Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Servicios\BackOffice\FachadaClases.asmx" />
+    <Content Include="Servicios\BackOffice\FachadaInstructores.asmx" />
+    <Content Include="Servicios\BackOffice\FachadaUsuariosLogin.asmx" />
+    <Content Include="Servicios\FrontOffice\FachadaClases.asmx" />
+    <Content Include="Servicios\FrontOffice\FachadaUsuariosLogin.asmx" />
+    <Content Include="Servicios\FrontOffice\FachadaEjercicios.asmx" />
+    <Content Include="Servicios\FrontOffice\FachadaInstructores.asmx" />
+    <Content Include="Servicios\FrontOffice\FachadaRutinasEjercicios.asmx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bitacora\EscritorBitacora.cs" />
+    <Compile Include="Comandos\AComando.cs" />
+    <Compile Include="Comandos\ComandoHolaMundo.cs" />
+    <Compile Include="DAOs\ASQLServerDAO.cs" />
+    <Compile Include="DAOs\DAOsClases\ClaseSalonSQLServerDAO.cs" />
+    <Compile Include="DAOs\DAOsClases\ClaseSQLServerDAO.cs" />
+    <Compile Include="DAOs\DAOsClases\IClaseDAO.cs" />
+    <Compile Include="DAOs\DAOsClases\IClaseSalonDAO.cs" />
+    <Compile Include="DAOs\DAOsClases\ISalonDAO.cs" />
+    <Compile Include="DAOs\DAOsClases\SalonSQLServerDAO.cs" />
+    <Compile Include="DAOs\DAOsEjercicios\EjercicioSQLServerDAO.cs" />
+    <Compile Include="DAOs\DAOsEjercicios\IEjercicioDAO.cs" />
+    <Compile Include="DAOs\DAOsEjercicios\IMusculoDAO.cs" />
+    <Compile Include="DAOs\DAOsEjercicios\IRutinaDAO.cs" />
+    <Compile Include="DAOs\DAOsEjercicios\MusculoSQLServerDAO.cs" />
+    <Compile Include="DAOs\DAOsEjercicios\RutinaSQLServerDAO.cs" />
+    <Compile Include="DAOs\DAOsEvaluaciones\AEvaluacionSQLServerDao.cs" />
+    <Compile Include="DAOs\DAOsEvaluaciones\EvaluacionClaseSQLServerDAO.cs" />
+    <Compile Include="DAOs\DAOsEvaluaciones\EvaluacionInstructorSQLServerDAO.cs" />
+    <Compile Include="DAOs\DAOsEvaluaciones\IEvaluacionClaseDAO.cs" />
+    <Compile Include="DAOs\DAOsEvaluaciones\IEvaluacionDAO.cs" />
+    <Compile Include="DAOs\DAOsEvaluaciones\IEvaluacionInstructorDAO.cs" />
+    <Compile Include="DAOs\DAOsHorario\HorarioSQLServerDAO.cs" />
+    <Compile Include="DAOs\DAOsHorario\IHorarioDAO.cs" />
+    <Compile Include="DAOs\DAOsPersonas\AdministradorSQLServerDAO.cs" />
+    <Compile Include="DAOs\DAOsPersonas\APersonaSQLServerDAO.cs" />
+    <Compile Include="DAOs\DAOsPersonas\ClienteSQLServerDAO.cs" />
+    <Compile Include="DAOs\DAOsPersonas\IAdministradorDAO.cs" />
+    <Compile Include="DAOs\DAOsPersonas\IClienteDAO.cs" />
+    <Compile Include="DAOs\DAOsPersonas\IInstructorDAO.cs" />
+    <Compile Include="DAOs\DAOsPersonas\InstructorSQLServerDAO.cs" />
+    <Compile Include="DAOs\DAOsPersonas\IPersonaDAO.cs" />
+    <Compile Include="DAOs\DAOsReservaciones\AReservacionSQLServerDAO.cs" />
+    <Compile Include="DAOs\DAOsReservaciones\IReservacionClaseDAO.cs" />
+    <Compile Include="DAOs\DAOsReservaciones\IReservacionDAO.cs" />
+    <Compile Include="DAOs\DAOsReservaciones\IReservacionInstructorDAO.cs" />
+    <Compile Include="DAOs\DAOsReservaciones\ReservacionClaseSQLServerDAO.cs" />
+    <Compile Include="DAOs\DAOsReservaciones\ReservacionInstructorSQLServerDAO.cs" />
+    <Compile Include="DAOs\IDAO.cs" />
+    <Compile Include="Default.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\EClases\Clase.cs" />
+    <Compile Include="Entidades\EClases\ClaseSalon.cs" />
+    <Compile Include="Entidades\EPersonas\Acceso.cs" />
+    <Compile Include="Entidades\EPersonas\Administrador.cs" />
+    <Compile Include="Entidades\EPersonas\Cliente.cs" />
+    <Compile Include="Entidades\EPersonas\APersona.cs" />
+    <Compile Include="Entidades\EEjercicios\AComponenteRutina.cs" />
+    <Compile Include="Entidades\EEjercicios\Ejercicio.cs" />
+    <Compile Include="Entidades\EEjercicios\Musculo.cs" />
+    <Compile Include="Entidades\EEjercicios\Rutina.cs" />
+    <Compile Include="Entidades\EEvaluaciones\AEvaluacion.cs" />
+    <Compile Include="Entidades\EEvaluaciones\EvaluacionClase.cs" />
+    <Compile Include="Entidades\EEvaluaciones\EvaluacionInstructor.cs" />
+    <Compile Include="Entidades\EEvaluaciones\IEvaluable.cs" />
+    <Compile Include="Entidades\AEntidad.cs" />
+    <Compile Include="Entidades\EHorario\Horario.cs" />
+    <Compile Include="Entidades\EPersonas\Instructor.cs" />
+    <Compile Include="Entidades\EReservaciones\AReservacion.cs" />
+    <Compile Include="Entidades\EReservaciones\IReservable.cs" />
+    <Compile Include="Entidades\EReservaciones\ReservacionClase.cs" />
+    <Compile Include="Entidades\EReservaciones\ReservacionInstructor.cs" />
+    <Compile Include="Entidades\EClases\Salon.cs" />
+    <Compile Include="Excepciones\AExcepcionLogicaPuiPui.cs" />
+    <Compile Include="Excepciones\ExcepcionConexionBD.cs" />
+    <Compile Include="Fabricas\AFabricaDAO.cs" />
+    <Compile Include="Fabricas\FabricaComando.cs" />
+    <Compile Include="Fabricas\FabricaEntidad.cs" />
+    <Compile Include="Fabricas\FabricaSQLServerDAO.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Servicios\BackOffice\FachadaClases.asmx.cs">
+      <DependentUpon>FachadaClases.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Servicios\BackOffice\FachadaInstructores.asmx.cs">
+      <DependentUpon>FachadaInstructores.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Servicios\BackOffice\FachadaUsuariosLogin.asmx.cs">
+      <DependentUpon>FachadaUsuariosLogin.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Servicios\FrontOffice\FachadaClases.asmx.cs">
+      <DependentUpon>FachadaClases.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Servicios\FrontOffice\FachadaUsuariosLogin.asmx.cs">
+      <DependentUpon>FachadaUsuariosLogin.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Servicios\FrontOffice\FachadaEjercicios.asmx.cs">
+      <DependentUpon>FachadaEjercicios.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Servicios\FrontOffice\FachadaInstructores.asmx.cs">
+      <DependentUpon>FachadaInstructores.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Servicios\FrontOffice\FachadaRutinasEjercicios.asmx.cs">
+      <DependentUpon>FachadaRutinasEjercicios.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Fakes Include="Fakes\log4net.fakes" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60002</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:24057/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
