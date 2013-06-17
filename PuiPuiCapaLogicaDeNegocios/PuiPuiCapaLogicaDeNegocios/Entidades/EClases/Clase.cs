@@ -14,7 +14,6 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EClases
         private int _idClase;
         private String _descripcion;
         private int _status;
-         private DateTime _horario;
         #endregion
 
         #region Getter Setter
@@ -53,15 +52,7 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EClases
             this._nombre = nombre;
             this._idClase = idClase;
         }
-            public Clase(String nombre, int idClase, String descripcion,int st,DateTime horario)
-        {
-            this._status = st;
-            this._descripcion = descripcion;
-            this._nombre = nombre;
-            this._idClase = idClase;
-            this._horario=horario;
-        }
-
+   
 
         public Clase(String nombre, int idClase, String descripcion,int st)
         {
@@ -85,4 +76,3 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EClases
 
 
     }
-}
