@@ -1,10 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.UI.MobileControls;
+using PuiPuiCapaLogicaDeNegocios.Entidades;
+using PuiPuiCapaLogicaDeNegocios.Excepciones;
 
 namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
 {
+    
     /// <summary>
     /// Esta clase tiene como finalidad realizar operaciones referentes a la 
     /// entidad Clase en la base de datos de SQL Server de la capa de 
@@ -12,6 +18,9 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
     /// </summary>
     public class ClaseSQLServerDAO : ASQLServerDAO, IClaseDAO
     {
+        #region Atributos
+        private List<Entidades.AEntidad> listaclase;
+        #endregion
         /// <summary>
         /// Devuelve una lista con todas las entidades activas de Clase que se
         /// encuentran en la base de datos de SQL Server de la capa de datos.
@@ -19,7 +28,55 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
         /// <returns></returns>
         public List<Entidades.AEntidad> ConsultarTodos()
         {
-            throw new NotImplementedException();
+            listaclase = new List<Entidades.AEntidad>();
+            listaclase.RemoveRange(0, listaclase.Count);
+            try
+            {
+                ASQLServerDAO.obtenerConexion().Open();
+                
+                SqlCommand cmd = new SqlCommand("[dbo].[ListarClases]", ASQLServerDAO.obtenerConexion());
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataReader dr;
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Entidades.EClases.Clase clase = (Entidades.EClases.Clase)Fabricas.FabricaEntidad.CrearClase();
+                    clase.IdClase = Convert.ToInt32(dr.GetValue(0));
+                    clase.Nombre = dr.GetValue(1).ToString();
+                    clase.Status = Convert.ToInt32(dr.GetValue(2));
+                    listaclase.Add(clase);
+
+                }
+                ASQLServerDAO.obtenerConexion().Close();  
+            }
+              catch (ArgumentException e)
+            {
+                throw new ExecpcionClaseSalon("Parametros invalidos", e);
+            }
+            catch (InvalidOperationException e)
+            {
+                throw new ExecpcionClaseSalon("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new ExecpcionClaseSalon("Objetos Vacios", e);
+            }
+            catch (SqlException e)
+            {
+                throw new ExecpcionClaseSalon("Error con la base de datos", e);
+            }
+            catch (Exception e)
+            {
+                throw new ExecpcionClaseSalon("Falla", e);
+            }
+            finally
+            {
+                ASQLServerDAO.obtenerConexion().Close();
+            }
+            
+            return listaclase;
+             
+               
         }
 
         /// <summary>
@@ -33,7 +90,50 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
         /// <returns></returns>
         public Entidades.AEntidad ConsultarPorId(int id)
         {
-            throw new NotImplementedException();
+            Entidades.EClases.Clase clase = (Entidades.EClases.Clase)Fabricas.FabricaEntidad.CrearClase();
+            try
+            {
+                ASQLServerDAO.obtenerConexion().Open();
+                SqlCommand cmd = new SqlCommand("[dbo].[DetalleClase]", ASQLServerDAO.obtenerConexion());
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlParameter param = new SqlParameter("@Idclass", id);
+                cmd.Parameters.Add(param);
+                SqlDataReader dr;
+                dr = cmd.ExecuteReader();
+               
+                while (dr.Read())
+                {
+                    clase.Nombre = dr.GetValue(0).ToString();
+                    clase.Descripcion = dr.GetValue(1).ToString();
+                    clase.Status = Convert.ToInt32(dr.GetValue(2));
+                }
+                ASQLServerDAO.obtenerConexion().Close();
+            }
+            catch (ArgumentException e)
+            {
+                throw new ExecpcionClaseSalon("Parametros invalidos", e);
+            }
+            catch (InvalidOperationException e)
+            {
+                throw new ExecpcionClaseSalon("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new ExecpcionClaseSalon("Objetos Vacios", e);
+            }
+            catch (SqlException e)
+            {
+                throw new ExecpcionClaseSalon("Error con la base de datos", e);
+            }
+            catch (Exception e)
+            {
+                throw new ExecpcionClaseSalon("Falla", e);
+            }
+            finally
+            {
+                ASQLServerDAO.obtenerConexion().Close(); ;
+            }
+            return clase;
         }
 
         /// <summary>
@@ -44,9 +144,59 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
         /// la entidad que se desea agregar.
         /// </param>
         /// <returns></returns>
-        public int Agregar(Entidades.AEntidad entidad)
+        public Boolean Agregar(Entidades.AEntidad entidad)
         {
-            throw new NotImplementedException();
+            Boolean insercion = false;
+            Entidades.EClases.Clase clase =(Entidades.EClases.Clase)entidad ;
+
+            try
+            {
+                ASQLServerDAO.obtenerConexion().Open();
+                SqlCommand cmd = new SqlCommand("[dbo].[AgregarClase]", ASQLServerDAO.obtenerConexion());
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlParameter param = new SqlParameter("@Nombre", clase.Nombre);
+                cmd.Parameters.Add(param);
+                param = new SqlParameter("@Descripcion", clase.Descripcion);
+                cmd.Parameters.Add(param);
+                param = new SqlParameter("@Status", clase.Status);
+                cmd.Parameters.Add(param);
+                SqlDataReader dr;
+                dr = cmd.ExecuteReader();
+                insercion = true;
+                ASQLServerDAO.obtenerConexion().Close();
+
+            }
+            catch (ArgumentException e)
+            {
+                insercion = false;
+                throw new ExecpcionClaseSalon("Parametros invalidos", e);
+            }
+            catch (InvalidOperationException e)
+            {
+                insercion = false;
+                throw new ExecpcionClaseSalon("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                insercion = false;
+                throw new ExecpcionClaseSalon("Objetos Vacios", e);
+            }
+            catch (SqlException e)
+            {
+                insercion = false;
+                throw new ExecpcionClaseSalon("Error con la base de datos", e);
+            }
+            catch (Exception e)
+            {
+                insercion = false;
+                throw new ExecpcionClaseSalon("Falla", e);
+            }
+            finally
+            {
+                ASQLServerDAO.obtenerConexion().Close(); ;
+
+            }
+            return insercion;
         }
 
         /// <summary>
@@ -78,7 +228,188 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
         /// <returns></returns>
         public bool Modificar(int id, Entidades.AEntidad entidad)
         {
-            throw new NotImplementedException();
+            Boolean insercion = false;
+            Entidades.EClases.Clase clase = (Entidades.EClases.Clase)entidad;
+            try
+            {
+                ASQLServerDAO.obtenerConexion().Open();
+                SqlCommand cmd = new SqlCommand("[dbo].[ModificarClase]", ASQLServerDAO.obtenerConexion());
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlParameter param = new SqlParameter("@Id_clase", clase.IdClase);
+                cmd.Parameters.Add(param);
+                param = new SqlParameter("@Nombre", clase.Nombre);
+                cmd.Parameters.Add(param);
+                param = new SqlParameter("@Descripcion", clase.Descripcion);
+                cmd.Parameters.Add(param);
+                param = new SqlParameter("@Status", clase.Status);
+                cmd.Parameters.Add(param);
+                SqlDataReader dr;
+                dr = cmd.ExecuteReader();
+                insercion = true;
+                 ASQLServerDAO.obtenerConexion().Close();
+
+            }
+            catch (ArgumentException e)
+            {
+                insercion = false;
+                throw new ExecpcionClaseSalon("Parametros invalidos", e);
+            }
+            catch (InvalidOperationException e)
+            {
+                insercion = false;
+                throw new ExecpcionClaseSalon("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                insercion = false;
+                throw new ExecpcionClaseSalon("Objetos Vacios", e);
+            }
+            catch (SqlException e)
+            {
+                insercion = false;
+                throw new ExecpcionClaseSalon("Error con la base de datos", e);
+            }
+            catch (Exception e)
+            {
+                insercion = false;
+                throw new ExecpcionClaseSalon("Falla", e);
+            }
+            finally
+            {
+                ASQLServerDAO.obtenerConexion().Close();
+
+            }
+            return insercion;
         }
+
+        /// <summary>
+        /// Busca los nombres de la Clase
+        /// la informacion suministrada en la entidad especificada. En caso de 
+        /// exito, retorna una lista llena. De lo contrario, 
+        /// retorna null.
+        /// </summary>
+        /// <param name="clase">
+        /// Nombre de la clase a buscar.
+        /// </param>
+        /// <returns></returns>
+        public List<Entidades.AEntidad> BusquedaNombreClase(String nombreClase)
+        {
+            listaclase.RemoveRange(0, listaclase.Count);
+            try
+            {
+                ASQLServerDAO.obtenerConexion().Open();
+                SqlCommand cmd = new SqlCommand("[dbo].[BusquedaNombreClase]", ASQLServerDAO.obtenerConexion());
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlParameter param = new SqlParameter("@Nombre", nombreClase);
+                cmd.Parameters.Add(param);
+                SqlDataReader dr;
+                dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    Entidades.EClases.Clase clase = (Entidades.EClases.Clase)Fabricas.FabricaEntidad.CrearClase();
+                    clase.IdClase = Convert.ToInt32(dr.GetValue(0));
+                    clase.Nombre = dr.GetValue(1).ToString();
+                    clase.Descripcion = dr.GetValue(2).ToString();
+                    clase.Status = Convert.ToInt32(dr.GetValue(3));
+                    listaclase.Add(clase);
+                }
+
+                ASQLServerDAO.obtenerConexion().Close();
+
+            }
+            catch (ArgumentException e)
+            {
+                throw new ExecpcionClaseSalon("Parametros invalidos", e);
+            }
+            catch (InvalidOperationException e)
+            {
+                throw new ExecpcionClaseSalon("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new ExecpcionClaseSalon("Objetos Vacios", e);
+            }
+            catch (SqlException e)
+            {
+                throw new ExecpcionClaseSalon("Error con la base de datos", e);
+            }
+            catch (Exception e)
+            {
+                throw new ExecpcionClaseSalon("Falla", e);
+            }
+            finally
+            {
+                ASQLServerDAO.obtenerConexion().Close();
+            }
+            return listaclase;
+        }
+
+        /// <summary>
+        /// Busca los nombres de la Clase
+        /// la informacion suministrada en la entidad especificada. En caso de 
+        /// exito, retorna una lista llena. De lo contrario, 
+        /// retorna null.
+        /// </summary>
+        /// <param name="stat">
+        /// nombre del status de la clase en el gym.
+        /// </param>
+        /// <returns></returns>
+        /// 
+        public List<Entidades.AEntidad> BusquedaStatusClase(int stat)
+        {
+            listaclase.RemoveRange(0, listaclase.Count);
+            try
+            {
+                ASQLServerDAO.obtenerConexion().Open();
+                SqlCommand cmd = new SqlCommand("[dbo].[BusquedaStatusClase]", ASQLServerDAO.obtenerConexion());
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlParameter param = new SqlParameter("@Status", stat);
+                cmd.Parameters.Add(param);
+                SqlDataReader dr;
+                dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    Entidades.EClases.Clase clase = (Entidades.EClases.Clase)Fabricas.FabricaEntidad.CrearClase();
+                    clase.IdClase = Convert.ToInt32(dr.GetValue(0));
+                    clase.Nombre = dr.GetValue(1).ToString();
+                    clase.Descripcion = dr.GetValue(2).ToString();
+                    clase.Status = Convert.ToInt32(dr.GetValue(3));
+                    listaclase.Add(clase);
+                }
+
+                ASQLServerDAO.obtenerConexion().Close();
+
+            }
+            catch (ArgumentException e)
+            {
+                throw new ExecpcionClaseSalon("Parametros invalidos", e);
+            }
+            catch (InvalidOperationException e)
+            {
+                throw new ExecpcionClaseSalon("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new ExecpcionClaseSalon("Objetos Vacios", e);
+            }
+            catch (SqlException e)
+            {
+                throw new ExecpcionClaseSalon("Error con la base de datos", e);
+            }
+            catch (Exception e)
+            {
+                throw new ExecpcionClaseSalon("Falla", e);
+            }
+            finally
+            {
+                ASQLServerDAO.obtenerConexion().Close();
+            }
+            return listaclase;
+        }
+
+
+        
     }
 }
