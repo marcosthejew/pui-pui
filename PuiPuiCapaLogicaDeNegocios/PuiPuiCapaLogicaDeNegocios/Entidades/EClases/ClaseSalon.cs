@@ -16,7 +16,7 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EClases
         private int _id;
         private Clase _clase;
         private Salon _salon;
-        private Instructor.Instructor _instructor;
+        private Instructor _instructor;
         private int _disponibilidad;
 
         #endregion
@@ -33,12 +33,12 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EClases
             get { return _clase; }
             set { _clase = value; }
         }
-        public Salon.Salon Salon
+        public Salon Salon
         {
             get { return _salon; }
             set { _salon = value; }
         }
-        public Instructor.Instructor Instructor
+        public Instructor Instructor
         {
             get { return _instructor; }
             set { _instructor = value; }
@@ -57,15 +57,15 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EClases
         {
             _clase = new Clase();
             _salon = new Salon();
-            _instructor = new Instructor.Instructor();
+            _instructor = new Instructor();
         }
-        public ClaseSalon(Salon sal, Clase clas, Instructor.Instructor ins)
+        public ClaseSalon(Salon sal, Clase clas,  Instructor ins)
         {
             this.Instructor = ins;
             this.Salon = sal;
             this.Clase = clas;
         }
-        public ClaseSalon(int iid, Salon sal, Clase clas, Instructor.Instructor ins, int disp)
+        public ClaseSalon(int iid, Salon sal, Clase clas,  Instructor ins, int disp)
         {
             this._id = iid;
             this._instructor = ins;
@@ -75,7 +75,8 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EClases
         }
         #endregion
 
-
+        public void reservar (EHorario.Horario horario) {}
+        public void evaluar(int califacion) { }
 
     }
 }
