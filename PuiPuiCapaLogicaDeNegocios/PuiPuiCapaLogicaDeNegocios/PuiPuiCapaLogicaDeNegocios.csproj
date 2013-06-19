@@ -76,6 +76,7 @@
   <ItemGroup>
     <Compile Include="Bitacora\EscritorBitacora.cs" />
     <Compile Include="Comandos\AComando.cs" />
+    <Compile Include="Comandos\ComandoEjemploDAO.cs" />
     <Compile Include="Comandos\ComandoHolaMundo.cs" />
     <Compile Include="DAOs\ASQLServerDAO.cs" />
     <Compile Include="DAOs\DAOsClases\ClaseSalonSQLServerDAO.cs" />
