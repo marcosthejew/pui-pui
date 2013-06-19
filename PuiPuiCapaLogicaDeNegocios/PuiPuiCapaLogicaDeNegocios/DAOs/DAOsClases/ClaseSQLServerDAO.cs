@@ -144,9 +144,9 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
         /// la entidad que se desea agregar.
         /// </param>
         /// <returns></returns>
-        public Boolean Agregar(Entidades.AEntidad entidad)
+        public int Agregar(Entidades.AEntidad entidad)
         {
-            Boolean insercion = false;
+            int insercion =1;
             Entidades.EClases.Clase clase =(Entidades.EClases.Clase)entidad ;
 
             try
@@ -162,33 +162,33 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
                 cmd.Parameters.Add(param);
                 SqlDataReader dr;
                 dr = cmd.ExecuteReader();
-                insercion = true;
+                insercion =0;
                 ASQLServerDAO.obtenerConexion().Close();
 
             }
             catch (ArgumentException e)
             {
-                insercion = false;
+                insercion = 1;
                 throw new ExecpcionClaseSalon("Parametros invalidos", e);
             }
             catch (InvalidOperationException e)
             {
-                insercion = false;
+                insercion = 1;
                 throw new ExecpcionClaseSalon("Operacion Invalida", e);
             }
             catch (NullReferenceException e)
             {
-                insercion = false;
+                insercion = 1;
                 throw new ExecpcionClaseSalon("Objetos Vacios", e);
             }
             catch (SqlException e)
             {
-                insercion = false;
+                insercion = 1;
                 throw new ExecpcionClaseSalon("Error con la base de datos", e);
             }
             catch (Exception e)
             {
-                insercion = false;
+                insercion = 1;
                 throw new ExecpcionClaseSalon("Falla", e);
             }
             finally
