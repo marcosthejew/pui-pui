@@ -32,9 +32,9 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
             listaclase.RemoveRange(0, listaclase.Count);
             try
             {
-                ASQLServerDAO.obtenerConexion().Open();
+                obtenerConexion().Open();
                 
-                SqlCommand cmd = new SqlCommand("[dbo].[ListarClases]", ASQLServerDAO.obtenerConexion());
+                SqlCommand cmd = new SqlCommand("[dbo].[ListarClases]", obtenerConexion());
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataReader dr;
                 dr = cmd.ExecuteReader();
@@ -47,7 +47,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
                     listaclase.Add(clase);
 
                 }
-                ASQLServerDAO.obtenerConexion().Close();  
+                obtenerConexion().Close();  
             }
               catch (ArgumentException e)
             {
@@ -71,7 +71,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
             }
             finally
             {
-                ASQLServerDAO.obtenerConexion().Close();
+               obtenerConexion().Close();
             }
             
             return listaclase;
@@ -93,8 +93,8 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
             Entidades.EClases.Clase clase = (Entidades.EClases.Clase)Fabricas.FabricaEntidad.CrearClase();
             try
             {
-                ASQLServerDAO.obtenerConexion().Open();
-                SqlCommand cmd = new SqlCommand("[dbo].[DetalleClase]", ASQLServerDAO.obtenerConexion());
+                obtenerConexion().Open();
+                SqlCommand cmd = new SqlCommand("[dbo].[DetalleClase]",obtenerConexion());
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlParameter param = new SqlParameter("@Idclass", id);
                 cmd.Parameters.Add(param);
@@ -107,7 +107,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
                     clase.Descripcion = dr.GetValue(1).ToString();
                     clase.Status = Convert.ToInt32(dr.GetValue(2));
                 }
-                ASQLServerDAO.obtenerConexion().Close();
+               obtenerConexion().Close();
             }
             catch (ArgumentException e)
             {
@@ -131,7 +131,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
             }
             finally
             {
-                ASQLServerDAO.obtenerConexion().Close(); ;
+               obtenerConexion().Close(); ;
             }
             return clase;
         }
@@ -151,8 +151,8 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
 
             try
             {
-                ASQLServerDAO.obtenerConexion().Open();
-                SqlCommand cmd = new SqlCommand("[dbo].[AgregarClase]", ASQLServerDAO.obtenerConexion());
+                obtenerConexion().Open();
+                SqlCommand cmd = new SqlCommand("[dbo].[AgregarClase]", obtenerConexion());
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlParameter param = new SqlParameter("@Nombre", clase.Nombre);
                 cmd.Parameters.Add(param);
@@ -163,7 +163,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
                 SqlDataReader dr;
                 dr = cmd.ExecuteReader();
                 insercion =0;
-                ASQLServerDAO.obtenerConexion().Close();
+                obtenerConexion().Close();
 
             }
             catch (ArgumentException e)
@@ -193,7 +193,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
             }
             finally
             {
-                ASQLServerDAO.obtenerConexion().Close(); ;
+             obtenerConexion().Close(); ;
 
             }
             return insercion;
@@ -232,8 +232,8 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
             Entidades.EClases.Clase clase = (Entidades.EClases.Clase)entidad;
             try
             {
-                ASQLServerDAO.obtenerConexion().Open();
-                SqlCommand cmd = new SqlCommand("[dbo].[ModificarClase]", ASQLServerDAO.obtenerConexion());
+                obtenerConexion().Open();
+                SqlCommand cmd = new SqlCommand("[dbo].[ModificarClase]", obtenerConexion());
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlParameter param = new SqlParameter("@Id_clase", clase.IdClase);
                 cmd.Parameters.Add(param);
@@ -246,7 +246,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
                 SqlDataReader dr;
                 dr = cmd.ExecuteReader();
                 insercion = true;
-                 ASQLServerDAO.obtenerConexion().Close();
+                 obtenerConexion().Close();
 
             }
             catch (ArgumentException e)
@@ -276,7 +276,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
             }
             finally
             {
-                ASQLServerDAO.obtenerConexion().Close();
+               obtenerConexion().Close();
 
             }
             return insercion;
@@ -297,8 +297,8 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
             listaclase.RemoveRange(0, listaclase.Count);
             try
             {
-                ASQLServerDAO.obtenerConexion().Open();
-                SqlCommand cmd = new SqlCommand("[dbo].[BusquedaNombreClase]", ASQLServerDAO.obtenerConexion());
+               obtenerConexion().Open();
+                SqlCommand cmd = new SqlCommand("[dbo].[BusquedaNombreClase]", obtenerConexion());
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlParameter param = new SqlParameter("@Nombre", nombreClase);
                 cmd.Parameters.Add(param);
@@ -315,7 +315,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
                     listaclase.Add(clase);
                 }
 
-                ASQLServerDAO.obtenerConexion().Close();
+                obtenerConexion().Close();
 
             }
             catch (ArgumentException e)
@@ -340,7 +340,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
             }
             finally
             {
-                ASQLServerDAO.obtenerConexion().Close();
+               obtenerConexion().Close();
             }
             return listaclase;
         }
@@ -361,8 +361,8 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
             listaclase.RemoveRange(0, listaclase.Count);
             try
             {
-                ASQLServerDAO.obtenerConexion().Open();
-                SqlCommand cmd = new SqlCommand("[dbo].[BusquedaStatusClase]", ASQLServerDAO.obtenerConexion());
+               obtenerConexion().Open();
+                SqlCommand cmd = new SqlCommand("[dbo].[BusquedaStatusClase]", obtenerConexion());
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlParameter param = new SqlParameter("@Status", stat);
                 cmd.Parameters.Add(param);
@@ -379,7 +379,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
                     listaclase.Add(clase);
                 }
 
-                ASQLServerDAO.obtenerConexion().Close();
+                obtenerConexion().Close();
 
             }
             catch (ArgumentException e)
@@ -404,7 +404,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
             }
             finally
             {
-                ASQLServerDAO.obtenerConexion().Close();
+               obtenerConexion().Close();
             }
             return listaclase;
         }
