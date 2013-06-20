@@ -13,7 +13,7 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EClases
     {
         #region Atributos
 
-        private int _id;
+       
         private Clase _clase;
         private Salon _salon;
         private Instructor _instructor;

@@ -30,9 +30,9 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
             listasalon.RemoveRange(0, listasalon.Count);
             try
             {
-                ASQLServerDAO.obtenerConexion().Open();
+                obtenerConexion().Open();
 
-                SqlCommand cmd = new SqlCommand("[dbo].[ListarSalones]", ASQLServerDAO.obtenerConexion());
+                SqlCommand cmd = new SqlCommand("[dbo].[ListarSalones]", obtenerConexion());
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataReader dr;
                 dr = cmd.ExecuteReader();
@@ -46,7 +46,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
                     listasalon.Add(salon);
 
                 }
-                ASQLServerDAO.obtenerConexion().Close();
+                obtenerConexion().Close();
             }
             catch (ArgumentException e)
             {
@@ -70,7 +70,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
             }
             finally
             {
-                ASQLServerDAO.obtenerConexion().Close();
+                obtenerConexion().Close();
             }
 
             return listasalon;
@@ -108,8 +108,8 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
             Entidades.EClases.Salon salon = (Entidades.EClases.Salon)Fabricas.FabricaEntidad.CrearSalon();
             try
             {
-                ASQLServerDAO.obtenerConexion().Open();
-                SqlCommand cmd = new SqlCommand("[dbo].[AgregarSalon]", ASQLServerDAO.obtenerConexion());
+                obtenerConexion().Open();
+                SqlCommand cmd = new SqlCommand("[dbo].[AgregarSalon]", obtenerConexion());
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter param = new SqlParameter("@Ubicacion", salon.Ubicacion);
@@ -124,7 +124,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
                 dr = cmd.ExecuteReader();
 
                 insercion = 0;
-                ASQLServerDAO.obtenerConexion().Close();
+                obtenerConexion().Close();
             }
             catch (ArgumentException e)
             {
@@ -153,7 +153,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
             }
             finally
             {
-                ASQLServerDAO.obtenerConexion().Close();
+               obtenerConexion().Close();
 
             }
             return insercion;
@@ -190,8 +190,8 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
             Entidades.EClases.Salon salon = (Entidades.EClases.Salon)Fabricas.FabricaEntidad.CrearSalon();
             try
             {
-                 ASQLServerDAO.obtenerConexion().Open();
-                 SqlCommand cmd = new SqlCommand("[dbo].[ModificarSalon]", ASQLServerDAO.obtenerConexion());
+                 obtenerConexion().Open();
+                 SqlCommand cmd = new SqlCommand("[dbo].[ModificarSalon]",obtenerConexion());
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter param = new SqlParameter("@Id_salon", salon.IdSalon);
@@ -209,7 +209,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
                 dr = cmd.ExecuteReader();
 
                 insercion = true;
-                ASQLServerDAO.obtenerConexion().Close();
+                obtenerConexion().Close();
 
             }
             catch (ArgumentException e)
@@ -239,7 +239,8 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
             }
             finally
             {
-                ASQLServerDAO.obtenerConexion().Close();
+               
+                obtenerConexion().Close();
 
 
             }
@@ -264,8 +265,8 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
             listasalon.RemoveRange(0, listasalon.Count);
             try
             {
-                ASQLServerDAO.obtenerConexion().Open();
-                SqlCommand cmd = new SqlCommand("[dbo].[BusquedaUbicacionSalon]", ASQLServerDAO.obtenerConexion());
+                obtenerConexion().Open();
+                SqlCommand cmd = new SqlCommand("[dbo].[BusquedaUbicacionSalon]", obtenerConexion());
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlParameter param = new SqlParameter("@Ubicacion", ubicacion);
                 cmd.Parameters.Add(param);
@@ -282,7 +283,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
                     listasalon.Add(salon);
                 }
 
-                ASQLServerDAO.obtenerConexion().Close();
+                obtenerConexion().Close();
 
             }
             catch (ArgumentException e)
@@ -307,7 +308,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
             }
             finally
             {
-                ASQLServerDAO.obtenerConexion().Close();
+                obtenerConexion().Close();
             }
             return listasalon;
         }
@@ -330,8 +331,8 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
             try
             {
 
-                ASQLServerDAO.obtenerConexion().Open();
-                SqlCommand cmd = new SqlCommand("[dbo].[BusquedaCapacidadMayorSalon]", ASQLServerDAO.obtenerConexion());
+                obtenerConexion().Open();
+                SqlCommand cmd = new SqlCommand("[dbo].[BusquedaCapacidadMayorSalon]", obtenerConexion());
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlParameter param = new SqlParameter("@Capacidad", capacidad);
                 cmd.Parameters.Add(param);
@@ -348,7 +349,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
                     listasalon.Add(salon);
                 }
 
-                ASQLServerDAO.obtenerConexion().Close();
+               obtenerConexion().Close();
 
             }
             catch (ArgumentException e)
@@ -373,7 +374,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
             }
             finally
             {
-                ASQLServerDAO.obtenerConexion().Close();
+                obtenerConexion().Close();
             }
             return listasalon;
         }
@@ -394,8 +395,8 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
             listasalon.RemoveRange(0, listasalon.Count);
             try
             {
-                ASQLServerDAO.obtenerConexion().Open();
-                SqlCommand cmd = new SqlCommand("[dbo].[BusquedaCapacidadMenorSalon]", ASQLServerDAO.obtenerConexion());
+                obtenerConexion().Open();
+                SqlCommand cmd = new SqlCommand("[dbo].[BusquedaCapacidadMenorSalon]", obtenerConexion());
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlParameter param = new SqlParameter("@Capacidad", stat);
                 cmd.Parameters.Add(param);
@@ -412,7 +413,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
                     listasalon.Add(salon);
                 }
 
-                ASQLServerDAO.obtenerConexion().Close();
+                obtenerConexion().Close();
 
             }
             catch (ArgumentException e)
@@ -437,7 +438,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
             }
             finally
             {
-                ASQLServerDAO.obtenerConexion().Close();
+                obtenerConexion().Close();
             }
             return listasalon;
         }
@@ -458,8 +459,8 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
             listasalon.RemoveRange(0, listasalon.Count);
             try
             {
-                ASQLServerDAO.obtenerConexion().Open();
-                SqlCommand cmd = new SqlCommand("[dbo].[BusquedaStatusSalon]", ASQLServerDAO.obtenerConexion());
+                obtenerConexion().Open();
+                SqlCommand cmd = new SqlCommand("[dbo].[BusquedaStatusSalon]", obtenerConexion());
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlParameter param = new SqlParameter("@Status", stat);
                 cmd.Parameters.Add(param);
@@ -476,7 +477,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
                     listasalon.Add(salon);
                 }
 
-                ASQLServerDAO.obtenerConexion().Close();
+                obtenerConexion().Close();
 
             }
             catch (ArgumentException e)
@@ -501,7 +502,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
             }
             finally
             {
-                ASQLServerDAO.obtenerConexion().Close();
+                obtenerConexion().Close();
             }
             return listasalon;
         }
