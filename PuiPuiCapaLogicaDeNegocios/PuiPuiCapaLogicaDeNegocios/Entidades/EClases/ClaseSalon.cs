@@ -6,6 +6,7 @@ using PuiPuiCapaLogicaDeNegocios.Entidades;
 using PuiPuiCapaLogicaDeNegocios.Entidades.EEvaluaciones;
 using PuiPuiCapaLogicaDeNegocios.Entidades.EPersonas;
 using PuiPuiCapaLogicaDeNegocios.Entidades.EReservaciones;
+using PuiPuiCapaLogicaDeNegocios.Entidades.EHorario;
 
 namespace PuiPuiCapaLogicaDeNegocios.Entidades.EClases
 {
@@ -17,6 +18,13 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EClases
         private Clase _clase;
         private Salon _salon;
         private Instructor _instructor;
+        private Horario _horario;
+
+        public Horario Horario
+        {
+            get { return _horario; }
+            set { _horario = value; }
+        }
         private int _disponibilidad;
 
         #endregion
@@ -53,11 +61,20 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EClases
 
         #region Constructor
 
+        public ClaseSalon(Salon sal, Clase clas, Instructor ins, Horario hora)
+        {
+            this.Instructor = ins;
+            this.Salon = sal;
+            this.Clase = clas;
+            this.Horario = hora;
+        
+        }
         public ClaseSalon()
         {
             _clase = new Clase();
             _salon = new Salon();
             _instructor = new Instructor();
+            _horario = new Horario();
         }
         public ClaseSalon(Salon sal, Clase clas,  Instructor ins)
         {
