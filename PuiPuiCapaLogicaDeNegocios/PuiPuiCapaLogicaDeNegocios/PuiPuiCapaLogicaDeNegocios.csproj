@@ -144,6 +144,7 @@
     <Compile Include="Entidades\EReservaciones\ReservacionInstructor.cs" />
     <Compile Include="Entidades\EClases\Salon.cs" />
     <Compile Include="Excepciones\AExcepcionLogicaPuiPui.cs" />
+    <Compile Include="Excepciones\ExcepcionEjercicioConexionBD.cs" />
     <Compile Include="Excepciones\ExcepcionConexionBD.cs" />
     <Compile Include="Excepciones\ExecpcionClaseSalon.cs" />
     <Compile Include="Fabricas\AFabricaDAO.cs" />
