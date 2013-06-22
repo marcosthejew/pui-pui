@@ -12,6 +12,8 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EEjercicios
 
         private string _nombre;
         private string _descripcion;
+        private string _duracion;
+        private int _repeticiones;
         private Musculo _musculo;
 
         #endregion 
@@ -28,6 +30,18 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EEjercicios
         {
             get { return _descripcion; }
             set { _descripcion = value; }
+        }
+
+        public string Duracion
+        {
+            get { return _duracion; }
+            set { _duracion = value; }
+        }
+
+        public int Repeticiones
+        {
+            get { return _repeticiones; }
+            set { _repeticiones = value; }
         }
 
         public Musculo Musculo
@@ -80,6 +94,15 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EEjercicios
             _musculo = musculo;
         }
 
+        public Ejercicio(int id, string nombre, string descripcion,string duracion, int repeticiones, Musculo musculo)
+        {
+            _id = id;
+            _nombre = nombre;
+            _descripcion = descripcion;
+            _musculo = musculo;
+            _duracion = duracion;
+            _repeticiones = repeticiones;
+        }
         #endregion Constructores
 
     }
