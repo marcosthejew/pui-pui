@@ -76,6 +76,7 @@
   <ItemGroup>
     <Compile Include="Bitacora\EscritorBitacora.cs" />
     <Compile Include="Comandos\AComando.cs" />
+    <Compile Include="Comandos\ComandoEjemploDAO.cs" />
     <Compile Include="Comandos\ComandoHolaMundo.cs" />
     <Compile Include="DAOs\ASQLServerDAO.cs" />
     <Compile Include="DAOs\DAOsClases\ClaseSalonSQLServerDAO.cs" />
@@ -143,7 +144,9 @@
     <Compile Include="Entidades\EReservaciones\ReservacionInstructor.cs" />
     <Compile Include="Entidades\EClases\Salon.cs" />
     <Compile Include="Excepciones\AExcepcionLogicaPuiPui.cs" />
+    <Compile Include="Excepciones\ExcepcionEjercicioConexionBD.cs" />
     <Compile Include="Excepciones\ExcepcionConexionBD.cs" />
+    <Compile Include="Excepciones\ExecpcionClaseSalon.cs" />
     <Compile Include="Fabricas\AFabricaDAO.cs" />
     <Compile Include="Fabricas\FabricaComando.cs" />
     <Compile Include="Fabricas\FabricaEntidad.cs" />

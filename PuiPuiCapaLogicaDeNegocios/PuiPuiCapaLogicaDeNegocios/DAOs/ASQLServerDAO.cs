@@ -26,5 +26,13 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs
         {
             return new SqlConnection(_cadenaConexion);
         }
+
+        protected void CerrarConexion(SqlConnection conexion)
+        {
+            if (conexion == null) return;
+            if (conexion.State.ToString() != "Open") return;
+            conexion.Close();
+            conexion.Dispose();
+        }
     }
 }
