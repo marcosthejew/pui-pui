@@ -59,6 +59,31 @@ namespace PuiPuiCapaLogicaDeNegocios.Fabricas
             return new Ejercicio();
         }
 
+        public static AEntidad CrearEjercicio(int id)
+        {
+            return new Ejercicio(id);
+        }
+
+        public static AEntidad CrearEjercicio(int id, string nombre)
+        {
+            return new Ejercicio(id, nombre);
+        }
+
+        public static AEntidad CrearEjercicio(int id, string nombre, string descripcion)
+        {
+            return new Ejercicio(id, nombre,descripcion);
+        }
+
+        public static AEntidad CrearEjercicio(int id, string nombre, string descripcion, Musculo musculo)
+        {
+            return new Ejercicio(id , nombre,descripcion,musculo);
+        }
+
+        public static AEntidad CrearEjercicio(int id, string nombre, string descripcion, Musculo musculo, string duracion, int repeticiones)
+        {
+            return new Ejercicio(id,nombre,descripcion,musculo,duracion,repeticiones);
+        }
+
         /// <summary>
         /// Metodo estatico que retorna una instancia de la clase Musculo 
         /// encajonada en la clase abstracta AEntidad.

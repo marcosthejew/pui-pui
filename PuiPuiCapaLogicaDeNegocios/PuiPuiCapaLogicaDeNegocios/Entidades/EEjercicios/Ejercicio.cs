@@ -9,7 +9,7 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EEjercicios
     public class Ejercicio : AComponenteRutina
     {
         #region Atributos
-
+        private int id;
         private string _nombre;
         private string _descripcion;
         private string _duracion;
@@ -94,7 +94,7 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EEjercicios
             _musculo = musculo;
         }
 
-        public Ejercicio(int id, string nombre, string descripcion,string duracion, int repeticiones, Musculo musculo)
+        public Ejercicio(int id, string nombre, string descripcion, Musculo musculo, string duracion, int repeticiones)
         {
             _id = id;
             _nombre = nombre;

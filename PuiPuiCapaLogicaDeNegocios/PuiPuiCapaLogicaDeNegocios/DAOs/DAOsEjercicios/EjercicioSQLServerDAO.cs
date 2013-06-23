@@ -22,11 +22,13 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEjercicios
     public class EjercicioSQLServerDAO : ASQLServerDAO, IEjercicioDAO
     {
 
+        #region Atributos
         private SqlConnection conexion;
         private SqlCommand cmd;
         private SqlDataReader dr;
-       
-        
+        #endregion 
+
+        #region Metodos
         /// <summary>
         /// Devuelve una lista con todas las entidades activas de Ejercicio que
         /// se encuentran en la base de datos de SQL Server de la capa de datos.
@@ -49,6 +51,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEjercicios
 
                 while (dr.Read())
                 {
+
                     AEntidad ejercicio = FabricaEntidad.CrearEjercicio();
                     (ejercicio as Ejercicio).Id = Convert.ToInt32(dr.GetValue(0));
                     (ejercicio as Ejercicio).Nombre = dr.GetValue(1).ToString();
@@ -67,7 +70,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEjercicios
             }
             catch (NullReferenceException e)
             {
-                throw new ExcepcionEjercicioConexionBD("Ejerciocio no encontrado", e);
+                throw new ExcepcionEjercicioConexionBD("Ejercicio no encontrado", e);
             }
             catch (SqlException e)
             {
@@ -129,7 +132,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEjercicios
             }
             catch (NullReferenceException e)
             {
-                throw new ExcepcionEjercicioConexionBD("Ejerciocio no encontrado", e);
+                throw new ExcepcionEjercicioConexionBD("Ejercicio no encontrado", e);
             }
             catch (SqlException e)
             {
@@ -446,6 +449,8 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEjercicios
             return flag;
         }
         #endregion ExisteRutinaConEjercicio
+
+        #endregion
 
     }
 }
