@@ -11,162 +11,94 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EPersonas
 
         #region Atributos
 
-        private int _cedulaPersona;
-        private string _nombrePersona1;
-        private string _nombrePersona2;
-        private string _apellidoPersona1;
-        private string _apellidoPersona2;
-        private string _generoPersona;
-        private DateTime _fechaNacimientoPersona;
-        private DateTime _fechaIngresoPersona;
-        private string _ciudadPersona;
-        private string _DireccionPersona;
-        private string _telefonoLocalPersona;
-        private string _telefonoCelularPersona;
-        private string _correoPersona;
-        private string _contactoNombrePersona;
-        private string _contactoTelefonoPersona;
-        private string _estadoPersona;
-        private string _loginPersona;
-        private string _passwordPersona;
-        private string _tipoPersona;
+        protected string _cedula;
+        protected string _nombre1;
+        protected string _nombre2;
+        protected string _apellido1;
+        protected string _apellido2;
+        protected string _sexo;
+        protected DateTime _fechaNac;
+        protected DateTime _fechaIngreso;
+        protected string _entidadFederal;
+        protected string _ciudad;
+        protected string _direccion;
+        protected string _telefonoLocal;
+        protected string _telefonoCelular;
+        protected string _email;
 
         #endregion
 
         #region Encapsulamiento
 
-        public int IdPersona
+        public string CedulaPersona
         {
-            get { return _id; }
-            set { _id = value; }
-        }
-        public int CedulaPersona
-        {
-            get { return _cedulaPersona; }
-            set { _cedulaPersona = value; }
+            get { return _cedula; }
+            set { _cedula = value; }
         }
         public string NombrePersona1
         {
-            get { return _nombrePersona1; }
-            set { _nombrePersona1 = value; }
+            get { return _nombre1; }
+            set { _nombre1 = value; }
         }
         public string NombrePersona2
         {
-            get { return _nombrePersona2; }
-            set { _nombrePersona2 = value; }
+            get { return _nombre2; }
+            set { _nombre2 = value; }
         }
         public string ApellidoPersona1
         {
-            get { return _apellidoPersona1; }
-            set { _apellidoPersona1 = value; }
+            get { return _apellido1; }
+            set { _apellido1 = value; }
         }
         public string ApellidoPersona2
         {
-            get { return _apellidoPersona2; }
-            set { _apellidoPersona2 = value; }
+            get { return _apellido2; }
+            set { _apellido2 = value; }
         }
         public string GeneroPersona
         {
-            get { return _generoPersona; }
-            set { _generoPersona = value; }
+            get { return _sexo; }
+            set { _sexo = value; }
         }
         public DateTime FechaNacimientoPersona
         {
-            get { return _fechaNacimientoPersona; }
-            set { _fechaNacimientoPersona = value; }
+            get { return _fechaNac; }
+            set { _fechaNac = value; }
         }
         public DateTime FechaIngresoPersona
         {
-            get { return _fechaIngresoPersona; }
-            set { _fechaIngresoPersona = value; }
+            get { return _fechaIngreso; }
+            set { _fechaIngreso = value; }
         }
         public string CiudadPersona
         {
-            get { return _ciudadPersona; }
-            set { _ciudadPersona = value; }
+            get { return _ciudad; }
+            set { _ciudad = value; }
         }
         public string DireccionPersona
         {
-            get { return _DireccionPersona; }
-            set { _DireccionPersona = value; }
+            get { return _direccion; }
+            set { _direccion = value; }
         }
         public string TelefonoLocalPersona
         {
-            get { return _telefonoLocalPersona; }
-            set { _telefonoLocalPersona = value; }
+            get { return _telefonoLocal; }
+            set { _telefonoLocal = value; }
         }
         public string TelefonoCelularPersona
         {
-            get { return _telefonoCelularPersona; }
-            set { _telefonoCelularPersona = value; }
+            get { return _telefonoCelular; }
+            set { _telefonoCelular = value; }
         }
         public string CorreoPersona
         {
-            get { return _correoPersona; }
-            set { _correoPersona = value; }
-        }
-        public string ContactoNombrePersona
-        {
-            get { return _contactoNombrePersona; }
-            set { _contactoNombrePersona = value; }
-        }
-        public string ContactoTelefonoPersona
-        {
-            get { return _contactoTelefonoPersona; }
-            set { _contactoTelefonoPersona = value; }
+            get { return _email; }
+            set { _email = value; }
         }
         public string EstadoPersona
         {
-            get { return _estadoPersona; }
-            set { _estadoPersona = value; }
-        }
-        public string LoginPersona
-        {
-            get { return _loginPersona; }
-            set { _loginPersona = value; }
-        }
-        public string PasswordPersona
-        {
-            get { return _passwordPersona; }
-            set { _passwordPersona = value; }
-        }
-        public string TipoPersona
-        {
-            get { return _tipoPersona; }
-            set { _tipoPersona = value; }
-        }
-
-        #endregion
-
-        #region Construccion
-
-        public APersona()
-        {
-
-        }
-
-        public APersona(int id)
-        {
-            _id = id;
-        }
-
-        public APersona(int cedula, string nombre1, string nombre2, string apellido1, string apellido2,
-         string genero, DateTime fechaNacimiento, string ciudad, string direccion, string correo, string contacto,
-         string telfContacto)
-        {
-            _cedulaPersona = cedula;
-            _nombrePersona1 = nombre1;
-            _nombrePersona2 = nombre2;
-            _apellidoPersona1 = apellido1;
-            _apellidoPersona2 = apellido2;
-            _generoPersona = genero;
-            _fechaNacimientoPersona = fechaNacimiento;
-            _ciudadPersona = ciudad;
-            _DireccionPersona = direccion;
-            _contactoNombrePersona = contacto;
-            _contactoTelefonoPersona = telfContacto;
-            _fechaIngresoPersona = new DateTime().Date;
-            _estadoPersona = "activo";
+            get { return _entidadFederal; }
+            set { _entidadFederal = value; }
         }
 
         #endregion
