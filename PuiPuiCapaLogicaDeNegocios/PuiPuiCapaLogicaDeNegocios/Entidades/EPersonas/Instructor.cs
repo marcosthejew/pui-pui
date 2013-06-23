@@ -35,17 +35,31 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EPersonas
             _horario = new List<Horario>();
         }
 
-        public Instructor(int id):base(id)
+        public Instructor(int id)
         {
+            _id = id;
             _horario = new List<Horario>();
         }
 
-        public Instructor(int cedula, string nombre1, string nombre2, string apellido1, string apellido2,
-         string genero, DateTime fechaNacimiento, string ciudad, string direccion, string correo, string contacto,
-         string telfContacto, List<Horario> horario)
-            : base(cedula, nombre1, nombre2, apellido1, apellido2, genero, fechaNacimiento, ciudad, direccion, correo,
-             contacto, telfContacto)
+        public Instructor(string cedula, string nombre1, string nombre2, string apellido1, string apellido2,
+         string genero, DateTime fechaNacimiento,DateTime fechaIngreso,string estado, string ciudad, string direccion,
+         string correo, string tlfLocal, string telfCelular, List<Horario> horario)
+            
         {
+            _cedula = cedula;
+            _nombre1 = nombre1;
+            _nombre2 = nombre2;
+            _apellido1 = apellido1;
+            _apellido2 = apellido2;
+            _sexo = genero;
+            _fechaNac = fechaNacimiento;
+            _fechaIngreso = fechaIngreso;
+            _entidadFederal = estado;
+            _ciudad = ciudad;
+            _direccion = direccion;
+            _telefonoLocal = tlfLocal;
+            _telefonoCelular = telfCelular;
+            _email = correo;
             _horario = horario;
         }
 
@@ -55,6 +69,7 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EPersonas
 
         void IEvaluable.evaluar(int calificacion)
         {
+
         }
 
         void IReservable.reservar(EHorario.Horario horario)
