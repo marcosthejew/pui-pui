@@ -94,6 +94,16 @@ namespace PuiPuiCapaLogicaDeNegocios.Fabricas
             return new Musculo();
         }
 
+        public static AEntidad CrearMusculo(int id)
+        {
+            return new Musculo(id);
+        }
+
+        public static AEntidad CrearMusculo(int id, string nombre)
+        {
+            return new Musculo(id,nombre);
+        }
+
         /// <summary>
         /// Metodo estatico que retorna una instancia de la clase Rutina 
         /// encajonada en la clase abstracta AEntidad.

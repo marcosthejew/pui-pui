@@ -9,13 +9,18 @@ namespace PuiPuiCapaLogicaDeNegocios.Comandos.ComandosEjercicio
 {
     public class ComandoModificarEjercicio:AComando<bool>
     {
+        AEntidad _ejercicio;
+        public ComandoModificarEjercicio(AEntidad ejercicio)
+        {
+            _ejercicio = ejercicio;
+        }
         public override bool Ejecutar()
         {
-            AEntidad ejercicio=new Entidades.EEjercicios.Ejercicio();
+           
             bool flag = false;
             try
             {
-                flag = FabricaSQLServerDAO.obtenerInstancia().CrearEjercicioSQLServerDAO().Modificar(ejercicio);
+                flag = FabricaSQLServerDAO.obtenerInstancia().CrearEjercicioSQLServerDAO().Modificar(_ejercicio);
                 
             }
             catch (ExcepcionMusculoConexionBD e)

@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using PuiPuiCapaLogicaDeNegocios.Entidades;
 using PuiPuiCapaLogicaDeNegocios.Comandos;
+using PuiPuiCapaLogicaDeNegocios.Comandos.ComandosEjercicio;
 
 namespace PuiPuiCapaLogicaDeNegocios.Fabricas
 {
@@ -20,5 +22,34 @@ namespace PuiPuiCapaLogicaDeNegocios.Fabricas
         {
             return new ComandoHolaMundo();
         }
+
+        #region Ejercicios
+
+        public static AComando<bool> CrearComandoAgregarEjercicio(AEntidad ejercicio)
+        {
+            return new ComandoAgregarEjecicio(ejercicio);
+
+        }
+
+        public static AComando<AEntidad> CrearComandoConsultarPorIdEjercicio(AEntidad ejercicio)
+        {
+            return new ComandoConsultarPorIdEjercicio(ejercicio);
+        }
+
+        public static AComando<List<AEntidad>> CrearComandoConsultarEjerciciosTodos()
+        {
+            return new ComandoConsultarTodosEjercicio();
+        }
+
+        public static AComando<bool> CrearComandoInactivarEjercicio(AEntidad ejercicio)
+        {
+            return new ComandoInactivarEjercicio(ejercicio);
+        }
+
+        public static AComando<bool> CrearComandoModificarEjercicio(AEntidad ejercicio)
+        {
+            return new ComandoModificarEjercicio(ejercicio);
+        }
+        #endregion
     }
 }

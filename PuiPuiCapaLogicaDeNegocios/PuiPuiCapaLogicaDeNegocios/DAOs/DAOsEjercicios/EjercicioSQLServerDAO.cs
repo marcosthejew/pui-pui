@@ -161,7 +161,14 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEjercicios
         public int Agregar(AEntidad entidad)
         {
             
-            int exito = 0;
+            return 0;
+            
+        }
+
+        public bool Agregar(int a,AEntidad entidad)
+        {
+
+            bool flag = false;
 
             try
             {
@@ -173,7 +180,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEjercicios
                 cmd.Parameters.AddWithValue("@descripcionEjercicio", (entidad as Ejercicio).Descripcion);
                 cmd.Parameters.AddWithValue("@idMusculo", (entidad as Ejercicio).Musculo);
                 dr = cmd.ExecuteReader();
-                exito = 1;
+                flag = true;
             }
             catch (ArgumentException e)
             {
@@ -199,8 +206,8 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEjercicios
             {
                 CerrarConexion(conexion);
             }
-            return exito;
-            
+            return flag;
+
         }
 
         /// <summary>
