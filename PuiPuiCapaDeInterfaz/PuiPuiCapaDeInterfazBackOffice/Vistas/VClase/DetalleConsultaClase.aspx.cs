@@ -5,16 +5,11 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VSalon
+namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VClase
 {
-    public partial class ModificarSalon : System.Web.UI.Page
+    public partial class DetalleConsultaClase : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

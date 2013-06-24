@@ -39,8 +39,9 @@ margin-top: 0px;">
                     <br />
                     (Número de personas)</td>
                 <td class="auto-style2">
-                    &nbsp;<asp:RegularExpressionValidator ID="RegularExpressionValidator2" ControlToValidate="TextBoxCapacidad" ValidationGroup="check" ForeColor="Red"  runat="server" ErrorMessage="Solo numero del 1-999" ValidationExpression="^[0-9]{1,3}$"></asp:RegularExpressionValidator>
-                    <asp:TextBox ID="TextBoxCapacidad" runat="server" Height="22px" Width="270px" Font-Names="Arial" Font-Size="12px"></asp:TextBox>
+                    &nbsp;<asp:TextBox ID="TextBoxCapacidad" runat="server" Height="22px" Width="61px" Font-Names="Arial" Font-Size="12px"></asp:TextBox>
+                    <br />
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" ControlToValidate="TextBoxCapacidad" ValidationGroup="check" ForeColor="Red"  runat="server" ErrorMessage="Solo numero del 1-999" ValidationExpression="^[0-9]{1,3}$"></asp:RegularExpressionValidator>
                 </td>
             </tr>
             <tr>

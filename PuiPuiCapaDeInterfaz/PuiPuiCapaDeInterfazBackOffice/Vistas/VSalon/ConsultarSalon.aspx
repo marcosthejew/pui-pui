@@ -15,62 +15,64 @@
         <fieldset style="width:775px; height:auto; margin-left:7.5%; fit-position:center;">
        <legend style="text-align:center;"><h2>Agregar Salón</h2></legend>
                
-            <table border="0" cellspacing="0" cellpadding="0" style="width: 654px; margin-left:100px" >
+            <table border="0" cellspacing="0" cellpadding="0" style="width: 654px; margin-left:86px" >
             <tr>
                 <td rowspan="0" nowrap="nowrap" class="auto-style3" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
 margin-top: 0px;">
                     Buscar por:</td>
               
-                <td rowspan="1" nowrap="nowrap" class="auto-style4" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
+                <td rowspan="1" nowrap="nowrap" class="auto-style12" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
 margin-top: 0px;">
                      <asp:RadioButton ID="consultaCompleta" runat="server" 
                         GroupName="ConsultarSalon" Text="Todos los parámetros" OnCheckedChanged="consultaCompleta_CheckedChanged1" /> 
                 </td>              
-                <td class="auto-style10">&nbsp;</td>              
+                <td class="auto-style18">&nbsp;</td>              
                 <td class="auto-style7">&nbsp;</td>
             </tr>
                 <tr>
-                <td></td>                
-                <td class="auto-style9" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
+                <td class="auto-style14"></td>                
+                <td class="auto-style15" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
 margin-top: 0px;">
                     <asp:RadioButton ID="consultarSalonPorUbicacion" runat="server" 
                         GroupName="ConsultarSalon" Text="Ubicación:" OnCheckedChanged="consultarSalonPorUbicacion_CheckedChanged"/>
                     </td>  
-                <td class="auto-style10">
-                    <asp:TextBox ID="salon" runat="server" Height="22px" Width="172px"></asp:TextBox>
+                <td class="auto-style19">
+                    <asp:TextBox ID="salon" runat="server" Height="22px" Width="172px" ValidationGroup="check"></asp:TextBox>
                     </td>  
-                <td class="auto-style7">&nbsp;</td>  
+                <td class="auto-style17">
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" ControlToValidate="salon" runat="server" ErrorMessage="No se aceptan numero ni caracteres especiales" ForeColor="Red" ValidationGroup="check" ValidationExpression="^[a-zA-Z''-'''.'\s]{1,45}$" Display="Dynamic"></asp:RegularExpressionValidator>
+                    </td>  
             </tr>
 
             <tr>
                 <td class="auto-style3"></td>
                 
-                <td rowspan="1" nowrap="nowrap" class="auto-style4" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
+                <td rowspan="1" nowrap="nowrap" class="auto-style12" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
 margin-top: 0px;" >
                      <asp:RadioButton ID="consultarSalonPorCapacidad" runat="server" 
                         GroupName="ConsultarSalon" Text="Capacidad:" OnCheckedChanged="consultaCapacidad_CheckedChanged1" />
                     </td>
 
-                <td rowspan="0" nowrap="nowrap" class="auto-style11" >
+                <td rowspan="0" nowrap="nowrap" class="auto-style20" >
                     <asp:DropDownList ID="DropDownListCapacidadSalon" runat="server" Width="100px" Height="22px" >
                         <asp:ListItem Value="0">Mayor a</asp:ListItem>
                         <asp:ListItem Value="1">Menor a</asp:ListItem>
                     </asp:DropDownList>
-                    <asp:TextBox ID="TextBoxCapacidad" runat="server" Height="22px" Width="69px"></asp:TextBox>
+                    <asp:TextBox ID="TextBoxCapacidad" runat="server" Height="16px" Width="30px"></asp:TextBox>
                 </td>
-                <td>
+                <td class="auto-style7">
                     (cantidad de personas)</td>
             </tr>
             <tr>
                 <td></td>                
-                <td class="auto-style9" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
+                <td class="auto-style13" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
 margin-top: 0px;">
                     <asp:RadioButton ID="consultaSalonPorStatus" runat="server" 
                         GroupName="ConsultarSalon" Text="Status:" OnCheckedChanged="consultaSalonPorStatus_CheckedChanged"/>
                        
                     
                     </td>  
-                <td class="auto-style10">
+                <td class="auto-style18">
                     <asp:DropDownList ID="DropDownListStatusSalon" runat="server" Width="100px">
                         <asp:ListItem Value="0">Activo</asp:ListItem>
                         <asp:ListItem Value="1">Inactivo</asp:ListItem>
@@ -82,8 +84,8 @@ margin-top: 0px;">
             </tr>
                  <tr>
                 <td></td>                
-                <td class="auto-style9">&nbsp;</td>  
-                <td class="auto-style10">&nbsp;</td>  
+                <td class="auto-style13">&nbsp;</td>  
+                <td class="auto-style18">&nbsp;</td>  
                 <td class="auto-style7"><asp:Button ID="Button1" runat="server" Height="25px" Width="120px" Text="Buscar" CssClass="button" OnClick="botonBuscarSalon_Click"/>
                 </td>  
             </tr>
@@ -123,22 +125,45 @@ margin-top: 0px;">
         .auto-style3 {
             height: 31px;
         }
-        .auto-style4 {
-            width: 182px;
-            height: 31px;
-        }
         .auto-style7 {
-            width: 140px;
+            width: 254px;
         }
-        .auto-style9 {
-            width: 182px;
-        }
-        .auto-style10 {
-            width: 187px;
-        }
-        .auto-style11 {
+        .auto-style12
+        {
             height: 31px;
-            width: 187px;
+            width: 196px;
+        }
+        .auto-style13
+        {
+            width: 196px;
+        }
+        .auto-style14
+        {
+            height: 50px;
+        }
+        .auto-style15
+        {
+            width: 196px;
+            height: 50px;
+        }
+        .auto-style17
+        {
+            width: 254px;
+            height: 50px;
+        }
+        .auto-style18
+        {
+            width: 194px;
+        }
+        .auto-style19
+        {
+            width: 194px;
+            height: 50px;
+        }
+        .auto-style20
+        {
+            height: 31px;
+            width: 194px;
         }
     </style>
 </asp:Content>

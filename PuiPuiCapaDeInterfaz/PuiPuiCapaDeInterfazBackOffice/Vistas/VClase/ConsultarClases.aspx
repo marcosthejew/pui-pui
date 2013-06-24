@@ -16,6 +16,10 @@
         <legend style="text-align:center; font-family:Helvetica; font-size:14px;">
             </legend>
             <h2 style="text-align:center">Consultar Clase</h2>
+            <h2 style="text-align:center">
+                    <asp:RegularExpressionValidator  ID="ValidacionExpresionRegular" ControlToValidate="nombreClase" runat="server" ForeColor="Red"
+                        ErrorMessage="Solo se pueden introducir letras y numeros (sin caracteres especiales)" ValidationGroup="check" ValidationExpression="^[a-zA-Z 0-9''-'\s]{1,25}$"  Display="Dynamic" ></asp:RegularExpressionValidator>
+                    </h2>
              <table border="0" cellspacing="0" cellpadding="0" style="width: 712px; height: 26px;" >
             <tr>
                 <td rowspan="0"  class="auto-style18" nowrap="nowrap">
@@ -33,7 +37,7 @@
                 </td>
               
                 <td rowspan="0" class="auto-style19" >
-                    <asp:TextBox ID="nombreClase" runat="server" Width="163px" style="margin-left: 0px"></asp:TextBox>
+                    <asp:TextBox ID="nombreClase" runat="server" Width="163px" style="margin-left: 0px" ValidationGroup="check"></asp:TextBox>
 
                     </td>
               

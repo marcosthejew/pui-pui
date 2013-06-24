@@ -7,28 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VClase {
+namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VSalon {
     
     
-    public partial class ModificarClase {
-        
-        /// <summary>
-        /// Label6 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label6;
-        
-        /// <summary>
-        /// Exito control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Exito;
+    public partial class DetalleConsultaSalon {
         
         /// <summary>
         /// falla control.
@@ -40,22 +22,13 @@ namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VClase {
         protected global::System.Web.UI.WebControls.Label falla;
         
         /// <summary>
-        /// NClase control.
+        /// Exito control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label NClase;
-        
-        /// <summary>
-        /// DropDownList1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.Label Exito;
         
         /// <summary>
         /// Label4 control.
@@ -67,22 +40,13 @@ namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VClase {
         protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
-        /// nombreClaseAModificar control.
+        /// TextBoxUbicacion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox nombreClaseAModificar;
-        
-        /// <summary>
-        /// ValidacionExpresionRegular control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator ValidacionExpresionRegular;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxUbicacion;
         
         /// <summary>
         /// Label3 control.
@@ -94,57 +58,48 @@ namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VClase {
         protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// TADescripcion control.
+        /// TextBoxCapacidad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TADescripcion;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxCapacidad;
         
         /// <summary>
-        /// ValidacionExpresionRegular2 control.
+        /// Label2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator ValidacionExpresionRegular2;
+        protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// Activo control.
+        /// TextBoxStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton Activo;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxStatus;
         
         /// <summary>
-        /// Inactivo control.
+        /// Regresar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton Inactivo;
+        protected global::System.Web.UI.WebControls.Button Regresar;
         
         /// <summary>
-        /// botonRegresar control.
+        /// Modificar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button botonRegresar;
-        
-        /// <summary>
-        /// botonAceptar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button botonAceptar;
+        protected global::System.Web.UI.WebControls.Button Modificar;
     }
 }
