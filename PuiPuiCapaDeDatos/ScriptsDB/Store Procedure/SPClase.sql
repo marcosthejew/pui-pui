@@ -42,7 +42,7 @@ BEGIN
 
 	SET NOCOUNT ON;
 
-    update Clase set nombre=@Nombre, descripcion=@Descripcion, estatus=@Status where id_clase=@Id_clase;
+    update Clase set nombre=@Nombre, descripcion=@Descripcion, inactivo=@Status where id_clase=@Id_clase;
     
 	
 END
@@ -61,7 +61,7 @@ BEGIN
 	SET NOCOUNT ON;
 
     
-    Select id_clase,nombre,estatus
+    Select id_clase,nombre,inactivo
     from clase;
 	
 END
@@ -81,7 +81,7 @@ BEGIN
 	SET NOCOUNT ON;
 
     
-    Select nombre,descripcion,estatus
+    Select nombre,descripcion,inactivo
     from clase
     where id_clase=@idclass;
 	
@@ -100,7 +100,7 @@ BEGIN
 
 	SET NOCOUNT ON;
 	  
-    Select id_clase, nombre,descripcion,estatus
+    Select id_clase, nombre,descripcion,inactivo
     from clase
     where LOWER(nombre) like LOWER(@Nombre+'%');
 	
@@ -119,9 +119,9 @@ BEGIN
 
 	SET NOCOUNT ON;
 	  
-    Select id_clase, nombre,descripcion,estatus
+    Select id_clase, nombre,descripcion,inactivo
     from clase
-    where estatus=@Status;
+    where inactivo=@Status;
 	
 END
 GO
