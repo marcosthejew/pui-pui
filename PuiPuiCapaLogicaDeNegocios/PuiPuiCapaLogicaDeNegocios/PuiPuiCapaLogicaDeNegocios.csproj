@@ -79,6 +79,7 @@
     <Compile Include="Comandos\AComando.cs" />
     <Compile Include="Comandos\ComandoEjemploDAO.cs" />
     <Compile Include="Comandos\ComandoHolaMundo.cs" />
+    <Compile Include="Comandos\ComandosEjercicio\ComadoEjercicio2.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoAgregarEjecicio.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoConsultarPorIdEjercicio.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoConsultarTodosEjercicio.cs" />

@@ -45,6 +45,7 @@ namespace PuiPuiCapaLogicaDeNegocios.Servicios.BackOffice
             _escritorXML.WriteElementString("id", XmlConvert.ToString((respuesta as Ejercicio).Musculo.Id));
             _escritorXML.WriteEndElement();
             _escritorXML.WriteEndDocument();
+            _escritorXML.Flush();
             _escritorXML.Close();
 
             XmlDocument retorno= new XmlDocument();
@@ -55,10 +56,33 @@ namespace PuiPuiCapaLogicaDeNegocios.Servicios.BackOffice
         }
 
         [WebMethod]
-        public void ServicioConsultarEjercicioTodos()
+        public XmlDocument ServicioConsultarEjercicioTodos()
         {
             List<AEntidad> respuesta = FabricaComando.CrearComandoConsultarEjerciciosTodos().Ejecutar();
 
+            foreach (AEntidad lista in respuesta)
+            {
+                _escritorXML = new XmlTextWriter("C:\\XmlEjercicioTodos.xml", null);
+                _escritorXML.WriteStartDocument();
+                _escritorXML.WriteComment("XMl para la consulta de ejercicios por Id");
+
+                _escritorXML.WriteStartElement("Ejercicio");
+                _escritorXML.WriteElementString("id", XmlConvert.ToString((lista as Ejercicio).Id));
+                _escritorXML.WriteElementString("nombre", (lista as Ejercicio).Nombre);
+                _escritorXML.WriteElementString("descripcion", (lista as Ejercicio).Descripcion);
+                _escritorXML.WriteElementString("id", XmlConvert.ToString((lista as Ejercicio).Musculo.Id));
+                _escritorXML.WriteEndElement();
+            }
+
+            _escritorXML.Flush();
+            _escritorXML.WriteEndDocument();
+            _escritorXML.Close();
+
+            XmlDocument retorno = new XmlDocument();
+
+            retorno.Load("C:\\XmlEjercicioTodos.xml");
+
+            return retorno;
         }
 
         [WebMethod]
