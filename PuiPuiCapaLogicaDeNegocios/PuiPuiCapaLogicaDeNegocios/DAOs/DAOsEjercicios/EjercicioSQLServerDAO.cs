@@ -158,7 +158,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEjercicios
         /// la entidad que se desea agregar.
         /// </param>
         /// <returns></returns>
-        public int Agregar(Entidades.AEntidad entidad)
+        public int Agregar(AEntidad entidad)
         {
             
             int exito = 0;
@@ -266,7 +266,14 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEjercicios
         /// la entidad que contiene los nuevos datos de la modificacion.
         /// </param>
         /// <returns></returns>
-        public bool Modificar(int id, Entidades.AEntidad entidad)
+        public bool Modificar(int id ,AEntidad entidad)
+        {
+            
+            return false;
+        }
+
+
+        public bool Modificar(AEntidad entidad)
         {
             bool flag = false;
             try
@@ -279,11 +286,11 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEjercicios
                 cmd.Parameters.AddWithValue("@nombreEjercicio", (entidad as Ejercicio).Nombre);
                 cmd.Parameters.AddWithValue("@descripcionEjercicio", (entidad as Ejercicio).Descripcion);
                 cmd.Parameters.AddWithValue("@idMusculo", (entidad as Ejercicio).Musculo.IdMusculo);
-                
+
                 dr = cmd.ExecuteReader();
 
                 flag = true;
-                
+
             }
             catch (ArgumentException e)
             {

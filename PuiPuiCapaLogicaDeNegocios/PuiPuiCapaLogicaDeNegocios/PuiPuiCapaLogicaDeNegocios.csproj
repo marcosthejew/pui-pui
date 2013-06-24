@@ -79,6 +79,11 @@
     <Compile Include="Comandos\AComando.cs" />
     <Compile Include="Comandos\ComandoEjemploDAO.cs" />
     <Compile Include="Comandos\ComandoHolaMundo.cs" />
+    <Compile Include="Comandos\ComandosEjercicio\ComandoAgregarEjecicio.cs" />
+    <Compile Include="Comandos\ComandosEjercicio\ComandoConsultarPorIdEjercicio.cs" />
+    <Compile Include="Comandos\ComandosEjercicio\ComandoConsultarTodosEjercicio.cs" />
+    <Compile Include="Comandos\ComandosEjercicio\ComandoInactivarEjercicio.cs" />
+    <Compile Include="Comandos\ComandosEjercicio\ComandoModificarEjercicio.cs" />
     <Compile Include="Comandos\ComandosEvaluacionInstructor\ComandoDetalleEvaluacionInstructor.cs" />
     <Compile Include="Comandos\ComandosEvaluacionInstructor\ComandoDetalleTodoEvaluacionInstructor.cs" />
     <Compile Include="Comandos\ComandosEvaluacionInstructor\ComandoInsertarEvaluacionInstructor.cs" />
@@ -152,6 +157,7 @@
     <Compile Include="Excepciones\AExcepcionLogicaPuiPui.cs" />
     <Compile Include="Excepciones\ExcepcionConexionBD.cs" />
     <Compile Include="Excepciones\ExcepcionEjercicioConexionBD.cs" />
+    <Compile Include="Excepciones\ExcepcionMusculoConexionBD.cs" />
     <Compile Include="Excepciones\ExecpcionClaseSalon.cs" />
     <Compile Include="Excepciones\ExecpcionEvaluacionInstructor.cs" />
     <Compile Include="Fabricas\AFabricaDAO.cs" />
