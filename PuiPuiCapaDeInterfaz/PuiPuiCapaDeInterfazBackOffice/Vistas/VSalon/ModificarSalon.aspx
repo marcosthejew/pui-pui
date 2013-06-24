@@ -17,6 +17,10 @@
       <div style="height:20px; text-align:left; font-family:Helvetica; font-size:16px;">
         <asp:Label ID="NClase" runat="server" Text="Debe introducir todos los campos obligatorios" CssClass="NClase" 
             Visible="False" ForeColor="Red" Font-Names="Arial" Font-Size="14px"></asp:Label>
+          <br />
+          <br />
+&nbsp;<br />
+&nbsp;&nbsp;
         </div>                
             <table style="margin:5% auto auto 26%; height: 140px; width: 432px;" border="0" cellspacing="0" cellpadding="0" align="center">
             <tr>
@@ -24,21 +28,28 @@
 margin-top: 0px;">
                    <asp:Label ID="Rojo" runat="server" Text="Label" ForeColor="Red" Font-Names="Arial" Font-Size="12px">*</asp:Label>
                     <asp:Label ID="Label4" runat="server" Text="Ubicación:"></asp:Label>
+                &nbsp;
                 </td>
                 <td class="auto-style2">
                     &nbsp;<asp:TextBox ID="TextBoxUbicacion" runat="server" Height="22px" Width="270px"></asp:TextBox>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" ControlToValidate="TextBoxUbicacion" runat="server" ErrorMessage="No se aceptan numero ni caracteres especiales" ForeColor="Red"  ValidationGroup="check" ValidationExpression="^[a-zA-Z''-'''.'\s]{1,45}$"  Display="Dynamic" ></asp:RegularExpressionValidator>
+                    <br />
+                    <br />
                 </td>
             </tr>
             <tr>
-                <td class="auto-style1" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
+                <td class="auto-style3" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
 margin-top: 0px;">
                     <asp:Label ID="Label6" runat="server" Text="Label" ForeColor="Red" Font-Names="Arial" Font-Size="12px">*</asp:Label>
                     <asp:Label ID="Label3" runat="server" Text="Capacidad:" ></asp:Label>
                     <br />
                     (Número de personas)
                 </td>
-                <td class="auto-style2">
-                    &nbsp;<asp:TextBox ID="TextBoxCapacidad" runat="server" Height="22px" Width="270px"></asp:TextBox>
+                <td class="auto-style4">
+                    &nbsp;<asp:TextBox ID="TextBoxCapacidad" runat="server" Height="22px" Width="65px"></asp:TextBox>
+                    <br />
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" ControlToValidate="TextBoxCapacidad" ValidationGroup="check" ForeColor="Red"  runat="server" ErrorMessage="Solo numero del 1-999" ValidationExpression="^[0-9]{1,3}$"></asp:RegularExpressionValidator>
+                    <br />
                 </td>
             </tr>
 
@@ -102,6 +113,16 @@ margin-top: 0px;">
         }
         .auto-style2 {
             width: 254px;
+        }
+        .auto-style3
+        {
+            width: 92px;
+            height: 32px;
+        }
+        .auto-style4
+        {
+            width: 254px;
+            height: 32px;
         }
     </style>
 </asp:Content>
