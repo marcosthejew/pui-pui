@@ -11,12 +11,12 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
     /// </summary>
     public interface ISalonDAO : IDAO
     {
-        public List<Entidades.AEntidad> BusquedaUbicacion(String ubicacion);
+        List<Entidades.AEntidad> BusquedaUbicacion(String ubicacion);
 
-        public List<Entidades.AEntidad> BusquedaCapacidadMayorSalon(int capacidad);
+        List<Entidades.AEntidad> BusquedaCapacidadMayorSalon(int capacidad);
 
-        public List<Entidades.AEntidad> BusquedaCapacidadMenorSalon(int stat);
+        List<Entidades.AEntidad> BusquedaCapacidadMenorSalon(int stat);
 
-        public List<Entidades.AEntidad> BusquedaStatusSalon(int stat);
+        List<Entidades.AEntidad> BusquedaStatusSalon(int stat);
     }
 }

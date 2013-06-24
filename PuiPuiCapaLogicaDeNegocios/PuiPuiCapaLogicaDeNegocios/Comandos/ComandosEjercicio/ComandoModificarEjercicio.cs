@@ -9,9 +9,9 @@ namespace PuiPuiCapaLogicaDeNegocios.Comandos.ComandosEjercicio
 {
     public class ComandoModificarEjercicio:AComando<bool>
     {
-        public override bool Ejecutar(AEntidad ejercicio)
+        public override bool Ejecutar()
         {
-           
+            AEntidad ejercicio=new Entidades.EEjercicios.Ejercicio();
             bool flag = false;
             try
             {
