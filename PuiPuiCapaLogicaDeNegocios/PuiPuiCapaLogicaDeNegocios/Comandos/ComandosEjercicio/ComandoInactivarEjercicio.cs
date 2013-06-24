@@ -9,13 +9,17 @@ namespace PuiPuiCapaLogicaDeNegocios.Comandos.ComandosEjercicio
 {
     public class ComandoInactivarEjercicio:AComando<bool>
     {
-
-        public override bool Ejecutar(AEntidad ejercicio)
+        AEntidad _ejercicio;
+        public ComandoInactivarEjercicio(AEntidad ejercicio)
+        {
+            _ejercicio = ejercicio;
+        }
+        public override bool Ejecutar()
         {
             bool flag=false;
             try
             {
-                flag = FabricaSQLServerDAO.obtenerInstancia().CrearEjercicioSQLServerDAO().Inactivar(ejercicio.Id);
+                flag = FabricaSQLServerDAO.obtenerInstancia().CrearEjercicioSQLServerDAO().Inactivar(_ejercicio.Id);
 
             }
             catch (ExcepcionEjercicioConexionBD e)

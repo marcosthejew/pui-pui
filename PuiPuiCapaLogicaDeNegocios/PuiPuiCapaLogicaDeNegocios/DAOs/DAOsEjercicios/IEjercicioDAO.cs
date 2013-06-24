@@ -13,6 +13,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEjercicios
     public interface IEjercicioDAO : IDAO
     {
         bool Modificar(AEntidad entidad);
+        bool Agregar(int a,AEntidad entidad);
         bool ExisteEjercicio(AEntidad ejercicio);
         bool ExisteEjercicioOtroId(AEntidad ejercicio);
         bool ExisteRutinaConEjercicio(AEntidad ejercicio);

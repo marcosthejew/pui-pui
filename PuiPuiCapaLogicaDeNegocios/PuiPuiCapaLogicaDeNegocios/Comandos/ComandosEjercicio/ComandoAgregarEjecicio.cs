@@ -11,27 +11,30 @@ namespace PuiPuiCapaLogicaDeNegocios.Comandos.ComandosEjercicio
     {
 
         #region Atributos
-
+        AEntidad _ejecicio;
         bool flag;
         #endregion
-        public override bool Ejecutar(AEntidad ejercicio)
+
+        #region Constructor
+        public ComandoAgregarEjecicio(AEntidad ejercicio)
+        {
+            _ejecicio = ejercicio;
+        }
+        #endregion
+
+        #region Metodo
+        public override bool Ejecutar()
         {
             
             try
             {
-                if (FabricaSQLServerDAO.obtenerInstancia().CrearEjercicioSQLServerDAO().ExisteEjercicio(ejercicio))
+                if (FabricaSQLServerDAO.obtenerInstancia().CrearEjercicioSQLServerDAO().ExisteEjercicio(_ejecicio))
                 {
                     flag = false;
                 }
                 else
                 {
-                    int valor = FabricaSQLServerDAO.obtenerInstancia().CrearEjercicioSQLServerDAO().Agregar(ejercicio);
-                    if(valor==1){
-                        flag=true;
-                    }else
-                    {
-                        flag=false;
-                    }
+                    flag = FabricaSQLServerDAO.obtenerInstancia().CrearEjercicioSQLServerDAO().Agregar(0,_ejecicio);
                 }
             }
             catch (ExcepcionEjercicioConexionBD e)
@@ -40,6 +43,6 @@ namespace PuiPuiCapaLogicaDeNegocios.Comandos.ComandosEjercicio
             }
             return flag;
         }
-
+        #endregion
     }
 }

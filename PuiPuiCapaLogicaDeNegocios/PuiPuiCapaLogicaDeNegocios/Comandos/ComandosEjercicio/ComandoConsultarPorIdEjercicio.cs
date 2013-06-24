@@ -10,20 +10,24 @@ namespace PuiPuiCapaLogicaDeNegocios.Comandos.ComandosEjercicio
 {
     public class ComandoConsultarPorIdEjercicio: AComando<AEntidad>
     {
+        AEntidad _ejercicio;
 
-        public override AEntidad Ejecutar(AEntidad ejercicio)
+        public ComandoConsultarPorIdEjercicio(AEntidad ejercicio)
         {
-            
+            _ejercicio = ejercicio;
+        }
+        public override AEntidad Ejecutar()
+        {
             
             try
             {
-                ejercicio = FabricaSQLServerDAO.obtenerInstancia().CrearEjercicioSQLServerDAO().ConsultarPorId(ejercicio.Id);
+                _ejercicio = FabricaSQLServerDAO.obtenerInstancia().CrearEjercicioSQLServerDAO().ConsultarPorId(_ejercicio.Id);
             }
             catch (ExcepcionEjercicioConexionBD e)
             {
                 throw new ExcepcionEjercicioConexionBD("No se pudo consultar el ejercicio: " + e.Message, e);
             }
-            return ejercicio;
+            return _ejercicio;
         }
     }
 }
