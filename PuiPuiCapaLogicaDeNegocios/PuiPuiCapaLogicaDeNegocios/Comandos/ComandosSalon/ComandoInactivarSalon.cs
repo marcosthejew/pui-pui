@@ -30,9 +30,9 @@ namespace PuiPuiCapaLogicaDeNegocios.Comandos.ComandosSalon
         public override bool Ejecutar()
         {
             bool inactivo = false;
-            ISalonDAO SalonDAO=(ISalonDAO)
+            ISalonDAO salonDao=(ISalonDAO)
             AFabricaDAO.CrearFabricaSQLServerDAO().CrearSalonSQLServerDAO();
-            inactivo=SalonDAO.Inactivar(_id);
+            inactivo=salonDao.Inactivar(_id);
             return (inactivo);
 
         }
