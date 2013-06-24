@@ -1,35 +1,36 @@
-﻿using System;
+﻿using PuiPuiCapaLogicaDeNegocios.Entidades.EClases;
+using PuiPuiCapaLogicaDeNegocios.Fabricas;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using PuiPuiCapaLogicaDeNegocios.Entidades.EClases;
+using PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases;
 
 namespace PuiPuiCapaLogicaDeNegocios.Comandos.ComandosSalon
 {
     /// <summary>
-    /// Comando que inserta una nueva clase.
+    /// Comando que inserta un nuevo salon.
     /// </summary>
-    public class ComandoInsertarSalon : AComando<Salon>
+    public class ComandoAgregarSalon : AComando<int>
     {
         private Salon salon;
 
-        public ComandoInsertarSalon(Salon salon) {
+        public ComandoAgregarSalon(Salon salon) {
             this.salon = salon;
         }
-
-
 
         /// <summary>
         /// Ejecuta el comando.
         /// </summary>
         /// <returns></returns>
-        public override Salon Ejecutar()
+        public override int Ejecutar()
         {
-
-            DAOs.IDAO SalonSqlServerDAO;
-            SalonSqlServerDAO = new DAOs.DAOsClases.SalonSQLServerDAO();
-            SalonSqlServerDAO.Agregar(this.salon);
-            return (this.salon);
+            int agrego = 1;
+            ISalonDAO salonDao=(ISalonDAO)
+            AFabricaDAO.CrearFabricaSQLServerDAO().CrearSalonSQLServerDAO();
+            agrego=salonDao.Agregar(this.salon);
+            return (agrego);
             
         }
     }
