@@ -12,4 +12,5 @@
         También puede encontrar <a href="http://go.microsoft.com/fwlink/?LinkID=152368"
             title="Documentación de ASP.NET en MSDN">documentación sobre ASP.NET en MSDN</a>.
     </p>
+    <asp:Label ID="Hello" runat="server"></asp:Label>
 </asp:Content>
