@@ -83,6 +83,10 @@
     <Content Include="Scripts\fullcalendar\gcal.js" />
     <Content Include="Scripts\gym2.js" />
     <Content Include="MasterPages\PuiPuiCapaDeInterfazBackOfficeSesion.Master" />
+    <Content Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </Content>
     <None Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
@@ -90,6 +94,10 @@
     <Content Include="Scripts\jquery\jquery-ui-1.10.2.custom.min.js" />
     <Content Include="Scripts\ValidarText.js" />
     <Content Include="Vistas\VHome\Home.aspx" />
+    <Content Include="Web References\LogicaClases\FachadaClasesBackOffice.disco" />
+    <Content Include="Web References\LogicaEjercicios\FachadaEjerciciosBackOffice.disco" />
+    <Content Include="Web References\LogicaPersonas\FachadaInstructoresBackOffice.disco" />
+    <Content Include="Web References\LogicaUsuariosLogin\FachadaUsuariosLoginBackOffice.disco" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -117,6 +125,11 @@
       <DependentUpon>PuiPuiCapaDeInterfazBackOfficeSesion.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\VHome\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -124,9 +137,49 @@
     <Compile Include="Vistas\VHome\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Web References\LogicaClases\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\LogicaEjercicios\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\LogicaPersonas\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\LogicaUsuariosLogin\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="MasterPages\PuiPuiCapaDeInterfazBackOffice.Master" />
+    <Content Include="Web References\LogicaClases\FachadaClasesBackOffice.wsdl" />
+    <Content Include="Web References\LogicaClases\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Web References\LogicaEjercicios\FachadaEjerciciosBackOffice.wsdl" />
+    <Content Include="Web References\LogicaEjercicios\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Web References\LogicaPersonas\FachadaInstructoresBackOffice.wsdl" />
+    <Content Include="Web References\LogicaPersonas\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Web References\LogicaUsuariosLogin\FachadaUsuariosLoginBackOffice.wsdl" />
+    <Content Include="Web References\LogicaUsuariosLogin\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -150,6 +203,58 @@
     <Folder Include="Vistas\VEjercicio\" />
     <Folder Include="Vistas\VInstructor\" />
     <Folder Include="Vistas\VSalon\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://localhost:24057/Servicios/BackOffice/FachadaClasesBackOffice.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\LogicaClases\</RelPath>
+      <UpdateFromURL>http://localhost:24057/Servicios/BackOffice/FachadaClasesBackOffice.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>PuiPuiCapaDeInterfazBackOffice_LogicaClases_FachadaClases</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:24057/Servicios/BackOffice/FachadaEjerciciosBackOffice.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\LogicaEjercicios\</RelPath>
+      <UpdateFromURL>http://localhost:24057/Servicios/BackOffice/FachadaEjerciciosBackOffice.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>PuiPuiCapaDeInterfazBackOffice_LogicaEjercicios_FachadaEjerciciosBackOffice</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:24057/Servicios/BackOffice/FachadaInstructoresBackOffice.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\LogicaPersonas\</RelPath>
+      <UpdateFromURL>http://localhost:24057/Servicios/BackOffice/FachadaInstructoresBackOffice.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>PuiPuiCapaDeInterfazBackOffice_LogicaPersonas_FachadaPersonas</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:24057/Servicios/BackOffice/FachadaUsuariosLoginBackOffice.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\LogicaUsuariosLogin\</RelPath>
+      <UpdateFromURL>http://localhost:24057/Servicios/BackOffice/FachadaUsuariosLoginBackOffice.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>PuiPuiCapaDeInterfazBackOffice_LogicaUsuariosLogin_FachadaUsuariosLogin</CachedSettingsPropName>
+    </WebReferenceUrl>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

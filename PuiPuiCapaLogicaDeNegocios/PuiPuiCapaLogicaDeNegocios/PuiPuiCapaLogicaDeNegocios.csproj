@@ -63,14 +63,15 @@
     <Content Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
-    <Content Include="Servicios\BackOffice\FachadaClases.asmx" />
-    <Content Include="Servicios\BackOffice\FachadaInstructores.asmx" />
-    <Content Include="Servicios\BackOffice\FachadaUsuariosLogin.asmx" />
-    <Content Include="Servicios\FrontOffice\FachadaClases.asmx" />
-    <Content Include="Servicios\FrontOffice\FachadaUsuariosLogin.asmx" />
-    <Content Include="Servicios\FrontOffice\FachadaEjercicios.asmx" />
-    <Content Include="Servicios\FrontOffice\FachadaInstructores.asmx" />
-    <Content Include="Servicios\FrontOffice\FachadaRutinasEjercicios.asmx" />
+    <Content Include="Servicios\BackOffice\FachadaClasesBackOffice.asmx" />
+    <Content Include="Servicios\BackOffice\FachadaEjerciciosBackOffice.asmx" />
+    <Content Include="Servicios\BackOffice\FachadaInstructoresBackOffice.asmx" />
+    <Content Include="Servicios\BackOffice\FachadaUsuariosLoginBackOffice.asmx" />
+    <Content Include="Servicios\FrontOffice\FachadaClasesFrontOffice.asmx" />
+    <Content Include="Servicios\FrontOffice\FachadaUsuariosLoginFrontOffice.asmx" />
+    <Content Include="Servicios\FrontOffice\FachadaEjerciciosFrontOffice.asmx" />
+    <Content Include="Servicios\FrontOffice\FachadaInstructoresFrontOffice.asmx" />
+    <Content Include="Servicios\FrontOffice\FachadaRutinasEjerciciosFrontOffice.asmx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -158,36 +159,40 @@
     <Compile Include="Fabricas\FabricaEntidad.cs" />
     <Compile Include="Fabricas\FabricaSQLServerDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Servicios\BackOffice\FachadaClases.asmx.cs">
-      <DependentUpon>FachadaClases.asmx</DependentUpon>
+    <Compile Include="Servicios\BackOffice\FachadaClasesBackOffice.asmx.cs">
+      <DependentUpon>FachadaClasesBackOffice.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Servicios\BackOffice\FachadaInstructores.asmx.cs">
-      <DependentUpon>FachadaInstructores.asmx</DependentUpon>
+    <Compile Include="Servicios\BackOffice\FachadaEjerciciosBackOffice.asmx.cs">
+      <DependentUpon>FachadaEjerciciosBackOffice.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Servicios\BackOffice\FachadaUsuariosLogin.asmx.cs">
-      <DependentUpon>FachadaUsuariosLogin.asmx</DependentUpon>
+    <Compile Include="Servicios\BackOffice\FachadaInstructoresBackOffice.asmx.cs">
+      <DependentUpon>FachadaInstructoresBackOffice.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Servicios\FrontOffice\FachadaClases.asmx.cs">
-      <DependentUpon>FachadaClases.asmx</DependentUpon>
+    <Compile Include="Servicios\BackOffice\FachadaUsuariosLoginBackOffice.asmx.cs">
+      <DependentUpon>FachadaUsuariosLoginBackOffice.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Servicios\FrontOffice\FachadaUsuariosLogin.asmx.cs">
-      <DependentUpon>FachadaUsuariosLogin.asmx</DependentUpon>
+    <Compile Include="Servicios\FrontOffice\FachadaClasesFrontOffice.asmx.cs">
+      <DependentUpon>FachadaClasesFrontOffice.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Servicios\FrontOffice\FachadaEjercicios.asmx.cs">
-      <DependentUpon>FachadaEjercicios.asmx</DependentUpon>
+    <Compile Include="Servicios\FrontOffice\FachadaUsuariosLoginFrontOffice.asmx.cs">
+      <DependentUpon>FachadaUsuariosLoginFrontOffice.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Servicios\FrontOffice\FachadaInstructores.asmx.cs">
-      <DependentUpon>FachadaInstructores.asmx</DependentUpon>
+    <Compile Include="Servicios\FrontOffice\FachadaEjerciciosFrontOffice.asmx.cs">
+      <DependentUpon>FachadaEjerciciosFrontOffice.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Servicios\FrontOffice\FachadaRutinasEjercicios.asmx.cs">
-      <DependentUpon>FachadaRutinasEjercicios.asmx</DependentUpon>
+    <Compile Include="Servicios\FrontOffice\FachadaInstructoresFrontOffice.asmx.cs">
+      <DependentUpon>FachadaInstructoresFrontOffice.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Servicios\FrontOffice\FachadaRutinasEjerciciosFrontOffice.asmx.cs">
+      <DependentUpon>FachadaRutinasEjerciciosFrontOffice.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>

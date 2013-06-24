@@ -4,9 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Services;
 
-namespace PuiPuiCapaLogicaDeNegocios.Servicios.FrontOffice
+namespace PuiPuiCapaLogicaDeNegocios.Servicios.BackOffice
 {
-    public class FachadaClientes : System.Web.Services.WebService
+    public class FachadaEjerciciosBackOffice : System.Web.Services.WebService
     {
     }
 }
