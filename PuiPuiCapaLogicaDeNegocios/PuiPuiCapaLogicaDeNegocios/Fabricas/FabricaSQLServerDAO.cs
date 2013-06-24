@@ -73,7 +73,7 @@ namespace PuiPuiCapaLogicaDeNegocios.Fabricas
         /// en la interfaz IDAO.
         /// </summary>
         /// <returns></returns>
-        public IDAO CrearEjercicioSQLServerDAO()
+        public IEjercicioDAO CrearEjercicioSQLServerDAO()
         {
             return new EjercicioSQLServerDAO();
         }
