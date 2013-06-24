@@ -14,7 +14,7 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EClases
 
         #region Atributos
 
-        private int _idSalon;
+        private String _idSalon;
         private String _ubicacion;
         private int _capacidad;
         private int _status;
@@ -22,7 +22,15 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EClases
         #endregion
 
         #region Metodos GetterSetter
-        public int IdSalon
+
+        public int Id {
+
+            get { return _id; }
+            set { _id = value; }
+        
+        }
+
+        public String IdSalon
         {
             get { return _idSalon; }
             set { _idSalon = value; }
@@ -47,15 +55,24 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EClases
 
         #region Contructores
 
-        public Salon(int idSalon, String ubicacion, int capacidad)
+        public Salon(string idSalon, String ubicacion, int capacidad)
         {
             this._capacidad = capacidad;
             this._idSalon = idSalon;
             this._ubicacion = ubicacion;
 
         }
-        public Salon(int idSalon, String ubicacion, int capacidad, int st)
+        public Salon(string idSalon, String ubicacion, int capacidad, int st)
         {
+            this._status = st;
+            this._capacidad = capacidad;
+            this._idSalon = idSalon;
+            this._ubicacion = ubicacion;
+
+        }
+        public Salon(int id,string idSalon, String ubicacion, int capacidad, int st)
+        {
+            this.Id = id;
             this._status = st;
             this._capacidad = capacidad;
             this._idSalon = idSalon;
@@ -68,7 +85,7 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EClases
         }
         public Salon(int id)
         {
-            this.IdSalon = id;
+            this.Id = id;
         }
         #endregion
 

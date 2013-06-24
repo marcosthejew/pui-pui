@@ -10,7 +10,7 @@ using PuiPuiCapaLogicaDeNegocios.Entidades.EHorario;
 
 namespace PuiPuiCapaLogicaDeNegocios.Entidades.EClases
 {
-    public class ClaseSalon : AEntidad, IEvaluable, IReservable
+    public class ClaseSalon : AEntidad
     {
         #region Atributos
 
@@ -31,7 +31,7 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EClases
 
         #region Getter Setter
 
-        public int Id
+        public int ID
         {
             get { return _id; }
             set { _id = value; }
@@ -91,9 +91,5 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EClases
             this._disponibilidad = disp;
         }
         #endregion
-
-        public void reservar (EHorario.Horario horario) {}
-        public void evaluar(int califacion) { }
-
     }
 }

@@ -39,10 +39,11 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
                 while (dr.Read())
                 {
                     Entidades.EClases.Salon salon = (Entidades.EClases.Salon)Fabricas.FabricaEntidad.CrearSalon();
-                    salon.IdSalon = Convert.ToInt32(dr.GetValue(0));
-                    salon.Ubicacion = dr.GetValue(1).ToString();
-                    salon.Capacidad = Convert.ToInt32(dr.GetValue(2));
-                    salon.Status = Convert.ToInt32(dr.GetValue(3));
+                    salon.IdSalon = dr.GetValue(0).ToString();
+                    salon.Id = Convert.ToInt32(dr.GetValue(1));
+                    salon.Ubicacion = dr.GetValue(2).ToString();
+                    salon.Capacidad = Convert.ToInt32(dr.GetValue(3));
+                    salon.Status = Convert.ToInt32(dr.GetValue(4));
                     listasalon.Add(salon);
 
                 }
@@ -112,9 +113,11 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
                 SqlCommand cmd = new SqlCommand("[dbo].[AgregarSalon]", obtenerConexion());
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                SqlParameter param = new SqlParameter("@Ubicacion", salon.Ubicacion);
+                SqlParameter param = new SqlParameter("@Codigo", salon.IdSalon);
                 cmd.Parameters.Add(param);
 
+                param = new SqlParameter("@Ubicacion", salon.Ubicacion);
+                cmd.Parameters.Add(param);
                 param = new SqlParameter("@Capacidad", salon.Capacidad);
                 cmd.Parameters.Add(param);
 
@@ -194,9 +197,11 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
                  SqlCommand cmd = new SqlCommand("[dbo].[ModificarSalon]",obtenerConexion());
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                SqlParameter param = new SqlParameter("@Id_salon", salon.IdSalon);
+                SqlParameter param = new SqlParameter("@Id_salon", salon.Id);
                 cmd.Parameters.Add(param);
 
+                param = new SqlParameter("@Codigo", salon.IdSalon);
+                cmd.Parameters.Add(param);
                 param = new SqlParameter("@Ubicacion", salon.Ubicacion);
                 cmd.Parameters.Add(param);
 
@@ -276,10 +281,11 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
                 while (dr.Read())
                 {
                     Entidades.EClases.Salon salon = (Entidades.EClases.Salon)Fabricas.FabricaEntidad.CrearSalon();
-                    salon.IdSalon = Convert.ToInt32(dr.GetValue(0));
-                    salon.Ubicacion = dr.GetValue(1).ToString();
-                    salon.Capacidad = Convert.ToInt32(dr.GetValue(2).ToString());
-                    salon.Status = Convert.ToInt32(dr.GetValue(3));
+                    salon.Id = Convert.ToInt32(dr.GetValue(0));
+                    salon.IdSalon = dr.GetValue(1).ToString();
+                    salon.Ubicacion = dr.GetValue(2).ToString();
+                    salon.Capacidad = Convert.ToInt32(dr.GetValue(3).ToString());
+                    salon.Status = Convert.ToInt32(dr.GetValue(4));
                     listasalon.Add(salon);
                 }
 
@@ -342,10 +348,11 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
                 while (dr.Read())
                 {
                     Entidades.EClases.Salon salon = (Entidades.EClases.Salon)Fabricas.FabricaEntidad.CrearSalon();
-                    salon.IdSalon = Convert.ToInt32(dr.GetValue(0));
-                    salon.Ubicacion = dr.GetValue(1).ToString();
-                    salon.Capacidad = Convert.ToInt32(dr.GetValue(2).ToString());
-                    salon.Status = Convert.ToInt32(dr.GetValue(3));
+                    salon.Id = Convert.ToInt32(dr.GetValue(0));
+                    salon.IdSalon = dr.GetValue(1).ToString();
+                    salon.Ubicacion = dr.GetValue(2).ToString();
+                    salon.Capacidad = Convert.ToInt32(dr.GetValue(3).ToString());
+                    salon.Status = Convert.ToInt32(dr.GetValue(4));
                     listasalon.Add(salon);
                 }
 
@@ -406,10 +413,11 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
                 while (dr.Read())
                 {
                     Entidades.EClases.Salon salon = (Entidades.EClases.Salon)Fabricas.FabricaEntidad.CrearSalon();
-                    salon.IdSalon = Convert.ToInt32(dr.GetValue(0));
-                    salon.Ubicacion = dr.GetValue(1).ToString();
-                    salon.Capacidad = Convert.ToInt32(dr.GetValue(2).ToString());
-                    salon.Status = Convert.ToInt32(dr.GetValue(3));
+                    salon.Id = Convert.ToInt32(dr.GetValue(0));
+                    salon.IdSalon = dr.GetValue(1).ToString();
+                    salon.Ubicacion = dr.GetValue(2).ToString();
+                    salon.Capacidad = Convert.ToInt32(dr.GetValue(3).ToString());
+                    salon.Status = Convert.ToInt32(dr.GetValue(4));
                     listasalon.Add(salon);
                 }
 
@@ -470,10 +478,11 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
                 while (dr.Read())
                 {
                     Entidades.EClases.Salon salon = (Entidades.EClases.Salon)Fabricas.FabricaEntidad.CrearSalon();
-                    salon.IdSalon = Convert.ToInt32(dr.GetValue(0));
-                    salon.Ubicacion = dr.GetValue(1).ToString();
-                    salon.Capacidad = Convert.ToInt32(dr.GetValue(2).ToString());
-                    salon.Status = Convert.ToInt32(dr.GetValue(3));
+                    salon.Id = Convert.ToInt32(dr.GetValue(0));
+                    salon.IdSalon = dr.GetValue(1).ToString();
+                    salon.Ubicacion = dr.GetValue(2).ToString();
+                    salon.Capacidad = Convert.ToInt32(dr.GetValue(3).ToString());
+                    salon.Status = Convert.ToInt32(dr.GetValue(4));
                     listasalon.Add(salon);
                 }
 

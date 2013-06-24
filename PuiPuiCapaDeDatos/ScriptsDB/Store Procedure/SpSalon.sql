@@ -13,7 +13,8 @@ go
 CREATE PROCEDURE [dbo].[AgregarSalon]
 @Ubicacion NVARCHAR(50),
 @Capacidad int,
-@Status int
+@Status int,
+@Codigo NVARCHAR(50)
 AS
 
 BEGIN
@@ -22,7 +23,7 @@ BEGIN
 
 	
     
-    Insert Salon values(@Ubicacion,@Capacidad,0);
+    Insert Salon values(@Codigo,@Ubicacion,@Capacidad,0);
 	
 END
 
@@ -40,7 +41,7 @@ BEGIN
 	SET NOCOUNT ON;
 
     
-    Select id_salon,ubicacion,capacidad, estatus
+    Select codigo,id_salon,ubicacion,capacidad, inactivo
     from Salon;
 	
 END
@@ -60,7 +61,7 @@ BEGIN
 	SET NOCOUNT ON;
 
     
-    Select ubicacion,capacidad,estatus
+    Select codigo,ubicacion,capacidad,inactivo
     from Salon
     where id_salon=@id_salon;
 	
@@ -75,14 +76,15 @@ CREATE PROCEDURE [dbo].[ModificarSalon]
 @Id_salon int,
 @Ubicacion NVARCHAR(50),
 @Capacidad NVARCHAR(200),
-@Status int
+@Status int,
+@Codigo NVARCHAR(50)
 AS
 
 BEGIN
 
 	SET NOCOUNT ON;
 
-    update Salon set ubicacion=@Ubicacion, capacidad=@Capacidad, estatus=@Status where id_salon=@Id_salon;
+    update Salon set codigo=@Codigo, ubicacion=@Ubicacion, capacidad=@Capacidad, inactivo=@Status where id_salon=@Id_salon;
     
 	
 END
@@ -101,7 +103,7 @@ BEGIN
 
 	SET NOCOUNT ON;
 	  
-    Select id_salon,ubicacion,capacidad,estatus
+    Select id_salon,codigo,ubicacion,capacidad,inactivo
     from Salon
     where LOWER(ubicacion) like LOWER('%'+@Ubicacion+'%');
 	
@@ -120,9 +122,9 @@ BEGIN
 
 	SET NOCOUNT ON;
 	  
-    Select id_salon, ubicacion,capacidad,estatus
+    Select id_salon,codigo, ubicacion,capacidad,inactivo
     from Salon
-    where estatus=@Status;
+    where inactivo=@Status;
 	
 END
 GO
@@ -139,7 +141,7 @@ BEGIN
 
 	SET NOCOUNT ON;
 	  
-    Select id_salon, ubicacion,capacidad,estatus
+    Select id_salon,codigo, ubicacion,capacidad,inactivo
     from Salon
     where capacidad >= @Capacidad;
 	
@@ -159,7 +161,7 @@ BEGIN
 
 	SET NOCOUNT ON;
 	  
-    Select id_salon, ubicacion,capacidad,estatus
+    Select id_salon,codigo, ubicacion,capacidad,inactivo
     from Salon
     where capacidad <= @Capacidad;
 	
@@ -206,7 +208,7 @@ BEGIN
 
 	
     
-    update Clase_Salon set id_clase=@Id_clase,id_salon=@Id_salon,id_instructor= @Id_instructor, isReservado=@disponibilidad where id_clase_salon=@Id_clase_salon ;
+    update Clase_Salon set id_clase=@Id_clase,id_salon=@Id_salon,id_instructor= @Id_instructor, inactivo=@disponibilidad where id_clase_salon=@Id_clase_salon ;
 	
 END
 
@@ -224,7 +226,7 @@ BEGIN
 	SET NOCOUNT ON;
 
     
-    Select clasal.id_clase_salon, clas.nombre,sal.ubicacion,ins.primer_nombre, ins.primer_apellido, clasal.isReservado
+    Select clasal.id_clase_salon, clas.nombre,sal.codigo,sal.ubicacion,ins.nombre1, ins.apellido1, clasal.inactivo
     from Clase clas, Salon sal, Instructor ins, Clase_Salon clasal
 	where clasal.id_clase=clas.id_clase
 	and clasal.id_salon=sal.id_salon
@@ -247,7 +249,7 @@ BEGIN
 	SET NOCOUNT ON;
 
     
-    Select clasal.id_clase_salon, clas.nombre,sal.ubicacion,ins.primer_nombre+' '+ins.primer_apellido, clasal.isReservado
+    Select clasal.id_clase_salon, clas.nombre,sal.codigo,sal.ubicacion,ins.nombre1+' '+ins.apellido1, clasal.inactivo
     from Clase clas, Salon sal, Instructor ins, Clase_Salon clasal
 	where LOWER(clas.nombre) like LOWER(@nombre+'%')
 	and clasal.id_clase=clas.id_clase
@@ -271,7 +273,7 @@ BEGIN
 	SET NOCOUNT ON;
 
     
-    Select clasal.id_clase_salon, clas.nombre,sal.ubicacion,ins.primer_nombre+' '+ins.primer_apellido, clasal.isReservado
+    Select clasal.id_clase_salon, clas.nombre,sal.codigo,sal.ubicacion,ins.nombre1+' '+ins.apellido1, clasal.inactivo
     from Clase clas, Salon sal, Instructor ins, Clase_Salon clasal
 	where LOWER(sal.ubicacion) like LOWER(@Ubicacion+'%')
 	and clasal.id_clase=clas.id_clase
@@ -295,10 +297,10 @@ BEGIN
 	SET NOCOUNT ON;
 
     
-    Select clasal.id_clase_salon,clas.nombre,sal.ubicacion,ins.primer_nombre+' '+ins.primer_apellido, clasal.isReservado
+    Select clasal.id_clase_salon,clas.nombre,sal.codigo,sal.ubicacion,ins.nombre1+' '+ins.apellido1, clasal.inactivo
     from Clase clas, Salon sal, Instructor ins, Clase_Salon clasal
-	where LOWER(ins.primer_nombre) like LOWER(@Nombre+'%')
-	or LOWER(ins.primer_apellido) like LOWER(@Nombre+'%')
+	where LOWER(ins.nombre1) like LOWER(@Nombre+'%')
+	or LOWER(ins.apellido1) like LOWER(@Nombre+'%')
 	and clasal.id_clase=clas.id_clase
 	and clasal.id_salon=sal.id_salon
 	and clasal.id_instructor=ins.id_instructor;
@@ -320,9 +322,9 @@ BEGIN
 	SET NOCOUNT ON;
 
     
-    Select clasal.id_clase_salon, clas.nombre,sal.ubicacion,ins.primer_nombre+' '+ins.primer_apellido, clasal.isReservado
+    Select clasal.id_clase_salon,sal.codigo, clas.nombre,sal.ubicacion,ins.nombre1+' '+ins.apellido1, clasal.inactivo
     from Clase clas, Salon sal, Instructor ins, Clase_Salon clasal
-	where clasal.isReservado=@reservacion
+	where clasal.inactivo=@reservacion
 	and clasal.id_clase=clas.id_clase
 	and clasal.id_salon=sal.id_salon
 	and clasal.id_instructor=ins.id_instructor;

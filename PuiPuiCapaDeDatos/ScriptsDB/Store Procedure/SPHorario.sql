@@ -12,8 +12,8 @@ as
 
 BEGIN
 	INSERT
-	INTO Horario(hora_inicio,hora_fin,dia_semana)
-	VALUES (@hora_inicio,@hora_fin,@dia_semana);
+	INTO Horario(hora_inicio,hora_fin,dia_semana,inactivo)
+	VALUES (@hora_inicio,@hora_fin,@dia_semana,0);
 END;
 GO
 
