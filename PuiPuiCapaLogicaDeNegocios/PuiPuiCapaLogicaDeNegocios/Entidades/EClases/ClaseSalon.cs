@@ -6,6 +6,7 @@ using PuiPuiCapaLogicaDeNegocios.Entidades;
 using PuiPuiCapaLogicaDeNegocios.Entidades.EEvaluaciones;
 using PuiPuiCapaLogicaDeNegocios.Entidades.EPersonas;
 using PuiPuiCapaLogicaDeNegocios.Entidades.EReservaciones;
+using PuiPuiCapaLogicaDeNegocios.Entidades.EHorario;
 
 namespace PuiPuiCapaLogicaDeNegocios.Entidades.EClases
 {
@@ -13,10 +14,17 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EClases
     {
         #region Atributos
 
-        private int _id;
+       
         private Clase _clase;
         private Salon _salon;
         private Instructor _instructor;
+        private Horario _horario;
+
+        public Horario Horario
+        {
+            get { return _horario; }
+            set { _horario = value; }
+        }
         private int _disponibilidad;
 
         #endregion
@@ -53,19 +61,28 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EClases
 
         #region Constructor
 
+        public ClaseSalon(Salon sal, Clase clas, Instructor ins, Horario hora)
+        {
+            this.Instructor = ins;
+            this.Salon = sal;
+            this.Clase = clas;
+            this.Horario = hora;
+        
+        }
         public ClaseSalon()
         {
             _clase = new Clase();
             _salon = new Salon();
-            _instructor = new Instructor ();
+            _instructor = new Instructor();
+            _horario = new Horario();
         }
-        public ClaseSalon(Salon sal, Clase clas, Instructor ins)
+        public ClaseSalon(Salon sal, Clase clas,  Instructor ins)
         {
             this.Instructor = ins;
             this.Salon = sal;
             this.Clase = clas;
         }
-        public ClaseSalon(int iid, Salon sal, Clase clas, Instructor  ins, int disp)
+        public ClaseSalon(int iid, Salon sal, Clase clas,  Instructor ins, int disp)
         {
             this._id = iid;
             this._instructor = ins;
@@ -75,8 +92,8 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EClases
         }
         #endregion
 
-       public void reservar(EHorario.Horario horario) { }
-       public void evaluar(int id) { }
+        public void reservar (EHorario.Horario horario) {}
+        public void evaluar(int califacion) { }
 
     }
 }
