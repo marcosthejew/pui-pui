@@ -40,7 +40,7 @@
   <ItemGroup>
     <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\log4net.dll</HintPath>
+      <HintPath>..\..\..\Users\DesarrolloTIG\Desktop\Desarrollo\log4net-1.2.11\bin\net\2.0\release\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -84,6 +84,7 @@
     <Content Include="Servicios\BackOffice\FachadaInstructoresBackOffice.asmx" />
     <Content Include="Servicios\BackOffice\FachadaUsuariosLoginBackOffice.asmx" />
     <Content Include="Servicios\FrontOffice\FachadaClasesFrontOffice.asmx" />
+    <Content Include="Servicios\FrontOffice\FachadaReservarClasesFrontOffice.asmx" />
     <Content Include="Servicios\FrontOffice\FachadaUsuariosLoginFrontOffice.asmx" />
     <Content Include="Servicios\FrontOffice\FachadaEjerciciosFrontOffice.asmx" />
     <Content Include="Servicios\FrontOffice\FachadaInstructoresFrontOffice.asmx" />
@@ -95,6 +96,7 @@
     <Compile Include="Comandos\AComando.cs" />
     <Compile Include="Comandos\ComandoEjemploDAO.cs" />
     <Compile Include="Comandos\ComandoHolaMundo.cs" />
+    <Compile Include="Comandos\ComandoResevarClase\ComandoConsultarTodosReservarClase.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComadoEjercicio2.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoAgregarEjecicio.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoConsultarPorIdEjercicio.cs" />
@@ -177,12 +179,14 @@
     <Compile Include="Entidades\EReservaciones\AReservacion.cs" />
     <Compile Include="Entidades\EReservaciones\IReservable.cs" />
     <Compile Include="Entidades\EReservaciones\ReservacionClase.cs" />
+    <Compile Include="Entidades\EReservaciones\ReservacionEventoCalendario.cs" />
     <Compile Include="Entidades\EReservaciones\ReservacionInstructor.cs" />
     <Compile Include="Entidades\EClases\Salon.cs" />
     <Compile Include="Excepciones\AExcepcionLogicaPuiPui.cs" />
     <Compile Include="Excepciones\ExcepcionConexionBD.cs" />
     <Compile Include="Excepciones\ExcepcionEjercicioConexionBD.cs" />
     <Compile Include="Excepciones\ExcepcionMusculoConexionBD.cs" />
+    <Compile Include="Excepciones\ExcepcionReservarClaseConexionBD.cs" />
     <Compile Include="Excepciones\ExecpcionClaseSalon.cs" />
     <Compile Include="Excepciones\ExecpcionEvaluacionInstructor.cs" />
     <Compile Include="Fabricas\AFabricaDAO.cs" />
@@ -210,6 +214,10 @@
     </Compile>
     <Compile Include="Servicios\FrontOffice\FachadaClasesFrontOffice.asmx.cs">
       <DependentUpon>FachadaClasesFrontOffice.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Servicios\FrontOffice\FachadaReservarClasesFrontOffice.asmx.cs">
+      <DependentUpon>FachadaReservarClasesFrontOffice.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Servicios\FrontOffice\FachadaUsuariosLoginFrontOffice.asmx.cs">
