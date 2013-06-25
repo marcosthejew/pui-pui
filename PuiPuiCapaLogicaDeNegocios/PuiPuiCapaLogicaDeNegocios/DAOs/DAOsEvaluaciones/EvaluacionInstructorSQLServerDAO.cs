@@ -50,8 +50,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEvaluaciones
                     evalua.Fecha = Convert.ToDateTime(dr.GetValue(1));
                     evalua.Calificacion = Convert.ToInt32(dr.GetValue(2));
                     evalua.Inactivo = Convert.ToInt32(dr.GetValue(3));
-                    evalua.Observaciones = dr.GetString(4);
-                    
+                    evalua.Observaciones = dr.GetString(4);                    
                     evalua.idCliente = Convert.ToInt32(dr.GetValue(5));
                     evalua.idInstructor = Convert.ToInt32(dr.GetValue(6));
 
@@ -176,9 +175,6 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEvaluaciones
                 param = new SqlParameter("@calificacion", evaluacion.Calificacion);
                 cmd.Parameters.Add(param);
 
-                param = new SqlParameter("@inactivo", evaluacion.Inactivo);
-                cmd.Parameters.Add(param);
-
                 param = new SqlParameter("@observaciones", evaluacion.Observaciones);
                 cmd.Parameters.Add(param);
 
@@ -272,9 +268,6 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEvaluaciones
                 cmd.Parameters.Add(param);
 
                 param = new SqlParameter("@calificacion", evaluacion.Calificacion);
-                cmd.Parameters.Add(param);
-
-                param = new SqlParameter("@inactivo", evaluacion.Inactivo);
                 cmd.Parameters.Add(param);
 
                 param = new SqlParameter("@observaciones", evaluacion.Observaciones);

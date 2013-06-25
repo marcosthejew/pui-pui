@@ -2,18 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using PuiPuiCapaLogicaDeNegocios.Fabricas;
 using PuiPuiCapaLogicaDeNegocios.Entidades.EEvaluaciones;
+using PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEvaluaciones;
 
 
 namespace PuiPuiCapaLogicaDeNegocios.Comandos.ComandosEvaluacionInstructor
 {
-    public class ComandoInsertarEvaluacionInstructor : AComando<EvaluacionInstructor>
+    public class ComandoInsertarEvaluacionInstructor : AComando<int>
     {
-        private EvaluacionInstructor EvaluacionInstruc;
+        private EvaluacionInstructor _EvaluacionInstruc;
 
-        public ComandoInsertarEvaluacionInstructor(EvaluacionInstructor EvaluacionInstructor)
+        public ComandoInsertarEvaluacionInstructor(EvaluacionInstructor _EvaluacionInstruc)
         {
-            this.EvaluacionInstruc = EvaluacionInstructor;
+            this._EvaluacionInstruc = _EvaluacionInstruc;
         }
 
 
@@ -22,15 +24,13 @@ namespace PuiPuiCapaLogicaDeNegocios.Comandos.ComandosEvaluacionInstructor
         /// Ejecuta el comando.
         /// </summary>
         /// <returns></returns>
-        public override EvaluacionInstructor Ejecutar()
+        public override int Ejecutar()
         {
 
-            DAOs.IDAO EvaluacionDao;
-            EvaluacionDao = new DAOs.DAOsEvaluaciones.EvaluacionInstructorSQLServerDAO();
-            int result = EvaluacionDao.Agregar(this.EvaluacionInstruc);
-            if (result == 0)
-                this.EvaluacionInstruc = (EvaluacionInstructor)Fabricas.FabricaEntidad.CrearEvaluacionInstructor();
-            return (this.EvaluacionInstruc);
+            IEvaluacionInstructorDAO evaluacionDao = (IEvaluacionInstructorDAO)
+            AFabricaDAO.CrearFabricaSQLServerDAO().CrearEvaluacionInstructorSQLServerDAO();
+            int result = evaluacionDao.Agregar(_EvaluacionInstruc);
+            return result;
 
         }
 

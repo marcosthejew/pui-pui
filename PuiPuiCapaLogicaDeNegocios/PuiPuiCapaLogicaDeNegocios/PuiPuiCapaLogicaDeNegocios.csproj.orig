@@ -60,34 +60,17 @@
   <ItemGroup>
     <Content Include="Default.aspx" />
     <Content Include="Log4netConfig.xml" />
-    <Content Include="packages\log4net.2.0.0\lib\net10-full\log4net.dll" />
-    <Content Include="packages\log4net.2.0.0\lib\net10-full\log4net.xml" />
-    <Content Include="packages\log4net.2.0.0\lib\net11-full\log4net.dll" />
-    <Content Include="packages\log4net.2.0.0\lib\net11-full\log4net.xml" />
-    <Content Include="packages\log4net.2.0.0\lib\net20-cf\log4net.dll" />
-    <Content Include="packages\log4net.2.0.0\lib\net20-cf\log4net.xml" />
-    <Content Include="packages\log4net.2.0.0\lib\net20-full\log4net.dll" />
-    <Content Include="packages\log4net.2.0.0\lib\net20-full\log4net.xml" />
-    <Content Include="packages\log4net.2.0.0\lib\net35-client\log4net.dll" />
-    <Content Include="packages\log4net.2.0.0\lib\net35-client\log4net.xml" />
-    <Content Include="packages\log4net.2.0.0\lib\net35-full\log4net.dll" />
-    <Content Include="packages\log4net.2.0.0\lib\net35-full\log4net.xml" />
-    <Content Include="packages\log4net.2.0.0\lib\net40-client\log4net.dll" />
-    <Content Include="packages\log4net.2.0.0\lib\net40-client\log4net.xml" />
-    <Content Include="packages\log4net.2.0.0\lib\net40-full\log4net.dll" />
-    <Content Include="packages\log4net.2.0.0\lib\net40-full\log4net.xml" />
     <Content Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
-    <Content Include="Servicios\BackOffice\FachadaClasesBackOffice.asmx" />
-    <Content Include="Servicios\BackOffice\FachadaEjerciciosBackOffice.asmx" />
-    <Content Include="Servicios\BackOffice\FachadaInstructoresBackOffice.asmx" />
-    <Content Include="Servicios\BackOffice\FachadaUsuariosLoginBackOffice.asmx" />
-    <Content Include="Servicios\FrontOffice\FachadaClasesFrontOffice.asmx" />
-    <Content Include="Servicios\FrontOffice\FachadaUsuariosLoginFrontOffice.asmx" />
-    <Content Include="Servicios\FrontOffice\FachadaEjerciciosFrontOffice.asmx" />
-    <Content Include="Servicios\FrontOffice\FachadaInstructoresFrontOffice.asmx" />
-    <Content Include="Servicios\FrontOffice\FachadaRutinasEjerciciosFrontOffice.asmx" />
+    <Content Include="Servicios\BackOffice\FachadaClases.asmx" />
+    <Content Include="Servicios\BackOffice\FachadaInstructores.asmx" />
+    <Content Include="Servicios\BackOffice\FachadaUsuariosLogin.asmx" />
+    <Content Include="Servicios\FrontOffice\FachadaClases.asmx" />
+    <Content Include="Servicios\FrontOffice\FachadaUsuariosLogin.asmx" />
+    <Content Include="Servicios\FrontOffice\FachadaEjercicios.asmx" />
+    <Content Include="Servicios\FrontOffice\FachadaInstructores.asmx" />
+    <Content Include="Servicios\FrontOffice\FachadaRutinasEjercicios.asmx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -95,25 +78,6 @@
     <Compile Include="Comandos\AComando.cs" />
     <Compile Include="Comandos\ComandoEjemploDAO.cs" />
     <Compile Include="Comandos\ComandoHolaMundo.cs" />
-    <Compile Include="Comandos\ComandosEjercicio\ComadoEjercicio2.cs" />
-    <Compile Include="Comandos\ComandosEjercicio\ComandoAgregarEjecicio.cs" />
-    <Compile Include="Comandos\ComandosEjercicio\ComandoConsultarPorIdEjercicio.cs" />
-    <Compile Include="Comandos\ComandosEjercicio\ComandoConsultarTodosEjercicio.cs" />
-    <Compile Include="Comandos\ComandosEjercicio\ComandoInactivarEjercicio.cs" />
-    <Compile Include="Comandos\ComandosEjercicio\ComandoModificarEjercicio.cs" />
-    <Compile Include="Comandos\ComandosEvaluacionInstructor\ComandoDetalleEvaluacionInstructor.cs" />
-    <Compile Include="Comandos\ComandosEvaluacionInstructor\ComandoDetalleTodoEvaluacionInstructor.cs" />
-    <Compile Include="Comandos\ComandosEvaluacionInstructor\ComandoInsertarEvaluacionInstructor.cs" />
-    <Compile Include="Comandos\ComandosEvaluacionInstructor\ComandoModificarEvaluacionInstructor.cs" />
-    <Compile Include="Comandos\ComandosSalon\ComandoBusquedaCapacidadMayorSalon.cs" />
-    <Compile Include="Comandos\ComandosSalon\ComandoBusquedaCapacidadMenorSalon.cs" />
-    <Compile Include="Comandos\ComandosSalon\ComandoBusquedaStatusSalon.cs" />
-    <Compile Include="Comandos\ComandosSalon\ComandoBusquedaUbicacionSalones.cs" />
-    <Compile Include="Comandos\ComandosSalon\ComandoConsultarSalonesPorId.cs" />
-    <Compile Include="Comandos\ComandosSalon\ComandoConsultarTodosSalones.cs" />
-    <Compile Include="Comandos\ComandosSalon\ComandoInactivarSalon.cs" />
-    <Compile Include="Comandos\ComandosSalon\ComandoInsertarSalon.cs" />
-    <Compile Include="Comandos\ComandosSalon\ComandoModificarSalon.cs" />
     <Compile Include="DAOs\ASQLServerDAO.cs" />
     <Compile Include="DAOs\DAOsClases\ClaseSalonSQLServerDAO.cs" />
     <Compile Include="DAOs\DAOsClases\ClaseSQLServerDAO.cs" />
@@ -181,51 +145,43 @@
     <Compile Include="Entidades\EClases\Salon.cs" />
     <Compile Include="Excepciones\AExcepcionLogicaPuiPui.cs" />
     <Compile Include="Excepciones\ExcepcionConexionBD.cs" />
-    <Compile Include="Excepciones\ExcepcionEjercicioConexionBD.cs" />
-    <Compile Include="Excepciones\ExcepcionMusculoConexionBD.cs" />
     <Compile Include="Excepciones\ExecpcionClaseSalon.cs" />
     <Compile Include="Excepciones\ExecpcionEvaluacionInstructor.cs" />
     <Compile Include="Fabricas\AFabricaDAO.cs" />
     <Compile Include="Fabricas\FabricaComando.cs" />
-    <Compile Include="Fabricas\FabricaComandosEvaluacionInstructor.cs" />
-    <Compile Include="Fabricas\FabricaComandosSalon.cs" />
     <Compile Include="Fabricas\FabricaEntidad.cs" />
     <Compile Include="Fabricas\FabricaSQLServerDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Servicios\BackOffice\FachadaClasesBackOffice.asmx.cs">
-      <DependentUpon>FachadaClasesBackOffice.asmx</DependentUpon>
+    <Compile Include="Servicios\BackOffice\FachadaClases.asmx.cs">
+      <DependentUpon>FachadaClases.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Servicios\BackOffice\FachadaEjerciciosBackOffice.asmx.cs">
-      <DependentUpon>FachadaEjerciciosBackOffice.asmx</DependentUpon>
+    <Compile Include="Servicios\BackOffice\FachadaInstructores.asmx.cs">
+      <DependentUpon>FachadaInstructores.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Servicios\BackOffice\FachadaInstructoresBackOffice.asmx.cs">
-      <DependentUpon>FachadaInstructoresBackOffice.asmx</DependentUpon>
+    <Compile Include="Servicios\BackOffice\FachadaUsuariosLogin.asmx.cs">
+      <DependentUpon>FachadaUsuariosLogin.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Servicios\BackOffice\FachadaUsuariosLoginBackOffice.asmx.cs">
-      <DependentUpon>FachadaUsuariosLoginBackOffice.asmx</DependentUpon>
+    <Compile Include="Servicios\FrontOffice\FachadaClases.asmx.cs">
+      <DependentUpon>FachadaClases.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Servicios\FrontOffice\FachadaClasesFrontOffice.asmx.cs">
-      <DependentUpon>FachadaClasesFrontOffice.asmx</DependentUpon>
+    <Compile Include="Servicios\FrontOffice\FachadaUsuariosLogin.asmx.cs">
+      <DependentUpon>FachadaUsuariosLogin.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Servicios\FrontOffice\FachadaUsuariosLoginFrontOffice.asmx.cs">
-      <DependentUpon>FachadaUsuariosLoginFrontOffice.asmx</DependentUpon>
+    <Compile Include="Servicios\FrontOffice\FachadaEjercicios.asmx.cs">
+      <DependentUpon>FachadaEjercicios.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Servicios\FrontOffice\FachadaEjerciciosFrontOffice.asmx.cs">
-      <DependentUpon>FachadaEjerciciosFrontOffice.asmx</DependentUpon>
+    <Compile Include="Servicios\FrontOffice\FachadaInstructores.asmx.cs">
+      <DependentUpon>FachadaInstructores.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Servicios\FrontOffice\FachadaInstructoresFrontOffice.asmx.cs">
-      <DependentUpon>FachadaInstructoresFrontOffice.asmx</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Servicios\FrontOffice\FachadaRutinasEjerciciosFrontOffice.asmx.cs">
-      <DependentUpon>FachadaRutinasEjerciciosFrontOffice.asmx</DependentUpon>
+    <Compile Include="Servicios\FrontOffice\FachadaRutinasEjercicios.asmx.cs">
+      <DependentUpon>FachadaRutinasEjercicios.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
@@ -235,8 +191,6 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Fakes Include="Fakes\log4net.fakes" />
-    <Content Include="packages\log4net.2.0.0\log4net.2.0.0.nupkg" />
-    <Content Include="packages\repositories.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

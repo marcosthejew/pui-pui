@@ -2,19 +2,21 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using PuiPuiCapaLogicaDeNegocios.Entidades;
+using PuiPuiCapaLogicaDeNegocios.Fabricas;
 using PuiPuiCapaLogicaDeNegocios.Entidades.EEvaluaciones;
+using PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEvaluaciones;
+
 
 namespace PuiPuiCapaLogicaDeNegocios.Comandos.ComandosEvaluacionInstructor
 {
-    public class ComandoModificarEvaluacionInstructor: AComando<EvaluacionInstructor>
+    public class ComandoModificarEvaluacionInstructor: AComando<bool>
     
         {
-        private EvaluacionInstructor EvaluacionInstruc;
+        private EvaluacionInstructor _EvaluacionInstruc;
 
-        public ComandoModificarEvaluacionInstructor(EvaluacionInstructor EvaluacionInstructor)
+        public ComandoModificarEvaluacionInstructor(EvaluacionInstructor _EvaluacionInstruc)
         {
-            this.EvaluacionInstruc = EvaluacionInstructor;
+            this._EvaluacionInstruc = _EvaluacionInstruc;
         }
 
 
@@ -23,15 +25,13 @@ namespace PuiPuiCapaLogicaDeNegocios.Comandos.ComandosEvaluacionInstructor
         /// Ejecuta el comando.
         /// </summary>
         /// <returns></returns>
-        public override EvaluacionInstructor Ejecutar()
+        public override bool Ejecutar()
         {
 
-            DAOs.IDAO EvaluacionDao;
-            EvaluacionDao = new DAOs.DAOsEvaluaciones.EvaluacionInstructorSQLServerDAO();
-            bool result = EvaluacionDao.Modificar(this.EvaluacionInstruc.idEvaluacion,this.EvaluacionInstruc);
-            if (result)
-                this.EvaluacionInstruc = (EvaluacionInstructor)Fabricas.FabricaEntidad.CrearEvaluacionInstructor();
-            return (this.EvaluacionInstruc); ;
+            IEvaluacionInstructorDAO evaluacionDao = (IEvaluacionInstructorDAO)
+            AFabricaDAO.CrearFabricaSQLServerDAO().CrearEvaluacionInstructorSQLServerDAO();
+            bool result = evaluacionDao.Modificar(_EvaluacionInstruc.Id,_EvaluacionInstruc);
+            return result;
             
         }
     }
