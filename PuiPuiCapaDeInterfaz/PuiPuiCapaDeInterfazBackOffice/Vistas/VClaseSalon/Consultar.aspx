@@ -16,14 +16,14 @@ margin-top: 0px;" >
                 <td rowspan="0" class="auto-style21" nowrap="nowrap" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
 margin-top: 0px;">
                      <asp:RadioButton ID="RadioButtonConsultaCompleta" runat="server" 
-                        GroupName="ConsultarClases" Text="Clase:" OnCheckedChanged="RadioButtonConsultaCompleta_CheckedChanged1" /> 
+                        GroupName="ConsultarClases" Text="Clase:"  /> 
                               
 
                      </td>
                 <td rowspan="0" class="auto-style22" nowrap="nowrap" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
 margin-top: 0px;">
                     <asp:RadioButton ID="consultaClasePorNombres" runat="server" 
-                        GroupName="ConsultarClases" Text="Salón:" OnCheckedChanged="consultaClasePorNombres_CheckedChanged"  
+                        GroupName="ConsultarClases" Text="Salón:"   
                        />
 
                     </td>
@@ -31,7 +31,7 @@ margin-top: 0px;">
                 <td rowspan="1" nowrap="nowrap" class="auto-style24" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
 margin-top: 0px;">
                     <asp:RadioButton ID="consultaClasePorInstructor" runat="server" 
-                        GroupName="ConsultarClases" Text="Instructor:" OnCheckedChanged="consultaClasePorInstructor_CheckedChanged" />
+                        GroupName="ConsultarClases" Text="Instructor:"  />
                        
                     
                     </td>
@@ -49,7 +49,7 @@ margin-top: 0px;">
                    
 
                     <asp:RadioButton ID="consultaClasePorEstatus" runat="server" 
-                        GroupName="ConsultarClases" Text="Status:" OnCheckedChanged="consultaClasePorEstatus_CheckedChanged1"/>
+                        GroupName="ConsultarClases" Text="Status:" />
                        
                     
                     </td>
@@ -57,7 +57,7 @@ margin-top: 0px;">
                 <td rowspan="0" nowrap="nowrap" class="auto-style17" align="left">
                    
 
-                    <asp:DropDownList ID="DropDownListEstatusClase" runat="server" Width="75px" OnSelectedIndexChanged="DropDownListEstatusClase_SelectedIndexChanged" Height="18px" style="margin-left: 0px">
+                    <asp:DropDownList ID="DropDownListEstatusClase" runat="server" Width="75px"  Height="18px" style="margin-left: 0px">
                         <asp:ListItem Value="0">Activa</asp:ListItem>
                         <asp:ListItem Value="1">Inactiva</asp:ListItem>
                         
@@ -82,9 +82,8 @@ margin-top: 0px;">
           
                         <asp:GridView ID="GridConsultar" runat="server" CellPadding="4" ForeColor="#333333" 
                         GridLines="None" Height="16px" Width="687px" 
-                        OnRowCommand="GridConsultar_RowCommand" AllowPaging="True" 
-                        OnPageIndexChanging="GridConsultar_PageIndexChanging" 
-                        OnSelectedIndexChanged="GridConsultar_SelectedIndexChanged" HorizontalAlign="Center" style="margin-right: 0px">
+                         AllowPaging="True" 
+                        HorizontalAlign="Center" style="margin-right: 0px">
                         <AlternatingRowStyle BackColor="White" />
                         <EditRowStyle BackColor="#2461BF" HorizontalAlign="Center" />
                         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />

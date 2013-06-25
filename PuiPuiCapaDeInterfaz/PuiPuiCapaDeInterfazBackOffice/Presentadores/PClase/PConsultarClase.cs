@@ -12,7 +12,7 @@ namespace PuiPuiCapaDeInterfazBackOffice.Presentadores.PClase
         IContratoConsultarClase consultar;
 
         public PConsultarClase(IContratoConsultarClase vista_consultar){
-            consultar = vista_consultar;
+           this.consultar = vista_consultar;
         
         }
 

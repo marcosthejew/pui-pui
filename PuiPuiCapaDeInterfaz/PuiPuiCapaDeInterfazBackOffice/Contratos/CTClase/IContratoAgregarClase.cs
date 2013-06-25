@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PuiPuiCapaDeInterfazBackOffice.Contratos.CTClase
 {
-    interface IContratoAgregarClase
+   public interface IContratoAgregarClase
     {
         String TxtnombreClaseNueva { set; get; }
         String TxtDescripcionClaseNueva { set; get; }

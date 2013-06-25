@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PuiPuiCapaDeInterfazBackOffice.Contratos.CTSalon
 {
-    interface IContratoModificarSalon
+    public interface IContratoModificarSalon
     {
 
         Boolean RBStatus_Activo { set; get; }

@@ -37,7 +37,10 @@ namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VClase
             get { return Inactivo.Checked; }
             set { Inactivo.Checked = value; }
         }
-
+        public String DPLClaseModificar {
+            get { return DropDownList1.SelectedValue.ToString(); }
+            set { DropDownList1.Text = value; }
+        }
 
     }
 }

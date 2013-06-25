@@ -34,6 +34,11 @@ namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VClase
             agregar.InsertarClase();
         }
 
+        protected void Cancelar_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
 
     }

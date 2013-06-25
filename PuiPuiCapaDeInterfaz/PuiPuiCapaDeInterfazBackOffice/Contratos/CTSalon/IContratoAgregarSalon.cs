@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PuiPuiCapaDeInterfazBackOffice.Contractos.CTSalon
 {
-    interface IContratoAgregarSalon
+   public interface IContratoAgregarSalon
     {
         String TxtCodigoSalon { get; set; }
         String TxtNombreSalon { get; set; }
