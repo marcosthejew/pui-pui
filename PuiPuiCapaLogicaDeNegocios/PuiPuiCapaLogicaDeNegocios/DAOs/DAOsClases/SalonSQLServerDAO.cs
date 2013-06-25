@@ -28,11 +28,13 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
         {
             listasalon = new List<Entidades.AEntidad>();
             listasalon.RemoveRange(0, listasalon.Count);
+            SqlConnection conexion = obtenerConexion();
             try
             {
-                obtenerConexion().Open();
+                
+                conexion.Open();
 
-                SqlCommand cmd = new SqlCommand("[dbo].[ListarSalones]", obtenerConexion());
+                SqlCommand cmd = new SqlCommand("[dbo].[ListarSalones]", conexion);
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataReader dr;
                 dr = cmd.ExecuteReader();
@@ -47,7 +49,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
                     listasalon.Add(salon);
 
                 }
-                obtenerConexion().Close();
+                conexion.Close();
             }
             catch (ArgumentException e)
             {
@@ -71,7 +73,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
             }
             finally
             {
-                obtenerConexion().Close();
+                conexion.Close();
             }
 
             return listasalon;
@@ -106,28 +108,31 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
         public int Agregar(Entidades.AEntidad entidad)
         {
             int insercion = 1;
-            Entidades.EClases.Salon salon = (Entidades.EClases.Salon)Fabricas.FabricaEntidad.CrearSalon();
+            SqlConnection conexion = obtenerConexion();
+            Entidades.EClases.Salon salon = (Entidades.EClases.Salon)entidad;
             try
             {
-                obtenerConexion().Open();
-                SqlCommand cmd = new SqlCommand("[dbo].[AgregarSalon]", obtenerConexion());
+                
+                conexion.Open();
+                SqlCommand cmd = new SqlCommand("[dbo].[AgregarSalon]", conexion);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                SqlParameter param = new SqlParameter("@Codigo", salon.IdSalon);
-                cmd.Parameters.Add(param);
-
-                param = new SqlParameter("@Ubicacion", salon.Ubicacion);
+                SqlParameter param = new SqlParameter("@Ubicacion", salon.Ubicacion);
                 cmd.Parameters.Add(param);
                 param = new SqlParameter("@Capacidad", salon.Capacidad);
                 cmd.Parameters.Add(param);
 
                 param = new SqlParameter("@Status", salon.Status);
                 cmd.Parameters.Add(param);
+                param = new SqlParameter("@Codigo", salon.IdSalon);
+                cmd.Parameters.Add(param);
+                
+
                 SqlDataReader dr;
                 dr = cmd.ExecuteReader();
 
                 insercion = 0;
-                obtenerConexion().Close();
+                conexion.Close();
             }
             catch (ArgumentException e)
             {
@@ -156,7 +161,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
             }
             finally
             {
-               obtenerConexion().Close();
+               conexion.Close();
 
             }
             return insercion;
@@ -190,11 +195,13 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
         public bool Modificar(int id, Entidades.AEntidad entidad)
         {
             Boolean insercion = false;
-            Entidades.EClases.Salon salon = (Entidades.EClases.Salon)Fabricas.FabricaEntidad.CrearSalon();
+            Entidades.EClases.Salon salon = (Entidades.EClases.Salon)entidad;
+            SqlConnection conexion = obtenerConexion();
             try
             {
-                 obtenerConexion().Open();
-                 SqlCommand cmd = new SqlCommand("[dbo].[ModificarSalon]",obtenerConexion());
+                
+                 conexion.Open();
+                 SqlCommand cmd = new SqlCommand("[dbo].[ModificarSalon]",conexion);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter param = new SqlParameter("@Id_salon", salon.Id);
@@ -214,7 +221,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
                 dr = cmd.ExecuteReader();
 
                 insercion = true;
-                obtenerConexion().Close();
+                conexion.Close();
 
             }
             catch (ArgumentException e)
@@ -245,7 +252,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
             finally
             {
                
-                obtenerConexion().Close();
+               conexion.Close();
 
 
             }
@@ -268,10 +275,12 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
         {
             listasalon = new List<Entidades.AEntidad>();
             listasalon.RemoveRange(0, listasalon.Count);
+            SqlConnection conexion = obtenerConexion();
             try
             {
-                obtenerConexion().Open();
-                SqlCommand cmd = new SqlCommand("[dbo].[BusquedaUbicacionSalon]", obtenerConexion());
+                
+                conexion.Open();
+                SqlCommand cmd = new SqlCommand("[dbo].[BusquedaUbicacionSalon]", conexion);
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlParameter param = new SqlParameter("@Ubicacion", ubicacion);
                 cmd.Parameters.Add(param);
@@ -289,7 +298,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
                     listasalon.Add(salon);
                 }
 
-                obtenerConexion().Close();
+                conexion.Close();
 
             }
             catch (ArgumentException e)
@@ -314,7 +323,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
             }
             finally
             {
-                obtenerConexion().Close();
+                conexion.Close();
             }
             return listasalon;
         }
@@ -400,10 +409,11 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
         {
             listasalon = new List<Entidades.AEntidad>();
             listasalon.RemoveRange(0, listasalon.Count);
+            SqlConnection conexion = obtenerConexion();
             try
             {
-                obtenerConexion().Open();
-                SqlCommand cmd = new SqlCommand("[dbo].[BusquedaCapacidadMenorSalon]", obtenerConexion());
+               conexion.Open();
+                SqlCommand cmd = new SqlCommand("[dbo].[BusquedaCapacidadMenorSalon]", conexion);
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlParameter param = new SqlParameter("@Capacidad", stat);
                 cmd.Parameters.Add(param);
@@ -421,7 +431,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
                     listasalon.Add(salon);
                 }
 
-                obtenerConexion().Close();
+                conexion.Close();
 
             }
             catch (ArgumentException e)
@@ -446,7 +456,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
             }
             finally
             {
-                obtenerConexion().Close();
+                conexion.Close();
             }
             return listasalon;
         }
@@ -465,9 +475,10 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
         {
             listasalon = new List<Entidades.AEntidad>();
             listasalon.RemoveRange(0, listasalon.Count);
+            SqlConnection conexion = obtenerConexion();
             try
             {
-                obtenerConexion().Open();
+                conexion.Open();
                 SqlCommand cmd = new SqlCommand("[dbo].[BusquedaStatusSalon]", obtenerConexion());
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlParameter param = new SqlParameter("@Status", stat);
@@ -486,7 +497,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
                     listasalon.Add(salon);
                 }
 
-                obtenerConexion().Close();
+                conexion.Close();
 
             }
             catch (ArgumentException e)
@@ -511,7 +522,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
             }
             finally
             {
-                obtenerConexion().Close();
+                conexion.Close();
             }
             return listasalon;
         }
