@@ -45,7 +45,17 @@ namespace PuiPuiCapaLogicaDeNegocios.Fabricas
         {
             return new Salon();
         }
+        /// <summary>
+        /// Metodo estatico que retorna una instancia de la clase Salon 
+        /// encajonada en la clase abstracta AEntidad.
+        /// </summary>
+        /// <returns></returns>
+        public static AEntidad CrearSalon(string codigo, int capacidad, string ubicacion, int status) 
+        {
+            return new Salon(codigo, ubicacion, capacidad, status);
+        }
         #endregion
+
 
         #region Ejercicios
 
