@@ -45,17 +45,20 @@ margin-top: 0px;">
                 </td>
             </tr>
             <tr>
-                <td class="auto-style3">
-                    &nbsp;</td>
-                <td class="auto-style2">
-                    &nbsp;</td>
+                <td class="auto-style4">
+                    <asp:Label ID="Label7" runat="server" Text="Codigo del Salon:"></asp:Label>
+                </td>
+                <td class="auto-style5">
+                    <asp:TextBox ID="TextBoxCodigo" runat="server" Height="22px" Width="206px" ValidationGroup="check" Font-Names="Arial" Font-Size="12px"></asp:TextBox>
+                </td>
             </tr>
 
             <tr>
                 <td class="auto-style3">
                     &nbsp;</td>
                 <td class="auto-style2">
-                    &nbsp;</td>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator3" ControlToValidate="TextBoxCapacidad" ValidationGroup="check" ForeColor="Red"  runat="server" ErrorMessage="No se aceptan numero ni caracteres especiales" ValidationExpression="^[a-zA-Z''-'''.'\s]{1,30}$"></asp:RegularExpressionValidator>
+                </td>
             </tr>
 
             <tr>
@@ -83,6 +86,16 @@ margin-top: 0px;">
         }
         .auto-style3 {
             width: 187px;
+        }
+        .auto-style4
+        {
+            width: 187px;
+            height: 31px;
+        }
+        .auto-style5
+        {
+            width: 207px;
+            height: 31px;
         }
     </style>
 </asp:Content>

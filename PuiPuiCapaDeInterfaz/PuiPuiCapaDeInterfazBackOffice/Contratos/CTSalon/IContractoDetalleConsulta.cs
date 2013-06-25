@@ -11,6 +11,7 @@ namespace PuiPuiCapaDeInterfazBackOffice.Contratos.CTSalon
         String SessionID { get; set; }
         String TxtUbicacion { get; set; }
         String TxtStatus { get; set; }
+        String TxtCodigo{ get; set; }
         int TxtCapcidad { get; set; }
     }
 }

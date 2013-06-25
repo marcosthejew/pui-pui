@@ -61,11 +61,11 @@ margin-top: 0px;">
             </tr>
 
             <tr>
-                <td class="auto-style1" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
+                <td class="auto-style7" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
 margin-top: 0px;">
                   <asp:Label ID="Label7" runat="server" Text="Label" ForeColor="Red" Font-Names="Arial" Font-Size="12px">*</asp:Label>
                       <asp:Label ID="Label1" runat="server" Text="Status:"></asp:Label></td>
-                <td class="auto-style2" align="center" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
+                <td class="auto-style8" align="center" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
 margin-top: 0px;">
                     &nbsp;<asp:RadioButton ID="Activo" runat="server" GroupName="EstatusSalon" />
                     <asp:Label ID="Label2" runat="server" Text="Activo"></asp:Label>
@@ -75,17 +75,20 @@ margin-top: 0px;">
             </tr>
 
             <tr>
-                <td class="auto-style1">
-                    &nbsp;</td>
-                <td class="auto-style2">
-                    &nbsp;</td>
+                <td class="auto-style5">
+                    <asp:Label ID="Label8" runat="server" Text="Codigo del Salon:"></asp:Label>
+                </td>
+                <td class="auto-style6">
+                    <asp:TextBox ID="TextBoxCodigo" runat="server" Height="22px" Width="189px" ValidationGroup="check" Font-Names="Arial" Font-Size="12px"></asp:TextBox>
+                </td>
             </tr>
 
             <tr>
-                <td class="auto-style1">
-                    &nbsp;</td>
-                <td class="auto-style2">
-                    &nbsp;</td>
+                <td class="auto-style9">
+                    </td>
+                <td class="auto-style10">
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator3" ControlToValidate="TextBoxCapacidad" ValidationGroup="check" ForeColor="Red"  runat="server" ErrorMessage="No se aceptan numero ni caracteres especiales" ValidationExpression="^[a-zA-Z''-'''.'\s]{1,30}$"></asp:RegularExpressionValidator>
+                </td>
             </tr>
 
             <tr>
@@ -123,6 +126,36 @@ margin-top: 0px;">
         {
             width: 254px;
             height: 32px;
+        }
+        .auto-style5
+        {
+            width: 92px;
+            height: 45px;
+        }
+        .auto-style6
+        {
+            width: 254px;
+            height: 45px;
+        }
+        .auto-style7
+        {
+            width: 92px;
+            height: 38px;
+        }
+        .auto-style8
+        {
+            width: 254px;
+            height: 38px;
+        }
+        .auto-style9
+        {
+            width: 92px;
+            height: 36px;
+        }
+        .auto-style10
+        {
+            width: 254px;
+            height: 36px;
         }
     </style>
 </asp:Content>

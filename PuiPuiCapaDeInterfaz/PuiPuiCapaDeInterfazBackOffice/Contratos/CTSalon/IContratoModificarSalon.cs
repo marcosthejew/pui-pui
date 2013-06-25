@@ -12,7 +12,7 @@ namespace PuiPuiCapaDeInterfazBackOffice.Contratos.CTSalon
         Boolean RBStatus_Activo { set; get; }
         Boolean RBStatus_Inactivo { set; get; }
         String TXTSalonModificar{ set; get; }
-        String DPLSalonModificar { set; get; }
+        String TXTSalonCodigo { set; get; }
         int TxtCapacidad { set; get; }
     }
 }

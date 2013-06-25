@@ -11,11 +11,11 @@
             Visible="False" ForeColor="#ffffff"></asp:Label>
     </div>
 
-    <div  style="float:left;">
+    <div  style="float:left; width: 874px;">
         <fieldset style="width:775px; height:auto; margin-left:7.5%; fit-position:center;">
        <legend style="text-align:center;"><h2>Agregar Salón</h2></legend>
                
-            <table border="0" cellspacing="0" cellpadding="0" style="width: 654px; margin-left:86px" >
+            <table border="0" cellspacing="0" cellpadding="0" style="width: 654px; margin-left:86px; height: 177px;" >
             <tr>
                 <td rowspan="0" nowrap="nowrap" class="auto-style3" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
 margin-top: 0px;">
@@ -61,7 +61,7 @@ margin-top: 0px;" >
                     <asp:TextBox ID="TextBoxCapacidad" runat="server" Height="16px" Width="30px"></asp:TextBox>
                 </td>
                 <td class="auto-style7">
-                    (cantidad de personas)</td>
+                    &nbsp;</td>
             </tr>
             <tr>
                 <td></td>                
@@ -80,21 +80,27 @@ margin-top: 0px;">
 
 
                 </td>  
-                <td class="auto-style7">&nbsp;</td>  
+                <td class="auto-style7"><asp:Button ID="Button1" runat="server" Height="25px" Width="120px" Text="Buscar" CssClass="button" OnClick="botonBuscarSalon_Click"/>
+                </td>  
             </tr>
                  <tr>
                 <td></td>                
-                <td class="auto-style13">&nbsp;</td>  
-                <td class="auto-style18">&nbsp;</td>  
-                <td class="auto-style7"><asp:Button ID="Button1" runat="server" Height="25px" Width="120px" Text="Buscar" CssClass="button" OnClick="botonBuscarSalon_Click"/>
-                </td>  
+                <td class="auto-style13">
+                    <asp:RadioButton ID="consultarSalonPorCodigo" runat="server" ForeColor="White"
+                        GroupName="ConsultarSalon" Text="Codigo:"/>
+                     </td>  
+                <td class="auto-style18">
+                    <asp:TextBox ID="salonCodigo" runat="server" Height="22px" Width="143px" ValidationGroup="check"></asp:TextBox>
+                     </td>  
+                <td class="auto-style7">&nbsp; <asp:RegularExpressionValidator ID="RegularExpressionValidator2" ControlToValidate="salonCodigo" runat="server" ErrorMessage="No se aceptan numero ni caracteres especiales" ForeColor="Red" ValidationGroup="check" ValidationExpression="^[a-zA-Z''-'''.'\s]{1,45}$" Display="Dynamic"></asp:RegularExpressionValidator></td>  
+                
             </tr>
             </table>
             &nbsp;
             &nbsp;            
             
             <asp:GridView ID="GridConsultar" runat="server" CellPadding="4" ForeColor="#333333" 
-                        GridLines="None" align="center" Height="16px" Width="687px" 
+                        GridLines="None" align="center" Height="16px" Width="734px" 
                         OnRowCommand="GridConsultar_RowCommand" AllowPaging="True" PageSize="10" 
                         OnPageIndexChanging="GridConsultar_PageIndexChanging" 
                         OnSelectedIndexChanged="GridConsultar_SelectedIndexChanged" HorizontalAlign="Center">

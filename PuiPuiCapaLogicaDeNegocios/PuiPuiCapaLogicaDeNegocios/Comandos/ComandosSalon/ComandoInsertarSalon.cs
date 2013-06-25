@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using PuiPuiCapaLogicaDeNegocios.Entidades.EClases;
 using PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases;
 
 namespace PuiPuiCapaLogicaDeNegocios.Comandos.ComandosSalon
