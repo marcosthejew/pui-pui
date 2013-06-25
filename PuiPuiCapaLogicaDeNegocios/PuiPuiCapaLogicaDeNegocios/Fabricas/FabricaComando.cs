@@ -5,6 +5,7 @@ using System.Web;
 using PuiPuiCapaLogicaDeNegocios.Entidades;
 using PuiPuiCapaLogicaDeNegocios.Comandos;
 using PuiPuiCapaLogicaDeNegocios.Comandos.ComandosEjercicio;
+using PuiPuiCapaLogicaDeNegocios.Comandos.ComandoResevarClase;
 
 namespace PuiPuiCapaLogicaDeNegocios.Fabricas
 {
@@ -50,6 +51,15 @@ namespace PuiPuiCapaLogicaDeNegocios.Fabricas
         {
             return new ComandoModificarEjercicio(ejercicio);
         }
+        #endregion
+        
+        #region Reservacion Clase
+
+        public static AComando<List<AEntidad>> CrearComandoConsultarTodosReservacionClase()
+        {
+            return new ComandoConsultarTodosReservarClase();
+        }
+
         #endregion
     }
 }

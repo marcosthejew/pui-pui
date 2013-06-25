@@ -213,6 +213,15 @@ namespace PuiPuiCapaLogicaDeNegocios.Fabricas
         {
             return new ReservacionClase();
         }
+        /// <summary>
+        /// Metodo estatico que retorna una instancia de la clase 
+        /// ReservacionEventoCalendario encajonada en la clase abstracta AEntidad.
+        /// </summary>
+        /// <returns></returns>
+        public static AEntidad CrearReservacionEventoCalendario()
+        {
+            return new ReservacionEventoCalendario();
+        }
 
         /// <summary>
         /// Metodo estatico que retorna una instancia de la clase 

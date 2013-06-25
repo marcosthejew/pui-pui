@@ -1,8 +1,14 @@
-﻿using System;
+﻿using PuiPuiCapaLogicaDeNegocios.Entidades;
+using PuiPuiCapaLogicaDeNegocios.Entidades.EReservaciones;
+using PuiPuiCapaLogicaDeNegocios.Excepciones;
+using PuiPuiCapaLogicaDeNegocios.Fabricas;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
-
 namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsReservaciones
 {
     /// <summary>
@@ -10,20 +16,82 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsReservaciones
     /// entidad ReservacionClase en la base de datos de SQL Server de la capa de
     /// datos.
     /// </summary>
-    public class ReservacionClaseSQLServerDAO : AReservacionSQLServerDAO, 
-                                                IReservacionClaseDAO
+    public class ReservacionClaseSQLServerDAO : AReservacionSQLServerDAO,IReservacionClaseDAO
     {
+
+        #region Atributos
+        private SqlConnection conexion;
+        private SqlCommand cmd;
+        private SqlDataReader dr;
+        #endregion 
+
+        #region Metodos
+
+        #region horarios clases
         /// <summary>
         /// Devuelve una lista con todas las entidades activas de 
         /// ReservacionClase que se encuentran en la base de datos de SQL Server
         /// de la capa de datos.
         /// </summary>
         /// <returns></returns>
-        public List<Entidades.AEntidad> ConsultarTodos()
+         public List<AEntidad> ConsultarTodos()
         {
-            throw new NotImplementedException();
-        }
 
+            List<AEntidad> eventos = new List<AEntidad>();
+
+            try
+            {
+                conexion = obtenerConexion();
+                conexion.Open();
+                cmd = new SqlCommand("[dbo].[consultarTodosReservacionesCalendario]", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                dr = cmd.ExecuteReader();
+           
+                while (dr.Read())
+                {
+                   eventos.Add(new ReservacionEventoCalendario
+                    {
+                        id = Convert.ToInt32(dr.GetValue(0)),
+                        title = dr.GetValue(1).ToString(),
+                        start = dr.GetValue(2).ToString(),
+                        end = dr.GetValue(3).ToString(),
+                        allDay = false,
+                        instructor = dr.GetValue(4).ToString(),
+                        cuposDisponibles = Convert.ToInt32(dr.GetValue(5)),
+                        status = Convert.ToInt32(dr.GetValue(6)),
+                        color = "#CCFF33",
+                        textColor = "black"
+                    });
+                }
+            }
+            catch (ArgumentException e)
+            {
+                throw new ExcepcionReservarClaseConexionBD("Parametros invalidos", e);
+            }
+            catch (InvalidOperationException e)
+            {
+                throw new ExcepcionReservarClaseConexionBD("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new ExcepcionReservarClaseConexionBD("Ejercicio no encontrado", e);
+            }
+            catch (SqlException e)
+            {
+                throw new ExcepcionReservarClaseConexionBD("Error con base de datos", e);
+            }
+            catch (Exception e)
+            {
+                throw new ExcepcionReservarClaseConexionBD("Error general", e);
+            }
+            finally
+            {
+                CerrarConexion(conexion);
+            }
+            return eventos;
+
+        }
+        #endregion
         /// <summary>
         /// Devuelve la entidad de ReservacionClase activa que se encuentra en 
         /// la base de datos de SQL Server de la capa de datos correspondiente
@@ -82,5 +150,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsReservaciones
         {
             throw new NotImplementedException();
         }
+
+        #endregion
     }
 }
