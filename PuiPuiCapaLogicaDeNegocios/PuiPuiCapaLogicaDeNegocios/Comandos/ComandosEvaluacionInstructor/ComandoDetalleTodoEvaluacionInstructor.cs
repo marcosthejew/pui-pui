@@ -2,36 +2,33 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using PuiPuiCapaLogicaDeNegocios.Entidades;
+using PuiPuiCapaLogicaDeNegocios.Fabricas;
 using PuiPuiCapaLogicaDeNegocios.Entidades.EEvaluaciones;
+using PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEvaluaciones;
 
 
 namespace PuiPuiCapaLogicaDeNegocios.Comandos.ComandosEvaluacionInstructor
 {
-    public class ComandoDetalleTodoEvaluacionInstructor : AComando<EvaluacionInstructor>
-    
+    public class ComandoDetalleTodoEvaluacionInstructor : AComando<List<EvaluacionInstructor>>
+        
+        
+    {
+        public ComandoDetalleTodoEvaluacionInstructor()
         {
-        private List<AEntidad> EvaluacionInstruc;
-
-        public ComandoDetalleTodoEvaluacionInstructor(List<AEntidad> EvaluacionInstructor)
-        {
-            this.EvaluacionInstruc = EvaluacionInstructor;
+            
         }
-
-
 
         /// <summary>
         /// Ejecuta el comando.
         /// </summary>
         /// <returns></returns>
-        public override EvaluacionInstructor Ejecutar()
+        public override List<EvaluacionInstructor> Ejecutar()
         {
 
             DAOs.IDAO EvaluacionDao;
             EvaluacionDao = new DAOs.DAOsEvaluaciones.EvaluacionInstructorSQLServerDAO();
-            EvaluacionInstruc = EvaluacionDao.ConsultarTodos();            
-            throw new NotImplementedException();
-            //return (this.EvaluacionInstruc);
+            List<EvaluacionInstructor> EvaluacionInstruc = (EvaluacionDao.ConsultarTodos()).Cast<EvaluacionInstructor>().ToList();                        
+            return (EvaluacionInstruc);
             
         }
     }
