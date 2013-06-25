@@ -8,6 +8,7 @@ namespace PuiPuiCapaDeInterfazBackOffice.Contractos.CTSalon
 {
     interface IContratoAgregarSalon
     {
+        String TxtCodigoSalon { get; set; }
         String TxtNombreSalon { get; set; }
         int TextCapacidadSalon { get; set; }
 

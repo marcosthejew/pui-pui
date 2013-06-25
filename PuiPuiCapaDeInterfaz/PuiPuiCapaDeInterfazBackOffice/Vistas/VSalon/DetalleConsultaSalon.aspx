@@ -47,10 +47,12 @@ margin-top: 0px;">
             </tr>
 
             <tr>
-                <td class="auto-style1">
-                    &nbsp;</td>
-                <td class="auto-style2">
-                    &nbsp;</td>
+                <td class="auto-style7">
+                    <asp:Label ID="Label8" runat="server" Text="Codigo del Salon:"></asp:Label>
+                </td>
+                <td class="auto-style8">
+                    <asp:TextBox ID="TextBoxCodigo" runat="server" Height="22px" Width="189px"  Font-Names="Arial" Font-Size="12px"></asp:TextBox>
+                </td>
             </tr>
 
             <tr>
@@ -105,6 +107,16 @@ margin-top: 0px;">
         {
             width: 207px;
             height: 44px;
+        }
+        .auto-style7
+        {
+            width: 180px;
+            height: 46px;
+        }
+        .auto-style8
+        {
+            width: 207px;
+            height: 46px;
         }
     </style>
 </asp:Content>
