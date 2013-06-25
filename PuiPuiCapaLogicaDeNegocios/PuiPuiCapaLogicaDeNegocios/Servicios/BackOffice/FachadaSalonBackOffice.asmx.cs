@@ -21,7 +21,7 @@ namespace PuiPuiCapaLogicaDeNegocios.Servicios.BackOffice
     {
 
         [WebMethod]
-        public int ServicioAgregarEjercicio(string codigo, string ubicacion, int status, int capacidad)
+        public int ServicioAgregarSalon(string codigo, string ubicacion, int status, int capacidad)
         {
 
             Salon salon = (Salon) FabricaEntidad.CrearSalon(codigo,capacidad,ubicacion,status);

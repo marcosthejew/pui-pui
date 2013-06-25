@@ -57,7 +57,7 @@ margin-top: 0px;">
                 <td class="auto-style3">
                     &nbsp;</td>
                 <td class="auto-style2">
-                    <asp:RegularExpressionValidator ID="RegularExpressionValidator3" ControlToValidate="TextBoxCapacidad" ValidationGroup="check" ForeColor="Red"  runat="server" ErrorMessage="No se aceptan numero ni caracteres especiales" ValidationExpression="^[a-zA-Z''-'''.'\s]{1,30}$"></asp:RegularExpressionValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator3" ControlToValidate="TextBoxCodigo" ValidationGroup="check" ForeColor="Red"  runat="server" ErrorMessage="No se aceptan numero ni caracteres especiales" ValidationExpression="^[a-zA-Z''-'''.'\s]{1,30}$"></asp:RegularExpressionValidator>
                 </td>
             </tr>
 
