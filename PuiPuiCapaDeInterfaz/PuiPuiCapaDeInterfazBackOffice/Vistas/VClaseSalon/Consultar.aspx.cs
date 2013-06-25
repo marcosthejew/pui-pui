@@ -18,5 +18,10 @@ namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VClaseSalon
         {
 
         }
+
+        protected void botonBuscarClase_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

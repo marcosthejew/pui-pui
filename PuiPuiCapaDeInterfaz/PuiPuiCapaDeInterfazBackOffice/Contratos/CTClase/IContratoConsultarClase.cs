@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace PuiPuiCapaDeInterfazBackOffice.Contratos.CTClase
 {
-    interface IContratoConsultarClase
+    public interface IContratoConsultarClase
     {
      
         Boolean RBConsultaCompleta { set; get; }

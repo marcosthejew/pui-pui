@@ -13,5 +13,20 @@ namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VClaseSalon
         {
 
         }
+
+        protected void Cancelar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void defaultButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnSave_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
