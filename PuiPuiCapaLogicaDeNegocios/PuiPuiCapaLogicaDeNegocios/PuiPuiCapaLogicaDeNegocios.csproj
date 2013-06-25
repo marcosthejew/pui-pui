@@ -60,6 +60,22 @@
   <ItemGroup>
     <Content Include="Default.aspx" />
     <Content Include="Log4netConfig.xml" />
+    <Content Include="packages\log4net.2.0.0\lib\net10-full\log4net.dll" />
+    <Content Include="packages\log4net.2.0.0\lib\net10-full\log4net.xml" />
+    <Content Include="packages\log4net.2.0.0\lib\net11-full\log4net.dll" />
+    <Content Include="packages\log4net.2.0.0\lib\net11-full\log4net.xml" />
+    <Content Include="packages\log4net.2.0.0\lib\net20-cf\log4net.dll" />
+    <Content Include="packages\log4net.2.0.0\lib\net20-cf\log4net.xml" />
+    <Content Include="packages\log4net.2.0.0\lib\net20-full\log4net.dll" />
+    <Content Include="packages\log4net.2.0.0\lib\net20-full\log4net.xml" />
+    <Content Include="packages\log4net.2.0.0\lib\net35-client\log4net.dll" />
+    <Content Include="packages\log4net.2.0.0\lib\net35-client\log4net.xml" />
+    <Content Include="packages\log4net.2.0.0\lib\net35-full\log4net.dll" />
+    <Content Include="packages\log4net.2.0.0\lib\net35-full\log4net.xml" />
+    <Content Include="packages\log4net.2.0.0\lib\net40-client\log4net.dll" />
+    <Content Include="packages\log4net.2.0.0\lib\net40-client\log4net.xml" />
+    <Content Include="packages\log4net.2.0.0\lib\net40-full\log4net.dll" />
+    <Content Include="packages\log4net.2.0.0\lib\net40-full\log4net.xml" />
     <Content Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
@@ -209,6 +225,8 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Fakes Include="Fakes\log4net.fakes" />
+    <Content Include="packages\log4net.2.0.0\log4net.2.0.0.nupkg" />
+    <Content Include="packages\repositories.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
