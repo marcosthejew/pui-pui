@@ -12,6 +12,8 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EEjercicios
         #region Atributos
 
         private string _nombreMusculo;
+        private string _descripcion;
+        private bool _status;        
 
         #endregion
 
@@ -28,6 +30,18 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EEjercicios
             get { return _id; }
             set { _id = value; }
 
+        }
+
+        public string Descripcion
+        {
+            get { return _descripcion; }
+            set { _descripcion = value; }
+        }
+
+        public bool Status
+        {
+            get { return _status; }
+            set { _status = value; }
         }
 
         #endregion MetodoGetSet
@@ -53,6 +67,20 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EEjercicios
         {
             _id = id;
             _nombreMusculo = nombre;
+        }
+
+        public Musculo(int id, string nombre, string descripcion) {
+            _id = id;
+            _nombreMusculo = nombre;
+            _descripcion = descripcion;
+        }
+
+        public Musculo(int id, string nombre, string descripcion, bool status)
+        {
+            _id = id;
+            _nombreMusculo = nombre;
+            _descripcion = descripcion;
+            _status = status;
         }
 
         #endregion Constructores
