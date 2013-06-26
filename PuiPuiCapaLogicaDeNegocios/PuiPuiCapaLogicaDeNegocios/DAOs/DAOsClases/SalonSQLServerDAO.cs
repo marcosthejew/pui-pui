@@ -204,7 +204,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
                  SqlCommand cmd = new SqlCommand("[dbo].[ModificarSalon]",conexion);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                SqlParameter param = new SqlParameter("@Id_salon", salon.Id);
+                SqlParameter param = new SqlParameter("@Id_salon",id);
                 cmd.Parameters.Add(param);
 
                 param = new SqlParameter("@Codigo", salon.IdSalon);
