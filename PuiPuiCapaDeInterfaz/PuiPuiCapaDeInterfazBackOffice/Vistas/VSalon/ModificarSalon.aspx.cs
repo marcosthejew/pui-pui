@@ -18,5 +18,13 @@ namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VSalon
         {
 
         }
+
+        protected void Aceptar_Click(object sender, EventArgs e)
+        {
+            if ((TextBoxCodigo.Text.Equals("")) || (TextBoxUbicacion.Text.Equals("")) || (TextBoxCapacidad.Text.Equals("") )||(Activo.Checked==false)||(Inactivo.Checked=false) )
+            {
+                NClase.Visible = true;
+            }
+        }
     }
 }
