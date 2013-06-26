@@ -30,8 +30,15 @@ namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VClase
 
         protected void Aceptar_Click(object sender, EventArgs e)
         {
-            PAgregarClase agregar = new PAgregarClase(this);
-            agregar.InsertarClase();
+            if ((nombreNuevaClase.Text.Equals("")) || (descripcioNuevaClase.Text.Equals("")))
+            {
+                NClase.Enabled = true;
+            }
+            else
+            {
+                PAgregarClase agregar = new PAgregarClase(this);
+                agregar.InsertarClase();
+            }
         }
 
         protected void Cancelar_Click(object sender, EventArgs e)

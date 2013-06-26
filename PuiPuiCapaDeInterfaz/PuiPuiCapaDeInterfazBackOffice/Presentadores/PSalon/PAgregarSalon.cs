@@ -20,7 +20,7 @@ namespace PuiPuiCapaDeInterfazBackOffice.Presentadores.PSalon
         public  bool AgregarSalon()
         {
             FachadaSalonBackOfficeSoapClient agregar = new FachadaSalonBackOfficeSoapClient();
-            int se_agrego = agregar.ServicioAgregarEjercicio(salon.TxtCodigoSalon, salon.TxtNombreSalon, 0, salon.TextCapacidadSalon);
+            int se_agrego = agregar.ServicioAgregarSalon(salon.TxtCodigoSalon, salon.TxtNombreSalon, 0, salon.TextCapacidadSalon);
 
             if (se_agrego == 0)
                 return true;

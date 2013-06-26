@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using PuiPuiCapaLogicaDeNegocios.Excepciones;
 
 namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsHorario
 {
@@ -47,7 +50,57 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsHorario
         /// <returns></returns>
         public int Agregar(Entidades.AEntidad entidad)
         {
-            throw new NotImplementedException();
+            int insercion = 1;
+            Entidades.EHorario.Horario horario = (Entidades.EHorario.Horario)entidad;
+            SqlConnection conexion = obtenerConexion();
+            try
+            {
+                conexion.Open();
+                SqlCommand cmd = new SqlCommand("[dbo].[agregarHorario]", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlParameter param = new SqlParameter("@hora_inicio", horario.HoraInicio);
+                cmd.Parameters.Add(param);
+                param = new SqlParameter("@hora_fin", horario.HoraFin);
+                cmd.Parameters.Add(param);
+                param = new SqlParameter("@dia_semana", horario.DiaSemana);
+                cmd.Parameters.Add(param);
+                SqlDataReader dr;
+                dr = cmd.ExecuteReader();
+                insercion = 0;
+                conexion.Close();
+
+            }
+            catch (ArgumentException e)
+            {
+                insercion = 1;
+                throw new ExcepcionHorario("Parametros invalidos", e);
+            }
+            catch (InvalidOperationException e)
+            {
+                insercion = 1;
+                throw new ExcepcionHorario("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                insercion = 1;
+                throw new ExcepcionHorario("Objetos Vacios", e);
+            }
+            catch (SqlException e)
+            {
+                insercion = 1;
+                throw new ExcepcionHorario("Error con la base de datos", e);
+            }
+            catch (Exception e)
+            {
+                insercion = 1;
+                throw new ExcepcionHorario("Falla", e);
+            }
+            finally
+            {
+                conexion.Close(); ;
+
+            }
+            return insercion;
         }
 
         /// <summary>

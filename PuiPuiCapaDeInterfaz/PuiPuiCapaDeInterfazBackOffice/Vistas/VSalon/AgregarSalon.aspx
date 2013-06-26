@@ -21,12 +21,12 @@
                
             <table style="margin:0px auto auto 22%; height: 140px; width: 473px;" border="0" cellspacing="0" cellpadding="0" align="center">
             <tr>
-                <td class="auto-style3" align="left" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
+                <td class="auto-style6" align="left" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
 margin-top: 0px;">
                     <asp:Label ID="Rojo" runat="server" Text="Label" ForeColor="Red" Font-Names="Arial" Font-Size="12px">*</asp:Label>
                     <asp:Label ID="Label4" runat="server" Text="Ubicación:"></asp:Label>
                 </td>
-                <td class="auto-style2">
+                <td class="auto-style7">
                     &nbsp;<asp:RegularExpressionValidator ID="RegularExpressionValidator1" ControlToValidate="TextBoxUbicacion" runat="server" ErrorMessage="No se aceptan numero ni caracteres especiales" ForeColor="Red"  ValidationGroup="check" ValidationExpression="^[a-zA-Z''-'''.'\s]{1,45}$"  Display="Dynamic" ></asp:RegularExpressionValidator>
                     <asp:TextBox ID="TextBoxUbicacion" runat="server" Height="22px" Width="270px" ValidationGroup="check" Font-Names="Arial" Font-Size="12px"></asp:TextBox>
                 </td>
@@ -97,5 +97,15 @@ margin-top: 0px;">
             width: 207px;
             height: 31px;
         }
+    .auto-style6
+    {
+        width: 187px;
+        height: 105px;
+    }
+    .auto-style7
+    {
+        width: 207px;
+        height: 105px;
+    }
     </style>
 </asp:Content>

@@ -56,6 +56,18 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EHorario
             _id = id;
             
         }
+        public Horario(int id, TimeSpan horaInicio, TimeSpan horaFin)
+        {
+            _id = id;
+            _horaInicio = horaInicio;
+            _horaFin = horaFin;
+        }
+        public Horario( TimeSpan horaInicio, TimeSpan horaFin)
+        {
+            _horaInicio = horaInicio;
+            _horaFin = horaFin;
+        }
+
 
         public Horario(int id, TimeSpan horaInicio,TimeSpan horaFin,string diaSemana)
         {

@@ -41,8 +41,28 @@ namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VSalon
 
         protected void Aceptar_Click(object sender, EventArgs e)
         {
-            PAgregarSalon agrega = new PAgregarSalon(this);
-            agrega.AgregarSalon();
+
+            if ((TextBoxCodigo.Text.Equals("")) || (TextBoxUbicacion.Text.Equals("")) || (TextBoxCapacidad.Text.Equals("")))
+            {
+                NClase.Visible = true;
+            }
+            else
+            {
+                NClase.Visible = false;
+                PAgregarSalon agrega = new PAgregarSalon(this);
+                agrega.AgregarSalon();
+                if (agrega.AgregarSalon() == true)
+                {
+                    Exito.Visible = true;
+
+                }
+                else
+                {
+
+                    falla.Visible = true;
+                
+                }
+            }
         }
     }
 }

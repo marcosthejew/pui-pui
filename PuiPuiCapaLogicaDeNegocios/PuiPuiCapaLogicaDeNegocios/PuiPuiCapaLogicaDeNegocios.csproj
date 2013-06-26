@@ -82,6 +82,7 @@
     <Content Include="Servicios\BackOffice\FachadaClasesBackOffice.asmx" />
     <Content Include="Servicios\BackOffice\FachadaEjerciciosBackOffice.asmx" />
     <Content Include="Servicios\BackOffice\FachadaInstructoresBackOffice.asmx" />
+    <Content Include="Servicios\BackOffice\FachadaSalonBackOffice.asmx" />
     <Content Include="Servicios\BackOffice\FachadaUsuariosLoginBackOffice.asmx" />
     <Content Include="Servicios\FrontOffice\FachadaClasesFrontOffice.asmx" />
     <Content Include="Servicios\FrontOffice\FachadaReservarClasesFrontOffice.asmx" />
@@ -107,6 +108,7 @@
     <Compile Include="Comandos\ComandosEvaluacionInstructor\ComandoDetalleTodoEvaluacionInstructor.cs" />
     <Compile Include="Comandos\ComandosEvaluacionInstructor\ComandoInsertarEvaluacionInstructor.cs" />
     <Compile Include="Comandos\ComandosEvaluacionInstructor\ComandoModificarEvaluacionInstructor.cs" />
+    <Compile Include="Comandos\ComandosHorario\ComandoInsertaHorario.cs" />
     <Compile Include="Comandos\ComandosSalon\ComandoBusquedaCapacidadMayorSalon.cs" />
     <Compile Include="Comandos\ComandosSalon\ComandoBusquedaCapacidadMenorSalon.cs" />
     <Compile Include="Comandos\ComandosSalon\ComandoBusquedaStatusSalon.cs" />
@@ -185,6 +187,7 @@
     <Compile Include="Excepciones\AExcepcionLogicaPuiPui.cs" />
     <Compile Include="Excepciones\ExcepcionConexionBD.cs" />
     <Compile Include="Excepciones\ExcepcionEjercicioConexionBD.cs" />
+    <Compile Include="Excepciones\ExcepcionHorario.cs" />
     <Compile Include="Excepciones\ExcepcionMusculoConexionBD.cs" />
     <Compile Include="Excepciones\ExcepcionReservarClaseConexionBD.cs" />
     <Compile Include="Excepciones\ExecpcionClaseSalon.cs" />
@@ -192,6 +195,7 @@
     <Compile Include="Fabricas\AFabricaDAO.cs" />
     <Compile Include="Fabricas\FabricaComando.cs" />
     <Compile Include="Fabricas\FabricaComandosEvaluacionInstructor.cs" />
+    <Compile Include="Fabricas\FabricaComandosHorario.cs" />
     <Compile Include="Fabricas\FabricaComandosSalon.cs" />
     <Compile Include="Fabricas\FabricaEntidad.cs" />
     <Compile Include="Fabricas\FabricaSQLServerDAO.cs" />
@@ -206,6 +210,10 @@
     </Compile>
     <Compile Include="Servicios\BackOffice\FachadaInstructoresBackOffice.asmx.cs">
       <DependentUpon>FachadaInstructoresBackOffice.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Servicios\BackOffice\FachadaSalonBackOffice.asmx.cs">
+      <DependentUpon>FachadaSalonBackOffice.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Servicios\BackOffice\FachadaUsuariosLoginBackOffice.asmx.cs">
