@@ -76,7 +76,7 @@ margin-top: 0px;">
 
             <tr>
                 <td class="auto-style5">
-                    <asp:Label ID="Label8" runat="server" Text="Codigo del Salon:"></asp:Label>
+                   <h2> Codigo del Salon:</h2>
                 </td>
                 <td class="auto-style6">
                     <asp:TextBox ID="TextBoxCodigo" runat="server" Height="22px" Width="189px" ValidationGroup="check" Font-Names="Arial" Font-Size="12px"></asp:TextBox>

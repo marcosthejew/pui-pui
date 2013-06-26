@@ -24,7 +24,7 @@ margin-top: 0px;">
                 <td rowspan="1" nowrap="nowrap" class="auto-style12" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
 margin-top: 0px;">
                      <asp:RadioButton ID="consultaCompleta" runat="server" 
-                        GroupName="ConsultarSalon" Text="Todos los parámetros" OnCheckedChanged="consultaCompleta_CheckedChanged1" /> 
+                        GroupName="ConsultarSalon" Text="Todos los parámetros" /> 
                 </td>              
                 <td class="auto-style18">&nbsp;</td>              
                 <td class="auto-style7">&nbsp;</td>
@@ -34,7 +34,7 @@ margin-top: 0px;">
                 <td class="auto-style15" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
 margin-top: 0px;">
                     <asp:RadioButton ID="consultarSalonPorUbicacion" runat="server" 
-                        GroupName="ConsultarSalon" Text="Ubicación:" OnCheckedChanged="consultarSalonPorUbicacion_CheckedChanged"/>
+                        GroupName="ConsultarSalon" Text="Ubicación:" />
                     </td>  
                 <td class="auto-style19">
                     <asp:TextBox ID="salon" runat="server" Height="22px" Width="172px" ValidationGroup="check"></asp:TextBox>
@@ -50,7 +50,7 @@ margin-top: 0px;">
                 <td rowspan="1" nowrap="nowrap" class="auto-style12" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
 margin-top: 0px;" >
                      <asp:RadioButton ID="consultarSalonPorCapacidad" runat="server" 
-                        GroupName="ConsultarSalon" Text="Capacidad:" OnCheckedChanged="consultaCapacidad_CheckedChanged1" />
+                        GroupName="ConsultarSalon" Text="Capacidad:" />
                     </td>
 
                 <td rowspan="0" nowrap="nowrap" class="auto-style20" >
@@ -68,7 +68,7 @@ margin-top: 0px;" >
                 <td class="auto-style13" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
 margin-top: 0px;">
                     <asp:RadioButton ID="consultaSalonPorStatus" runat="server" 
-                        GroupName="ConsultarSalon" Text="Status:" OnCheckedChanged="consultaSalonPorStatus_CheckedChanged"/>
+                        GroupName="ConsultarSalon" Text="Status:" />
                        
                     
                     </td>  
@@ -101,9 +101,8 @@ margin-top: 0px;">
             
             <asp:GridView ID="GridConsultar" runat="server" CellPadding="4" ForeColor="#333333" 
                         GridLines="None" align="center" Height="16px" Width="734px" 
-                        OnRowCommand="GridConsultar_RowCommand" AllowPaging="True" PageSize="10" 
-                        OnPageIndexChanging="GridConsultar_PageIndexChanging" 
-                        OnSelectedIndexChanged="GridConsultar_SelectedIndexChanged" HorizontalAlign="Center">
+                       AllowPaging="True" PageSize="10" 
+                        HorizontalAlign="Center">
                         <AlternatingRowStyle BackColor="White" />
                         <EditRowStyle BackColor="#2461BF" HorizontalAlign="Center" />
                         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />

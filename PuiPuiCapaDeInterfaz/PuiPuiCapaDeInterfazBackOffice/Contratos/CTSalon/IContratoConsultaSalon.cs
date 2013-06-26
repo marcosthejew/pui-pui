@@ -12,7 +12,7 @@ namespace PuiPuiCapaDeInterfazBackOffice.Contratos.CTSalon
         Boolean RBUbicacion { set; get; }
         Boolean RBCapacidad { set; get; }
         Boolean RBStatus { set; get; }
-        String SessionID { get; set; }
+       /*String SessionID { get; set; }*/
         String TextNombreSalon { set; get; }
         String DPLStatus { set; get; }
         String DPLCapacidad{ set; get; }

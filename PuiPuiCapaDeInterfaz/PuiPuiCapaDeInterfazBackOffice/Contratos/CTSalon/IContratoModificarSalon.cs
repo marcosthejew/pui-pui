@@ -14,5 +14,6 @@ namespace PuiPuiCapaDeInterfazBackOffice.Contratos.CTSalon
         String TXTSalonModificar{ set; get; }
         String TXTSalonCodigo { set; get; }
         int TxtCapacidad { set; get; }
+        int SessionID{ set; get; }
     }
 }
