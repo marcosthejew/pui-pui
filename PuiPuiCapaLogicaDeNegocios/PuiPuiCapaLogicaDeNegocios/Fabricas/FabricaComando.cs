@@ -6,6 +6,7 @@ using PuiPuiCapaLogicaDeNegocios.Entidades;
 using PuiPuiCapaLogicaDeNegocios.Comandos;
 using PuiPuiCapaLogicaDeNegocios.Comandos.ComandosEjercicio;
 using PuiPuiCapaLogicaDeNegocios.Comandos.ComandoResevarClase;
+using System.IO;
 
 namespace PuiPuiCapaLogicaDeNegocios.Fabricas
 {
@@ -58,6 +59,10 @@ namespace PuiPuiCapaLogicaDeNegocios.Fabricas
         public static AComando<List<AEntidad>> CrearComandoConsultarTodosReservacionClase()
         {
             return new ComandoConsultarTodosReservarClase();
+        }
+        public static AComando<StringWriter> CrearComandoSerializadorListaEntidades(List<AEntidad> entidad)
+        {
+            return new ComandoSerializadorListaEntidades(entidad);
         }
 
         #endregion

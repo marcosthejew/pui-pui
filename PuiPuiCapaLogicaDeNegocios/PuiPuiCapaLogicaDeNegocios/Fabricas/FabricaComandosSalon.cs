@@ -31,9 +31,9 @@ namespace PuiPuiCapaLogicaDeNegocios.Fabricas
         {
             return new ComandoInactivarSalon(id);
         }
-        public static AComando<bool> CrearComandoModificarSalon(int id)
+        public static AComando<bool> CrearComandoModificarSalon(int id, Salon salon)
         {
-            return new ComandoModificarSalon(id);
+            return new ComandoModificarSalon(id,salon);
         }
         public static AComando <List<Salon>>
         CrearComandoBusquedaUbicacionSalones(String ubicacion)
