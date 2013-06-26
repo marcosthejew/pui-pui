@@ -5,6 +5,7 @@ using System.Web;
 using PuiPuiCapaLogicaDeNegocios.Entidades;
 using PuiPuiCapaLogicaDeNegocios.Comandos;
 using PuiPuiCapaLogicaDeNegocios.Comandos.ComandosEjercicio;
+using PuiPuiCapaLogicaDeNegocios.Comandos.ComandosInstructor;
 using PuiPuiCapaLogicaDeNegocios.Comandos.ComandoResevarClase;
 using System.IO;
 
@@ -25,7 +26,7 @@ namespace PuiPuiCapaLogicaDeNegocios.Fabricas
             return new ComandoHolaMundo();
         }
 
-        #region Ejercicios
+        #region Ejercicio
 
         public static AComando<bool> CrearComandoAgregarEjercicio(AEntidad ejercicio)
         {
@@ -52,6 +53,35 @@ namespace PuiPuiCapaLogicaDeNegocios.Fabricas
         {
             return new ComandoModificarEjercicio(ejercicio);
         }
+        #endregion
+
+        #region Instructor
+
+        public static AComando<bool> CrearComandoAgregarInstructor(AEntidad instructor)
+        {
+            return new ComandoAgregarInstructor(instructor);
+        }
+
+        public static AComando<AEntidad> CrearComandoConsultarPorIdInstructor(AEntidad instructor)
+        {
+            return new ComandoConsultarPorIdInstructor(instructor);
+        }
+
+        public static AComando<List<AEntidad>> CrearComandoConsultarTodosInstructor()
+        {
+            return new ComandoConsultarTodosInstructor();
+        }
+
+        public static AComando<bool> CrearComandoInactivarInstructor(AEntidad instructor)
+        {
+            return new ComandoInactivarInstructor(instructor);
+        }
+
+        public static AComando<bool> CrearComandoModificarInstructor(AEntidad instructor)
+        {
+            return new ComandoModificarInstructor(instructor);
+        }
+
         #endregion
         
         #region Reservacion Clase
