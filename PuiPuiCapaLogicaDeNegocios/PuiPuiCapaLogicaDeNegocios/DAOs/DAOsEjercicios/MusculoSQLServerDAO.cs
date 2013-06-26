@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using PuiPuiCapaLogicaDeNegocios.Entidades;
+using PuiPuiCapaLogicaDeNegocios.Entidades.EEjercicios;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
+using PuiPuiCapaLogicaDeNegocios.Fabricas;
+using PuiPuiCapaLogicaDeNegocios.Excepciones;
 
 namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEjercicios
 {
@@ -12,15 +19,69 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEjercicios
     /// </summary>
     public class MusculoSQLServerDAO : ASQLServerDAO, IMusculoDAO
     {
+        #region Atributos
+
+        SqlConnection _conexion;
+        SqlCommand _cmd;
+        SqlDataReader _dr;
+
+        #endregion
+
         /// <summary>
         /// Devuelve una lista con todas las entidades activas de Musculo 
         /// que se encuentran en la base de datos de SQL Server de la capa de 
         /// datos.
         /// </summary>
         /// <returns></returns>
-        public List<Entidades.AEntidad> ConsultarTodos()
+        public List<AEntidad> ConsultarTodos()
         {
-            throw new NotImplementedException();
+            //Devuelvo esta lista
+            List<AEntidad> musculos = new List<AEntidad>();
+            try
+            {
+                _conexion = obtenerConexion();
+                _conexion.Open();
+                _cmd = new SqlCommand("[dbo].[consultarTodosMusculos]", _conexion);
+                _cmd.CommandType = CommandType.StoredProcedure;
+                _dr = _cmd.ExecuteReader();
+
+                while (_dr.Read())
+                {
+                    AEntidad musculo = FabricaEntidad.CrearMusculo();
+                    (musculo as Musculo).IdMusculo = Convert.ToInt32(_dr.GetValue(0));
+                    (musculo as Musculo).NombreMusculo = _dr.GetValue(1).ToString();
+                    (musculo as Musculo).Descripcion = _dr.GetValue(2).ToString();
+                    (musculo as Musculo).Status = Convert.ToBoolean(_dr.GetValue(3));
+
+                    musculos.Add(musculo);
+                }
+
+            }
+            catch (ArgumentException e)
+            {
+                throw new ExcepcionMusculoConexionBD("Parametros invalidos", e);
+            }
+            catch (InvalidOperationException e)
+            {
+                throw new ExcepcionMusculoConexionBD("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new ExcepcionMusculoConexionBD("Musculo no encontrado", e);
+            }
+            catch (SqlException e)
+            {
+                throw new ExcepcionMusculoConexionBD("Error con base de datos", e);
+            }
+            catch (Exception e)
+            {
+                throw new ExcepcionMusculoConexionBD("Error general musculo", e);
+            }
+            finally
+            {
+                CerrarConexion(_conexion);
+            }
+            return musculos;
         }
 
         /// <summary>
@@ -32,9 +93,55 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEjercicios
         /// el id de la entidad Musculo que desea consultarse.
         /// </param>
         /// <returns></returns>
-        public Entidades.AEntidad ConsultarPorId(int id)
+        public AEntidad ConsultarPorId(int id)
         {
-            throw new NotImplementedException();
+
+            AEntidad musculoCompleto = FabricaEntidad.CrearMusculo();
+
+            try
+            {
+                _conexion = obtenerConexion();
+                _conexion.Open();
+                _cmd = new SqlCommand("[dbo].[buscarMusculoPorId]", _conexion);
+                _cmd.CommandType = CommandType.StoredProcedure;
+                _cmd.Parameters.AddWithValue("@idMusculo", id);
+                _dr = _cmd.ExecuteReader();
+
+                if (_dr.Read())
+                {
+                    (musculoCompleto as Musculo).IdMusculo = Convert.ToInt32(_dr.GetValue(0));
+                    (musculoCompleto as Musculo).NombreMusculo = _dr.GetValue(1).ToString();
+                    (musculoCompleto as Musculo).Descripcion = _dr.GetValue(2).ToString();
+                    (musculoCompleto as Musculo).Status = Convert.ToBoolean(_dr.GetValue(3));
+
+                }
+
+            }
+            catch (ArgumentException e)
+            {
+                throw new ExcepcionMusculoConexionBD("Parametros invalidos", e);
+            }
+            catch (InvalidOperationException e)
+            {
+                throw new ExcepcionMusculoConexionBD("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new ExcepcionMusculoConexionBD("Musculo no encontrado", e);
+            }
+            catch (SqlException e)
+            {
+                throw new ExcepcionMusculoConexionBD("Error con base de datos", e);
+            }
+            catch (Exception e)
+            {
+                throw new ExcepcionMusculoConexionBD("Error general", e);
+            }
+            finally
+            {
+                CerrarConexion(_conexion);
+            }
+            return musculoCompleto;
         }
 
         /// <summary>
@@ -45,9 +152,53 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEjercicios
         /// la entidad que se desea agregar.
         /// </param>
         /// <returns></returns>
-        public int Agregar(Entidades.AEntidad entidad)
+        public int Agregar(AEntidad entidad)
         {
-            throw new NotImplementedException();
+            return 0;
+        }
+
+        public bool Agregar(int x, AEntidad entidad)
+        {
+
+            bool flag = false;
+
+            try
+            {
+                _conexion = obtenerConexion();
+                _conexion.Open();
+                _cmd = new SqlCommand("[dbo].[agregarMusculo]", _conexion);
+                _cmd.CommandType = CommandType.StoredProcedure;
+                _cmd.Parameters.AddWithValue("@nombreMusculo", (entidad as Musculo).NombreMusculo);
+                _cmd.Parameters.AddWithValue("@descripcionMusculo", (entidad as Musculo).Descripcion);
+                _dr = _cmd.ExecuteReader();
+                flag = true;
+
+            }
+            catch (ArgumentException e)
+            {
+                throw new ExcepcionMusculoConexionBD("Parametros invalidos", e);
+            }
+            catch (InvalidOperationException e)
+            {
+                throw new ExcepcionMusculoConexionBD("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new ExcepcionMusculoConexionBD("Musculo no encontrado", e);
+            }
+            catch (SqlException e)
+            {
+                throw new ExcepcionMusculoConexionBD("Error con base de datos", e);
+            }
+            catch (Exception e)
+            {
+                throw new ExcepcionMusculoConexionBD("Error general", e);
+            }
+            finally
+            {
+                CerrarConexion(_conexion);
+            }
+            return flag;
         }
 
         /// <summary>
@@ -61,7 +212,43 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEjercicios
         /// <returns></returns>
         public bool Inactivar(int id)
         {
-            throw new NotImplementedException();
+            bool flag = false;
+
+            try
+            {
+                _conexion = obtenerConexion();
+                _conexion.Open();
+                _cmd = new SqlCommand("[dbo].[cambiarEstado]", _conexion);
+                _cmd.CommandType = CommandType.StoredProcedure;
+                _cmd.Parameters.AddWithValue("@idMusculo", id);
+                _dr = _cmd.ExecuteReader();
+                flag = true;
+            }
+            catch (ArgumentException e)
+            {
+                throw new ExcepcionMusculoConexionBD("Parametros invalidos", e);
+            }
+            catch (InvalidOperationException e)
+            {
+                throw new ExcepcionMusculoConexionBD("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new ExcepcionMusculoConexionBD("Musculo no encontrado", e);
+            }
+            catch (SqlException e)
+            {
+                throw new ExcepcionMusculoConexionBD("Error con base de datos", e);
+            }
+            catch (Exception e)
+            {
+                throw new ExcepcionMusculoConexionBD("Error general", e);
+            }
+            finally
+            {
+                CerrarConexion(_conexion);
+            }
+            return flag;
         }
 
         /// <summary>
@@ -77,9 +264,103 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEjercicios
         /// la entidad que contiene los nuevos datos de la modificacion.
         /// </param>
         /// <returns></returns>
-        public bool Modificar(int id, Entidades.AEntidad entidad)
+        public bool Modificar(int id, AEntidad entidad)
         {
             throw new NotImplementedException();
         }
+
+
+        public bool ExisteMusculo(string nombreMusculo)
+        {
+
+            bool flag = false;
+            try
+            {
+                _conexion = obtenerConexion();
+                _conexion.Open();
+                _cmd = new SqlCommand("[dbo].[existeMusculo]", _conexion);
+                _cmd.CommandType = CommandType.StoredProcedure;
+                _cmd.Parameters.AddWithValue("@nombreMusculo", nombreMusculo);
+                _dr = _cmd.ExecuteReader();
+
+                if (_dr.Read())
+                {
+                    flag = true;
+                }
+
+            }
+            catch (ArgumentException e)
+            {
+                throw new ExcepcionMusculoConexionBD("Parametros invalidos", e);
+            }
+            catch (InvalidOperationException e)
+            {
+                throw new ExcepcionMusculoConexionBD("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new ExcepcionMusculoConexionBD("Musculo no encontrado", e);
+            }
+            catch (SqlException e)
+            {
+                throw new ExcepcionMusculoConexionBD("Error con base de datos", e);
+            }
+            catch (Exception e)
+            {
+                throw new ExcepcionMusculoConexionBD("Error general", e);
+            }
+            finally
+            {
+                CerrarConexion(_conexion);
+            }
+            return flag;
+        }
+
+        public bool ExisteEjercicioConMusculo(int idMusculo)
+        {
+
+            bool flag = false;
+            try
+            {
+                _conexion = obtenerConexion();
+                _conexion.Open();
+                _cmd = new SqlCommand("[dbo].[existeEjercicioConMusculo]", _conexion);
+                _cmd.CommandType = CommandType.StoredProcedure;
+                _cmd.Parameters.AddWithValue("@idMusculo", idMusculo);
+                _dr = _cmd.ExecuteReader();
+
+                if (_dr.Read())
+                {
+                    flag = true;
+                }
+                
+            }
+            catch (ArgumentException e)
+            {
+                throw new ExcepcionMusculoConexionBD("Parametros invalidos", e);
+            }
+            catch (InvalidOperationException e)
+            {
+                throw new ExcepcionMusculoConexionBD("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new ExcepcionMusculoConexionBD("Musculo no encontrado", e);
+            }
+            catch (SqlException e)
+            {
+                throw new ExcepcionMusculoConexionBD("Error con base de datos", e);
+            }
+            catch (Exception e)
+            {
+                throw new ExcepcionMusculoConexionBD("Error general", e);
+            }
+            finally
+            {
+                CerrarConexion(_conexion);
+            }
+            return flag;
+        }
+
     }
 }

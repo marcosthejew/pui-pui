@@ -11,5 +11,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEjercicios
     /// </summary>
     public interface IMusculoDAO : IDAO
     {
+        bool ExisteMusculo(string nombreMusculo);
+        bool ExisteEjercicioConMusculo(int idMusculo);
     }
 }
