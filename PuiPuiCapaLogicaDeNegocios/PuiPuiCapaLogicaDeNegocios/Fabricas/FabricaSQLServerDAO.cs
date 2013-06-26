@@ -83,7 +83,7 @@ namespace PuiPuiCapaLogicaDeNegocios.Fabricas
         /// la interfaz IDAO.
         /// </summary>
         /// <returns></returns>
-        public IDAO CrearMusculoSQLServerDAO()
+        public IMusculoDAO CrearMusculoSQLServerDAO()
         {
             return new MusculoSQLServerDAO();
         }

@@ -97,6 +97,9 @@
     <Compile Include="Comandos\AComando.cs" />
     <Compile Include="Comandos\ComandoEjemploDAO.cs" />
     <Compile Include="Comandos\ComandoHolaMundo.cs" />
+    <Compile Include="Comandos\ComandoMusculo\ComandoAgregarMusculo.cs" />
+    <Compile Include="Comandos\ComandoMusculo\ComandoConsultarTodosLosMusculos.cs" />
+    <Compile Include="Comandos\ComandoMusculo\ComandoDesactivarMusculo.cs" />
     <Compile Include="Comandos\ComandoResevarClase\ComandoConsultarTodosReservarClase.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComadoEjercicio2.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoAgregarEjecicio.cs" />
