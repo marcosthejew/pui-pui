@@ -87,6 +87,18 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EClases
         {
             this.Id = id;
         }
+        public string serializar() {
+          string resultado= "<Salon>";
+
+          resultado += "<Id>" + Id + "</Id>";
+          resultado += "<Status>" + Status + "</Status>";
+          resultado += "<Capacidad>" + Capacidad + "</Capacidad>";
+          resultado += "<IdSalon>" + IdSalon + "</IdSalon>";
+          resultado += "<Ubicacion>" + Ubicacion + "</Ubicacion>";
+          resultado+="</Salon>";
+          return resultado;
+        
+        }
         #endregion
 
         #region Metodos
