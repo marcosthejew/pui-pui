@@ -9,6 +9,8 @@ using System.Web;
 using System.Web.Services;
 using System.Xml;
 using System.Xml.Serialization;
+using System.Web.Script.Serialization;
+using System.Reflection;
 
 namespace PuiPuiCapaLogicaDeNegocios.Servicios.BackOffice
 {
@@ -18,16 +20,24 @@ namespace PuiPuiCapaLogicaDeNegocios.Servicios.BackOffice
     /*[WebService(Namespace = "http://tempuri.org/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
-    // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
-    // [System.Web.Script.Services.ScriptService]*/
+    // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. */
+     [System.Web.Script.Services.ScriptService]
     public class FachadaSalonBackOffice : System.Web.Services.WebService
     { 
         [WebMethod]
-        public StringWriter ServicioConsultarSalonesTodos()
+        public string ServicioConsultarSalonesTodos()
         {
+           
             List <Salon> listaSalones= FabricaComandosSalon.CrearComandoConsultarTodosSalones().Ejecutar();
-            StringWriter  cadenaAEnviar= FabricaComando.CrearComandoSerializadorListaEntidades(listaSalones.Cast<Entidades.AEntidad>().ToList()).Ejecutar();
-            return cadenaAEnviar;
+            string cadenaAEnviar = "<Salones>";
+            foreach (Salon salon in listaSalones) {
+                cadenaAEnviar += salon.serializar();
+            }
+           cadenaAEnviar+="</Salones>";
+     
+           return cadenaAEnviar;
+
+         
         }
     
 
