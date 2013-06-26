@@ -153,7 +153,7 @@ namespace PuiPuiCapaLogicaDeNegocios.Fabricas
         /// en la interfaz IDAO.
         /// </summary>
         /// <returns></returns>
-        public IDAO CrearInstructorSQLServerDAO()
+        public IInstructorDAO CrearInstructorSQLServerDAO()
         {
             return new InstructorSQLServerDAO();
         }

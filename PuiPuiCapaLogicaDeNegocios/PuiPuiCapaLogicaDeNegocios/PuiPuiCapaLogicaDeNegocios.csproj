@@ -109,6 +109,11 @@
     <Compile Include="Comandos\ComandosEvaluacionInstructor\ComandoInsertarEvaluacionInstructor.cs" />
     <Compile Include="Comandos\ComandosEvaluacionInstructor\ComandoModificarEvaluacionInstructor.cs" />
     <Compile Include="Comandos\ComandosHorario\ComandoInsertaHorario.cs" />
+    <Compile Include="Comandos\ComandosInstructor\ComandoAgregarInstructor.cs" />
+    <Compile Include="Comandos\ComandosInstructor\ComandoConsultarPorIdInstructor.cs" />
+    <Compile Include="Comandos\ComandosInstructor\ComandoConsultarTodosInstructor.cs" />
+    <Compile Include="Comandos\ComandosInstructor\ComandoInactivarInstructor.cs" />
+    <Compile Include="Comandos\ComandosInstructor\ComandoModificarInstructor.cs" />
     <Compile Include="Comandos\ComandosSalon\ComandoBusquedaCapacidadMayorSalon.cs" />
     <Compile Include="Comandos\ComandosSalon\ComandoBusquedaCapacidadMenorSalon.cs" />
     <Compile Include="Comandos\ComandosSalon\ComandoBusquedaStatusSalon.cs" />
@@ -188,6 +193,7 @@
     <Compile Include="Excepciones\ExcepcionConexionBD.cs" />
     <Compile Include="Excepciones\ExcepcionEjercicioConexionBD.cs" />
     <Compile Include="Excepciones\ExcepcionHorario.cs" />
+    <Compile Include="Excepciones\ExcepcionInstructorConexionBD.cs" />
     <Compile Include="Excepciones\ExcepcionMusculoConexionBD.cs" />
     <Compile Include="Excepciones\ExcepcionReservarClaseConexionBD.cs" />
     <Compile Include="Excepciones\ExecpcionClaseSalon.cs" />

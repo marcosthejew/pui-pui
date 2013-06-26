@@ -14,12 +14,26 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EPersonas
 
         #region Atributos
 
+        private string _nombreContactoEmergencia;
+        private string _telefonoContactoEmergencia;
         private List<Horario> _horario;
 
         #endregion
 
         #region Getter & Setter
 
+        public string NombreContactoEmergencia
+        {
+            get { return _nombreContactoEmergencia; }
+            set { _nombreContactoEmergencia = value; }
+        }
+
+        public string TelefonoContactoEmergencia
+        {
+            get { return _telefonoContactoEmergencia; }
+            set { _telefonoContactoEmergencia = value; }
+        }
+        
         public List<Horario> Horario
         {
             get { return _horario; }
@@ -60,6 +74,30 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EPersonas
             _telefonoLocal = tlfLocal;
             _telefonoCelular = telfCelular;
             _email = correo;
+            _horario = horario;
+        }
+
+        public Instructor(string cedula, string nombre1, string nombre2, string apellido1, string apellido2,
+        string genero, DateTime fechaNacimiento, DateTime fechaIngreso, string estado, string ciudad, string direccion,
+        string tlfLocal, string telfCelular, string correo, string nombreEmergencia, string telfContactoEmergencia,
+        List<Horario> horario)
+        {
+            _cedula = cedula;
+            _nombre1 = nombre1;
+            _nombre2 = nombre2;
+            _apellido1 = apellido1;
+            _apellido2 = apellido2;
+            _sexo = genero;
+            _fechaNac = fechaNacimiento;
+            _fechaIngreso = fechaIngreso;
+            //OJO_entidadFederal = estado;
+            _ciudad = ciudad;
+            _direccion = direccion;
+            _telefonoLocal = tlfLocal;
+            _telefonoCelular = telfCelular;
+            _email = correo;
+            _nombreContactoEmergencia = nombreEmergencia;
+            _telefonoContactoEmergencia = telfContactoEmergencia;
             _horario = horario;
         }
 
