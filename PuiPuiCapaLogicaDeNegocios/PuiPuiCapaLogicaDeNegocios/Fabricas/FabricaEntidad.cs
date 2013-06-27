@@ -25,6 +25,11 @@ namespace PuiPuiCapaLogicaDeNegocios.Fabricas
         {
             return new Clase();
         }
+        public static AEntidad CrearClase(string nombre,int idClase, string descripcion, int status)
+        {
+
+            return new Clase(nombre, idClase, descripcion, status);
+        }
 
         /// <summary>
         /// Metodo estatico que retorna una instancia de la clase ClaseSalon
@@ -94,6 +99,7 @@ namespace PuiPuiCapaLogicaDeNegocios.Fabricas
             return new Ejercicio(id,nombre,descripcion,musculo,duracion,repeticiones);
         }
 
+
         /// <summary>
         /// Metodo estatico que retorna una instancia de la clase Musculo 
         /// encajonada en la clase abstracta AEntidad.
@@ -112,6 +118,11 @@ namespace PuiPuiCapaLogicaDeNegocios.Fabricas
         public static AEntidad CrearMusculo(int id, string nombre)
         {
             return new Musculo(id,nombre);
+        }
+
+        public static AEntidad CrearMusculo(string nombre, string descripcion)
+        {
+            return new Musculo(nombre,descripcion);
         }
 
         public static AEntidad CrearMusculo(int id, string nombre, string descripcion)

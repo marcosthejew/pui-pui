@@ -44,7 +44,7 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EClases
 
         #endregion
 
-         #region Constructores
+        #region Constructores
 
         public Clase()
         {
@@ -59,17 +59,30 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EClases
             this._nombre = nombre;
             this._idClase = idClase;
         }
-        public Clase(String nombre, int idClase, String descripcion,int st)
+        public Clase(String nombre, int idClase, String descripcion, int st)
         {
             this._status = st;
             this._descripcion = descripcion;
             this._nombre = nombre;
             this._idClase = idClase;
         }
-       
+
 
         #endregion
+
+
+        public string serializar()
+        {
+            string resultado = "<Clase>";
+
+            resultado += "<Id>" + Id + "</Id>";
+            resultado += "<Status>" + Status + "</Status>";
+            resultado += "<Descripcion>" + Descripcion + "</Descripcion>";
+            resultado += "<IdClase>" + IdClase + "</IdClase>";
+            resultado += "<Nombre>" + Nombre + "</Nombre>";
+            resultado += "</Clase>";
+            return resultado;
+
+        }
     }
-
-
     }
