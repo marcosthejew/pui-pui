@@ -32,20 +32,25 @@ namespace PuiPuiCapaLogicaDeNegocios.Fabricas
         }
 
         /// <summary>
-        /// Metodo estatico que retorna una instancia de la clase ClaseSalon
+        /// Metodos estaticos que reciben distintos parametros y retornan una instancia de la clase ClaseSalon
         /// encajonada en la clase abstracta AEntidad.
         /// </summary>
         /// <returns></returns>
         public static AEntidad CrearClaseSalon()
         {
             return new ClaseSalon();
-        }
 
+        }
+         public static AEntidad CrearClaseSalon(int iid, Salon sal, Clase clas, Instructor ins, int disp)
+        {
+            return new ClaseSalon(iid, sal,  clas,  ins,  disp);
+        }
         /// <summary>
         /// Metodo estatico que retorna una instancia de la clase Salon 
         /// encajonada en la clase abstracta AEntidad.
         /// </summary>
         /// <returns></returns>
+        
         public static AEntidad CrearSalon()
         {
             return new Salon();

@@ -43,6 +43,11 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EHorario
             set { _status = value; }
         }
 
+         public int Id
+        {
+            get { return Id; }
+            set { Id = value; }
+        }
         #endregion
 
         #region Constructores
