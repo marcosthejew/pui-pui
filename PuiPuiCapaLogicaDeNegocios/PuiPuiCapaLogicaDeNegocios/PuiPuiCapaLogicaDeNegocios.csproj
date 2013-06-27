@@ -115,8 +115,11 @@
     <Compile Include="Comandos\ComandosEjercicio\ComadoEjercicio2.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoAgregarEjecicio.cs" />
     <Compile Include="Comandos\ComandosRutina\ComandoActivarInactivarRutina.cs" />
+    <Compile Include="Comandos\ComandosRutina\ComandoAgregarHistorial.cs" />
+    <Compile Include="Comandos\ComandosRutina\ComandoAgregarRutina.cs" />
     <Compile Include="Comandos\ComandosRutina\ComandoConsultarEjerciciosPorIDRutina.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoConsultarPorIdEjercicio.cs" />
+    <Compile Include="Comandos\ComandosRutina\ComandoConsultarPersonaPorLogin.cs" />
     <Compile Include="Comandos\ComandosRutina\ComandoConsultarRutinasPorCliente.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoConsultarTodosEjercicio.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoInactivarEjercicio.cs" />
@@ -133,6 +136,8 @@
     <Compile Include="Comandos\ComandosInstructor\ComandoConsultarTodosInstructor.cs" />
     <Compile Include="Comandos\ComandosInstructor\ComandoInactivarInstructor.cs" />
     <Compile Include="Comandos\ComandosInstructor\ComandoModificarInstructor.cs" />
+    <Compile Include="Comandos\ComandosRutina\ComandoConsultarTodosEjerciciosR.cs" />
+    <Compile Include="Comandos\ComandosRutina\ComandoObtenerUltimoIDRutina.cs" />
     <Compile Include="Comandos\ComandosSalon\ComandoBusquedaCapacidadMayorSalon.cs" />
     <Compile Include="Comandos\ComandosSalon\ComandoBusquedaCapacidadMenorSalon.cs" />
     <Compile Include="Comandos\ComandosSalon\ComandoBusquedaStatusSalon.cs" />
@@ -284,8 +289,6 @@
     <Fakes Include="Fakes\log4net.fakes" />
     <Content Include="packages\log4net.2.0.0\log4net.2.0.0.nupkg" />
     <Content Include="packages\repositories.config" />
-    <Content Include="Fabricas\FabricaComando.cs.orig" />
-    <Content Include="Fabricas\FabricaEntidad.cs.orig" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

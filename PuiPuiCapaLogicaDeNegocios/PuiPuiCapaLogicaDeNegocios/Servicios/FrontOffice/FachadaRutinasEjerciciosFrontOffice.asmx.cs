@@ -18,6 +18,7 @@ namespace PuiPuiCapaLogicaDeNegocios.Servicios.FrontOffice
             respuesta = "Respuesta Cableada";
             return respuesta;
         }
+
         [WebMethod]
         public string ConsultarRutinasPorIDCliente(int idCliente)
         {
@@ -55,7 +56,7 @@ namespace PuiPuiCapaLogicaDeNegocios.Servicios.FrontOffice
         }
 
         [WebMethod]
-        public string ComandoConsultarEjerciciosPorIDRutina(int idRutina)
+        public string ConsultarEjerciciosPorIDRutina(int idRutina)
         {
             List<Ejercicio> listaEjercicio = new List<Ejercicio>();
             Rutina entidadEjercicio = new Rutina();
@@ -95,13 +96,79 @@ namespace PuiPuiCapaLogicaDeNegocios.Servicios.FrontOffice
             return resultado;
         }
 
-
         [WebMethod]
         public bool ActivarInactivarRutina(int idRutina, byte inactivo)
         {
             bool entidadRutina = false;
             entidadRutina = Fabricas.FabricaComando.CrearComandoActivarInactivarRutina().Ejecutar();
             return entidadRutina;
+        }
+        
+        [WebMethod]
+        public bool AgregarRutina(string nombre, string descripcion)
+        {
+            bool rutina = false;
+            rutina = Fabricas.FabricaComando.CrearComandoAgregarRutina().Ejecutar();
+            return true;
+        }
+        
+        [WebMethod]
+        public bool AgregarHistorial(string duracion, int repeticion, int cliente, int rutina, int ejercicio)
+        {
+            bool historial = false;
+            historial = Fabricas.FabricaComando.CrearComandoAgregarHistorial().Ejecutar();
+            return true;
+        }
+
+        [WebMethod]
+        public int ConsultarPersonaPorLogin(string loginPersona)
+        {
+            int idPersona;
+            idPersona = Fabricas.FabricaComando.CrearComandoConsultarPersonaPorLogin().Ejecutar();
+            return idPersona;
+        }
+
+        [WebMethod]
+        public int ObtenerUltimoIDRutina()
+        {
+            int idRutina;
+            idRutina = Fabricas.FabricaComando.CrearComandoObtenerUltimoIDRutina().Ejecutar();
+            return idRutina;
+        }
+        
+        [WebMethod]
+        public string ConsultarTodosEjerciciosR()
+        {
+            List<Ejercicio> listaEjercicio = new List<Ejercicio>();
+            Rutina entidadEjercicio = new Rutina();
+
+            listaEjercicio = Fabricas.FabricaComando.CrearComandoConsultarTodosEjerciciosR().Ejecutar();
+            string resultado = "<Ejercicios>";
+
+            foreach (Ejercicio ejercicio in listaEjercicio)
+            {
+                string objeto = entidadEjercicio.SerializarEjercicio(ejercicio);
+
+                resultado += objeto;
+                objeto = " ";
+            }
+            resultado = resultado + "</Ejercicios>";
+            XmlDocument xml = new XmlDocument();
+            xml.Load(new System.IO.StringReader(resultado));
+            XmlNodeList xnList = xml.SelectNodes("Ejercicio");
+
+            int h = 0;
+
+            foreach (XmlElement nodo in xnList)
+            {
+                XmlNodeList id = nodo.GetElementsByTagName("Id");
+                XmlNodeList nombre = nodo.GetElementsByTagName("Nombre");
+                resultado = id[h].InnerText;
+                resultado = nombre[h].InnerText;
+                
+            }
+
+            return resultado;
         }
 
     }
