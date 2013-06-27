@@ -7,6 +7,7 @@ using PuiPuiCapaLogicaDeNegocios.Comandos;
 using PuiPuiCapaLogicaDeNegocios.Comandos.ComandosEjercicio;
 using PuiPuiCapaLogicaDeNegocios.Comandos.ComandosInstructor;
 using PuiPuiCapaLogicaDeNegocios.Comandos.ComandoResevarClase;
+using PuiPuiCapaLogicaDeNegocios.Comandos.ComandoMusculo;
 using System.IO;
 
 namespace PuiPuiCapaLogicaDeNegocios.Fabricas
@@ -55,6 +56,24 @@ namespace PuiPuiCapaLogicaDeNegocios.Fabricas
         }
         #endregion
 
+        #region Musculo
+
+        public static AComando<bool> CrearComandoAgregarMusculo(AEntidad musculo)
+        {
+            return new ComandoAgregarMusculo(musculo);
+        }
+
+        public static AComando<List<AEntidad>> CrearConsultarTodosLosMusculos()
+        {
+            return new ComandoConsultarTodosLosMusculos();
+        }
+
+        public static AComando<bool> CrearDesactivarMusculos(AEntidad musculo)
+        {
+            return new ComandoDesactivarMusculo(musculo);
+        }
+        #endregion 
+
         #region Instructor
 
         public static AComando<bool> CrearComandoAgregarInstructor(AEntidad instructor)
@@ -96,6 +115,22 @@ namespace PuiPuiCapaLogicaDeNegocios.Fabricas
             return new ComandoSerializadorListaEntidades(entidad);
         }
 
+        #endregion
+
+        #region  Rutina
+        
+        /// <summary>
+        /// Devuelve una instancia del comando ComandoHolaMundo.
+        /// </summary>
+        /// <returns></returns>
+        public static AComando<List<Entidades.EEjercicios.Rutina>> CrearComandoConsultarRutinasPorIDCliente()
+        {
+            return new  ComandoConsultarRutinasPorCliente();
+        }
+        public static AComando<List<Entidades.EEjercicios.Ejercicio>> CrearComandoConsultarEjerciciosPorIDRutina()
+        {
+            return new ComandoConsultarEjerciciosPorIDRutina();
+        }
         #endregion
     }
 }

@@ -82,6 +82,7 @@
     <Content Include="Servicios\BackOffice\FachadaClasesBackOffice.asmx" />
     <Content Include="Servicios\BackOffice\FachadaEjerciciosBackOffice.asmx" />
     <Content Include="Servicios\BackOffice\FachadaInstructoresBackOffice.asmx" />
+    <Content Include="Servicios\BackOffice\FachadaMusculos.asmx" />
     <Content Include="Servicios\BackOffice\FachadaSalonBackOffice.asmx" />
     <Content Include="Servicios\BackOffice\FachadaUsuariosLoginBackOffice.asmx" />
     <Content Include="Servicios\FrontOffice\FachadaClasesFrontOffice.asmx" />
@@ -97,10 +98,15 @@
     <Compile Include="Comandos\AComando.cs" />
     <Compile Include="Comandos\ComandoEjemploDAO.cs" />
     <Compile Include="Comandos\ComandoHolaMundo.cs" />
+    <Compile Include="Comandos\ComandoMusculo\ComandoAgregarMusculo.cs" />
+    <Compile Include="Comandos\ComandoMusculo\ComandoConsultarTodosLosMusculos.cs" />
+    <Compile Include="Comandos\ComandoMusculo\ComandoDesactivarMusculo.cs" />
     <Compile Include="Comandos\ComandoResevarClase\ComandoConsultarTodosReservarClase.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComadoEjercicio2.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoAgregarEjecicio.cs" />
+    <Compile Include="Comandos\ComandosRutina\ComandoConsultarEjerciciosPorIDRutina.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoConsultarPorIdEjercicio.cs" />
+    <Compile Include="Comandos\ComandosRutina\ComandoConsultarRutinasPorCliente.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoConsultarTodosEjercicio.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoInactivarEjercicio.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoModificarEjercicio.cs" />
@@ -110,6 +116,11 @@
     <Compile Include="Comandos\ComandosEvaluacionInstructor\ComandoInsertarEvaluacionInstructor.cs" />
     <Compile Include="Comandos\ComandosEvaluacionInstructor\ComandoModificarEvaluacionInstructor.cs" />
     <Compile Include="Comandos\ComandosHorario\ComandoInsertaHorario.cs" />
+    <Compile Include="Comandos\ComandosInstructor\ComandoAgregarInstructor.cs" />
+    <Compile Include="Comandos\ComandosInstructor\ComandoConsultarPorIdInstructor.cs" />
+    <Compile Include="Comandos\ComandosInstructor\ComandoConsultarTodosInstructor.cs" />
+    <Compile Include="Comandos\ComandosInstructor\ComandoInactivarInstructor.cs" />
+    <Compile Include="Comandos\ComandosInstructor\ComandoModificarInstructor.cs" />
     <Compile Include="Comandos\ComandosSalon\ComandoBusquedaCapacidadMayorSalon.cs" />
     <Compile Include="Comandos\ComandosSalon\ComandoBusquedaCapacidadMenorSalon.cs" />
     <Compile Include="Comandos\ComandosSalon\ComandoBusquedaStatusSalon.cs" />
@@ -119,6 +130,7 @@
     <Compile Include="Comandos\ComandosSalon\ComandoInactivarSalon.cs" />
     <Compile Include="Comandos\ComandosSalon\ComandoInsertarSalon.cs" />
     <Compile Include="Comandos\ComandosSalon\ComandoModificarSalon.cs" />
+    <Compile Include="Comandos\ComandosSalon\ComandoSerializarListaSalon.cs" />
     <Compile Include="DAOs\ASQLServerDAO.cs" />
     <Compile Include="DAOs\DAOsClases\ClaseSalonSQLServerDAO.cs" />
     <Compile Include="DAOs\DAOsClases\ClaseSQLServerDAO.cs" />
@@ -189,6 +201,7 @@
     <Compile Include="Excepciones\ExcepcionConexionBD.cs" />
     <Compile Include="Excepciones\ExcepcionEjercicioConexionBD.cs" />
     <Compile Include="Excepciones\ExcepcionHorario.cs" />
+    <Compile Include="Excepciones\ExcepcionInstructorConexionBD.cs" />
     <Compile Include="Excepciones\ExcepcionMusculoConexionBD.cs" />
     <Compile Include="Excepciones\ExcepcionReservarClaseConexionBD.cs" />
     <Compile Include="Excepciones\ExecpcionClaseSalon.cs" />
@@ -211,6 +224,10 @@
     </Compile>
     <Compile Include="Servicios\BackOffice\FachadaInstructoresBackOffice.asmx.cs">
       <DependentUpon>FachadaInstructoresBackOffice.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Servicios\BackOffice\FachadaMusculos.asmx.cs">
+      <DependentUpon>FachadaMusculos.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Servicios\BackOffice\FachadaSalonBackOffice.asmx.cs">

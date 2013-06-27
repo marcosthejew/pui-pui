@@ -69,6 +69,12 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EEjercicios
             _nombreMusculo = nombre;
         }
 
+        public Musculo(string nombre, string descripcion) 
+        {
+            _nombreMusculo = nombre;
+            _descripcion = descripcion;
+        }
+
         public Musculo(int id, string nombre, string descripcion) {
             _id = id;
             _nombreMusculo = nombre;
