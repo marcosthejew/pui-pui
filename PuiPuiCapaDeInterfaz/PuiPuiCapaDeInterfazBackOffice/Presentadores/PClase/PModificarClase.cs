@@ -8,6 +8,11 @@ using PuiPuiCapaDeInterfazBackOffice.LogicaClase;
 
 namespace PuiPuiCapaDeInterfazBackOffice.Presentadores.PClase
 {
+
+    /// <summary>
+    /// Esta clase tiene como finalidad realizar operaciones referentes a la 
+    /// Vista de modificar clase con la capa de Logica de negocios.
+    /// </summary>
     public class PModificarClase
     {
         IContratoModificaClase _modificar;
@@ -15,7 +20,11 @@ namespace PuiPuiCapaDeInterfazBackOffice.Presentadores.PClase
         {
             _modificar = vista_modificar;
         }
-
+        /// <summary>
+        /// Devuelve un booleano que determina si la clase se modifico o no 
+        /// en la base de datos
+        /// </summary>
+        /// <returns>boolean</returns>
         public bool ModificarClase()
         {
 

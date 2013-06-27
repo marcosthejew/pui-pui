@@ -41,9 +41,9 @@ namespace PuiPuiCapaLogicaDeNegocios.Fabricas
             return new ClaseSalon();
 
         }
-         public static AEntidad CrearClaseSalon(int iid, Salon sal, Clase clas, Instructor ins, int disp)
+         public static AEntidad CrearClaseSalon(int iid, Salon sal, Clase clas, Instructor ins,Horario ho, int disp)
         {
-            return new ClaseSalon(iid, sal,  clas,  ins,  disp);
+            return new ClaseSalon(iid, sal, clas, ho, ins, disp);
         }
         /// <summary>
         /// Metodo estatico que retorna una instancia de la clase Salon 

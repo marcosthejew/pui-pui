@@ -14,7 +14,8 @@ namespace PuiPuiCapaLogicaDeNegocios.Comandos
       public ComandoSerializadorListaEntidades(List<AEntidad> entidad)
         {
             StringWriter stringwriter = new StringWriter();
-            XmlSerializer serializer = new XmlSerializer(entidad.First().GetType());
+            XmlSerializer serializer = new XmlSerializer(entidad.GetType());
+            Type bkh=entidad.GetType();
             serializer.Serialize(stringwriter, entidad);
             _cadenaSerializada = stringwriter;
         }

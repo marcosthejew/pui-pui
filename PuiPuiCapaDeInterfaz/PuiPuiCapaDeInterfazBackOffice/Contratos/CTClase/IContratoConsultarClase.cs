@@ -7,6 +7,10 @@ using System.Web.UI.WebControls;
 
 namespace PuiPuiCapaDeInterfazBackOffice.Contratos.CTClase
 {
+    /// <summary>
+    /// Interfaz que implementa tods los de datos primitivos
+    /// que pertenecen a las Vista consultar.
+    /// </summary>
     public interface IContratoConsultarClase
     {
      

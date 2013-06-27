@@ -7,6 +7,10 @@ using PuiPuiCapaDeInterfazBackOffice.Contractos.CTSalon;
 
 namespace PuiPuiCapaDeInterfazBackOffice.Presentadores.PSalon
 {
+    /// <summary>
+    /// Estalase tiene como finalidad realizar operaciones referentes a la 
+    /// Vista de agregar salon con la capa de Logica de negocios.
+    /// </summary>
     public class PAgregarSalon
     {
         IContratoAgregarSalon salon;
@@ -17,6 +21,11 @@ namespace PuiPuiCapaDeInterfazBackOffice.Presentadores.PSalon
             this.salon = vista_agregar;
 
         }
+        /// <summary>
+        /// Inserta una salon del GYM en la base de datos pasando por la Logica de negocios
+        /// devuelve un booleano depende del caso si se inserto o no
+        /// </summary>
+        /// <returns>boolean</returns>
         public  bool AgregarSalon()
         {
             FachadaSalonBackOfficeSoapClient agregar = new FachadaSalonBackOfficeSoapClient();

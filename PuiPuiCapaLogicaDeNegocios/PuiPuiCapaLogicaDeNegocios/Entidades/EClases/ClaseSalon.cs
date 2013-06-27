@@ -19,6 +19,9 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EClases
         private Salon _salon;
         private Instructor _instructor;
         private Horario _horario;
+  
+
+      
 
         public Horario Horario
         {
@@ -26,6 +29,12 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EClases
             set { _horario = value; }
         }
         private int _disponibilidad;
+        private int iid;
+        private EClases.Salon sal;
+        private EClases.Clase clas;
+        private EPersonas.Instructor ins;
+        private EHorario.Horario ho;
+        private int disp;
 
         #endregion
 
@@ -90,6 +99,34 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EClases
             this._clase = clas;
             this._disponibilidad = disp;
         }
+        public ClaseSalon(int iid, Salon sal, Clase clas,Horario ho, Instructor ins, int disp)
+        {
+            this._id = iid;
+            this._instructor = ins;
+            this._salon = sal;
+            this._clase = clas;
+            this._horario = ho;
+            this._disponibilidad = disp;
+        }
+
         #endregion
+
+
+        public string serializar()
+        {
+            string resultado = "<ClaseSalon>";
+
+            resultado += "<Id>" + Id + "</Id>";
+            resultado += "<Clase>" + Clase.Nombre + "</Clase>";
+            resultado += "<Codigo>" + Salon.IdSalon + "</Codigo>";
+            resultado += "<Ubicacion>" + Salon.Ubicacion + "</Ubicacion>";
+            resultado += "<Instructor>" + Instructor.NombrePersona1 + "</Instructor>";
+            resultado += "<HInicio>" + Horario.HoraInicio + "</HInicio>";
+            resultado += "<HFin>" + Horario.HoraInicio + "</HFin>";
+            resultado += "<Estatus>" + Disponibilidad+ "</Estatus>";
+            resultado += "</ClaseSalon>";
+            return resultado;
+
+        }
     }
 }

@@ -98,6 +98,11 @@
   <ItemGroup>
     <Compile Include="Bitacora\EscritorBitacora.cs" />
     <Compile Include="Comandos\AComando.cs" />
+    <Compile Include="Comandos\ComandasoClaseSalon\ComandoAgregarClaseSalon.cs" />
+    <Compile Include="Comandos\ComandasoClaseSalon\ComandoBusquedaClase.cs" />
+    <Compile Include="Comandos\ComandasoClaseSalon\ComandoBusquedaInstructor.cs" />
+    <Compile Include="Comandos\ComandasoClaseSalon\ComandoBusquedaSalon.cs" />
+    <Compile Include="Comandos\ComandasoClaseSalon\ComandoConsultarClaseSalonTodos.cs" />
     <Compile Include="Comandos\ComandoEjemploDAO.cs" />
     <Compile Include="Comandos\ComandoHolaMundo.cs" />
     <Compile Include="Comandos\ComandoMusculo\ComandoAgregarMusculo.cs" />

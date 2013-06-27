@@ -199,6 +199,7 @@ CREATE PROCEDURE [dbo].[ModificarSalonClase]
 @Id_clase int,
 @Id_instructor int,
 @Id_clase_salon int,
+@Id_horario int,
 @disponibilidad int
 AS
 
@@ -208,7 +209,7 @@ BEGIN
 
 	
     
-    update Clase_Salon set id_clase=@Id_clase,id_salon=@Id_salon,id_instructor= @Id_instructor, inactivo=@disponibilidad where id_clase_salon=@Id_clase_salon ;
+    update Clase_Salon set id_horario= @Id_horario,id_clase=@Id_clase,id_salon=@Id_salon,id_instructor= @Id_instructor, inactivo=@disponibilidad where id_clase_salon=@Id_clase_salon ;
 	
 END
 
@@ -226,11 +227,12 @@ BEGIN
 	SET NOCOUNT ON;
 
     
-    Select clasal.id_clase_salon, clas.nombre,sal.codigo,sal.ubicacion,ins.nombre1, ins.apellido1, clasal.inactivo
-    from Clase clas, Salon sal, Instructor ins, Clase_Salon clasal
+    Select clasal.id_clase_salon, clas.nombre,sal.codigo,sal.ubicacion,ins.nombre1+' '+ins.apellido1,ho.hora_inicio,ho.hora_fin,clasal.inactivo
+    from Clase clas, Salon sal, Instructor ins, Clase_Salon clasal,Horario ho
 	where clasal.id_clase=clas.id_clase
 	and clasal.id_salon=sal.id_salon
-	and clasal.id_instructor=ins.id_instructor;
+	and clasal.id_instructor=ins.id_instructor
+	and clasal.id_horario=ho.id_horario;
 	
 END
 
@@ -249,12 +251,13 @@ BEGIN
 	SET NOCOUNT ON;
 
     
-    Select clasal.id_clase_salon, clas.nombre,sal.codigo,sal.ubicacion,ins.nombre1+' '+ins.apellido1, clasal.inactivo
-    from Clase clas, Salon sal, Instructor ins, Clase_Salon clasal
+    Select clasal.id_clase_salon, clas.nombre,sal.codigo,sal.ubicacion,ins.nombre1+' '+ins.apellido1,ho.hora_inicio,ho.hora_fin,clasal.inactivo
+    from Clase clas, Salon sal, Instructor ins, Clase_Salon clasal,Horario ho
 	where LOWER(clas.nombre) like LOWER(@nombre+'%')
 	and clasal.id_clase=clas.id_clase
 	and clasal.id_salon=sal.id_salon
-	and clasal.id_instructor=ins.id_instructor;
+	and clasal.id_instructor=ins.id_instructor
+	and clasal.id_horario=ho.id_horario;
 	
 END
 
@@ -265,7 +268,7 @@ AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
 drop procedure [ListarSalonesClaseTsalon]
 go
 CREATE PROCEDURE [dbo].[ListarSalonesClaseTsalon]
-@Ubicacion int 
+@Codigo int 
 AS
 
 BEGIN
@@ -273,12 +276,13 @@ BEGIN
 	SET NOCOUNT ON;
 
     
-    Select clasal.id_clase_salon, clas.nombre,sal.codigo,sal.ubicacion,ins.nombre1+' '+ins.apellido1, clasal.inactivo
-    from Clase clas, Salon sal, Instructor ins, Clase_Salon clasal
-	where LOWER(sal.ubicacion) like LOWER(@Ubicacion+'%')
+    Select clasal.id_clase_salon, clas.nombre,sal.codigo,sal.ubicacion,ins.nombre1+' '+ins.apellido1,ho.hora_inicio,ho.hora_fin,clasal.inactivo
+    from Clase clas, Salon sal, Instructor ins, Clase_Salon clasal,Horario ho
+	where LOWER(sal.codigo) like LOWER(@Codigo+'%')
 	and clasal.id_clase=clas.id_clase
 	and clasal.id_salon=sal.id_salon
-	and clasal.id_instructor=ins.id_instructor;
+	and clasal.id_instructor=ins.id_instructor
+	and clasal.id_horario=ho.id_horario;
 	
 END
 
@@ -297,13 +301,14 @@ BEGIN
 	SET NOCOUNT ON;
 
     
-    Select clasal.id_clase_salon,clas.nombre,sal.codigo,sal.ubicacion,ins.nombre1+' '+ins.apellido1, clasal.inactivo
-    from Clase clas, Salon sal, Instructor ins, Clase_Salon clasal
+     Select clasal.id_clase_salon, clas.nombre,sal.codigo,sal.ubicacion,ins.nombre1+' '+ins.apellido1,ho.hora_inicio,ho.hora_fin,clasal.inactivo
+    from Clase clas, Salon sal, Instructor ins, Clase_Salon clasal,Horario ho
 	where LOWER(ins.nombre1) like LOWER(@Nombre+'%')
 	or LOWER(ins.apellido1) like LOWER(@Nombre+'%')
 	and clasal.id_clase=clas.id_clase
 	and clasal.id_salon=sal.id_salon
-	and clasal.id_instructor=ins.id_instructor;
+	and clasal.id_instructor=ins.id_instructor
+	and clasal.id_horario=ho.id_horario;
 	
 END
 
@@ -322,12 +327,13 @@ BEGIN
 	SET NOCOUNT ON;
 
     
-    Select clasal.id_clase_salon,sal.codigo, clas.nombre,sal.ubicacion,ins.nombre1+' '+ins.apellido1, clasal.inactivo
-    from Clase clas, Salon sal, Instructor ins, Clase_Salon clasal
+    Select clasal.id_clase_salon, clas.nombre,sal.codigo,sal.ubicacion,ins.nombre1+' '+ins.apellido1,ho.hora_inicio,ho.hora_fin,clasal.inactivo
+    from Clase clas, Salon sal, Instructor ins, Clase_Salon clasal,Horario ho
 	where clasal.inactivo=@reservacion
 	and clasal.id_clase=clas.id_clase
 	and clasal.id_salon=sal.id_salon
-	and clasal.id_instructor=ins.id_instructor;
+	and clasal.id_instructor=ins.id_instructor
+	and clasal.id_horario=ho.id_horario;
 	
 END
 

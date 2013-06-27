@@ -7,6 +7,10 @@ using PuiPuiCapaDeInterfazBackOffice.LogicaClase;
 
 namespace PuiPuiCapaDeInterfazBackOffice.Presentadores.PClase
 {
+    /// <summary>
+    /// Esta clase tiene como finalidad realizar operaciones referentes a la 
+    /// Vista de Agregar clase con la capa de Logica de negocios.
+    /// </summary>
     public class PAgregarClase
     {
         IContratoAgregarClase agregarclase;
@@ -16,7 +20,11 @@ namespace PuiPuiCapaDeInterfazBackOffice.Presentadores.PClase
             agregarclase = vistaAgregar;
         
         }
-
+        /// <summary>
+        /// Inserta una clase del GYM en la base de datos pasando por la Logica de negocios
+        /// devuelve un booleano depende del caso si se inserto o no
+        /// </summary>
+        /// <returns>boolean</returns>
         public Boolean InsertarClase()
         {
             FachadaClasesSoapClient insertar = new FachadaClasesSoapClient();

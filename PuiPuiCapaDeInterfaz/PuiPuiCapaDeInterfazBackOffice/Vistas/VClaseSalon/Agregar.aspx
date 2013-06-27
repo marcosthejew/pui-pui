@@ -33,7 +33,7 @@
             </tr>
             <tr>
                 <td class="auto-style5" align="left">
-                    <h3>Ubicación del Salón:</h3>
+                    <h3>Codigo del Salón:</h3>
                                         
                 </td>
                 <td class="auto-style6" colspan="0" align="left">

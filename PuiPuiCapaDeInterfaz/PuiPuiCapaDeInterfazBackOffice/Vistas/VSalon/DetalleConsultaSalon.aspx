@@ -71,7 +71,7 @@ margin-top: 0px;">
 
             <tr >
                 <td colspan="2"  style="text-align:center">
-                <asp:Button ID="Regresar" runat="server" Text="Regresar" Height="25px" Width="120px"  Font-Size="14px"/>
+                <asp:Button ID="Regresar" runat="server" Text="Regresar" Height="25px" Width="120px"  Font-Size="14px" OnClick="Regresar_Click"/>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="Modificar" runat="server" Text="Modificar" Height="25px" Width="120px" OnClick="Modificar_Click" Font-Size="14px"/>
                 </td>
             </tr>

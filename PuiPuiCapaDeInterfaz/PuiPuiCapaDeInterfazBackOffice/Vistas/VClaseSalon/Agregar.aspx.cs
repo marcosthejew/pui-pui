@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using PuiPuiCapaDeInterfazBackOffice.Contratos.CTClaseSalon;
 
 namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VClaseSalon
 {
@@ -28,5 +29,36 @@ namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VClaseSalon
         {
 
         }
+
+        public DropDownList salones {
+
+            get { return ComboSalon; }
+            set { salones = value; }
+        }
+        public DropDownList clases
+        {
+            get { return ComboClase; }
+            set { clases = value; }
+        
+        }
+        public DropDownList instructores
+        {
+            get { return ComboInstructor; }
+            set { instructores = value; }
+        
+        
+        }
+        public string hora_inicio
+        {
+            get {return TBHoraInicio.Text; }
+            set { hora_inicio = value; }
+        }
+
+        public string hora_fin
+        {
+            get { return TBHoraFin.Text; }
+            set { hora_fin = value; }
+        }
     }
+
 }
