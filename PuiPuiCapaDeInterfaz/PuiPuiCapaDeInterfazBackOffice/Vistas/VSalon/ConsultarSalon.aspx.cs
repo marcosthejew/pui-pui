@@ -59,6 +59,7 @@ namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VSalon
             set { TxtCapacidad = value; }
         
         }
+
         protected void botonBuscarSalon_Click(object sender, EventArgs e)
         {
           /*  if ((consultarSalonPorCapacidad.Checked == false) || (consultaCompleta.Checked == false) || (consultarSalonPorUbicacion.Checked == false) || (consultaSalonPorStatus.Checked = false) || (salon.Text.Equals("")) || (TextBoxCapacidad.Text.Equals("")))
@@ -77,6 +78,26 @@ namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VSalon
             
             
             
+        }
+
+        protected void GridConsultar_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Consultar")
+            {
+                int index = Convert.ToInt32(e.CommandArgument);
+                GridViewRow row = GridConsultar.Rows[index];
+                String _id = Convert.ToString(row.Cells[1].Text);
+                String _codigo = Convert.ToString(row.Cells[2].Text);
+                String _ubicacion = Convert.ToString(row.Cells[3].Text);
+                String _capacidad = Convert.ToString(row.Cells[4].Text);
+                String _status = Convert.ToString(row.Cells[5].Text);
+                Session["_idSalon"] = _id;
+                char[] charsToTrim = { '*', ' ', '\'', 'O', ':' };
+                char[] charsToTrim1 = { '*', ' ', '\'', ':' };
+                _ubicacion = _ubicacion.Trim(charsToTrim1);
+                Response.Redirect("DetalleConsultaSalon.aspx?ubicacion=" + _ubicacion + "&status=" + _status + "&id=" + _id + "&capacidad=" + _capacidad + "&codigo=" + _codigo);
+
+            }
         }
     }
 }

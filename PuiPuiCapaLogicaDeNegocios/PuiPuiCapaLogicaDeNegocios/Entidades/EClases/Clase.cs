@@ -11,13 +11,17 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EClases
         #region Atributos
 
         private String _nombre;
-        private int _idClase;
         private String _descripcion;
         private int _status;
         #endregion
 
         #region Getter Setter
 
+        public int Id
+        {
+            get { return _id; }
+            set { _id = value; }
+        }
         public int Status
         {
             get { return _status; }
@@ -30,11 +34,7 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EClases
             set { _descripcion = value; }
         }
 
-        public int IdClase
-        {
-            get { return _idClase; }
-            set { _idClase = value; }
-        }
+    
 
         public String Nombre
         {
@@ -51,22 +51,28 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EClases
         }
         public Clase(int id)
         {
-            this._idClase = id;
+            this._id = id;
         }
-        public Clase(String nombre, int idClase, String descripcion)
+        public Clase(String nombre, int id, String descripcion)
         {
             this._descripcion = descripcion;
             this._nombre = nombre;
-            this._idClase = idClase;
+            this._id = id;
         }
         public Clase(String nombre, int idClase, String descripcion, int st)
         {
             this._status = st;
             this._descripcion = descripcion;
             this._nombre = nombre;
-            this._idClase = idClase;
+            this._id = idClase;
         }
-
+        public Clase(String nombre,  String descripcion, int st)
+        {
+            this._status = st;
+            this._descripcion = descripcion;
+            this._nombre = nombre;
+            
+        }
 
         #endregion
 
@@ -78,7 +84,6 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EClases
             resultado += "<Id>" + Id + "</Id>";
             resultado += "<Status>" + Status + "</Status>";
             resultado += "<Descripcion>" + Descripcion + "</Descripcion>";
-            resultado += "<IdClase>" + IdClase + "</IdClase>";
             resultado += "<Nombre>" + Nombre + "</Nombre>";
             resultado += "</Clase>";
             return resultado;

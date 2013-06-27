@@ -102,6 +102,14 @@
     <Compile Include="Comandos\ComandoMusculo\ComandoConsultarTodosLosMusculos.cs" />
     <Compile Include="Comandos\ComandoMusculo\ComandoDesactivarMusculo.cs" />
     <Compile Include="Comandos\ComandoResevarClase\ComandoConsultarTodosReservarClase.cs" />
+    <Compile Include="Comandos\ComandosClase\ComandoBusquedaNombreClase.cs" />
+    <Compile Include="Comandos\ComandosClase\ComandoBusquedaStatusClase.cs" />
+    <Compile Include="Comandos\ComandosClase\ComandoConsultarClasesPorId.cs" />
+    <Compile Include="Comandos\ComandosClase\ComandoConsultarTodasClases.cs" />
+    <Compile Include="Comandos\ComandosClase\ComandoInactivarClase.cs" />
+    <Compile Include="Comandos\ComandosClase\ComandoInsertarClase.cs" />
+    <Compile Include="Comandos\ComandosClase\ComandoModificarClase.cs" />
+    <Compile Include="Comandos\ComandosClase\ComandoSerializarListaClase.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComadoEjercicio2.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoAgregarEjecicio.cs" />
     <Compile Include="Comandos\ComandosRutina\ComandoConsultarEjerciciosPorIDRutina.cs" />
@@ -209,6 +217,7 @@
     <Compile Include="Excepciones\ExecpcionEvaluacionInstructor.cs" />
     <Compile Include="Fabricas\AFabricaDAO.cs" />
     <Compile Include="Fabricas\FabricaComando.cs" />
+    <Compile Include="Fabricas\FabricaComandosClase.cs" />
     <Compile Include="Fabricas\FabricaComandosEvaluacionInstructor.cs" />
     <Compile Include="Fabricas\FabricaComandosHorario.cs" />
     <Compile Include="Fabricas\FabricaComandosSalon.cs" />

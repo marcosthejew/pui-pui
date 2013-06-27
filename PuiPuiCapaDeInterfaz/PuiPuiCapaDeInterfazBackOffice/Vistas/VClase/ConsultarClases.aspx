@@ -26,13 +26,13 @@
                     <h3 style="height: 8px; width: 100px">Buscar por:</h3></td>
                 <td rowspan="0" class="auto-style22" nowrap="nowrap" style="font-family: Arial,Helvetica, sans-serif; font-size: 14px; font-weight: bold; color: #fff; margin-top: 0px;">
                     <asp:RadioButton ID="RadioButtonConsultaCompleta" runat="server"
-                        GroupName="ConsultarClases" Text="Todos:" OnCheckedChanged="RadioButtonConsultaCompleta_CheckedChanged1" />
+                        GroupName="ConsultarClases" Text="Todos:"  />
 
 
                 </td>
                 <td rowspan="0" class="auto-style15" nowrap="nowrap" style="font-family: Arial,Helvetica, sans-serif; font-size: 14px; font-weight: bold; color: #fff; margin-top: 0px;">
                     <asp:RadioButton ID="consultaClasePorNombres" runat="server"
-                        GroupName="ConsultarClases" Text="Nombre:" OnCheckedChanged="consultaClasePorNombres_CheckedChanged" />
+                        GroupName="ConsultarClases" Text="Nombre:" />
 
                 </td>
               
@@ -43,7 +43,7 @@
               
                 <td rowspan="0" class="auto-style16" nowrap="nowrap" style="font-family: Arial,Helvetica, sans-serif; font-size: 14px; font-weight: bold; color: #fff; margin-top: 0px;">
                     <asp:RadioButton ID="consultaClasePorEstatus" runat="server" 
-                        GroupName="ConsultarClases" Text="Status:" OnCheckedChanged="consultaClasePorEstatus_CheckedChanged1"/>
+                        GroupName="ConsultarClases" Text="Status:" />
                        
                     
                     </td>
@@ -51,7 +51,7 @@
                 <td rowspan="0" class="auto-style21" nowrap="nowrap">
                    
 
-                    <asp:DropDownList ID="DropDownListEstatusClase" runat="server" Width="104px" OnSelectedIndexChanged="DropDownListEstatusClase_SelectedIndexChanged" Height="22px" style="margin-left: 0px" >
+                    <asp:DropDownList ID="DropDownListEstatusClase" runat="server" Width="104px"  Height="22px" style="margin-left: 0px" >
                         <asp:ListItem Value="0">Activa</asp:ListItem>
                         <asp:ListItem Value="1">Inactiva</asp:ListItem>
                         
@@ -70,9 +70,9 @@
             &nbsp;
                         <asp:GridView ID="GridConsultar" runat="server" CellPadding="4" ForeColor="#333333" 
                         GridLines="None" Height="16px" Width="687px" 
-                        OnRowCommand="GridConsultar_RowCommand" AllowPaging="True" PageSize="10" 
-                        OnPageIndexChanging="GridConsultar_PageIndexChanging" 
-                        OnSelectedIndexChanged="GridConsultar_SelectedIndexChanged" HorizontalAlign="Center">
+                         AllowPaging="True" PageSize="10" 
+                        
+                       HorizontalAlign="Center">
                         <AlternatingRowStyle BackColor="White" />
                         <EditRowStyle BackColor="#2461BF" HorizontalAlign="Center" />
                         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />

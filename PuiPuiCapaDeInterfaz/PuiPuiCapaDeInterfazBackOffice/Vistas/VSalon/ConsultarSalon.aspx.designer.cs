@@ -121,33 +121,6 @@ namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VSalon {
         protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
-        /// consultarSalonPorCodigo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton consultarSalonPorCodigo;
-        
-        /// <summary>
-        /// salonCodigo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox salonCodigo;
-        
-        /// <summary>
-        /// RegularExpressionValidator2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator2;
-        
-        /// <summary>
         /// GridConsultar control.
         /// </summary>
         /// <remarks>
