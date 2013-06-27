@@ -32,16 +32,15 @@ drop procedure [insertarEjercicio]
 go
 CREATE PROCEDURE [dbo].[insertarEjercicio]
 @Nombre NVARCHAR(50),
-@Descripcion nvarchar(150),
-@status int,
+@Descripcion nvarchar(150),	
 @idMusculo int
 AS
 BEGIN
 
 	SET NOCOUNT ON;
 
-    insert into Ejercicio (nombre,descripcion,inactivo) values (@Nombre,@Descripcion,@status);
-	SELECT SCOPE_IDENTITY();
+    insert into Ejercicio (nombre,descripcion,inactivo) values (@Nombre,@Descripcion,1);
+	/*SELECT SCOPE_IDENTITY();*/
 	
 	
 END
@@ -62,6 +61,7 @@ set nocount on
 			   eje.nombre,
 			   eje.descripcion,
 			   eje.inactivo,
+			   mus.id_musculo,
 			   mus.nombre
 		from Ejercicio eje,
 		     Musculo mus, 
@@ -133,9 +133,9 @@ go
 
 
 CREATE procedure [dbo].[actualizarEjercicio]
+@idEjercicio int,
 @nombreEjercicio nchar(50),
-@descripcionEjercicio nchar(250),
-@idEjercicio int
+@descripcionEjercicio nchar(250)
 as
 
 BEGIN
@@ -191,6 +191,7 @@ END;
 
 GO
 
+/*MUSCULOS*/
 
 IF EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'[existeMusculo]')
 AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
@@ -210,6 +211,27 @@ END;
 
 GO
 
+
+IF EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'[buscarMusculoPorId]')
+AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [buscarMusculoPorId]
+go
+CREATE procedure [dbo].[buscarMusculoPorId]
+@idMusculo nchar(50)
+as
+
+BEGIN
+	set nocount on
+		
+	SELECT M.id_musculo,
+	M.nombre,
+	M.descripcion,
+	M.inactivo
+	FROM Musculo M
+	where M.id_musculo = @idMusculo		
+END;
+
+GO
 IF EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'[agregarMusculo]')
 AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
 drop procedure [agregarMusculo]
@@ -266,7 +288,18 @@ CREATE procedure [dbo].[eliminarMusculo]
 as
 
 BEGIN
+	declare @status int;
 	set nocount on
         
-       update Musculo set inactivo=1 where @idMusculo=id_musculo;
+        
+		select inactivo =@status
+		from Musculo
+		where id_musculo=@idMusculo;
+
+		if @status =1
+		begin
+			update Musculo set inactivo= 0 where id_musculo=@idMusculo;
+		end
+		else 
+			update Musculo set inactivo= 1 where id_musculo=@idMusculo;
 END;

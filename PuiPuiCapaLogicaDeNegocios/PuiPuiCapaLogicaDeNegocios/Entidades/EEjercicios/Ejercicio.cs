@@ -9,9 +9,9 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EEjercicios
     public class Ejercicio : AComponenteRutina
     {
         #region Atributos
-        private int id;
         private string _nombre;
         private string _descripcion;
+        private bool _status;
         private string _duracion;
         private int _repeticiones;
         private Musculo _musculo;
@@ -30,6 +30,12 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EEjercicios
         {
             get { return _descripcion; }
             set { _descripcion = value; }
+        }
+
+        public bool Status
+        {
+            get { return _status; }
+            set { _status = value; }
         }
 
         public string Duracion
