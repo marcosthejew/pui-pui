@@ -71,7 +71,7 @@
                         <asp:GridView ID="GridConsultar" runat="server" CellPadding="4" ForeColor="#333333" 
                         GridLines="None" Height="16px" Width="687px" 
                          AllowPaging="True" PageSize="10" 
-                        
+                         OnRowCommand="GridConsultar_RowCommand"
                        HorizontalAlign="Center">
                         <AlternatingRowStyle BackColor="White" />
                         <EditRowStyle BackColor="#2461BF" HorizontalAlign="Center" />

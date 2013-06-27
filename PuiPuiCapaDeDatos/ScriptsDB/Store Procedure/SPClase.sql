@@ -61,7 +61,7 @@ BEGIN
 	SET NOCOUNT ON;
 
     
-    Select id_clase,nombre,inactivo
+    Select id_clase,nombre,descripcion,inactivo
     from clase;
 	
 END

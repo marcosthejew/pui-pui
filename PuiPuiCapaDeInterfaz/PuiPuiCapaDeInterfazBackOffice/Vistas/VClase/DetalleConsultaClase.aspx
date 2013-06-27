@@ -49,9 +49,10 @@
             </tr>
                 <tr>
                 <td class="auto-style5" align="center">
-                    &nbsp;</td>
-                <td class="auto-style6" colspan="0" align="center">
                 <asp:Button ID="botonRegresar" runat="server" Text="Regresar" CssClass="button" Font-Names="Tomoha Plain" Font-Size="14px" Height="25px" OnClick="botonRegresar_Click" Width="120px"  />
+                    </td>
+                <td class="auto-style6" colspan="0" align="center">
+                <asp:Button ID="botonModificar" runat="server" Text="Modificar" CssClass="button" Font-Names="Tomoha Plain" Font-Size="14px" Height="25px"  Width="120px" OnClick="botonModificar_Click"  />
                     </td>
 
             </tr>
