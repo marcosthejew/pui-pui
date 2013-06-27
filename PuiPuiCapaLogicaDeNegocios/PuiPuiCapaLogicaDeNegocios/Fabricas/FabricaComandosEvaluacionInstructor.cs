@@ -32,5 +32,11 @@ namespace PuiPuiCapaLogicaDeNegocios.Fabricas
             return new ComandoModificarEvaluacionInstructor(evaluacion);
         }
 
+        public static AComando<string>
+        CrearComandoSerializarListaEvaluacionInstructor(List<EvaluacionInstructor> listaevaluacioninstrustor)
+        {
+            return new ComandoSerializarListaEvaluacionInstructor(listaevaluacioninstrustor);
+        }
+
     }
 }

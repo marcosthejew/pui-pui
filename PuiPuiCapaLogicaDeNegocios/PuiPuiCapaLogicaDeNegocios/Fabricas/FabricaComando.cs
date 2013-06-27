@@ -90,6 +90,7 @@ namespace PuiPuiCapaLogicaDeNegocios.Fabricas
         {
             return new ComandoConsultarTodosReservarClase();
         }
+
         public static AComando<StringWriter> CrearComandoSerializadorListaEntidades(List<AEntidad> entidad)
         {
             return new ComandoSerializadorListaEntidades(entidad);

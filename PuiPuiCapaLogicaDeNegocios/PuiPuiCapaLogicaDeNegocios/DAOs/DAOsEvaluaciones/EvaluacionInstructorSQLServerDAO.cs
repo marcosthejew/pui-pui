@@ -178,6 +178,9 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEvaluaciones
                 param = new SqlParameter("@observaciones", evaluacion.Observaciones);
                 cmd.Parameters.Add(param);
 
+                param = new SqlParameter("@inactivo", evaluacion.Observaciones);
+                cmd.Parameters.Add(param);
+
                 param = new SqlParameter("@id_cliente", evaluacion.idCliente);
                 cmd.Parameters.Add(param);
 
@@ -271,6 +274,9 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEvaluaciones
                 cmd.Parameters.Add(param);
 
                 param = new SqlParameter("@observaciones", evaluacion.Observaciones);
+                cmd.Parameters.Add(param);
+
+                param = new SqlParameter("@inactivo", evaluacion.Observaciones);
                 cmd.Parameters.Add(param);
 
                 param = new SqlParameter("@id_cliente", evaluacion.idCliente);

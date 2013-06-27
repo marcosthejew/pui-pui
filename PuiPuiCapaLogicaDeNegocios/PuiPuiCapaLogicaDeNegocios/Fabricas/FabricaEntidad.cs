@@ -164,10 +164,11 @@ namespace PuiPuiCapaLogicaDeNegocios.Fabricas
             return eva;
         }
 
-        public static AEntidad CrearEvaluacionInstructor(int id,DateTime fecha,String observaciones,int idcliente,int idinstructor)
+        public static AEntidad CrearEvaluacionInstructor(int id,DateTime fecha,String observaciones,int status,int idcliente,int idinstructor)
         {          
             EvaluacionInstructor eva = new EvaluacionInstructor();
             eva.Id = id;
+            eva.Inactivo = status; 
             eva.Fecha = fecha;
             eva.Observaciones = observaciones;
             eva.idCliente = idcliente;

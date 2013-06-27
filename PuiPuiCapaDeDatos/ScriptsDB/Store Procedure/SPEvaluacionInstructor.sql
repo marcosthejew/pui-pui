@@ -13,15 +13,17 @@ go
 CREATE PROCEDURE [dbo].[AgregarEvaluacionInstructor]
 @fecha datetime,
 @calificacion int,
+@inactivo bit,
 @observaciones NVARCHAR(200),
 @id_cliente int,
-@id_instructor bit
+@id_instructor int
+
 AS
 
 BEGIN
 
 	SET NOCOUNT ON;    
-    Insert Evaluacion_Instructor values(@fecha,@calificacion,0,@observaciones,@id_cliente,@id_instructor);
+    Insert Evaluacion_Instructor values(@fecha,@calificacion,@inactivo,@observaciones,@id_cliente,@id_instructor);
 	
 END
 
@@ -29,12 +31,13 @@ GO
 
 IF EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'[ModificarEvaluacionInstructor]')
 AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
-drop procedure [ModificarClase]
+drop procedure [ModificarEvaluacionInstructor]
 go
 CREATE PROCEDURE [dbo].[ModificarEvaluacionInstructor]
 @idEvaluacion int,
 @fecha datetime,
 @calificacion int,
+@inactivo bit,
 @observaciones NVARCHAR(200),
 @id_cliente int,
 @id_instructor bit
@@ -44,7 +47,7 @@ BEGIN
 
 	SET NOCOUNT ON;
 
-    update Evaluacion_Instructor set fecha_evaluacion=@fecha, calificacion=@calificacion, 
+    update Evaluacion_Instructor set fecha_evaluacion=@fecha, calificacion=@calificacion, inactivo = @inactivo,
 	observaciones=@observaciones,id_cliente=@id_cliente, id_instructor=@id_instructor where id_eval_inst=@idEvaluacion;
     
 	

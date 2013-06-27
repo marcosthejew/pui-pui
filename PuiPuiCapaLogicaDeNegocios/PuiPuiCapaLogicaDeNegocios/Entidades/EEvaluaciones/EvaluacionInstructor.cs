@@ -53,5 +53,21 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EEvaluaciones
 
 
         #endregion
+        #region Metodos
+            public string serializar()
+            {
+                string resultado = "<EvalucionIntructor>";
+
+                resultado += "<Id>" + Id + "</Id>";
+                resultado += "<Fecha>" + _fecha + "</Fecha>";
+                resultado += "<Observaciones>" + _observaciones + "</Observaciones>";
+                resultado += "<Status>" + _inactivo + "</Status>";
+                resultado += "<Cliente>" + _id_Cliente + "</Cliente>";
+                resultado += "<Instructor>" + _id_Instructor + "</Instructor>";
+                resultado += "</EvalucionIntructor>";
+                return resultado;
+
+            }
+        #endregion
     }
 }

@@ -107,10 +107,12 @@
     <Compile Include="Comandos\ComandosEjercicio\ComandoConsultarTodosEjercicio.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoInactivarEjercicio.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoModificarEjercicio.cs" />
+    <Compile Include="Comandos\ComandoSerializadorListaEntidades.cs" />
     <Compile Include="Comandos\ComandosEvaluacionInstructor\ComandoDetalleEvaluacionInstructor.cs" />
     <Compile Include="Comandos\ComandosEvaluacionInstructor\ComandoDetalleTodoEvaluacionInstructor.cs" />
     <Compile Include="Comandos\ComandosEvaluacionInstructor\ComandoInsertarEvaluacionInstructor.cs" />
     <Compile Include="Comandos\ComandosEvaluacionInstructor\ComandoModificarEvaluacionInstructor.cs" />
+    <Compile Include="Comandos\ComandosEvaluacionInstructor\ComandoSerializarListaEvaluacionInstructor.cs" />
     <Compile Include="Comandos\ComandosHorario\ComandoInsertaHorario.cs" />
     <Compile Include="Comandos\ComandosInstructor\ComandoAgregarInstructor.cs" />
     <Compile Include="Comandos\ComandosInstructor\ComandoConsultarPorIdInstructor.cs" />
@@ -126,6 +128,7 @@
     <Compile Include="Comandos\ComandosSalon\ComandoInactivarSalon.cs" />
     <Compile Include="Comandos\ComandosSalon\ComandoInsertarSalon.cs" />
     <Compile Include="Comandos\ComandosSalon\ComandoModificarSalon.cs" />
+    <Compile Include="Comandos\ComandosSalon\ComandoSerializarListaSalon.cs" />
     <Compile Include="DAOs\ASQLServerDAO.cs" />
     <Compile Include="DAOs\DAOsClases\ClaseSalonSQLServerDAO.cs" />
     <Compile Include="DAOs\DAOsClases\ClaseSQLServerDAO.cs" />
@@ -262,6 +265,8 @@
     <Fakes Include="Fakes\log4net.fakes" />
     <Content Include="packages\log4net.2.0.0\log4net.2.0.0.nupkg" />
     <Content Include="packages\repositories.config" />
+    <Content Include="Fabricas\FabricaComando.cs.orig" />
+    <Content Include="Fabricas\FabricaEntidad.cs.orig" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
