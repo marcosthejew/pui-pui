@@ -95,5 +95,14 @@ namespace PuiPuiCapaLogicaDeNegocios.Servicios.FrontOffice
             return resultado;
         }
 
+
+        [WebMethod]
+        public bool ActivarInactivarRutina(int idRutina, byte inactivo)
+        {
+            bool entidadRutina = false;
+            entidadRutina = Fabricas.FabricaComando.CrearComandoActivarInactivarRutina().Ejecutar();
+            return entidadRutina;
+        }
+
     }
 }

@@ -91,7 +91,9 @@
     <Content Include="Servicios\FrontOffice\FachadaEjerciciosFrontOffice.asmx" />
     <Content Include="Servicios\FrontOffice\FachadaInstructoresFrontOffice.asmx" />
     <Content Include="Servicios\FrontOffice\FachadaRutinasEjerciciosFrontOffice.asmx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bitacora\EscritorBitacora.cs" />
@@ -112,6 +114,7 @@
     <Compile Include="Comandos\ComandosClase\ComandoSerializarListaClase.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComadoEjercicio2.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoAgregarEjecicio.cs" />
+    <Compile Include="Comandos\ComandosRutina\ComandoActivarInactivarRutina.cs" />
     <Compile Include="Comandos\ComandosRutina\ComandoConsultarEjerciciosPorIDRutina.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoConsultarPorIdEjercicio.cs" />
     <Compile Include="Comandos\ComandosRutina\ComandoConsultarRutinasPorCliente.cs" />

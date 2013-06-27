@@ -5,6 +5,7 @@ using System.Web;
 using PuiPuiCapaLogicaDeNegocios.Entidades;
 using PuiPuiCapaLogicaDeNegocios.Comandos;
 using PuiPuiCapaLogicaDeNegocios.Comandos.ComandosEjercicio;
+using PuiPuiCapaLogicaDeNegocios.Comandos.ComandosRutina;
 using PuiPuiCapaLogicaDeNegocios.Comandos.ComandosInstructor;
 using PuiPuiCapaLogicaDeNegocios.Comandos.ComandoResevarClase;
 using PuiPuiCapaLogicaDeNegocios.Comandos.ComandoMusculo;
@@ -130,6 +131,10 @@ namespace PuiPuiCapaLogicaDeNegocios.Fabricas
         public static AComando<List<Entidades.EEjercicios.Ejercicio>> CrearComandoConsultarEjerciciosPorIDRutina()
         {
             return new ComandoConsultarEjerciciosPorIDRutina();
+        }
+        public static AComando<bool> CrearComandoActivarInactivarRutina()
+        {
+            return new ComandoActivarInactivarRutina();
         }
         #endregion
     }
