@@ -23,7 +23,8 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEjercicios
         private SqlDataReader dr;
 
         #endregion
-
+        
+        #region ConsultarRutinasPorIDCliente
         public List<Rutina> ConsultarRutinasPorIDCliente(int idPersona)
         {
 
@@ -81,19 +82,16 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEjercicios
 
             return listaRutina;
         }
+        #endregion
 
+        #region ConsultarEjerciciosPorIDRutina
         public List<Ejercicio> ConsultarEjerciciosPorIDRutina(int idRutina)
         {
-            string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDBv1;Integrated Security=True";
-            SqlConnection conexion = new SqlConnection();
-            SqlCommand cmd = new SqlCommand();
-            SqlDataReader dr;
-
             List<Ejercicio> listaEjercicio = new List<Ejercicio>();
 
             try
             {
-                conexion = new SqlConnection(cadenaConexion);
+                conexion = obtenerConexion();
                 conexion.Open();
                 cmd = new SqlCommand("[dbo].[ConsultarEjerciciosPorIDRutina]", conexion);
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -141,58 +139,52 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEjercicios
             }
             return listaEjercicio;
         }
-        //public List<Entidades.AEntidad> ConsultarRutinasPorIDCliente(int idCliente)
+        #endregion
 
-        //{
-        //    List<AEntidad> ejercicios = new List<AEntidad>();
-        //    try
-        //    {
-        //        conexion = obtenerConexion();
-        //        conexion.Open();
-        //        cmd = new SqlCommand("[dbo].[consultarTodosEjercicios]", conexion);
-        //        cmd.CommandType = CommandType.StoredProcedure;
-        //        dr = cmd.ExecuteReader();
+        #region ActivarInactivarRutina
+        public bool ActivarInactivarRutina(int idRutina, byte inactivo)
+        {
+            try
+            {
+                conexion = obtenerConexion();
+                conexion.Open();
+                cmd = new SqlCommand("[dbo].[ActivarDesactivarRutina]", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idRutina", idRutina);
+                cmd.Parameters.AddWithValue("@inactivo", inactivo);
+                dr = cmd.ExecuteReader();
 
+                dr.Read();
+                return true;
 
-
-        //        while (dr.Read())
-        //        {
-
-        //            AEntidad ejercicio = FabricaEntidad.CrearEjercicio();
-        //            (ejercicio as Ejercicio).Id = Convert.ToInt32(dr.GetValue(0));
-        //            (ejercicio as Ejercicio).Nombre = dr.GetValue(1).ToString();
-        //            ejercicios.Add(ejercicio);
-        //        }
-
-
-        //    }
-        //    catch (ArgumentException e)
-        //    {
-        //        throw new ExcepcionEjercicioConexionBD("Parametros invalidos", e);
-        //    }
-        //    catch (InvalidOperationException e)
-        //    {
-        //        throw new ExcepcionEjercicioConexionBD("Operacion Invalida", e);
-        //    }
-        //    catch (NullReferenceException e)
-        //    {
-        //        throw new ExcepcionEjercicioConexionBD("Ejercicio no encontrado", e);
-        //    }
-        //    catch (SqlException e)
-        //    {
-        //        throw new ExcepcionEjercicioConexionBD("Error con base de datos", e);
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        throw new ExcepcionEjercicioConexionBD("Error general", e);
-        //    }
-        //    finally
-        //    {
-        //        CerrarConexion(conexion);
-        //    }
-        //    return ejercicios;
-
-        //}
+            }
+            catch (ArgumentException e)
+            {
+                throw new ExcepcionEjercicioConexionBD("Parametros invalidos", e);
+            }
+            catch (InvalidOperationException e)
+            {
+                throw new ExcepcionEjercicioConexionBD("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new ExcepcionEjercicioConexionBD("Ejercicio no encontrado", e);
+            }
+            catch (SqlException e)
+            {
+                throw new ExcepcionEjercicioConexionBD("Error con base de datos", e);
+            }
+            catch (Exception e)
+            {
+                throw new ExcepcionEjercicioConexionBD("Error general", e);
+            }
+            finally
+            {
+                CerrarConexion(conexion);
+            }
+            
+        }
+        #endregion
 
 
         /// <summary>

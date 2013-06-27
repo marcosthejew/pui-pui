@@ -14,5 +14,6 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEjercicios
     {
         List<Rutina> ConsultarRutinasPorIDCliente(int idCliente);
         List<Ejercicio> ConsultarEjerciciosPorIDRutina(int idRutina);
+        bool ActivarInactivarRutina(int idRutina, byte inactivo);
     }
 }
