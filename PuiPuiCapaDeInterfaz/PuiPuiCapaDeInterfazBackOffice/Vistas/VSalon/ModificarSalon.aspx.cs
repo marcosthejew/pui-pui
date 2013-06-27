@@ -95,7 +95,7 @@ namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VSalon
 
         protected void Cancelar_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("ConsultarSalon.aspx");
         }
     }
 }

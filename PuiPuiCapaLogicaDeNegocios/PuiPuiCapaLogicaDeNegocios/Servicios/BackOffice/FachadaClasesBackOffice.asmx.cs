@@ -35,9 +35,9 @@ namespace PuiPuiCapaLogicaDeNegocios.Servicios.BackOffice
         }
 
         [WebMethod]
-        public bool ServicioModificarClase(int id, string nombre, int idClase, string descripcion, int status)
+        public bool ServicioModificarClase(int id, string nombre, string descripcion, int status)
         {
-           Clase clase = (Clase)FabricaEntidad.CrearClase(nombre, idClase, descripcion, status);
+           Clase clase = (Clase)FabricaEntidad.CrearClase(nombre, id, descripcion, status);
             return FabricaComandosClase.CrearComandoModificarClase(id, clase).Ejecutar();
         }
 

@@ -48,7 +48,7 @@ namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VClase
         public int SessionID
         {
             get { return _idClase; }
-            set { SessionID= value; }
+            set { SessionID = value; }
 
         }
 
@@ -76,5 +76,24 @@ namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VClase
 
         }
 
+        protected void GridConsultar_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+
+            if (e.CommandName == "Consultar")
+            {
+                int index = Convert.ToInt32(e.CommandArgument);
+                GridViewRow row = GridConsultar.Rows[index];
+                String _id = Convert.ToString(row.Cells[1].Text);
+                String _nombre = Convert.ToString(row.Cells[2].Text);
+                String _descripcion = Convert.ToString(row.Cells[3].Text);
+                String _status = Convert.ToString(row.Cells[4].Text);
+                Session["_idClase"] = _id;
+                char[] charsToTrim = { '*', ' ', '\'', 'O', ':' };
+                char[] charsToTrim1 = { '*', ' ', '\'', ':' };
+                _nombre = _nombre.Trim(charsToTrim1);
+                Response.Redirect("DetalleConsultaClase.aspx?nombre=" + _nombre + "&status=" + _status + "&id=" + _id + "&descripcion=" + _descripcion);
+            }
+
+        }
     }
 }

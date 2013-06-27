@@ -29,7 +29,12 @@ namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VSalon
             String _ubicacion = Convert.ToString((Request.QueryString["ubicacion"] != null) ? Request.QueryString["ubicacion"] : "");
             String _capacidad = Convert.ToString((Request.QueryString["capacidad"] != null) ? Request.QueryString["capacidad"] : "");
             String _status = Convert.ToString((Request.QueryString["status"] != null) ? Request.QueryString["status"] : "");
-            Response.Redirect("ModificarSalon.aspx?ubicacion=" + _ubicacion + "&status=" + _status + "&id=" + _id + "&capacidad=" + _capacidad + "&codigo=" + _codigo);
+            Response.Redirect("DetalleConsultaClase.aspx?ubicacion=" + _ubicacion + "&status=" + _status + "&id=" + _id + "&capacidad=" + _capacidad + "&codigo=" + _codigo);
+        }
+
+        protected void Regresar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ConsultarSalon.aspx");
         }
     }
 }

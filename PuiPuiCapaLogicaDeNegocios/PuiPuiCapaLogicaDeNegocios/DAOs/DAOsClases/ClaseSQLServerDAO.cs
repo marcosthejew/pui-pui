@@ -44,7 +44,8 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
                     Entidades.EClases.Clase clase = (Entidades.EClases.Clase)Fabricas.FabricaEntidad.CrearClase();
                     clase.Id = Convert.ToInt32(dr.GetValue(0));
                     clase.Nombre = dr.GetValue(1).ToString();
-                    clase.Status = Convert.ToInt32(dr.GetValue(2));
+                    clase.Descripcion=dr.GetValue(2).ToString();
+                    clase.Status = Convert.ToInt32(dr.GetValue(3));
                     listaclase.Add(clase);
 
                 }
@@ -297,6 +298,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
         /// <returns></returns>
         public List<Entidades.AEntidad> BusquedaNombreClase(String nombreClase)
         {
+            listaclase = new List<Entidades.AEntidad>();
             listaclase.RemoveRange(0, listaclase.Count);
             SqlConnection conexion = obtenerConexion();
             try
@@ -362,6 +364,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
         /// 
         public List<Entidades.AEntidad> BusquedaStatusClase(int stat)
         {
+            listaclase = new List<Entidades.AEntidad>();
             listaclase.RemoveRange(0, listaclase.Count);
             SqlConnection conexion = obtenerConexion();
             try

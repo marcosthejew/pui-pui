@@ -12,6 +12,6 @@ namespace PuiPuiCapaDeInterfazBackOffice.Contratos.CTClase
         String TADescripcionModificar { get; set; }
         Boolean RBStatus_Activo { get; set; }
         Boolean RBStatus_Inactivo { get; set; }
-        String DPLClaseModificar { set; get; }
+        int idClase { set; get; }
     }
 }
