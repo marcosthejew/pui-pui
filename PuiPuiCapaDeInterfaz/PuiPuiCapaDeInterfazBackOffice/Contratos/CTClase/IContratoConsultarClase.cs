@@ -12,8 +12,9 @@ namespace PuiPuiCapaDeInterfazBackOffice.Contratos.CTClase
      
         Boolean RBConsultaCompleta { set; get; }
         Boolean RBconsultaClasePorNombres { set; get; }
+        Boolean RBPorStatus { set; get; }
         String TextNombreClase { set; get; }
         String DPLStatus { set; get; }
-
+         int SessionID { set; get; }
     }
 }

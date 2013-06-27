@@ -86,13 +86,10 @@ margin-top: 0px;">
                  <tr>
                 <td></td>                
                 <td class="auto-style13">
-                    <asp:RadioButton ID="consultarSalonPorCodigo" runat="server" ForeColor="White"
-                        GroupName="ConsultarSalon" Text="Codigo:"/>
-                     </td>  
+                    &nbsp;</td>  
                 <td class="auto-style18">
-                    <asp:TextBox ID="salonCodigo" runat="server" Height="22px" Width="143px" ValidationGroup="check"></asp:TextBox>
-                     </td>  
-                <td class="auto-style7">&nbsp; <asp:RegularExpressionValidator ID="RegularExpressionValidator2" ControlToValidate="salonCodigo" runat="server" ErrorMessage="No se aceptan numero ni caracteres especiales" ForeColor="Red" ValidationGroup="check" ValidationExpression="^[a-zA-Z''-'''.'\s]{1,45}$" Display="Dynamic"></asp:RegularExpressionValidator></td>  
+                    &nbsp;</td>  
+                <td class="auto-style7">&nbsp; </td>  
                 
             </tr>
             </table>
@@ -101,6 +98,7 @@ margin-top: 0px;">
             
             <asp:GridView ID="GridConsultar" runat="server" CellPadding="4" ForeColor="#333333" 
                         GridLines="None" align="center" Height="16px" Width="734px" 
+                        OnRowCommand="GridConsultar_RowCommand"
                        AllowPaging="True" PageSize="10" 
                         HorizontalAlign="Center">
                         <AlternatingRowStyle BackColor="White" />

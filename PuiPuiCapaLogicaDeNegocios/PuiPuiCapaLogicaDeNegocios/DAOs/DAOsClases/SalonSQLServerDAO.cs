@@ -343,11 +343,12 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
 
             listasalon = new List<Entidades.AEntidad>();
             listasalon.RemoveRange(0, listasalon.Count);
+            SqlConnection conexion = obtenerConexion();
             try
             {
 
-                obtenerConexion().Open();
-                SqlCommand cmd = new SqlCommand("[dbo].[BusquedaCapacidadMayorSalon]", obtenerConexion());
+                conexion.Open();
+                SqlCommand cmd = new SqlCommand("[dbo].[BusquedaCapacidadMayorSalon]", conexion);
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlParameter param = new SqlParameter("@Capacidad", capacidad);
                 cmd.Parameters.Add(param);
@@ -365,7 +366,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
                     listasalon.Add(salon);
                 }
 
-               obtenerConexion().Close();
+                conexion.Close();
 
             }
             catch (ArgumentException e)
@@ -390,7 +391,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
             }
             finally
             {
-                obtenerConexion().Close();
+                conexion.Close();
             }
             return listasalon;
         }
@@ -479,7 +480,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
             try
             {
                 conexion.Open();
-                SqlCommand cmd = new SqlCommand("[dbo].[BusquedaStatusSalon]", obtenerConexion());
+                SqlCommand cmd = new SqlCommand("[dbo].[BusquedaStatusSalon]", conexion);
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlParameter param = new SqlParameter("@Status", stat);
                 cmd.Parameters.Add(param);

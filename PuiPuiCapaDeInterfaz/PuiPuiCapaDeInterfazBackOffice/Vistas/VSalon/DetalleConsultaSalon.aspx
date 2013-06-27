@@ -51,7 +51,7 @@ margin-top: 0px;">
                   <h2>Codigo del Salon:</h2>  
                 </td>
                 <td class="auto-style8">
-                    <asp:TextBox ID="TextBoxCodigo" runat="server" Height="22px" Width="189px"  Font-Names="Arial" Font-Size="12px"></asp:TextBox>
+                    <asp:TextBox ID="TextBoxCodigo" runat="server" Height="22px" Width="189px"  Font-Names="Arial" Font-Size="12px" Enabled="False" ></asp:TextBox>
                 </td>
             </tr>
 
@@ -71,7 +71,7 @@ margin-top: 0px;">
 
             <tr >
                 <td colspan="2"  style="text-align:center">
-                <asp:Button ID="Regresar" runat="server" Text="Regresar" Height="25px" Width="120px" OnClick="Regresar_Click" Font-Size="14px"/>
+                <asp:Button ID="Regresar" runat="server" Text="Regresar" Height="25px" Width="120px"  Font-Size="14px"/>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="Modificar" runat="server" Text="Modificar" Height="25px" Width="120px" OnClick="Modificar_Click" Font-Size="14px"/>
                 </td>
             </tr>

@@ -42,7 +42,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
                 while (dr.Read())
                 {
                     Entidades.EClases.Clase clase = (Entidades.EClases.Clase)Fabricas.FabricaEntidad.CrearClase();
-                    clase.IdClase = Convert.ToInt32(dr.GetValue(0));
+                    clase.Id = Convert.ToInt32(dr.GetValue(0));
                     clase.Nombre = dr.GetValue(1).ToString();
                     clase.Status = Convert.ToInt32(dr.GetValue(2));
                     listaclase.Add(clase);
@@ -238,7 +238,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
                conexion.Open();
                 SqlCommand cmd = new SqlCommand("[dbo].[ModificarClase]", conexion);
                 cmd.CommandType = CommandType.StoredProcedure;
-                SqlParameter param = new SqlParameter("@Id_clase", clase.IdClase);
+                SqlParameter param = new SqlParameter("@Id_clase", clase.Id);
                 cmd.Parameters.Add(param);
                 param = new SqlParameter("@Nombre", clase.Nombre);
                 cmd.Parameters.Add(param);
@@ -312,7 +312,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
                 while (dr.Read())
                 {
                     Entidades.EClases.Clase clase = (Entidades.EClases.Clase)Fabricas.FabricaEntidad.CrearClase();
-                    clase.IdClase = Convert.ToInt32(dr.GetValue(0));
+                    clase.Id = Convert.ToInt32(dr.GetValue(0));
                     clase.Nombre = dr.GetValue(1).ToString();
                     clase.Descripcion = dr.GetValue(2).ToString();
                     clase.Status = Convert.ToInt32(dr.GetValue(3));
@@ -377,7 +377,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
                 while (dr.Read())
                 {
                     Entidades.EClases.Clase clase = (Entidades.EClases.Clase)Fabricas.FabricaEntidad.CrearClase();
-                    clase.IdClase = Convert.ToInt32(dr.GetValue(0));
+                    clase.Id = Convert.ToInt32(dr.GetValue(0));
                     clase.Nombre = dr.GetValue(1).ToString();
                     clase.Descripcion = dr.GetValue(2).ToString();
                     clase.Status = Convert.ToInt32(dr.GetValue(3));

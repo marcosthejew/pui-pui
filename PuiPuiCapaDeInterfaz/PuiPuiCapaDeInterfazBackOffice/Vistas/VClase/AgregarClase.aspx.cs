@@ -37,7 +37,16 @@ namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VClase
             else
             {
                 PAgregarClase agregar = new PAgregarClase(this);
-                agregar.InsertarClase();
+                bool Inserto = agregar.InsertarClase();
+                if (Inserto == true)
+                {
+                    Exito.Visible = true;
+                }
+                else
+                {
+                    falla.Visible = true;
+                }
+                
             }
         }
 
