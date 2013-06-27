@@ -25,6 +25,11 @@ namespace PuiPuiCapaLogicaDeNegocios.Fabricas
         {
             return new Clase();
         }
+        public static AEntidad CrearClase(string nombre,int idClase, string descripcion, int status)
+        {
+
+            return new Clase(nombre, idClase, descripcion, status);
+        }
 
         /// <summary>
         /// Metodo estatico que retorna una instancia de la clase ClaseSalon
