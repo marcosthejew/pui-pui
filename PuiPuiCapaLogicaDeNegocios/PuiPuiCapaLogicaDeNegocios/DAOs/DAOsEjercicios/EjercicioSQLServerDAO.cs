@@ -55,6 +55,9 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEjercicios
                     AEntidad ejercicio = FabricaEntidad.CrearEjercicio();
                     (ejercicio as Ejercicio).Id = Convert.ToInt32(dr.GetValue(0));
                     (ejercicio as Ejercicio).Nombre = dr.GetValue(1).ToString();
+                    (ejercicio as Ejercicio).Status = Convert.ToBoolean(dr.GetValue(2));
+                    AEntidad musculo = FabricaEntidad.CrearMusculo(Convert.ToInt32(dr.GetValue(3)),dr.GetValue(4).ToString());
+                    (ejercicio as Ejercicio).Musculo = musculo as Musculo;
                     ejercicios.Add(ejercicio);
                 }
               
@@ -176,8 +179,8 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEjercicios
                 conexion.Open();
                 cmd = new SqlCommand("[dbo].[insertarEjercicio]", conexion);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@nombreEjercicio", (entidad as Ejercicio).Nombre);
-                cmd.Parameters.AddWithValue("@descripcionEjercicio", (entidad as Ejercicio).Descripcion);
+                cmd.Parameters.AddWithValue("@Nombre", (entidad as Ejercicio).Nombre);
+                cmd.Parameters.AddWithValue("@Descripcion", (entidad as Ejercicio).Descripcion);
                 cmd.Parameters.AddWithValue("@idMusculo", (entidad as Ejercicio).Musculo);
                 dr = cmd.ExecuteReader();
                 flag = true;
@@ -292,7 +295,6 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEjercicios
                 cmd.Parameters.AddWithValue("@idEjercicio", (entidad as Ejercicio).Id);
                 cmd.Parameters.AddWithValue("@nombreEjercicio", (entidad as Ejercicio).Nombre);
                 cmd.Parameters.AddWithValue("@descripcionEjercicio", (entidad as Ejercicio).Descripcion);
-                cmd.Parameters.AddWithValue("@idMusculo", (entidad as Ejercicio).Musculo.IdMusculo);
 
                 dr = cmd.ExecuteReader();
 

@@ -218,7 +218,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEjercicios
             {
                 _conexion = obtenerConexion();
                 _conexion.Open();
-                _cmd = new SqlCommand("[dbo].[cambiarEstado]", _conexion);
+                _cmd = new SqlCommand("[dbo].[eliminarMusculo]", _conexion);
                 _cmd.CommandType = CommandType.StoredProcedure;
                 _cmd.Parameters.AddWithValue("@idMusculo", id);
                 _dr = _cmd.ExecuteReader();
