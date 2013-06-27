@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace PuiPuiCapaDeInterfazBackOffice.Contratos.CTSalon
 {
+    /// <summary>
+    /// Interfaz que implementa tods los de datos primitivos
+    /// que pertenecen a las Vista detalle Consulta.
+    /// </summary>
    public interface IContractoDetalleConsulta
     {
         String SessionID { get; set; }

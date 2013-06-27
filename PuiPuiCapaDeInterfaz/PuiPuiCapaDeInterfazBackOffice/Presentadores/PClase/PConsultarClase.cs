@@ -9,6 +9,10 @@ using PuiPuiCapaDeInterfazBackOffice.LogicaClase;
 
 namespace PuiPuiCapaDeInterfazBackOffice.Presentadores.PClase
 {
+    /// <summary>
+    /// Esta clase tiene como finalidad realizar operaciones referentes a la 
+    /// Vista de Consultar clase con la capa de Logica de negocios.
+    /// </summary>
     public class PConsultarClase
     {
         IContratoConsultarClase consultar;
@@ -17,6 +21,11 @@ namespace PuiPuiCapaDeInterfazBackOffice.Presentadores.PClase
            this.consultar = vista_consultar;
         
         }
+        /// <summary>
+        /// Consulta las clases de gym que capa de datos pasando por la logica
+        /// ya sea todas las clases o las clases por datos especificos
+        /// </summary>
+        /// <returns>DataTable</returns>
 
         public DataTable ConsultaClase() {
 

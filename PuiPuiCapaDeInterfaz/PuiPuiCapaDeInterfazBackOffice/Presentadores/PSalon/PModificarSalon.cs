@@ -7,6 +7,10 @@ using PuiPuiCapaDeInterfazBackOffice.Contratos.CTSalon;
 
 namespace PuiPuiCapaDeInterfazBackOffice.Presentadores.PSalon
 {
+    /// <summary>
+    /// Estalase tiene como finalidad realizar operaciones referentes a la 
+    /// Vista de modificar salon con la capa de Logica de negocios.
+    /// </summary>
     public class PModificarSalon
     {
         IContratoModificarSalon _modificar;
@@ -16,6 +20,11 @@ namespace PuiPuiCapaDeInterfazBackOffice.Presentadores.PSalon
         
         }
 
+        /// <summary>
+        /// Devuelve un booleano que determina si el salon se modifico o no 
+        /// en la base de datos
+        /// </summary>
+        /// <returns>boolean</returns>
         public Boolean ModificarSalon()
         {
             FachadaSalonBackOfficeSoapClient modifica = new FachadaSalonBackOfficeSoapClient();

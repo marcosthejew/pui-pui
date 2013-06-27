@@ -131,6 +131,7 @@
     <Compile Include="Comandos\AComando.cs" />
     <Compile Include="Comandos\ComandoSerializadorListaEntidades.cs" />
     <Compile Include="Comandos\FabricaComando.cs" />
+    <Compile Include="Contratos\CTClaseSalon\IContratoAgregarClaseSalon.cs" />
     <Compile Include="Contratos\CTClase\IContratoAgregarClase.cs">
       <SubType>Code</SubType>
     </Compile>

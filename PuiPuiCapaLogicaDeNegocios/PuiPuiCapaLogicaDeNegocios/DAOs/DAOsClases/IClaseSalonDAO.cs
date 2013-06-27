@@ -11,5 +11,9 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
     /// </summary>
     public interface IClaseSalonDAO : IDAO
     {
+         List<Entidades.AEntidad> ListarSalonesClaseTclase(String nombreClase);
+         List<Entidades.AEntidad> ListarSalonesClaseTsalon(String ubicacion);
+         List<Entidades.AEntidad> ListarSalonesClaseTinstructor(String instruc);
+         List<Entidades.AEntidad> ListarSalonesClaseTdisponible(int stst);
     }
 }

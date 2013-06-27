@@ -9,6 +9,10 @@ using PuiPuiCapaDeInterfazBackOffice.LogicaSalon;
 
 namespace PuiPuiCapaDeInterfazBackOffice.Presentadores.PSalon
 {
+    /// <summary>
+    /// Estalase tiene como finalidad realizar operaciones referentes a la 
+    /// Vista de consultar salon con la capa de Logica de negocios.
+    /// </summary>
     public class PConsultarSalon
     {
         IContratoConsultaSalon salon;
@@ -20,7 +24,11 @@ namespace PuiPuiCapaDeInterfazBackOffice.Presentadores.PSalon
         }
 
 
-
+        /// <summary>
+        /// Consulta todos los salonde gym que capa de datos pasando por la logica
+        /// ya sea todos los salones o los salones por datos especificos 
+        /// </summary>
+        /// <returns>DataTable</returns>
         public DataTable Consultar_salones()
         {
             DataTable tablaConsulta = new DataTable();

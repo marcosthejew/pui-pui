@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace PuiPuiCapaDeInterfazBackOffice.Contratos.CTClase
 {
+    /// <summary>
+    /// Interfaz que implementa tods los de datos primitivos
+    /// que pertenecen a las Vista modificar.
+    /// </summary>
     public interface IContratoModificaClase
     {
         String TxtClaseModificar { get; set; }
