@@ -115,5 +115,21 @@ namespace PuiPuiCapaLogicaDeNegocios.Fabricas
         }
 
         #endregion
+
+        #region  Rutina
+        
+        /// <summary>
+        /// Devuelve una instancia del comando ComandoHolaMundo.
+        /// </summary>
+        /// <returns></returns>
+        public static AComando<List<Entidades.EEjercicios.Rutina>> CrearComandoConsultarRutinasPorIDCliente()
+        {
+            return new  ComandoConsultarRutinasPorCliente();
+        }
+        public static AComando<List<Entidades.EEjercicios.Ejercicio>> CrearComandoConsultarEjerciciosPorIDRutina()
+        {
+            return new ComandoConsultarEjerciciosPorIDRutina();
+        }
+        #endregion
     }
 }

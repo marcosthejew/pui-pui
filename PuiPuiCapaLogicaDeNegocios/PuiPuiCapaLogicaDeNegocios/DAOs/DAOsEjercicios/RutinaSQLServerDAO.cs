@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using PuiPuiCapaLogicaDeNegocios.Entidades.EEjercicios;
+using PuiPuiCapaLogicaDeNegocios.Excepciones;
 
 namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEjercicios
 {
@@ -12,6 +16,185 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEjercicios
     /// </summary>
     public class RutinaSQLServerDAO : ASQLServerDAO, IRutinaDAO
     {
+        #region Atributos
+
+        private SqlConnection conexion;
+        private SqlCommand cmd;
+        private SqlDataReader dr;
+
+        #endregion
+
+        public List<Rutina> ConsultarRutinasPorIDCliente(int idPersona)
+        {
+
+            List<Rutina> listaRutina = new List<Rutina>();
+            Rutina objetoRutina;
+
+            try
+            {
+                conexion = obtenerConexion();
+                conexion.Open();
+                cmd = new SqlCommand("[dbo].[consultarRutinasPorCliente]", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idPersona", idPersona);
+                dr = cmd.ExecuteReader();
+
+                //Se recorre cada row
+                while (dr.Read())
+                {
+
+                    objetoRutina = new Rutina();
+
+                    objetoRutina.Id = Convert.ToInt32(dr.GetValue(0));
+                    objetoRutina.Nombre = dr.GetValue(1).ToString();
+                    objetoRutina.Descripcion = dr.GetValue(2).ToString();
+                    objetoRutina.Inactivo = Convert.ToByte(dr.GetValue(3));
+
+                    listaRutina.Add(objetoRutina);
+                }
+
+            }
+            catch (ArgumentException e)
+            {
+                throw new ExcepcionEjercicioConexionBD("Parametros invalidos", e);
+            }
+            catch (InvalidOperationException e)
+            {
+                throw new ExcepcionEjercicioConexionBD("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new ExcepcionEjercicioConexionBD("Ejercicio no encontrado", e);
+            }
+            catch (SqlException e)
+            {
+                throw new ExcepcionEjercicioConexionBD("Error con base de datos", e);
+            }
+            catch (Exception e)
+            {
+                throw new ExcepcionEjercicioConexionBD("Error general", e);
+            }
+            finally
+            {
+                CerrarConexion(conexion);
+            }
+
+            return listaRutina;
+        }
+
+        public List<Ejercicio> ConsultarEjerciciosPorIDRutina(int idRutina)
+        {
+            string cadenaConexion = "Data Source=localhost;Initial Catalog=puipuiDBv1;Integrated Security=True";
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader dr;
+
+            List<Ejercicio> listaEjercicio = new List<Ejercicio>();
+
+            try
+            {
+                conexion = new SqlConnection(cadenaConexion);
+                conexion.Open();
+                cmd = new SqlCommand("[dbo].[ConsultarEjerciciosPorIDRutina]", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idRutina", idRutina);
+                dr = cmd.ExecuteReader();
+
+                //Se recorre cada row
+                while (dr.Read())
+                {
+                    Ejercicio objetoEjercicio = new Ejercicio();
+                    objetoEjercicio.Id = Convert.ToInt32(dr.GetValue(0));
+                    objetoEjercicio.Nombre = dr.GetValue(1).ToString();
+                    objetoEjercicio.Descripcion = dr.GetValue(2).ToString();
+                    objetoEjercicio.Repeticiones = Convert.ToInt32(dr.GetValue(3));
+                    objetoEjercicio.Duracion = dr.GetValue(4).ToString();
+
+
+                    listaEjercicio.Add(objetoEjercicio);
+                }
+
+            }
+            catch (ArgumentException e)
+            {
+                throw new ExcepcionEjercicioConexionBD("Parametros invalidos", e);
+            }
+            catch (InvalidOperationException e)
+            {
+                throw new ExcepcionEjercicioConexionBD("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new ExcepcionEjercicioConexionBD("Ejercicio no encontrado", e);
+            }
+            catch (SqlException e)
+            {
+                throw new ExcepcionEjercicioConexionBD("Error con base de datos", e);
+            }
+            catch (Exception e)
+            {
+                throw new ExcepcionEjercicioConexionBD("Error general", e);
+            }
+            finally
+            {
+                CerrarConexion(conexion);
+            }
+            return listaEjercicio;
+        }
+        //public List<Entidades.AEntidad> ConsultarRutinasPorIDCliente(int idCliente)
+
+        //{
+        //    List<AEntidad> ejercicios = new List<AEntidad>();
+        //    try
+        //    {
+        //        conexion = obtenerConexion();
+        //        conexion.Open();
+        //        cmd = new SqlCommand("[dbo].[consultarTodosEjercicios]", conexion);
+        //        cmd.CommandType = CommandType.StoredProcedure;
+        //        dr = cmd.ExecuteReader();
+
+
+
+        //        while (dr.Read())
+        //        {
+
+        //            AEntidad ejercicio = FabricaEntidad.CrearEjercicio();
+        //            (ejercicio as Ejercicio).Id = Convert.ToInt32(dr.GetValue(0));
+        //            (ejercicio as Ejercicio).Nombre = dr.GetValue(1).ToString();
+        //            ejercicios.Add(ejercicio);
+        //        }
+
+
+        //    }
+        //    catch (ArgumentException e)
+        //    {
+        //        throw new ExcepcionEjercicioConexionBD("Parametros invalidos", e);
+        //    }
+        //    catch (InvalidOperationException e)
+        //    {
+        //        throw new ExcepcionEjercicioConexionBD("Operacion Invalida", e);
+        //    }
+        //    catch (NullReferenceException e)
+        //    {
+        //        throw new ExcepcionEjercicioConexionBD("Ejercicio no encontrado", e);
+        //    }
+        //    catch (SqlException e)
+        //    {
+        //        throw new ExcepcionEjercicioConexionBD("Error con base de datos", e);
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        throw new ExcepcionEjercicioConexionBD("Error general", e);
+        //    }
+        //    finally
+        //    {
+        //        CerrarConexion(conexion);
+        //    }
+        //    return ejercicios;
+
+        //}
+
+
         /// <summary>
         /// Devuelve una lista con todas las entidades activas de Rutina 
         /// que se encuentran en la base de datos de SQL Server de la capa de 

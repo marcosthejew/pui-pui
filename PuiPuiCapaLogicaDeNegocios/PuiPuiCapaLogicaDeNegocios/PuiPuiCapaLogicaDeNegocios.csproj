@@ -104,10 +104,13 @@
     <Compile Include="Comandos\ComandoResevarClase\ComandoConsultarTodosReservarClase.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComadoEjercicio2.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoAgregarEjecicio.cs" />
+    <Compile Include="Comandos\ComandosRutina\ComandoConsultarEjerciciosPorIDRutina.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoConsultarPorIdEjercicio.cs" />
+    <Compile Include="Comandos\ComandosRutina\ComandoConsultarRutinasPorCliente.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoConsultarTodosEjercicio.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoInactivarEjercicio.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoModificarEjercicio.cs" />
+    <Compile Include="Comandos\ComandoSerializadorListaEntidades.cs" />
     <Compile Include="Comandos\ComandosEvaluacionInstructor\ComandoDetalleEvaluacionInstructor.cs" />
     <Compile Include="Comandos\ComandosEvaluacionInstructor\ComandoDetalleTodoEvaluacionInstructor.cs" />
     <Compile Include="Comandos\ComandosEvaluacionInstructor\ComandoInsertarEvaluacionInstructor.cs" />
@@ -127,6 +130,7 @@
     <Compile Include="Comandos\ComandosSalon\ComandoInactivarSalon.cs" />
     <Compile Include="Comandos\ComandosSalon\ComandoInsertarSalon.cs" />
     <Compile Include="Comandos\ComandosSalon\ComandoModificarSalon.cs" />
+    <Compile Include="Comandos\ComandosSalon\ComandoSerializarListaSalon.cs" />
     <Compile Include="DAOs\ASQLServerDAO.cs" />
     <Compile Include="DAOs\DAOsClases\ClaseSalonSQLServerDAO.cs" />
     <Compile Include="DAOs\DAOsClases\ClaseSQLServerDAO.cs" />
