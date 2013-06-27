@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
+using System.Web.Script.Serialization;
 using System.Web.Services;
 using System.Xml;
 using System.Xml.Serialization;
@@ -29,13 +30,8 @@ namespace PuiPuiCapaLogicaDeNegocios.Servicios.BackOffice
         {
            
             List <Salon> listaSalones= FabricaComandosSalon.CrearComandoConsultarTodosSalones().Ejecutar();
-            string cadenaAEnviar = "<Salones>";
-            foreach (Salon salon in listaSalones) {
-                cadenaAEnviar += salon.serializar();
-            }
-           cadenaAEnviar+="</Salones>";
-     
-           return cadenaAEnviar;
+            String cadenaAEnviar =FabricaComandosSalon.CrearComandoSerializarListaSalon(listaSalones).Ejecutar();
+            return cadenaAEnviar;
 
          
         }
@@ -61,34 +57,34 @@ namespace PuiPuiCapaLogicaDeNegocios.Servicios.BackOffice
         }
 
         [WebMethod]
-        public StringWriter ServicioComandoUbicacionSalones(String ubicacion)
+        public string ServicioComandoUbicacionSalones(String ubicacion)
         {
             List<Salon> listaSalones = FabricaComandosSalon.CrearComandoBusquedaUbicacionSalones(ubicacion).Ejecutar();
-            StringWriter cadenaAEnviar = FabricaComando.CrearComandoSerializadorListaEntidades(listaSalones.Cast<Entidades.AEntidad>().ToList()).Ejecutar();
+            String cadenaAEnviar = FabricaComandosSalon.CrearComandoSerializarListaSalon(listaSalones).Ejecutar();
             return cadenaAEnviar;
         }
 
 
         [WebMethod]
-        public StringWriter ServicioComandoBusquedaCapacidadMayorSalon(int capacidad)
+        public string ServicioComandoBusquedaCapacidadMayorSalon(int capacidad)
         {
             List<Salon> listaSalones = FabricaComandosSalon.CrearComandoBusquedaCapacidadMayorSalon(capacidad).Ejecutar();
-            StringWriter cadenaAEnviar = FabricaComando.CrearComandoSerializadorListaEntidades(listaSalones.Cast<Entidades.AEntidad>().ToList()).Ejecutar();
+            string cadenaAEnviar = FabricaComandosSalon.CrearComandoSerializarListaSalon(listaSalones).Ejecutar();
             return cadenaAEnviar;
         }
          
         [WebMethod]
-        public StringWriter ServicioComandoBusquedaCapacidadMenorSalon(int capacidad)
+        public string ServicioComandoBusquedaCapacidadMenorSalon(int capacidad)
         {
             List<Salon> listaSalones = FabricaComandosSalon.CrearComandoBusquedaCapacidadMenorSalon(capacidad).Ejecutar();
-            StringWriter cadenaAEnviar = FabricaComando.CrearComandoSerializadorListaEntidades(listaSalones.Cast<Entidades.AEntidad>().ToList()).Ejecutar();
+            string cadenaAEnviar = FabricaComandosSalon.CrearComandoSerializarListaSalon(listaSalones).Ejecutar();
             return cadenaAEnviar;
         }
         [WebMethod]
-        public StringWriter ServicioComandoBusquedaStatusSalon(int status)
+        public string ServicioComandoBusquedaStatusSalon(int status)
         {
             List<Salon> listaSalones = FabricaComandosSalon.CrearComandoBusquedaStatusSalon(status).Ejecutar();
-            StringWriter cadenaAEnviar = FabricaComando.CrearComandoSerializadorListaEntidades(listaSalones.Cast<Entidades.AEntidad>().ToList()).Ejecutar();
+            string cadenaAEnviar = FabricaComandosSalon.CrearComandoSerializarListaSalon(listaSalones).Ejecutar();
             return cadenaAEnviar;
         }
     }

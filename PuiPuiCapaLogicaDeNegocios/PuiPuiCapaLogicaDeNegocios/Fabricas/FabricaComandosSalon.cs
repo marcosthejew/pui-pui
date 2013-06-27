@@ -58,6 +58,11 @@ namespace PuiPuiCapaLogicaDeNegocios.Fabricas
         {
             return new ComandoBusquedaStatusSalon(status);
         }
+        public static AComando <string>
+        CrearComandoSerializarListaSalon(List <Salon>listaSalon)
+        {
+            return new ComandoSerializarListaSalon(listaSalon);
+        }
 
     }
 }
