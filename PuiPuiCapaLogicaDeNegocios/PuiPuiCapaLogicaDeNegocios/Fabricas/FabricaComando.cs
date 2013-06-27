@@ -7,6 +7,7 @@ using PuiPuiCapaLogicaDeNegocios.Comandos;
 using PuiPuiCapaLogicaDeNegocios.Comandos.ComandosEjercicio;
 using PuiPuiCapaLogicaDeNegocios.Comandos.ComandosInstructor;
 using PuiPuiCapaLogicaDeNegocios.Comandos.ComandoResevarClase;
+using PuiPuiCapaLogicaDeNegocios.Comandos.ComandoMusculo;
 using System.IO;
 
 namespace PuiPuiCapaLogicaDeNegocios.Fabricas
@@ -54,6 +55,24 @@ namespace PuiPuiCapaLogicaDeNegocios.Fabricas
             return new ComandoModificarEjercicio(ejercicio);
         }
         #endregion
+
+        #region Musculo
+
+        public static AComando<bool> CrearComandoAgregarMusculo(AEntidad musculo)
+        {
+            return new ComandoAgregarMusculo(musculo);
+        }
+
+        public static AComando<List<AEntidad>> CrearConsultarTodosLosMusculos()
+        {
+            return new ComandoConsultarTodosLosMusculos();
+        }
+
+        public static AComando<bool> CrearDesactivarMusculos(AEntidad musculo)
+        {
+            return new ComandoDesactivarMusculo(musculo);
+        }
+        #endregion 
 
         #region Instructor
 
