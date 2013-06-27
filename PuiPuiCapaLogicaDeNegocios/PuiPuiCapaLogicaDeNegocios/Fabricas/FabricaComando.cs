@@ -136,6 +136,29 @@ namespace PuiPuiCapaLogicaDeNegocios.Fabricas
         {
             return new ComandoActivarInactivarRutina();
         }
+
+        public static AComando<bool> CrearComandoAgregarRutina()
+        {
+            return new ComandoAgregarRutina();
+        }
+
+        public static AComando<bool> CrearComandoAgregarHistorial()
+        {
+            return new ComandoAgregarHistorial();
+        }
+
+        public static AComando<int> CrearComandoConsultarPersonaPorLogin()
+        {
+            return new ComandoConsultarPersonaPorLogin();
+        }
+        public static AComando<int> CrearComandoObtenerUltimoIDRutina()
+        {
+            return new ComandoObtenerUltimoIDRutina();
+        }
+        public static AComando<List<Entidades.EEjercicios.Ejercicio>> CrearComandoConsultarTodosEjerciciosR()
+        {
+            return new ComandoConsultarTodosEjerciciosR();
+        }
         #endregion
     }
 }
