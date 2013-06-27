@@ -82,6 +82,7 @@
     <Content Include="Servicios\BackOffice\FachadaClasesBackOffice.asmx" />
     <Content Include="Servicios\BackOffice\FachadaEjerciciosBackOffice.asmx" />
     <Content Include="Servicios\BackOffice\FachadaInstructoresBackOffice.asmx" />
+    <Content Include="Servicios\BackOffice\FachadaMusculos.asmx" />
     <Content Include="Servicios\BackOffice\FachadaSalonBackOffice.asmx" />
     <Content Include="Servicios\BackOffice\FachadaUsuariosLoginBackOffice.asmx" />
     <Content Include="Servicios\FrontOffice\FachadaClasesFrontOffice.asmx" />
@@ -219,6 +220,10 @@
     </Compile>
     <Compile Include="Servicios\BackOffice\FachadaInstructoresBackOffice.asmx.cs">
       <DependentUpon>FachadaInstructoresBackOffice.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Servicios\BackOffice\FachadaMusculos.asmx.cs">
+      <DependentUpon>FachadaMusculos.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Servicios\BackOffice\FachadaSalonBackOffice.asmx.cs">
