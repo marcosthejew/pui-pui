@@ -149,6 +149,7 @@
     <Compile Include="Comandos\AComando.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoAgregarEjercicio.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoCargarMusculos.cs" />
+    <Compile Include="Comandos\ComandosEjercicio\ComandoValidarCampo.cs" />
     <Compile Include="Comandos\ComandoSerializadorListaEntidades.cs" />
     <Compile Include="Comandos\FabricaComando.cs" />
     <Compile Include="Contratos\CTClaseSalon\IContratoAgregarClaseSalon.cs" />
