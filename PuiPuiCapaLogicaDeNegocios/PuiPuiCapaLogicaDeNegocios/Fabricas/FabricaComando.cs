@@ -55,6 +55,22 @@ namespace PuiPuiCapaLogicaDeNegocios.Fabricas
         {
             return new ComandoModificarEjercicio(ejercicio);
         }
+        public static AComando<string> CrearComandoSerializarEjercicio(AEntidad ejercicio)
+        {
+            return new ComandoSerializarEjercicio(ejercicio);
+        }
+        public static AComando<string> CrearComandoSerializarEjercicio(List<AEntidad> ejercicios)
+        {
+            return new ComandoSerializarEjercicio(ejercicios);
+        }
+        public static AComando<string> CrearComandoSerializarMusculo(AEntidad musculo)
+        {
+            return new ComandoSerializarMusculo(musculo);
+        }
+        public static AComando<string> CrearComandoSerializarMusculo(List<AEntidad> musculo)
+        {
+            return new ComandoSerializarMusculo(musculo);
+        }
         #endregion
 
         #region Musculo

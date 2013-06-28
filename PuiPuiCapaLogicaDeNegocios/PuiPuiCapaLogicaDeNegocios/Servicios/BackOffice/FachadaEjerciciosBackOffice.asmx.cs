@@ -14,8 +14,6 @@ namespace PuiPuiCapaLogicaDeNegocios.Servicios.BackOffice
     public class FachadaEjerciciosBackOffice : System.Web.Services.WebService
     {
 
-        XmlTextWriter _escritorXML;
-
         [WebMethod]
         public bool ServicioAgregarEjercicio(string nombre, string descripcion, int idMusculo,string nombreMusculo)
         {
@@ -28,61 +26,21 @@ namespace PuiPuiCapaLogicaDeNegocios.Servicios.BackOffice
         }
 
         [WebMethod]
-        public XmlDocument ServicioConsultarEjecicioId(int id)
+        public string ServicioConsultarEjecicioId(int id)
         {
             AEntidad ejercicio = FabricaEntidad.CrearEjercicio(id);
             AEntidad respuesta;
             respuesta= FabricaComando.CrearComandoConsultarPorIdEjercicio(ejercicio).Ejecutar();
+            return FabricaComando.CrearComandoSerializarEjercicio(respuesta).Ejecutar();
 
-            _escritorXML = new XmlTextWriter("C:\\XmlEjercicio.xml", null);
-            _escritorXML.WriteStartDocument();
-            _escritorXML.WriteComment("XMl para la consulta de ejercicios por Id");
-
-            _escritorXML.WriteStartElement("Ejercicio");
-            _escritorXML.WriteElementString("id",XmlConvert.ToString((respuesta as Ejercicio).Id));
-            _escritorXML.WriteElementString("nombre",(respuesta as Ejercicio).Nombre);
-            _escritorXML.WriteElementString("descripcion", (respuesta as Ejercicio).Descripcion);
-            _escritorXML.WriteElementString("id", XmlConvert.ToString((respuesta as Ejercicio).Musculo.Id));
-            _escritorXML.WriteEndElement();
-            _escritorXML.WriteEndDocument();
-            _escritorXML.Flush();
-            _escritorXML.Close();
-
-            XmlDocument retorno= new XmlDocument();
-
-            retorno.Load("C:\\XmlEjercicio.xml");
-
-            return retorno;
         }
 
         [WebMethod]
-        public XmlDocument ServicioConsultarEjercicioTodos()
+        public string ServicioConsultarEjercicioTodos()
         {
             List<AEntidad> respuesta = FabricaComando.CrearComandoConsultarEjerciciosTodos().Ejecutar();
 
-            foreach (AEntidad lista in respuesta)
-            {
-                _escritorXML = new XmlTextWriter("C:\\XmlEjercicioTodos.xml", null);
-                _escritorXML.WriteStartDocument();
-                _escritorXML.WriteComment("XMl para la consulta de ejercicios por Id");
-
-                _escritorXML.WriteStartElement("Ejercicio");
-                _escritorXML.WriteElementString("id", XmlConvert.ToString((lista as Ejercicio).Id));
-                _escritorXML.WriteElementString("nombre", (lista as Ejercicio).Nombre);
-                _escritorXML.WriteElementString("descripcion", (lista as Ejercicio).Descripcion);
-                _escritorXML.WriteElementString("id", XmlConvert.ToString((lista as Ejercicio).Musculo.Id));
-                _escritorXML.WriteEndElement();
-            }
-
-            _escritorXML.Flush();
-            _escritorXML.WriteEndDocument();
-            _escritorXML.Close();
-
-            XmlDocument retorno = new XmlDocument();
-
-            retorno.Load("C:\\XmlEjercicioTodos.xml");
-
-            return retorno;
+            return FabricaComando.CrearComandoSerializarEjercicio(respuesta).Ejecutar();
         }
 
         [WebMethod]
