@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace PuiPuiCapaDeInterfazBackOffice.Contratos.CTEjercicio
 {
-    public interface IAgregarEjercicio
+   public interface IContratoDesactivarMusculo
     {
-        string Nombre { get; set; }
-        string Descripcion { get; set; }
-        string Musculos { get; }
-        string Exito { get; set; }
+        String MusculoADesactivar { get; }
     }
 }
