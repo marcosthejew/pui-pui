@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
+    <Content Include="Estilos\jquery-ui.css" />
     <Content Include="Estilos\Site.css" />
     <Content Include="Imagenes\Buscar.png" />
     <Content Include="Imagenes\cambiar_estado.png" />
@@ -81,6 +82,9 @@
     <Content Include="Scripts\fullcalendar\fullcalendar.min.js" />
     <Content Include="Scripts\fullcalendar\fullcalendar.print.css" />
     <Content Include="Scripts\fullcalendar\gcal.js" />
+    <Content Include="Scripts\fullcalendar\jquery-1.7.js" />
+    <Content Include="Scripts\fullcalendar\jquery-ui.js" />
+    <Content Include="Scripts\fullcalendar\jquery.qtip-1.0.0-rc3.min.js" />
     <Content Include="Scripts\gym2.js" />
     <Content Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -93,9 +97,13 @@
     <Content Include="Scripts\jquery\jquery-ui-1.10.2.custom.min.js" />
     <Content Include="Scripts\ValidarText.js" />
     <Content Include="Vistas\VHome\Home.aspx" />
+    <Content Include="Vistas\VReservarClase\Reservas.ashx" />
     <None Include="Web References\LogicaClases\FachadaClasesFrontOffice.disco" />
+    <Content Include="Vistas\VReservarClase\ConsultarDetalleReservacionClase.aspx" />
+    <Content Include="Vistas\VReservarClase\ReservarClase.aspx" />
     <Content Include="Web References\LogicaEjercicios\FachadaEjerciciosFrontOffice.disco" />
     <Content Include="Web References\LogicaInstructores\FachadaInstructoresFrontOffice.disco" />
+    <Content Include="Web References\LogicaReservarClase\FachadaReservarClasesFrontOffice.disco" />
     <Content Include="Web References\LogicaRutinasEjercicios\FachadaRutinasEjerciciosFrontOffice.disco" />
     <Content Include="Web References\LogicaUsuariosLogin\FachadaUsuariosLoginFrontOffice.disco" />
     <Content Include="Web.config" />
@@ -103,6 +111,8 @@
   <ItemGroup>
     <Compile Include="Comandos\AComando.cs" />
     <Compile Include="Comandos\FabricaComando.cs" />
+    <Compile Include="Contratos\CTReservarClase\IContratoConsultarDetalleReservacionClase.cs" />
+    <Compile Include="Contratos\CTReservarClase\IContratoReservarClase.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -124,6 +134,8 @@
     <Compile Include="MasterPages\PuiPuiCapaDeInterfazFrontOfficeSesion.Master.designer.cs">
       <DependentUpon>PuiPuiCapaDeInterfazFrontOfficeSesion.Master</DependentUpon>
     </Compile>
+    <Compile Include="Presentadores\PReservarClase\PConsultarDetalleReservacionClase.cs" />
+    <Compile Include="Presentadores\PReservarClase\PReservarClase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -137,6 +149,23 @@
     <Compile Include="Vistas\VHome\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\VReservarClase\ConsultarDetalleReservacionClase.aspx.cs">
+      <DependentUpon>ConsultarDetalleReservacionClase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\VReservarClase\ConsultarDetalleReservacionClase.aspx.designer.cs">
+      <DependentUpon>ConsultarDetalleReservacionClase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VReservarClase\ReservarClase.aspx.cs">
+      <DependentUpon>ReservarClase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\VReservarClase\ReservarClase.aspx.designer.cs">
+      <DependentUpon>ReservarClase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VReservarClase\Reservas.ashx.cs">
+      <DependentUpon>Reservas.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Web References\LogicaClases\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -148,6 +177,11 @@
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
     <Compile Include="Web References\LogicaInstructores\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\LogicaReservarClase\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
@@ -191,6 +225,11 @@
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
+    <Content Include="Web References\LogicaReservarClase\FachadaReservarClasesFrontOffice.wsdl" />
+    <Content Include="Web References\LogicaReservarClase\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -213,6 +252,7 @@
     <Folder Include="Vistas\VCliente\" />
     <Folder Include="Vistas\VEjercicio\" />
     <Folder Include="Vistas\VInstructor\" />
+    <Folder Include="Vistas\VReservarClase\aspnet_client\system_web\2_0_50727\" />
     <Folder Include="Vistas\VSalon\" />
   </ItemGroup>
   <ItemGroup>
@@ -254,6 +294,17 @@
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>PuiPuiCapaDeInterfazFrontOffice_LogicaInstructores_FachadaInstructores</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:24057/Servicios/FrontOffice/FachadaReservarClasesFrontOffice.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\LogicaReservarClase\</RelPath>
+      <UpdateFromURL>http://localhost:24057/Servicios/FrontOffice/FachadaReservarClasesFrontOffice.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>PuiPuiCapaDeInterfazFrontOffice_LogicaReservarClase_FachadaReservarClasesFrontOffice</CachedSettingsPropName>
     </WebReferenceUrl>
     <WebReferenceUrl Include="http://localhost:24057/Servicios/FrontOffice/FachadaRutinasEjerciciosFrontOffice.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
