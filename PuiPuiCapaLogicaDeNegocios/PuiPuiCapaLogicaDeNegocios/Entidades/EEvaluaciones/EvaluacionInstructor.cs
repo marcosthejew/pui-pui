@@ -9,21 +9,14 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EEvaluaciones
     public class EvaluacionInstructor : AEvaluacion
     {
         #region Atributos
-            private int _idEvaluacion;
             private DateTime _fecha;
             private String _observaciones;
             private int _inactivo;
-            private int _id_Cliente;
-            private int _id_Instructor;
+            private string _id_Cliente;
+            private string _id_Instructor;
         #endregion
 
-        #region Getter Setter
-
-            public int idEvaluacion
-            {
-                get { return _idEvaluacion; }
-                set { _idEvaluacion = value; }
-            }
+        #region Getter Setter           
 
             public DateTime Fecha
             {
@@ -40,12 +33,12 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EEvaluaciones
                 get { return _inactivo; }
                 set { _inactivo = value; }
             }
-            public int idCliente
+            public string idCliente
             {
                 get { return _id_Cliente; }
                 set { _id_Cliente = value; }
             }
-            public int idInstructor
+            public string idInstructor
             {
                 get { return _id_Instructor; }
                 set { _id_Instructor = value; }
@@ -56,7 +49,7 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EEvaluaciones
         #region Metodos
             public string serializar()
             {
-                string resultado = "<EvalucionIntructor>";
+                string resultado = "<EvalucionInstructor>";
 
                 resultado += "<Id>" + Id + "</Id>";
                 resultado += "<Fecha>" + _fecha + "</Fecha>";
@@ -64,7 +57,8 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EEvaluaciones
                 resultado += "<Status>" + _inactivo + "</Status>";
                 resultado += "<Cliente>" + _id_Cliente + "</Cliente>";
                 resultado += "<Instructor>" + _id_Instructor + "</Instructor>";
-                resultado += "</EvalucionIntructor>";
+                resultado += "<Calificacion>" + Calificacion + "</Calificacion>";
+                resultado += "</EvalucionInstructor>";
                 return resultado;
 
             }

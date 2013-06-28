@@ -10,7 +10,7 @@
 namespace PuiPuiCapaDeInterfazFrontOffice.Vistas.VEvaluacionInstructor {
     
     
-    public partial class ConsultarTodosEvaluacionInstructor {
+    public partial class ConsultarEvaluacionInstructor {
         
         /// <summary>
         /// Label1 control.
@@ -40,15 +40,6 @@ namespace PuiPuiCapaDeInterfazFrontOffice.Vistas.VEvaluacionInstructor {
         protected global::System.Web.UI.WebControls.Label Exito;
         
         /// <summary>
-        /// ValidacionExpresionRegular control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator ValidacionExpresionRegular;
-        
-        /// <summary>
         /// RadioButtonConsultaCompleta control.
         /// </summary>
         /// <remarks>
@@ -67,13 +58,13 @@ namespace PuiPuiCapaDeInterfazFrontOffice.Vistas.VEvaluacionInstructor {
         protected global::System.Web.UI.WebControls.RadioButton consultaClasePorNombres;
         
         /// <summary>
-        /// nombreIntructor control.
+        /// nombreInstructor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox nombreIntructor;
+        protected global::System.Web.UI.WebControls.TextBox nombreInstructor;
         
         /// <summary>
         /// botonBuscarClase control.
@@ -85,12 +76,12 @@ namespace PuiPuiCapaDeInterfazFrontOffice.Vistas.VEvaluacionInstructor {
         protected global::System.Web.UI.WebControls.Button botonBuscarClase;
         
         /// <summary>
-        /// GridConsultar control.
+        /// GridConsulta control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridConsultar;
+        protected global::System.Web.UI.WebControls.GridView GridConsulta;
     }
 }

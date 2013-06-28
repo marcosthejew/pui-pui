@@ -10,7 +10,6 @@ using System.Web.Script.Serialization;
 using System.Web.Services;
 using System.Xml;
 using System.Xml.Serialization;
-using System.Web.Script.Serialization;
 using System.Reflection;
 
 namespace PuiPuiCapaLogicaDeNegocios.Servicios.BackOffice
