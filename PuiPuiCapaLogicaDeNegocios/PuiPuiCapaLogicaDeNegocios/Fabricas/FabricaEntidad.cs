@@ -25,6 +25,11 @@ namespace PuiPuiCapaLogicaDeNegocios.Fabricas
         {
             return new Clase();
         }
+        public static AEntidad CrearClase(string nombre, int idClase, string descripcion, int status)
+        {
+
+            return new Clase(nombre, idClase, descripcion, status);
+        }
 
         /// <summary>
         /// Metodo estatico que retorna una instancia de la clase ClaseSalon
@@ -54,6 +59,16 @@ namespace PuiPuiCapaLogicaDeNegocios.Fabricas
         {
             return new Salon(codigo, ubicacion, capacidad, status);
         }
+
+        public static AEntidad CrearClaseSalon(int iid, Salon sal, Clase clas, Instructor ins, Horario ho, int disp)
+        {
+            return new ClaseSalon(iid, sal, clas, ho, ins, disp);
+        }
+
+         public static AEntidad CrearClaseSalon(int iid, Salon sal, Clase clas, Instructor ins,int disp)
+        {
+          return new ClaseSalon(iid, sal, clas, ins, disp);
+       }
         #endregion
 
 
@@ -231,6 +246,18 @@ namespace PuiPuiCapaLogicaDeNegocios.Fabricas
         {
             return new Instructor(id);
         }
+      
+        public static AEntidad CrearEvaluacionInstructor(int id, DateTime fecha, String observaciones, int status, int idcliente, int idinstructor)
+        {
+            EvaluacionInstructor eva = new EvaluacionInstructor();
+            eva.Id = id;
+            eva.Inactivo = status;
+            eva.Fecha = fecha;
+            eva.Observaciones = observaciones;
+            eva.idCliente = idcliente;
+            eva.idInstructor = idinstructor;
+            return eva;
+        }
 
         #endregion
 
@@ -265,5 +292,7 @@ namespace PuiPuiCapaLogicaDeNegocios.Fabricas
             return new ReservacionInstructor();
         }
         #endregion
+
+
     }
 }
