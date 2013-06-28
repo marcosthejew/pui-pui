@@ -1,0 +1,695 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ServicioConsultarSalonesTodos">
+        <s:complexType />
+      </s:element>
+      <s:element name="ServicioConsultarSalonesTodosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ServicioConsultarSalonesTodosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioAgregarSalon">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ubicacion" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="capacidad" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioAgregarSalonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ServicioAgregarSalonResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioInactivarSalon">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioInactivarSalonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ServicioInactivarSalonResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioModificarSalon">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ubicacion" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="capacidad" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioModificarSalonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ServicioModificarSalonResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioComandoUbicacionSalones">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ubicacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioComandoUbicacionSalonesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ServicioComandoUbicacionSalonesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioComandoBusquedaCapacidadMayorSalon">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="capacidad" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioComandoBusquedaCapacidadMayorSalonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ServicioComandoBusquedaCapacidadMayorSalonResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioComandoBusquedaCapacidadMenorSalon">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="capacidad" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioComandoBusquedaCapacidadMenorSalonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ServicioComandoBusquedaCapacidadMenorSalonResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioComandoBusquedaStatusSalon">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioComandoBusquedaStatusSalonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ServicioComandoBusquedaStatusSalonResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="int" type="s:int" />
+      <s:element name="boolean" type="s:boolean" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ServicioConsultarSalonesTodosSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicioConsultarSalonesTodos" />
+  </wsdl:message>
+  <wsdl:message name="ServicioConsultarSalonesTodosSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicioConsultarSalonesTodosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServicioAgregarSalonSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicioAgregarSalon" />
+  </wsdl:message>
+  <wsdl:message name="ServicioAgregarSalonSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicioAgregarSalonResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServicioInactivarSalonSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicioInactivarSalon" />
+  </wsdl:message>
+  <wsdl:message name="ServicioInactivarSalonSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicioInactivarSalonResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServicioModificarSalonSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicioModificarSalon" />
+  </wsdl:message>
+  <wsdl:message name="ServicioModificarSalonSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicioModificarSalonResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServicioComandoUbicacionSalonesSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicioComandoUbicacionSalones" />
+  </wsdl:message>
+  <wsdl:message name="ServicioComandoUbicacionSalonesSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicioComandoUbicacionSalonesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServicioComandoBusquedaCapacidadMayorSalonSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicioComandoBusquedaCapacidadMayorSalon" />
+  </wsdl:message>
+  <wsdl:message name="ServicioComandoBusquedaCapacidadMayorSalonSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicioComandoBusquedaCapacidadMayorSalonResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServicioComandoBusquedaCapacidadMenorSalonSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicioComandoBusquedaCapacidadMenorSalon" />
+  </wsdl:message>
+  <wsdl:message name="ServicioComandoBusquedaCapacidadMenorSalonSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicioComandoBusquedaCapacidadMenorSalonResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServicioComandoBusquedaStatusSalonSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicioComandoBusquedaStatusSalon" />
+  </wsdl:message>
+  <wsdl:message name="ServicioComandoBusquedaStatusSalonSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicioComandoBusquedaStatusSalonResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServicioConsultarSalonesTodosHttpGetIn" />
+  <wsdl:message name="ServicioConsultarSalonesTodosHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioAgregarSalonHttpGetIn">
+    <wsdl:part name="codigo" type="s:string" />
+    <wsdl:part name="ubicacion" type="s:string" />
+    <wsdl:part name="status" type="s:string" />
+    <wsdl:part name="capacidad" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioAgregarSalonHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="ServicioInactivarSalonHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioInactivarSalonHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ServicioModificarSalonHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="codigo" type="s:string" />
+    <wsdl:part name="ubicacion" type="s:string" />
+    <wsdl:part name="status" type="s:string" />
+    <wsdl:part name="capacidad" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioModificarSalonHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ServicioComandoUbicacionSalonesHttpGetIn">
+    <wsdl:part name="ubicacion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioComandoUbicacionSalonesHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioComandoBusquedaCapacidadMayorSalonHttpGetIn">
+    <wsdl:part name="capacidad" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioComandoBusquedaCapacidadMayorSalonHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioComandoBusquedaCapacidadMenorSalonHttpGetIn">
+    <wsdl:part name="capacidad" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioComandoBusquedaCapacidadMenorSalonHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioComandoBusquedaStatusSalonHttpGetIn">
+    <wsdl:part name="status" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioComandoBusquedaStatusSalonHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioConsultarSalonesTodosHttpPostIn" />
+  <wsdl:message name="ServicioConsultarSalonesTodosHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioAgregarSalonHttpPostIn">
+    <wsdl:part name="codigo" type="s:string" />
+    <wsdl:part name="ubicacion" type="s:string" />
+    <wsdl:part name="status" type="s:string" />
+    <wsdl:part name="capacidad" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioAgregarSalonHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="ServicioInactivarSalonHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioInactivarSalonHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ServicioModificarSalonHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="codigo" type="s:string" />
+    <wsdl:part name="ubicacion" type="s:string" />
+    <wsdl:part name="status" type="s:string" />
+    <wsdl:part name="capacidad" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioModificarSalonHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ServicioComandoUbicacionSalonesHttpPostIn">
+    <wsdl:part name="ubicacion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioComandoUbicacionSalonesHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioComandoBusquedaCapacidadMayorSalonHttpPostIn">
+    <wsdl:part name="capacidad" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioComandoBusquedaCapacidadMayorSalonHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioComandoBusquedaCapacidadMenorSalonHttpPostIn">
+    <wsdl:part name="capacidad" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioComandoBusquedaCapacidadMenorSalonHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioComandoBusquedaStatusSalonHttpPostIn">
+    <wsdl:part name="status" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioComandoBusquedaStatusSalonHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="FachadaSalonBackOfficeSoap">
+    <wsdl:operation name="ServicioConsultarSalonesTodos">
+      <wsdl:input message="tns:ServicioConsultarSalonesTodosSoapIn" />
+      <wsdl:output message="tns:ServicioConsultarSalonesTodosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioAgregarSalon">
+      <wsdl:input message="tns:ServicioAgregarSalonSoapIn" />
+      <wsdl:output message="tns:ServicioAgregarSalonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioInactivarSalon">
+      <wsdl:input message="tns:ServicioInactivarSalonSoapIn" />
+      <wsdl:output message="tns:ServicioInactivarSalonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioModificarSalon">
+      <wsdl:input message="tns:ServicioModificarSalonSoapIn" />
+      <wsdl:output message="tns:ServicioModificarSalonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComandoUbicacionSalones">
+      <wsdl:input message="tns:ServicioComandoUbicacionSalonesSoapIn" />
+      <wsdl:output message="tns:ServicioComandoUbicacionSalonesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComandoBusquedaCapacidadMayorSalon">
+      <wsdl:input message="tns:ServicioComandoBusquedaCapacidadMayorSalonSoapIn" />
+      <wsdl:output message="tns:ServicioComandoBusquedaCapacidadMayorSalonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComandoBusquedaCapacidadMenorSalon">
+      <wsdl:input message="tns:ServicioComandoBusquedaCapacidadMenorSalonSoapIn" />
+      <wsdl:output message="tns:ServicioComandoBusquedaCapacidadMenorSalonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComandoBusquedaStatusSalon">
+      <wsdl:input message="tns:ServicioComandoBusquedaStatusSalonSoapIn" />
+      <wsdl:output message="tns:ServicioComandoBusquedaStatusSalonSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="FachadaSalonBackOfficeHttpGet">
+    <wsdl:operation name="ServicioConsultarSalonesTodos">
+      <wsdl:input message="tns:ServicioConsultarSalonesTodosHttpGetIn" />
+      <wsdl:output message="tns:ServicioConsultarSalonesTodosHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioAgregarSalon">
+      <wsdl:input message="tns:ServicioAgregarSalonHttpGetIn" />
+      <wsdl:output message="tns:ServicioAgregarSalonHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioInactivarSalon">
+      <wsdl:input message="tns:ServicioInactivarSalonHttpGetIn" />
+      <wsdl:output message="tns:ServicioInactivarSalonHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioModificarSalon">
+      <wsdl:input message="tns:ServicioModificarSalonHttpGetIn" />
+      <wsdl:output message="tns:ServicioModificarSalonHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComandoUbicacionSalones">
+      <wsdl:input message="tns:ServicioComandoUbicacionSalonesHttpGetIn" />
+      <wsdl:output message="tns:ServicioComandoUbicacionSalonesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComandoBusquedaCapacidadMayorSalon">
+      <wsdl:input message="tns:ServicioComandoBusquedaCapacidadMayorSalonHttpGetIn" />
+      <wsdl:output message="tns:ServicioComandoBusquedaCapacidadMayorSalonHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComandoBusquedaCapacidadMenorSalon">
+      <wsdl:input message="tns:ServicioComandoBusquedaCapacidadMenorSalonHttpGetIn" />
+      <wsdl:output message="tns:ServicioComandoBusquedaCapacidadMenorSalonHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComandoBusquedaStatusSalon">
+      <wsdl:input message="tns:ServicioComandoBusquedaStatusSalonHttpGetIn" />
+      <wsdl:output message="tns:ServicioComandoBusquedaStatusSalonHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="FachadaSalonBackOfficeHttpPost">
+    <wsdl:operation name="ServicioConsultarSalonesTodos">
+      <wsdl:input message="tns:ServicioConsultarSalonesTodosHttpPostIn" />
+      <wsdl:output message="tns:ServicioConsultarSalonesTodosHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioAgregarSalon">
+      <wsdl:input message="tns:ServicioAgregarSalonHttpPostIn" />
+      <wsdl:output message="tns:ServicioAgregarSalonHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioInactivarSalon">
+      <wsdl:input message="tns:ServicioInactivarSalonHttpPostIn" />
+      <wsdl:output message="tns:ServicioInactivarSalonHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioModificarSalon">
+      <wsdl:input message="tns:ServicioModificarSalonHttpPostIn" />
+      <wsdl:output message="tns:ServicioModificarSalonHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComandoUbicacionSalones">
+      <wsdl:input message="tns:ServicioComandoUbicacionSalonesHttpPostIn" />
+      <wsdl:output message="tns:ServicioComandoUbicacionSalonesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComandoBusquedaCapacidadMayorSalon">
+      <wsdl:input message="tns:ServicioComandoBusquedaCapacidadMayorSalonHttpPostIn" />
+      <wsdl:output message="tns:ServicioComandoBusquedaCapacidadMayorSalonHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComandoBusquedaCapacidadMenorSalon">
+      <wsdl:input message="tns:ServicioComandoBusquedaCapacidadMenorSalonHttpPostIn" />
+      <wsdl:output message="tns:ServicioComandoBusquedaCapacidadMenorSalonHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComandoBusquedaStatusSalon">
+      <wsdl:input message="tns:ServicioComandoBusquedaStatusSalonHttpPostIn" />
+      <wsdl:output message="tns:ServicioComandoBusquedaStatusSalonHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FachadaSalonBackOfficeSoap" type="tns:FachadaSalonBackOfficeSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ServicioConsultarSalonesTodos">
+      <soap:operation soapAction="http://tempuri.org/ServicioConsultarSalonesTodos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioAgregarSalon">
+      <soap:operation soapAction="http://tempuri.org/ServicioAgregarSalon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioInactivarSalon">
+      <soap:operation soapAction="http://tempuri.org/ServicioInactivarSalon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioModificarSalon">
+      <soap:operation soapAction="http://tempuri.org/ServicioModificarSalon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComandoUbicacionSalones">
+      <soap:operation soapAction="http://tempuri.org/ServicioComandoUbicacionSalones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComandoBusquedaCapacidadMayorSalon">
+      <soap:operation soapAction="http://tempuri.org/ServicioComandoBusquedaCapacidadMayorSalon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComandoBusquedaCapacidadMenorSalon">
+      <soap:operation soapAction="http://tempuri.org/ServicioComandoBusquedaCapacidadMenorSalon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComandoBusquedaStatusSalon">
+      <soap:operation soapAction="http://tempuri.org/ServicioComandoBusquedaStatusSalon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FachadaSalonBackOfficeSoap12" type="tns:FachadaSalonBackOfficeSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ServicioConsultarSalonesTodos">
+      <soap12:operation soapAction="http://tempuri.org/ServicioConsultarSalonesTodos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioAgregarSalon">
+      <soap12:operation soapAction="http://tempuri.org/ServicioAgregarSalon" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioInactivarSalon">
+      <soap12:operation soapAction="http://tempuri.org/ServicioInactivarSalon" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioModificarSalon">
+      <soap12:operation soapAction="http://tempuri.org/ServicioModificarSalon" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComandoUbicacionSalones">
+      <soap12:operation soapAction="http://tempuri.org/ServicioComandoUbicacionSalones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComandoBusquedaCapacidadMayorSalon">
+      <soap12:operation soapAction="http://tempuri.org/ServicioComandoBusquedaCapacidadMayorSalon" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComandoBusquedaCapacidadMenorSalon">
+      <soap12:operation soapAction="http://tempuri.org/ServicioComandoBusquedaCapacidadMenorSalon" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComandoBusquedaStatusSalon">
+      <soap12:operation soapAction="http://tempuri.org/ServicioComandoBusquedaStatusSalon" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FachadaSalonBackOfficeHttpGet" type="tns:FachadaSalonBackOfficeHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="ServicioConsultarSalonesTodos">
+      <http:operation location="/ServicioConsultarSalonesTodos" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioAgregarSalon">
+      <http:operation location="/ServicioAgregarSalon" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioInactivarSalon">
+      <http:operation location="/ServicioInactivarSalon" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioModificarSalon">
+      <http:operation location="/ServicioModificarSalon" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComandoUbicacionSalones">
+      <http:operation location="/ServicioComandoUbicacionSalones" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComandoBusquedaCapacidadMayorSalon">
+      <http:operation location="/ServicioComandoBusquedaCapacidadMayorSalon" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComandoBusquedaCapacidadMenorSalon">
+      <http:operation location="/ServicioComandoBusquedaCapacidadMenorSalon" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComandoBusquedaStatusSalon">
+      <http:operation location="/ServicioComandoBusquedaStatusSalon" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FachadaSalonBackOfficeHttpPost" type="tns:FachadaSalonBackOfficeHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="ServicioConsultarSalonesTodos">
+      <http:operation location="/ServicioConsultarSalonesTodos" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioAgregarSalon">
+      <http:operation location="/ServicioAgregarSalon" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioInactivarSalon">
+      <http:operation location="/ServicioInactivarSalon" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioModificarSalon">
+      <http:operation location="/ServicioModificarSalon" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComandoUbicacionSalones">
+      <http:operation location="/ServicioComandoUbicacionSalones" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComandoBusquedaCapacidadMayorSalon">
+      <http:operation location="/ServicioComandoBusquedaCapacidadMayorSalon" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComandoBusquedaCapacidadMenorSalon">
+      <http:operation location="/ServicioComandoBusquedaCapacidadMenorSalon" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComandoBusquedaStatusSalon">
+      <http:operation location="/ServicioComandoBusquedaStatusSalon" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FachadaSalonBackOffice">
+    <wsdl:port name="FachadaSalonBackOfficeSoap" binding="tns:FachadaSalonBackOfficeSoap">
+      <soap:address location="http://localhost:24057/Servicios/BackOffice/FachadaSalonBackOffice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="FachadaSalonBackOfficeSoap12" binding="tns:FachadaSalonBackOfficeSoap12">
+      <soap12:address location="http://localhost:24057/Servicios/BackOffice/FachadaSalonBackOffice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="FachadaSalonBackOfficeHttpGet" binding="tns:FachadaSalonBackOfficeHttpGet">
+      <http:address location="http://localhost:24057/Servicios/BackOffice/FachadaSalonBackOffice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="FachadaSalonBackOfficeHttpPost" binding="tns:FachadaSalonBackOfficeHttpPost">
+      <http:address location="http://localhost:24057/Servicios/BackOffice/FachadaSalonBackOffice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
