@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="PuiPuiCapaDeInterfazBackOffice.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="PuiPuiCapaDeInterfazBackOffice_LogicaClases_FachadaClases" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://localhost:24057/Servicios/BackOffice/FachadaClasesBackOffice.asmx</Value>
+    </Setting>
+    <Setting Name="PuiPuiCapaDeInterfazBackOffice_LogicaEjercicios_FachadaEjerciciosBackOffice" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:24057/Servicios/BackOffice/FachadaEjerciciosBackOffice.asmx</Value>
+    </Setting>
+    <Setting Name="PuiPuiCapaDeInterfazBackOffice_LogicaPersonas_FachadaPersonas" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://localhost:24057/Servicios/BackOffice/FachadaInstructoresBackOffice.asmx</Value>
+    </Setting>
+    <Setting Name="PuiPuiCapaDeInterfazBackOffice_LogicaUsuariosLogin_FachadaUsuariosLogin" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://localhost:24057/Servicios/BackOffice/FachadaUsuariosLoginBackOffice.asmx</Value>
+    </Setting>
+    <Setting Name="PuiPuiCapaDeInterfazBackOffice_localhost_FachadaMusculos" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:24057/Servicios/BackOffice/FachadaMusculos.asmx</Value>
+    </Setting>
+    <Setting Name="PuiPuiCapaDeInterfazBackOffice_LogicaMusculo_FachadaMusculos" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:24057/Servicios/BackOffice/FachadaMusculos.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
