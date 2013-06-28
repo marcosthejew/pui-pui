@@ -1,5 +1,465 @@
 <?xml version="1.0" encoding="utf-8"?>
 <wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-  <wsdl:types />
-  <wsdl:service name="FachadaEjerciciosBackOffice" />
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ServicioAgregarEjercicio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="descripcion" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idMusculo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombreMusculo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioAgregarEjercicioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ServicioAgregarEjercicioResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioConsultarEjecicioId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioConsultarEjecicioIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ServicioConsultarEjecicioIdResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioConsultarEjercicioTodos">
+        <s:complexType />
+      </s:element>
+      <s:element name="ServicioConsultarEjercicioTodosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ServicioConsultarEjercicioTodosResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioInactivarEjercicio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioInactivarEjercicioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ServicioInactivarEjercicioResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioModificarEjercicio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombreEjercicio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="descripcionEjercicio" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idMusculo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombreMusculo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioModificarEjercicioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ServicioModificarEjercicioResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="boolean" type="s:boolean" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ServicioAgregarEjercicioSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicioAgregarEjercicio" />
+  </wsdl:message>
+  <wsdl:message name="ServicioAgregarEjercicioSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicioAgregarEjercicioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServicioConsultarEjecicioIdSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicioConsultarEjecicioId" />
+  </wsdl:message>
+  <wsdl:message name="ServicioConsultarEjecicioIdSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicioConsultarEjecicioIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServicioConsultarEjercicioTodosSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicioConsultarEjercicioTodos" />
+  </wsdl:message>
+  <wsdl:message name="ServicioConsultarEjercicioTodosSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicioConsultarEjercicioTodosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServicioInactivarEjercicioSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicioInactivarEjercicio" />
+  </wsdl:message>
+  <wsdl:message name="ServicioInactivarEjercicioSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicioInactivarEjercicioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServicioModificarEjercicioSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicioModificarEjercicio" />
+  </wsdl:message>
+  <wsdl:message name="ServicioModificarEjercicioSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicioModificarEjercicioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServicioAgregarEjercicioHttpGetIn">
+    <wsdl:part name="nombre" type="s:string" />
+    <wsdl:part name="descripcion" type="s:string" />
+    <wsdl:part name="idMusculo" type="s:string" />
+    <wsdl:part name="nombreMusculo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioAgregarEjercicioHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ServicioConsultarEjecicioIdHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioConsultarEjecicioIdHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ServicioConsultarEjercicioTodosHttpGetIn" />
+  <wsdl:message name="ServicioConsultarEjercicioTodosHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ServicioInactivarEjercicioHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioInactivarEjercicioHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ServicioModificarEjercicioHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="nombreEjercicio" type="s:string" />
+    <wsdl:part name="descripcionEjercicio" type="s:string" />
+    <wsdl:part name="idMusculo" type="s:string" />
+    <wsdl:part name="nombreMusculo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioModificarEjercicioHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ServicioAgregarEjercicioHttpPostIn">
+    <wsdl:part name="nombre" type="s:string" />
+    <wsdl:part name="descripcion" type="s:string" />
+    <wsdl:part name="idMusculo" type="s:string" />
+    <wsdl:part name="nombreMusculo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioAgregarEjercicioHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ServicioConsultarEjecicioIdHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioConsultarEjecicioIdHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ServicioConsultarEjercicioTodosHttpPostIn" />
+  <wsdl:message name="ServicioConsultarEjercicioTodosHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ServicioInactivarEjercicioHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioInactivarEjercicioHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ServicioModificarEjercicioHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="nombreEjercicio" type="s:string" />
+    <wsdl:part name="descripcionEjercicio" type="s:string" />
+    <wsdl:part name="idMusculo" type="s:string" />
+    <wsdl:part name="nombreMusculo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioModificarEjercicioHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:portType name="FachadaEjerciciosBackOfficeSoap">
+    <wsdl:operation name="ServicioAgregarEjercicio">
+      <wsdl:input message="tns:ServicioAgregarEjercicioSoapIn" />
+      <wsdl:output message="tns:ServicioAgregarEjercicioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioConsultarEjecicioId">
+      <wsdl:input message="tns:ServicioConsultarEjecicioIdSoapIn" />
+      <wsdl:output message="tns:ServicioConsultarEjecicioIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioConsultarEjercicioTodos">
+      <wsdl:input message="tns:ServicioConsultarEjercicioTodosSoapIn" />
+      <wsdl:output message="tns:ServicioConsultarEjercicioTodosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioInactivarEjercicio">
+      <wsdl:input message="tns:ServicioInactivarEjercicioSoapIn" />
+      <wsdl:output message="tns:ServicioInactivarEjercicioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioModificarEjercicio">
+      <wsdl:input message="tns:ServicioModificarEjercicioSoapIn" />
+      <wsdl:output message="tns:ServicioModificarEjercicioSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="FachadaEjerciciosBackOfficeHttpGet">
+    <wsdl:operation name="ServicioAgregarEjercicio">
+      <wsdl:input message="tns:ServicioAgregarEjercicioHttpGetIn" />
+      <wsdl:output message="tns:ServicioAgregarEjercicioHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioConsultarEjecicioId">
+      <wsdl:input message="tns:ServicioConsultarEjecicioIdHttpGetIn" />
+      <wsdl:output message="tns:ServicioConsultarEjecicioIdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioConsultarEjercicioTodos">
+      <wsdl:input message="tns:ServicioConsultarEjercicioTodosHttpGetIn" />
+      <wsdl:output message="tns:ServicioConsultarEjercicioTodosHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioInactivarEjercicio">
+      <wsdl:input message="tns:ServicioInactivarEjercicioHttpGetIn" />
+      <wsdl:output message="tns:ServicioInactivarEjercicioHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioModificarEjercicio">
+      <wsdl:input message="tns:ServicioModificarEjercicioHttpGetIn" />
+      <wsdl:output message="tns:ServicioModificarEjercicioHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="FachadaEjerciciosBackOfficeHttpPost">
+    <wsdl:operation name="ServicioAgregarEjercicio">
+      <wsdl:input message="tns:ServicioAgregarEjercicioHttpPostIn" />
+      <wsdl:output message="tns:ServicioAgregarEjercicioHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioConsultarEjecicioId">
+      <wsdl:input message="tns:ServicioConsultarEjecicioIdHttpPostIn" />
+      <wsdl:output message="tns:ServicioConsultarEjecicioIdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioConsultarEjercicioTodos">
+      <wsdl:input message="tns:ServicioConsultarEjercicioTodosHttpPostIn" />
+      <wsdl:output message="tns:ServicioConsultarEjercicioTodosHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioInactivarEjercicio">
+      <wsdl:input message="tns:ServicioInactivarEjercicioHttpPostIn" />
+      <wsdl:output message="tns:ServicioInactivarEjercicioHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioModificarEjercicio">
+      <wsdl:input message="tns:ServicioModificarEjercicioHttpPostIn" />
+      <wsdl:output message="tns:ServicioModificarEjercicioHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FachadaEjerciciosBackOfficeSoap" type="tns:FachadaEjerciciosBackOfficeSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ServicioAgregarEjercicio">
+      <soap:operation soapAction="http://tempuri.org/ServicioAgregarEjercicio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioConsultarEjecicioId">
+      <soap:operation soapAction="http://tempuri.org/ServicioConsultarEjecicioId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioConsultarEjercicioTodos">
+      <soap:operation soapAction="http://tempuri.org/ServicioConsultarEjercicioTodos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioInactivarEjercicio">
+      <soap:operation soapAction="http://tempuri.org/ServicioInactivarEjercicio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioModificarEjercicio">
+      <soap:operation soapAction="http://tempuri.org/ServicioModificarEjercicio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FachadaEjerciciosBackOfficeSoap12" type="tns:FachadaEjerciciosBackOfficeSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ServicioAgregarEjercicio">
+      <soap12:operation soapAction="http://tempuri.org/ServicioAgregarEjercicio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioConsultarEjecicioId">
+      <soap12:operation soapAction="http://tempuri.org/ServicioConsultarEjecicioId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioConsultarEjercicioTodos">
+      <soap12:operation soapAction="http://tempuri.org/ServicioConsultarEjercicioTodos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioInactivarEjercicio">
+      <soap12:operation soapAction="http://tempuri.org/ServicioInactivarEjercicio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioModificarEjercicio">
+      <soap12:operation soapAction="http://tempuri.org/ServicioModificarEjercicio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FachadaEjerciciosBackOfficeHttpGet" type="tns:FachadaEjerciciosBackOfficeHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="ServicioAgregarEjercicio">
+      <http:operation location="/ServicioAgregarEjercicio" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioConsultarEjecicioId">
+      <http:operation location="/ServicioConsultarEjecicioId" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioConsultarEjercicioTodos">
+      <http:operation location="/ServicioConsultarEjercicioTodos" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioInactivarEjercicio">
+      <http:operation location="/ServicioInactivarEjercicio" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioModificarEjercicio">
+      <http:operation location="/ServicioModificarEjercicio" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FachadaEjerciciosBackOfficeHttpPost" type="tns:FachadaEjerciciosBackOfficeHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="ServicioAgregarEjercicio">
+      <http:operation location="/ServicioAgregarEjercicio" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioConsultarEjecicioId">
+      <http:operation location="/ServicioConsultarEjecicioId" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioConsultarEjercicioTodos">
+      <http:operation location="/ServicioConsultarEjercicioTodos" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioInactivarEjercicio">
+      <http:operation location="/ServicioInactivarEjercicio" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioModificarEjercicio">
+      <http:operation location="/ServicioModificarEjercicio" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FachadaEjerciciosBackOffice">
+    <wsdl:port name="FachadaEjerciciosBackOfficeSoap" binding="tns:FachadaEjerciciosBackOfficeSoap">
+      <soap:address location="http://localhost:24057/Servicios/BackOffice/FachadaEjerciciosBackOffice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="FachadaEjerciciosBackOfficeSoap12" binding="tns:FachadaEjerciciosBackOfficeSoap12">
+      <soap12:address location="http://localhost:24057/Servicios/BackOffice/FachadaEjerciciosBackOffice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="FachadaEjerciciosBackOfficeHttpGet" binding="tns:FachadaEjerciciosBackOfficeHttpGet">
+      <http:address location="http://localhost:24057/Servicios/BackOffice/FachadaEjerciciosBackOffice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="FachadaEjerciciosBackOfficeHttpPost" binding="tns:FachadaEjerciciosBackOfficeHttpPost">
+      <http:address location="http://localhost:24057/Servicios/BackOffice/FachadaEjerciciosBackOffice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
 </wsdl:definitions>
