@@ -13,11 +13,11 @@ namespace PuiPuiCapaDeInterfazBackOffice.Presentadores.PEjercicio
         #endregion
 
         #region Constructor Inyector 
-        public PAgregarEjercicio(IAgregarEjercicio vistaEjercicio)
+       /* public PAgregarEjercicio(IAgregarEjercicio vistaEjercicio)
         {
             _vistaEjercicio = vistaEjercicio;
 
-        }
+        }*/
         #endregion
 
         #region Metodos

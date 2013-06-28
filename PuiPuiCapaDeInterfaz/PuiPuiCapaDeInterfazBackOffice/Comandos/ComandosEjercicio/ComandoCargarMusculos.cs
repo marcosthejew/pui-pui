@@ -17,10 +17,10 @@ namespace PuiPuiCapaDeInterfazBackOffice.Comandos.ComandosEjercicio
         IAgregarEjercicio _vista;
         DropDownList _comboMusculo;
 
-        public ComandoCargarMusculos(IAgregarEjercicio vista)
+       /*public ComandoCargarMusculos(IAgregarEjercicio vista)
         {
             _vista = vista;
-        }
+        }*/
         public override bool Ejecutar()
         {
             bool flag = true;
