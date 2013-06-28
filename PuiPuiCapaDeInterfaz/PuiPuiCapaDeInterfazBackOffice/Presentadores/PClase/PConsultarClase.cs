@@ -42,7 +42,7 @@ namespace PuiPuiCapaDeInterfazBackOffice.Presentadores.PClase
                 XmlDocument clases = new XmlDocument();
                 clases.LoadXml(lista_clase);
                 XmlNodeList classroom = clases.GetElementsByTagName("Clases");
-                XmlNodeList listaClase = ((XmlElement)classroom[0]).GetElementsByTagName("Clase");
+                XmlNodeList listaClase = ((XmlElement)classroom[0]).GetElementsByTagName("ClaseSalon");
 
                 foreach (XmlElement nodo in listaClase)
                 {

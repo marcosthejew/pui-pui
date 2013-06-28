@@ -116,7 +116,7 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EClases
         {
             string resultado = "<ClaseSalon>";
 
-            resultado += "<Id>" + Id + "</Id>";
+            resultado += "<Id>" + ID + "</Id>";
             resultado += "<Clase>" + Clase.Nombre + "</Clase>";
             resultado += "<Codigo>" + Salon.IdSalon + "</Codigo>";
             resultado += "<Ubicacion>" + Salon.Ubicacion + "</Ubicacion>";

@@ -87,7 +87,7 @@ margin-top: 0px;">
                 <td class="auto-style9">
                     </td>
                 <td class="auto-style10">
-                    <asp:RegularExpressionValidator ID="RegularExpressionValidator3" ControlToValidate="TextBoxCapacidad" ValidationGroup="check" ForeColor="Red"  runat="server" ErrorMessage="Solo se pueden introducir letras y numeros (sin caracteres especiales)" ValidationExpression="^[a-zA-Z 0-9''-'\s]{1,25}$"></asp:RegularExpressionValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator3" ControlToValidate="TextBoxCapacidad" ValidationGroup="check" ForeColor="Red"  runat="server" ErrorMessage="Solo se pueden introducir letras y numeros (sin caracteres especiales)" ValidationExpression="^[a-zA-Z 0-9''-'\s]{1,25}$" Display="Dynamic"></asp:RegularExpressionValidator>
                 </td>
             </tr>
 

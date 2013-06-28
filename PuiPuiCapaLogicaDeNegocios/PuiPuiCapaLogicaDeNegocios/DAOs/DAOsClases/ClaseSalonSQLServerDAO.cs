@@ -62,8 +62,8 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
                     //clasal.id_clase_salon, clas.nombre,sal.codigo,sal.ubicacion,ins.nombre1+' '+ins.apellido1,ho.hora_inicio,ho.hora_fin,clasal.inactivo
                     Entidades.EClases.Salon _salon = (Entidades.EClases.Salon)Fabricas.FabricaEntidad.CrearSalon();
                     Entidades.EClases.Clase _clase = (Entidades.EClases.Clase)Fabricas.FabricaEntidad.CrearClase();
-                    Entidades.EHorario.Horario _horario=(Entidades.EHorario.Horario)Fabricas.FabricaEntidad.CrearInstructor();
-                    Entidades.EPersonas.Instructor _instructor = (Entidades.EPersonas.Instructor)Fabricas.FabricaEntidad.CrearClaseSalon();
+                    Entidades.EHorario.Horario _horario=(Entidades.EHorario.Horario)Fabricas.FabricaEntidad.CrearHorario();
+                    Entidades.EPersonas.Instructor _instructor = (Entidades.EPersonas.Instructor)Fabricas.FabricaEntidad.CrearInstructor();
 
                     idaux = Convert.ToInt32(dr.GetValue(0));
                     _clase.Nombre = dr.GetValue(1).ToString();
@@ -348,8 +348,8 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
                 {
                     Entidades.EClases.Salon _salon = (Entidades.EClases.Salon)Fabricas.FabricaEntidad.CrearSalon();
                     Entidades.EClases.Clase _clase = (Entidades.EClases.Clase)Fabricas.FabricaEntidad.CrearClase();
-                    Entidades.EHorario.Horario _horario = (Entidades.EHorario.Horario)Fabricas.FabricaEntidad.CrearInstructor();
-                    Entidades.EPersonas.Instructor _instructor = (Entidades.EPersonas.Instructor)Fabricas.FabricaEntidad.CrearClaseSalon();
+                    Entidades.EHorario.Horario _horario = (Entidades.EHorario.Horario)Fabricas.FabricaEntidad.CrearHorario();
+                    Entidades.EPersonas.Instructor _instructor = (Entidades.EPersonas.Instructor)Fabricas.FabricaEntidad.CrearInstructor();
 
                     idaux = Convert.ToInt32(dr.GetValue(0));
                     _clase.Nombre = dr.GetValue(1).ToString();
@@ -426,8 +426,8 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
                 {
                     Entidades.EClases.Salon _salon = (Entidades.EClases.Salon)Fabricas.FabricaEntidad.CrearSalon();
                     Entidades.EClases.Clase _clase = (Entidades.EClases.Clase)Fabricas.FabricaEntidad.CrearClase();
-                    Entidades.EHorario.Horario _horario = (Entidades.EHorario.Horario)Fabricas.FabricaEntidad.CrearInstructor();
-                    Entidades.EPersonas.Instructor _instructor = (Entidades.EPersonas.Instructor)Fabricas.FabricaEntidad.CrearClaseSalon();
+                    Entidades.EHorario.Horario _horario = (Entidades.EHorario.Horario)Fabricas.FabricaEntidad.CrearHorario();
+                    Entidades.EPersonas.Instructor _instructor = (Entidades.EPersonas.Instructor)Fabricas.FabricaEntidad.CrearInstructor();
 
                     idaux = Convert.ToInt32(_dr.GetValue(0));
                     _clase.Nombre = _dr.GetValue(1).ToString();
@@ -502,8 +502,8 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
                 {
                     Entidades.EClases.Salon _salon = (Entidades.EClases.Salon)Fabricas.FabricaEntidad.CrearSalon();
                     Entidades.EClases.Clase _clase = (Entidades.EClases.Clase)Fabricas.FabricaEntidad.CrearClase();
-                    Entidades.EHorario.Horario _horario = (Entidades.EHorario.Horario)Fabricas.FabricaEntidad.CrearInstructor();
-                    Entidades.EPersonas.Instructor _instructor = (Entidades.EPersonas.Instructor)Fabricas.FabricaEntidad.CrearClaseSalon();
+                    Entidades.EHorario.Horario _horario = (Entidades.EHorario.Horario)Fabricas.FabricaEntidad.CrearHorario();
+                    Entidades.EPersonas.Instructor _instructor = (Entidades.EPersonas.Instructor)Fabricas.FabricaEntidad.CrearInstructor();
 
                     idaux = Convert.ToInt32(_dr.GetValue(0));
                     _clase.Nombre = _dr.GetValue(1).ToString();
@@ -581,9 +581,8 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases
                 {
                     Entidades.EClases.Salon _salon = (Entidades.EClases.Salon)Fabricas.FabricaEntidad.CrearSalon();
                     Entidades.EClases.Clase _clase = (Entidades.EClases.Clase)Fabricas.FabricaEntidad.CrearClase();
-                    Entidades.EHorario.Horario _horario = (Entidades.EHorario.Horario)Fabricas.FabricaEntidad.CrearInstructor();
-                    Entidades.EPersonas.Instructor _instructor = (Entidades.EPersonas.Instructor)Fabricas.FabricaEntidad.CrearClaseSalon();
-
+                    Entidades.EHorario.Horario _horario = (Entidades.EHorario.Horario)Fabricas.FabricaEntidad.CrearHorario();
+                    Entidades.EPersonas.Instructor _instructor = (Entidades.EPersonas.Instructor)Fabricas.FabricaEntidad.CrearInstructor();
                     idaux = Convert.ToInt32(_dr.GetValue(0));
                     _clase.Nombre = _dr.GetValue(1).ToString();
                     _salon.IdSalon = _dr.GetValue(2).ToString();

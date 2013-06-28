@@ -8,23 +8,49 @@
         <fieldset style="width:775px; height:auto; margin-left:7.5%; fit-position:center;">
        <legend style="text-align:center;"><h2>Asignación de Clase - Salón - Instructor</h2></legend>
                
-             <table border="0" cellspacing="0" cellpadding="0" style="width: 782px; margin-left:0px">
+             <table border="0" cellspacing="0" cellpadding="0" style="width: 782px; margin-left:0px; height: 114px;">
             <tr>
-                <td rowspan="0" nowrap="nowrap" class="auto-style14" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
+                <td rowspan="0" nowrap="nowrap" class="auto-style25" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
 margin-top: 0px;" >
-                    Buscar por:</td>
+                    Buscar por:
+                    <asp:RadioButton ID="Todos" runat="server" Text="Todos los campos" />
+                </td>
                 <td rowspan="0" class="auto-style21" nowrap="nowrap" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
 margin-top: 0px;">
                      <asp:RadioButton ID="RadioButtonConsultaCompleta" runat="server" 
                         GroupName="ConsultarClases" Text="Clase:"  /> 
                               
 
+                     <br />
+                   
+
+                    <asp:TextBox ID="nombreClase" runat="server" Width="70px" style="margin-left: 24px" Height="21px" ValidationGroup="check" ></asp:TextBox>
+                    
+
+                     <br />
+                    
+                     <br />
+                   
+                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" ControlToValidate="nombreClase" ValidationGroup="check" ForeColor="Red" runat="server" ErrorMessage="Solo se pueden introducir letras y numeros" ValidationExpression="^[a-zA-Z 0-9''-'\s]{1,25}$"></asp:RegularExpressionValidator>
+                    
                      </td>
-                <td rowspan="0" class="auto-style22" nowrap="nowrap" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
+                <td rowspan="0" class="auto-style26" nowrap="nowrap" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
 margin-top: 0px;">
-                    <asp:RadioButton ID="consultaClasePorNombres" runat="server" 
-                        GroupName="ConsultarClases" Text="Salón:"   
+                    <asp:RadioButton ID="consultaSalon" runat="server" 
+                        GroupName="ConsultarClases" Text="Salón:" OnCheckedChanged="consultaClasePorNombres_CheckedChanged"   
                        />
+
+                    <br />
+                   
+
+                    <asp:TextBox ID="nombreSalon" runat="server" Width="82px" style="margin-left: 11px" Height="20px" ValidationGroup="check" ></asp:TextBox>
+
+
+                    <br />
+                    <br />
+                   
+                     <asp:RegularExpressionValidator ID="RegularExpressionValidator2" ControlToValidate="nombreSalon" ValidationGroup="check" ForeColor="Red" runat="server" ErrorMessage="Solo se pueden introducir letras y numeros" ValidationExpression="^[a-zA-Z 0-9''-'\s]{1,25}$"></asp:RegularExpressionValidator>
+                    
 
                     </td>
               
@@ -34,44 +60,42 @@ margin-top: 0px;">
                         GroupName="ConsultarClases" Text="Instructor:"  />
                        
                     
+                    <br />
+                   
+
+                    <asp:TextBox ID="nombreInstructor" runat="server" Width="91px" style="margin-left: 30px" Height="19px"  ValidationGroup="check"></asp:TextBox>
+
+
+                    <br />
+                    <br />
+                   
+                     <asp:RegularExpressionValidator ID="RegularExpressionValidator3" ControlToValidate="nombreInstructor" ValidationGroup="check" ForeColor="Red" runat="server" ErrorMessage="Solo se pueden introducir letras y numeros" ValidationExpression="^[a-zA-Z 0-9''-'\s]{1,25}$"></asp:RegularExpressionValidator>
+                    
+
                     </td>
               
                 <td rowspan="0" class="auto-style23" nowrap="nowrap">
                    
 
-                    <asp:TextBox ID="nombreClase" runat="server" Width="111px" style="margin-left: 0px" ></asp:TextBox>
-
-
-                    </td>
+                    &nbsp;</td>
               
                 <td rowspan="0" class="auto-style19" nowrap="nowrap" style="font-family: Arial,Helvetica, sans-serif;font-size: 14px;font-weight: bold;color: #fff;
 margin-top: 0px;">
                    
 
-                    <asp:RadioButton ID="consultaClasePorEstatus" runat="server" 
-                        GroupName="ConsultarClases" Text="Status:" />
-                       
-                    
-                    </td>
+                    &nbsp;</td>
               
                 <td rowspan="0" nowrap="nowrap" class="auto-style17" align="left">
                    
 
-                    <asp:DropDownList ID="DropDownListEstatusClase" runat="server" Width="75px"  Height="18px" style="margin-left: 0px">
-                        <asp:ListItem Value="0">Activa</asp:ListItem>
-                        <asp:ListItem Value="1">Inactiva</asp:ListItem>
-                        
-                    </asp:DropDownList>
+                <asp:Button ID="botonBuscarClase" runat="server" Text="Buscar" CssClass="button" OnClick="botonBuscarClase_Click" Font-Names="tahoma plain" Font-Size="14px" Height="24px" Width="89px"/>
 
 
                 </td>
                 <td class="auto-style3">
 
 
-                <asp:Button ID="botonBuscarClase" runat="server" Text="Buscar" CssClass="button" OnClick="botonBuscarClase_Click" Font-Names="tahoma plain" Font-Size="14px" Height="25px" Width="120px"/>
-
-
-                </td>
+                    &nbsp;</td>
               
             </tr>
 
@@ -114,28 +138,30 @@ margin-top: 0px;">
             width: 86px;
         }
         .button {
-            margin-left: 0px;
-        }
-        .auto-style14 {
-            width: 64px;
+            margin-left: 11px;
         }
         .auto-style17 {
-            width: 76px;
+            width: 83px;
         }
         .auto-style19 {
             width: 65px;
         }
         .auto-style21 {
-            width: 53px;
-        }
-        .auto-style22 {
-            width: 54px;
+            width: 124px;
         }
         .auto-style23 {
-            width: 89px;
+            width: 12px;
         }
         .auto-style24 {
-            width: 92px;
+            width: 150px;
+        }
+        .auto-style25
+        {
+            width: 233px;
+        }
+        .auto-style26
+        {
+            width: 117px;
         }
         </style>
     </asp:Content>
