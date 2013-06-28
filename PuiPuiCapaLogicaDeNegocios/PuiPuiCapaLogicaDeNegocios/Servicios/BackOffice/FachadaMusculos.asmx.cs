@@ -20,7 +20,6 @@ namespace PuiPuiCapaLogicaDeNegocios.Servicios.BackOffice
 
     public class FachadaMusculos : System.Web.Services.WebService
     {
-        XmlTextWriter _escritorXML;
 
         [WebMethod]
         public bool ServicioAgregarMusculo(string nombre, string descripcion)
@@ -32,32 +31,11 @@ namespace PuiPuiCapaLogicaDeNegocios.Servicios.BackOffice
         }
 
         [WebMethod]
-        public XmlDocument ServicioConsultarTodosLosMusculos() 
+        public string ServicioConsultarTodosLosMusculos() 
         {
             List<AEntidad> salida = FabricaComando.CrearConsultarTodosLosMusculos().Ejecutar();
-
-            foreach (AEntidad lista in salida)
-            {
-                _escritorXML = new XmlTextWriter("C:\\XmlMusculosTodos.xml", null);
-                _escritorXML.WriteStartDocument();
-                _escritorXML.WriteComment("XMl para la consulta de musculos");
-                _escritorXML.WriteStartElement("Musculos");
-                _escritorXML.WriteElementString("id", XmlConvert.ToString((lista as Musculo).IdMusculo));
-                _escritorXML.WriteElementString("nombre", ((lista as Musculo).NombreMusculo));
-                _escritorXML.WriteElementString("descripcion", (lista as Musculo).Descripcion);
-                _escritorXML.WriteElementString("estatus",XmlConvert.ToString ((lista as Musculo).Status));
-                _escritorXML.WriteEndElement();
-            }
-
-            _escritorXML.Flush();
-            _escritorXML.WriteEndDocument();
-            _escritorXML.Close();
-
-            XmlDocument retorno = new XmlDocument();
-
-            retorno.Load("C:\\XmlMusculosTodos.xml");
-
-            return retorno;
+           
+            return FabricaComando.CrearComandoSerializarMusculo(salida).Ejecutar();
         }
 
 
