@@ -56,7 +56,7 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EPersonas
         }
 
         public Instructor(string cedula, string nombre1, string nombre2, string apellido1, string apellido2,
-         string genero, DateTime fechaNacimiento,DateTime fechaIngreso,string estado, string ciudad, string direccion,
+         string genero, DateTime fechaNacimiento,DateTime fechaIngreso, string estado, string ciudad, string direccion,
          string correo, string tlfLocal, string telfCelular, List<Horario> horario)
             
         {
@@ -90,7 +90,7 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EPersonas
             _sexo = genero;
             _fechaNac = fechaNacimiento;
             _fechaIngreso = fechaIngreso;
-            //OJO_entidadFederal = estado;
+            _entidadFederal = estado;
             _ciudad = ciudad;
             _direccion = direccion;
             _telefonoLocal = tlfLocal;

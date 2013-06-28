@@ -66,7 +66,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsPersonas
                     (instructor as Instructor).CorreoPersona = dr.GetValue(14).ToString();
                     (instructor as Instructor).NombreContactoEmergencia = dr.GetValue(15).ToString();
                     (instructor as Instructor).TelefonoContactoEmergencia = dr.GetValue(16).ToString();
-                    (instructor as Instructor).EstadoPersona = dr.GetValue(17).ToString();
+                    (instructor as Instructor).Status = dr.GetValue(17).ToString();
                     FALTA HORARIO
                     (instructor as Instructor).Horario = Convert.ToString(dr.GetValue());*/
                     instructores.Add(instructor);
@@ -130,15 +130,15 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsPersonas
                     (instructor as Instructor).GeneroPersona = dr.GetValue(6).ToString();
                     (instructor as Instructor).FechaNacimientoPersona = DateTime.Parse(dr.GetValue(7).ToString());
                     (instructor as Instructor).FechaIngresoPersona = DateTime.Parse(dr.GetValue(8).ToString());
-                    //(instructor as Instructor).EntidadFederal = dr.GetValue(9).ToString();
-                    (instructor as Instructor).CiudadPersona = dr.GetValue(9).ToString();
-                    (instructor as Instructor).DireccionPersona = dr.GetValue(10).ToString();
-                    (instructor as Instructor).TelefonoLocalPersona = dr.GetValue(11).ToString();
-                    (instructor as Instructor).TelefonoCelularPersona = dr.GetValue(12).ToString();
-                    (instructor as Instructor).CorreoPersona = dr.GetValue(13).ToString();
-                    (instructor as Instructor).NombreContactoEmergencia = dr.GetValue(14).ToString();
-                    (instructor as Instructor).TelefonoContactoEmergencia = dr.GetValue(15).ToString();
-                    (instructor as Instructor).EstadoPersona = dr.GetValue(16).ToString();
+                    (instructor as Instructor).EstadoPersona = dr.GetValue(9).ToString();
+                    (instructor as Instructor).CiudadPersona = dr.GetValue(10).ToString();
+                    (instructor as Instructor).DireccionPersona = dr.GetValue(11).ToString();
+                    (instructor as Instructor).TelefonoLocalPersona = dr.GetValue(12).ToString();
+                    (instructor as Instructor).TelefonoCelularPersona = dr.GetValue(13).ToString();
+                    (instructor as Instructor).CorreoPersona = dr.GetValue(14).ToString();
+                    (instructor as Instructor).NombreContactoEmergencia = dr.GetValue(15).ToString();
+                    (instructor as Instructor).TelefonoContactoEmergencia = dr.GetValue(16).ToString();
+                    //(instructor as Instructor).Status = dr.GetValue(17).ToString();
                 }
             }
             catch (ArgumentException e)
@@ -199,7 +199,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsPersonas
                 cmd.Parameters.AddWithValue("@fechaNacimiento", (entidad as Instructor).FechaNacimientoPersona);
                 //cmd.Parameters.AddWithValue("@fechaRegistro", DateTime.Today);
                 cmd.Parameters.AddWithValue("@fechaRegistro", (entidad as Instructor).FechaIngresoPersona);
-                //cmd.Parameters.AddWithValue("@entidadFederal", (entidad as Instructor).EntidadFederal);
+                cmd.Parameters.AddWithValue("@entidadFederal", (entidad as Instructor).EstadoPersona);
                 cmd.Parameters.AddWithValue("@ciudad", (entidad as Instructor).CiudadPersona);
                 cmd.Parameters.AddWithValue("@direccion", (entidad as Instructor).DireccionPersona);
                 cmd.Parameters.AddWithValue("@telefonoLocal", (entidad as Instructor).TelefonoLocalPersona);
@@ -207,7 +207,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsPersonas
                 cmd.Parameters.AddWithValue("@correoElectronico", (entidad as Instructor).CorreoPersona);
                 cmd.Parameters.AddWithValue("@nombreEmergencia", (entidad as Instructor).NombreContactoEmergencia);
                 cmd.Parameters.AddWithValue("@contactoEmergencia", (entidad as Instructor).TelefonoContactoEmergencia);
-                cmd.Parameters.AddWithValue("@status", (entidad as Instructor).EstadoPersona);
+                cmd.Parameters.AddWithValue("@status", 1);
                 dr = cmd.ExecuteReader();
                 _flag = true;
             }
@@ -331,7 +331,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsPersonas
                 cmd.Parameters.AddWithValue("@segundoApellido", (entidad as Instructor).ApellidoPersona2);
                 cmd.Parameters.AddWithValue("@genero", (entidad as Instructor).GeneroPersona);
                 cmd.Parameters.AddWithValue("@fechaNacimiento", (entidad as Instructor).FechaNacimientoPersona);
-                //cmd.Parameters.AddWithValue("@entidadFederal", (entidad as Instructor).EntidadFederal);
+                cmd.Parameters.AddWithValue("@entidadFederal", (entidad as Instructor).EstadoPersona);
                 cmd.Parameters.AddWithValue("@ciudad", (entidad as Instructor).CiudadPersona);
                 cmd.Parameters.AddWithValue("@direccion", (entidad as Instructor).DireccionPersona);
                 cmd.Parameters.AddWithValue("@telefonoLocal", (entidad as Instructor).TelefonoLocalPersona);
@@ -339,7 +339,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsPersonas
                 cmd.Parameters.AddWithValue("@correoElectronico", (entidad as Instructor).CorreoPersona);
                 cmd.Parameters.AddWithValue("@nombreEmergencia", (entidad as Instructor).NombreContactoEmergencia);
                 cmd.Parameters.AddWithValue("@contactoEmergencia", (entidad as Instructor).TelefonoContactoEmergencia);
-                cmd.Parameters.AddWithValue("@status", (entidad as Instructor).EstadoPersona);
+                cmd.Parameters.AddWithValue("@status", 1);
                 dr = cmd.ExecuteReader();
                 _flag = true;
             }
@@ -442,7 +442,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsPersonas
                     (instructor as Instructor).CorreoPersona = dr.GetValue(14).ToString();
                     (instructor as Instructor).NombreContactoEmergencia = dr.GetValue(15).ToString();
                     (instructor as Instructor).TelefonoContactoEmergencia = dr.GetValue(16).ToString();
-                    (instructor as Instructor).EstadoPersona = dr.GetValue(17).ToString();
+                    (instructor as Instructor).Status = dr.GetValue(17).ToString();
                     FALTA HORARIO
                     (instructor as Instructor).Horario = Convert.ToString(dr.GetValue());*/
                     instructores.Add(instructor);

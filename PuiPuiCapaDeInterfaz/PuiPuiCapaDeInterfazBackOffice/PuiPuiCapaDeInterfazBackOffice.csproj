@@ -122,6 +122,10 @@
     <Content Include="Vistas\VClase\DetalleConsultaClase.aspx" />
     <Content Include="Vistas\VClase\ModificarClase.aspx" />
     <Content Include="Vistas\VHome\Home.aspx" />
+    <Content Include="Vistas\VInstructor\AgregarInstructor.aspx" />
+    <Content Include="Vistas\VInstructor\ConsultarInstructor.aspx" />
+    <Content Include="Vistas\VInstructor\EliminarInstructor.aspx" />
+    <Content Include="Vistas\VInstructor\ModificarInstructor.aspx" />
     <Content Include="Vistas\VSalon\AgregarSalon.aspx" />
     <Content Include="Vistas\VSalon\ConsultarSalon.aspx" />
     <Content Include="Vistas\VSalon\DetalleConsultaSalon.aspx" />
@@ -255,6 +259,34 @@
     <Compile Include="Vistas\VHome\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\VInstructor\AgregarInstructor.aspx.cs">
+      <DependentUpon>AgregarInstructor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\VInstructor\AgregarInstructor.aspx.designer.cs">
+      <DependentUpon>AgregarInstructor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VInstructor\ConsultarInstructor.aspx.cs">
+      <DependentUpon>ConsultarInstructor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\VInstructor\ConsultarInstructor.aspx.designer.cs">
+      <DependentUpon>ConsultarInstructor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VInstructor\EliminarInstructor.aspx.cs">
+      <DependentUpon>EliminarInstructor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\VInstructor\EliminarInstructor.aspx.designer.cs">
+      <DependentUpon>EliminarInstructor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VInstructor\ModificarInstructor.aspx.cs">
+      <DependentUpon>ModificarInstructor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\VInstructor\ModificarInstructor.aspx.designer.cs">
+      <DependentUpon>ModificarInstructor.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\VSalon\AgregarSalon.aspx.cs">
       <DependentUpon>AgregarSalon.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -345,7 +377,6 @@
     <Folder Include="Presentadores\PInstructor\" />
     <Folder Include="Vistas\VCliente\" />
     <Folder Include="Vistas\VEjercicio\" />
-    <Folder Include="Vistas\VInstructor\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
