@@ -25,36 +25,22 @@ namespace PuiPuiCapaLogicaDeNegocios.Fabricas
         {
             return new Clase();
         }
-        public static AEntidad CrearClase(string nombre,int idClase, string descripcion, int status)
-        {
-
-            return new Clase(nombre, idClase, descripcion, status);
-        }
 
         /// <summary>
-        /// Metodos estaticos que reciben distintos parametros y retornan una instancia de la clase ClaseSalon
+        /// Metodo estatico que retorna una instancia de la clase ClaseSalon
         /// encajonada en la clase abstracta AEntidad.
         /// </summary>
         /// <returns></returns>
         public static AEntidad CrearClaseSalon()
         {
             return new ClaseSalon();
+        }
 
-        }
-         public static AEntidad CrearClaseSalon(int iid, Salon sal, Clase clas, Instructor ins,Horario ho, int disp)
-        {
-            return new ClaseSalon(iid, sal, clas, ho, ins, disp);
-        }
-         public static AEntidad CrearClaseSalon(int iid, Salon sal, Clase clas, Instructor ins,int disp)
-         {
-             return new ClaseSalon(iid, sal, clas, ins, disp);
-         }
         /// <summary>
         /// Metodo estatico que retorna una instancia de la clase Salon 
         /// encajonada en la clase abstracta AEntidad.
         /// </summary>
         /// <returns></returns>
-        
         public static AEntidad CrearSalon()
         {
             return new Salon();
@@ -184,11 +170,10 @@ namespace PuiPuiCapaLogicaDeNegocios.Fabricas
             return eva;
         }
 
-        public static AEntidad CrearEvaluacionInstructor(int id,DateTime fecha,String observaciones,int status,int idcliente,int idinstructor)
+        public static AEntidad CrearEvaluacionInstructor(int id,DateTime fecha,String observaciones,int idcliente,int idinstructor)
         {          
             EvaluacionInstructor eva = new EvaluacionInstructor();
             eva.Id = id;
-            eva.Inactivo = status; 
             eva.Fecha = fecha;
             eva.Observaciones = observaciones;
             eva.idCliente = idcliente;
@@ -241,6 +226,12 @@ namespace PuiPuiCapaLogicaDeNegocios.Fabricas
         {
             return new Instructor();
         }
+
+        public static AEntidad CrearInstructor(int id)
+        {
+            return new Instructor(id);
+        }
+
         #endregion
 
         #region Reservaciones
