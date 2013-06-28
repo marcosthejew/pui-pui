@@ -19,16 +19,14 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EReservaciones
         public String end { get; set; }
         public bool allDay { get; set; }
         public String instructor { get; set; }
-        public int cuposDisponibles { get; set; }
-        public int status { get; set; }
         public String color { get; set; }
         public String textColor { get; set; }
-  
+
         #endregion
 
-       #region constructor
+        #region constructor
         public ReservacionEventoCalendario()
-        { 
+        {
         }
         #endregion
     }

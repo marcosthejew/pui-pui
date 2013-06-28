@@ -16,14 +16,19 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsReservaciones
     /// entidad ReservacionClase en la base de datos de SQL Server de la capa de
     /// datos.
     /// </summary>
-    public class ReservacionClaseSQLServerDAO : AReservacionSQLServerDAO,IReservacionClaseDAO
+    public class ReservacionClaseSQLServerDAO : AReservacionSQLServerDAO, IReservacionClaseDAO
     {
 
         #region Atributos
         private SqlConnection conexion;
         private SqlCommand cmd;
         private SqlDataReader dr;
-        #endregion 
+        private String _stFechaI;
+        private String _stFechaF;
+        private DateTime _fechaInicio;
+        private DateTime _fechaFin;
+        private DateTime _fechaPrueba;
+        #endregion
 
         #region Metodos
 
@@ -34,35 +39,46 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsReservaciones
         /// de la capa de datos.
         /// </summary>
         /// <returns></returns>
-         public List<AEntidad> ConsultarTodos()
+        public List<AEntidad> ConsultarTodos()
         {
 
             List<AEntidad> eventos = new List<AEntidad>();
-
+            _stFechaI= "2013-07-01"; 
+            _stFechaF= "2013-08-08"; 
+            _fechaInicio = Convert.ToDateTime(_stFechaI);  
+            _fechaFin = Convert.ToDateTime(_stFechaF);  
+            _fechaPrueba=_fechaInicio;
+           
             try
             {
-                conexion = obtenerConexion();
-                conexion.Open();
-                cmd = new SqlCommand("[dbo].[consultarTodosReservacionesCalendario]", conexion);
-                cmd.CommandType = CommandType.StoredProcedure;
-                dr = cmd.ExecuteReader();
-           
-                while (dr.Read())
+
+                while (_fechaPrueba < _fechaFin)
                 {
-                   eventos.Add(new ReservacionEventoCalendario
+                    conexion = obtenerConexion();
+                    conexion.Open();
+                    cmd = new SqlCommand("[dbo].[consultarTodosReservacionesCalendario]", conexion);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@fecha", _fechaPrueba);
+                    dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
                     {
-                        id = Convert.ToInt32(dr.GetValue(0)),
-                        title = dr.GetValue(1).ToString(),
-                        start = dr.GetValue(2).ToString(),
-                        end = dr.GetValue(3).ToString(),
-                        allDay = false,
-                        instructor = dr.GetValue(4).ToString(),
-                        cuposDisponibles = Convert.ToInt32(dr.GetValue(5)),
-                        status = Convert.ToInt32(dr.GetValue(6)),
-                        color = "#CCFF33",
-                        textColor = "black"
-                    });
+                        eventos.Add(new ReservacionEventoCalendario
+                        {
+                            id = Convert.ToInt32(dr.GetValue(0)),
+                            title = dr.GetValue(1).ToString(),
+                            start = dr.GetValue(2).ToString(),
+                            end = dr.GetValue(3).ToString(),
+                            allDay = false,
+                            instructor = dr.GetValue(4).ToString(),
+                            color = "#CCFF33",
+                            textColor = "black"
+                        });
+                    }
+
+                    _fechaPrueba = _fechaPrueba.AddDays(1);
                 }
+               
             }
             catch (ArgumentException e)
             {
