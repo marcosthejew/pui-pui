@@ -260,6 +260,7 @@
     </Compile>
     <Compile Include="Servicios\BackOffice\FachadaMusculos.asmx.cs">
       <DependentUpon>FachadaMusculos.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Servicios\BackOffice\FachadaSalonBackOffice.asmx.cs">
       <DependentUpon>FachadaSalonBackOffice.asmx</DependentUpon>

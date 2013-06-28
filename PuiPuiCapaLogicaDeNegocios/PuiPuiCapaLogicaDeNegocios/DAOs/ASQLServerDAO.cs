@@ -14,7 +14,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs
     public abstract class ASQLServerDAO
     {
         protected static string _cadenaConexion = 
-                ConfigurationManager.ConnectionStrings["SqlServer"]
+                ConfigurationManager.ConnectionStrings["SQLServer"]
                         .ConnectionString;
         
         /// <summary>
