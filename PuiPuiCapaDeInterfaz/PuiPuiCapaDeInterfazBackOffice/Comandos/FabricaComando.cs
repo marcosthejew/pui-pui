@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using PuiPuiCapaDeInterfazBackOffice.Comandos.ComandosEjercicio;
+using PuiPuiCapaDeInterfazBackOffice.Contratos.CTEjercicio;
 
 namespace PuiPuiCapaDeInterfazBackOffice.Comandos
 {
@@ -11,6 +13,12 @@ namespace PuiPuiCapaDeInterfazBackOffice.Comandos
     /// </summary>
     public class FabricaComando
     {
+        #region Ejercicio
+        public static AComando<bool> CrearComandoCargarMusculos(IAgregarEjercicio vista)
+        {
+            return new ComandoCargarMusculos(vista);
+        }
 
+        #endregion
     }
 }
