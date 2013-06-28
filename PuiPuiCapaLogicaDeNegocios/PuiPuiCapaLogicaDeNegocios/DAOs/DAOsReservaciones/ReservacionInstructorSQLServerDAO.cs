@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data.SqlClient;
+using System.Configuration;
+using System.Data;
+using PuiPuiCapaLogicaDeNegocios.Excepciones;
 
 namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsReservaciones
 {
@@ -13,6 +17,9 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsReservaciones
     public class ReservacionInstructorSQLServerDAO : AReservacionSQLServerDAO, 
                                                      IReservacionInstructorDAO
     {
+        #region Atributos
+        private List<Entidades.AEntidad> _listaReservaInstructor;
+        #endregion
         /// <summary>
         /// Devuelve una lista con todas las entidades activas de 
         /// ReservacionInstructor que se encuentran en la base de datos de SQL

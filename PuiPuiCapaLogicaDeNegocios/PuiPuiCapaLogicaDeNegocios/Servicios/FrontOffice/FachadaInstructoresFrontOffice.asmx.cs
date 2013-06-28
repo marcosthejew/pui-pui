@@ -36,21 +36,21 @@ namespace PuiPuiCapaLogicaDeNegocios.Servicios.FrontOffice
         }
 
         [WebMethod]
-        public int ServicioComandoInsertarEvaluacionesInstructor(DateTime fecha, String observaciones, int status, int idcliente, int idinstructor)
+        public int ServicioComandoInsertarEvaluacionesInstructor(DateTime fecha, String observaciones, int status, string idcliente, string idinstructor, int calificacion)
         {
 
             EvaluacionInstructor evaluaciionInstructor = (EvaluacionInstructor)FabricaEntidad.
-                CrearEvaluacionInstructor(0, fecha, observaciones,status ,idcliente, idinstructor);
+                CrearEvaluacionInstructor(0, fecha, observaciones,status ,idcliente, idinstructor, calificacion);
             return FabricaComandosEvaluacionInstructor.CrearComandoInsertarEvaluacionInstructor(evaluaciionInstructor).Ejecutar();
         }
 
 
         [WebMethod]
-        public bool ServicioComandoModificarEvaluacionesInstructor(int id,DateTime fecha, String observaciones, int status, int idcliente, int idinstructor)
+        public bool ServicioComandoModificarEvaluacionesInstructor(int id, DateTime fecha, String observaciones, int status, string idcliente, string idinstructor, int calificacion)
         {
 
             EvaluacionInstructor evaluaciionInstructor = (EvaluacionInstructor)FabricaEntidad.
-                CrearEvaluacionInstructor(id, fecha, observaciones, status, idcliente, idinstructor);
+                CrearEvaluacionInstructor(id, fecha, observaciones, status, idcliente, idinstructor, calificacion);
             return FabricaComandosEvaluacionInstructor.CrearComandoModificarEvaluacionInstructor(evaluaciionInstructor).Ejecutar();
         }
     }

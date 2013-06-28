@@ -17,12 +17,12 @@ namespace PuiPuiCapaLogicaDeNegocios.Comandos.ComandosEvaluacionInstructor
 
         public override string Ejecutar()
         {
-            string cadenaAEnviar = "<EvaluacionInstructor>";
+            string cadenaAEnviar = "<EvaluacionInst>";
             foreach (EvaluacionInstructor evalinst in _listaEvaluaiconInstructor)
             {
                 cadenaAEnviar += evalinst.serializar();
             }
-            cadenaAEnviar += "</EvaluacionInstructor>";
+            cadenaAEnviar += "</EvaluacionInst>";
 
             return cadenaAEnviar;
         }

@@ -65,8 +65,10 @@ AS
 BEGIN
 
 	SET NOCOUNT ON;    
-    Select id_eval_inst,fecha_evaluacion,calificacion,inactivo,observaciones,id_cliente,id_instructor
-    from Evaluacion_Instructor;
+    Select e.id_eval_inst,e.fecha_evaluacion,e.calificacion,e.inactivo,e.observaciones,
+	(Select concat(concat(concat(concat(id_persona,' '),nombre1),' '),apellido1) from Persona where id_persona = e.id_cliente) as  cliente,
+	(Select concat(concat(concat(concat(id_instructor,' '),nombre1),' '),apellido1) from Instructor where id_instructor = e.id_instructor) as  instructor
+    from Evaluacion_Instructor as e;
 	
 END
 
@@ -85,9 +87,11 @@ BEGIN
 	SET NOCOUNT ON;
 
     
-    Select id_eval_inst,fecha_evaluacion,calificacion,inactivo,observaciones,id_cliente,id_instructor
-    from Evaluacion_Instructor
-    where id_eval_inst = @IdEvaluacionInstructor;
+    Select e.id_eval_inst,e.fecha_evaluacion,e.calificacion,e.inactivo,e.observaciones,
+	(Select concat(concat(concat(concat(id_persona,' '),nombre1),' '),apellido1) from Persona where id_persona = e.id_cliente) as  cliente,
+	(Select concat(concat(concat(concat(id_instructor,' '),nombre1),' '),apellido1) from Instructor where id_instructor = e.id_instructor) as  instructor
+    from Evaluacion_Instructor as e
+    where e.id_eval_inst = @IdEvaluacionInstructor;
 	
 END
 Go

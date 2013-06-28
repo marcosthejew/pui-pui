@@ -1,4 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPages/PuiPuiCapaDeInterfazBackOfficeSesion.Master" AutoEventWireup="true" CodeBehind="ConsultarClases.aspx.cs" Inherits="PuiPuiCapaDeInterfazBackOffice.Vistas.VClase.ConsultarClases" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPages/PuiPuiCapaDeInterfazBackOfficeSesion.Master" 
+    AutoEventWireup="true" CodeBehind="ConsultarClases.aspx.cs" 
+    Inherits="PuiPuiCapaDeInterfazBackOffice.Vistas.VClase.ConsultarClases" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div style="text-align:center; font-family:Helvetica; font-size:16px;">
     <asp:Label ID="Label1" runat="server" Text="<h1>CLASE</h1>"></asp:Label>

@@ -34,11 +34,12 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEvaluaciones
 
             _listaEvaluacionInstructor = new List<Entidades.AEntidad>();
             _listaEvaluacionInstructor.RemoveRange(0, _listaEvaluacionInstructor.Count);
+            SqlConnection conexion = obtenerConexion();
             try
             {
-                obtenerConexion().Open();
+                conexion.Open();
 
-                SqlCommand cmd = new SqlCommand("[dbo].[ListarEvaluacionesInstructor]", obtenerConexion());
+                SqlCommand cmd = new SqlCommand("[dbo].[ListarEvaluacionesInstructor]", conexion);
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataReader dr;
                 dr = cmd.ExecuteReader();
@@ -46,18 +47,18 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEvaluaciones
                 {
                     Entidades.EEvaluaciones.EvaluacionInstructor evalua = (Entidades.EEvaluaciones.EvaluacionInstructor)Fabricas.FabricaEntidad.CrearEvaluacionInstructor();
                     
-                    evalua.idEvaluacion = Convert.ToInt32(dr.GetValue(0));
+                    evalua.Id = Convert.ToInt32(dr.GetValue(0));
                     evalua.Fecha = Convert.ToDateTime(dr.GetValue(1));
                     evalua.Calificacion = Convert.ToInt32(dr.GetValue(2));
                     evalua.Inactivo = Convert.ToInt32(dr.GetValue(3));
-                    evalua.Observaciones = dr.GetString(4);                    
-                    evalua.idCliente = Convert.ToInt32(dr.GetValue(5));
-                    evalua.idInstructor = Convert.ToInt32(dr.GetValue(6));
+                    evalua.Observaciones = dr.GetString(4);
+                    evalua.idCliente = dr.GetString(5);
+                    evalua.idInstructor = dr.GetString(6);
 
                     _listaEvaluacionInstructor.Add(evalua);
 
                 }
-                obtenerConexion().Close();
+                conexion.Close();
             }
             catch (ArgumentException e)
             {
@@ -81,7 +82,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEvaluaciones
             }
             finally
             {
-                obtenerConexion().Close();
+                conexion.Close();
             }
 
             return _listaEvaluacionInstructor;             
@@ -101,10 +102,11 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEvaluaciones
         public Entidades.AEntidad ConsultarPorId(int id)
         {            
             Entidades.EEvaluaciones.EvaluacionInstructor evalua = (Entidades.EEvaluaciones.EvaluacionInstructor)Fabricas.FabricaEntidad.CrearEvaluacionInstructor();
+            SqlConnection conexion = obtenerConexion();
             try
             {
-                obtenerConexion().Open();
-                SqlCommand cmd = new SqlCommand("[dbo].[DetalleEvaluacionInstructor]", obtenerConexion());
+                conexion.Open();
+                SqlCommand cmd = new SqlCommand("[dbo].[DetalleEvaluacionInstructor]", conexion);
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlParameter param = new SqlParameter("@IdEvaluacionInstructor", id);
                 cmd.Parameters.Add(param);
@@ -112,13 +114,13 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEvaluaciones
                 dr = cmd.ExecuteReader();                
                 while (dr.Read())
                 {                    
-                    evalua.idEvaluacion = Convert.ToInt32(dr.GetValue(0));
+                    evalua.Id = Convert.ToInt32(dr.GetValue(0));
                     evalua.Fecha = Convert.ToDateTime(dr.GetValue(1));
                     evalua.Calificacion = Convert.ToInt32(dr.GetValue(2));
                     evalua.Inactivo = Convert.ToInt32(dr.GetValue(3));
                     evalua.Observaciones = dr.GetString(4);
-                    evalua.idCliente = Convert.ToInt32(dr.GetValue(5));
-                    evalua.idInstructor = Convert.ToInt32(dr.GetValue(6));
+                    evalua.idCliente = dr.GetString(5);
+                    evalua.idInstructor = dr.GetString(6);
                 }
                
                 obtenerConexion().Close();
@@ -145,7 +147,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEvaluaciones
             }
             finally
             {
-                obtenerConexion().Close();
+                conexion.Close();
             }
             return evalua;
         }
@@ -162,11 +164,12 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEvaluaciones
         {
 
             int insercion = 1;
-            Entidades.EEvaluaciones.EvaluacionInstructor evaluacion = (Entidades.EEvaluaciones.EvaluacionInstructor)Fabricas.FabricaEntidad.CrearEvaluacionInstructor();
+            Entidades.EEvaluaciones.EvaluacionInstructor evaluacion = (Entidades.EEvaluaciones.EvaluacionInstructor)entidad;
+            SqlConnection conexion = obtenerConexion();
             try
             {
-                obtenerConexion().Open();
-                SqlCommand cmd = new SqlCommand("[dbo].[AgregarEvaluacionInstructor]", obtenerConexion());
+                conexion.Open();
+                SqlCommand cmd = new SqlCommand("[dbo].[AgregarEvaluacionInstructor]", conexion);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter param = new SqlParameter("@fecha", evaluacion.Fecha);
@@ -178,13 +181,13 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEvaluaciones
                 param = new SqlParameter("@observaciones", evaluacion.Observaciones);
                 cmd.Parameters.Add(param);
 
-                param = new SqlParameter("@inactivo", evaluacion.Observaciones);
+                param = new SqlParameter("@inactivo", evaluacion.Inactivo);
                 cmd.Parameters.Add(param);
 
-                param = new SqlParameter("@id_cliente", evaluacion.idCliente);
+                param = new SqlParameter("@id_cliente", evaluacion.idCliente.Substring(0, evaluacion.idCliente.IndexOf(" ")));
                 cmd.Parameters.Add(param);
 
-                param = new SqlParameter("@id_instructor", evaluacion.idInstructor);
+                param = new SqlParameter("@id_instructor", evaluacion.idInstructor.Substring(0, evaluacion.idInstructor.IndexOf(" ")));
                 cmd.Parameters.Add(param);
 
                 SqlDataReader dr;
@@ -220,7 +223,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEvaluaciones
             }
             finally
             {
-                obtenerConexion().Close();
+                conexion.Close();
 
             }
             return insercion;
@@ -257,14 +260,15 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEvaluaciones
         public bool Modificar(int id, Entidades.AEntidad entidad)
         {
             Boolean insercion = false;
-            Entidades.EEvaluaciones.EvaluacionInstructor evaluacion = (Entidades.EEvaluaciones.EvaluacionInstructor)Fabricas.FabricaEntidad.CrearEvaluacionInstructor();
+            Entidades.EEvaluaciones.EvaluacionInstructor evaluacion = (Entidades.EEvaluaciones.EvaluacionInstructor)entidad;
+            SqlConnection conexion = obtenerConexion();
             try
             {
-                obtenerConexion().Open();
-                SqlCommand cmd = new SqlCommand("[dbo].[AgregarEvaluacionInstructor]", obtenerConexion());
+                conexion.Open();
+                SqlCommand cmd = new SqlCommand("[dbo].[ModificarEvaluacionInstructor]", conexion);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                SqlParameter param = new SqlParameter("@idEvaluacion", evaluacion.idEvaluacion);
+                SqlParameter param = new SqlParameter("@idEvaluacion", evaluacion.Id);
                 cmd.Parameters.Add(param);
 
                 param = new SqlParameter("@fecha", evaluacion.Fecha);
@@ -276,13 +280,13 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEvaluaciones
                 param = new SqlParameter("@observaciones", evaluacion.Observaciones);
                 cmd.Parameters.Add(param);
 
-                param = new SqlParameter("@inactivo", evaluacion.Observaciones);
+                param = new SqlParameter("@inactivo", evaluacion.Inactivo);
                 cmd.Parameters.Add(param);
 
-                param = new SqlParameter("@id_cliente", evaluacion.idCliente);
+                param = new SqlParameter("@id_cliente", evaluacion.idCliente.Substring(0, evaluacion.idCliente.IndexOf(" ")));
                 cmd.Parameters.Add(param);
 
-                param = new SqlParameter("@id_instructor", evaluacion.idInstructor);
+                param = new SqlParameter("@id_instructor", evaluacion.idInstructor.Substring(0, evaluacion.idInstructor.IndexOf(" ")));
                 cmd.Parameters.Add(param);
 
                 SqlDataReader dr;
@@ -320,7 +324,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEvaluaciones
             finally
             {
 
-                obtenerConexion().Close();
+                conexion.Close();
 
 
             }

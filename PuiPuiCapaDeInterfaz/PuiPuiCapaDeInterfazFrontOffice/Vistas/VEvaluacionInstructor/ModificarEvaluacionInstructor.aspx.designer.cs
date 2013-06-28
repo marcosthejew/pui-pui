@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VClase {
+namespace PuiPuiCapaDeInterfazFrontOffice.Vistas.VEvaluacionInstructor {
     
     
-    public partial class DetalleConsultaClase {
+    public partial class ModificarEvaluacionInstructor {
         
         /// <summary>
         /// Label2 control.
@@ -40,6 +40,15 @@ namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VClase {
         protected global::System.Web.UI.WebControls.Label Exito;
         
         /// <summary>
+        /// NClase control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label NClase;
+        
+        /// <summary>
         /// Label4 control.
         /// </summary>
         /// <remarks>
@@ -49,13 +58,31 @@ namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VClase {
         protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
-        /// nombreEvaInstActual control.
+        /// MnombreInstructor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox nombreEvaInstActual;
+        protected global::System.Web.UI.WebControls.TextBox MnombreInstructor;
+        
+        /// <summary>
+        /// Label5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label5;
+        
+        /// <summary>
+        /// nombreCliente control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox nombreCliente;
         
         /// <summary>
         /// Label1 control.
@@ -74,6 +101,24 @@ namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VClase {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Fecha;
+        
+        /// <summary>
+        /// Label6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label6;
+        
+        /// <summary>
+        /// Calificacion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Calificacion;
         
         /// <summary>
         /// Label3 control.

@@ -10,10 +10,11 @@ namespace PuiPuiCapaDeInterfazFrontOffice.Contratos.CTInstructor
 {
     public interface IContratoConsultarEvaluacionInstructor
     {
+
         Boolean RBConsultaCompleta { set; get; }
-        Boolean RBconsultaClasePorNombres { set; get; }
-        String TextNombreClase { set; get; }
-        String DPLStatus { set; get; }
+        Boolean RBconsultaInstructorPorNombres { set; get; }
+        String TextNombreInstrutor { set; get; }
+        int SessionID { set; get; }
 
 
 
