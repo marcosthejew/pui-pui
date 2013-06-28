@@ -17,5 +17,8 @@
     <Setting Name="PuiPuiCapaDeInterfazFrontOffice_LogicaUsuariosLogin_FachadaClientes" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">http://localhost:24057/Servicios/FrontOffice/FachadaUsuariosLoginFrontOffice.asmx</Value>
     </Setting>
+    <Setting Name="PuiPuiCapaDeInterfazFrontOffice_LogicaReservarClase_FachadaReservarClasesFrontOffice" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:24057/Servicios/FrontOffice/FachadaReservarClasesFrontOffice.asmx</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
