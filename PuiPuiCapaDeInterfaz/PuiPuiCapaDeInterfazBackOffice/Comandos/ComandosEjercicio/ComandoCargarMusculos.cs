@@ -17,7 +17,7 @@ namespace PuiPuiCapaDeInterfazBackOffice.Comandos.ComandosEjercicio
     public class ComandoCargarMusculos : AComando<bool>
     {
         IAgregarEjercicio _vista;
-        DropDownList _comboMusculo;
+        
 
         public ComandoCargarMusculos(IAgregarEjercicio vista)
         {
