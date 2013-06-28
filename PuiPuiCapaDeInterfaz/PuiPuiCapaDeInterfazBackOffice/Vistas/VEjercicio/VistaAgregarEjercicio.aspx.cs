@@ -53,7 +53,7 @@ namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VEjercicio
         #region Constructor
         public VistaAgregarEjercicio()
         {
-            _presentadorEjercicio = new PAgregarEjercicio();
+            _presentadorEjercicio = new PAgregarEjercicio(this);
         }
         #endregion
 

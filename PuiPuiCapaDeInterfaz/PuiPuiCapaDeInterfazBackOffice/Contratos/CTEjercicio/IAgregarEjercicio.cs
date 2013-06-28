@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PuiPuiCapaDeInterfazBackOffice.Contratos.CTEjercicio
 {
-    interface IAgregarEjercicio
+   public interface IAgregarEjercicio
     {
         string Nombre { get; set; }
         string Descripcion { get; set; }

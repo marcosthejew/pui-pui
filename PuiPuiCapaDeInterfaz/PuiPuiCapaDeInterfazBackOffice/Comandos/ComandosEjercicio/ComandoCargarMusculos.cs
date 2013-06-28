@@ -5,9 +5,11 @@ using System.Web;
 using System.Web.UI;
 using System.Xml;
 using System.Web.UI.WebControls;
-using PuiPuiCapaDeInterfazBackOffice.Contratos.CTEjercicio;
-using PuiPuiCapaDeInterfazBackOffice.Vistas.VEjercicio;
 using PuiPuiCapaDeInterfazBackOffice.LogicaMusculo;
+using PuiPuiCapaDeInterfazBackOffice.Vistas.VEjercicio;
+using PuiPuiCapaDeInterfazBackOffice.Contratos.CTEjercicio;
+
+
 
 
 namespace PuiPuiCapaDeInterfazBackOffice.Comandos.ComandosEjercicio
@@ -17,10 +19,10 @@ namespace PuiPuiCapaDeInterfazBackOffice.Comandos.ComandosEjercicio
         IAgregarEjercicio _vista;
         DropDownList _comboMusculo;
 
-       /*public ComandoCargarMusculos(IAgregarEjercicio vista)
+        public ComandoCargarMusculos(IAgregarEjercicio vista)
         {
             _vista = vista;
-        }*/
+        }
         public override bool Ejecutar()
         {
             bool flag = true;

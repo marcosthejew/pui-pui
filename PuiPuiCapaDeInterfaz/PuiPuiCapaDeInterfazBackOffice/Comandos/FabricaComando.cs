@@ -14,11 +14,11 @@ namespace PuiPuiCapaDeInterfazBackOffice.Comandos
     public class FabricaComando
     {
         #region Ejercicio
-        /*public static AComando<bool> CrearComandoCargarMusculos(IAgregarEjercicio vista)
+        public static AComando<bool> CrearComandoCargarMusculos(IAgregarEjercicio vista)
         {
             return new ComandoCargarMusculos(vista);
         }
-        */
+        
         #endregion
     }
 }
