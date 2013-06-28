@@ -80,7 +80,7 @@ margin-top: 0px;">
 
 
                 </td>  
-                <td class="auto-style7"><asp:Button ID="Button1" runat="server" Height="25px" Width="120px" Text="Buscar" CssClass="button" OnClick="botonBuscarSalon_Click"/>
+                <td class="auto-style7"><asp:Button ID="Button1" runat="server" Height="25px" Width="120px" Text="Buscar" CssClass="button" OnClick="botonBuscarSalon_Click" ValidationGroup="check"/>
                 </td>  
             </tr>
                  <tr>

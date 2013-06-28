@@ -88,7 +88,7 @@ margin-top: 0px;">
                 <td rowspan="0" nowrap="nowrap" class="auto-style17" align="left">
                    
 
-                <asp:Button ID="botonBuscarClase" runat="server" Text="Buscar" CssClass="button" OnClick="botonBuscarClase_Click" Font-Names="tahoma plain" Font-Size="14px" Height="24px" Width="89px"/>
+                <asp:Button ID="botonBuscarClase" runat="server" Text="Buscar" CssClass="button" OnClick="botonBuscarClase_Click" Font-Names="tahoma plain" Font-Size="14px" Height="24px" Width="89px" ValidationGroup="check"/>
 
 
                 </td>
