@@ -13,6 +13,15 @@ namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VClaseSalon {
     public partial class Consular {
         
         /// <summary>
+        /// Todos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton Todos;
+        
+        /// <summary>
         /// RadioButtonConsultaCompleta control.
         /// </summary>
         /// <remarks>
@@ -20,24 +29,6 @@ namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VClaseSalon {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButton RadioButtonConsultaCompleta;
-        
-        /// <summary>
-        /// consultaClasePorNombres control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton consultaClasePorNombres;
-        
-        /// <summary>
-        /// consultaClasePorInstructor control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton consultaClasePorInstructor;
         
         /// <summary>
         /// nombreClase control.
@@ -49,22 +40,67 @@ namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VClaseSalon {
         protected global::System.Web.UI.WebControls.TextBox nombreClase;
         
         /// <summary>
-        /// consultaClasePorEstatus control.
+        /// RegularExpressionValidator1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton consultaClasePorEstatus;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
         
         /// <summary>
-        /// DropDownListEstatusClase control.
+        /// consultaSalon control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListEstatusClase;
+        protected global::System.Web.UI.WebControls.RadioButton consultaSalon;
+        
+        /// <summary>
+        /// nombreSalon control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox nombreSalon;
+        
+        /// <summary>
+        /// RegularExpressionValidator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator2;
+        
+        /// <summary>
+        /// consultaClasePorInstructor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton consultaClasePorInstructor;
+        
+        /// <summary>
+        /// nombreInstructor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox nombreInstructor;
+        
+        /// <summary>
+        /// RegularExpressionValidator3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator3;
         
         /// <summary>
         /// botonBuscarClase control.
