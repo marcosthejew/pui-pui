@@ -74,5 +74,17 @@ namespace PuiPuiCapaDeInterfazFrontOffice.Properties {
                 return ((string)(this["PuiPuiCapaDeInterfazFrontOffice_LogicaUsuariosLogin_FachadaClientes"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:24057/Servicios/FrontOffice/FachadaReservarClasesFrontOffice.asm" +
+            "x")]
+        public string PuiPuiCapaDeInterfazFrontOffice_LogicaReservarClase_FachadaReservarClasesFrontOffice {
+            get {
+                return ((string)(this["PuiPuiCapaDeInterfazFrontOffice_LogicaReservarClase_FachadaReservarClasesFrontOff" +
+                    "ice"]));
+            }
+        }
     }
 }
