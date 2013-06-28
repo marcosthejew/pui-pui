@@ -101,7 +101,7 @@ margin-top: 0px;">
             <tr >
                 <td colspan="2"  style="text-align:center">
                 <asp:Button ID="Cancelar" runat="server" Text="Regresar" Height="25px" Width="120px" Font-Size="14px" OnClick="Cancelar_Click"/>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="Aceptar" runat="server" Text="Aceptar" Height="25px" Width="120px" Font-Size="14px" OnClick="Aceptar_Click"/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="Aceptar" runat="server" Text="Aceptar" Height="25px" Width="120px" Font-Size="14px" OnClick="Aceptar_Click" ValidationGroup="check"/>
                 </td>
             </tr>
             </table>          
