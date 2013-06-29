@@ -112,6 +112,7 @@
     <Content Include="Vistas\VReservaInstructor\DetalleReservaInstructor.aspx" />
     <Content Include="Vistas\VReservaInstructor\ModificarReservaInstructor.aspx" />
     <Content Include="Vistas\VRutina\ActivarInactivarRutina.aspx" />
+    <Content Include="Vistas\VRutina\AgregarRutina.aspx" />
     <Content Include="Vistas\VRutina\BuscarConsultar.aspx" />
     <Content Include="Web References\LogicaEjercicios\FachadaEjerciciosFrontOffice.disco" />
     <Content Include="Web References\LogicaInstructores\FachadaInstructoresFrontOffice.disco" />
@@ -131,6 +132,7 @@
     <Compile Include="Contratos\CTInstructor\IContratoConsultarEvaluacionInstructor.cs" />
     <Compile Include="Contratos\CTInstructor\IContratoModificarEvaluarInstructor.cs" />
     <Compile Include="Contratos\CTRutina\IContratoActivarInactivarRutina.cs" />
+    <Compile Include="Contratos\CTRutina\IContratoAgregarRutina.cs" />
     <Compile Include="Contratos\CTRutina\IContratoBuscarRutina.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -157,6 +159,7 @@
     <Compile Include="Presentadores\PInstructor\PConsultarEvaluacionInstructor.cs" />
     <Compile Include="Presentadores\PInstructor\PModificarEvaluacionInstructor.cs" />
     <Compile Include="Presentadores\PRutina\PresentadorActivarInactivarRutina.cs" />
+    <Compile Include="Presentadores\PRutina\PresentadorAgregarRutina.cs" />
     <Compile Include="Presentadores\PRutina\PresentadorBuscarRutina.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -231,6 +234,12 @@
     </Compile>
     <Compile Include="Vistas\VRutina\ActivarInactivarRutina.aspx.designer.cs">
       <DependentUpon>ActivarInactivarRutina.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VRutina\AgregarRutina.aspx.cs">
+      <DependentUpon>AgregarRutina.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VRutina\AgregarRutina.aspx.designer.cs">
+      <DependentUpon>AgregarRutina.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\VRutina\BuscarConsultar.aspx.cs">
       <DependentUpon>BuscarConsultar.aspx</DependentUpon>

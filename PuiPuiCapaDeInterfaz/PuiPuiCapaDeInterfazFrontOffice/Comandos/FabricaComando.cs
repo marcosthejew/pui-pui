@@ -41,6 +41,30 @@ namespace PuiPuiCapaDeInterfazFrontOffice.Comandos
             return new ComandoDesSerializarStatus(resultadoComando);
         }
         #endregion        
-    
+
+        #region Angelica
+
+        public static AComando<string> CrearComandoConsultarEjerciciosTodos()
+        {
+            return new ComandoConsultarEjercicios();
+
+        }
+
+        public static AComando<DataTable> CrearComandoDeserializarEjercicio(string resultado)
+        {
+            return new ComandoDeserializarEjercicio(resultado);
+        }
+
+
+        public static AComando<bool> CrearComandoAgregarRutina(string nombre, string descripcion)
+        {
+            return new ComandoAgregarRutina(nombre, descripcion);
+        }
+
+
+
+        #endregion
+
+
     }
 }
