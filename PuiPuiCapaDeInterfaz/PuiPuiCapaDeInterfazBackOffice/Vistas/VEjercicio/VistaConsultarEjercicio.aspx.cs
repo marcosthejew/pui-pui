@@ -53,7 +53,7 @@ namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VEjercicio
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            _preConsultarEjercicio.CargarEjercicios();
         }
 
         public VistaConsultarEjercicio()

@@ -381,7 +381,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
-    <Compile Include="Web References\LogicaMusculo\Reference.cs" />
+    <Compile Include="Web References\LogicaMusculo\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
     <Compile Include="Web References\LogicaPersonas\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -418,10 +422,13 @@
     <Content Include="Service References\LogicaSalon\FachadaSalonBackOffice.wsdl" />
     <Content Include="Service References\LogicaClase\FachadaClasesBackOffice.wsdl" />
     <Content Include="Service References\LogicaClaseSalon\FachadaClaseSalonBackOffice.wsdl" />
-    <Content Include="Web References\LogicaMusculo\FachadaMusculos.wsdl" />
-    <Content Include="Web References\LogicaMusculo\Reference.map" />
     <Content Include="Web References\LogicaInstructor\FachadaInstructor.wsdl" />
     <Content Include="Web References\LogicaInstructor\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Web References\LogicaMusculo\FachadaMusculos.wsdl" />
+    <Content Include="Web References\LogicaMusculo\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
@@ -491,6 +498,17 @@
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>PuiPuiCapaDeInterfazBackOffice_LogicaPersonas_FachadaPersonas</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:24057/Servicios/BackOffice/FachadaMusculos.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\LogicaMusculo\</RelPath>
+      <UpdateFromURL>http://localhost:24057/Servicios/BackOffice/FachadaMusculos.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>PuiPuiCapaDeInterfazBackOffice_LogicaMusculo_FachadaMusculos</CachedSettingsPropName>
     </WebReferenceUrl>
     <WebReferenceUrl Include="http://localhost:24057/Servicios/BackOffice/FachadaUsuariosLoginBackOffice.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>

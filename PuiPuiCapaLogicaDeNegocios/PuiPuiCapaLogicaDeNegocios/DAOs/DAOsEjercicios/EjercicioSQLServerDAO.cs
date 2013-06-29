@@ -103,27 +103,34 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEjercicios
         public Entidades.AEntidad ConsultarPorId(int id)
         {
             AEntidad ejercicio = FabricaEntidad.CrearEjercicio();
+           
+            return ejercicio;
+            
+        }
+        public Entidades.AEntidad ConsultarPorId(int id,string nombre)
+        {
+            AEntidad ejercicio = FabricaEntidad.CrearEjercicio();
             try
             {
                 conexion = obtenerConexion();
                 conexion.Open();
                 cmd = new SqlCommand("[dbo].[consultarEjercicio]", conexion);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@idEjercicio", id);
+                cmd.Parameters.AddWithValue("@nobre", nombre);
                 dr = cmd.ExecuteReader();
-                 if (dr.Read())
+                if (dr.Read())
                 {
                     (ejercicio as Ejercicio).Id = Convert.ToInt32(dr.GetValue(0));
                     (ejercicio as Ejercicio).Nombre = dr.GetValue(1).ToString();
                     (ejercicio as Ejercicio).Descripcion = dr.GetValue(2).ToString();
-                    
+
                     AEntidad musculo = FabricaEntidad.CrearMusculo();
                     (musculo as Musculo).IdMusculo = Convert.ToInt32(dr.GetValue(3));
                     (musculo as Musculo).NombreMusculo = dr.GetValue(4).ToString();
                     (ejercicio as Ejercicio).Musculo = (musculo as Musculo);
                 }
 
-               
+
             }
             catch (ArgumentException e)
             {
@@ -150,7 +157,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEjercicios
                 CerrarConexion(conexion);
             }
             return ejercicio;
-            
+
         }
 
         /// <summary>

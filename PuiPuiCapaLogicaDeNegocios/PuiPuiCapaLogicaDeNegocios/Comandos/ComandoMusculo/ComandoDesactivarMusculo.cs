@@ -24,10 +24,10 @@ namespace PuiPuiCapaLogicaDeNegocios.Comandos.ComandoMusculo
            
             try
             {
-                if ((FabricaSQLServerDAO.obtenerInstancia().CrearMusculoSQLServerDAO().ExisteEjercicioConMusculo((_musculo as Musculo).IdMusculo))!=true)
+                if ((FabricaSQLServerDAO.obtenerInstancia().CrearMusculoSQLServerDAO().ExisteEjercicioConMusculo((_musculo as Musculo).NombreMusculo))!=true)
                     
                     {
-                        flag = FabricaSQLServerDAO.obtenerInstancia().CrearMusculoSQLServerDAO().Inactivar((_musculo as Musculo).IdMusculo);                        
+                        flag = FabricaSQLServerDAO.obtenerInstancia().CrearMusculoSQLServerDAO().Inactivar(0,(_musculo as Musculo).NombreMusculo);                        
                     }
             }
             catch (ExcepcionMusculoConexionBD e)
