@@ -142,24 +142,26 @@ namespace PuiPuiCapaDeInterfazBackOffice.LogicaMusculo {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ServicioDesactivarMusculo", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public bool ServicioDesactivarMusculo(int idMusculo) {
+        public bool ServicioDesactivarMusculo(int idMusculo, string nombre) {
             object[] results = this.Invoke("ServicioDesactivarMusculo", new object[] {
-                        idMusculo});
+                        idMusculo,
+                        nombre});
             return ((bool)(results[0]));
         }
         
         /// <remarks/>
-        public void ServicioDesactivarMusculoAsync(int idMusculo) {
-            this.ServicioDesactivarMusculoAsync(idMusculo, null);
+        public void ServicioDesactivarMusculoAsync(int idMusculo, string nombre) {
+            this.ServicioDesactivarMusculoAsync(idMusculo, nombre, null);
         }
         
         /// <remarks/>
-        public void ServicioDesactivarMusculoAsync(int idMusculo, object userState) {
+        public void ServicioDesactivarMusculoAsync(int idMusculo, string nombre, object userState) {
             if ((this.ServicioDesactivarMusculoOperationCompleted == null)) {
                 this.ServicioDesactivarMusculoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnServicioDesactivarMusculoOperationCompleted);
             }
             this.InvokeAsync("ServicioDesactivarMusculo", new object[] {
-                        idMusculo}, this.ServicioDesactivarMusculoOperationCompleted, userState);
+                        idMusculo,
+                        nombre}, this.ServicioDesactivarMusculoOperationCompleted, userState);
         }
         
         private void OnServicioDesactivarMusculoOperationCompleted(object arg) {

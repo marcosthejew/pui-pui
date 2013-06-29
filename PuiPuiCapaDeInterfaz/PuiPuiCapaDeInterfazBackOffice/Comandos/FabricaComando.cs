@@ -18,6 +18,10 @@ namespace PuiPuiCapaDeInterfazBackOffice.Comandos
         {
             return new ComandoCargarMusculos(vista);
         }
+        public static AComando<bool> CrearComandoCargarEjercicios(IContratoConsultarEjercicio vista)
+        {
+            return new ComandoCargarEjercicio(vista);
+        }
         public static AComando<bool> CrearComandoAgregarEjercicio(string nombre, string descripcion, string musculo)
         {
             return new ComandoAgregarEjercicio(nombre, descripcion, musculo);

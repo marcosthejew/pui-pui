@@ -26,9 +26,9 @@ namespace PuiPuiCapaLogicaDeNegocios.Servicios.BackOffice
         }
 
         [WebMethod]
-        public string ServicioConsultarEjecicioId(int id)
+        public string ServicioConsultarEjecicioId(int id,string nombre)
         {
-            AEntidad ejercicio = FabricaEntidad.CrearEjercicio(id);
+            AEntidad ejercicio = FabricaEntidad.CrearEjercicio(id,nombre);
             AEntidad respuesta;
             respuesta= FabricaComando.CrearComandoConsultarPorIdEjercicio(ejercicio).Ejecutar();
             return FabricaComando.CrearComandoSerializarEjercicio(respuesta).Ejecutar();
@@ -44,9 +44,9 @@ namespace PuiPuiCapaLogicaDeNegocios.Servicios.BackOffice
         }
 
         [WebMethod]
-        public bool ServicioInactivarEjercicio(int id)
+        public bool ServicioInactivarEjercicio(int id,string nombre)
         {
-            return FabricaComando.CrearComandoInactivarEjercicio(FabricaEntidad.CrearEjercicio(id)).Ejecutar();
+            return FabricaComando.CrearComandoInactivarEjercicio(FabricaEntidad.CrearEjercicio(id,nombre)).Ejecutar();
         }
 
         [WebMethod]

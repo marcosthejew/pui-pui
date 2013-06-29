@@ -251,6 +251,47 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEjercicios
             return flag;
         }
 
+        public bool Inactivar(int id,string nombre)
+        {
+            bool flag = false;
+
+            try
+            {
+                _conexion = obtenerConexion();
+                _conexion.Open();
+                _cmd = new SqlCommand("[dbo].[eliminarMusculo]", _conexion);
+                _cmd.CommandType = CommandType.StoredProcedure;
+                _cmd.Parameters.AddWithValue("@idMusculo", nombre);
+                _dr = _cmd.ExecuteReader();
+                flag = true;
+            }
+            catch (ArgumentException e)
+            {
+                throw new ExcepcionMusculoConexionBD("Parametros invalidos", e);
+            }
+            catch (InvalidOperationException e)
+            {
+                throw new ExcepcionMusculoConexionBD("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new ExcepcionMusculoConexionBD("Musculo no encontrado", e);
+            }
+            catch (SqlException e)
+            {
+                throw new ExcepcionMusculoConexionBD("Error con base de datos", e);
+            }
+            catch (Exception e)
+            {
+                throw new ExcepcionMusculoConexionBD("Error general", e);
+            }
+            finally
+            {
+                CerrarConexion(_conexion);
+            }
+            return flag;
+        }
+
         /// <summary>
         /// Modifica la entidad de Musculo correspondiente al id 
         /// especificado con la informacion suministrada en la entidad 
@@ -316,7 +357,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEjercicios
             return flag;
         }
 
-        public bool ExisteEjercicioConMusculo(int idMusculo)
+        public bool ExisteEjercicioConMusculo(string idMusculo)
         {
 
             bool flag = false;
