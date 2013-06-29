@@ -19,7 +19,7 @@ namespace PuiPuiCapaDeInterfazBackOffice.Presentadores.PEjercicio
 
         public void MostrarEjercicio()
         {
-
+            FabricaComando.CrearComandoConsultarEjercicio(_vistaConsultarEjercicio);
         }
         public void CargarEjercicios()
         {

@@ -136,7 +136,7 @@ AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
 drop procedure [actualizarEjercicio]
 go
 
-
+  
 CREATE procedure [dbo].[actualizarEjercicio]
 @idEjercicio int,
 @nombreEjercicio nchar(50),
