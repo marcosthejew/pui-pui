@@ -154,28 +154,28 @@ namespace PuiPuiCapaLogicaDeNegocios.Fabricas
         {
             return new  ComandoConsultarRutinasPorCliente(idCliente);
         }
-        public static AComando<List<Entidades.EEjercicios.Ejercicio>> CrearComandoConsultarEjerciciosPorIDRutina()
+        public static AComando<List<Entidades.EEjercicios.Ejercicio>> CrearComandoConsultarEjerciciosPorIDRutina(int idCliente)
         {
-            return new ComandoConsultarEjerciciosPorIDRutina();
+            return new ComandoConsultarEjerciciosPorIDRutina(idCliente);
         }
         public static AComando<bool> CrearComandoActivarInactivarRutina(int idRutina, byte inactivo)
         {
             return new ComandoActivarInactivarRutina(idRutina, inactivo);
         }
 
-        public static AComando<bool> CrearComandoAgregarRutina()
+        public static AComando<bool> CrearComandoAgregarRutina(string nombre, string descripcion)
         {
-            return new ComandoAgregarRutina();
+            return new ComandoAgregarRutina(nombre, descripcion);
         }
 
-        public static AComando<bool> CrearComandoAgregarHistorial()
+        public static AComando<bool> CrearComandoAgregarHistorial(int repeticion, string duracion, int cliente, int rutina, int ejercicio)
         {
-            return new ComandoAgregarHistorial();
+            return new ComandoAgregarHistorial(repeticion, duracion, cliente, rutina, ejercicio);
         }
 
-        public static AComando<int> CrearComandoConsultarPersonaPorLogin()
+        public static AComando<int> CrearComandoConsultarPersonaPorLogin(string login)
         {
-            return new ComandoConsultarPersonaPorLogin();
+            return new ComandoConsultarPersonaPorLogin(login);
         }
         public static AComando<int> CrearComandoObtenerUltimoIDRutina()
         {

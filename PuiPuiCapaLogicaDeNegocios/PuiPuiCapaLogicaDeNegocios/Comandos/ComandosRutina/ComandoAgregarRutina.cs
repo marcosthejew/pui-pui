@@ -9,12 +9,16 @@ namespace PuiPuiCapaLogicaDeNegocios.Comandos.ComandosRutina
     public class ComandoAgregarRutina : AComando<bool>
     {
 
+        string nombre;
+        string descripcion;
+
         /// <summary>
         /// Esta clase tiene como finalidad agregar rutinas nuevas
         /// </summary>
-        public ComandoAgregarRutina()
+        public ComandoAgregarRutina(string _nombre, string _descripcion)
         {
-
+            this.nombre = _nombre;
+            this.descripcion = _descripcion;
         }
 
         public override bool Ejecutar()
@@ -22,7 +26,7 @@ namespace PuiPuiCapaLogicaDeNegocios.Comandos.ComandosRutina
             try
             {
                 IRutinaDAO rutinaDAO = (IRutinaDAO)Fabricas.AFabricaDAO.CrearFabricaSQLServerDAO().CrearRutinaSQLServerDAO();
-                return rutinaDAO.AgregarRutina("hola", "hola");
+                return rutinaDAO.AgregarRutina(nombre, descripcion);
 
 
             }

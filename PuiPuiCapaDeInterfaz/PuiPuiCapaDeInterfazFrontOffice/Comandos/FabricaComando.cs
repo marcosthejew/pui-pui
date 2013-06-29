@@ -27,8 +27,6 @@ namespace PuiPuiCapaDeInterfazFrontOffice.Comandos
             return new ComandoDesSerializarRutina(rutina);
         }
 
-        #endregion        
-    
         public static AComando<string> CrearComandoStatusDeRutina(int idRutina)
         {
             return new ComandoStatusDeRutina(idRutina);
@@ -42,5 +40,7 @@ namespace PuiPuiCapaDeInterfazFrontOffice.Comandos
         {
             return new ComandoDesSerializarStatus(resultadoComando);
         }
+        #endregion        
+    
     }
 }

@@ -9,12 +9,14 @@ namespace PuiPuiCapaLogicaDeNegocios.Comandos.ComandosRutina
 {
     public class ComandoConsultarPersonaPorLogin : AComando<int>
     {
+
+        string login;
         /// <summary>
         /// Esta clase tiene como finalidad 
         /// </summary>
-        public ComandoConsultarPersonaPorLogin()
+        public ComandoConsultarPersonaPorLogin(string _login)
         {
-
+            this.login = _login;
         }
         public override int Ejecutar()
         {
@@ -22,7 +24,7 @@ namespace PuiPuiCapaLogicaDeNegocios.Comandos.ComandosRutina
             {
                 IRutinaDAO ClienteDAO = (IRutinaDAO)Fabricas.AFabricaDAO.CrearFabricaSQLServerDAO().CrearRutinaSQLServerDAO();
 
-                return ClienteDAO.ConsultarPersonaPorLogin("Karla");
+                return ClienteDAO.ConsultarPersonaPorLogin(login);
 
             }
             catch (Exception e)

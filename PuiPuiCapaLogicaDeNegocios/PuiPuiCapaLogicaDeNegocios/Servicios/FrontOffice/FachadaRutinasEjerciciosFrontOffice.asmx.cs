@@ -62,7 +62,7 @@ namespace PuiPuiCapaLogicaDeNegocios.Servicios.FrontOffice
             List<Ejercicio> listaEjercicio = new List<Ejercicio>();
             Rutina entidadEjercicio = new Rutina();
 
-            listaEjercicio = Fabricas.FabricaComando.CrearComandoConsultarEjerciciosPorIDRutina().Ejecutar();
+            listaEjercicio = Fabricas.FabricaComando.CrearComandoConsultarEjerciciosPorIDRutina(idRutina).Ejecutar();
             string resultado = "<Ejercicios>";
 
             foreach (Ejercicio ejercicio in listaEjercicio)
@@ -109,7 +109,7 @@ namespace PuiPuiCapaLogicaDeNegocios.Servicios.FrontOffice
         public bool AgregarRutina(string nombre, string descripcion)
         {
             bool rutina = false;
-            rutina = Fabricas.FabricaComando.CrearComandoAgregarRutina().Ejecutar();
+            rutina = Fabricas.FabricaComando.CrearComandoAgregarRutina(nombre, descripcion).Ejecutar();
             return true;
         }
         
@@ -117,7 +117,7 @@ namespace PuiPuiCapaLogicaDeNegocios.Servicios.FrontOffice
         public bool AgregarHistorial(string duracion, int repeticion, int cliente, int rutina, int ejercicio)
         {
             bool historial = false;
-            historial = Fabricas.FabricaComando.CrearComandoAgregarHistorial().Ejecutar();
+            historial = Fabricas.FabricaComando.CrearComandoAgregarHistorial(repeticion, duracion, cliente, rutina, ejercicio).Ejecutar();
             return true;
         }
 
@@ -125,7 +125,7 @@ namespace PuiPuiCapaLogicaDeNegocios.Servicios.FrontOffice
         public int ConsultarPersonaPorLogin(string loginPersona)
         {
             int idPersona;
-            idPersona = Fabricas.FabricaComando.CrearComandoConsultarPersonaPorLogin().Ejecutar();
+            idPersona = Fabricas.FabricaComando.CrearComandoConsultarPersonaPorLogin(loginPersona).Ejecutar();
             return idPersona;
         }
 

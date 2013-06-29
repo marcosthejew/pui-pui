@@ -224,6 +224,7 @@
     </Compile>
     <Compile Include="Vistas\VRutina\ActivarInactivarRutina.aspx.cs">
       <DependentUpon>ActivarInactivarRutina.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Vistas\VRutina\ActivarInactivarRutina.aspx.designer.cs">
       <DependentUpon>ActivarInactivarRutina.aspx</DependentUpon>

@@ -8,12 +8,22 @@ namespace PuiPuiCapaLogicaDeNegocios.Comandos.ComandosRutina
 {
     public class ComandoAgregarHistorial : AComando<bool>
     {
+        int repeticion;
+        string duracion;
+        int idCliente;
+        int idEjercicio;
+        int idRutina;
+
 
         /// <summary>
         /// Esta clase tiene como finalidad agregar rutinas nuevas
         /// </summary>
-        public ComandoAgregarHistorial()
-        {
+        public ComandoAgregarHistorial(int _repeticion, string _duracion, int _idCliente, int _idRutina, int _idEjercicio){
+            this.repeticion = _repeticion;
+            this.duracion = _duracion;
+            this.idCliente = _idCliente;
+            this.idEjercicio = _idEjercicio;
+            this.idRutina = _idRutina;
 
         }
 
@@ -22,7 +32,7 @@ namespace PuiPuiCapaLogicaDeNegocios.Comandos.ComandosRutina
             try
             {
                 IRutinaDAO rutinaDAO = (IRutinaDAO)Fabricas.AFabricaDAO.CrearFabricaSQLServerDAO().CrearRutinaSQLServerDAO();
-                return rutinaDAO.AgregarHistorialRutina("10", 0, 7, 1, 1);
+                return rutinaDAO.AgregarHistorialRutina(duracion, repeticion, idCliente, idRutina, idEjercicio);
 
 
             }
