@@ -23,6 +23,7 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -47,6 +48,7 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -120,6 +122,7 @@
   </wsdl:message>
   <wsdl:message name="ServicioConsultarEjecicioIdHttpGetIn">
     <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="nombre" type="s:string" />
   </wsdl:message>
   <wsdl:message name="ServicioConsultarEjecicioIdHttpGetOut">
     <wsdl:part name="Body" element="tns:string" />
@@ -130,6 +133,7 @@
   </wsdl:message>
   <wsdl:message name="ServicioInactivarEjercicioHttpGetIn">
     <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="nombre" type="s:string" />
   </wsdl:message>
   <wsdl:message name="ServicioInactivarEjercicioHttpGetOut">
     <wsdl:part name="Body" element="tns:boolean" />
@@ -155,6 +159,7 @@
   </wsdl:message>
   <wsdl:message name="ServicioConsultarEjecicioIdHttpPostIn">
     <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="nombre" type="s:string" />
   </wsdl:message>
   <wsdl:message name="ServicioConsultarEjecicioIdHttpPostOut">
     <wsdl:part name="Body" element="tns:string" />
@@ -165,6 +170,7 @@
   </wsdl:message>
   <wsdl:message name="ServicioInactivarEjercicioHttpPostIn">
     <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="nombre" type="s:string" />
   </wsdl:message>
   <wsdl:message name="ServicioInactivarEjercicioHttpPostOut">
     <wsdl:part name="Body" element="tns:boolean" />

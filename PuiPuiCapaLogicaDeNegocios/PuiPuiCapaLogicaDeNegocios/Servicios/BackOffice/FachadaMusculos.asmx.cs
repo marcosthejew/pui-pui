@@ -40,9 +40,9 @@ namespace PuiPuiCapaLogicaDeNegocios.Servicios.BackOffice
 
 
         [WebMethod]
-        public bool ServicioDesactivarMusculo(int idMusculo)
+        public bool ServicioDesactivarMusculo(int idMusculo,string nombre)
         {
-            return FabricaComando.CrearDesactivarMusculos(FabricaEntidad.CrearMusculo(idMusculo)).Ejecutar();
+            return FabricaComando.CrearDesactivarMusculos(FabricaEntidad.CrearMusculo(idMusculo,nombre)).Ejecutar();
         }
 
     }

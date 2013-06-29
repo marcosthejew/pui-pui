@@ -129,24 +129,26 @@ namespace PuiPuiCapaDeInterfazBackOffice.LogicaEjercicios {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ServicioConsultarEjecicioId", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public string ServicioConsultarEjecicioId(int id) {
+        public string ServicioConsultarEjecicioId(int id, string nombre) {
             object[] results = this.Invoke("ServicioConsultarEjecicioId", new object[] {
-                        id});
+                        id,
+                        nombre});
             return ((string)(results[0]));
         }
         
         /// <remarks/>
-        public void ServicioConsultarEjecicioIdAsync(int id) {
-            this.ServicioConsultarEjecicioIdAsync(id, null);
+        public void ServicioConsultarEjecicioIdAsync(int id, string nombre) {
+            this.ServicioConsultarEjecicioIdAsync(id, nombre, null);
         }
         
         /// <remarks/>
-        public void ServicioConsultarEjecicioIdAsync(int id, object userState) {
+        public void ServicioConsultarEjecicioIdAsync(int id, string nombre, object userState) {
             if ((this.ServicioConsultarEjecicioIdOperationCompleted == null)) {
                 this.ServicioConsultarEjecicioIdOperationCompleted = new System.Threading.SendOrPostCallback(this.OnServicioConsultarEjecicioIdOperationCompleted);
             }
             this.InvokeAsync("ServicioConsultarEjecicioId", new object[] {
-                        id}, this.ServicioConsultarEjecicioIdOperationCompleted, userState);
+                        id,
+                        nombre}, this.ServicioConsultarEjecicioIdOperationCompleted, userState);
         }
         
         private void OnServicioConsultarEjecicioIdOperationCompleted(object arg) {
@@ -185,24 +187,26 @@ namespace PuiPuiCapaDeInterfazBackOffice.LogicaEjercicios {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ServicioInactivarEjercicio", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public bool ServicioInactivarEjercicio(int id) {
+        public bool ServicioInactivarEjercicio(int id, string nombre) {
             object[] results = this.Invoke("ServicioInactivarEjercicio", new object[] {
-                        id});
+                        id,
+                        nombre});
             return ((bool)(results[0]));
         }
         
         /// <remarks/>
-        public void ServicioInactivarEjercicioAsync(int id) {
-            this.ServicioInactivarEjercicioAsync(id, null);
+        public void ServicioInactivarEjercicioAsync(int id, string nombre) {
+            this.ServicioInactivarEjercicioAsync(id, nombre, null);
         }
         
         /// <remarks/>
-        public void ServicioInactivarEjercicioAsync(int id, object userState) {
+        public void ServicioInactivarEjercicioAsync(int id, string nombre, object userState) {
             if ((this.ServicioInactivarEjercicioOperationCompleted == null)) {
                 this.ServicioInactivarEjercicioOperationCompleted = new System.Threading.SendOrPostCallback(this.OnServicioInactivarEjercicioOperationCompleted);
             }
             this.InvokeAsync("ServicioInactivarEjercicio", new object[] {
-                        id}, this.ServicioInactivarEjercicioOperationCompleted, userState);
+                        id,
+                        nombre}, this.ServicioInactivarEjercicioOperationCompleted, userState);
         }
         
         private void OnServicioInactivarEjercicioOperationCompleted(object arg) {
