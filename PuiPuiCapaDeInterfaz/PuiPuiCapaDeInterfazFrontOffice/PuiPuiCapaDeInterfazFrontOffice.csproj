@@ -114,6 +114,7 @@
     <Content Include="Vistas\VRutina\ActivarInactivarRutina.aspx" />
     <Content Include="Vistas\VRutina\AgregarRutina.aspx" />
     <Content Include="Vistas\VRutina\BuscarConsultar.aspx" />
+    <Content Include="Vistas\VRutina\BuscarModificar.aspx" />
     <Content Include="Web References\LogicaEjercicios\FachadaEjerciciosFrontOffice.disco" />
     <Content Include="Web References\LogicaInstructores\FachadaInstructoresFrontOffice.disco" />
     <Content Include="Web References\LogicaRutinasEjercicios\FachadaRutinasEjerciciosFrontOffice.disco" />
@@ -124,7 +125,10 @@
     <Compile Include="Comandos\AComando.cs" />
     <Compile Include="Comandos\FabricaComando.cs" />
     <Compile Include="Comandos\Rutina\ComandoActivarInactivarRutina.cs" />
+    <Compile Include="Comandos\Rutina\ComandoAgregarRutina.cs" />
+    <Compile Include="Comandos\Rutina\ComandoConsultarEjercicios.cs" />
     <Compile Include="Comandos\Rutina\ComandoConsultarRutina.cs" />
+    <Compile Include="Comandos\Rutina\ComandoDeserializarEjercicio.cs" />
     <Compile Include="Comandos\Rutina\ComandoDesSerializarRutina.cs" />
     <Compile Include="Comandos\Rutina\ComandoDesSerializarStatus.cs" />
     <Compile Include="Comandos\Rutina\ComandoStatusDeRutina.cs" />
@@ -134,6 +138,7 @@
     <Compile Include="Contratos\CTRutina\IContratoActivarInactivarRutina.cs" />
     <Compile Include="Contratos\CTRutina\IContratoAgregarRutina.cs" />
     <Compile Include="Contratos\CTRutina\IContratoBuscarRutina.cs" />
+    <Compile Include="Contratos\CTRutina\IContratoModificarRutina.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -161,6 +166,7 @@
     <Compile Include="Presentadores\PRutina\PresentadorActivarInactivarRutina.cs" />
     <Compile Include="Presentadores\PRutina\PresentadorAgregarRutina.cs" />
     <Compile Include="Presentadores\PRutina\PresentadorBuscarRutina.cs" />
+    <Compile Include="Presentadores\PRutina\PresentadorModificarRutina.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -237,6 +243,7 @@
     </Compile>
     <Compile Include="Vistas\VRutina\AgregarRutina.aspx.cs">
       <DependentUpon>AgregarRutina.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Vistas\VRutina\AgregarRutina.aspx.designer.cs">
       <DependentUpon>AgregarRutina.aspx</DependentUpon>
@@ -247,6 +254,12 @@
     </Compile>
     <Compile Include="Vistas\VRutina\BuscarConsultar.aspx.designer.cs">
       <DependentUpon>BuscarConsultar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VRutina\BuscarModificar.aspx.cs">
+      <DependentUpon>BuscarModificar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VRutina\BuscarModificar.aspx.designer.cs">
+      <DependentUpon>BuscarModificar.aspx</DependentUpon>
     </Compile>
     <Compile Include="Web References\LogicaClases\Reference.cs">
       <AutoGen>True</AutoGen>
