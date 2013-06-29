@@ -154,6 +154,7 @@
     <Compile Include="Comandos\ComandosEjercicio\ComandoAgregarEjercicio.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoCargarEjercicio.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoCargarMusculos.cs" />
+    <Compile Include="Comandos\ComandosEjercicio\ComandoConsultarEjercicio.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoMostrarEjercicio.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoValidarCampo.cs" />
     <Compile Include="Comandos\ComandoSerializadorListaEntidades.cs" />

@@ -49,6 +49,7 @@ namespace PuiPuiCapaLogicaDeNegocios.Servicios.BackOffice
             return FabricaComando.CrearComandoInactivarEjercicio(FabricaEntidad.CrearEjercicio(id,nombre)).Ejecutar();
         }
 
+
         [WebMethod]
         public bool ServicioModificarEjercicio(int id, string nombreEjercicio, string descripcionEjercicio, int idMusculo, string nombreMusculo)
         {

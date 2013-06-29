@@ -30,6 +30,10 @@ namespace PuiPuiCapaDeInterfazBackOffice.Comandos
         {
             return new ComandoValidarCampo(valor);
         }
+        public static AComando<bool> CrearComandoConsultarEjercicio(IContratoConsultarEjercicio vista)
+        {
+            return new ComandoConsultarEjercicio(vista);
+        }
         #endregion
     }
 }
