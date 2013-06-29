@@ -118,6 +118,16 @@ namespace PuiPuiCapaLogicaDeNegocios.Fabricas
             return new ComandoModificarInstructor(instructor);
         }
 
+        public static AComando<string> CrearComandoSerializarInstructor(AEntidad instructor)
+        {
+            return new ComandoSerializarInstructor(instructor);
+        }
+        
+        public static AComando<string> CrearComandoSerializarInstructor(List<AEntidad> instructores)
+        {
+            return new ComandoSerializarInstructor(instructores);
+        }
+
         #endregion
         
         #region Reservacion Clase
