@@ -5,21 +5,23 @@ using System.Web;
 using PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEjercicios;
 using PuiPuiCapaLogicaDeNegocios.Entidades.EEjercicios;
 
-namespace PuiPuiCapaLogicaDeNegocios.Comandos.ComandosEjercicio
+namespace PuiPuiCapaLogicaDeNegocios.Comandos.ComandosRutina
 {
-    public class ComandoConsultarRutinasPorCliente : AComando<List<Rutina>>
+    public class ComandoConsutarStatusRutinaPorID : AComando<string>
     {
-        public ComandoConsultarRutinasPorCliente()
-        {
+        int idRutina;
 
+        public ComandoConsutarStatusRutinaPorID(int _idRutina)
+        {
+            this.idRutina = _idRutina;
         }
-        public override List<Rutina> Ejecutar()
+        public override string Ejecutar()
         {
             try
             {
                 IRutinaDAO rutinaDAO = (IRutinaDAO)Fabricas.AFabricaDAO.CrearFabricaSQLServerDAO().CrearRutinaSQLServerDAO();
 
-                return rutinaDAO.ConsultarRutinasPorIDCliente(7);
+                return rutinaDAO.ConsultarStatusRutinaPorID(idRutina);
 
             }
             catch (Exception e)
