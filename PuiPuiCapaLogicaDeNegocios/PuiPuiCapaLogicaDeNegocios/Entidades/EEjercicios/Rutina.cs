@@ -60,6 +60,7 @@ namespace PuiPuiCapaLogicaDeNegocios.Entidades.EEjercicios
             cadena += "<Id>" + rutina.Id + "</Id>";
             cadena += "<Nombre>" + rutina.Nombre + "</Nombre>";
             cadena += "<Descripcion>" + rutina.Descripcion + "</Descripcion>";
+            cadena += "<Status>" + rutina.Inactivo + "</Status>";
             cadena += "</Rutina>";
 
 

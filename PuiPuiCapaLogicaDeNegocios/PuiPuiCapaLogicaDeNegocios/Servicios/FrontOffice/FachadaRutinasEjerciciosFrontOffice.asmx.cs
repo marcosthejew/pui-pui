@@ -45,6 +45,7 @@ namespace PuiPuiCapaLogicaDeNegocios.Servicios.FrontOffice
                 XmlNodeList id = nodo.GetElementsByTagName("Id");
                 XmlNodeList nombre = nodo.GetElementsByTagName("Nombre");
                 XmlNodeList descripcion = nodo.GetElementsByTagName("Descripcion");
+                XmlNodeList status = nodo.GetElementsByTagName("Status");
                 resultado = id[l].InnerText;
                 resultado = nombre[l].InnerText;
                 resultado = descripcion[l].InnerText;
@@ -100,7 +101,7 @@ namespace PuiPuiCapaLogicaDeNegocios.Servicios.FrontOffice
         public bool ActivarInactivarRutina(int idRutina, byte inactivo)
         {
             bool entidadRutina = false;
-            entidadRutina = Fabricas.FabricaComando.CrearComandoActivarInactivarRutina().Ejecutar();
+            entidadRutina = Fabricas.FabricaComando.CrearComandoActivarInactivarRutina(idRutina,inactivo).Ejecutar();
             return entidadRutina;
         }
         
@@ -171,5 +172,30 @@ namespace PuiPuiCapaLogicaDeNegocios.Servicios.FrontOffice
             return resultado;
         }
 
+        [WebMethod]
+        public string StatusDeRutina(int idRutina)
+        {
+            string statusRutina;
+            statusRutina = Fabricas.FabricaComando.CrearComandoConsutarStatusRutinaPorID(idRutina).Ejecutar();
+            resultado = "<Rutina>";
+
+            resultado += "<Status>" + statusRutina + "</Status>";
+
+
+            resultado = resultado + "</Rutina>";
+            XmlDocument xml = new XmlDocument();
+            xml.Load(new System.IO.StringReader(resultado));
+            XmlNodeList xnList = xml.SelectNodes("Rutina");
+            int l = 0;
+            foreach (XmlElement nodo in xnList)
+            {
+                XmlNodeList status = nodo.GetElementsByTagName("Status");
+                statusRutina = status[l].InnerText;
+                
+            }
+
+            return resultado;
+
+        }
     }
 }

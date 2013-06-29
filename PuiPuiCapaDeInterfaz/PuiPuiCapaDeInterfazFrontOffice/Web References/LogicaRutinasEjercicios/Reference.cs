@@ -14,7 +14,685 @@
 #pragma warning disable 1591
 
 namespace PuiPuiCapaDeInterfazFrontOffice.LogicaRutinasEjercicios {
+    using System;
+    using System.Web.Services;
+    using System.Diagnostics;
+    using System.Web.Services.Protocols;
+    using System.Xml.Serialization;
+    using System.ComponentModel;
     
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Web.Services.WebServiceBindingAttribute(Name="FachadaRutinasEjerciciosSoap", Namespace="http://tempuri.org/")]
+    public partial class FachadaRutinasEjercicios : System.Web.Services.Protocols.SoapHttpClientProtocol {
+        
+        private System.Threading.SendOrPostCallback ObtenerRutinasOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ConsultarRutinasPorIDClienteOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ConsultarEjerciciosPorIDRutinaOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ActivarInactivarRutinaOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback AgregarRutinaOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback AgregarHistorialOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ConsultarPersonaPorLoginOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ObtenerUltimoIDRutinaOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ConsultarTodosEjerciciosROperationCompleted;
+        
+        private System.Threading.SendOrPostCallback StatusDeRutinaOperationCompleted;
+        
+        private bool useDefaultCredentialsSetExplicitly;
+        
+        /// <remarks/>
+        public FachadaRutinasEjercicios() {
+            this.Url = global::PuiPuiCapaDeInterfazFrontOffice.Properties.Settings.Default.PuiPuiCapaDeInterfazFrontOffice_LogicaRutinasEjercicios_FachadaRutinasEjercicios;
+            if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
+                this.UseDefaultCredentials = true;
+                this.useDefaultCredentialsSetExplicitly = false;
+            }
+            else {
+                this.useDefaultCredentialsSetExplicitly = true;
+            }
+        }
+        
+        public new string Url {
+            get {
+                return base.Url;
+            }
+            set {
+                if ((((this.IsLocalFileSystemWebService(base.Url) == true) 
+                            && (this.useDefaultCredentialsSetExplicitly == false)) 
+                            && (this.IsLocalFileSystemWebService(value) == false))) {
+                    base.UseDefaultCredentials = false;
+                }
+                base.Url = value;
+            }
+        }
+        
+        public new bool UseDefaultCredentials {
+            get {
+                return base.UseDefaultCredentials;
+            }
+            set {
+                base.UseDefaultCredentials = value;
+                this.useDefaultCredentialsSetExplicitly = true;
+            }
+        }
+        
+        /// <remarks/>
+        public event ObtenerRutinasCompletedEventHandler ObtenerRutinasCompleted;
+        
+        /// <remarks/>
+        public event ConsultarRutinasPorIDClienteCompletedEventHandler ConsultarRutinasPorIDClienteCompleted;
+        
+        /// <remarks/>
+        public event ConsultarEjerciciosPorIDRutinaCompletedEventHandler ConsultarEjerciciosPorIDRutinaCompleted;
+        
+        /// <remarks/>
+        public event ActivarInactivarRutinaCompletedEventHandler ActivarInactivarRutinaCompleted;
+        
+        /// <remarks/>
+        public event AgregarRutinaCompletedEventHandler AgregarRutinaCompleted;
+        
+        /// <remarks/>
+        public event AgregarHistorialCompletedEventHandler AgregarHistorialCompleted;
+        
+        /// <remarks/>
+        public event ConsultarPersonaPorLoginCompletedEventHandler ConsultarPersonaPorLoginCompleted;
+        
+        /// <remarks/>
+        public event ObtenerUltimoIDRutinaCompletedEventHandler ObtenerUltimoIDRutinaCompleted;
+        
+        /// <remarks/>
+        public event ConsultarTodosEjerciciosRCompletedEventHandler ConsultarTodosEjerciciosRCompleted;
+        
+        /// <remarks/>
+        public event StatusDeRutinaCompletedEventHandler StatusDeRutinaCompleted;
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ObtenerRutinas", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string ObtenerRutinas(string login) {
+            object[] results = this.Invoke("ObtenerRutinas", new object[] {
+                        login});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ObtenerRutinasAsync(string login) {
+            this.ObtenerRutinasAsync(login, null);
+        }
+        
+        /// <remarks/>
+        public void ObtenerRutinasAsync(string login, object userState) {
+            if ((this.ObtenerRutinasOperationCompleted == null)) {
+                this.ObtenerRutinasOperationCompleted = new System.Threading.SendOrPostCallback(this.OnObtenerRutinasOperationCompleted);
+            }
+            this.InvokeAsync("ObtenerRutinas", new object[] {
+                        login}, this.ObtenerRutinasOperationCompleted, userState);
+        }
+        
+        private void OnObtenerRutinasOperationCompleted(object arg) {
+            if ((this.ObtenerRutinasCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ObtenerRutinasCompleted(this, new ObtenerRutinasCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ConsultarRutinasPorIDCliente", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string ConsultarRutinasPorIDCliente(int idCliente) {
+            object[] results = this.Invoke("ConsultarRutinasPorIDCliente", new object[] {
+                        idCliente});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ConsultarRutinasPorIDClienteAsync(int idCliente) {
+            this.ConsultarRutinasPorIDClienteAsync(idCliente, null);
+        }
+        
+        /// <remarks/>
+        public void ConsultarRutinasPorIDClienteAsync(int idCliente, object userState) {
+            if ((this.ConsultarRutinasPorIDClienteOperationCompleted == null)) {
+                this.ConsultarRutinasPorIDClienteOperationCompleted = new System.Threading.SendOrPostCallback(this.OnConsultarRutinasPorIDClienteOperationCompleted);
+            }
+            this.InvokeAsync("ConsultarRutinasPorIDCliente", new object[] {
+                        idCliente}, this.ConsultarRutinasPorIDClienteOperationCompleted, userState);
+        }
+        
+        private void OnConsultarRutinasPorIDClienteOperationCompleted(object arg) {
+            if ((this.ConsultarRutinasPorIDClienteCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ConsultarRutinasPorIDClienteCompleted(this, new ConsultarRutinasPorIDClienteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ConsultarEjerciciosPorIDRutina", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string ConsultarEjerciciosPorIDRutina(int idRutina) {
+            object[] results = this.Invoke("ConsultarEjerciciosPorIDRutina", new object[] {
+                        idRutina});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ConsultarEjerciciosPorIDRutinaAsync(int idRutina) {
+            this.ConsultarEjerciciosPorIDRutinaAsync(idRutina, null);
+        }
+        
+        /// <remarks/>
+        public void ConsultarEjerciciosPorIDRutinaAsync(int idRutina, object userState) {
+            if ((this.ConsultarEjerciciosPorIDRutinaOperationCompleted == null)) {
+                this.ConsultarEjerciciosPorIDRutinaOperationCompleted = new System.Threading.SendOrPostCallback(this.OnConsultarEjerciciosPorIDRutinaOperationCompleted);
+            }
+            this.InvokeAsync("ConsultarEjerciciosPorIDRutina", new object[] {
+                        idRutina}, this.ConsultarEjerciciosPorIDRutinaOperationCompleted, userState);
+        }
+        
+        private void OnConsultarEjerciciosPorIDRutinaOperationCompleted(object arg) {
+            if ((this.ConsultarEjerciciosPorIDRutinaCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ConsultarEjerciciosPorIDRutinaCompleted(this, new ConsultarEjerciciosPorIDRutinaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ActivarInactivarRutina", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool ActivarInactivarRutina(int idRutina, byte inactivo) {
+            object[] results = this.Invoke("ActivarInactivarRutina", new object[] {
+                        idRutina,
+                        inactivo});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ActivarInactivarRutinaAsync(int idRutina, byte inactivo) {
+            this.ActivarInactivarRutinaAsync(idRutina, inactivo, null);
+        }
+        
+        /// <remarks/>
+        public void ActivarInactivarRutinaAsync(int idRutina, byte inactivo, object userState) {
+            if ((this.ActivarInactivarRutinaOperationCompleted == null)) {
+                this.ActivarInactivarRutinaOperationCompleted = new System.Threading.SendOrPostCallback(this.OnActivarInactivarRutinaOperationCompleted);
+            }
+            this.InvokeAsync("ActivarInactivarRutina", new object[] {
+                        idRutina,
+                        inactivo}, this.ActivarInactivarRutinaOperationCompleted, userState);
+        }
+        
+        private void OnActivarInactivarRutinaOperationCompleted(object arg) {
+            if ((this.ActivarInactivarRutinaCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ActivarInactivarRutinaCompleted(this, new ActivarInactivarRutinaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/AgregarRutina", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool AgregarRutina(string nombre, string descripcion) {
+            object[] results = this.Invoke("AgregarRutina", new object[] {
+                        nombre,
+                        descripcion});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void AgregarRutinaAsync(string nombre, string descripcion) {
+            this.AgregarRutinaAsync(nombre, descripcion, null);
+        }
+        
+        /// <remarks/>
+        public void AgregarRutinaAsync(string nombre, string descripcion, object userState) {
+            if ((this.AgregarRutinaOperationCompleted == null)) {
+                this.AgregarRutinaOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAgregarRutinaOperationCompleted);
+            }
+            this.InvokeAsync("AgregarRutina", new object[] {
+                        nombre,
+                        descripcion}, this.AgregarRutinaOperationCompleted, userState);
+        }
+        
+        private void OnAgregarRutinaOperationCompleted(object arg) {
+            if ((this.AgregarRutinaCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.AgregarRutinaCompleted(this, new AgregarRutinaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/AgregarHistorial", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool AgregarHistorial(string duracion, int repeticion, int cliente, int rutina, int ejercicio) {
+            object[] results = this.Invoke("AgregarHistorial", new object[] {
+                        duracion,
+                        repeticion,
+                        cliente,
+                        rutina,
+                        ejercicio});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void AgregarHistorialAsync(string duracion, int repeticion, int cliente, int rutina, int ejercicio) {
+            this.AgregarHistorialAsync(duracion, repeticion, cliente, rutina, ejercicio, null);
+        }
+        
+        /// <remarks/>
+        public void AgregarHistorialAsync(string duracion, int repeticion, int cliente, int rutina, int ejercicio, object userState) {
+            if ((this.AgregarHistorialOperationCompleted == null)) {
+                this.AgregarHistorialOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAgregarHistorialOperationCompleted);
+            }
+            this.InvokeAsync("AgregarHistorial", new object[] {
+                        duracion,
+                        repeticion,
+                        cliente,
+                        rutina,
+                        ejercicio}, this.AgregarHistorialOperationCompleted, userState);
+        }
+        
+        private void OnAgregarHistorialOperationCompleted(object arg) {
+            if ((this.AgregarHistorialCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.AgregarHistorialCompleted(this, new AgregarHistorialCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ConsultarPersonaPorLogin", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int ConsultarPersonaPorLogin(string loginPersona) {
+            object[] results = this.Invoke("ConsultarPersonaPorLogin", new object[] {
+                        loginPersona});
+            return ((int)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ConsultarPersonaPorLoginAsync(string loginPersona) {
+            this.ConsultarPersonaPorLoginAsync(loginPersona, null);
+        }
+        
+        /// <remarks/>
+        public void ConsultarPersonaPorLoginAsync(string loginPersona, object userState) {
+            if ((this.ConsultarPersonaPorLoginOperationCompleted == null)) {
+                this.ConsultarPersonaPorLoginOperationCompleted = new System.Threading.SendOrPostCallback(this.OnConsultarPersonaPorLoginOperationCompleted);
+            }
+            this.InvokeAsync("ConsultarPersonaPorLogin", new object[] {
+                        loginPersona}, this.ConsultarPersonaPorLoginOperationCompleted, userState);
+        }
+        
+        private void OnConsultarPersonaPorLoginOperationCompleted(object arg) {
+            if ((this.ConsultarPersonaPorLoginCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ConsultarPersonaPorLoginCompleted(this, new ConsultarPersonaPorLoginCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ObtenerUltimoIDRutina", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int ObtenerUltimoIDRutina() {
+            object[] results = this.Invoke("ObtenerUltimoIDRutina", new object[0]);
+            return ((int)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ObtenerUltimoIDRutinaAsync() {
+            this.ObtenerUltimoIDRutinaAsync(null);
+        }
+        
+        /// <remarks/>
+        public void ObtenerUltimoIDRutinaAsync(object userState) {
+            if ((this.ObtenerUltimoIDRutinaOperationCompleted == null)) {
+                this.ObtenerUltimoIDRutinaOperationCompleted = new System.Threading.SendOrPostCallback(this.OnObtenerUltimoIDRutinaOperationCompleted);
+            }
+            this.InvokeAsync("ObtenerUltimoIDRutina", new object[0], this.ObtenerUltimoIDRutinaOperationCompleted, userState);
+        }
+        
+        private void OnObtenerUltimoIDRutinaOperationCompleted(object arg) {
+            if ((this.ObtenerUltimoIDRutinaCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ObtenerUltimoIDRutinaCompleted(this, new ObtenerUltimoIDRutinaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ConsultarTodosEjerciciosR", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string ConsultarTodosEjerciciosR() {
+            object[] results = this.Invoke("ConsultarTodosEjerciciosR", new object[0]);
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ConsultarTodosEjerciciosRAsync() {
+            this.ConsultarTodosEjerciciosRAsync(null);
+        }
+        
+        /// <remarks/>
+        public void ConsultarTodosEjerciciosRAsync(object userState) {
+            if ((this.ConsultarTodosEjerciciosROperationCompleted == null)) {
+                this.ConsultarTodosEjerciciosROperationCompleted = new System.Threading.SendOrPostCallback(this.OnConsultarTodosEjerciciosROperationCompleted);
+            }
+            this.InvokeAsync("ConsultarTodosEjerciciosR", new object[0], this.ConsultarTodosEjerciciosROperationCompleted, userState);
+        }
+        
+        private void OnConsultarTodosEjerciciosROperationCompleted(object arg) {
+            if ((this.ConsultarTodosEjerciciosRCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ConsultarTodosEjerciciosRCompleted(this, new ConsultarTodosEjerciciosRCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/StatusDeRutina", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string StatusDeRutina(int idRutina) {
+            object[] results = this.Invoke("StatusDeRutina", new object[] {
+                        idRutina});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void StatusDeRutinaAsync(int idRutina) {
+            this.StatusDeRutinaAsync(idRutina, null);
+        }
+        
+        /// <remarks/>
+        public void StatusDeRutinaAsync(int idRutina, object userState) {
+            if ((this.StatusDeRutinaOperationCompleted == null)) {
+                this.StatusDeRutinaOperationCompleted = new System.Threading.SendOrPostCallback(this.OnStatusDeRutinaOperationCompleted);
+            }
+            this.InvokeAsync("StatusDeRutina", new object[] {
+                        idRutina}, this.StatusDeRutinaOperationCompleted, userState);
+        }
+        
+        private void OnStatusDeRutinaOperationCompleted(object arg) {
+            if ((this.StatusDeRutinaCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.StatusDeRutinaCompleted(this, new StatusDeRutinaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        public new void CancelAsync(object userState) {
+            base.CancelAsync(userState);
+        }
+        
+        private bool IsLocalFileSystemWebService(string url) {
+            if (((url == null) 
+                        || (url == string.Empty))) {
+                return false;
+            }
+            System.Uri wsUri = new System.Uri(url);
+            if (((wsUri.Port >= 1024) 
+                        && (string.Compare(wsUri.Host, "localHost", System.StringComparison.OrdinalIgnoreCase) == 0))) {
+                return true;
+            }
+            return false;
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void ObtenerRutinasCompletedEventHandler(object sender, ObtenerRutinasCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ObtenerRutinasCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ObtenerRutinasCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void ConsultarRutinasPorIDClienteCompletedEventHandler(object sender, ConsultarRutinasPorIDClienteCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ConsultarRutinasPorIDClienteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ConsultarRutinasPorIDClienteCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void ConsultarEjerciciosPorIDRutinaCompletedEventHandler(object sender, ConsultarEjerciciosPorIDRutinaCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ConsultarEjerciciosPorIDRutinaCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ConsultarEjerciciosPorIDRutinaCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void ActivarInactivarRutinaCompletedEventHandler(object sender, ActivarInactivarRutinaCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ActivarInactivarRutinaCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ActivarInactivarRutinaCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void AgregarRutinaCompletedEventHandler(object sender, AgregarRutinaCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class AgregarRutinaCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal AgregarRutinaCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void AgregarHistorialCompletedEventHandler(object sender, AgregarHistorialCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class AgregarHistorialCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal AgregarHistorialCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void ConsultarPersonaPorLoginCompletedEventHandler(object sender, ConsultarPersonaPorLoginCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ConsultarPersonaPorLoginCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ConsultarPersonaPorLoginCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void ObtenerUltimoIDRutinaCompletedEventHandler(object sender, ObtenerUltimoIDRutinaCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ObtenerUltimoIDRutinaCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ObtenerUltimoIDRutinaCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void ConsultarTodosEjerciciosRCompletedEventHandler(object sender, ConsultarTodosEjerciciosRCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ConsultarTodosEjerciciosRCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ConsultarTodosEjerciciosRCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void StatusDeRutinaCompletedEventHandler(object sender, StatusDeRutinaCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class StatusDeRutinaCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal StatusDeRutinaCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
 }
 
 #pragma warning restore 1591
