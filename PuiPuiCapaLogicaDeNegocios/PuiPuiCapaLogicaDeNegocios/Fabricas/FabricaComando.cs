@@ -150,9 +150,9 @@ namespace PuiPuiCapaLogicaDeNegocios.Fabricas
         /// Devuelve una instancia del comando ComandoHolaMundo.
         /// </summary>
         /// <returns></returns>
-        public static AComando<List<Entidades.EEjercicios.Rutina>> CrearComandoConsultarRutinasPorIDCliente()
+        public static AComando<List<Entidades.EEjercicios.Rutina>> CrearComandoConsultarRutinasPorIDCliente(int idCliente)
         {
-            return new  ComandoConsultarRutinasPorCliente();
+            return new  ComandoConsultarRutinasPorCliente(idCliente);
         }
         public static AComando<List<Entidades.EEjercicios.Ejercicio>> CrearComandoConsultarEjerciciosPorIDRutina()
         {

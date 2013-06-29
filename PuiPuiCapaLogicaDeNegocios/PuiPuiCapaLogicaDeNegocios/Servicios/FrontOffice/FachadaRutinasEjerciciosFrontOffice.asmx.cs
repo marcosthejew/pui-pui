@@ -25,7 +25,7 @@ namespace PuiPuiCapaLogicaDeNegocios.Servicios.FrontOffice
             List<Rutina> listaRutina = new List<Rutina>();
             Rutina entidadRutina = new Rutina();
             Ejercicio entidadEjercicio = new Ejercicio();
-            listaRutina = Fabricas.FabricaComando.CrearComandoConsultarRutinasPorIDCliente().Ejecutar();
+            listaRutina = Fabricas.FabricaComando.CrearComandoConsultarRutinasPorIDCliente(idCliente).Ejecutar();
             resultado = "<Rutinas>";
 
             foreach (Rutina rutina in listaRutina)

@@ -9,9 +9,10 @@ namespace PuiPuiCapaLogicaDeNegocios.Comandos.ComandosEjercicio
 {
     public class ComandoConsultarRutinasPorCliente : AComando<List<Rutina>>
     {
-        public ComandoConsultarRutinasPorCliente()
+        int idCliente;
+        public ComandoConsultarRutinasPorCliente(int _idCliente)
         {
-
+            this.idCliente = _idCliente;
         }
         public override List<Rutina> Ejecutar()
         {
@@ -19,7 +20,7 @@ namespace PuiPuiCapaLogicaDeNegocios.Comandos.ComandosEjercicio
             {
                 IRutinaDAO rutinaDAO = (IRutinaDAO)Fabricas.AFabricaDAO.CrearFabricaSQLServerDAO().CrearRutinaSQLServerDAO();
 
-                return rutinaDAO.ConsultarRutinasPorIDCliente(7);
+                return rutinaDAO.ConsultarRutinasPorIDCliente(idCliente);
 
             }
             catch (Exception e)
