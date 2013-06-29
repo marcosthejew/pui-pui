@@ -8,6 +8,6 @@ namespace PuiPuiCapaDeInterfazBackOffice.Contratos.CTInstructor
 {
     public interface IContratoEliminarInstructor
     {
-        String sesionId { get; set; }
+        String ElegirInstructor { get; }
     }
 }

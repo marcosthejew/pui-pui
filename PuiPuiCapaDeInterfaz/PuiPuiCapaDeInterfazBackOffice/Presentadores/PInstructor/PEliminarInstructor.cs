@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using PuiPuiCapaDeInterfazBackOffice.Contratos.CTInstructor;
+using PuiPuiCapaDeInterfazBackOffice.Comandos;
 
 namespace PuiPuiCapaDeInterfazBackOffice.Presentadores.PInstructor
 {

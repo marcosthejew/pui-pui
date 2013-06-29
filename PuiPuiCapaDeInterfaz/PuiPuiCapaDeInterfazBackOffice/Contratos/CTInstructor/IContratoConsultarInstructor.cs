@@ -27,5 +27,7 @@ namespace PuiPuiCapaDeInterfazBackOffice.Contratos.CTInstructor
         String nombreContactoInstructor { get; set; }
         String telefonoContactoInstructor { get; set; }
         String statusInstructor { get; set; }
+        String NombreInstructorAConsultar { get; }
+
     }
 }

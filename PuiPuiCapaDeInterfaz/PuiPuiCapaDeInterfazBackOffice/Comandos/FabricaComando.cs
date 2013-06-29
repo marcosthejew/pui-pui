@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using PuiPuiCapaDeInterfazBackOffice.Comandos.ComandosEjercicio;
+using PuiPuiCapaDeInterfazBackOffice.Comandos.ComandosInstructor;
 using PuiPuiCapaDeInterfazBackOffice.Contratos.CTEjercicio;
+using PuiPuiCapaDeInterfazBackOffice.Contratos.CTInstructor;
 
 namespace PuiPuiCapaDeInterfazBackOffice.Comandos
 {
@@ -68,6 +70,15 @@ namespace PuiPuiCapaDeInterfazBackOffice.Comandos
         }
 
     
+        #endregion
+
+        #region Instructor
+
+        public static AComando<bool> CrearComandoCargarInstructores(IContratoConsultarInstructor vista)
+        {
+            return new ComandoCargarInstructor(vista);        
+        }
+
         #endregion
     }
 }
