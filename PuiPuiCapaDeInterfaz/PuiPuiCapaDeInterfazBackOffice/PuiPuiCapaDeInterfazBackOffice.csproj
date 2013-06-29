@@ -165,6 +165,7 @@
     <Compile Include="Comandos\ComandosEjercicio\ComandoCargarEjercicio.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoCargarMusculos.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoConsultarEjercicio.cs" />
+    <Compile Include="Comandos\ComandosEjercicio\ComandoDesactivarEjercicio.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoDesactivarMusculos.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoModificarEjercicio.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoMostrarEjercicio.cs" />

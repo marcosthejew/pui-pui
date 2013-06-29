@@ -11,30 +11,34 @@ namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VEjercicio
 {
     public partial class VistaDesactivarEjercicio : System.Web.UI.Page, IContratoDesactivarEjercicio
     {
+        #region Atributos
         private PDesactivarEjercicio _presentadorDesactivarEjercicio;
+        #endregion
 
-        public String ElegirEjercicio{
-            get { return ddlEjercicios.SelectedItem.ToString();}
+        #region Getter and Setter
+        public String Ejercicio{
+            get { return _nombre.SelectedItem.ToString(); }
         }
 
-        public String NombreDelEjercicio 
+        public String Exito 
         {
-            get {return tbNombre.Text;}
-            set {tbNombre.Text=value;}
+            get { return _exito.Text; }
+            set {_exito.Text=value;}
         }
 
-        public String DescripcionDelEjercicio
+        public DropDownList ComboMusculo
         {
-            get { return tbDescripcion.Text;}
-            set { tbDescripcion.Text = value;}
+            get { return _nombre; }
+            set { _nombre = value; }
         }
 
-        public String NombreDelMusculo
+        public Label Mensaje
         {
-            get {return tbMusculo.Text;}
-            set {tbMusculo.Text = value;}
+            get { return _exito; }
         }
+        #endregion
 
+        #region Atributos
         public VistaDesactivarEjercicio()
         {
             _presentadorDesactivarEjercicio = new PDesactivarEjercicio(this);
@@ -42,12 +46,13 @@ namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VEjercicio
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            _presentadorDesactivarEjercicio.CargarEjercicios();
         }
 
         protected void Desactivar_Click(object sender, EventArgs e)
         {
-            //_presentadorDesactivarEjercicio.Click_PDesactivarEjercicio();
+            _presentadorDesactivarEjercicio.Click_PDesactivarEjercicio();
         }
+        #endregion
     }
 }

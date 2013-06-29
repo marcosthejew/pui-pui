@@ -19,13 +19,16 @@ namespace PuiPuiCapaDeInterfazBackOffice.Presentadores.PEjercicio
 
         public void Click_ModificarEjercicio()
         {
-            FabricaComando.CrearComandoModificarEjercicio(_vistaModificarEjercicio.NombreDeEjercicio, _vistaModificarEjercicio.tbDescripcionEjer, _vistaModificarEjercicio.MusculoAEjercitar);
+            if (FabricaComando.CrearComandoModificarEjercicio(_vistaModificarEjercicio.NombreDeEjercicio, _vistaModificarEjercicio.tbDescripcionEjer, _vistaModificarEjercicio.MusculoAEjercitar).Ejecutar())
+            {
+                
+            }
 
         }
         public void CagarCombos()
         {
-            FabricaComando.CrearComandoCargarEjercicios(_vistaModificarEjercicio);
-            FabricaComando.CrearComandoCargarMusculos(_vistaModificarEjercicio);
+            FabricaComando.CrearComandoCargarEjercicios(_vistaModificarEjercicio).Ejecutar();
+            FabricaComando.CrearComandoCargarMusculos(_vistaModificarEjercicio).Ejecutar();
             
         }
     }

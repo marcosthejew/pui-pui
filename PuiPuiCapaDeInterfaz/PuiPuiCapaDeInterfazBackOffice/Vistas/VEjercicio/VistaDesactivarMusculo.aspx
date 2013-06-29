@@ -13,7 +13,7 @@
     </h2>
     <br />
 
-    <asp:Label ID="_exito" runat="server" Text="El musculo se ha desactivado correctamente." Visible="False"></asp:Label>
+    <asp:Label ID="_exito" runat="server" Text=" " Visible="False"></asp:Label>
 
     <br />
     <br />
@@ -42,8 +42,7 @@
                     &nbsp; 
                 </td>
                 <td class="style1">
-                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
-                    <asp:Button ID="bEliminar" runat="server" Text="Desactivar" OnClick="desactivar_Click" />
+                   <asp:Button ID="bEliminar" runat="server" Text="Desactivar" OnClick="desactivar_Click" />
                 </td>
             </tr>
         </table>

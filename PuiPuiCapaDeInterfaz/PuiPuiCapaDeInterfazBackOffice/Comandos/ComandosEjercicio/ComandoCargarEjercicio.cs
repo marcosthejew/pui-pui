@@ -16,6 +16,7 @@ namespace PuiPuiCapaDeInterfazBackOffice.Comandos.ComandosEjercicio
     {
         IContratoConsultarEjercicio _vista;
         IContratoModificarEjercicio _vista2;
+        IContratoDesactivarEjercicio _vista3;
 
 
         public ComandoCargarEjercicio(IContratoConsultarEjercicio vista)
@@ -25,6 +26,10 @@ namespace PuiPuiCapaDeInterfazBackOffice.Comandos.ComandosEjercicio
         public ComandoCargarEjercicio(IContratoModificarEjercicio vista)
         {
             _vista2 = vista;
+        }
+        public ComandoCargarEjercicio(IContratoDesactivarEjercicio vista)
+        {
+            _vista3 = vista;
         }
         public override bool Ejecutar()
         {
@@ -51,7 +56,7 @@ namespace PuiPuiCapaDeInterfazBackOffice.Comandos.ComandosEjercicio
 
                 }
             }
-            else
+            else if(_vista2!=null)
             {
                 string ejercicios = new FachadaEjerciciosBackOffice().ServicioConsultarEjercicioTodos();
                 XmlDocument ejercicio = new XmlDocument();
@@ -70,6 +75,29 @@ namespace PuiPuiCapaDeInterfazBackOffice.Comandos.ComandosEjercicio
                         (_vista as VistaModificarEjercicio).ListaEjercicio.DataTextField = id[0].InnerText;
                         (_vista as VistaModificarEjercicio).ListaEjercicio.DataTextField = nombre[0].InnerText;
                         (_vista as VistaModificarEjercicio).ListaEjercicio.Items.Insert(i, nombre[0].InnerText);
+                    }
+
+                }
+            }
+            else
+            {
+                string ejercicios = new FachadaEjerciciosBackOffice().ServicioConsultarEjercicioTodos();
+                XmlDocument ejercicio = new XmlDocument();
+                ejercicio.LoadXml(ejercicios);
+                XmlNodeList nodoEjercicio = ejercicio.GetElementsByTagName("Ejercicios");
+                XmlNodeList nodoListaEjercicio = ((XmlElement)nodoEjercicio[0]).GetElementsByTagName("Ejercicio");
+                int i = 0;
+                foreach (XmlElement nodo in nodoListaEjercicio)
+                {
+
+                    XmlNodeList id = nodo.GetElementsByTagName("IdEjercicio");
+                    XmlNodeList nombre = nodo.GetElementsByTagName("NombreEjercicio");
+                    XmlNodeList status = nodo.GetElementsByTagName("Status");
+                    if (Convert.ToInt32(status[0].InnerText) == 1)
+                    {
+                        (_vista as VistaDesactivarEjercicio).ComboMusculo.DataTextField = id[0].InnerText;
+                        (_vista as VistaDesactivarEjercicio).ComboMusculo.DataTextField = nombre[0].InnerText;
+                        (_vista as VistaDesactivarEjercicio).ComboMusculo.Items.Insert(i, nombre[0].InnerText);
                     }
 
                 }

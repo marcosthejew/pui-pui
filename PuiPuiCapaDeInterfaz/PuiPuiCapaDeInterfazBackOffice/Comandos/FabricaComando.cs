@@ -30,9 +30,17 @@ namespace PuiPuiCapaDeInterfazBackOffice.Comandos
         {
             return new ComandoCargarEjercicio(vista);
         }
+        public static AComando<bool> CrearComandoCargarEjercicios(IContratoDesactivarEjercicio vista)
+        {
+            return new ComandoCargarEjercicio(vista);
+        }
         public static AComando<bool> CrearComandoCargarEjercicios(IContratoModificarEjercicio vista)
         {
             return new ComandoCargarEjercicio(vista);
+        }
+        public static AComando<bool> CrearComandoConsultarEjercicio(IContratoConsultarEjercicio vista)
+        {
+            return new ComandoConsultarEjercicio(vista);
         }
         public static AComando<bool> CrearComandoAgregarEjercicio(string nombre, string descripcion, string musculo)
         {
@@ -46,14 +54,19 @@ namespace PuiPuiCapaDeInterfazBackOffice.Comandos
         {
             return new ComandoAgregarMusculos(nombre, descripcion);
         }
-        public static AComando<bool> CrearComandoDesactivarMusculo(int idMusuclo)
+        public static AComando<bool> CrearComandoDesactivarMusculo(int idMusuclo,string nombre)
         {
-            return new ComandoDesactivarMusculos(idMusuclo);
+            return new ComandoDesactivarMusculos(idMusuclo,nombre);
         }
         public static AComando<bool> CrearComandoModificarEjercicio(string nombre, string descripcion, string musculo)
         {
             return new ComandoModificarEjercicio(nombre,descripcion,musculo);
         }
+        public static AComando<bool> CrearComandoDesactivarEjercicio(int x,string nombre)
+        {
+            return new ComandoDesactivarEjercicio(0,nombre);
+        }
+
     
         #endregion
     }

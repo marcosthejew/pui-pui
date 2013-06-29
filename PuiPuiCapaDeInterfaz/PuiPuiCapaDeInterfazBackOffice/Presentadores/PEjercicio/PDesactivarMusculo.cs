@@ -30,8 +30,8 @@ namespace PuiPuiCapaDeInterfazBackOffice.Presentadores.PEjercicio
 
         public void DesactivarMusculo(int num, string nombre)
         {
-            //Cambiar el envio
-            if (FabricaComando.CrearComandoDesactivarMusculo(num).Ejecutar())
+       
+            if (FabricaComando.CrearComandoDesactivarMusculo(0,nombre).Ejecutar())
             {
                 _vistaDesrMusculo.Exito = "Ingreso Exitoso";
                 (_vistaDesrMusculo as VistaDesactivarMusculo).Mensaje.ForeColor = System.Drawing.Color.Blue;
