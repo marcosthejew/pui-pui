@@ -29,13 +29,7 @@
       <s:element name="ServicioConsultarEjecicioIdResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ServicioConsultarEjecicioIdResult">
-              <s:complexType mixed="true">
-                <s:sequence>
-                  <s:any />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="ServicioConsultarEjecicioIdResult" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -45,13 +39,7 @@
       <s:element name="ServicioConsultarEjercicioTodosResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ServicioConsultarEjercicioTodosResult">
-              <s:complexType mixed="true">
-                <s:sequence>
-                  <s:any />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="ServicioConsultarEjercicioTodosResult" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -88,6 +76,7 @@
         </s:complexType>
       </s:element>
       <s:element name="boolean" type="s:boolean" />
+      <s:element name="string" nillable="true" type="s:string" />
     </s:schema>
   </wsdl:types>
   <wsdl:message name="ServicioAgregarEjercicioSoapIn">
@@ -133,11 +122,11 @@
     <wsdl:part name="id" type="s:string" />
   </wsdl:message>
   <wsdl:message name="ServicioConsultarEjecicioIdHttpGetOut">
-    <wsdl:part name="Body" />
+    <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
   <wsdl:message name="ServicioConsultarEjercicioTodosHttpGetIn" />
   <wsdl:message name="ServicioConsultarEjercicioTodosHttpGetOut">
-    <wsdl:part name="Body" />
+    <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
   <wsdl:message name="ServicioInactivarEjercicioHttpGetIn">
     <wsdl:part name="id" type="s:string" />
@@ -168,11 +157,11 @@
     <wsdl:part name="id" type="s:string" />
   </wsdl:message>
   <wsdl:message name="ServicioConsultarEjecicioIdHttpPostOut">
-    <wsdl:part name="Body" />
+    <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
   <wsdl:message name="ServicioConsultarEjercicioTodosHttpPostIn" />
   <wsdl:message name="ServicioConsultarEjercicioTodosHttpPostOut">
-    <wsdl:part name="Body" />
+    <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
   <wsdl:message name="ServicioInactivarEjercicioHttpPostIn">
     <wsdl:part name="id" type="s:string" />
@@ -369,7 +358,7 @@
         <http:urlEncoded />
       </wsdl:input>
       <wsdl:output>
-        <mime:content part="Body" type="text/xml" />
+        <mime:mimeXml part="Body" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ServicioConsultarEjercicioTodos">
@@ -378,7 +367,7 @@
         <http:urlEncoded />
       </wsdl:input>
       <wsdl:output>
-        <mime:content part="Body" type="text/xml" />
+        <mime:mimeXml part="Body" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ServicioInactivarEjercicio">
@@ -417,7 +406,7 @@
         <mime:content type="application/x-www-form-urlencoded" />
       </wsdl:input>
       <wsdl:output>
-        <mime:content part="Body" type="text/xml" />
+        <mime:mimeXml part="Body" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ServicioConsultarEjercicioTodos">
@@ -426,7 +415,7 @@
         <mime:content type="application/x-www-form-urlencoded" />
       </wsdl:input>
       <wsdl:output>
-        <mime:content part="Body" type="text/xml" />
+        <mime:mimeXml part="Body" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ServicioInactivarEjercicio">

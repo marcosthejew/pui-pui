@@ -181,7 +181,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEjercicios
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Nombre", (entidad as Ejercicio).Nombre);
                 cmd.Parameters.AddWithValue("@Descripcion", (entidad as Ejercicio).Descripcion);
-                cmd.Parameters.AddWithValue("@idMusculo", (entidad as Ejercicio).Musculo);
+                cmd.Parameters.AddWithValue("@idMusculo", (entidad as Ejercicio).Musculo.NombreMusculo);
                 dr = cmd.ExecuteReader();
                 flag = true;
             }

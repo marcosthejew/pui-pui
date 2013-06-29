@@ -60,9 +60,10 @@ namespace PuiPuiCapaLogicaDeNegocios.Servicios.BackOffice
               Instructor idInstructor=(Instructor)FabricaEntidad.CrearInstructor();
               idInstructor.Id=id_instructor;
               Horario idHorario=(Horario)FabricaEntidad.CrearHorario();
-              ClaseSalon insertarClaseSalon=(ClaseSalon)FabricaEntidad.CrearClaseSalon(id,idSalon,idClase,idInstructor,status);
-              int insertarSalon = FabricaComandoClaseSalon.CrearComandoInsertarClaseSalon(insertarClaseSalon).Ejecutar();
-              return insertarSalon;
+              //ClaseSalon insertarClaseSalon=(ClaseSalon)FabricaEntidad.CrearClaseSalon(id,idSalon,idClase,idInstructor,status);
+             // int insertarSalon = FabricaComandoClaseSalon.CrearComandoInsertarClaseSalon(insertarClaseSalon).Ejecutar();
+              //return insertarSalon;
+              return 0;
         }
 
     }

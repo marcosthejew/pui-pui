@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using PuiPuiCapaDeInterfazBackOffice.Contratos.CTEjercicio;
+using PuiPuiCapaDeInterfazBackOffice.Comandos;
+
 
 namespace PuiPuiCapaDeInterfazBackOffice.Presentadores.PEjercicio
 {
@@ -13,6 +15,11 @@ namespace PuiPuiCapaDeInterfazBackOffice.Presentadores.PEjercicio
         public PConsultarEjercicio(IContratoConsultarEjercicio laVistaConsultarEjercicio)
         {
             _vistaConsultarEjercicio = laVistaConsultarEjercicio;
+        }
+
+        public void MostrarEjercicio()
+        {
+
         }
 
 

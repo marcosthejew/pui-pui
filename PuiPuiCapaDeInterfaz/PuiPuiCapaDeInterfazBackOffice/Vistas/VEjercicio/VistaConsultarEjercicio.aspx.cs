@@ -13,6 +13,9 @@ namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VEjercicio
     {
         private PConsultarEjercicio _preConsultarEjercicio;
 
+
+        #region Getter Setter
+
         public String NombreEjercicioAConsultar
         {
             get { return ddlEjercicios.SelectedItem.ToString(); }
@@ -35,8 +38,20 @@ namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VEjercicio
             get { return tbMusculo.Text; }
             set { tbMusculo.Text = value; }
         }
+        public DropDownList Lista
+        {
+            get { return ddlEjercicios; }
+        }
+        public Label Etiqueta
+        {
+            get { return lExito; }
+        }
 
-                protected void Page_Load(object sender, EventArgs e)
+#endregion
+
+        #region Metodos
+
+        protected void Page_Load(object sender, EventArgs e)
         {
 
         }
@@ -46,7 +61,11 @@ namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VEjercicio
           _preConsultarEjercicio = new PConsultarEjercicio(this);
         }
 
-      
-        
+        protected void ddlEjercicios_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
+
     }
 }

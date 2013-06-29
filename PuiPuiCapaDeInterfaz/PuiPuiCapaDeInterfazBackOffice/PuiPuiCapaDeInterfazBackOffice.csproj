@@ -89,7 +89,10 @@
     <Content Include="Scripts\fullcalendar\gcal.js" />
     <Content Include="Scripts\gym2.js" />
     <Content Include="MasterPages\PuiPuiCapaDeInterfazBackOfficeSesion.Master" />
-    <Content Include="Properties\Settings.settings" />
+    <Content Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings1.Designer.cs</LastGenOutput>
+    </Content>
     <Content Include="PuiPuiCapaDeInterfazBackOffice.csproj.orig" />
     <None Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
@@ -132,16 +135,13 @@
     <Content Include="Vistas\VEjercicio\VistaDesactivarMusculo.aspx" />
     <Content Include="Vistas\VEjercicio\VistaModificarEjercicio.aspx" />
     <Content Include="Vistas\VHome\Home.aspx" />
-    <Content Include="Vistas\VInstructor\AgregarInstructor.aspx" />
-    <Content Include="Vistas\VInstructor\ConsultarInstructor.aspx" />
-    <Content Include="Vistas\VInstructor\EliminarInstructor.aspx" />
-    <Content Include="Vistas\VInstructor\ModificarInstructor.aspx" />
     <Content Include="Vistas\VSalon\AgregarSalon.aspx" />
     <Content Include="Vistas\VSalon\ConsultarSalon.aspx" />
     <Content Include="Vistas\VSalon\DetalleConsultaSalon.aspx" />
     <Content Include="Vistas\VSalon\ModificarSalon.aspx" />
     <Content Include="Web References\LogicaClases\FachadaClasesBackOffice.disco" />
-    <Content Include="Web References\LogicaEjercicios\FachadaEjerciciosBackOffice.disco" />
+    <None Include="Web References\LogicaEjercicios\FachadaEjerciciosBackOffice.disco" />
+    <Content Include="Web References\LogicaInstructor\FachadaInstructor.disco" />
     <Content Include="Web References\LogicaMusculo\FachadaMusculos.disco" />
     <Content Include="Web References\LogicaPersonas\FachadaInstructoresBackOffice.disco" />
     <Content Include="Web References\LogicaUsuariosLogin\FachadaUsuariosLoginBackOffice.disco" />
@@ -152,7 +152,9 @@
   <ItemGroup>
     <Compile Include="Comandos\AComando.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoAgregarEjercicio.cs" />
+    <Compile Include="Comandos\ComandosEjercicio\ComandoCargarEjercicio.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoCargarMusculos.cs" />
+    <Compile Include="Comandos\ComandosEjercicio\ComandoMostrarEjercicio.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoValidarCampo.cs" />
     <Compile Include="Comandos\ComandoSerializadorListaEntidades.cs" />
     <Compile Include="Comandos\FabricaComando.cs" />
@@ -173,10 +175,6 @@
     <Compile Include="Contratos\CTEjercicio\IContratoDesactivarEjercicio.cs" />
     <Compile Include="Contratos\CTEjercicio\IContratoDesactivarMusculo.cs" />
     <Compile Include="Contratos\CTEjercicio\IContratoModificarEjercicio.cs" />
-    <Compile Include="Contratos\CTInstructor\IContratoAgregarInstructor.cs" />
-    <Compile Include="Contratos\CTInstructor\IContratoConsultarInstructor.cs" />
-    <Compile Include="Contratos\CTInstructor\IContratoEliminarInstructor.cs" />
-    <Compile Include="Contratos\CTInstructor\IContratoModificarInstructor.cs" />
     <Compile Include="Contratos\CTSalon\IContractoDetalleConsulta.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -224,15 +222,16 @@
     <Compile Include="Presentadores\PEjercicio\PDesactivarEjercicio.cs" />
     <Compile Include="Presentadores\PEjercicio\PDesactivarMusculo.cs" />
     <Compile Include="Presentadores\PEjercicio\PModificarEjercicio.cs" />
-    <Compile Include="Presentadores\PInstructor\PAgregarInstructor.cs" />
-    <Compile Include="Presentadores\PInstructor\PConsultarInstructor.cs" />
-    <Compile Include="Presentadores\PInstructor\PEliminarInstructor.cs" />
-    <Compile Include="Presentadores\PInstructor\PModificarInstructor.cs" />
     <Compile Include="Presentadores\PSalon\PAgregarSalon.cs" />
     <Compile Include="Presentadores\PSalon\PConsultarSalon.cs" />
     <Compile Include="Presentadores\PSalon\PModificarSalon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs" />
+    <Compile Include="Properties\Settings1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="Service References\LogicaClaseSalon\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -339,34 +338,6 @@
     <Compile Include="Vistas\VHome\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\VInstructor\AgregarInstructor.aspx.cs">
-      <DependentUpon>AgregarInstructor.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Vistas\VInstructor\AgregarInstructor.aspx.designer.cs">
-      <DependentUpon>AgregarInstructor.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Vistas\VInstructor\ConsultarInstructor.aspx.cs">
-      <DependentUpon>ConsultarInstructor.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Vistas\VInstructor\ConsultarInstructor.aspx.designer.cs">
-      <DependentUpon>ConsultarInstructor.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Vistas\VInstructor\EliminarInstructor.aspx.cs">
-      <DependentUpon>EliminarInstructor.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Vistas\VInstructor\EliminarInstructor.aspx.designer.cs">
-      <DependentUpon>EliminarInstructor.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Vistas\VInstructor\ModificarInstructor.aspx.cs">
-      <DependentUpon>ModificarInstructor.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Vistas\VInstructor\ModificarInstructor.aspx.designer.cs">
-      <DependentUpon>ModificarInstructor.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Vistas\VSalon\AgregarSalon.aspx.cs">
       <DependentUpon>AgregarSalon.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -405,6 +376,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <Compile Include="Web References\LogicaInstructor\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
     <Compile Include="Web References\LogicaMusculo\Reference.cs" />
     <Compile Include="Web References\LogicaPersonas\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -424,11 +400,11 @@
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
-    <Content Include="Web References\LogicaEjercicios\FachadaEjerciciosBackOffice.wsdl" />
-    <Content Include="Web References\LogicaEjercicios\Reference.map">
+    <None Include="Web References\LogicaEjercicios\FachadaEjerciciosBackOffice.wsdl" />
+    <None Include="Web References\LogicaEjercicios\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    </None>
     <Content Include="Web References\LogicaPersonas\FachadaInstructoresBackOffice.wsdl" />
     <Content Include="Web References\LogicaPersonas\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
@@ -444,6 +420,11 @@
     <Content Include="Service References\LogicaClaseSalon\FachadaClaseSalonBackOffice.wsdl" />
     <Content Include="Web References\LogicaMusculo\FachadaMusculos.wsdl" />
     <Content Include="Web References\LogicaMusculo\Reference.map" />
+    <Content Include="Web References\LogicaInstructor\FachadaInstructor.wsdl" />
+    <Content Include="Web References\LogicaInstructor\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -453,10 +434,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
-    <Folder Include="Comandos\ComandosInstructor\" />
     <Folder Include="Contratos\CTCliente\" />
+    <Folder Include="Contratos\CTInstructor\" />
     <Folder Include="Presentadores\PCliente\" />
+    <Folder Include="Presentadores\PInstructor\" />
     <Folder Include="Vistas\VCliente\" />
+    <Folder Include="Vistas\VInstructor\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -486,6 +469,17 @@
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>PuiPuiCapaDeInterfazBackOffice_LogicaEjercicios_FachadaEjerciciosBackOffice</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:24057/Servicios/BackOffice/FachadaInstructor.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\LogicaInstructor\</RelPath>
+      <UpdateFromURL>http://localhost:24057/Servicios/BackOffice/FachadaInstructor.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>PuiPuiCapaDeInterfazBackOffice_LogicaInstructor_FachadaInstructor</CachedSettingsPropName>
     </WebReferenceUrl>
     <WebReferenceUrl Include="http://localhost:24057/Servicios/BackOffice/FachadaInstructoresBackOffice.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>

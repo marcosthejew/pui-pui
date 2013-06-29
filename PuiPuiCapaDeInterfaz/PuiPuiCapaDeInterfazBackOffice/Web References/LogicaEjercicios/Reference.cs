@@ -129,10 +129,10 @@ namespace PuiPuiCapaDeInterfazBackOffice.LogicaEjercicios {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ServicioConsultarEjecicioId", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public System.Xml.XmlNode ServicioConsultarEjecicioId(int id) {
+        public string ServicioConsultarEjecicioId(int id) {
             object[] results = this.Invoke("ServicioConsultarEjecicioId", new object[] {
                         id});
-            return ((System.Xml.XmlNode)(results[0]));
+            return ((string)(results[0]));
         }
         
         /// <remarks/>
@@ -158,9 +158,9 @@ namespace PuiPuiCapaDeInterfazBackOffice.LogicaEjercicios {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ServicioConsultarEjercicioTodos", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public System.Xml.XmlNode ServicioConsultarEjercicioTodos() {
+        public string ServicioConsultarEjercicioTodos() {
             object[] results = this.Invoke("ServicioConsultarEjercicioTodos", new object[0]);
-            return ((System.Xml.XmlNode)(results[0]));
+            return ((string)(results[0]));
         }
         
         /// <remarks/>
@@ -312,10 +312,10 @@ namespace PuiPuiCapaDeInterfazBackOffice.LogicaEjercicios {
         }
         
         /// <remarks/>
-        public System.Xml.XmlNode Result {
+        public string Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((System.Xml.XmlNode)(this.results[0]));
+                return ((string)(this.results[0]));
             }
         }
     }
@@ -338,10 +338,10 @@ namespace PuiPuiCapaDeInterfazBackOffice.LogicaEjercicios {
         }
         
         /// <remarks/>
-        public System.Xml.XmlNode Result {
+        public string Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((System.Xml.XmlNode)(this.results[0]));
+                return ((string)(this.results[0]));
             }
         }
     }
