@@ -13,22 +13,22 @@ namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VEjercicio {
     public partial class VistaDesactivarMusculo {
         
         /// <summary>
-        /// lExito control.
+        /// _exito control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lExito;
+        protected global::System.Web.UI.WebControls.Label _exito;
         
         /// <summary>
-        /// ddlMusculo control.
+        /// _nombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlMusculo;
+        protected global::System.Web.UI.WebControls.DropDownList _nombre;
         
         /// <summary>
         /// bEliminar control.

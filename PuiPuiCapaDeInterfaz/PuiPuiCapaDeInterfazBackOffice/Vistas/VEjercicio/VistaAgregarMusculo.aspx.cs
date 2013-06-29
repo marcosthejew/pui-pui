@@ -11,34 +11,54 @@ namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VEjercicio
 {
     public partial class VistaAgregarMusculo : System.Web.UI.Page, IContratoAgregarMusculo
     {
+        #region Atributos
         private PAgregarMusculo _pAgregarMusculo;
-
-        protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
-      
+        #endregion
+              
+        #region Constructor
         public VistaAgregarMusculo()
         {
             _pAgregarMusculo = new PAgregarMusculo(this);
         }
+        #endregion
 
+        #region Getter and Setter
         public String nombreMusculo
         {
-            get{ return tbNombre.Text;}
-            set { tbNombre.Text = value; }           
+            get { return _nombre.Text; }
+            set { _nombre.Text = value; }           
         }
 
         public String descripcionMusculo
         {
-            get { return tbDescripcion.Text; }
-            set { tbDescripcion.Text = value; }
-        }        
+            get { return _descripcion.Text; }
+            set { _descripcion.Text = value; }
+        }
+
+        public String Exito
+        {
+            get { return _exito.Text; }
+            set { _exito.Text = value; }
+        }
+
+        public Label Mensaje
+        {
+            get { return _exito; }
+        }
+        #endregion
+
+        #region Metodos
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
 
         public void Aceptar_Click(object sender, EventArgs e)
         {
-            _pAgregarMusculo.AgregarMusculo();
+           _pAgregarMusculo.AgregarMusculo(nombreMusculo,descripcionMusculo);
         }
-   
+            
     }
+        #endregion  
+    
 }

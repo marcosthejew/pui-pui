@@ -66,14 +66,9 @@ namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VEjercicio
 
         protected void bAgregar_Click(object sender, EventArgs e)
         {
-
+            _presentadorEjercicio.AgregarEjercicio(Nombre,Descripcion,Musculos);
         }
-
-        protected void Nombre_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+                
         #endregion
     }
 }

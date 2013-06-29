@@ -13,31 +13,31 @@ namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VEjercicio {
     public partial class VistaAgregarMusculo {
         
         /// <summary>
-        /// lExito control.
+        /// _exito control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lExito;
+        protected global::System.Web.UI.WebControls.Label _exito;
         
         /// <summary>
-        /// tbNombre control.
+        /// _nombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbNombre;
+        protected global::System.Web.UI.WebControls.TextBox _nombre;
         
         /// <summary>
-        /// tbDescripcion control.
+        /// _descripcion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbDescripcion;
+        protected global::System.Web.UI.WebControls.TextBox _descripcion;
         
         /// <summary>
         /// bAgregar control.

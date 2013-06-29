@@ -59,6 +59,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\PuiPuiCapaDeInterfazBackOffice.dll" />
+    <Content Include="bin\PuiPuiCapaDeInterfazBackOffice.pdb" />
     <Content Include="Default.aspx" />
     <Content Include="Estilos\calendar-blue.css" />
     <Content Include="Estilos\Site.css" />
@@ -94,6 +96,8 @@
       <LastGenOutput>Settings1.Designer.cs</LastGenOutput>
     </Content>
     <Content Include="PuiPuiCapaDeInterfazBackOffice.csproj.orig" />
+    <Content Include="Comandos\FabricaComando.cs.orig" />
+    <Content Include="Contratos\CTEjercicio\IAgregarEjercicio.cs.orig" />
     <None Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
@@ -135,6 +139,11 @@
     <Content Include="Vistas\VEjercicio\VistaDesactivarMusculo.aspx" />
     <Content Include="Vistas\VEjercicio\VistaModificarEjercicio.aspx" />
     <Content Include="Vistas\VHome\Home.aspx" />
+    <Content Include="Vistas\VInstructor\AgregarInstructor.aspx" />
+    <Content Include="Vistas\VInstructor\ConsultarInstructor.aspx" />
+    <Content Include="Vistas\VInstructor\EliminarInstructor.aspx" />
+    <Content Include="Vistas\VInstructor\ModificarInstructor.aspx" />
+    <Content Include="Vistas\VRutina\AgregarRutina.aspx" />
     <Content Include="Vistas\VSalon\AgregarSalon.aspx" />
     <Content Include="Vistas\VSalon\ConsultarSalon.aspx" />
     <Content Include="Vistas\VSalon\DetalleConsultaSalon.aspx" />
@@ -152,11 +161,14 @@
   <ItemGroup>
     <Compile Include="Comandos\AComando.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoAgregarEjercicio.cs" />
+    <Compile Include="Comandos\ComandosEjercicio\ComandoAgregarMusculos.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoCargarEjercicio.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoCargarMusculos.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoConsultarEjercicio.cs" />
+    <Compile Include="Comandos\ComandosEjercicio\ComandoDesactivarMusculos.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoMostrarEjercicio.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoValidarCampo.cs" />
+    <Compile Include="Comandos\ComandosEjercicio\ComndoCargarMusculos2.cs" />
     <Compile Include="Comandos\ComandoSerializadorListaEntidades.cs" />
     <Compile Include="Comandos\FabricaComando.cs" />
     <Compile Include="Contratos\CTClaseSalon\IContratoAgregarClaseSalon.cs" />
@@ -176,6 +188,10 @@
     <Compile Include="Contratos\CTEjercicio\IContratoDesactivarEjercicio.cs" />
     <Compile Include="Contratos\CTEjercicio\IContratoDesactivarMusculo.cs" />
     <Compile Include="Contratos\CTEjercicio\IContratoModificarEjercicio.cs" />
+    <Compile Include="Contratos\CTInstructor\IContratoAgregarInstructor.cs" />
+    <Compile Include="Contratos\CTInstructor\IContratoConsultarInstructor.cs" />
+    <Compile Include="Contratos\CTInstructor\IContratoEliminarInstructor.cs" />
+    <Compile Include="Contratos\CTInstructor\IContratoModificarInstructor.cs" />
     <Compile Include="Contratos\CTSalon\IContractoDetalleConsulta.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -223,6 +239,10 @@
     <Compile Include="Presentadores\PEjercicio\PDesactivarEjercicio.cs" />
     <Compile Include="Presentadores\PEjercicio\PDesactivarMusculo.cs" />
     <Compile Include="Presentadores\PEjercicio\PModificarEjercicio.cs" />
+    <Compile Include="Presentadores\PInstructor\PAgregarInstructor.cs" />
+    <Compile Include="Presentadores\PInstructor\PConsultarInstructor.cs" />
+    <Compile Include="Presentadores\PInstructor\PEliminarInstructor.cs" />
+    <Compile Include="Presentadores\PInstructor\PModificarInstructor.cs" />
     <Compile Include="Presentadores\PSalon\PAgregarSalon.cs" />
     <Compile Include="Presentadores\PSalon\PConsultarSalon.cs" />
     <Compile Include="Presentadores\PSalon\PModificarSalon.cs" />
@@ -339,6 +359,41 @@
     <Compile Include="Vistas\VHome\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\VInstructor\AgregarInstructor.aspx.cs">
+      <DependentUpon>AgregarInstructor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\VInstructor\AgregarInstructor.aspx.designer.cs">
+      <DependentUpon>AgregarInstructor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VInstructor\ConsultarInstructor.aspx.cs">
+      <DependentUpon>ConsultarInstructor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\VInstructor\ConsultarInstructor.aspx.designer.cs">
+      <DependentUpon>ConsultarInstructor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VInstructor\EliminarInstructor.aspx.cs">
+      <DependentUpon>EliminarInstructor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\VInstructor\EliminarInstructor.aspx.designer.cs">
+      <DependentUpon>EliminarInstructor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VInstructor\ModificarInstructor.aspx.cs">
+      <DependentUpon>ModificarInstructor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\VInstructor\ModificarInstructor.aspx.designer.cs">
+      <DependentUpon>ModificarInstructor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VRutina\AgregarRutina.aspx.cs">
+      <DependentUpon>AgregarRutina.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\VRutina\AgregarRutina.aspx.designer.cs">
+      <DependentUpon>AgregarRutina.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\VSalon\AgregarSalon.aspx.cs">
       <DependentUpon>AgregarSalon.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -441,13 +496,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="bin\" />
     <Folder Include="Contratos\CTCliente\" />
-    <Folder Include="Contratos\CTInstructor\" />
     <Folder Include="Presentadores\PCliente\" />
-    <Folder Include="Presentadores\PInstructor\" />
     <Folder Include="Vistas\VCliente\" />
-    <Folder Include="Vistas\VInstructor\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

@@ -8,6 +8,8 @@ namespace PuiPuiCapaDeInterfazBackOffice.Contratos.CTEjercicio
 {
    public interface IContratoDesactivarMusculo
     {
-        String MusculoADesactivar { get; }
+        String Musculo { get; }
+        String Exito { get; set; }
+        
     }
 }

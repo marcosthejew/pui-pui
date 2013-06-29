@@ -10,5 +10,7 @@ namespace PuiPuiCapaDeInterfazBackOffice.Contratos.CTEjercicio
     {
         String nombreMusculo {get; set;}
         String descripcionMusculo { get; set; }
+        String Exito { get; set; }
+       
     }
 }
