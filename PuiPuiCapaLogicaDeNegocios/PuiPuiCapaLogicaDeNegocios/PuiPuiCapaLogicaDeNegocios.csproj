@@ -123,6 +123,7 @@
     <Compile Include="Comandos\ComandosEjercicio\ComandoAgregarEjecicio.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoSerializarEjercicio.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoSerializarMusculo.cs" />
+    <Compile Include="Comandos\ComandosInstructor\ComandoSerializarInstructor.cs" />
     <Compile Include="Comandos\ComandosRutina\ComandoActivarInactivarRutina.cs" />
     <Compile Include="Comandos\ComandosRutina\ComandoAgregarHistorial.cs" />
     <Compile Include="Comandos\ComandosRutina\ComandoAgregarRutina.cs" />

@@ -238,6 +238,11 @@ namespace PuiPuiCapaLogicaDeNegocios.Fabricas
         {
             return new Instructor();
         }
+
+        public static AEntidad CrearInstructor(int id)
+        {
+            return new Instructor(id);
+        }
         #endregion
 
         #region Reservaciones

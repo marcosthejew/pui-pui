@@ -132,6 +132,10 @@
     <Content Include="Vistas\VEjercicio\VistaDesactivarMusculo.aspx" />
     <Content Include="Vistas\VEjercicio\VistaModificarEjercicio.aspx" />
     <Content Include="Vistas\VHome\Home.aspx" />
+    <Content Include="Vistas\VInstructor\AgregarInstructor.aspx" />
+    <Content Include="Vistas\VInstructor\ConsultarInstructor.aspx" />
+    <Content Include="Vistas\VInstructor\EliminarInstructor.aspx" />
+    <Content Include="Vistas\VInstructor\ModificarInstructor.aspx" />
     <Content Include="Vistas\VSalon\AgregarSalon.aspx" />
     <Content Include="Vistas\VSalon\ConsultarSalon.aspx" />
     <Content Include="Vistas\VSalon\DetalleConsultaSalon.aspx" />
@@ -169,6 +173,10 @@
     <Compile Include="Contratos\CTEjercicio\IContratoDesactivarEjercicio.cs" />
     <Compile Include="Contratos\CTEjercicio\IContratoDesactivarMusculo.cs" />
     <Compile Include="Contratos\CTEjercicio\IContratoModificarEjercicio.cs" />
+    <Compile Include="Contratos\CTInstructor\IContratoAgregarInstructor.cs" />
+    <Compile Include="Contratos\CTInstructor\IContratoConsultarInstructor.cs" />
+    <Compile Include="Contratos\CTInstructor\IContratoEliminarInstructor.cs" />
+    <Compile Include="Contratos\CTInstructor\IContratoModificarInstructor.cs" />
     <Compile Include="Contratos\CTSalon\IContractoDetalleConsulta.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -216,6 +224,10 @@
     <Compile Include="Presentadores\PEjercicio\PDesactivarEjercicio.cs" />
     <Compile Include="Presentadores\PEjercicio\PDesactivarMusculo.cs" />
     <Compile Include="Presentadores\PEjercicio\PModificarEjercicio.cs" />
+    <Compile Include="Presentadores\PInstructor\PAgregarInstructor.cs" />
+    <Compile Include="Presentadores\PInstructor\PConsultarInstructor.cs" />
+    <Compile Include="Presentadores\PInstructor\PEliminarInstructor.cs" />
+    <Compile Include="Presentadores\PInstructor\PModificarInstructor.cs" />
     <Compile Include="Presentadores\PSalon\PAgregarSalon.cs" />
     <Compile Include="Presentadores\PSalon\PConsultarSalon.cs" />
     <Compile Include="Presentadores\PSalon\PModificarSalon.cs" />
@@ -327,6 +339,34 @@
     <Compile Include="Vistas\VHome\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\VInstructor\AgregarInstructor.aspx.cs">
+      <DependentUpon>AgregarInstructor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\VInstructor\AgregarInstructor.aspx.designer.cs">
+      <DependentUpon>AgregarInstructor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VInstructor\ConsultarInstructor.aspx.cs">
+      <DependentUpon>ConsultarInstructor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\VInstructor\ConsultarInstructor.aspx.designer.cs">
+      <DependentUpon>ConsultarInstructor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VInstructor\EliminarInstructor.aspx.cs">
+      <DependentUpon>EliminarInstructor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\VInstructor\EliminarInstructor.aspx.designer.cs">
+      <DependentUpon>EliminarInstructor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VInstructor\ModificarInstructor.aspx.cs">
+      <DependentUpon>ModificarInstructor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\VInstructor\ModificarInstructor.aspx.designer.cs">
+      <DependentUpon>ModificarInstructor.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\VSalon\AgregarSalon.aspx.cs">
       <DependentUpon>AgregarSalon.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -413,12 +453,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
+    <Folder Include="Comandos\ComandosInstructor\" />
     <Folder Include="Contratos\CTCliente\" />
-    <Folder Include="Contratos\CTInstructor\" />
     <Folder Include="Presentadores\PCliente\" />
-    <Folder Include="Presentadores\PInstructor\" />
     <Folder Include="Vistas\VCliente\" />
-    <Folder Include="Vistas\VInstructor\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
