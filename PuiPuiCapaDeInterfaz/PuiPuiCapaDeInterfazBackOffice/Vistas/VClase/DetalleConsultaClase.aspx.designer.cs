@@ -49,31 +49,13 @@ namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VClase {
         protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
-        /// nombreEvaInstActual control.
+        /// nombreClaseActual control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox nombreEvaInstActual;
-        
-        /// <summary>
-        /// Label1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-        
-        /// <summary>
-        /// Fecha control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Fecha;
+        protected global::System.Web.UI.WebControls.TextBox nombreClaseActual;
         
         /// <summary>
         /// Label3 control.
@@ -85,13 +67,22 @@ namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VClase {
         protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// Observacion control.
+        /// TextArea control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Observacion;
+        protected global::System.Web.UI.WebControls.TextBox TextArea;
+        
+        /// <summary>
+        /// EstatusActual control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox EstatusActual;
         
         /// <summary>
         /// botonRegresar control.
