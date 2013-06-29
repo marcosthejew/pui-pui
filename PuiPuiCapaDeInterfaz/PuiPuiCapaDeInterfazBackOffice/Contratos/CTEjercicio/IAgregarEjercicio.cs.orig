@@ -1,0 +1,20 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PuiPuiCapaDeInterfazBackOffice.Contratos.CTEjercicio
+{
+<<<<<<< local
+    public interface IAgregarEjercicio
+=======
+   public interface IAgregarEjercicio
+>>>>>>> other
+    {
+        string Nombre { get; set; }
+        string Descripcion { get; set; }
+        string Musculos { get; }
+        string Exito { get; set; }
+    }
+}

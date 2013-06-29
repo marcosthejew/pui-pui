@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ServicioConsultarTodosInstructor">
+        <s:complexType />
+      </s:element>
+      <s:element name="ServicioConsultarTodosInstructorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ServicioConsultarTodosInstructorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioConsultarPorIdInstructor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioConsultarPorIdInstructorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ServicioConsultarPorIdInstructorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioInactivarInstructor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioInactivarInstructorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ServicioInactivarInstructorResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="boolean" type="s:boolean" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ServicioConsultarTodosInstructorSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicioConsultarTodosInstructor" />
+  </wsdl:message>
+  <wsdl:message name="ServicioConsultarTodosInstructorSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicioConsultarTodosInstructorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServicioConsultarPorIdInstructorSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicioConsultarPorIdInstructor" />
+  </wsdl:message>
+  <wsdl:message name="ServicioConsultarPorIdInstructorSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicioConsultarPorIdInstructorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServicioInactivarInstructorSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicioInactivarInstructor" />
+  </wsdl:message>
+  <wsdl:message name="ServicioInactivarInstructorSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicioInactivarInstructorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServicioConsultarTodosInstructorHttpGetIn" />
+  <wsdl:message name="ServicioConsultarTodosInstructorHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioConsultarPorIdInstructorHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioConsultarPorIdInstructorHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioInactivarInstructorHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioInactivarInstructorHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ServicioConsultarTodosInstructorHttpPostIn" />
+  <wsdl:message name="ServicioConsultarTodosInstructorHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioConsultarPorIdInstructorHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioConsultarPorIdInstructorHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioInactivarInstructorHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioInactivarInstructorHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:portType name="FachadaInstructorSoap">
+    <wsdl:operation name="ServicioConsultarTodosInstructor">
+      <wsdl:input message="tns:ServicioConsultarTodosInstructorSoapIn" />
+      <wsdl:output message="tns:ServicioConsultarTodosInstructorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioConsultarPorIdInstructor">
+      <wsdl:input message="tns:ServicioConsultarPorIdInstructorSoapIn" />
+      <wsdl:output message="tns:ServicioConsultarPorIdInstructorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioInactivarInstructor">
+      <wsdl:input message="tns:ServicioInactivarInstructorSoapIn" />
+      <wsdl:output message="tns:ServicioInactivarInstructorSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="FachadaInstructorHttpGet">
+    <wsdl:operation name="ServicioConsultarTodosInstructor">
+      <wsdl:input message="tns:ServicioConsultarTodosInstructorHttpGetIn" />
+      <wsdl:output message="tns:ServicioConsultarTodosInstructorHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioConsultarPorIdInstructor">
+      <wsdl:input message="tns:ServicioConsultarPorIdInstructorHttpGetIn" />
+      <wsdl:output message="tns:ServicioConsultarPorIdInstructorHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioInactivarInstructor">
+      <wsdl:input message="tns:ServicioInactivarInstructorHttpGetIn" />
+      <wsdl:output message="tns:ServicioInactivarInstructorHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="FachadaInstructorHttpPost">
+    <wsdl:operation name="ServicioConsultarTodosInstructor">
+      <wsdl:input message="tns:ServicioConsultarTodosInstructorHttpPostIn" />
+      <wsdl:output message="tns:ServicioConsultarTodosInstructorHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioConsultarPorIdInstructor">
+      <wsdl:input message="tns:ServicioConsultarPorIdInstructorHttpPostIn" />
+      <wsdl:output message="tns:ServicioConsultarPorIdInstructorHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioInactivarInstructor">
+      <wsdl:input message="tns:ServicioInactivarInstructorHttpPostIn" />
+      <wsdl:output message="tns:ServicioInactivarInstructorHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FachadaInstructorSoap" type="tns:FachadaInstructorSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ServicioConsultarTodosInstructor">
+      <soap:operation soapAction="http://tempuri.org/ServicioConsultarTodosInstructor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioConsultarPorIdInstructor">
+      <soap:operation soapAction="http://tempuri.org/ServicioConsultarPorIdInstructor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioInactivarInstructor">
+      <soap:operation soapAction="http://tempuri.org/ServicioInactivarInstructor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FachadaInstructorSoap12" type="tns:FachadaInstructorSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ServicioConsultarTodosInstructor">
+      <soap12:operation soapAction="http://tempuri.org/ServicioConsultarTodosInstructor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioConsultarPorIdInstructor">
+      <soap12:operation soapAction="http://tempuri.org/ServicioConsultarPorIdInstructor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioInactivarInstructor">
+      <soap12:operation soapAction="http://tempuri.org/ServicioInactivarInstructor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FachadaInstructorHttpGet" type="tns:FachadaInstructorHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="ServicioConsultarTodosInstructor">
+      <http:operation location="/ServicioConsultarTodosInstructor" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioConsultarPorIdInstructor">
+      <http:operation location="/ServicioConsultarPorIdInstructor" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioInactivarInstructor">
+      <http:operation location="/ServicioInactivarInstructor" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FachadaInstructorHttpPost" type="tns:FachadaInstructorHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="ServicioConsultarTodosInstructor">
+      <http:operation location="/ServicioConsultarTodosInstructor" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioConsultarPorIdInstructor">
+      <http:operation location="/ServicioConsultarPorIdInstructor" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioInactivarInstructor">
+      <http:operation location="/ServicioInactivarInstructor" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FachadaInstructor">
+    <wsdl:port name="FachadaInstructorSoap" binding="tns:FachadaInstructorSoap">
+      <soap:address location="http://localhost:24057/Servicios/BackOffice/FachadaInstructor.asmx" />
+    </wsdl:port>
+    <wsdl:port name="FachadaInstructorSoap12" binding="tns:FachadaInstructorSoap12">
+      <soap12:address location="http://localhost:24057/Servicios/BackOffice/FachadaInstructor.asmx" />
+    </wsdl:port>
+    <wsdl:port name="FachadaInstructorHttpGet" binding="tns:FachadaInstructorHttpGet">
+      <http:address location="http://localhost:24057/Servicios/BackOffice/FachadaInstructor.asmx" />
+    </wsdl:port>
+    <wsdl:port name="FachadaInstructorHttpPost" binding="tns:FachadaInstructorHttpPost">
+      <http:address location="http://localhost:24057/Servicios/BackOffice/FachadaInstructor.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

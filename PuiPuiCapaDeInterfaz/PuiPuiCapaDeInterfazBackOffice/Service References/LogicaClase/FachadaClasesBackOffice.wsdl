@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ServicioConsultarSalonesTodos">
+        <s:complexType />
+      </s:element>
+      <s:element name="ServicioConsultarSalonesTodosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ServicioConsultarSalonesTodosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioAgregarClase">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idClase" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="descripcion" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioAgregarClaseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ServicioAgregarClaseResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioInactivarClase">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioInactivarClaseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ServicioInactivarClaseResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioModificarClase">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idClase" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="descripcion" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioModificarClaseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ServicioModificarClaseResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioComandoNombreClase">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioComandoNombreClaseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ServicioComandoNombreClaseResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioComandoBusquedaStatusClases">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioComandoBusquedaStatusClasesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ServicioComandoBusquedaStatusClasesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="int" type="s:int" />
+      <s:element name="boolean" type="s:boolean" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ServicioConsultarSalonesTodosSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicioConsultarSalonesTodos" />
+  </wsdl:message>
+  <wsdl:message name="ServicioConsultarSalonesTodosSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicioConsultarSalonesTodosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServicioAgregarClaseSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicioAgregarClase" />
+  </wsdl:message>
+  <wsdl:message name="ServicioAgregarClaseSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicioAgregarClaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServicioInactivarClaseSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicioInactivarClase" />
+  </wsdl:message>
+  <wsdl:message name="ServicioInactivarClaseSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicioInactivarClaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServicioModificarClaseSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicioModificarClase" />
+  </wsdl:message>
+  <wsdl:message name="ServicioModificarClaseSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicioModificarClaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServicioComandoNombreClaseSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicioComandoNombreClase" />
+  </wsdl:message>
+  <wsdl:message name="ServicioComandoNombreClaseSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicioComandoNombreClaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServicioComandoBusquedaStatusClasesSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicioComandoBusquedaStatusClases" />
+  </wsdl:message>
+  <wsdl:message name="ServicioComandoBusquedaStatusClasesSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicioComandoBusquedaStatusClasesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServicioConsultarSalonesTodosHttpGetIn" />
+  <wsdl:message name="ServicioConsultarSalonesTodosHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioAgregarClaseHttpGetIn">
+    <wsdl:part name="nombre" type="s:string" />
+    <wsdl:part name="idClase" type="s:string" />
+    <wsdl:part name="descripcion" type="s:string" />
+    <wsdl:part name="status" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioAgregarClaseHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="ServicioInactivarClaseHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioInactivarClaseHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ServicioModificarClaseHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="nombre" type="s:string" />
+    <wsdl:part name="idClase" type="s:string" />
+    <wsdl:part name="descripcion" type="s:string" />
+    <wsdl:part name="status" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioModificarClaseHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ServicioComandoNombreClaseHttpGetIn">
+    <wsdl:part name="nombre" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioComandoNombreClaseHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioComandoBusquedaStatusClasesHttpGetIn">
+    <wsdl:part name="status" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioComandoBusquedaStatusClasesHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioConsultarSalonesTodosHttpPostIn" />
+  <wsdl:message name="ServicioConsultarSalonesTodosHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioAgregarClaseHttpPostIn">
+    <wsdl:part name="nombre" type="s:string" />
+    <wsdl:part name="idClase" type="s:string" />
+    <wsdl:part name="descripcion" type="s:string" />
+    <wsdl:part name="status" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioAgregarClaseHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="ServicioInactivarClaseHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioInactivarClaseHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ServicioModificarClaseHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="nombre" type="s:string" />
+    <wsdl:part name="idClase" type="s:string" />
+    <wsdl:part name="descripcion" type="s:string" />
+    <wsdl:part name="status" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioModificarClaseHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ServicioComandoNombreClaseHttpPostIn">
+    <wsdl:part name="nombre" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioComandoNombreClaseHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioComandoBusquedaStatusClasesHttpPostIn">
+    <wsdl:part name="status" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioComandoBusquedaStatusClasesHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="FachadaClasesSoap">
+    <wsdl:operation name="ServicioConsultarSalonesTodos">
+      <wsdl:input message="tns:ServicioConsultarSalonesTodosSoapIn" />
+      <wsdl:output message="tns:ServicioConsultarSalonesTodosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioAgregarClase">
+      <wsdl:input message="tns:ServicioAgregarClaseSoapIn" />
+      <wsdl:output message="tns:ServicioAgregarClaseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioInactivarClase">
+      <wsdl:input message="tns:ServicioInactivarClaseSoapIn" />
+      <wsdl:output message="tns:ServicioInactivarClaseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioModificarClase">
+      <wsdl:input message="tns:ServicioModificarClaseSoapIn" />
+      <wsdl:output message="tns:ServicioModificarClaseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComandoNombreClase">
+      <wsdl:input message="tns:ServicioComandoNombreClaseSoapIn" />
+      <wsdl:output message="tns:ServicioComandoNombreClaseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComandoBusquedaStatusClases">
+      <wsdl:input message="tns:ServicioComandoBusquedaStatusClasesSoapIn" />
+      <wsdl:output message="tns:ServicioComandoBusquedaStatusClasesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="FachadaClasesHttpGet">
+    <wsdl:operation name="ServicioConsultarSalonesTodos">
+      <wsdl:input message="tns:ServicioConsultarSalonesTodosHttpGetIn" />
+      <wsdl:output message="tns:ServicioConsultarSalonesTodosHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioAgregarClase">
+      <wsdl:input message="tns:ServicioAgregarClaseHttpGetIn" />
+      <wsdl:output message="tns:ServicioAgregarClaseHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioInactivarClase">
+      <wsdl:input message="tns:ServicioInactivarClaseHttpGetIn" />
+      <wsdl:output message="tns:ServicioInactivarClaseHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioModificarClase">
+      <wsdl:input message="tns:ServicioModificarClaseHttpGetIn" />
+      <wsdl:output message="tns:ServicioModificarClaseHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComandoNombreClase">
+      <wsdl:input message="tns:ServicioComandoNombreClaseHttpGetIn" />
+      <wsdl:output message="tns:ServicioComandoNombreClaseHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComandoBusquedaStatusClases">
+      <wsdl:input message="tns:ServicioComandoBusquedaStatusClasesHttpGetIn" />
+      <wsdl:output message="tns:ServicioComandoBusquedaStatusClasesHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="FachadaClasesHttpPost">
+    <wsdl:operation name="ServicioConsultarSalonesTodos">
+      <wsdl:input message="tns:ServicioConsultarSalonesTodosHttpPostIn" />
+      <wsdl:output message="tns:ServicioConsultarSalonesTodosHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioAgregarClase">
+      <wsdl:input message="tns:ServicioAgregarClaseHttpPostIn" />
+      <wsdl:output message="tns:ServicioAgregarClaseHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioInactivarClase">
+      <wsdl:input message="tns:ServicioInactivarClaseHttpPostIn" />
+      <wsdl:output message="tns:ServicioInactivarClaseHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioModificarClase">
+      <wsdl:input message="tns:ServicioModificarClaseHttpPostIn" />
+      <wsdl:output message="tns:ServicioModificarClaseHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComandoNombreClase">
+      <wsdl:input message="tns:ServicioComandoNombreClaseHttpPostIn" />
+      <wsdl:output message="tns:ServicioComandoNombreClaseHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComandoBusquedaStatusClases">
+      <wsdl:input message="tns:ServicioComandoBusquedaStatusClasesHttpPostIn" />
+      <wsdl:output message="tns:ServicioComandoBusquedaStatusClasesHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FachadaClasesSoap" type="tns:FachadaClasesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ServicioConsultarSalonesTodos">
+      <soap:operation soapAction="http://tempuri.org/ServicioConsultarSalonesTodos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioAgregarClase">
+      <soap:operation soapAction="http://tempuri.org/ServicioAgregarClase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioInactivarClase">
+      <soap:operation soapAction="http://tempuri.org/ServicioInactivarClase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioModificarClase">
+      <soap:operation soapAction="http://tempuri.org/ServicioModificarClase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComandoNombreClase">
+      <soap:operation soapAction="http://tempuri.org/ServicioComandoNombreClase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComandoBusquedaStatusClases">
+      <soap:operation soapAction="http://tempuri.org/ServicioComandoBusquedaStatusClases" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FachadaClasesSoap12" type="tns:FachadaClasesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ServicioConsultarSalonesTodos">
+      <soap12:operation soapAction="http://tempuri.org/ServicioConsultarSalonesTodos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioAgregarClase">
+      <soap12:operation soapAction="http://tempuri.org/ServicioAgregarClase" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioInactivarClase">
+      <soap12:operation soapAction="http://tempuri.org/ServicioInactivarClase" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioModificarClase">
+      <soap12:operation soapAction="http://tempuri.org/ServicioModificarClase" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComandoNombreClase">
+      <soap12:operation soapAction="http://tempuri.org/ServicioComandoNombreClase" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComandoBusquedaStatusClases">
+      <soap12:operation soapAction="http://tempuri.org/ServicioComandoBusquedaStatusClases" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FachadaClasesHttpGet" type="tns:FachadaClasesHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="ServicioConsultarSalonesTodos">
+      <http:operation location="/ServicioConsultarSalonesTodos" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioAgregarClase">
+      <http:operation location="/ServicioAgregarClase" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioInactivarClase">
+      <http:operation location="/ServicioInactivarClase" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioModificarClase">
+      <http:operation location="/ServicioModificarClase" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComandoNombreClase">
+      <http:operation location="/ServicioComandoNombreClase" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComandoBusquedaStatusClases">
+      <http:operation location="/ServicioComandoBusquedaStatusClases" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FachadaClasesHttpPost" type="tns:FachadaClasesHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="ServicioConsultarSalonesTodos">
+      <http:operation location="/ServicioConsultarSalonesTodos" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioAgregarClase">
+      <http:operation location="/ServicioAgregarClase" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioInactivarClase">
+      <http:operation location="/ServicioInactivarClase" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioModificarClase">
+      <http:operation location="/ServicioModificarClase" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComandoNombreClase">
+      <http:operation location="/ServicioComandoNombreClase" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComandoBusquedaStatusClases">
+      <http:operation location="/ServicioComandoBusquedaStatusClases" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FachadaClases">
+    <wsdl:port name="FachadaClasesSoap" binding="tns:FachadaClasesSoap">
+      <soap:address location="http://localhost:24057/Servicios/BackOffice/FachadaClasesBackOffice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="FachadaClasesSoap12" binding="tns:FachadaClasesSoap12">
+      <soap12:address location="http://localhost:24057/Servicios/BackOffice/FachadaClasesBackOffice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="FachadaClasesHttpGet" binding="tns:FachadaClasesHttpGet">
+      <http:address location="http://localhost:24057/Servicios/BackOffice/FachadaClasesBackOffice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="FachadaClasesHttpPost" binding="tns:FachadaClasesHttpPost">
+      <http:address location="http://localhost:24057/Servicios/BackOffice/FachadaClasesBackOffice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
