@@ -79,6 +79,7 @@
     <Content Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Servicios\BackOffice\FachadaClaseSalonBackOffice.asmx" />
     <Content Include="Servicios\BackOffice\FachadaClasesBackOffice.asmx" />
     <Content Include="Servicios\BackOffice\FachadaEjerciciosBackOffice.asmx" />
     <Content Include="Servicios\BackOffice\FachadaInstructoresBackOffice.asmx" />
@@ -91,11 +92,19 @@
     <Content Include="Servicios\FrontOffice\FachadaEjerciciosFrontOffice.asmx" />
     <Content Include="Servicios\FrontOffice\FachadaInstructoresFrontOffice.asmx" />
     <Content Include="Servicios\FrontOffice\FachadaRutinasEjerciciosFrontOffice.asmx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bitacora\EscritorBitacora.cs" />
     <Compile Include="Comandos\AComando.cs" />
+    <Compile Include="Comandos\ComandasoClaseSalon\ComandoAgregarClaseSalon.cs" />
+    <Compile Include="Comandos\ComandasoClaseSalon\ComandoBusquedaClase.cs" />
+    <Compile Include="Comandos\ComandasoClaseSalon\ComandoBusquedaInstructor.cs" />
+    <Compile Include="Comandos\ComandasoClaseSalon\ComandoBusquedaSalon.cs" />
+    <Compile Include="Comandos\ComandasoClaseSalon\ComandoConsultarClaseSalonTodos.cs" />
+    <Compile Include="Comandos\ComandasoClaseSalon\ComandoSerializarClaseSalon.cs" />
     <Compile Include="Comandos\ComandoEjemploDAO.cs" />
     <Compile Include="Comandos\ComandoHolaMundo.cs" />
     <Compile Include="Comandos\ComandoMusculo\ComandoAgregarMusculo.cs" />
@@ -112,8 +121,15 @@
     <Compile Include="Comandos\ComandosClase\ComandoSerializarListaClase.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComadoEjercicio2.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoAgregarEjecicio.cs" />
+    <Compile Include="Comandos\ComandosEjercicio\ComandoSerializarEjercicio.cs" />
+    <Compile Include="Comandos\ComandosEjercicio\ComandoSerializarMusculo.cs" />
+    <Compile Include="Comandos\ComandosInstructor\ComandoSerializarInstructor.cs" />
+    <Compile Include="Comandos\ComandosRutina\ComandoActivarInactivarRutina.cs" />
+    <Compile Include="Comandos\ComandosRutina\ComandoAgregarHistorial.cs" />
+    <Compile Include="Comandos\ComandosRutina\ComandoAgregarRutina.cs" />
     <Compile Include="Comandos\ComandosRutina\ComandoConsultarEjerciciosPorIDRutina.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoConsultarPorIdEjercicio.cs" />
+    <Compile Include="Comandos\ComandosRutina\ComandoConsultarPersonaPorLogin.cs" />
     <Compile Include="Comandos\ComandosRutina\ComandoConsultarRutinasPorCliente.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoConsultarTodosEjercicio.cs" />
     <Compile Include="Comandos\ComandosEjercicio\ComandoInactivarEjercicio.cs" />
@@ -130,6 +146,9 @@
     <Compile Include="Comandos\ComandosInstructor\ComandoConsultarTodosInstructor.cs" />
     <Compile Include="Comandos\ComandosInstructor\ComandoInactivarInstructor.cs" />
     <Compile Include="Comandos\ComandosInstructor\ComandoModificarInstructor.cs" />
+    <Compile Include="Comandos\ComandosRutina\ComandoConsultarTodosEjerciciosR.cs" />
+    <Compile Include="Comandos\ComandosRutina\ComandoConsutarStatusRutinaPorID.cs" />
+    <Compile Include="Comandos\ComandosRutina\ComandoObtenerUltimoIDRutina.cs" />
     <Compile Include="Comandos\ComandosSalon\ComandoBusquedaCapacidadMayorSalon.cs" />
     <Compile Include="Comandos\ComandosSalon\ComandoBusquedaCapacidadMenorSalon.cs" />
     <Compile Include="Comandos\ComandosSalon\ComandoBusquedaStatusSalon.cs" />
@@ -217,6 +236,7 @@
     <Compile Include="Excepciones\ExecpcionEvaluacionInstructor.cs" />
     <Compile Include="Fabricas\AFabricaDAO.cs" />
     <Compile Include="Fabricas\FabricaComando.cs" />
+    <Compile Include="Fabricas\FabricaComandoClaseSalon.cs" />
     <Compile Include="Fabricas\FabricaComandosClase.cs" />
     <Compile Include="Fabricas\FabricaComandosEvaluacionInstructor.cs" />
     <Compile Include="Fabricas\FabricaComandosHorario.cs" />
@@ -224,6 +244,10 @@
     <Compile Include="Fabricas\FabricaEntidad.cs" />
     <Compile Include="Fabricas\FabricaSQLServerDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Servicios\BackOffice\FachadaClaseSalonBackOffice.asmx.cs">
+      <DependentUpon>FachadaClaseSalonBackOffice.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Servicios\BackOffice\FachadaClasesBackOffice.asmx.cs">
       <DependentUpon>FachadaClasesBackOffice.asmx</DependentUpon>
       <SubType>Component</SubType>
@@ -281,8 +305,6 @@
     <Fakes Include="Fakes\log4net.fakes" />
     <Content Include="packages\log4net.2.0.0\log4net.2.0.0.nupkg" />
     <Content Include="packages\repositories.config" />
-    <Content Include="Fabricas\FabricaComando.cs.orig" />
-    <Content Include="Fabricas\FabricaEntidad.cs.orig" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

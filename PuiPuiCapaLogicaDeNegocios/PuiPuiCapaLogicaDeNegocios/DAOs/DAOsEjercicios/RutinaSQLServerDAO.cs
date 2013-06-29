@@ -441,6 +441,59 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEjercicios
         }
         #endregion
 
+        #region ConsultarStatusRutinaPorID
+        public string ConsultarStatusRutinaPorID(int idRutina)
+        {
+            string resultado="";
+
+            try
+            {
+                conexion = obtenerConexion();
+                conexion.Open();
+                cmd = new SqlCommand("[dbo].[consultarStatusRutinaPorID]", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idRutina", idRutina);
+                dr = cmd.ExecuteReader();
+
+                //Se recorre cada row
+                while (dr.Read())
+                {
+
+                    resultado = dr.GetValue(0).ToString();
+                    
+                }
+                return resultado;
+            }
+            catch (ArgumentException e)
+            {
+                throw new ExcepcionEjercicioConexionBD("Parametros invalidos", e);
+            }
+            catch (InvalidOperationException e)
+            {
+                throw new ExcepcionEjercicioConexionBD("Operacion Invalida", e);
+            }
+            catch (NullReferenceException e)
+            {
+                throw new ExcepcionEjercicioConexionBD("Ejercicio no encontrado", e);
+            }
+            catch (SqlException e)
+            {
+                throw new ExcepcionEjercicioConexionBD("Error con base de datos", e);
+            }
+            catch (Exception e)
+            {
+                throw new ExcepcionEjercicioConexionBD("Error general", e);
+            }
+            finally
+            {
+                CerrarConexion(conexion);
+            }
+
+            
+        }
+        #endregion
+
+
         /// <summary>
         /// Devuelve una lista con todas las entidades activas de Rutina 
         /// que se encuentran en la base de datos de SQL Server de la capa de 
