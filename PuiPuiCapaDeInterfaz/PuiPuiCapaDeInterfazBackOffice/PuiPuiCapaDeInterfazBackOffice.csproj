@@ -1,0 +1,544 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{87FF2D16-2929-4578-963B-56721D18CAB6}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PuiPuiCapaDeInterfazBackOffice</RootNamespace>
+    <AssemblyName>PuiPuiCapaDeInterfazBackOffice</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Default.aspx" />
+    <Content Include="Estilos\calendar-blue.css" />
+    <Content Include="Estilos\Site.css" />
+    <Content Include="Imagenes\Buscar.png" />
+    <Content Include="Imagenes\calendario.png" />
+    <Content Include="Imagenes\cambiar_estado.png" />
+    <Content Include="Imagenes\Editar.png" />
+    <Content Include="Imagenes\Eliminar.png" />
+    <Content Include="Imagenes\templatemo_content_bg.jpg" />
+    <Content Include="Imagenes\templatemo_footer.jpg" />
+    <Content Include="Imagenes\templatemo_header.jpg" />
+    <Content Include="Imagenes\templatemo_leftmenu_bot.jpg" />
+    <Content Include="Imagenes\templatemo_leftmenu_mid.jpg" />
+    <Content Include="Imagenes\templatemo_leftmenu_top.jpg" />
+    <Content Include="Imagenes\templatemo_left_corner.jpg" />
+    <Content Include="Imagenes\templatemo_page_bg.jpg" />
+    <Content Include="Imagenes\templatemo_right_corner.jpg" />
+    <Content Include="Imagenes\templatemo_title_bg.jpg" />
+    <Content Include="Imagenes\templatemo_top_current.jpg" />
+    <Content Include="Imagenes\templatemo_top_menu_level2.jpg" />
+    <Content Include="Imagenes\users.png" />
+    <Content Include="Scripts\calendar-en.min.js" />
+    <Content Include="Scripts\calendar-es.min.js" />
+    <Content Include="Scripts\fullcalendar\fullcalendar.css" />
+    <Content Include="Scripts\fullcalendar\fullcalendar.js" />
+    <Content Include="Scripts\fullcalendar\fullcalendar.min.js" />
+    <Content Include="Scripts\fullcalendar\fullcalendar.print.css" />
+    <Content Include="Scripts\fullcalendar\gcal.js" />
+    <Content Include="Scripts\gym2.js" />
+    <Content Include="MasterPages\PuiPuiCapaDeInterfazBackOfficeSesion.Master" />
+    <Content Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings1.Designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="PuiPuiCapaDeInterfazBackOffice.csproj.orig" />
+    <None Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\jquery.dynDateTime.min.js" />
+    <Content Include="Scripts\jquery\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\jquery\jquery-ui-1.10.2.custom.min.js" />
+    <Content Include="Scripts\ValidarText.js" />
+    <Content Include="Service References\LogicaClaseSalon\FachadaClaseSalonBackOffice.disco" />
+    <Content Include="Service References\LogicaClaseSalon\configuration91.svcinfo" />
+    <Content Include="Service References\LogicaClaseSalon\configuration.svcinfo" />
+    <Content Include="Service References\LogicaClaseSalon\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Service References\LogicaClase\FachadaClasesBackOffice.disco" />
+    <Content Include="Service References\LogicaClase\configuration91.svcinfo" />
+    <Content Include="Service References\LogicaClase\configuration.svcinfo" />
+    <Content Include="Service References\LogicaClase\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Service References\LogicaSalon\FachadaSalonBackOffice.disco" />
+    <Content Include="Service References\LogicaSalon\configuration91.svcinfo" />
+    <Content Include="Service References\LogicaSalon\configuration.svcinfo" />
+    <Content Include="Service References\LogicaSalon\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Vistas\VClaseSalon\Agregar.aspx" />
+    <Content Include="Vistas\VClaseSalon\Consultar.aspx" />
+    <Content Include="Vistas\VClase\AgregarClase.aspx" />
+    <Content Include="Vistas\VClase\ConsultarClases.aspx" />
+    <Content Include="Vistas\VClase\DetalleConsultaClase.aspx" />
+    <Content Include="Vistas\VClase\ModificarClase.aspx" />
+    <Content Include="Vistas\VEjercicio\VistaAgregarEjercicio.aspx" />
+    <Content Include="Vistas\VEjercicio\VistaAgregarMusculo.aspx" />
+    <Content Include="Vistas\VEjercicio\VistaConsultarEjercicio.aspx" />
+    <Content Include="Vistas\VEjercicio\VistaDesactivarEjercicio.aspx" />
+    <Content Include="Vistas\VEjercicio\VistaDesactivarMusculo.aspx" />
+    <Content Include="Vistas\VEjercicio\VistaModificarEjercicio.aspx" />
+    <Content Include="Vistas\VHome\Home.aspx" />
+    <Content Include="Vistas\VSalon\AgregarSalon.aspx" />
+    <Content Include="Vistas\VSalon\ConsultarSalon.aspx" />
+    <Content Include="Vistas\VSalon\DetalleConsultaSalon.aspx" />
+    <Content Include="Vistas\VSalon\ModificarSalon.aspx" />
+    <Content Include="Web References\LogicaClases\FachadaClasesBackOffice.disco" />
+    <None Include="Web References\LogicaEjercicios\FachadaEjerciciosBackOffice.disco" />
+    <Content Include="Web References\LogicaInstructor\FachadaInstructor.disco" />
+    <Content Include="Web References\LogicaMusculo\FachadaMusculos.disco" />
+    <Content Include="Web References\LogicaPersonas\FachadaInstructoresBackOffice.disco" />
+    <Content Include="Web References\LogicaUsuariosLogin\FachadaUsuariosLoginBackOffice.disco" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Comandos\AComando.cs" />
+    <Compile Include="Comandos\ComandosEjercicio\ComandoAgregarEjercicio.cs" />
+    <Compile Include="Comandos\ComandosEjercicio\ComandoCargarEjercicio.cs" />
+    <Compile Include="Comandos\ComandosEjercicio\ComandoCargarMusculos.cs" />
+    <Compile Include="Comandos\ComandosEjercicio\ComandoMostrarEjercicio.cs" />
+    <Compile Include="Comandos\ComandosEjercicio\ComandoValidarCampo.cs" />
+    <Compile Include="Comandos\ComandoSerializadorListaEntidades.cs" />
+    <Compile Include="Comandos\FabricaComando.cs" />
+    <Compile Include="Contratos\CTClaseSalon\IContratoAgregarClaseSalon.cs" />
+    <Compile Include="Contratos\CTClaseSalon\IContratoConsultarClaseSalon.cs" />
+    <Compile Include="Contratos\CTClase\IContratoAgregarClase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contratos\CTClase\IContratoConsultarClase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contratos\CTClase\IContratoModificaClase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contratos\CTEjercicio\IAgregarEjercicio.cs" />
+    <Compile Include="Contratos\CTEjercicio\IContratoAgregarMusculo.cs" />
+    <Compile Include="Contratos\CTEjercicio\IContratoConsultarEjercicio.cs" />
+    <Compile Include="Contratos\CTEjercicio\IContratoDesactivarEjercicio.cs" />
+    <Compile Include="Contratos\CTEjercicio\IContratoDesactivarMusculo.cs" />
+    <Compile Include="Contratos\CTEjercicio\IContratoModificarEjercicio.cs" />
+    <Compile Include="Contratos\CTSalon\IContractoDetalleConsulta.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contratos\CTSalon\IContratoAgregarSalon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contratos\CTSalon\IContratoConsultaSalon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contratos\CTSalon\IContratoModificarSalon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\PuiPuiCapaDeInterfazBackOffice.Master.cs">
+      <DependentUpon>PuiPuiCapaDeInterfazBackOffice.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\PuiPuiCapaDeInterfazBackOffice.Master.designer.cs">
+      <DependentUpon>PuiPuiCapaDeInterfazBackOffice.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\PuiPuiCapaDeInterfazBackOfficeSesion.Master.cs">
+      <DependentUpon>PuiPuiCapaDeInterfazBackOfficeSesion.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\PuiPuiCapaDeInterfazBackOfficeSesion.Master.designer.cs">
+      <DependentUpon>PuiPuiCapaDeInterfazBackOfficeSesion.Master</DependentUpon>
+    </Compile>
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Presentadores\PClaseSalon\PConsultaClaseSalon.cs" />
+    <Compile Include="Presentadores\PClase\PAgregarClase.cs" />
+    <Compile Include="Presentadores\PClase\PConsultarClase.cs" />
+    <Compile Include="Presentadores\PClase\PDetalleConsulta.cs" />
+    <Compile Include="Presentadores\PClase\PModificarClase.cs" />
+    <Compile Include="Presentadores\PEjercicio\PAgregarEjercicio.cs" />
+    <Compile Include="Presentadores\PEjercicio\PAgregarMusculo.cs" />
+    <Compile Include="Presentadores\PEjercicio\PConsultarEjercicio.cs" />
+    <Compile Include="Presentadores\PEjercicio\PDesactivarEjercicio.cs" />
+    <Compile Include="Presentadores\PEjercicio\PDesactivarMusculo.cs" />
+    <Compile Include="Presentadores\PEjercicio\PModificarEjercicio.cs" />
+    <Compile Include="Presentadores\PSalon\PAgregarSalon.cs" />
+    <Compile Include="Presentadores\PSalon\PConsultarSalon.cs" />
+    <Compile Include="Presentadores\PSalon\PModificarSalon.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs" />
+    <Compile Include="Properties\Settings1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\LogicaClaseSalon\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\LogicaClase\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\LogicaSalon\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VClaseSalon\Agregar.aspx.cs">
+      <DependentUpon>Agregar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\VClaseSalon\Agregar.aspx.designer.cs">
+      <DependentUpon>Agregar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VClaseSalon\Consultar.aspx.cs">
+      <DependentUpon>Consultar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\VClaseSalon\Consultar.aspx.designer.cs">
+      <DependentUpon>Consultar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VClase\AgregarClase.aspx.cs">
+      <DependentUpon>AgregarClase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\VClase\AgregarClase.aspx.designer.cs">
+      <DependentUpon>AgregarClase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VClase\ConsultarClases.aspx.cs">
+      <DependentUpon>ConsultarClases.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\VClase\ConsultarClases.aspx.designer.cs">
+      <DependentUpon>ConsultarClases.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VClase\DetalleConsultaClase.aspx.cs">
+      <DependentUpon>DetalleConsultaClase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\VClase\DetalleConsultaClase.aspx.designer.cs">
+      <DependentUpon>DetalleConsultaClase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VClase\ModificarClase.aspx.cs">
+      <DependentUpon>ModificarClase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\VClase\ModificarClase.aspx.designer.cs">
+      <DependentUpon>ModificarClase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VEjercicio\VistaAgregarEjercicio.aspx.cs">
+      <DependentUpon>VistaAgregarEjercicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\VEjercicio\VistaAgregarEjercicio.aspx.designer.cs">
+      <DependentUpon>VistaAgregarEjercicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VEjercicio\VistaAgregarMusculo.aspx.cs">
+      <DependentUpon>VistaAgregarMusculo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\VEjercicio\VistaAgregarMusculo.aspx.designer.cs">
+      <DependentUpon>VistaAgregarMusculo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VEjercicio\VistaConsultarEjercicio.aspx.cs">
+      <DependentUpon>VistaConsultarEjercicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\VEjercicio\VistaConsultarEjercicio.aspx.designer.cs">
+      <DependentUpon>VistaConsultarEjercicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VEjercicio\VistaDesactivarEjercicio.aspx.cs">
+      <DependentUpon>VistaDesactivarEjercicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\VEjercicio\VistaDesactivarEjercicio.aspx.designer.cs">
+      <DependentUpon>VistaDesactivarEjercicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VEjercicio\VistaDesactivarMusculo.aspx.cs">
+      <DependentUpon>VistaDesactivarMusculo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\VEjercicio\VistaDesactivarMusculo.aspx.designer.cs">
+      <DependentUpon>VistaDesactivarMusculo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VEjercicio\VistaModificarEjercicio.aspx.cs">
+      <DependentUpon>VistaModificarEjercicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\VEjercicio\VistaModificarEjercicio.aspx.designer.cs">
+      <DependentUpon>VistaModificarEjercicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VHome\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\VHome\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VSalon\AgregarSalon.aspx.cs">
+      <DependentUpon>AgregarSalon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\VSalon\AgregarSalon.aspx.designer.cs">
+      <DependentUpon>AgregarSalon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VSalon\ConsultarSalon.aspx.cs">
+      <DependentUpon>ConsultarSalon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\VSalon\ConsultarSalon.aspx.designer.cs">
+      <DependentUpon>ConsultarSalon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VSalon\DetalleConsultaSalon.aspx.cs">
+      <DependentUpon>DetalleConsultaSalon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\VSalon\DetalleConsultaSalon.aspx.designer.cs">
+      <DependentUpon>DetalleConsultaSalon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VSalon\ModificarSalon.aspx.cs">
+      <DependentUpon>ModificarSalon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\VSalon\ModificarSalon.aspx.designer.cs">
+      <DependentUpon>ModificarSalon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\LogicaClases\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\LogicaEjercicios\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\LogicaInstructor\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\LogicaMusculo\Reference.cs" />
+    <Compile Include="Web References\LogicaPersonas\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\LogicaUsuariosLogin\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MasterPages\PuiPuiCapaDeInterfazBackOffice.Master" />
+    <Content Include="Web References\LogicaClases\FachadaClasesBackOffice.wsdl" />
+    <Content Include="Web References\LogicaClases\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <None Include="Web References\LogicaEjercicios\FachadaEjerciciosBackOffice.wsdl" />
+    <None Include="Web References\LogicaEjercicios\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Web References\LogicaPersonas\FachadaInstructoresBackOffice.wsdl" />
+    <Content Include="Web References\LogicaPersonas\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Web References\LogicaUsuariosLogin\FachadaUsuariosLoginBackOffice.wsdl" />
+    <Content Include="Web References\LogicaUsuariosLogin\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Service References\LogicaSalon\FachadaSalonBackOffice.wsdl" />
+    <Content Include="Service References\LogicaClase\FachadaClasesBackOffice.wsdl" />
+    <Content Include="Service References\LogicaClaseSalon\FachadaClaseSalonBackOffice.wsdl" />
+    <Content Include="Web References\LogicaMusculo\FachadaMusculos.wsdl" />
+    <Content Include="Web References\LogicaMusculo\Reference.map" />
+    <Content Include="Web References\LogicaInstructor\FachadaInstructor.wsdl" />
+    <Content Include="Web References\LogicaInstructor\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\" />
+    <Folder Include="Contratos\CTCliente\" />
+    <Folder Include="Contratos\CTInstructor\" />
+    <Folder Include="Presentadores\PCliente\" />
+    <Folder Include="Presentadores\PInstructor\" />
+    <Folder Include="Vistas\VCliente\" />
+    <Folder Include="Vistas\VInstructor\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://localhost:24057/Servicios/BackOffice/FachadaClasesBackOffice.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\LogicaClases\</RelPath>
+      <UpdateFromURL>http://localhost:24057/Servicios/BackOffice/FachadaClasesBackOffice.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>PuiPuiCapaDeInterfazBackOffice_LogicaClases_FachadaClases</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:24057/Servicios/BackOffice/FachadaEjerciciosBackOffice.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\LogicaEjercicios\</RelPath>
+      <UpdateFromURL>http://localhost:24057/Servicios/BackOffice/FachadaEjerciciosBackOffice.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>PuiPuiCapaDeInterfazBackOffice_LogicaEjercicios_FachadaEjerciciosBackOffice</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:24057/Servicios/BackOffice/FachadaInstructor.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\LogicaInstructor\</RelPath>
+      <UpdateFromURL>http://localhost:24057/Servicios/BackOffice/FachadaInstructor.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>PuiPuiCapaDeInterfazBackOffice_LogicaInstructor_FachadaInstructor</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:24057/Servicios/BackOffice/FachadaInstructoresBackOffice.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\LogicaPersonas\</RelPath>
+      <UpdateFromURL>http://localhost:24057/Servicios/BackOffice/FachadaInstructoresBackOffice.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>PuiPuiCapaDeInterfazBackOffice_LogicaPersonas_FachadaPersonas</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:24057/Servicios/BackOffice/FachadaUsuariosLoginBackOffice.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\LogicaUsuariosLogin\</RelPath>
+      <UpdateFromURL>http://localhost:24057/Servicios/BackOffice/FachadaUsuariosLoginBackOffice.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>PuiPuiCapaDeInterfazBackOffice_LogicaUsuariosLogin_FachadaUsuariosLogin</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\LogicaClaseSalon\" />
+    <WCFMetadataStorage Include="Service References\LogicaClase\" />
+    <WCFMetadataStorage Include="Service References\LogicaSalon\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:4106/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

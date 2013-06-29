@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ServicioConsultarTodosReservacionesClases">
+        <s:complexType />
+      </s:element>
+      <s:element name="ServicioConsultarTodosReservacionesClasesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ServicioConsultarTodosReservacionesClasesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioConsultarDetalleReservacionPorId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idReservacion" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioConsultarDetalleReservacionPorIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ServicioConsultarDetalleReservacionPorIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ServicioConsultarTodosReservacionesClasesSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicioConsultarTodosReservacionesClases" />
+  </wsdl:message>
+  <wsdl:message name="ServicioConsultarTodosReservacionesClasesSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicioConsultarTodosReservacionesClasesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServicioConsultarDetalleReservacionPorIdSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicioConsultarDetalleReservacionPorId" />
+  </wsdl:message>
+  <wsdl:message name="ServicioConsultarDetalleReservacionPorIdSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicioConsultarDetalleReservacionPorIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServicioConsultarTodosReservacionesClasesHttpGetIn" />
+  <wsdl:message name="ServicioConsultarTodosReservacionesClasesHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioConsultarDetalleReservacionPorIdHttpGetIn">
+    <wsdl:part name="idReservacion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioConsultarDetalleReservacionPorIdHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioConsultarTodosReservacionesClasesHttpPostIn" />
+  <wsdl:message name="ServicioConsultarTodosReservacionesClasesHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioConsultarDetalleReservacionPorIdHttpPostIn">
+    <wsdl:part name="idReservacion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ServicioConsultarDetalleReservacionPorIdHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="FachadaReservarClasesFrontOfficeSoap">
+    <wsdl:operation name="ServicioConsultarTodosReservacionesClases">
+      <wsdl:input message="tns:ServicioConsultarTodosReservacionesClasesSoapIn" />
+      <wsdl:output message="tns:ServicioConsultarTodosReservacionesClasesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioConsultarDetalleReservacionPorId">
+      <wsdl:input message="tns:ServicioConsultarDetalleReservacionPorIdSoapIn" />
+      <wsdl:output message="tns:ServicioConsultarDetalleReservacionPorIdSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="FachadaReservarClasesFrontOfficeHttpGet">
+    <wsdl:operation name="ServicioConsultarTodosReservacionesClases">
+      <wsdl:input message="tns:ServicioConsultarTodosReservacionesClasesHttpGetIn" />
+      <wsdl:output message="tns:ServicioConsultarTodosReservacionesClasesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioConsultarDetalleReservacionPorId">
+      <wsdl:input message="tns:ServicioConsultarDetalleReservacionPorIdHttpGetIn" />
+      <wsdl:output message="tns:ServicioConsultarDetalleReservacionPorIdHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="FachadaReservarClasesFrontOfficeHttpPost">
+    <wsdl:operation name="ServicioConsultarTodosReservacionesClases">
+      <wsdl:input message="tns:ServicioConsultarTodosReservacionesClasesHttpPostIn" />
+      <wsdl:output message="tns:ServicioConsultarTodosReservacionesClasesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioConsultarDetalleReservacionPorId">
+      <wsdl:input message="tns:ServicioConsultarDetalleReservacionPorIdHttpPostIn" />
+      <wsdl:output message="tns:ServicioConsultarDetalleReservacionPorIdHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FachadaReservarClasesFrontOfficeSoap" type="tns:FachadaReservarClasesFrontOfficeSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ServicioConsultarTodosReservacionesClases">
+      <soap:operation soapAction="http://tempuri.org/ServicioConsultarTodosReservacionesClases" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioConsultarDetalleReservacionPorId">
+      <soap:operation soapAction="http://tempuri.org/ServicioConsultarDetalleReservacionPorId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FachadaReservarClasesFrontOfficeSoap12" type="tns:FachadaReservarClasesFrontOfficeSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ServicioConsultarTodosReservacionesClases">
+      <soap12:operation soapAction="http://tempuri.org/ServicioConsultarTodosReservacionesClases" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioConsultarDetalleReservacionPorId">
+      <soap12:operation soapAction="http://tempuri.org/ServicioConsultarDetalleReservacionPorId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FachadaReservarClasesFrontOfficeHttpGet" type="tns:FachadaReservarClasesFrontOfficeHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="ServicioConsultarTodosReservacionesClases">
+      <http:operation location="/ServicioConsultarTodosReservacionesClases" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioConsultarDetalleReservacionPorId">
+      <http:operation location="/ServicioConsultarDetalleReservacionPorId" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FachadaReservarClasesFrontOfficeHttpPost" type="tns:FachadaReservarClasesFrontOfficeHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="ServicioConsultarTodosReservacionesClases">
+      <http:operation location="/ServicioConsultarTodosReservacionesClases" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioConsultarDetalleReservacionPorId">
+      <http:operation location="/ServicioConsultarDetalleReservacionPorId" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FachadaReservarClasesFrontOffice">
+    <wsdl:port name="FachadaReservarClasesFrontOfficeSoap" binding="tns:FachadaReservarClasesFrontOfficeSoap">
+      <soap:address location="http://localhost:24057/Servicios/FrontOffice/FachadaReservarClasesFrontOffice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="FachadaReservarClasesFrontOfficeSoap12" binding="tns:FachadaReservarClasesFrontOfficeSoap12">
+      <soap12:address location="http://localhost:24057/Servicios/FrontOffice/FachadaReservarClasesFrontOffice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="FachadaReservarClasesFrontOfficeHttpGet" binding="tns:FachadaReservarClasesFrontOfficeHttpGet">
+      <http:address location="http://localhost:24057/Servicios/FrontOffice/FachadaReservarClasesFrontOffice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="FachadaReservarClasesFrontOfficeHttpPost" binding="tns:FachadaReservarClasesFrontOfficeHttpPost">
+      <http:address location="http://localhost:24057/Servicios/FrontOffice/FachadaReservarClasesFrontOffice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
