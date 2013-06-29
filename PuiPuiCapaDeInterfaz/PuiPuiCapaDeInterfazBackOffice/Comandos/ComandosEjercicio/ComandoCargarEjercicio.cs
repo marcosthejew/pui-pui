@@ -14,7 +14,7 @@ namespace PuiPuiCapaDeInterfazBackOffice.Comandos.ComandosEjercicio
 {
     public class ComandoCargarEjercicio: AComando<bool>
     {
-        IContratoConsultarEjercicio _vista;
+        IContratoConsultarEjercicio _vista;  
 
 
         public ComandoCargarEjercicio(IContratoConsultarEjercicio vista)

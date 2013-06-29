@@ -218,31 +218,27 @@ namespace PuiPuiCapaDeInterfazBackOffice.LogicaEjercicios {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ServicioModificarEjercicio", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public bool ServicioModificarEjercicio(int id, string nombreEjercicio, string descripcionEjercicio, int idMusculo, string nombreMusculo) {
+        public bool ServicioModificarEjercicio(string nombreEjercicio, string descripcionEjercicio, string nombreMusculo) {
             object[] results = this.Invoke("ServicioModificarEjercicio", new object[] {
-                        id,
                         nombreEjercicio,
                         descripcionEjercicio,
-                        idMusculo,
                         nombreMusculo});
             return ((bool)(results[0]));
         }
         
         /// <remarks/>
-        public void ServicioModificarEjercicioAsync(int id, string nombreEjercicio, string descripcionEjercicio, int idMusculo, string nombreMusculo) {
-            this.ServicioModificarEjercicioAsync(id, nombreEjercicio, descripcionEjercicio, idMusculo, nombreMusculo, null);
+        public void ServicioModificarEjercicioAsync(string nombreEjercicio, string descripcionEjercicio, string nombreMusculo) {
+            this.ServicioModificarEjercicioAsync(nombreEjercicio, descripcionEjercicio, nombreMusculo, null);
         }
         
         /// <remarks/>
-        public void ServicioModificarEjercicioAsync(int id, string nombreEjercicio, string descripcionEjercicio, int idMusculo, string nombreMusculo, object userState) {
+        public void ServicioModificarEjercicioAsync(string nombreEjercicio, string descripcionEjercicio, string nombreMusculo, object userState) {
             if ((this.ServicioModificarEjercicioOperationCompleted == null)) {
                 this.ServicioModificarEjercicioOperationCompleted = new System.Threading.SendOrPostCallback(this.OnServicioModificarEjercicioOperationCompleted);
             }
             this.InvokeAsync("ServicioModificarEjercicio", new object[] {
-                        id,
                         nombreEjercicio,
                         descripcionEjercicio,
-                        idMusculo,
                         nombreMusculo}, this.ServicioModificarEjercicioOperationCompleted, userState);
         }
         

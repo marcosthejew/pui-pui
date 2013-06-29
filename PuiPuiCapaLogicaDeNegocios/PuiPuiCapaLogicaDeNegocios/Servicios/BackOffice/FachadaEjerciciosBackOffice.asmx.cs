@@ -51,9 +51,9 @@ namespace PuiPuiCapaLogicaDeNegocios.Servicios.BackOffice
 
 
         [WebMethod]
-        public bool ServicioModificarEjercicio(int id, string nombreEjercicio, string descripcionEjercicio, int idMusculo, string nombreMusculo)
+        public bool ServicioModificarEjercicio(string nombreEjercicio, string descripcionEjercicio,string nombreMusculo)
         {
-            AEntidad ejercicio=FabricaEntidad.CrearEjercicio(id,nombreEjercicio,descripcionEjercicio,(FabricaEntidad.CrearMusculo(idMusculo,nombreMusculo)as Musculo));
+            AEntidad ejercicio=FabricaEntidad.CrearEjercicio(0,nombreEjercicio,descripcionEjercicio,(FabricaEntidad.CrearMusculo(0,nombreMusculo)as Musculo));
             return FabricaComando.CrearComandoModificarEjercicio(ejercicio).Ejecutar();
         }
 

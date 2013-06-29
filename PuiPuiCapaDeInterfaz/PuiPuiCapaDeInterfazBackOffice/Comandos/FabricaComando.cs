@@ -15,7 +15,7 @@ namespace PuiPuiCapaDeInterfazBackOffice.Comandos
     {
         #region Ejercicio
         public static AComando<bool> CrearComandoCargarMusculos(IAgregarEjercicio vista)
-        {
+        {   
             return new ComandoCargarMusculos(vista);
         }
         public static AComando<bool> CrearComandoCargarMusculos(IContratoDesactivarMusculo vista)
