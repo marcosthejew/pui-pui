@@ -7,7 +7,7 @@ using System.Xml;
 using System.Web.UI.WebControls;
 using PuiPuiCapaDeInterfazBackOffice.LogicaEjercicios;
 using PuiPuiCapaDeInterfazBackOffice.Contratos.CTEjercicio;
-
+  
 namespace PuiPuiCapaDeInterfazBackOffice.Comandos.ComandosEjercicio
 {
     public class ComandoConsultarEjercicio:AComando<bool>

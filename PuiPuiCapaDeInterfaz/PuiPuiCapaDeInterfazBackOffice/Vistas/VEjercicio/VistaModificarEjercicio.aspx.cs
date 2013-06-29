@@ -13,6 +13,7 @@ namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VEjercicio
     {
         private PModificarEjercicio _presentadorModificarComando;
 
+        #region Getter and Setter
         public String NombreDeEjercicio
         {
             get {return ddlEjercicios.Text;}
@@ -37,11 +38,15 @@ namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VEjercicio
             set { ddlMusculo .Text= value; }
         }
 
+        
+        #endregion
+
+        #region Metodos
+
         public VistaModificarEjercicio()
         {
             _presentadorModificarComando = new PModificarEjercicio(this);
         }
-
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -51,5 +56,6 @@ namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VEjercicio
         {
             _presentadorModificarComando.Click_ModificarEjercicio();
         }
+        #endregion
     }
 }
