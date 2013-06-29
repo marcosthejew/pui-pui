@@ -8,8 +8,7 @@
         AGREGAR MUSCULO
     </h2>
     <br />
-
-    <asp:Label ID="lExito" runat="server" Text="El musculo se ha agregado correctamente." Visible="False"></asp:Label>
+    <asp:Label ID="_exito" runat="server" Text=" " Visible="False"></asp:Label>
 
     <br />
 
@@ -27,7 +26,7 @@
 
                 <td class="style1">
 
-                    <asp:TextBox ID="tbNombre" runat="server" Width="270px"></asp:TextBox>
+                    <asp:TextBox ID="_nombre" runat="server" Width="270px" OnTextChanged="tbNombre_TextChanged"></asp:TextBox>
 
                 </td>
 
@@ -37,7 +36,7 @@
                    Descripcion: 
                 </td>
                 <td class="auto-style7">
-                    <asp:TextBox ID="tbDescripcion" runat="server" Height="83px" Width="270px" TextMode="MultiLine" Font-Names="Arial"></asp:TextBox>
+                    <asp:TextBox ID="_descripcion" runat="server" Height="83px" Width="270px" TextMode="MultiLine" Font-Names="Arial"></asp:TextBox>
                 </td></tr>
 
             <tr>
@@ -68,7 +67,7 @@
 
                     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 
-                    <asp:Button ID="bAgregar" runat="server" Text="Agregar" OnClick="bAgregar_Click" />
+                    <asp:Button ID="bAgregar" runat="server" Text="Agregar" OnClick="Aceptar_Click" />
 
                 </td>
 

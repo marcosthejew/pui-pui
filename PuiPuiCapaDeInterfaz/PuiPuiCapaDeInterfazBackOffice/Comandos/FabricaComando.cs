@@ -18,9 +18,9 @@ namespace PuiPuiCapaDeInterfazBackOffice.Comandos
         {
             return new ComandoCargarMusculos(vista);
         }
-        public static AComando<bool> CrearComandoCargarEjercicios(IContratoConsultarEjercicio vista)
+        public static AComando<bool> CrearComandoCargarMusculos(IContratoDesactivarMusculo vista)
         {
-            return new ComandoCargarEjercicio(vista);
+            return new ComndoCargarMusculos2(vista);
         }
         public static AComando<bool> CrearComandoAgregarEjercicio(string nombre, string descripcion, string musculo)
         {
@@ -30,9 +30,13 @@ namespace PuiPuiCapaDeInterfazBackOffice.Comandos
         {
             return new ComandoValidarCampo(valor);
         }
-        public static AComando<bool> CrearComandoConsultarEjercicio(IContratoConsultarEjercicio vista)
+        public static AComando<bool> CrearComandoAgregarMusculo(string nombre, string descripcion)
         {
-            return new ComandoConsultarEjercicio(vista);
+            return new ComandoAgregarMusculos(nombre, descripcion);
+        }
+        public static AComando<bool> CrearComandoDesactivarMusculo(int idMusuclo)
+        {
+            return new ComandoDesactivarMusculos(idMusuclo);
         }
         #endregion
     }

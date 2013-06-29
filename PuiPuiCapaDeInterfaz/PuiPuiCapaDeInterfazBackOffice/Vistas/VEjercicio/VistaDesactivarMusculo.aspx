@@ -13,7 +13,7 @@
     </h2>
     <br />
 
-    <asp:Label ID="lExito" runat="server" Text="El musculo se ha desactivado correctamente." Visible="False"></asp:Label>
+    <asp:Label ID="_exito" runat="server" Text="El musculo se ha desactivado correctamente." Visible="False"></asp:Label>
 
     <br />
     <br />
@@ -24,7 +24,7 @@
                 </td>
                 <td class="auto-style1">
 
-                    <asp:DropDownList ID="ddlMusculo" runat="server" Height="17px" Width="272px" AutoPostBack="True">
+                    <asp:DropDownList ID="_nombre" runat="server" Height="17px" Width="272px" AutoPostBack="True">
                     </asp:DropDownList>
     
                 </td>
@@ -43,7 +43,7 @@
                 </td>
                 <td class="style1">
                     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
-                    <asp:Button ID="bEliminar" runat="server" Text="Desactivar" OnClick="bEliminar_Click" />
+                    <asp:Button ID="bEliminar" runat="server" Text="Desactivar" OnClick="desactivar_Click" />
                 </td>
             </tr>
         </table>
