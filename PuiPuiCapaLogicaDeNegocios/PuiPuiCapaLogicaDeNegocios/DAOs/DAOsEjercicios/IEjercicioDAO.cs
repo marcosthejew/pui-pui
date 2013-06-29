@@ -15,6 +15,7 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEjercicios
         bool Modificar(AEntidad entidad);
         bool Agregar(int a,AEntidad entidad);
         bool ExisteEjercicio(AEntidad ejercicio);
+        Entidades.AEntidad ConsultarPorId(int id, string nombre);
         bool ExisteEjercicioOtroId(AEntidad ejercicio);
         bool ExisteRutinaConEjercicio(AEntidad ejercicio);
     }

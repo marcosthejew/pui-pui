@@ -33,15 +33,20 @@ go
 CREATE PROCEDURE [dbo].[insertarEjercicio]
 @Nombre NVARCHAR(50),
 @Descripcion nvarchar(150),	
-@idMusculo int
+@idMusculo nvarchar(150)
 AS
 BEGIN
-
+declare @i int;
 	SET NOCOUNT ON;
 
     insert into Ejercicio (nombre,descripcion,inactivo) values (@Nombre,@Descripcion,1);
-	/*SELECT SCOPE_IDENTITY();*/
+
+	SELECT @i=SCOPE_IDENTITY();
 	
+	insert into Musculo_Involucrado(id_musculo,id_ejercicio,inactivo) values ((select id_musculo
+																			  from Musculo
+																			  where nombre=@idMusculo),@i,1 );
+
 	
 END
 
@@ -78,7 +83,7 @@ drop procedure [consultarEjercicio]
 go
 
 CREATE procedure [dbo].[consultarEjercicio]
-@id_ejercicio int
+@nombre int
 as
 BEGIN	
 set nocount on	
@@ -91,7 +96,7 @@ set nocount on
     from Ejercicio E, 
 	     Musculo M, 
 		 Musculo_Involucrado MI
-    where E.id_ejercicio=@id_ejercicio and
+    where LOWER(e.nombre) like LOWER(@nombre+'%') and
 		  E.id_ejercicio=mi.id_ejercicio and
 		  M.id_musculo=mi.id_musculo;
 	 
@@ -266,7 +271,7 @@ AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
 drop procedure [existeEjercicioConMusculo]
 go
 CREATE procedure [dbo].[existeEjercicioConMusculo]
-@idMusculo int
+@idMusculo nvarchar(50)
 as
 
 BEGIN
@@ -284,7 +289,7 @@ drop procedure [eliminarMusculo]
 go
 
 CREATE procedure [dbo].[eliminarMusculo]
-@idMusculo int
+@idMusculo nvarchar(50)
 as
 
 BEGIN

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using PuiPuiCapaLogicaDeNegocios.Entidades;
+using PuiPuiCapaLogicaDeNegocios.Entidades.EEjercicios;
 using PuiPuiCapaLogicaDeNegocios.Fabricas;
 using PuiPuiCapaLogicaDeNegocios.Excepciones;
 
@@ -21,7 +22,7 @@ namespace PuiPuiCapaLogicaDeNegocios.Comandos.ComandosEjercicio
             
             try
             {
-                _ejercicio = FabricaSQLServerDAO.obtenerInstancia().CrearEjercicioSQLServerDAO().ConsultarPorId(_ejercicio.Id);
+                _ejercicio = FabricaSQLServerDAO.obtenerInstancia().CrearEjercicioSQLServerDAO().ConsultarPorId(0,(_ejercicio as Ejercicio).Nombre);
             }
             catch (ExcepcionEjercicioConexionBD e)
             {
