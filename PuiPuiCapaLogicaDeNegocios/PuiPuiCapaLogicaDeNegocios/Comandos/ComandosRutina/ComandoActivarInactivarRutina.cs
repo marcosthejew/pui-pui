@@ -8,9 +8,12 @@ namespace PuiPuiCapaLogicaDeNegocios.Comandos.ComandosRutina
 {
     public class ComandoActivarInactivarRutina :AComando<bool>
     {
-        public ComandoActivarInactivarRutina()
+        int idRutina;
+        byte inactivo;
+        public ComandoActivarInactivarRutina(int _idRutina, byte _inactivo)
         {
-
+            this.idRutina = _idRutina;
+            this.inactivo = _inactivo;
         }
         public override bool Ejecutar()
         {
@@ -18,7 +21,7 @@ namespace PuiPuiCapaLogicaDeNegocios.Comandos.ComandosRutina
             {
                 IRutinaDAO rutinaDAO = (IRutinaDAO)Fabricas.AFabricaDAO.CrearFabricaSQLServerDAO().CrearRutinaSQLServerDAO();
 
-                return rutinaDAO.ActivarInactivarRutina(18,1);
+                return rutinaDAO.ActivarInactivarRutina(idRutina,inactivo);
 
             }
             catch (Exception e)

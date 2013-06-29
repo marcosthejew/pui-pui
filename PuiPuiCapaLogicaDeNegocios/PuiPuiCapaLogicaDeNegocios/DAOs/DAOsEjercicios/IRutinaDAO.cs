@@ -20,5 +20,6 @@ namespace PuiPuiCapaLogicaDeNegocios.DAOs.DAOsEjercicios
         int ConsultarPersonaPorLogin(string login);
         int ObtenerUltimoIDRutina();
         List<Ejercicio> ConsultarTodosEjerciciosR();
+        string ConsultarStatusRutinaPorID(int idRutina);
     }
 }

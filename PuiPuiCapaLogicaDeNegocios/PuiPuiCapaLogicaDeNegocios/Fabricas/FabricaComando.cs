@@ -158,9 +158,9 @@ namespace PuiPuiCapaLogicaDeNegocios.Fabricas
         {
             return new ComandoConsultarEjerciciosPorIDRutina();
         }
-        public static AComando<bool> CrearComandoActivarInactivarRutina()
+        public static AComando<bool> CrearComandoActivarInactivarRutina(int idRutina, byte inactivo)
         {
-            return new ComandoActivarInactivarRutina();
+            return new ComandoActivarInactivarRutina(idRutina, inactivo);
         }
 
         public static AComando<bool> CrearComandoAgregarRutina()
@@ -184,6 +184,10 @@ namespace PuiPuiCapaLogicaDeNegocios.Fabricas
         public static AComando<List<Entidades.EEjercicios.Ejercicio>> CrearComandoConsultarTodosEjerciciosR()
         {
             return new ComandoConsultarTodosEjerciciosR();
+        }
+        public static AComando<string> CrearComandoConsutarStatusRutinaPorID(int idRutina)
+        {
+            return new ComandoConsutarStatusRutinaPorID(idRutina);
         }
         #endregion
     }

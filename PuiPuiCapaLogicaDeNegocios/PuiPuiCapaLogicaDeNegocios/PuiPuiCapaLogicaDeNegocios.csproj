@@ -148,6 +148,7 @@
     <Compile Include="Comandos\ComandosInstructor\ComandoInactivarInstructor.cs" />
     <Compile Include="Comandos\ComandosInstructor\ComandoModificarInstructor.cs" />
     <Compile Include="Comandos\ComandosRutina\ComandoConsultarTodosEjerciciosR.cs" />
+    <Compile Include="Comandos\ComandosRutina\ComandoConsutarStatusRutinaPorID.cs" />
     <Compile Include="Comandos\ComandosRutina\ComandoObtenerUltimoIDRutina.cs" />
     <Compile Include="Comandos\ComandosSalon\ComandoBusquedaCapacidadMayorSalon.cs" />
     <Compile Include="Comandos\ComandosSalon\ComandoBusquedaCapacidadMenorSalon.cs" />
