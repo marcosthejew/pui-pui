@@ -1,4 +1,5 @@
-﻿using PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases;
+﻿using PuiPuiCapaLogicaDeNegocios.Bitacora;
+using PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases;
 using PuiPuiCapaLogicaDeNegocios.Entidades.EClases;
 using PuiPuiCapaLogicaDeNegocios.Fabricas;
 using System;
@@ -15,7 +16,7 @@ namespace PuiPuiCapaLogicaDeNegocios.Comandos.ComandosClase
     {
         private int _id;
         /// <summary>
-        /// Constructor de la clase por defecto.
+        /// Constructor de la clase que recibe el id a modificar
         /// </summary>
         /// <returns></returns>
         public ComandoInactivarClase(int id)
@@ -24,7 +25,7 @@ namespace PuiPuiCapaLogicaDeNegocios.Comandos.ComandosClase
         }
 
         /// <summary>
-        /// Ejecuta el comando.
+        /// Ejecuta el comando que inactiva la clase
         /// </summary>
         /// <returns></returns>
         public override bool Ejecutar()
@@ -33,6 +34,8 @@ namespace PuiPuiCapaLogicaDeNegocios.Comandos.ComandosClase
             IClaseDAO ClaseDao=(IClaseDAO)
             AFabricaDAO.CrearFabricaSQLServerDAO().CrearClaseSQLServerDAO();
             inactivo=ClaseDao.Inactivar(_id);
+            EscritorBitacora bitacora = EscritorBitacora.obtenerInstancia();
+            bitacora.escribirInfoEnBitacora("el usuario **** accedio al comando inactivar clase");
             return (inactivo);
 
         }

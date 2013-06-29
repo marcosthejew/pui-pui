@@ -1,4 +1,5 @@
-﻿using PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases;
+﻿using PuiPuiCapaLogicaDeNegocios.Bitacora;
+using PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases;
 using PuiPuiCapaLogicaDeNegocios.Entidades;
 using PuiPuiCapaLogicaDeNegocios.Entidades.EClases;
 using PuiPuiCapaLogicaDeNegocios.Fabricas;
@@ -18,7 +19,8 @@ namespace PuiPuiCapaLogicaDeNegocios.Comandos.ComandosClase
         private int _id;
         private AEntidad _clase;
         /// <summary>
-        /// Constructor de la clase por defecto.
+        /// Constructor de la clase por defecto recibe el id y el nuevo objeto
+        /// conformado por los nuevos atributos que formaran la clase
         /// </summary>
         /// <returns></returns>
         public ComandoModificarClase(int id, Clase clase)
@@ -28,7 +30,7 @@ namespace PuiPuiCapaLogicaDeNegocios.Comandos.ComandosClase
         }
 
         /// <summary>
-        /// Ejecuta el comando.
+        /// Ejecuta el comando retorna true de modifcarse el salon y false de no hacerlo
         /// </summary>
         /// <returns></returns>
         public override bool Ejecutar()
@@ -38,6 +40,8 @@ namespace PuiPuiCapaLogicaDeNegocios.Comandos.ComandosClase
             AFabricaDAO.CrearFabricaSQLServerDAO().CrearClaseSQLServerDAO();
             claseDao = new DAOs.DAOsClases.ClaseSQLServerDAO();
             modifico = claseDao.Modificar(_id, _clase);
+            EscritorBitacora bitacora = EscritorBitacora.obtenerInstancia();
+            bitacora.escribirInfoEnBitacora("el usuario **** accedio al comando modificar clase");
             return (modifico);
 
         }
