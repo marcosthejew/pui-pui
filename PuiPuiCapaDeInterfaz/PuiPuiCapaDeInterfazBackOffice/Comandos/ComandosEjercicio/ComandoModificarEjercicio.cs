@@ -11,15 +11,18 @@ namespace PuiPuiCapaDeInterfazBackOffice.Comandos.ComandosEjercicio
     {
         private string nombre;
         private string descripcion;
-        public ComandoModificarEjercicio()
+        private string musculo;
+         
+        public ComandoModificarEjercicio(string nombre, string descripcion, string musculo)
         {
-           
+            this.nombre = nombre;
+            this.descripcion = descripcion;
+            this.musculo = musculo;
         }
         public override bool Ejecutar()
         {
             
-            return false ;
-            //new FachadaEjerciciosBackOffice().ServicioModificarEjercicio(
+            return  new FachadaEjerciciosBackOffice().ServicioModificarEjercicio(nombre,descripcion,musculo);
 
         }
 
