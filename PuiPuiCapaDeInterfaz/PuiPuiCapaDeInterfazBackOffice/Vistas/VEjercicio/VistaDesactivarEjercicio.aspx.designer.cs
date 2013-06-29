@@ -13,49 +13,22 @@ namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VEjercicio {
     public partial class VistaDesactivarEjercicio {
         
         /// <summary>
-        /// lExito control.
+        /// _exito control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lExito;
+        protected global::System.Web.UI.WebControls.Label _exito;
         
         /// <summary>
-        /// ddlEjercicios control.
+        /// _nombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlEjercicios;
-        
-        /// <summary>
-        /// tbNombre control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tbNombre;
-        
-        /// <summary>
-        /// tbDescripcion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbDescripcion;
-        
-        /// <summary>
-        /// tbMusculo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tbMusculo;
+        protected global::System.Web.UI.WebControls.DropDownList _nombre;
         
         /// <summary>
         /// bEliminar control.
