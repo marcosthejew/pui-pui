@@ -1,4 +1,5 @@
-﻿using PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases;
+﻿using PuiPuiCapaLogicaDeNegocios.Bitacora;
+using PuiPuiCapaLogicaDeNegocios.DAOs.DAOsClases;
 using PuiPuiCapaLogicaDeNegocios.Entidades.EClases;
 using PuiPuiCapaLogicaDeNegocios.Fabricas;
 using System;
@@ -24,7 +25,7 @@ namespace PuiPuiCapaLogicaDeNegocios.Comandos.ComandosSalon
         }
 
         /// <summary>
-        /// Ejecuta el comando.
+        /// Ejecuta el comando y devuelve todos los salones del sistema.
         /// </summary>
         /// <returns></returns>
         public override List<Salon> Ejecutar()
@@ -33,6 +34,8 @@ namespace PuiPuiCapaLogicaDeNegocios.Comandos.ComandosSalon
             AFabricaDAO.CrearFabricaSQLServerDAO().CrearSalonSQLServerDAO();
             List<Salon> listaSalon= 
             (salonDao.ConsultarTodos()).Cast<Salon>().ToList();
+            EscritorBitacora bitacora = EscritorBitacora.obtenerInstancia();
+            bitacora.escribirInfoEnBitacora("el usuario **** accedio al comando consultarTodosSalones");
             return (listaSalon);
 
         }
