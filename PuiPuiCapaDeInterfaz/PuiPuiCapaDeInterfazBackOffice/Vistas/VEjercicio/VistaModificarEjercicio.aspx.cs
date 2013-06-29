@@ -38,6 +38,22 @@ namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VEjercicio
             set { ddlMusculo .Text= value; }
         }
 
+        public DropDownList ListaEjercicio
+        {
+            get
+            {
+                return ddlEjercicios;
+            }
+        }
+
+        public DropDownList ListaMusculo
+        {
+            get
+            {
+                return ddlMusculo;
+            }
+        }
+
         
         #endregion
 
@@ -49,6 +65,7 @@ namespace PuiPuiCapaDeInterfazBackOffice.Vistas.VEjercicio
         }
         protected void Page_Load(object sender, EventArgs e)
         {
+            _presentadorModificarComando.CagarCombosI();
 
         }
 

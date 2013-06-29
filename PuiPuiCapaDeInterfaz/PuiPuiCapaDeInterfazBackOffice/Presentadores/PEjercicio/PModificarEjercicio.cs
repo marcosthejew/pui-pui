@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using PuiPuiCapaDeInterfazBackOffice.Contratos.CTEjercicio;
+using PuiPuiCapaDeInterfazBackOffice.Comandos;
+using PuiPuiCapaDeInterfazBackOffice.Comandos.ComandosEjercicio;
 
 namespace PuiPuiCapaDeInterfazBackOffice.Presentadores.PEjercicio
 {
@@ -17,7 +19,14 @@ namespace PuiPuiCapaDeInterfazBackOffice.Presentadores.PEjercicio
 
         public void Click_ModificarEjercicio()
         {
+            FabricaComando.CrearComandoModificarEjercicio(_vistaModificarEjercicio.NombreDeEjercicio, _vistaModificarEjercicio.tbDescripcionEjer, _vistaModificarEjercicio.MusculoAEjercitar);
 
+        }
+        public void CagarCombos()
+        {
+            FabricaComando.CrearComandoCargarEjercicios(_vistaModificarEjercicio);
+            FabricaComando.CrearComandoCargarMusculos(_vistaModificarEjercicio);
+            
         }
     }
 }
