@@ -1,0 +1,1 @@
+proyecto de desarrollo de software para el semestre 1213B. El proyecto se basa en un sistema sencillo para gimnasios
